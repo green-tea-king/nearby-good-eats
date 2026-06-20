@@ -735,7 +735,7 @@ function cardHTML(r, rank){
   // 評鑑徽章：有資料就顯示，否則留 placeholder（Step 2）
   const badges = (r.awards && r.awards.length)
     ? r.awards.map(badgeHTML).join("")
-    : `<span class="badge placeholder">評鑑徽章 · Step 2</span>`;
+    : "";  // 無評鑑就不顯示徽章（Step 2 已接真實名單）
   // AI 理由：有就顯示，否則 placeholder（Step 3）
   const ai = r.aiReason
     ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
