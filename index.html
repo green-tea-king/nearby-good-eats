@@ -694,7 +694,10 @@ async function placesSearch() {
     aiReason: null,      // Step 3 由 Claude 填入
   }));
 }
-function priceToNum(pl){const map={PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4};return map[pl]||0;}
+function priceToNum(pl){const map={
+  FREE:0,INEXPENSIVE:1,MODERATE:2,EXPENSIVE:3,VERY_EXPENSIVE:4,
+  PRICE_LEVEL_FREE:0,PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4
+};return map[pl]||0;}
 // Google reviewSummary 結構不一（字串 / {text} / {text:{text}}），防禦式取出純文字
 function extractReviewSummary(rs){
   if(!rs) return "";
