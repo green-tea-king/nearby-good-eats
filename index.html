@@ -400,6 +400,7 @@ const CONFIG = {
 
   // ── 搜尋
   DEFAULT_RADIUS_M: 800,     // 步行半徑預設（公尺）
+  DISTRICT_RADIUS_M: 3000,   // 選「區」時的範圍：涵蓋全區、忽略步行距離
   WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
   RESULT_COUNT: 5,           // 取前幾家
   DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 預設地點（demo / 定位失敗時）：台北市中心
@@ -446,6 +447,7 @@ const state = {
   radius: CONFIG.DEFAULT_RADIUS_M,
   usingArea: false,        // false=目前位置 / true=選地區
   areaName: "目前位置",
+  wholeArea: false,        // 選「區」＝true：全區候選、忽略步行距離
   sort: CONFIG.SORT_DEFAULT,
   openOnly: CONFIG.OPEN_ONLY_DEFAULT,
   priceLevels: [],         // 價位篩選（空＝全部；含 1~4）
@@ -471,6 +473,7 @@ function enterApp() {
 }
 
 function locateThenSearch() {
+  state.wholeArea = false;   // 目前位置一律步行模式
   setStatus(true, "定位中…");
   if (!navigator.geolocation || demoMode) {
     // demo：直接用預設中心（避免要求權限）
@@ -502,6 +505,8 @@ $("#radius").addEventListener("input", e => {
 });
 $("#applyScope").addEventListener("click", () => {
   state.radius = +$("#radius").value;
+  state.wholeArea = false;   // 手動設定步行半徑＝切回步行模式
+  $("#scopeMode").textContent = state.usingArea ? "以選定地區為圓心" : "以目前位置為圓心";
   $("#scopePanel").classList.add("hidden");
   search();
 });
@@ -579,7 +584,7 @@ $("#areaGo").addEventListener("click", submitArea);
 $("#areaInput").addEventListener("keydown", e=>{ if(e.key==="Enter") submitArea(); });
 $("#areaCurrent").addEventListener("click", ()=>{
   closeAreaModal();
-  state.usingArea = false; state.areaName = "目前位置";
+  state.usingArea = false; state.areaName = "目前位置"; state.wholeArea = false;
   $("#scopeLabel").textContent = "目前位置";
   $("#scopeMode").textContent = "以目前位置為圓心";
   locateThenSearch();
@@ -621,8 +626,9 @@ async function submitArea(){
     state.center = center;
     state.usingArea = true;
     state.areaName = label;
+    state.wholeArea = /區$/.test(label.trim());   // 結尾是「區」＝整區候選、忽略步行距離
     $("#scopeLabel").textContent = label;
-    $("#scopeMode").textContent = "以選定地區為圓心";
+    $("#scopeMode").textContent = state.wholeArea ? "整區範圍（不限步行距離）" : "以選定地區為圓心";
     if (state.map) state.map.setCenter(center);
     search();
   }catch(e){
@@ -668,7 +674,7 @@ async function placesSearch() {
     fields: ["id","displayName","location","rating","userRatingCount",
              "priceLevel","regularOpeningHours","businessStatus","formattedAddress",
              "nationalPhoneNumber","editorialSummary","photos","reviewSummary"],
-    locationRestriction: { center: state.center, radius: state.radius },
+    locationRestriction: { center: state.center, radius: state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius },
     includedPrimaryTypes: ["restaurant"],
     maxResultCount: 20,
     rankPreference: SearchNearbyRankPreference.POPULARITY,
@@ -753,7 +759,7 @@ function rankAndRender(){
     i.bayesScore = bayes(i, m);
     i.composite = i.bayesScore
       + awardBonus(i.awards)
-      - (i.dist/100) * CONFIG.DISTANCE_PENALTY_PER_100M
+      - (state.wholeArea ? 0 : (i.dist/100) * CONFIG.DISTANCE_PENALTY_PER_100M)
       + (i.openNow === true ? CONFIG.OPEN_BONUS : 0);
   });
 
@@ -805,7 +811,8 @@ function renderOverview(text){
 
 function setSummary(){
   const where = state.usingArea ? state.areaName : "你附近";
-  $("#status").innerHTML = `${where} · 步行 ${state.radius}m 內 · 前 ${state.ranked.length} 家`
+  const scope = state.wholeArea ? "全區" : `步行 ${state.radius}m 內`;
+  $("#status").innerHTML = `${where} · ${scope} · 前 ${state.ranked.length} 家`
     + (demoMode ? `<span class="demo-tag">DEMO 資料</span>` : "");
 }
 
