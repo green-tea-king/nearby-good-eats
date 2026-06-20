@@ -1,0 +1,48 @@
+{
+  "_README": "台北餐廳評鑑名單。維護＝改本檔 + push，不動程式碼。guide 可為 michelin / bib / 500plate；500plate 可給 plates（已彙總盤數）或 dishPlates（各菜盤數，程式會自動加總）。徽章須帶 year。標記 _demo:true 者為預覽用假資料，上線前請刪除並改填官方來源（米其林指南官網、500 盤官方公告）。",
+  "_sources": ["https://guide.michelin.com/tw/zh_TW", "500 盤官方公告"],
+  "updated": "2026-06-15",
+  "restaurants": [
+    {
+      "name": "海風生魚片丼",
+      "address": "台北市中山區",
+      "_demo": true,
+      "awards": [
+        { "guide": "michelin", "level": "二星", "year": 2025 }
+      ]
+    },
+    {
+      "name": "五味爐 川菜小館",
+      "address": "台北市中山區",
+      "_demo": true,
+      "awards": [
+        { "guide": "michelin", "level": "一星", "year": 2025 }
+      ]
+    },
+    {
+      "name": "老巷牛肉麵",
+      "address": "台北市中山區",
+      "_demo": true,
+      "awards": [
+        { "guide": "bib", "year": 2025 },
+        { "guide": "500plate", "year": 2025, "dishPlates": [3, 2, 1] }
+      ]
+    },
+    {
+      "name": "夜半食堂 居酒屋",
+      "address": "台北市中山區",
+      "_demo": true,
+      "awards": [
+        { "guide": "500plate", "year": 2025, "plates": 4 }
+      ]
+    },
+    {
+      "name": "九層糕老店",
+      "address": "台北市中山區",
+      "_demo": true,
+      "awards": [
+        { "guide": "bib", "year": 2024 }
+      ]
+    }
+  ]
+}

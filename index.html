@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>附近好吃的</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   設計 tokens（暗色，集中於 CSS variables；將來加淺色模式只需多定義一組）
+   ============================================================ */
+:root{
+  --bg:#101216;          /* 底（深炭灰，非純黑） */
+  --surface:#181B20;     /* 卡片 */
+  --surface-2:#1F232A;   /* 展開／次層 */
+  --line:#262B33;        /* 細分隔線 */
+  --text:#E8EAED;        /* 主文字（近白） */
+  --text-dim:#9BA3AE;    /* 次要文字 */
+  --accent:#E4B84C;      /* 主點綴（沈穩金） */
+  --green:#3DD68C;       /* 營業中 */
+  /* 評鑑徽章（皆低彩度深底 + 亮字） */
+  --michelin:#FF5A5F;
+  --bib:#FF9F43;
+  --plate:#5AC8FA;
+  --radius:14px;
+  --t:170ms;             /* 動效收斂 150–200ms */
+}
+/* 淺色模式：只需多定義一組值（tokens 集中設計即為此） */
+:root[data-theme="light"]{
+  --bg:#F4F5F7;
+  --surface:#FFFFFF;
+  --surface-2:#EDF0F3;
+  --line:#DBE0E6;
+  --text:#1A1D22;
+  --text-dim:#5C6573;
+  --accent:#9A7A12;      /* 加深金，確保淺底對比達 AA */
+  --green:#1E9E63;
+  --michelin:#D6383D;
+  --bib:#D17A12;
+  --plate:#1F8FCC;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Noto Sans TC",system-ui,sans-serif;
+  line-height:1.5;
+  overscroll-behavior-y:none;
+}
+.num,.rating,.dist,.count,.rank-badge{font-family:"Space Grotesk","Noto Sans TC",sans-serif;font-variant-numeric:tabular-nums;}
+
+button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:none;}
+.hidden{display:none !important;}
+
+/* ============================================================
+   開場
+   ============================================================ */
+#splash{
+  position:fixed;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:22px;padding:32px;
+  background:radial-gradient(120% 80% at 50% 0%, #15181E 0%, var(--bg) 60%);
+  text-align:center;z-index:30;
+}
+#splash .logo{font-size:13px;letter-spacing:.32em;color:var(--text-dim);text-transform:uppercase;}
+#splash h1{font-size:30px;font-weight:700;letter-spacing:.01em;}
+#splash p.sub{color:var(--text-dim);font-size:14px;max-width:300px;}
+.btn-primary{
+  margin-top:6px;background:var(--accent);color:#1A1606;font-weight:700;
+  font-size:17px;padding:16px 30px;border-radius:var(--radius);
+  display:flex;align-items:center;gap:10px;transition:transform var(--t),filter var(--t);
+}
+.btn-primary:active{transform:scale(.97);filter:brightness(1.05);}
+.btn-text{color:var(--text-dim);font-size:14px;text-decoration:underline;text-underline-offset:3px;padding:6px;}
+.btn-text:active{color:var(--text);}
+
+/* ============================================================
+   頂部控制列
+   ============================================================ */
+#app{display:none;flex-direction:column;min-height:100%;}
+header{
+  position:sticky;top:0;z-index:20;background:rgba(16,18,22,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom,0)*0);
+}
+.bar-row{display:flex;align-items:center;gap:8px;}
+.scope-btn{
+  flex:1;display:flex;align-items:center;gap:7px;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;padding:9px 12px;
+  font-size:14px;text-align:left;min-width:0;transition:border-color var(--t);
+}
+.scope-btn:active{border-color:var(--accent);}
+.scope-btn .icon{color:var(--accent);flex:none;}
+.scope-btn .label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.scope-btn .chev{margin-left:auto;color:var(--text-dim);flex:none;}
+.icon-btn{flex:none;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--text-dim);transition:border-color var(--t),color var(--t);}
+.icon-btn:active{border-color:var(--accent);color:var(--accent);}
+
+/* 情境比較 banner（Step 4） */
+#overview{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:11px 13px;margin-bottom:12px;font-size:13.5px;color:var(--text);line-height:1.55;}
+#overview .lab{display:block;font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:4px;text-transform:uppercase;}
+
+.sorts{display:flex;gap:6px;margin-top:9px;}
+.sort-chip{
+  flex:1;font-size:13px;padding:7px 0;text-align:center;border-radius:8px;
+  background:var(--surface);border:1px solid var(--line);color:var(--text-dim);
+  transition:all var(--t);
+}
+.sort-chip[aria-pressed="true"]{background:var(--accent);color:#1A1606;border-color:var(--accent);font-weight:500;}
+
+.toggle-row{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:var(--text-dim);}
+.switch{position:relative;width:40px;height:23px;flex:none;}
+.switch input{opacity:0;width:0;height:0;}
+.slider{position:absolute;inset:0;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;transition:var(--t);}
+.slider::before{content:"";position:absolute;height:17px;width:17px;left:2px;top:2px;background:var(--text-dim);border-radius:50%;transition:var(--t);}
+.switch input:checked + .slider{background:rgba(61,214,140,.25);border-color:var(--green);}
+.switch input:checked + .slider::before{transform:translateX(17px);background:var(--green);}
+
+/* 範圍面板（半徑滑桿） */
+#scopePanel{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;}
+#scopePanel .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--text-dim);margin-bottom:10px;}
+#scopePanel .row b{color:var(--text);font-size:15px;}
+input[type=range]{width:100%;accent-color:var(--accent);height:26px;}
+.panel-actions{display:flex;gap:8px;margin-top:12px;}
+.panel-actions button{flex:1;padding:9px;border-radius:9px;font-size:14px;background:var(--surface-2);border:1px solid var(--line);}
+.panel-actions .apply{background:var(--accent);color:#1A1606;font-weight:600;border-color:var(--accent);}
+
+/* ============================================================
+   清單 / 卡片
+   ============================================================ */
+main{flex:1;padding:14px 14px 90px;}
+#status{color:var(--text-dim);font-size:13px;padding:6px 2px 12px;display:flex;align-items:center;gap:8px;}
+.spin{width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;flex:none;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px;margin-bottom:12px;position:relative;overflow:hidden;
+  animation:rise var(--t) ease both;
+}
+@keyframes rise{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.card .top{display:flex;gap:12px;}
+.rank-badge{
+  flex:none;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;background:var(--surface-2);color:var(--accent);border:1px solid var(--line);
+}
+.card:nth-child(1) .rank-badge{background:var(--accent);color:#1A1606;border-color:var(--accent);}
+.head{flex:1;min-width:0;}
+/* 主卡縮圖（照片為輔） */
+.thumb{flex:none;width:62px;height:62px;border-radius:10px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line);}
+.name{font-size:17px;font-weight:700;line-height:1.25;}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:6px;font-size:13px;color:var(--text-dim);}
+.rating{color:var(--text);font-weight:500;}
+.rating .star{color:var(--accent);}
+.open-now{color:var(--green);font-weight:500;}
+.closed{color:#E0685F;}
+.price{letter-spacing:1px;}
+
+/* 評鑑徽章（Step 2 填入；先留空位樣式） */
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;min-height:0;}
+.badge{font-size:11px;padding:3px 8px;border-radius:6px;font-weight:500;display:inline-flex;gap:5px;align-items:center;}
+.badge .yr{opacity:.7;font-size:10px;}
+.badge.michelin{background:rgba(255,90,95,.14);color:var(--michelin);}
+.badge.bib{background:rgba(255,159,67,.14);color:var(--bib);}
+.badge.plate{background:rgba(90,200,250,.14);color:var(--plate);}
+.badge.placeholder{background:var(--surface-2);color:var(--text-dim);border:1px dashed var(--line);}
+
+/* AI 一句理由（Step 3 填入；先留 placeholder） */
+.ai-reason{
+  margin-top:10px;font-size:13.5px;color:var(--text);background:var(--surface-2);
+  border-left:2px solid var(--accent);border-radius:0 8px 8px 0;padding:8px 11px;
+}
+.ai-reason.placeholder{color:var(--text-dim);font-style:italic;border-left-color:var(--line);}
+
+.actions{display:flex;gap:8px;margin-top:11px;}
+.actions button{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;padding:9px;border-radius:9px;border:1px solid var(--line);background:var(--surface-2);transition:border-color var(--t);}
+.actions .nav{background:var(--accent);color:#1A1606;font-weight:600;border-color:var(--accent);}
+.actions button:active{filter:brightness(1.08);}
+
+/* 展開詳情（Step 1 留結構，Step 3 補照片/評論摘要） */
+.detail{margin-top:0;max-height:0;overflow:hidden;transition:max-height var(--t) ease;}
+.detail.open{max-height:520px;}
+.detail-inner{padding-top:12px;margin-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--text-dim);display:flex;flex-direction:column;gap:8px;}
+.detail-inner .ph{background:var(--surface-2);border:1px dashed var(--line);border-radius:8px;padding:18px;text-align:center;color:var(--text-dim);}
+.detail-inner .photo{width:100%;height:160px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);}
+.detail-inner .line{display:flex;gap:8px;}
+.detail-inner .line .k{color:var(--text-dim);flex:none;width:48px;}
+.detail-inner .line .v{color:var(--text);}
+
+/* ============================================================
+   地圖（整頁切換）
+   ============================================================ */
+#fab{
+  position:fixed;right:16px;bottom:calc(20px + env(safe-area-inset-bottom,0));z-index:25;
+  background:var(--surface);border:1px solid var(--line);color:var(--text);
+  border-radius:999px;padding:13px 18px;font-size:14px;font-weight:500;
+  display:flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(0,0,0,.45);transition:transform var(--t);
+}
+#fab:active{transform:scale(.96);}
+#mapView{position:fixed;inset:0;z-index:28;background:var(--bg);display:flex;flex-direction:column;}
+#mapView header{position:static;}
+#map{flex:1;background:var(--surface-2);}
+#mapFallback{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-dim);font-size:14px;padding:30px;}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--line);color:var(--text);padding:11px 16px;border-radius:10px;font-size:13px;z-index:60;box-shadow:0 6px 20px rgba(0,0,0,.5);max-width:90vw;}
+
+.demo-tag{font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:2px 6px;margin-left:8px;}
+
+/* 選地點面板（Step 4） */
+#areaModal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.5);display:flex;align-items:flex-end;}
+#areaModal .sheet{background:var(--surface);border-top:1px solid var(--line);border-radius:18px 18px 0 0;width:100%;padding:18px 16px calc(20px + env(safe-area-inset-bottom,0));display:flex;flex-direction:column;gap:12px;animation:rise var(--t) ease both;}
+@media(min-width:560px){#areaModal{align-items:center;justify-content:center;}#areaModal .sheet{max-width:460px;border-radius:16px;border:1px solid var(--line);}}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:700;}
+#areaInput{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 13px;font-size:15px;color:var(--text);font-family:inherit;}
+#areaInput:focus{outline:none;border-color:var(--accent);}
+.chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chips .chip{font-size:13px;padding:7px 11px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--text-dim);transition:border-color var(--t),color var(--t);}
+.chips .chip:active{border-color:var(--accent);color:var(--accent);}
+.sheet-actions{display:flex;gap:8px;margin-top:2px;}
+.sheet-actions button{flex:1;padding:11px;border-radius:10px;font-size:14px;background:var(--surface-2);border:1px solid var(--line);}
+.sheet-actions .apply{background:var(--accent);color:#1A1606;font-weight:600;border-color:var(--accent);}
+</style>
+</head>
+<body>
+
+<!-- ============ 開場 ============ -->
+<section id="splash">
+  <div class="logo">附近好吃的</div>
+  <h1>走幾步，就吃到好的</h1>
+  <p class="sub">用你現在的位置，找出步行可達、口碑最好的前五家。</p>
+  <button class="btn-primary" id="btnLocate">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+    找我附近的餐廳
+  </button>
+  <button class="btn-text" id="btnPickArea">或選地區</button>
+</section>
+
+<!-- ============ 主畫面 ============ -->
+<div id="app">
+  <header>
+    <div class="bar-row">
+      <button class="scope-btn" id="scopeBtn">
+        <span class="icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </span>
+        <span class="label" id="scopeLabel">目前位置</span>
+        <span class="chev">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </span>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="切換明暗主題" title="切換明暗主題">
+        <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+    </div>
+
+    <!-- 範圍面板（含半徑滑桿，預設收起） -->
+    <div id="scopePanel" class="hidden">
+      <div class="row"><span>步行搜尋半徑</span><b><span id="radiusVal">800</span> 公尺</b></div>
+      <input type="range" id="radius" min="200" max="2000" step="100" value="800" />
+      <div class="row" style="margin:8px 0 0;"><span>約步行 <span id="walkMin">10</span> 分鐘</span><span id="scopeMode">以目前位置為圓心</span></div>
+      <div class="panel-actions">
+        <button id="useArea">改選地區</button>
+        <button class="apply" id="applyScope">套用</button>
+      </div>
+    </div>
+
+    <div class="sorts" role="group" aria-label="排序">
+      <button class="sort-chip" data-sort="composite" aria-pressed="true">綜合</button>
+      <button class="sort-chip" data-sort="distance" aria-pressed="false">距離</button>
+      <button class="sort-chip" data-sort="rating" aria-pressed="false">評分</button>
+    </div>
+
+    <label class="toggle-row">
+      <span class="switch"><input type="checkbox" id="openOnly" /><span class="slider"></span></span>
+      只看營業中
+    </label>
+  </header>
+
+  <main>
+    <div id="status"></div>
+    <div id="overview" class="hidden"></div>
+    <div id="list"></div>
+  </main>
+
+  <button id="fab">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+    地圖
+  </button>
+</div>
+
+<!-- ============ 地圖（整頁） ============ -->
+<div id="mapView" class="hidden">
+  <header>
+    <div class="bar-row">
+      <button class="scope-btn" id="backToList" style="flex:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        清單
+      </button>
+      <span style="color:var(--text-dim);font-size:13px;">前五家位置</span>
+    </div>
+  </header>
+  <div id="map"></div>
+  <div id="mapFallback" class="hidden"></div>
+</div>
+
+<!-- ============ 選地點 / 地區 ============ -->
+<div id="areaModal" class="hidden">
+  <div class="sheet">
+    <div class="sheet-head">
+      <span>選地點 / 地區</span>
+      <button id="areaClose" class="icon-btn" aria-label="關閉" style="width:34px;height:34px;">✕</button>
+    </div>
+    <input id="areaInput" type="text" inputmode="search" autocomplete="off"
+           placeholder="輸入地名、地址或地標，例：台北車站、信義區" />
+    <div class="chips" id="areaChips"></div>
+    <div class="sheet-actions">
+      <button id="areaCurrent">用目前位置</button>
+      <button id="areaGo" class="apply">搜尋這裡</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — 所有可調權重集中此處，改一個數字即生效
+   ============================================================ */
+const CONFIG = {
+  // ── Google 金鑰：留空字串＝啟用 demo 假資料模式（骨架可立即預覽）
+  //    上線前填入並設定 referrer + API 範圍限制
+  GOOGLE_API_KEY: "",
+
+  // ── 搜尋
+  DEFAULT_RADIUS_M: 800,     // 步行半徑預設（公尺）
+  WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
+  RESULT_COUNT: 5,           // 取前幾家
+  DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 預設地點（demo / 定位失敗時）：台北市中心
+
+  // ── 貝氏加權平均（C、m 之後用實際資料調校）
+  //    加權分數 = (C*m + n*r) / (C + n)
+  BAYES: {
+    C: 150,  // 可信度門檻：評論數要多少才算「夠數」（demo 值，上線用實際資料調校）
+    m: 4.0,  // 全體平均分基準值（理想上由當批結果動態計算，見 computeM）
+    DYNAMIC_M: true, // true＝用當批結果平均覆蓋上面的 m
+  },
+
+  // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
+  AWARD_BONUS: {
+    michelin: { "三星": 0.5, "二星": 0.4, "一星": 0.3 },
+    bib: 0.2,                 // 必比登推介
+    platePerUnit: 0.03,       // 500 盤每盤加分
+    plateCap: 0.4,            // 500 盤加分上限
+  },
+
+  // ── 距離 / 營業 對排名的影響（綜合排序時）
+  DISTANCE_PENALTY_PER_100M: 0.04, // 每 100m 扣分
+  OPEN_BONUS: 0.05,                // 目前營業中加分
+
+  SORT_DEFAULT: "composite",       // composite | distance | rating
+  OPEN_ONLY_DEFAULT: false,        // 「只看營業中」預設
+
+  // ── 評鑑名單（Step 2）：獨立 JSON 檔（做法 1）；file:// 預覽時 fetch 失敗會自動退回內嵌備援
+  AWARDS_URL: "awards-taipei.json",
+
+  // ── AI 解讀（Step 3）
+  AI: {
+    MODE: "demo",            // demo＝規則產生（免金鑰，立即可看）｜ live＝呼叫 Claude
+    API_KEY: "",             // live 模式才需要；上線請走後端代理，勿把金鑰放前端
+    MODEL: "claude-sonnet-4-6",
+  },
+};
+
+/* ============================================================
+   狀態
+   ============================================================ */
+const state = {
+  center: { ...CONFIG.DEFAULT_CENTER },
+  radius: CONFIG.DEFAULT_RADIUS_M,
+  usingArea: false,        // false=目前位置 / true=選地區
+  areaName: "目前位置",
+  sort: CONFIG.SORT_DEFAULT,
+  openOnly: CONFIG.OPEN_ONLY_DEFAULT,
+  raw: [],                 // 原始搜尋結果
+  ranked: [],              // 排名後前五
+  map: null,
+  markers: [],
+};
+
+const $ = sel => document.querySelector(sel);
+const demoMode = !CONFIG.GOOGLE_API_KEY;
+
+/* ============================================================
+   開場流程
+   ============================================================ */
+$("#btnLocate").addEventListener("click", () => { enterApp(); locateThenSearch(); });
+$("#btnPickArea").addEventListener("click", () => { enterApp(); openAreaModal(); });
+
+function enterApp() {
+  $("#splash").classList.add("hidden");
+  $("#app").style.display = "flex";
+  syncControls();
+}
+
+function locateThenSearch() {
+  setStatus(true, "定位中…");
+  if (!navigator.geolocation || demoMode) {
+    // demo：直接用預設中心（避免要求權限）
+    if (demoMode) { state.center = jitter(CONFIG.DEFAULT_CENTER); search(); return; }
+  }
+  navigator.geolocation.getCurrentPosition(
+    pos => { state.center = { lat: pos.coords.latitude, lng: pos.coords.longitude }; search(); },
+    err => { toast("無法定位，改用預設中心"); state.center = { ...CONFIG.DEFAULT_CENTER }; search(); },
+    { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
+  );
+}
+
+/* ============================================================
+   控制列：範圍面板 / 半徑 / 排序 / 只看營業中
+   ============================================================ */
+function syncControls() {
+  $("#radius").value = state.radius;
+  $("#radiusVal").textContent = state.radius;
+  $("#walkMin").textContent = Math.round(state.radius / CONFIG.WALK_SPEED_M_PER_MIN);
+  $("#openOnly").checked = state.openOnly;
+  document.querySelectorAll(".sort-chip").forEach(c =>
+    c.setAttribute("aria-pressed", c.dataset.sort === state.sort));
+}
+
+$("#scopeBtn").addEventListener("click", () => $("#scopePanel").classList.toggle("hidden"));
+$("#radius").addEventListener("input", e => {
+  $("#radiusVal").textContent = e.target.value;
+  $("#walkMin").textContent = Math.round(e.target.value / CONFIG.WALK_SPEED_M_PER_MIN);
+});
+$("#applyScope").addEventListener("click", () => {
+  state.radius = +$("#radius").value;
+  $("#scopePanel").classList.add("hidden");
+  search();
+});
+$("#useArea").addEventListener("click", () => {
+  $("#scopePanel").classList.add("hidden");
+  openAreaModal();
+});
+
+document.querySelectorAll(".sort-chip").forEach(chip =>
+  chip.addEventListener("click", () => {
+    state.sort = chip.dataset.sort;
+    syncControls();
+    rankAndRender();
+  }));
+
+$("#openOnly").addEventListener("change", e => {
+  state.openOnly = e.target.checked;
+  rankAndRender();
+});
+
+// 主題切換（淺色／暗色）— 記憶體狀態，不用 storage
+const ICON_MOON = '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>';
+const ICON_SUN  = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+$("#themeBtn").addEventListener("click", () => {
+  const root = document.documentElement;
+  const toLight = root.getAttribute("data-theme") !== "light";
+  root.setAttribute("data-theme", toLight ? "light" : "dark");
+  $("#themeIcon").innerHTML = toLight ? ICON_SUN : ICON_MOON;
+  if (state.map) state.map.setOptions({ colorScheme: toLight ? "LIGHT" : "DARK" });
+});
+
+/* ============================================================
+   Step 4 — 自然語言選地點：輸入地名/地標 → geocoding → 以該點搜尋
+   ============================================================ */
+// demo 內建查找（免金鑰）：台北 12 區 + 常見地標。真實模式則接 Google Geocoding。
+const LOCAL_PLACES = {
+  "中正區":{lat:25.0324,lng:121.5199}, "大同區":{lat:25.0658,lng:121.5130},
+  "中山區":{lat:25.0640,lng:121.5330}, "松山區":{lat:25.0497,lng:121.5746},
+  "大安區":{lat:25.0263,lng:121.5436}, "萬華區":{lat:25.0340,lng:121.4997},
+  "信義區":{lat:25.0333,lng:121.5654}, "士林區":{lat:25.0928,lng:121.5240},
+  "北投區":{lat:25.1320,lng:121.4986}, "內湖區":{lat:25.0697,lng:121.5890},
+  "南港區":{lat:25.0554,lng:121.6066}, "文山區":{lat:24.9889,lng:121.5705},
+  "台北車站":{lat:25.0478,lng:121.5170}, "台北101":{lat:25.0339,lng:121.5645},
+  "西門町":{lat:25.0421,lng:121.5076}, "大安森林公園":{lat:25.0297,lng:121.5354},
+  "師大夜市":{lat:25.0244,lng:121.5290}, "饒河夜市":{lat:25.0508,lng:121.5773},
+  "永康街":{lat:25.0312,lng:121.5300}, "公館":{lat:25.0148,lng:121.5343},
+};
+const AREA_CHIPS = ["台北車站","信義區","大安區","西門町","台北101","師大夜市","公館"];
+
+function openAreaModal(){
+  const wrap = $("#areaChips");
+  wrap.innerHTML = AREA_CHIPS.map(n=>`<button class="chip" data-q="${n}">${n}</button>`).join("");
+  wrap.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+    $("#areaInput").value = c.dataset.q; submitArea();
+  }));
+  $("#areaModal").classList.remove("hidden");
+  setTimeout(()=>$("#areaInput").focus(), 50);
+}
+function closeAreaModal(){ $("#areaModal").classList.add("hidden"); }
+
+$("#areaClose").addEventListener("click", closeAreaModal);
+$("#areaModal").addEventListener("click", e=>{ if(e.target.id==="areaModal") closeAreaModal(); });
+$("#areaGo").addEventListener("click", submitArea);
+$("#areaInput").addEventListener("keydown", e=>{ if(e.key==="Enter") submitArea(); });
+$("#areaCurrent").addEventListener("click", ()=>{
+  closeAreaModal();
+  state.usingArea = false; state.areaName = "目前位置";
+  $("#scopeLabel").textContent = "目前位置";
+  $("#scopeMode").textContent = "以目前位置為圓心";
+  locateThenSearch();
+});
+
+// 地名 → 座標
+async function geocode(q){
+  // 1) 內建字典（部分比對）
+  for (const [name, c] of Object.entries(LOCAL_PLACES)){
+    if (q.includes(name) || name.includes(q)) return { center:c, label:name };
+  }
+  // 2) 真實模式：Google Geocoding
+  if (!demoMode){
+    await loadGoogle();
+    const { Geocoder } = await google.maps.importLibrary("geocoding");
+    const res = await new Geocoder().geocode({ address:q, region:"tw", language:"zh-TW" });
+    if (res.results && res.results.length){
+      const g = res.results[0];
+      return { center:{ lat:g.geometry.location.lat(), lng:g.geometry.location.lng() }, label:g.formatted_address };
+    }
+    throw new Error("找不到這個地點");
+  }
+  // 3) demo 後援：OpenStreetMap Nominatim（免金鑰）
+  try{
+    const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&accept-language=zh-TW&q=${encodeURIComponent(q+" 台灣")}`);
+    const j = await r.json();
+    if (j[0]) return { center:{ lat:+j[0].lat, lng:+j[0].lon }, label:(j[0].display_name||q).split(",")[0] };
+  }catch(_){}
+  throw new Error("找不到這個地點，試試區名或地標");
+}
+
+async function submitArea(){
+  const q = $("#areaInput").value.trim();
+  if (!q) return;
+  closeAreaModal();
+  setStatus(true, "尋找地點…");
+  try{
+    const { center, label } = await geocode(q);
+    state.center = center;
+    state.usingArea = true;
+    state.areaName = label;
+    $("#scopeLabel").textContent = label;
+    $("#scopeMode").textContent = "以選定地區為圓心";
+    if (state.map) state.map.setCenter(center);
+    search();
+  }catch(e){
+    setStatus(false);
+    toast(e.message || "找不到地點");
+  }
+}
+
+/* ============================================================
+   搜尋（Places API New，含 demo 假資料）
+   ============================================================ */
+async function search() {
+  setStatus(true, demoMode ? "搜尋附近餐廳（demo 資料）…" : "搜尋附近餐廳…");
+  try {
+    state.raw = demoMode ? demoSearch() : await placesSearch();
+    await ensureAwards();      // Step 2：載入評鑑名單（只載一次）
+    applyAwards(state.raw);    // Step 2：模糊比對 → 填入 awards
+    rankAndRender();
+  } catch (e) {
+    console.error(e);
+    setStatus(false);
+    $("#list").innerHTML = `<div class="detail-inner"><div class="ph">搜尋失敗：${e.message}<br>請確認 API 金鑰與範圍限制設定。</div></div>`;
+  }
+}
+
+/* ---- 真實 Places 搜尋（New） ---- */
+let gmapsReady = null;
+function loadGoogle() {
+  if (gmapsReady) return gmapsReady;
+  gmapsReady = new Promise((res, rej) => {
+    const s = document.createElement("script");
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIG.GOOGLE_API_KEY}&v=weekly&libraries=places,marker`;
+    s.async = true; s.onload = res; s.onerror = () => rej(new Error("Google Maps 載入失敗"));
+    document.head.appendChild(s);
+  });
+  return gmapsReady;
+}
+
+async function placesSearch() {
+  await loadGoogle();
+  const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary("places");
+  const req = {
+    fields: ["id","displayName","location","rating","userRatingCount",
+             "priceLevel","regularOpeningHours","businessStatus","formattedAddress",
+             "nationalPhoneNumber","editorialSummary","photos","reviewSummary"],
+    locationRestriction: { center: state.center, radius: state.radius },
+    includedPrimaryTypes: ["restaurant"],
+    maxResultCount: 20,
+    rankPreference: SearchNearbyRankPreference.POPULARITY,
+    language: "zh-TW", region: "tw",
+  };
+  const { places } = await Place.searchNearby(req);
+  return (places || []).map(p => ({
+    id: p.id,
+    name: p.displayName,
+    loc: { lat: p.location.lat(), lng: p.location.lng() },
+    rating: p.rating || 0,
+    count: p.userRatingCount || 0,
+    priceLevel: priceToNum(p.priceLevel),
+    openNow: p.regularOpeningHours?.openNow ?? null,
+    address: p.formattedAddress || "",
+    phone: p.nationalPhoneNumber || "",
+    summary: p.editorialSummary || "",
+    // Google 生成的評論摘要（Atmosphere SKU；zh-TW 有時回空，會自動退回規則摘要）
+    reviewSummary: extractReviewSummary(p.reviewSummary),
+    // 真實店家照片（Places photos）：縮圖小張、詳情大張，省流量
+    photo:    p.photos?.[0]?.getURI({ maxWidth: 200, maxHeight: 200 }) || "",
+    photoBig: p.photos?.[0]?.getURI({ maxWidth: 800, maxHeight: 480 }) || "",
+    awards: [],          // Step 2 由評鑑名單比對填入
+    aiReason: null,      // Step 3 由 Claude 填入
+  }));
+}
+function priceToNum(pl){const map={PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4};return map[pl]||0;}
+// Google reviewSummary 結構不一（字串 / {text} / {text:{text}}），防禦式取出純文字
+function extractReviewSummary(rs){
+  if(!rs) return "";
+  if(typeof rs==="string") return rs;
+  if(typeof rs.text==="string") return rs.text;
+  if(rs.text && typeof rs.text.text==="string") return rs.text.text;
+  return "";
+}
+
+/* ============================================================
+   排名：貝氏加權 + 加分 → 排序 → 取前五
+   ============================================================ */
+function computeM(items){
+  if (!CONFIG.BAYES.DYNAMIC_M || !items.length) return CONFIG.BAYES.m;
+  const rated = items.filter(i => i.count > 0);
+  if (!rated.length) return CONFIG.BAYES.m;
+  return rated.reduce((s,i)=>s+i.rating,0)/rated.length;
+}
+
+function bayes(item, m){
+  const { C } = CONFIG.BAYES;
+  return (C * m + item.count * item.rating) / (C + item.count);
+}
+
+function awardBonus(awards){
+  let b = 0;
+  for (const a of (awards||[])) {
+    if (a.guide === "michelin") b += CONFIG.AWARD_BONUS.michelin[a.level] || 0;
+    else if (a.guide === "bib") b += CONFIG.AWARD_BONUS.bib;
+    else if (a.guide === "500plate") {
+      const plates = a.plates != null ? a.plates : (parseInt(a.level) || 0);
+      b += Math.min(plates * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap);
+    }
+  }
+  return b;
+}
+
+function distanceM(a, b){ // haversine
+  const R=6371000, toR=x=>x*Math.PI/180;
+  const dLat=toR(b.lat-a.lat), dLng=toR(b.lng-a.lng);
+  const s=Math.sin(dLat/2)**2 + Math.cos(toR(a.lat))*Math.cos(toR(b.lat))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s));
+}
+
+function rankAndRender(){
+  let items = state.raw.map(i => ({ ...i, dist: Math.round(distanceM(state.center, i.loc)) }));
+  if (state.openOnly) items = items.filter(i => i.openNow === true);
+
+  const m = computeM(items);
+  items.forEach(i => {
+    i.bayesScore = bayes(i, m);
+    i.composite = i.bayesScore
+      + awardBonus(i.awards)
+      - (i.dist/100) * CONFIG.DISTANCE_PENALTY_PER_100M
+      + (i.openNow === true ? CONFIG.OPEN_BONUS : 0);
+  });
+
+  const cmp = {
+    composite: (a,b) => b.composite - a.composite,
+    distance:  (a,b) => a.dist - b.dist,
+    rating:    (a,b) => b.rating - a.rating || b.count - a.count,
+  }[state.sort];
+  items.sort(cmp);
+
+  state.ranked = items.slice(0, CONFIG.RESULT_COUNT);
+  setStatus(false);
+  applyAI();          // Step 3：填入上榜理由＋評論摘要（demo 同步 / live 非同步後再 render）
+  renderList();
+  if (state.map) renderMarkers();
+}
+
+/* ============================================================
+   渲染清單 / 卡片
+   ============================================================ */
+function renderList(){
+  const list = $("#list");
+  renderOverview(state.ranked.length ? state.overview : "");
+  if (!state.ranked.length){
+    list.innerHTML = `<div class="detail-inner"><div class="ph">這個範圍內沒有符合條件的餐廳。<br>試試拉大搜尋半徑，或關閉「只看營業中」。</div></div>`;
+    setSummary();
+    return;
+  }
+  setSummary();
+  list.innerHTML = state.ranked.map((r,i)=>cardHTML(r,i+1)).join("");
+  // 綁定展開 / 導航
+  list.querySelectorAll("[data-detail]").forEach(btn=>btn.addEventListener("click",()=>{
+    const d = btn.closest(".card").querySelector(".detail");
+    d.classList.toggle("open");
+    btn.querySelector(".chev2").style.transform = d.classList.contains("open")?"rotate(180deg)":"";
+  }));
+  list.querySelectorAll("[data-nav]").forEach(btn=>btn.addEventListener("click",()=>{
+    const {lat,lng,name} = btn.dataset;
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_id=&travelmode=walking&q=${encodeURIComponent(name)}`,"_blank");
+  }));
+}
+
+function renderOverview(text){
+  const el = $("#overview");
+  if (!text){ el.classList.add("hidden"); el.innerHTML=""; return; }
+  el.classList.remove("hidden");
+  el.innerHTML = `<span class="lab">情境比較</span>${escapeHTML(text)}`;
+}
+
+function setSummary(){
+  const where = state.usingArea ? state.areaName : "你附近";
+  $("#status").innerHTML = `${where} · 步行 ${state.radius}m 內 · 前 ${state.ranked.length} 家`
+    + (demoMode ? `<span class="demo-tag">DEMO 資料</span>` : "");
+}
+
+function cardHTML(r, rank){
+  const price = r.priceLevel ? "$".repeat(r.priceLevel) : "";
+  const walk = Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN));
+  const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
+                : r.openNow === false ? `<span class="closed">休息中</span>` : "";
+  // 評鑑徽章：有資料就顯示，否則留 placeholder（Step 2）
+  const badges = (r.awards && r.awards.length)
+    ? r.awards.map(badgeHTML).join("")
+    : `<span class="badge placeholder">評鑑徽章 · Step 2</span>`;
+  // AI 理由：有就顯示，否則 placeholder（Step 3）
+  const ai = r.aiReason
+    ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
+    : `<div class="ai-reason placeholder">AI 上榜理由 · Step 3 接入</div>`;
+  const fallback = "this.style.visibility='hidden'";
+  const thumb = r.photo
+    ? `<img class="thumb" src="${escapeHTML(r.photo)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="${fallback}">`
+    : "";
+  const detailPhoto = (r.photoBig || r.photo)
+    ? `<img class="photo" src="${escapeHTML(r.photoBig || r.photo)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="${fallback}">`
+    : `<div class="ph">照片 — Step 3 / 真實資料接入</div>`;
+
+  return `
+  <div class="card">
+    <div class="top">
+      <div class="rank-badge">${rank}</div>
+      <div class="head">
+        <div class="name">${escapeHTML(r.name)}</div>
+        <div class="meta">
+          <span class="rating"><span class="star">★</span> ${r.rating.toFixed(1)}</span>
+          <span class="count">(${r.count.toLocaleString()})</span>
+          ${price?`<span class="price">${price}</span>`:""}
+          ${openTxt}
+          <span class="dist">步行 ${walk} 分 · ${r.dist} m</span>
+        </div>
+      </div>
+      ${thumb}
+    </div>
+    <div class="badges">${badges}</div>
+    ${ai}
+    <div class="actions">
+      <button class="nav" data-nav data-lat="${r.loc.lat}" data-lng="${r.loc.lng}" data-name="${escapeHTML(r.name)}">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
+        導航
+      </button>
+      <button data-detail>詳情 <span class="chev2" style="display:inline-block;transition:transform var(--t)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+      </button>
+    </div>
+    <div class="detail">
+      <div class="detail-inner">
+        ${detailPhoto}
+        ${r.reviewSummary
+          ? `<div class="line"><span class="k">評論</span><span class="v">${escapeHTML(r.reviewSummary)}</span></div>`
+          : `<div class="ph">評論摘要 — AI 生成</div>`}
+        ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
+        <div class="line"><span class="k">地址</span><span class="v">${escapeHTML(r.address||"—")}</span></div>
+        <div class="line"><span class="k">電話</span><span class="v">${escapeHTML(r.phone||"—")}</span></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function badgeHTML(a){
+  if (a.guide==="michelin") return `<span class="badge michelin">米其林 ${a.level}<span class="yr">${a.year||""}</span></span>`;
+  if (a.guide==="bib") return `<span class="badge bib">必比登<span class="yr">${a.year||""}</span></span>`;
+  if (a.guide==="500plate") return `<span class="badge plate">500盤 ${a.level}<span class="yr">${a.year||""}</span></span>`;
+  return "";
+}
+
+/* ============================================================
+   地圖切換
+   ============================================================ */
+$("#fab").addEventListener("click", openMap);
+$("#backToList").addEventListener("click", ()=>$("#mapView").classList.add("hidden"));
+
+async function openMap(){
+  $("#mapView").classList.remove("hidden");
+  if (demoMode){
+    $("#map").classList.add("hidden");
+    const fb = $("#mapFallback"); fb.classList.remove("hidden");
+    fb.innerHTML = "地圖需要 Google 金鑰。<br>填入 CONFIG.GOOGLE_API_KEY 後，這裡會顯示前五家的標記。";
+    return;
+  }
+  try{
+    await loadGoogle();
+    if (!state.map){
+      const { Map } = await google.maps.importLibrary("maps");
+      state.map = new Map($("#map"), {
+        center: state.center, zoom: 15, disableDefaultUI: true,
+        gestureHandling: "greedy", colorScheme: "DARK",
+      });
+    } else {
+      state.map.setCenter(state.center);
+    }
+    renderMarkers();
+  }catch(e){
+    $("#map").classList.add("hidden");
+    $("#mapFallback").classList.remove("hidden");
+    $("#mapFallback").textContent = "地圖載入失敗：" + e.message;
+  }
+}
+
+async function renderMarkers(){
+  if (!state.map) return;
+  const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+  state.markers.forEach(m=>m.map=null); state.markers=[];
+  // 中心點
+  state.ranked.forEach((r,i)=>{
+    const pin = new PinElement({
+      glyph: String(i+1), background: i===0? "#E4B84C":"#181B20",
+      glyphColor: i===0? "#1A1606":"#E8EAED", borderColor:"#262B33",
+    });
+    const mk = new AdvancedMarkerElement({ map: state.map, position: r.loc, content: pin.element, title: r.name });
+    state.markers.push(mk);
+  });
+}
+
+/* ============================================================
+   工具
+   ============================================================ */
+function setStatus(loading, msg){
+  const el = $("#status");
+  if (loading){ el.innerHTML = `<span class="spin"></span> ${msg||"載入中…"}`; }
+}
+function toast(msg){
+  const t=document.createElement("div"); t.className="toast"; t.textContent=msg;
+  document.body.appendChild(t); setTimeout(()=>t.remove(),2600);
+}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function jitter(c){return {lat:c.lat+(Math.random()-.5)*.004, lng:c.lng+(Math.random()-.5)*.004};}
+
+/* ============================================================
+   Step 2 — 評鑑模組：載入名單 + 模糊比對 + 500 盤彙總
+   ============================================================ */
+let AWARDS = null, awardsPromise = null;
+
+// 內嵌備援：file:// 直接預覽時 fetch 會被 CORS 擋，改用這份（與 awards-taipei.json 同步維護）
+const EMBEDDED_AWARDS = [
+  { name:"海風生魚片丼",   address:"台北市中山區", awards:[{guide:"michelin",level:"二星",year:2025}] },
+  { name:"五味爐 川菜小館", address:"台北市中山區", awards:[{guide:"michelin",level:"一星",year:2025}] },
+  { name:"老巷牛肉麵",     address:"台北市中山區", awards:[{guide:"bib",year:2025},{guide:"500plate",year:2025,dishPlates:[3,2,1]}] },
+  { name:"夜半食堂 居酒屋", address:"台北市中山區", awards:[{guide:"500plate",year:2025,plates:4}] },
+  { name:"九層糕老店",     address:"台北市中山區", awards:[{guide:"bib",year:2024}] },
+];
+
+function ensureAwards(){
+  if (AWARDS) return Promise.resolve(AWARDS);
+  if (awardsPromise) return awardsPromise;
+  awardsPromise = fetch(CONFIG.AWARDS_URL)
+    .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(j => { AWARDS = j.restaurants || []; })
+    .catch(() => { AWARDS = EMBEDDED_AWARDS; console.info("[評鑑] 改用內嵌備援名單（file:// 預覽屬正常）"); })
+    .then(() => AWARDS);
+  return awardsPromise;
+}
+
+// 店名正規化：全形→半形、去空白標點、去常見尾綴；用於模糊比對
+function normName(s){
+  return (s||"").toString()
+    .replace(/[！-～]/g, c => String.fromCharCode(c.charCodeAt(0)-0xFEE0))
+    .replace(/　/g," ")
+    .replace(/\s+/g,"")
+    .replace(/[()（）・·.,，、!！?？\-_/&]/g,"")
+    .replace(/(總店|本店|本舖|旗艦店|[^]*?分店)$/,"")
+    .toLowerCase();
+}
+
+// 比對：完全相等→high；包含關係→medium（地址可升級為 high）
+function matchAward(rest, list){
+  const rn = normName(rest.name);
+  if (!rn) return { entry:null, conf:"none" };
+  let best=null, conf="none";
+  for (const e of list){
+    const en = normName(e.name);
+    if (!en) continue;
+    if (en === rn){ best=e; conf="high"; break; }
+    if (en.length>=3 && (rn.includes(en)||en.includes(rn))){ best=e; conf="medium"; }
+  }
+  if (best && conf==="medium" && best.address && rest.address){
+    const a1=best.address.replace(/\s/g,""), a2=rest.address.replace(/\s/g,"");
+    if (a1 && a2 && (a2.includes(a1.slice(0,6))||a1.includes(a2.slice(0,6)))) conf="high";
+  }
+  return { entry:best, conf };
+}
+
+// 彙總 500 盤（dishPlates 各菜盤數 → 餐廳層級總盤數）並標準化顯示
+function normalizeAwards(awards){
+  return (awards||[]).map(a=>{
+    if (a.guide==="500plate"){
+      const plates = a.dishPlates ? a.dishPlates.reduce((s,x)=>s+x,0) : (a.plates||0);
+      return { ...a, plates, level:`${plates}盤` };
+    }
+    return a;
+  });
+}
+
+// 套用到搜尋結果：高信心自動標；低信心列入 console 待人工覆核（不默默標錯）
+function applyAwards(items){
+  const review = [];
+  items.forEach(r=>{
+    r.awards = r.awards || [];
+    if (!AWARDS || !AWARDS.length) return;
+    const { entry, conf } = matchAward(r, AWARDS);
+    if (entry && conf==="high")      r.awards = normalizeAwards(entry.awards);
+    else if (entry && conf==="medium") review.push({ store:r.name, matched:entry.name });
+  });
+  if (review.length) console.info("[評鑑比對] 低信心，待人工覆核：", review);
+}
+
+/* ============================================================
+   Step 3 — AI 解讀：一次處理五家，填上榜理由＋評論摘要
+   AI 只解讀真實資料，不碰計算與定位、不杜撰
+   ============================================================ */
+function applyAI(){
+  if (CONFIG.AI.MODE==="live" && CONFIG.AI.API_KEY){
+    state.ranked.forEach(r=>{ r.aiReason=r.aiReason||"分析中…"; });
+    aiLive(state.ranked);   // 非同步，完成後自行 renderList
+  } else {
+    state.ranked.forEach(r=>{ const a=demoReason(r); r.aiReason=a.reason; if(!r.reviewSummary) r.reviewSummary=a.summary; });
+    state.overview = buildOverview(state.ranked);   // Step 4：情境比較
+  }
+}
+
+// 情境比較（demo）：由前五的真實屬性組出一句整體短評
+function buildOverview(items){
+  if (!items || items.length < 2) return "";
+  const top = items[0];
+  const nearest = [...items].sort((a,b)=>a.dist-b.dist)[0];
+  const starred = items.find(r=>(r.awards||[]).some(a=>a.guide==="michelin"));
+  const cheap = [...items].filter(r=>r.priceLevel===1).sort((a,b)=>b.rating-a.rating)[0];
+  const parts = [`綜合最穩 → ${top.name}`];
+  if (nearest && nearest!==top) parts.push(`最近 → ${nearest.name}（步行 ${Math.max(1,Math.round(nearest.dist/CONFIG.WALK_SPEED_M_PER_MIN))} 分）`);
+  if (starred) parts.push(`想吃米其林 → ${starred.name}`);
+  else if (cheap) parts.push(`想平價 → ${cheap.name}`);
+  return parts.join("；") + "。";
+}
+
+// 規則文案（demo）：全部取自真實欄位，不杜撰
+function topAwardText(awards){
+  const m=(awards||[]).find(a=>a.guide==="michelin"); if(m) return `米其林${m.level}`;
+  const b=(awards||[]).find(a=>a.guide==="bib");      if(b) return "必比登推介";
+  const p=(awards||[]).find(a=>a.guide==="500plate"); if(p) return `500盤 ${p.level}`;
+  return "";
+}
+function demoReason(r){
+  const walk = Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN));
+  const award = topAwardText(r.awards);
+  const bits = [];
+  if (award) bits.push(award + "肯定");
+  bits.push(r.count>=1000
+    ? `${r.count.toLocaleString()} 則評論仍守住 ${r.rating.toFixed(1)} 分`
+    : `${r.rating.toFixed(1)} 分（${r.count.toLocaleString()} 則）`);
+  bits.push(`步行 ${walk} 分可達`);
+  const priceTxt = ["","平價","中價位","價位偏高","高價位"][r.priceLevel] || "";
+  return {
+    reason: bits.slice(0,3).join("，") + "。",
+    summary: `${priceTxt?priceTxt+"，":""}口碑由 ${r.count.toLocaleString()} 則評論長期累積，評分穩定在 ${r.rating.toFixed(1)}。`,
+  };
+}
+
+// 真實呼叫 Claude（一次五家）。上線建議改走後端代理，勿在前端帶金鑰。
+async function aiLive(items){
+  try{
+    const payload = items.map((r,i)=>({
+      rank:i+1, name:r.name, rating:r.rating, count:r.count,
+      priceLevel:r.priceLevel, openNow:r.openNow,
+      walkMin: Math.round(r.dist/CONFIG.WALK_SPEED_M_PER_MIN),
+      awards: r.awards, editorialSummary: r.summary,
+    }));
+    const system = "你是在地步行覓食嚮導。只依據使用者提供的每家餐廳資料，產生繁體中文短評，"
+      + "嚴禁杜撰未提供的事實。回傳純 JSON 物件 {overview, items}："
+      + "items 為陣列，長度與輸入相同，每筆含 reason（為何排此名，≤30字）與 summary（評論特徵，≤30字）；"
+      + "overview 為一句情境比較（例：想快選 A、想坐久選 B，≤40字）。只輸出 JSON。";
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method:"POST",
+      headers:{
+        "content-type":"application/json",
+        "x-api-key":CONFIG.AI.API_KEY,
+        "anthropic-version":"2023-06-01",
+        "anthropic-dangerous-direct-browser-access":"true",
+      },
+      body: JSON.stringify({
+        model: CONFIG.AI.MODEL, max_tokens: 1024, system,
+        messages:[{ role:"user", content: JSON.stringify(payload) }],
+      }),
+    });
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const data = await res.json();
+    const text = data.content?.[0]?.text || "{}";
+    const obj = JSON.parse(text.match(/\{[\s\S]*\}/)[0]);
+    const arr = obj.items || [];
+    items.forEach((r,i)=>{ r.aiReason=arr[i]?.reason||""; r.reviewSummary=arr[i]?.summary||""; });
+    state.overview = obj.overview || buildOverview(items);
+  }catch(e){
+    console.warn("[AI] live 失敗，改用 demo 文案：", e.message);
+    items.forEach(r=>{ const a=demoReason(r); r.aiReason=a.reason; r.reviewSummary=a.summary; });
+    state.overview = buildOverview(items);
+  }
+  renderList();
+}
+
+/* ============================================================
+   DEMO 假資料（無金鑰時用，讓骨架可立即預覽）
+   名稱為虛構，僅供版面測試；評鑑徽章與 AI 理由仍維持空位
+   ============================================================ */
+function demoSearch(){
+  const base = state.center;
+  const seed = [
+    {name:"老巷牛肉麵",          rating:4.7, count:2143, price:1, open:true},
+    {name:"晨之味 早午餐",        rating:4.5, count:880,  price:2, open:true},
+    {name:"五味爐 川菜小館",      rating:4.6, count:1320, price:2, open:false},
+    {name:"海風生魚片丼",         rating:4.6, count:560,  price:2, open:true},
+    {name:"米花壽司",            rating:5.0, count:11,   price:3, open:true},   // 高分但極少評論 → 應被貝氏拉下、擠出前五
+    {name:"轉角咖啡 & 輕食",      rating:4.2, count:1750, price:2, open:true},
+    {name:"阿香蚵仔煎",          rating:4.4, count:990,  price:1, open:true},
+    {name:"炭場 燒肉",           rating:4.5, count:430,  price:3, open:false},
+    {name:"綠盈蔬食",            rating:4.1, count:610,  price:2, open:true},
+    {name:"夜半食堂 居酒屋",      rating:4.6, count:1080, price:2, open:true},
+    {name:"九層糕老店",          rating:4.9, count:26,   price:1, open:true},   // 同上，少評論
+    {name:"鐵道便當本舖",         rating:3.9, count:2600, price:1, open:true},
+    {name:"快炒 99",            rating:3.8, count:540,  price:1, open:true},
+    {name:"連鎖速食店",          rating:3.6, count:3200, price:1, open:true},
+  ];
+  return seed.map((s,i)=>({
+    id:"demo-"+i,
+    name:s.name,
+    loc: jitter(base),
+    rating:s.rating, count:s.count, priceLevel:s.price,
+    openNow:s.open,
+    address:"台北市（demo 地址）",
+    phone:"02-0000-0000",
+    summary: i%3===0 ? "在地老店，主打招牌口味。" : "",
+    // 假圖：用穩定 seed 取佔位圖；上線改用 Places 真實照片（見 placesSearch）
+    photo:    `https://picsum.photos/seed/foodie${i}/200/200`,
+    photoBig: `https://picsum.photos/seed/foodie${i}/800/480`,
+    awards:[],        // 維持空位，Step 2 才填
+    aiReason:null,    // 維持空位，Step 3 才填
+  }));
+}
+</script>
+</body>
+</html>
