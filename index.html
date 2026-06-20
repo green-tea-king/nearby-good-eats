@@ -154,6 +154,13 @@ header{
 .sort-chip[aria-pressed="true"]{color:var(--text);border-color:var(--accent);font-weight:500;}
 
 .toggle-row{display:flex;align-items:center;gap:9px;margin-top:13px;font-size:12.5px;letter-spacing:.03em;color:var(--text-dim);}
+
+/* 價位篩選 */
+.filter-row{display:flex;align-items:center;gap:13px;margin-top:13px;}
+.filter-lab{font-size:12.5px;letter-spacing:.03em;color:var(--text-dim);flex:none;}
+.price-chips{display:flex;gap:7px;}
+.pchip{font-family:var(--mono);font-size:13px;letter-spacing:1px;min-width:40px;padding:6px 11px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-faint);transition:background var(--t),border-color var(--t),color var(--t);}
+.pchip[aria-pressed="true"]{background:var(--accent-weak);border-color:var(--accent);color:var(--accent-bright);font-weight:500;}
 .switch{position:relative;width:40px;height:23px;flex:none;}
 .switch input{opacity:0;width:0;height:0;}
 .slider{position:absolute;inset:0;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;transition:var(--t);}
@@ -323,6 +330,16 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
       <span class="switch"><input type="checkbox" id="openOnly" /><span class="slider"></span></span>
       只看營業中
     </label>
+
+    <div class="filter-row">
+      <span class="filter-lab">價位</span>
+      <div class="price-chips" id="priceChips">
+        <button class="pchip" data-price="1" aria-pressed="false">$</button>
+        <button class="pchip" data-price="2" aria-pressed="false">$$</button>
+        <button class="pchip" data-price="3" aria-pressed="false">$$$</button>
+        <button class="pchip" data-price="4" aria-pressed="false">$$$$</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -430,6 +447,7 @@ const state = {
   areaName: "目前位置",
   sort: CONFIG.SORT_DEFAULT,
   openOnly: CONFIG.OPEN_ONLY_DEFAULT,
+  priceLevels: [],         // 價位篩選（空＝全部；含 1~4）
   raw: [],                 // 原始搜尋結果
   ranked: [],              // 排名後前五
   map: null,
@@ -502,6 +520,17 @@ $("#openOnly").addEventListener("change", e => {
   state.openOnly = e.target.checked;
   rankAndRender();
 });
+
+// 價位篩選（多選；空＝全部）
+document.querySelectorAll(".pchip").forEach(chip =>
+  chip.addEventListener("click", () => {
+    const lvl = +chip.dataset.price;
+    const on = chip.getAttribute("aria-pressed") === "true";
+    chip.setAttribute("aria-pressed", String(!on));
+    const idx = state.priceLevels.indexOf(lvl);
+    if (idx >= 0) state.priceLevels.splice(idx, 1); else state.priceLevels.push(lvl);
+    rankAndRender();
+  }));
 
 // 主題切換（淺色／暗色）— 記憶體狀態，不用 storage
 const ICON_MOON = '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>';
@@ -713,6 +742,7 @@ function distanceM(a, b){ // haversine
 function rankAndRender(){
   let items = state.raw.map(i => ({ ...i, dist: Math.round(distanceM(state.center, i.loc)) }));
   if (state.openOnly) items = items.filter(i => i.openNow === true);
+  if (state.priceLevels.length) items = items.filter(i => state.priceLevels.includes(i.priceLevel));
 
   const m = computeM(items);
   items.forEach(i => {
