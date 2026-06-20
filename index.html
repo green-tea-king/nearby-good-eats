@@ -930,10 +930,14 @@ function applyAwards(items){
     r.awards = r.awards || [];
     if (!AWARDS || !AWARDS.length) return;
     const { entry, conf } = matchAward(r, AWARDS);
-    if (entry && conf==="high")      r.awards = normalizeAwards(entry.awards);
-    else if (entry && conf==="medium") review.push({ store:r.name, matched:entry.name });
+    // 高信心（完全同名或地址相符）自動標。中信心（店名包含關係，如「鼎泰豐 101店」含「鼎泰豐」）
+    // 也自動標，但記入 console 供人工覆核——真實 Google 店名常帶分店/地區後綴，純高信心會漏標。
+    if (entry && (conf==="high" || conf==="medium")) {
+      r.awards = normalizeAwards(entry.awards);
+      if (conf==="medium") review.push({ store:r.name, matched:entry.name });
+    }
   });
-  if (review.length) console.info("[評鑑比對] 低信心，待人工覆核：", review);
+  if (review.length) console.info("[評鑑比對] 中信心自動標記（建議人工確認是否為同一家）：", review);
 }
 
 /* ============================================================
