@@ -154,6 +154,14 @@ header{
 }
 .sort-chip[aria-pressed="true"]{color:var(--text);border-color:var(--accent);font-weight:500;}
 
+/* 用餐時段 / 類型（可橫向捲動） */
+.meal-row{display:flex;gap:7px;margin-top:14px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+.meal-row::-webkit-scrollbar{display:none;}
+.mchip{flex:none;font-size:13px;letter-spacing:.04em;padding:7px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:background var(--t),border-color var(--t),color var(--t);}
+.mchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:500;}
+.mchip-sep{margin-left:9px;position:relative;}
+.mchip-sep::before{content:"";position:absolute;left:-9px;top:6px;bottom:6px;width:1px;background:var(--line);}
+
 .toggle-row{display:flex;align-items:center;gap:9px;margin-top:13px;font-size:12.5px;letter-spacing:.03em;color:var(--text-dim);}
 
 /* 價位篩選 */
@@ -327,6 +335,18 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
       <button class="sort-chip" data-sort="rating" aria-pressed="false">評分</button>
     </div>
 
+    <div class="meal-row" id="mealChips" role="group" aria-label="用餐時段">
+      <button class="mchip" data-cat="breakfast">早餐</button>
+      <button class="mchip" data-cat="morningtea">早茶</button>
+      <button class="mchip" data-cat="lunch">午餐</button>
+      <button class="mchip" data-cat="afttea">午茶</button>
+      <button class="mchip" data-cat="dinner">晚餐</button>
+      <button class="mchip" data-cat="latenight">消夜</button>
+      <button class="mchip mchip-sep" data-cat="snack">小吃</button>
+      <button class="mchip" data-cat="dessert">甜點</button>
+      <button class="mchip" data-cat="all">不限</button>
+    </div>
+
     <label class="toggle-row">
       <span class="switch"><input type="checkbox" id="openOnly" /><span class="slider"></span></span>
       只看營業中
@@ -440,6 +460,32 @@ const CONFIG = {
 };
 
 /* ============================================================
+   用餐時段 / 類型 — 依現在時間自動推薦，亦可手動切換
+   （早茶、小吃等台灣概念對應為最接近的 Google Places 類型，屬近似）
+   ============================================================ */
+const MEALS = {
+  breakfast: { label:"早餐", types:["breakfast_restaurant","cafe","bakery"] },
+  morningtea:{ label:"早茶", types:["brunch_restaurant","cafe"] },
+  lunch:     { label:"午餐", types:["restaurant"] },
+  afttea:    { label:"午茶", types:["cafe","dessert_shop"] },
+  dinner:    { label:"晚餐", types:["restaurant"] },
+  latenight: { label:"消夜", types:["bar","meal_takeaway","ramen_restaurant"] },
+  snack:     { label:"小吃", types:["meal_takeaway","fast_food_restaurant"] },
+  dessert:   { label:"甜點", types:["dessert_shop","ice_cream_shop","bakery"] },
+  all:       { label:"不限", types:["restaurant"] },
+};
+function currentMealKey(){
+  const h = new Date().getHours() + new Date().getMinutes()/60;
+  if (h>=5 && h<10)    return "breakfast";
+  if (h>=10 && h<11.5) return "morningtea";
+  if (h>=11.5 && h<14) return "lunch";
+  if (h>=14 && h<17)   return "afttea";
+  if (h>=17 && h<21)   return "dinner";
+  return "latenight"; // 21:00–05:00
+}
+function mealTypes(){ const m = MEALS[state.category]; return m ? m.types : ["restaurant"]; }
+
+/* ============================================================
    狀態
    ============================================================ */
 const state = {
@@ -451,6 +497,7 @@ const state = {
   sort: CONFIG.SORT_DEFAULT,
   openOnly: CONFIG.OPEN_ONLY_DEFAULT,
   priceLevels: [],         // 價位篩選（空＝全部；含 1~4）
+  category: "lunch",       // 用餐時段/類型（進場時依現在時間自動設定）
   raw: [],                 // 原始搜尋結果
   ranked: [],              // 排名後前五
   map: null,
@@ -469,6 +516,7 @@ $("#btnPickArea").addEventListener("click", () => { enterApp(); openAreaModal();
 function enterApp() {
   $("#splash").classList.add("hidden");
   $("#app").style.display = "flex";
+  state.category = currentMealKey();   // 依現在時間自動推薦時段
   syncControls();
 }
 
@@ -496,6 +544,8 @@ function syncControls() {
   $("#openOnly").checked = state.openOnly;
   document.querySelectorAll(".sort-chip").forEach(c =>
     c.setAttribute("aria-pressed", c.dataset.sort === state.sort));
+  document.querySelectorAll(".mchip").forEach(c =>
+    c.setAttribute("aria-pressed", c.dataset.cat === state.category));
 }
 
 $("#scopeBtn").addEventListener("click", () => $("#scopePanel").classList.toggle("hidden"));
@@ -520,6 +570,14 @@ document.querySelectorAll(".sort-chip").forEach(chip =>
     state.sort = chip.dataset.sort;
     syncControls();
     rankAndRender();
+  }));
+
+// 用餐時段 / 類型：改變類型需重新向 Places 搜尋
+document.querySelectorAll(".mchip").forEach(chip =>
+  chip.addEventListener("click", () => {
+    state.category = chip.dataset.cat;
+    syncControls();
+    search();
   }));
 
 $("#openOnly").addEventListener("change", e => {
@@ -675,7 +733,7 @@ async function placesSearch() {
              "priceLevel","regularOpeningHours","businessStatus","formattedAddress",
              "nationalPhoneNumber","editorialSummary","photos","reviewSummary"],
     locationRestriction: { center: state.center, radius: state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius },
-    includedPrimaryTypes: ["restaurant"],
+    includedPrimaryTypes: mealTypes(),
     maxResultCount: 20,
     rankPreference: SearchNearbyRankPreference.POPULARITY,
     language: "zh-TW", region: "tw",
@@ -688,7 +746,7 @@ async function placesSearch() {
     rating: p.rating || 0,
     count: p.userRatingCount || 0,
     priceLevel: priceToNum(p.priceLevel),
-    openNow: p.regularOpeningHours?.openNow ?? null,
+    openNow: isOpenNow(p.regularOpeningHours),
     address: p.formattedAddress || "",
     phone: p.nationalPhoneNumber || "",
     summary: p.editorialSummary || "",
@@ -705,6 +763,21 @@ function priceToNum(pl){const map={
   FREE:0,INEXPENSIVE:1,MODERATE:2,EXPENSIVE:3,VERY_EXPENSIVE:4,
   PRICE_LEVEL_FREE:0,PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4
 };return map[pl]||0;}
+// 是否現在營業：新版 Places 的 regularOpeningHours.openNow 已不回傳，改用 periods 對現在時間判斷
+function isOpenNow(oh){
+  if (!oh || !oh.periods || !oh.periods.length) return null;   // 無資料＝未知
+  const now = new Date();
+  const mow = now.getDay()*1440 + now.getHours()*60 + now.getMinutes(); // 一週中的第幾分鐘
+  for (const p of oh.periods){
+    if (!p.open) continue;
+    const s = p.open.day*1440 + (p.open.hour||0)*60 + (p.open.minute||0);
+    if (!p.close) return true;                                  // 24 小時營業
+    let e = p.close.day*1440 + (p.close.hour||0)*60 + (p.close.minute||0);
+    if (e <= s) e += 10080;                                     // 跨夜
+    if ((mow>=s && mow<e) || (mow+10080>=s && mow+10080<e)) return true;
+  }
+  return false;
+}
 // Google reviewSummary 結構不一（字串 / {text} / {text:{text}}），防禦式取出純文字
 function extractReviewSummary(rs){
   if(!rs) return "";
