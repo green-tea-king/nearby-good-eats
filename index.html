@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
+<script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
 <style>
 /* ============================================================
    設計 tokens（暗色，集中於 CSS variables；將來加淺色模式只需多定義一組）
@@ -280,6 +282,7 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 .detail-inner .line{display:flex;gap:10px;}
 .detail-inner .line .k{color:var(--text-faint);flex:none;width:48px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:1px;}
 .detail-inner .line .v{color:var(--text);}
+.detail-inner .v.sum3{display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
 
 /* ============================================================
    地圖（整頁切換）
@@ -937,11 +940,11 @@ async function placesSearch() {
     count: p.userRatingCount || 0,
     priceLevel: priceToNum(p.priceLevel),
     openNow: isOpenNow(p.regularOpeningHours),
-    address: p.formattedAddress || "",
+    address: toTW(p.formattedAddress || ""),
     phone: p.nationalPhoneNumber || "",
-    hours: p.regularOpeningHours?.weekdayDescriptions || [],   // 每週營業時間
-    priceText: priceRangeText(p.priceRange),                   // 實際價位範圍
-    typeName: extractText(p.primaryTypeDisplayName),           // 類型（餐廳/咖啡廳…）
+    hours: (p.regularOpeningHours?.weekdayDescriptions || []).map(toTW),   // 每週營業時間
+    priceText: toTW(priceRangeText(p.priceRange)),             // 實際價位範圍
+    typeName: toTW(extractText(p.primaryTypeDisplayName)),     // 類型（餐廳/咖啡廳…）
     website: p.websiteURI || "",
     mapsUri: p.googleMapsURI || "",
     // 服務/供應/設施（布林；只在明確 true 才採用；JS 欄位名有 has/is 前綴）
@@ -1003,6 +1006,10 @@ function extractEditorial(es){
   return "";
 }
 function extractText(v){ if(!v) return ""; if(typeof v==="string") return v; if(typeof v.text==="string") return v.text; if(v.text&&typeof v.text.text==="string") return v.text.text; return ""; }
+// 簡體→繁體（台灣用字）。OpenCC 載入後建立轉換器；未就緒時原樣回傳。
+let __twConv = null;
+try { if (window.OpenCC) __twConv = OpenCC.Converter({ from:"cn", to:"tw" }); } catch(_){}
+function toTW(s){ if(!s) return s; if(!__twConv){ try{ if(window.OpenCC) __twConv = OpenCC.Converter({from:"cn",to:"tw"}); }catch(_){ } } try{ return __twConv ? __twConv(s) : s; }catch(_){ return s; } }
 // 價位範圍：Places priceRange（Money: units 字串 + currencyCode）→ 「NT$ 200 – 400」
 function priceRangeText(pr){
   if(!pr) return "";
@@ -1104,16 +1111,12 @@ async function enrichTop(){
   if (!list.length) return;
   try{
     await Promise.all(list.map(async r=>{
-      await r._place.fetchFields({ fields:["reviewSummary","editorialSummary","reviews"] });
-      const rs = extractReviewSummary(r._place.reviewSummary);
-      const ed = extractEditorial(r._place.editorialSummary);
+      // 只抓兩段摘要（已不抓個別 reviews，省 Atmosphere 費用、且詳情只顯示融合摘要）
+      await r._place.fetchFields({ fields:["reviewSummary","editorialSummary"] });
+      const rs = toTW(extractReviewSummary(r._place.reviewSummary));
+      const ed = toTW(extractEditorial(r._place.editorialSummary));
       if (rs) r.reviewSummary = rs;
       if (ed) r.summary = ed;
-      r.reviews = (r._place.reviews||[]).slice(0,2).map(rv=>({
-        name: extractText(rv.authorAttribution?.displayName) || "訪客",
-        rating: rv.rating || 0,
-        text: (extractText(rv.text) || "").replace(/\s+/g," ").trim()
-      })).filter(rv=>rv.text);
     }));
   }catch(_){}
   applyAI();          // 用補抓到的簡介重算上榜理由
@@ -1227,8 +1230,7 @@ function cardHTML(r, rank){
     <div class="detail">
       <div class="detail-inner">
         ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
-        ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v">${escapeHTML(r.reviewSummary)}</span></div>`:""}
-        ${(r.reviews&&r.reviews.length)?r.reviews.map(rv=>`<div class="line"><span class="k">評論</span><span class="v"><b>${escapeHTML(rv.name)}</b> ★${rv.rating}　${escapeHTML(rv.text.slice(0,90))}${rv.text.length>90?"…":""}</span></div>`).join(""):""}
+        ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v sum3">${escapeHTML(r.reviewSummary)}</span></div>`:""}
         ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
         ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
         ${r.priceText?`<div class="line"><span class="k">價位</span><span class="v">${escapeHTML(r.priceText)}</span></div>`:""}
