@@ -265,7 +265,10 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 
 /* 展開詳情 */
 .detail{margin-top:0;max-height:0;overflow:hidden;transition:max-height var(--t) ease;}
-.detail.open{max-height:560px;}
+.detail.open{max-height:1000px;}
+.detail-inner .hours{line-height:1.75;}
+.detail-inner .links a{color:var(--accent-bright);text-decoration:none;border-bottom:1px solid rgba(236,90,106,.4);}
+.detail-inner .links a:active{color:var(--text);}
 .detail-inner{padding-top:16px;margin-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--text-dim);display:flex;flex-direction:column;gap:10px;line-height:1.6;}
 .detail-inner .ph{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:18px;text-align:center;color:var(--text-faint);font-size:12px;}
 .detail-inner .photo{width:100%;height:172px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);}
@@ -906,8 +909,8 @@ async function placesSearch() {
   const req = {
     // 初次只抓較便宜欄位（不含 Atmosphere 的 reviewSummary/editorialSummary），排名後只對前 5 家補抓
     fields: ["id","displayName","location","rating","userRatingCount",
-             "priceLevel","regularOpeningHours","businessStatus","formattedAddress",
-             "nationalPhoneNumber","photos"],
+             "priceLevel","priceRange","regularOpeningHours","businessStatus","formattedAddress",
+             "nationalPhoneNumber","websiteURI","googleMapsURI","primaryTypeDisplayName","photos"],
     locationRestriction: { center: state.center, radius: state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius },
     includedPrimaryTypes: mealTypes(),
     maxResultCount: 20,
@@ -925,6 +928,11 @@ async function placesSearch() {
     openNow: isOpenNow(p.regularOpeningHours),
     address: p.formattedAddress || "",
     phone: p.nationalPhoneNumber || "",
+    hours: p.regularOpeningHours?.weekdayDescriptions || [],   // 每週營業時間
+    priceText: priceRangeText(p.priceRange),                   // 實際價位範圍
+    typeName: extractText(p.primaryTypeDisplayName),           // 類型（餐廳/咖啡廳…）
+    website: p.websiteURI || "",
+    mapsUri: p.googleMapsURI || "",
     summary: "",          // editorialSummary 延後對前 5 家補抓（省 Atmosphere 費用）
     reviewSummary: "",    // 同上，由 enrichTop 補
     _place: p,            // 保留 Place 實例供 fetchFields 補抓
@@ -968,6 +976,17 @@ function extractEditorial(es){
   if(typeof es==="string") return es;
   if(typeof es.text==="string") return es.text;
   if(es.text && typeof es.text.text==="string") return es.text.text;
+  return "";
+}
+function extractText(v){ if(!v) return ""; if(typeof v==="string") return v; if(typeof v.text==="string") return v.text; if(v.text&&typeof v.text.text==="string") return v.text.text; return ""; }
+// 價位範圍：Places priceRange（Money: units 字串 + currencyCode）→ 「NT$ 200 – 400」
+function priceRangeText(pr){
+  if(!pr) return "";
+  const u = m => (m && m.units!=null) ? Number(m.units).toLocaleString() : "";
+  const s=u(pr.startPrice), e=u(pr.endPrice);
+  if(s && e) return `NT$ ${s} – ${e}`;
+  if(s) return `NT$ ${s} 起`;
+  if(e) return `NT$ ${e} 以下`;
   return "";
 }
 
@@ -1115,9 +1134,6 @@ function cardHTML(r, rank){
   const photoStrip = photoUrls.length
     ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map(u=>`<img class="ph-img" src="${escapeHTML(u)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="this.remove()">`).join("")}</div>`
     : "";
-  const detailPhoto = (r.photoBig || r.photo)
-    ? `<img class="photo" src="${escapeHTML(r.photoBig || r.photo)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="${fallback}">`
-    : `<div class="ph">照片 — Step 3 / 真實資料接入</div>`;
 
   return `
   <div class="card">
@@ -1148,13 +1164,16 @@ function cardHTML(r, rank){
     </div>
     <div class="detail">
       <div class="detail-inner">
-        ${detailPhoto}
+        ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
         ${r.reviewSummary
           ? `<div class="line"><span class="k">評論</span><span class="v">${escapeHTML(r.reviewSummary)}</span></div>`
           : `<div class="ph">評論摘要 — AI 生成</div>`}
         ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
+        ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
+        ${r.priceText?`<div class="line"><span class="k">價位</span><span class="v">${escapeHTML(r.priceText)}</span></div>`:""}
         <div class="line"><span class="k">地址</span><span class="v">${escapeHTML(r.address||"—")}</span></div>
         <div class="line"><span class="k">電話</span><span class="v">${escapeHTML(r.phone||"—")}</span></div>
+        ${(r.website||r.mapsUri)?`<div class="line"><span class="k">連結</span><span class="v links">${[r.website?`<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">官方網站</a>`:"", r.mapsUri?`<a href="${escapeHTML(r.mapsUri)}" target="_blank" rel="noopener">Google 地圖</a>`:""].filter(Boolean).join(" · ")}</span></div>`:""}
       </div>
     </div>
   </div>`;
