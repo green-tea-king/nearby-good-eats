@@ -911,7 +911,7 @@ function rankCardData(c){
   }, rich);
 }
 
-// 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）
+// 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）。c 為卡片物件，縣市存於 lbCity
 function lbReason(c){
   const award = topAwardText(c.awards);
   const bits = [];
@@ -919,7 +919,7 @@ function lbReason(c){
   bits.push(c.count>=1000
     ? `${c.count.toLocaleString()} 則評論仍守住 ${c.rating.toFixed(1)} 分`
     : `${c.rating.toFixed(1)} 分（${c.count.toLocaleString()} 則）`);
-  bits.push(`${c.city}・綜合 ${c.composite.toFixed(2)}`);
+  bits.push(`${c.lbCity||""}・綜合 ${c.composite.toFixed(2)}`);
   return bits.join("，") + "。";
 }
 
