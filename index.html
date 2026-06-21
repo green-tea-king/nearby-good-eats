@@ -865,6 +865,7 @@ async function renderLeaderboard(){
 
 // 只對要顯示的前 5 名補抓完整欄位（照片/營業/服務/摘要…），用 id 重建 Place
 async function fetchRankRich(cands){
+  await loadGoogle();   // 快取命中時 ensureRankPool 不會載入 Google，這裡確保 google 已就緒
   const { Place } = await google.maps.importLibrary("places");
   await Promise.all(cands.map(async c => {
     if (rankRich[c.id]) return;
