@@ -333,7 +333,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
 .feat{font-size:10.5px;letter-spacing:.04em;padding:3px 9px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);color:var(--text-dim);}
 
-/* AI 上榜理由：斜體襯線引文 */
+/* AI 解讀：斜體襯線引文 */
 .ai-reason{
   margin-top:14px;font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;
   color:var(--text);border-left:2px solid var(--accent);padding:2px 0 2px 14px;letter-spacing:.01em;
@@ -385,8 +385,6 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 #mapFallback{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-dim);font-size:14px;line-height:1.7;padding:30px;width:100%;max-width:480px;}
 
 .toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--line);color:var(--text);padding:11px 17px;border-radius:999px;font-size:13px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.55);max-width:90vw;}
-
-.demo-tag{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-bright);border:1px solid rgba(200,16,46,.4);border-radius:999px;padding:2px 8px;margin-left:9px;}
 
 /* 選地點面板（Step 4） */
 #areaModal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-end;justify-content:center;}
@@ -647,7 +645,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
    CONFIG — 所有可調權重集中此處，改一個數字即生效
    ============================================================ */
 const CONFIG = {
-  // ── Google 金鑰：留空字串＝啟用 demo 假資料模式（骨架可立即預覽）
+  // ── Google 金鑰：必填。資料只走真實 Google Places / Geocoding。
   //    上線前填入並設定 referrer + API 範圍限制
   GOOGLE_API_KEY: "AIzaSyDjO79KBBzCxFx_Xc2aK4umJULdQCefPDY",
   // 向量地圖 ID（Google Cloud 地圖管理建立）：進階標記必需，並可套雲端深色樣式
@@ -658,12 +656,12 @@ const CONFIG = {
   DISTRICT_RADIUS_M: 3000,   // 選「區」時的範圍：涵蓋全區、忽略步行距離
   WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
   RESULT_COUNT: 5,           // 取前幾家
-  DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 預設地點（demo / 定位失敗時）：台北市中心
+  DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 定位失敗時仍用真實 Google 資料搜尋的預設中心
 
   // ── 貝氏加權平均（C、m 之後用實際資料調校）
   //    加權分數 = (C*m + n*r) / (C + n)
   BAYES: {
-    C: 150,  // 可信度門檻：評論數要多少才算「夠數」（demo 值，上線用實際資料調校）
+    C: 150,  // 可信度門檻：評論數要多少才算「夠數」
     m: 4.0,  // 全體平均分基準值（理想上由當批結果動態計算，見 computeM）
     DYNAMIC_M: true, // true＝用當批結果平均覆蓋上面的 m
   },
@@ -689,7 +687,7 @@ const CONFIG = {
 
   // ── AI 解讀（Step 3）
   AI: {
-    MODE: "demo",            // demo＝規則產生（免金鑰，立即可看）｜ live＝呼叫 Claude
+    MODE: "off",             // off＝不假裝 AI 解讀｜live＝呼叫 Claude
     API_KEY: "",             // live 模式才需要；上線請走後端代理，勿把金鑰放前端
     MODEL: "claude-sonnet-4-6",
   },
@@ -741,7 +739,7 @@ const state = {
 };
 
 const $ = sel => document.querySelector(sel);
-const demoMode = !CONFIG.GOOGLE_API_KEY;
+const hasGoogleApiKey = !!CONFIG.GOOGLE_API_KEY;
 
 /* ============================================================
    開場流程
@@ -756,11 +754,9 @@ $("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
 
 /* ============================================================
    美食排行榜：全台「綜合評價」前 5，可用篩網過濾，卡片格式同「附近美食」
-   - 一次撈全台候選（22 縣市各 searchByText 前段），分類＋貝氏排名後存 localStorage（7 天）
-   - 篩選全在前端對候選池操作（不重打 API）；只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
+   - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
+   - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const RANK_CACHE_KEY = "twfood_pool_v1";
-const RANK_CACHE_TTL = 7 * 864e5;   // 7 天
 const RANK_TOP = 5;                 // 只列前 5 名
 
 const RANK_FILTERS = [
@@ -784,16 +780,9 @@ async function openLeaderboard(force){
   renderLeaderboard();
 }
 
-// 撈全台候選池（含分類標籤），存快取
+// 撈全台候選池（含分類標籤），每次開啟重新查 Google
 async function ensureRankPool(force){
   if (force) rankAreaPools = {};
-  if (!force){
-    try{
-      const c = JSON.parse(localStorage.getItem(RANK_CACHE_KEY) || "null");
-      if (c && c.pool && (Date.now()-c.t) < RANK_CACHE_TTL){ rankPool=c.pool; rankPoolM=c.m; return; }
-    }catch(_){}
-  }
-  if (demoMode){ rankPool=[]; return; }
   $("#rankList").innerHTML = `<div class="rank-note">整理全台美食中…</div>`;
   $("#rankRefresh").classList.add("spin");
   try{
@@ -813,7 +802,6 @@ async function ensureRankPool(force){
     all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.composite=x.bScore+x.aBonus; });
     all.sort((a,b) => b.composite-a.composite);
     rankPool = all;
-    try{ localStorage.setItem(RANK_CACHE_KEY, JSON.stringify({ t:Date.now(), m, pool:all })); }catch(_){}
   }catch(e){
     console.error(e);
     $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(e.message)}</div>`;
@@ -901,7 +889,7 @@ function classifyCandidate(o){
 // 套用篩選 → 取前 5 → 補抓完整欄位 → 以「附近美食」卡片格式渲染
 let rankRenderToken = 0;
 async function renderLeaderboard(){
-  if (demoMode){ $("#rankList").innerHTML = `<div class="rank-note">需要 Google 金鑰才能載入排行榜。</div>`; return; }
+  if (!hasGoogleApiKey){ $("#rankList").innerHTML = `<div class="rank-note">需要 Google 金鑰才能載入排行榜。</div>`; return; }
   if (!rankPool){ return; }
   const token = ++rankRenderToken;
   const f = rankFilter;
@@ -927,14 +915,13 @@ async function renderLeaderboard(){
   await fetchRankRich(top);
   if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
   const cards = top.map(rankCardData);
-  cards.forEach(c => { c.aiReason = lbReason(c); });
   $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
   bindCardEvents($("#rankList"));
 }
 
 // 只對要顯示的前 5 名補抓完整欄位（照片/營業/服務/摘要…），用 id 重建 Place
 async function fetchRankRich(cands){
-  await loadGoogle();   // 快取命中時 ensureRankPool 不會載入 Google，這裡確保 google 已就緒
+  await loadGoogle();
   const { Place } = await google.maps.importLibrary("places");
   await Promise.all(cands.map(async c => {
     if (rankRich[c.id]) return;
@@ -982,17 +969,6 @@ function rankCardData(c){
 }
 
 // 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）。c 為卡片物件，縣市存於 lbCity
-function lbReason(c){
-  const award = topAwardText(c.awards);
-  const bits = [];
-  if (award) bits.push(award + "肯定");
-  bits.push(c.count>=1000
-    ? `${c.count.toLocaleString()} 則評論仍守住 ${c.rating.toFixed(1)} 分`
-    : `${c.rating.toFixed(1)} 分（${c.count.toLocaleString()} 則）`);
-  bits.push(`${c.lbCity||""}・綜合 ${c.composite.toFixed(2)}`);
-  return bits.join("，") + "。";
-}
-
 function bindCardEvents(root){
   root.querySelectorAll("[data-detail]").forEach(btn => btn.addEventListener("click", () => {
     const d = btn.closest(".card").querySelector(".detail");
@@ -1054,13 +1030,15 @@ function enterApp() {
 function locateThenSearch() {
   state.wholeArea = false;   // 目前位置一律步行模式
   setStatus(true, "定位中…");
-  if (!navigator.geolocation || demoMode) {
-    // demo：直接用預設中心（避免要求權限）
-    if (demoMode) { state.center = jitter(CONFIG.DEFAULT_CENTER); search(); return; }
+  if (!navigator.geolocation) {
+    toast("無法使用定位，改用預設中心搜尋真實資料");
+    state.center = { ...CONFIG.DEFAULT_CENTER };
+    search();
+    return;
   }
   navigator.geolocation.getCurrentPosition(
     pos => { state.center = { lat: pos.coords.latitude, lng: pos.coords.longitude }; search(); },
-    err => { toast("無法定位，改用預設中心"); state.center = { ...CONFIG.DEFAULT_CENTER }; search(); },
+    err => { toast("無法定位，改用預設中心搜尋真實資料"); state.center = { ...CONFIG.DEFAULT_CENTER }; search(); },
     { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
   );
 }
@@ -1141,21 +1119,6 @@ $("#themeBtn").addEventListener("click", () => {
 /* ============================================================
    Step 4 — 自然語言選地點：輸入地名/地標 → geocoding → 以該點搜尋
    ============================================================ */
-// demo 內建查找（免金鑰）：台北 12 區 + 常見地標。真實模式則接 Google Geocoding。
-const LOCAL_PLACES = {
-  "中正區":{lat:25.0324,lng:121.5199}, "大同區":{lat:25.0658,lng:121.5130},
-  "中山區":{lat:25.0640,lng:121.5330}, "松山區":{lat:25.0497,lng:121.5746},
-  "大安區":{lat:25.0263,lng:121.5436}, "萬華區":{lat:25.0340,lng:121.4997},
-  "信義區":{lat:25.0333,lng:121.5654}, "士林區":{lat:25.0928,lng:121.5240},
-  "北投區":{lat:25.1320,lng:121.4986}, "內湖區":{lat:25.0697,lng:121.5890},
-  "南港區":{lat:25.0554,lng:121.6066}, "文山區":{lat:24.9889,lng:121.5705},
-  "台北車站":{lat:25.0478,lng:121.5170}, "台北101":{lat:25.0339,lng:121.5645},
-  "西門町":{lat:25.0421,lng:121.5076}, "大安森林公園":{lat:25.0297,lng:121.5354},
-  "師大夜市":{lat:25.0244,lng:121.5290}, "饒河夜市":{lat:25.0508,lng:121.5773},
-  "永康街":{lat:25.0312,lng:121.5300}, "公館":{lat:25.0148,lng:121.5343},
-};
-const AREA_CHIPS = ["台北車站","信義區","大安區","西門町","台北101","師大夜市","公館"];
-
 /* 全台縣市 → 區/鄉/鎮/市（先選縣市再選區域；資料來源：官方郵遞區號對照） */
 const TW_CITIES=["臺北市","基隆市","新北市","宜蘭縣","桃園市","新竹市","新竹縣","苗栗縣","臺中市","彰化縣","南投縣","嘉義市","嘉義縣","雲林縣","臺南市","高雄市","屏東縣","臺東縣","花蓮縣","澎湖縣","金門縣","連江縣"];
 const TW_AREAS={"臺北市":["中正區","大同區","中山區","松山區","大安區","萬華區","信義區","士林區","北投區","內湖區","南港區","文山區"],"基隆市":["仁愛區","信義區","中正區","中山區","安樂區","暖暖區","七堵區"],"新北市":["萬里區","金山區","板橋區","汐止區","深坑區","石碇區","瑞芳區","平溪區","雙溪區","貢寮區","新店區","坪林區","烏來區","永和區","中和區","土城區","三峽區","樹林區","鶯歌區","三重區","新莊區","泰山區","林口區","蘆洲區","五股區","八里區","淡水區","三芝區","石門區"],"宜蘭縣":["宜蘭市","壯圍鄉","頭城鎮","礁溪鄉","員山鄉","羅東鎮","三星鄉","大同鄉","五結鄉","冬山鄉","蘇澳鎮","南澳鄉"],"桃園市":["中壢區","平鎮區","龍潭區","楊梅區","新屋區","觀音區","桃園區","龜山區","八德區","大溪區","復興區","大園區","蘆竹區"],"新竹市":["東區","北區","香山區"],"新竹縣":["竹北市","湖口鄉","新豐鄉","新埔鎮","關西鎮","芎林鄉","寶山鄉","竹東鎮","五峰鄉","橫山鄉","尖石鄉","北埔鄉","峨眉鄉"],"苗栗縣":["竹南鎮","頭份市","三灣鄉","南庄鄉","獅潭鄉","後龍鎮","通霄鎮","苑裡鎮","苗栗市","造橋鄉","頭屋鄉","公館鄉","大湖鄉","泰安鄉","銅鑼鄉","三義鄉","西湖鄉","卓蘭鎮"],"臺中市":["中區","東區","南區","西區","北區","北屯區","西屯區","南屯區","太平區","大里區","霧峰區","烏日區","豐原區","后里區","石岡區","東勢區","和平區","新社區","潭子區","大雅區","神岡區","大肚區","沙鹿區","龍井區","梧棲區","清水區","大甲區","外埔區","大安區"],"彰化縣":["彰化市","芬園鄉","花壇鄉","秀水鄉","鹿港鎮","福興鄉","線西鄉","和美鎮","伸港鄉","員林市","社頭鄉","永靖鄉","埔心鄉","溪湖鎮","大村鄉","埔鹽鄉","田中鎮","北斗鎮","田尾鄉","埤頭鄉","溪州鄉","竹塘鄉","二林鎮","大城鄉","芳苑鄉","二水鄉"],"南投縣":["南投市","中寮鄉","草屯鎮","國姓鄉","埔里鎮","仁愛鄉","名間鄉","集集鎮","水里鄉","魚池鄉","信義鄉","竹山鎮","鹿谷鄉"],"嘉義市":["西區","東區"],"嘉義縣":["番路鄉","梅山鄉","竹崎鄉","阿里山鄉","中埔鄉","大埔鄉","水上鄉","鹿草鄉","太保市","朴子市","東石鄉","六腳鄉","新港鄉","民雄鄉","大林鎮","溪口鄉","義竹鄉","布袋鎮"],"雲林縣":["斗南鎮","大埤鄉","虎尾鎮","土庫鎮","褒忠鄉","東勢鄉","臺西鄉","崙背鄉","麥寮鄉","斗六市","林內鄉","古坑鄉","莿桐鄉","西螺鎮","二崙鄉","北港鎮","水林鄉","口湖鄉","四湖鄉","元長鄉"],"臺南市":["中西區","東區","南區","北區","安平區","安南區","永康區","歸仁區","新化區","左鎮區","玉井區","楠西區","南化區","仁德區","關廟區","龍崎區","官田區","麻豆區","佳里區","西港區","七股區","將軍區","學甲區","北門區","新營區","後壁區","白河區","東山區","六甲區","下營區","柳營區","鹽水區","善化區","新市區","大內區","山上區","安定區"],"高雄市":["新興區","前金區","苓雅區","鹽埕區","鼓山區","旗津區","前鎮區","三民區","楠梓區","小港區","左營區","仁武區","大社區","岡山區","路竹區","阿蓮區","田寮區","燕巢區","橋頭區","梓官區","彌陀區","永安區","湖內區","鳳山區","大寮區","林園區","鳥松區","大樹區","旗山區","美濃區","六龜區","內門區","杉林區","甲仙區","桃源區","那瑪夏區","茂林區","茄萣區"],"屏東縣":["屏東市","三地門鄉","霧臺鄉","瑪家鄉","九如鄉","里港鄉","高樹鄉","鹽埔鄉","長治鄉","麟洛鄉","竹田鄉","內埔鄉","萬丹鄉","潮州鎮","泰武鄉","來義鄉","萬巒鄉","崁頂鄉","新埤鄉","南州鄉","林邊鄉","東港鎮","琉球鄉","佳冬鄉","新園鄉","枋寮鄉","枋山鄉","春日鄉","獅子鄉","車城鄉","牡丹鄉","恆春鎮","滿州鄉"],"臺東縣":["臺東市","綠島鄉","蘭嶼鄉","延平鄉","卑南鄉","鹿野鄉","關山鎮","海端鄉","池上鄉","東河鄉","成功鎮","長濱鄉","太麻里鄉","金峰鄉","大武鄉","達仁鄉"],"花蓮縣":["花蓮市","新城鄉","秀林鄉","吉安鄉","壽豐鄉","鳳林鎮","光復鄉","豐濱鄉","瑞穗鄉","萬榮鄉","玉里鎮","卓溪鄉","富里鄉"],"澎湖縣":["馬公市","西嶼鄉","望安鄉","七美鄉","白沙鄉","湖西鄉"],"金門縣":["金沙鎮","金湖鎮","金寧鄉","金城鎮","烈嶼鄉","烏坵鄉"],"連江縣":["南竿鄉","北竿鄉","莒光鄉","東引鄉"]};
@@ -1169,16 +1132,11 @@ async function pickCityArea(){
   setStatus(true, "尋找地點…");
   try{
     let center;
-    if (demoMode){
-      const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&accept-language=zh-TW&q=${encodeURIComponent(label+" 台灣")}`);
-      const j = await r.json(); if(!j[0]) throw new Error("找不到這個地區"); center = { lat:+j[0].lat, lng:+j[0].lon };
-    } else {
-      await loadGoogle();
-      const { Geocoder } = await google.maps.importLibrary("geocoding");
-      const res = await new Geocoder().geocode({ address: label, region:"tw", language:"zh-TW" });
-      if (!res.results || !res.results.length) throw new Error("找不到這個地區");
-      const g = res.results[0]; center = { lat:g.geometry.location.lat(), lng:g.geometry.location.lng() };
-    }
+    await loadGoogle();
+    const { Geocoder } = await google.maps.importLibrary("geocoding");
+    const res = await new Geocoder().geocode({ address: label, region:"tw", language:"zh-TW" });
+    if (!res.results || !res.results.length) throw new Error("找不到這個地區");
+    const g = res.results[0]; center = { lat:g.geometry.location.lat(), lng:g.geometry.location.lng() };
     state.center = center; state.usingArea = true; state.areaName = label; state.wholeArea = true;
     $("#scopeLabel").textContent = label;
     $("#scopeMode").textContent = "整區範圍（不限步行距離）";
@@ -1222,7 +1180,7 @@ $("#pickBack").addEventListener("click", () => $("#pickView").classList.add("hid
 $("#pickConfirm").addEventListener("click", confirmPick);
 
 async function openPickMap(){
-  if (demoMode){ toast("地圖選位置需要 Google 金鑰"); return; }
+  if (!hasGoogleApiKey){ toast("地圖選位置需要 Google 金鑰"); return; }
   closeAreaModal();
   $("#pickView").classList.remove("hidden");
   try{
@@ -1269,28 +1227,14 @@ function shortAreaLabel(results){
 
 // 地名 → 座標
 async function geocode(q){
-  // 1) 內建字典（部分比對）
-  for (const [name, c] of Object.entries(LOCAL_PLACES)){
-    if (q.includes(name) || name.includes(q)) return { center:c, label:name };
+  await loadGoogle();
+  const { Geocoder } = await google.maps.importLibrary("geocoding");
+  const res = await new Geocoder().geocode({ address:q, region:"tw", language:"zh-TW" });
+  if (res.results && res.results.length){
+    const g = res.results[0];
+    return { center:{ lat:g.geometry.location.lat(), lng:g.geometry.location.lng() }, label:g.formatted_address };
   }
-  // 2) 真實模式：Google Geocoding
-  if (!demoMode){
-    await loadGoogle();
-    const { Geocoder } = await google.maps.importLibrary("geocoding");
-    const res = await new Geocoder().geocode({ address:q, region:"tw", language:"zh-TW" });
-    if (res.results && res.results.length){
-      const g = res.results[0];
-      return { center:{ lat:g.geometry.location.lat(), lng:g.geometry.location.lng() }, label:g.formatted_address };
-    }
-    throw new Error("找不到這個地點");
-  }
-  // 3) demo 後援：OpenStreetMap Nominatim（免金鑰）
-  try{
-    const r = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&accept-language=zh-TW&q=${encodeURIComponent(q+" 台灣")}`);
-    const j = await r.json();
-    if (j[0]) return { center:{ lat:+j[0].lat, lng:+j[0].lon }, label:(j[0].display_name||q).split(",")[0] };
-  }catch(_){}
-  throw new Error("找不到這個地點，試試區名或地標");
+  throw new Error("找不到這個地點");
 }
 
 async function submitArea(){
@@ -1315,12 +1259,12 @@ async function submitArea(){
 }
 
 /* ============================================================
-   搜尋（Places API New，含 demo 假資料）
+   搜尋（Places API New，只使用真實資料）
    ============================================================ */
 async function search() {
-  setStatus(true, demoMode ? "搜尋附近餐廳（demo 資料）…" : "搜尋附近餐廳…");
+  setStatus(true, "搜尋附近餐廳…");
   try {
-    state.raw = demoMode ? demoSearch() : await placesSearch();
+    state.raw = await placesSearch();
     await ensureAwards();      // Step 2：載入評鑑名單（只載一次）
     applyAwards(state.raw);    // Step 2：模糊比對 → 填入 awards
     rankAndRender();
@@ -1338,30 +1282,21 @@ function showSearchError(error){
     <section class="error-state">
       <b>${isApiBlocked ? "Google API 目前擋下這個來源" : "搜尋暫時失敗"}</b>
       <p>${isApiBlocked
-        ? "這通常是 API key 的網域或 localhost referrer 限制。正式環境設定允許來源後即可恢復；現在也可以先用示範資料檢查介面。"
+        ? "這通常是 API key 的網域或 localhost referrer 限制。正式環境設定允許來源後即可恢復。"
         : "請稍後再試，或改用地名、縣市區域重新搜尋。"}
       </p>
       <code>${escapeHTML(msg)}</code>
       <div class="error-actions">
-        <button class="primary" id="demoFallbackBtn">改用示範資料</button>
         <button id="retrySearchBtn">重新搜尋</button>
       </div>
     </section>`;
-  $("#demoFallbackBtn").addEventListener("click", useDemoFallback);
   $("#retrySearchBtn").addEventListener("click", search);
-}
-
-async function useDemoFallback(){
-  setStatus(true, "載入示範餐廳…");
-  state.raw = demoSearch();
-  await ensureAwards();
-  applyAwards(state.raw);
-  rankAndRender();
 }
 
 /* ---- 真實 Places 搜尋（New） ---- */
 let gmapsReady = null;
 function loadGoogle() {
+  if (!hasGoogleApiKey) return Promise.reject(new Error("缺少 Google API key"));
   if (gmapsReady) return gmapsReady;
   gmapsReady = new Promise((res, rej) => {
     const s = document.createElement("script");
@@ -1573,15 +1508,14 @@ function rankAndRender(){
 
   state.ranked = items.slice(0, CONFIG.RESULT_COUNT);
   setStatus(false);
-  applyAI();          // 規則文案先上（含 fallback 摘要）
+  applyAI();
   renderList();
   if (state.map) renderMarkers();
   enrichTop();        // 只對前 5 家補抓 Google 簡介/評論摘要（省 Atmosphere 費用），完成後再 render
 }
 
-// 排名後只對前 5 家補抓 Atmosphere 欄位（reviewSummary/editorialSummary）；fetchFields 會快取，不重複計費
+// 排名後只對前 5 家補抓 Atmosphere 欄位（reviewSummary/editorialSummary）
 async function enrichTop(){
-  if (demoMode) return;
   const list = state.ranked.filter(r => r._place);
   if (!list.length) return;
   try{
@@ -1637,8 +1571,7 @@ function renderOverview(text){
 function setSummary(){
   const where = state.usingArea ? state.areaName : "你附近";
   const scope = state.wholeArea ? "全區" : `步行 ${state.radius}m 內`;
-  $("#status").innerHTML = `${where} · ${scope} · 前 ${state.ranked.length} 家`
-    + (demoMode ? `<span class="demo-tag">DEMO 資料</span>` : "");
+  $("#status").innerHTML = `${where} · ${scope} · 前 ${state.ranked.length} 家`;
 }
 
 function cardHTML(r, rank){
@@ -1656,7 +1589,9 @@ function cardHTML(r, rank){
   // AI 理由：有就顯示，否則 placeholder（Step 3）
   const ai = r.aiReason
     ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
-    : `<div class="ai-reason placeholder">AI 上榜理由 · Step 3 接入</div>`;
+    : (r.reviewSummary
+      ? `<div class="ai-reason">Google 評論摘要：${escapeHTML(r.reviewSummary)}</div>`
+      : `<div class="ai-reason placeholder">AI 解讀未啟用</div>`);
   const fallback = "this.style.visibility='hidden'";
   // 卡片內 1–3 張較大照片
   const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
@@ -1740,7 +1675,7 @@ $("#backToList").addEventListener("click", ()=>$("#mapView").classList.add("hidd
 
 async function openMap(){
   $("#mapView").classList.remove("hidden");
-  if (demoMode){
+  if (!hasGoogleApiKey){
     $("#map").classList.add("hidden");
     const fb = $("#mapFallback"); fb.classList.remove("hidden");
     fb.innerHTML = "地圖需要 Google 金鑰。<br>填入 CONFIG.GOOGLE_API_KEY 後，這裡會顯示前五家的標記。";
@@ -1801,22 +1736,13 @@ function jitter(c){return {lat:c.lat+(Math.random()-.5)*.004, lng:c.lng+(Math.ra
    ============================================================ */
 let AWARDS = null, awardsPromise = null;
 
-// 內嵌備援：file:// 直接預覽時 fetch 會被 CORS 擋，改用這份（與 awards-taipei.json 同步維護）
-const EMBEDDED_AWARDS = [
-  { name:"海風生魚片丼",   address:"台北市中山區", awards:[{guide:"michelin",level:"二星",year:2025}] },
-  { name:"五味爐 川菜小館", address:"台北市中山區", awards:[{guide:"michelin",level:"一星",year:2025}] },
-  { name:"老巷牛肉麵",     address:"台北市中山區", awards:[{guide:"bib",year:2025},{guide:"500plate",year:2025,dishPlates:[3,2,1]}] },
-  { name:"夜半食堂 居酒屋", address:"台北市中山區", awards:[{guide:"500plate",year:2025,plates:4}] },
-  { name:"九層糕老店",     address:"台北市中山區", awards:[{guide:"bib",year:2024}] },
-];
-
 function ensureAwards(){
   if (AWARDS) return Promise.resolve(AWARDS);
   if (awardsPromise) return awardsPromise;
   awardsPromise = fetch(CONFIG.AWARDS_URL)
     .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
     .then(j => { AWARDS = j.restaurants || []; })
-    .catch(() => { AWARDS = EMBEDDED_AWARDS; console.info("[評鑑] 改用內嵌備援名單（file:// 預覽屬正常）"); })
+    .catch(e => { AWARDS = []; console.warn("[評鑑] 評鑑名單載入失敗，不使用備援死資料：", e.message); })
     .then(() => AWARDS);
   return awardsPromise;
 }
@@ -1887,12 +1813,12 @@ function applyAI(){
     state.ranked.forEach(r=>{ r.aiReason=r.aiReason||"分析中…"; });
     aiLive(state.ranked);   // 非同步，完成後自行 renderList
   } else {
-    state.ranked.forEach(r=>{ const a=demoReason(r); r.aiReason=a.reason; if(!r.reviewSummary) r.reviewSummary=a.summary; });
-    state.overview = buildOverview(state.ranked);   // Step 4：情境比較
+    state.ranked.forEach(r=>{ r.aiReason=""; });
+    state.overview = "";
   }
 }
 
-// 情境比較（demo）：由前五的真實屬性組出一句整體短評
+// live AI 無 overview 時，僅用目前真實欄位組一句整體比較
 function buildOverview(items){
   if (!items || items.length < 2) return "";
   const top = items[0];
@@ -1906,32 +1832,6 @@ function buildOverview(items){
   return parts.join("；") + "。";
 }
 
-// 規則文案（demo）：全部取自真實欄位，不杜撰
-function topAwardText(awards){
-  const m=(awards||[]).find(a=>a.guide==="michelin"); if(m) return `米其林${m.level}`;
-  const b=(awards||[]).find(a=>a.guide==="bib");      if(b) return "必比登推介";
-  const p=(awards||[]).find(a=>a.guide==="500plate"); if(p) return `500盤 ${p.level}`;
-  return "";
-}
-function demoReason(r){
-  const walk = Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN));
-  const award = topAwardText(r.awards);
-  const ed = (r.summary || "").trim();
-  // 有 Google 官方簡介就優先當開頭（更貼該店）；否則用評鑑
-  const lead = (ed && ed.length <= 26) ? ed : (award ? award + "肯定" : "");
-  const bits = [];
-  if (lead) bits.push(lead);
-  bits.push(r.count>=1000
-    ? `${r.count.toLocaleString()} 則評論仍守住 ${r.rating.toFixed(1)} 分`
-    : `${r.rating.toFixed(1)} 分（${r.count.toLocaleString()} 則）`);
-  bits.push(`步行 ${walk} 分可達`);
-  const priceTxt = ["","平價","中價位","價位偏高","高價位"][r.priceLevel] || "";
-  return {
-    reason: bits.slice(0,3).join("，") + "。",
-    summary: `${priceTxt?priceTxt+"，":""}口碑由 ${r.count.toLocaleString()} 則評論長期累積，評分穩定在 ${r.rating.toFixed(1)}。`,
-  };
-}
-
 // 真實呼叫 Claude（一次五家）。上線建議改走後端代理，勿在前端帶金鑰。
 async function aiLive(items){
   try{
@@ -1939,7 +1839,7 @@ async function aiLive(items){
       rank:i+1, name:r.name, rating:r.rating, count:r.count,
       priceLevel:r.priceLevel, openNow:r.openNow,
       walkMin: Math.round(r.dist/CONFIG.WALK_SPEED_M_PER_MIN),
-      awards: r.awards, editorialSummary: r.summary,
+      awards: r.awards, editorialSummary: r.summary, reviewSummary: r.reviewSummary,
     }));
     const system = "你是在地步行覓食嚮導。只依據使用者提供的每家餐廳資料，產生繁體中文短評，"
       + "嚴禁杜撰未提供的事實。回傳純 JSON 物件 {overview, items}："
@@ -1966,63 +1866,13 @@ async function aiLive(items){
     items.forEach((r,i)=>{ r.aiReason=arr[i]?.reason||""; r.reviewSummary=arr[i]?.summary||""; });
     state.overview = obj.overview || buildOverview(items);
   }catch(e){
-    console.warn("[AI] live 失敗，改用 demo 文案：", e.message);
-    items.forEach(r=>{ const a=demoReason(r); r.aiReason=a.reason; r.reviewSummary=a.summary; });
-    state.overview = buildOverview(items);
+    console.warn("[AI] live 失敗，不使用假 AI 文案：", e.message);
+    items.forEach(r=>{ r.aiReason=""; });
+    state.overview = "";
   }
   renderList();
 }
 
-/* ============================================================
-   DEMO 假資料（無金鑰時用，讓骨架可立即預覽）
-   名稱為虛構，僅供版面測試；評鑑徽章與 AI 理由仍維持空位
-   ============================================================ */
-function demoSearch(){
-  const base = state.center;
-  const foodPhotos = [
-    "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
-  ];
-  const seed = [
-    {name:"老巷牛肉麵",          rating:4.7, count:2143, price:1, open:true},
-    {name:"晨之味 早午餐",        rating:4.5, count:880,  price:2, open:true},
-    {name:"五味爐 川菜小館",      rating:4.6, count:1320, price:2, open:false},
-    {name:"海風生魚片丼",         rating:4.6, count:560,  price:2, open:true},
-    {name:"米花壽司",            rating:5.0, count:11,   price:3, open:true},   // 高分但極少評論 → 應被貝氏拉下、擠出前五
-    {name:"轉角咖啡 & 輕食",      rating:4.2, count:1750, price:2, open:true},
-    {name:"阿香蚵仔煎",          rating:4.4, count:990,  price:1, open:true},
-    {name:"炭場 燒肉",           rating:4.5, count:430,  price:3, open:false},
-    {name:"綠盈蔬食",            rating:4.1, count:610,  price:2, open:true},
-    {name:"夜半食堂 居酒屋",      rating:4.6, count:1080, price:2, open:true},
-    {name:"九層糕老店",          rating:4.9, count:26,   price:1, open:true},   // 同上，少評論
-    {name:"鐵道便當本舖",         rating:3.9, count:2600, price:1, open:true},
-    {name:"快炒 99",            rating:3.8, count:540,  price:1, open:true},
-    {name:"連鎖速食店",          rating:3.6, count:3200, price:1, open:true},
-  ];
-  return seed.map((s,i)=>({
-    id:"demo-"+i,
-    name:s.name,
-    loc: jitter(base),
-    rating:s.rating, count:s.count, priceLevel:s.price,
-    openNow:s.open,
-    address:"台北市（demo 地址）",
-    phone:"02-0000-0000",
-    summary: i%3===0 ? "在地老店，主打招牌口味。" : "",
-    // 示範圖：真實搜尋時會改用 Places 照片（見 placesSearch）
-    photo: foodPhotos[i % foodPhotos.length],
-    photoBig: foodPhotos[i % foodPhotos.length],
-    awards:[],        // 維持空位，Step 2 才填
-    aiReason:null,    // 維持空位，Step 3 才填
-  }));
-}
 </script>
 </body>
 </html>
