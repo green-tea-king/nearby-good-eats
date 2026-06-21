@@ -422,8 +422,6 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
       <select id="citySel" class="sel" aria-label="縣市"></select>
       <select id="areaSel" class="sel" aria-label="區域"><option value="">區域</option></select>
     </div>
-    <div class="ca-label">熱門</div>
-    <div class="chips" id="areaChips"></div>
     <button id="btnMapPick" class="map-pick-btn">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
       用地圖選位置
@@ -713,11 +711,6 @@ async function pickCityArea(){
 })();
 
 function openAreaModal(){
-  const wrap = $("#areaChips");
-  wrap.innerHTML = AREA_CHIPS.map(n=>`<button class="chip" data-q="${n}">${n}</button>`).join("");
-  wrap.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
-    $("#areaInput").value = c.dataset.q; submitArea();
-  }));
   $("#areaModal").classList.remove("hidden");
   setTimeout(()=>$("#areaInput").focus(), 50);
 }
