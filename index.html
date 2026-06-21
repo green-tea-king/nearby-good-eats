@@ -129,8 +129,8 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 /* ============================================================
    美食排行榜
    ============================================================ */
-#rankView{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;}
-.rank-head{flex:none;display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--bg);}
+#rankView{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;align-items:center;}
+.rank-head{flex:none;display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--bg);width:100%;max-width:480px;}
 .rank-back,.rank-refresh{flex:none;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t);}
 .rank-back:active,.rank-refresh:active{color:var(--accent-bright);border-color:var(--accent);}
 .rank-refresh.spin svg{animation:rkspin .8s linear infinite;}
@@ -138,7 +138,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-titles{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;}
 .rank-titles b{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.01em;color:var(--text);}
 .rank-titles i{font-style:normal;font-size:11.5px;color:var(--text-dim);letter-spacing:.04em;}
-.rank-info{flex:none;margin:0;border-bottom:1px solid var(--line);}
+.rank-info{flex:none;margin:0;width:100%;max-width:480px;border-bottom:1px solid var(--line);}
 .rank-info summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 20px;cursor:pointer;font-size:13px;color:var(--accent-bright);font-weight:500;letter-spacing:.03em;}
 .rank-info summary::-webkit-details-marker{display:none;}
 .rank-info .ri-chev{flex:none;transition:transform var(--t);color:var(--text-faint);}
@@ -152,7 +152,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .ri-list li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);}
 .ri-total{font-size:13px;font-weight:600;color:var(--text);text-align:center;padding:10px;border-radius:8px;background:var(--surface);border:1px solid var(--accent);}
 /* 篩選列 */
-.rank-filters{flex:none;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);}
+.rank-filters{flex:none;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;}
 .rank-filters .fg{display:flex;align-items:center;gap:9px;}
 .rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
 .rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px;}
@@ -165,7 +165,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .fclear{align-self:flex-end;margin-top:1px;font-size:11.5px;color:var(--accent-bright);padding:2px 4px;}
 .rank-note{padding:34px 22px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
 .detail-inner .calc-v{font-family:var(--mono);font-size:11px;color:var(--accent-bright);line-height:1.5;}
-.rank-list{flex:1;overflow-y:auto;padding:14px 16px 6px;}
+.rank-list{flex:1;overflow-y:auto;padding:14px 16px 6px;width:100%;max-width:480px;}
 .rank-list .card{margin-bottom:14px;}
 .rank-row{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:13px 6px;border-bottom:1px solid var(--line);background:none;text-decoration:none;color:inherit;}
 .rank-row:last-child{border-bottom:none;}
@@ -184,7 +184,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-row .arr{flex:none;color:var(--text-faint);}
 .rank-row.loading .nm,.rank-row.loading .meta{color:var(--text-faint);}
 .rank-row.empty .nm{color:var(--text-faint);}
-.rank-foot{flex:none;padding:13px 20px 22px;font-size:11px;line-height:1.6;color:var(--text-faint);border-top:1px solid var(--line);}
+.rank-foot{flex:none;padding:13px 20px 22px;font-size:11px;line-height:1.6;color:var(--text-faint);border-top:1px solid var(--line);width:100%;max-width:480px;}
 #splash .logo{
   font-size:11px;letter-spacing:.34em;color:var(--accent-bright);
   text-transform:uppercase;font-weight:500;
@@ -378,10 +378,11 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
   display:flex;align-items:center;gap:8px;box-shadow:0 14px 36px -10px rgba(200,16,46,.55);transition:transform var(--t),filter var(--t);
 }
 #fab:active{transform:translateX(-50%) scale(.96);filter:brightness(1.06);}
-#mapView{position:fixed;inset:0;z-index:28;background:var(--bg);display:flex;flex-direction:column;}
-#mapView header{position:static;}
+#mapView{position:fixed;inset:0;z-index:28;background:var(--bg);display:flex;flex-direction:column;align-items:center;}
+#mapView header{position:static;width:100%;padding-left:0;padding-right:0;}
+#mapView .bar-row{width:100%;max-width:480px;margin:0 auto;padding:0 16px;}
 #map{flex:1;background:var(--surface-2);}
-#mapFallback{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-dim);font-size:14px;line-height:1.7;padding:30px;}
+#mapFallback{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-dim);font-size:14px;line-height:1.7;padding:30px;width:100%;max-width:480px;}
 
 .toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--line);color:var(--text);padding:11px 17px;border-radius:999px;font-size:13px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.55);max-width:90vw;}
 
@@ -436,7 +437,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <div class="splash-copy">
       <div class="logo">吃3小吃</div>
       <h1>台灣美食地圖</h1>
-      <p class="sub">依時間、地點、距離與評價快速縮小選擇，先找能立刻出發的好店。</p>
+      <p class="sub">時間 · 地點 · 美食 · 任選</p>
     </div>
 
     <div class="splash-panel">
