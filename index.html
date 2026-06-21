@@ -291,6 +291,17 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 .sheet-actions{display:flex;gap:9px;margin-top:4px;}
 .sheet-actions button{flex:1;padding:12px;border-radius:var(--radius-sm);font-size:14px;letter-spacing:.03em;background:transparent;border:1px solid var(--line);color:var(--text);}
 .sheet-actions .apply{background:var(--accent);color:var(--on-accent);font-weight:500;border-color:var(--accent);}
+
+/* 用地圖選位置 */
+.map-pick-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border-radius:var(--radius-sm);background:transparent;border:1px solid var(--line);color:var(--text);font-size:14px;letter-spacing:.03em;transition:border-color var(--t),color var(--t);}
+.map-pick-btn:active{border-color:var(--accent);color:var(--accent-bright);}
+.map-pick-btn svg{color:var(--accent);}
+#pickView{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;}
+#pickView header{position:static;}
+#pickMap{flex:1;background:var(--surface-2);}
+.pick-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);z-index:46;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.55));}
+.pick-confirm{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(26px + env(safe-area-inset-bottom,0));z-index:47;background:var(--accent);color:var(--on-accent);border:none;border-radius:999px;padding:14px 32px;font-size:15px;font-weight:500;letter-spacing:.05em;box-shadow:0 14px 36px -10px rgba(200,16,46,.6);transition:transform var(--t),filter var(--t);}
+.pick-confirm:active{transform:translateX(-50%) scale(.97);filter:brightness(1.06);}
 </style>
 </head>
 <body>
@@ -413,11 +424,33 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
     </div>
     <div class="ca-label">熱門</div>
     <div class="chips" id="areaChips"></div>
+    <button id="btnMapPick" class="map-pick-btn">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+      用地圖選位置
+    </button>
     <div class="sheet-actions">
       <button id="areaCurrent">用目前位置</button>
       <button id="areaGo" class="apply">搜尋這裡</button>
     </div>
   </div>
+</div>
+
+<!-- ============ 用地圖選位置 ============ -->
+<div id="pickView" class="hidden">
+  <header>
+    <div class="bar-row">
+      <button class="scope-btn" id="pickBack" style="flex:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        取消
+      </button>
+      <span style="color:var(--text-dim);font-size:13px;">移動地圖，把中心對準想找的位置</span>
+    </div>
+  </header>
+  <div id="pickMap"></div>
+  <div class="pick-pin">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="#C8102E" stroke="#FFF6F3" stroke-width="1.4" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.4" fill="#FFF6F3" stroke="none"/></svg>
+  </div>
+  <button id="pickConfirm" class="pick-confirm">選這裡搜尋</button>
 </div>
 
 <script>
@@ -701,6 +734,58 @@ $("#areaCurrent").addEventListener("click", ()=>{
   $("#scopeMode").textContent = "以目前位置為圓心";
   locateThenSearch();
 });
+
+/* ============ 用地圖選位置：拖曳地圖對準中心 → 反查地名 → 以該點搜尋 ============ */
+let pickMap = null;
+$("#btnMapPick").addEventListener("click", openPickMap);
+$("#pickBack").addEventListener("click", () => $("#pickView").classList.add("hidden"));
+$("#pickConfirm").addEventListener("click", confirmPick);
+
+async function openPickMap(){
+  if (demoMode){ toast("地圖選位置需要 Google 金鑰"); return; }
+  closeAreaModal();
+  $("#pickView").classList.remove("hidden");
+  try{
+    await loadGoogle();
+    const { Map } = await google.maps.importLibrary("maps");
+    if (!pickMap){
+      pickMap = new Map($("#pickMap"), {
+        center: state.center, zoom: 15, disableDefaultUI: true,
+        gestureHandling: "greedy", colorScheme: "DARK", mapId: CONFIG.MAP_ID,
+      });
+    } else { pickMap.setCenter(state.center); }
+  }catch(e){ $("#pickView").classList.add("hidden"); toast("地圖載入失敗：" + e.message); }
+}
+
+async function confirmPick(){
+  if (!pickMap) return;
+  const c = pickMap.getCenter();
+  const center = { lat: c.lat(), lng: c.lng() };
+  $("#pickView").classList.add("hidden");
+  setStatus(true, "尋找地點…");
+  let label = "選定位置";
+  try{
+    const { Geocoder } = await google.maps.importLibrary("geocoding");
+    const res = await new Geocoder().geocode({ location: center, language: "zh-TW" });
+    if (res.results && res.results.length) label = shortAreaLabel(res.results) || label;
+  }catch(_){}
+  state.center = center; state.usingArea = true; state.areaName = label; state.wholeArea = false; // 地圖選點＝以該點步行搜尋
+  $("#scopeLabel").textContent = label;
+  $("#scopeMode").textContent = "以選定位置為圓心";
+  search();
+}
+
+// 反查取出「縣市+區」短地名
+function shortAreaLabel(results){
+  for (const r of results){
+    const comp = r.address_components || [];
+    const get = t => { const x = comp.find(c => c.types.includes(t)); return x ? x.long_name : ""; };
+    const city = get("administrative_area_level_1");
+    const dist = get("administrative_area_level_2") || get("administrative_area_level_3") || get("sublocality_level_1");
+    if (dist) return (city || "") + dist;
+  }
+  return "";
+}
 
 // 地名 → 座標
 async function geocode(q){
