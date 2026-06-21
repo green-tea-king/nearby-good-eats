@@ -848,15 +848,21 @@ async function cityCandidates(Place, city, area=""){
   }catch(_){ return []; }
 }
 
-async function areaCandidates(city, area){
-  const key = city + "|" + area;
+function rankQueryTerms(f){
+  return ["cuisine","meal","type","diet","style"].map(k => f[k]).filter(Boolean);
+}
+
+async function areaCandidates(city, area, f=rankFilter){
+  const terms = rankQueryTerms(f);
+  const key = [city, area, ...terms].join("|");
   if (rankAreaPools[key]) return rankAreaPools[key];
   await loadGoogle();
   await ensureAwards();
   const { Place } = await google.maps.importLibrary("places");
-  let all = await cityCandidates(Place, city, area);
+  let all = await cityCandidates(Place, city, area + (terms.length ? " " + terms.join(" ") : ""));
   const seen = new Set();
   all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
+  all.forEach(x => { x.area = area; x.queryTerms = terms; });
   applyAwards(all);
   const m = all.length ? computeM(all) : rankPoolM;
   all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.composite=x.bScore+x.aBonus; });
@@ -908,11 +914,11 @@ async function renderLeaderboard(){
   const list = source.filter(x => {
     if (f.city && x.city !== f.city) return false;
     if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
-    if (f.cuisine && !(x.tags.cuisine||[]).includes(f.cuisine)) return false;
-    if (f.meal && !(x.tags.meal||[]).includes(f.meal)) return false;
-    if (f.type && !(x.tags.type||[]).includes(f.type)) return false;
-    if (f.diet && !(x.tags.diet||[]).includes(f.diet)) return false;
-    if (f.style && !(x.tags.style||[]).includes(f.style)) return false;
+    if (f.cuisine && !(x.queryTerms||[]).includes(f.cuisine) && !(x.tags.cuisine||[]).includes(f.cuisine)) return false;
+    if (f.meal && !(x.queryTerms||[]).includes(f.meal) && !(x.tags.meal||[]).includes(f.meal)) return false;
+    if (f.type && !(x.queryTerms||[]).includes(f.type) && !(x.tags.type||[]).includes(f.type)) return false;
+    if (f.diet && !(x.queryTerms||[]).includes(f.diet) && !(x.tags.diet||[]).includes(f.diet)) return false;
+    if (f.style && !(x.queryTerms||[]).includes(f.style) && !(x.tags.style||[]).includes(f.style)) return false;
     return true;
   });
   const top = list.slice(0, RANK_TOP);
