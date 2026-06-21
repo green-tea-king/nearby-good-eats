@@ -393,6 +393,10 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 #areaInput{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 14px;font-size:15px;color:var(--text);font-family:inherit;transition:border-color var(--t);}
 #areaInput::placeholder{color:var(--text-faint);}
 #areaInput:focus{outline:none;border-color:var(--accent);}
+.autocomplete-list{display:flex;flex-direction:column;gap:6px;margin-top:-7px;}
+.autocomplete-item{width:100%;text-align:left;border:1px solid var(--line);background:var(--surface-2);color:var(--text);border-radius:12px;padding:10px 12px;font-size:13px;line-height:1.45;font-family:inherit;}
+.autocomplete-item:active{border-color:var(--accent);background:rgba(200,16,46,.14);}
+.autocomplete-item small{display:block;color:var(--text-faint);font-size:11px;margin-top:2px;}
 .ca-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint);margin:-2px 0 -4px;}
 .city-area{display:flex;gap:9px;}
 .sel{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 13px;font-size:15px;color:var(--text);font-family:inherit;appearance:none;
@@ -606,6 +610,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     </div>
     <input id="areaInput" type="text" inputmode="search" autocomplete="off"
            placeholder="輸入地名、地址或地標，例：台北車站、信義區" />
+    <div id="areaSuggest" class="autocomplete-list hidden"></div>
     <div class="ca-label">或選 縣市 → 區域</div>
     <div class="city-area">
       <select id="citySel" class="sel" aria-label="縣市"></select>
@@ -655,6 +660,7 @@ const CONFIG = {
   DEFAULT_RADIUS_M: 800,     // 步行半徑預設（公尺）
   DISTRICT_RADIUS_M: 3000,   // 選「區」時的範圍：涵蓋全區、忽略步行距離
   WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
+  ROUTE_TIMEOUT_MS: 7000,    // Routes API 逾時後保留直線距離估算，不阻塞畫面
   RESULT_COUNT: 5,           // 取前幾家
   DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 定位失敗時仍用真實 Google 資料搜尋的預設中心
 
@@ -815,7 +821,7 @@ async function cityCandidates(Place, city, area=""){
   try{
     const res = await Place.searchByText({
       textQuery: (area ? city + area : city) + " 餐廳",
-      fields: ["id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName"],
+      fields: ["id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName","reviewSummary","editorialSummary","generativeSummary"],
       maxResultCount: 20, language:"zh-TW", region:"tw",
     });
     return (res.places || []).filter(p => p.rating && p.userRatingCount).map(p => {
@@ -828,6 +834,9 @@ async function cityCandidates(Place, city, area=""){
         pt: p.primaryType || "",
         ptd: toTW(extractText(p.primaryTypeDisplayName) || ""),
         loc: p.location ? { lat:p.location.lat(), lng:p.location.lng() } : null,
+        reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
+        summary: toTW(extractEditorial(p.editorialSummary)),
+        generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
         awards: [],
       };
       o.tags = classifyCandidate(o);
@@ -933,7 +942,7 @@ async function fetchRankRich(cands){
         "isGoodForChildren","isGoodForGroups","hasMenuForChildren","hasRestroom",
         "accessibilityOptions","paymentOptions","parkingOptions",
         "servesVegetarianFood","servesBeer","servesWine","servesCocktails",
-        "reviewSummary","editorialSummary"
+        "reviewSummary","editorialSummary","generativeSummary"
       ]});
       rankRich[c.id] = {
         openNow: isOpenNow(p.regularOpeningHours),
@@ -951,6 +960,7 @@ async function fetchRankRich(cands){
         servesAlcohol:(p.servesBeer===true||p.servesWine===true||p.servesCocktails===true),
         reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
         summary: toTW(extractEditorial(p.editorialSummary)),
+        generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
       };
     }catch(_){ rankRich[c.id] = {}; }
   }));
@@ -965,6 +975,7 @@ function rankCardData(c){
     name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
     dist:null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:null,
+    reviewSummary:c.reviewSummary || "", summary:c.summary || "", generativeSummary:c.generativeSummary || "",
   }, rich);
 }
 
@@ -1157,14 +1168,92 @@ async function pickCityArea(){
 
 function openAreaModal(){
   $("#areaModal").classList.remove("hidden");
+  clearAreaSuggestions();
   setTimeout(()=>$("#areaInput").focus(), 50);
 }
-function closeAreaModal(){ $("#areaModal").classList.add("hidden"); }
+function closeAreaModal(){
+  $("#areaModal").classList.add("hidden");
+  clearAreaSuggestions();
+}
+
+let autocompleteSessionToken = null;
+let autocompleteTimer = null;
+function clearAreaSuggestions(){
+  const box = $("#areaSuggest");
+  if (!box) return;
+  box.classList.add("hidden");
+  box.innerHTML = "";
+}
+async function showAreaSuggestions(q){
+  const box = $("#areaSuggest");
+  if (!box || !q || q.length < 2 || !hasGoogleApiKey){ clearAreaSuggestions(); return; }
+  try{
+    await loadGoogle();
+    const { AutocompleteSessionToken, AutocompleteSuggestion } = await google.maps.importLibrary("places");
+    if (!autocompleteSessionToken) autocompleteSessionToken = new AutocompleteSessionToken();
+    const request = {
+      input: q,
+      sessionToken: autocompleteSessionToken,
+      origin: state.center,
+      language: "zh-TW",
+      region: "tw",
+    };
+    const { suggestions } = await AutocompleteSuggestion.fetchAutocompleteSuggestions(request);
+    const items = (suggestions || []).filter(s => s.placePrediction).slice(0, 5);
+    if (!items.length){ clearAreaSuggestions(); return; }
+    box.innerHTML = items.map((s, i) => {
+      const p = s.placePrediction;
+      const main = toTW(p.text?.toString?.() || "");
+      const secondary = toTW(p.secondaryText?.toString?.() || "");
+      return `<button type="button" class="autocomplete-item" data-suggest="${i}">
+        ${escapeHTML(main)}${secondary?`<small>${escapeHTML(secondary)}</small>`:""}
+      </button>`;
+    }).join("");
+    box.classList.remove("hidden");
+    box.querySelectorAll("[data-suggest]").forEach(btn => {
+      btn.addEventListener("click", () => selectAreaSuggestion(items[Number(btn.dataset.suggest)]));
+    });
+  }catch(e){
+    console.warn("[Autocomplete] 取得建議失敗：", e.message);
+    clearAreaSuggestions();
+  }
+}
+async function selectAreaSuggestion(suggestion){
+  const pred = suggestion?.placePrediction;
+  if (!pred) return;
+  closeAreaModal();
+  setStatus(true, "尋找地點…");
+  try{
+    const place = pred.toPlace();
+    await place.fetchFields({ fields:["displayName","formattedAddress","location"] });
+    if (!place.location) throw new Error("這個地點沒有座標");
+    const label = toTW(place.formattedAddress || extractText(place.displayName) || pred.text?.toString?.() || "選定地點");
+    state.center = { lat: place.location.lat(), lng: place.location.lng() };
+    state.usingArea = true;
+    state.areaName = label;
+    state.wholeArea = /區$/.test(label.trim());
+    $("#scopeLabel").textContent = label;
+    $("#scopeMode").textContent = state.wholeArea ? "整區範圍（不限步行距離）" : "以選定地區為圓心";
+    autocompleteSessionToken = null;
+    if (state.map) state.map.setCenter(state.center);
+    search();
+  }catch(e){
+    autocompleteSessionToken = null;
+    setStatus(false);
+    toast(e.message || "找不到地點");
+  }
+}
 
 $("#areaClose").addEventListener("click", closeAreaModal);
 $("#areaModal").addEventListener("click", e=>{ if(e.target.id==="areaModal") closeAreaModal(); });
 $("#areaGo").addEventListener("click", submitArea);
 $("#areaInput").addEventListener("keydown", e=>{ if(e.key==="Enter") submitArea(); });
+$("#areaInput").addEventListener("input", e=>{
+  clearTimeout(autocompleteTimer);
+  const q = e.target.value.trim();
+  if (!q) { autocompleteSessionToken = null; clearAreaSuggestions(); return; }
+  autocompleteTimer = setTimeout(() => showAreaSuggestions(q), 260);
+});
 $("#areaCurrent").addEventListener("click", ()=>{
   closeAreaModal();
   state.usingArea = false; state.areaName = "目前位置"; state.wholeArea = false;
@@ -1240,6 +1329,7 @@ async function geocode(q){
 async function submitArea(){
   const q = $("#areaInput").value.trim();
   if (!q) return;
+  autocompleteSessionToken = null;
   closeAreaModal();
   setStatus(true, "尋找地點…");
   try{
@@ -1300,7 +1390,7 @@ function loadGoogle() {
   if (gmapsReady) return gmapsReady;
   gmapsReady = new Promise((res, rej) => {
     const s = document.createElement("script");
-    s.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIG.GOOGLE_API_KEY}&v=weekly&libraries=places,marker`;
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIG.GOOGLE_API_KEY}&v=weekly&libraries=places,marker,routes`;
     s.async = true; s.onload = res; s.onerror = () => rej(new Error("Google Maps 載入失敗"));
     document.head.appendChild(s);
   });
@@ -1357,6 +1447,7 @@ async function placesSearch() {
     servesDessert: p.servesDessert===true, servesCoffee: p.servesCoffee===true,
     summary: "",          // editorialSummary 延後對前 5 家補抓（省 Atmosphere 費用）
     reviewSummary: "",    // 同上，由 enrichTop 補
+    generativeSummary: "", // Google AI-powered place summary，由 enrichTop 補
     _place: p,            // 保留 Place 實例供 fetchFields 補抓
     // 真實店家照片（Places photos）：縮圖小張、詳情大張，省流量
     photos:   (p.photos || []).slice(0, 3).map(ph => ph.getURI({ maxWidth: 560, maxHeight: 420 })),
@@ -1399,6 +1490,16 @@ function extractEditorial(es){
   if(typeof es.text==="string") return es.text;
   if(es.text && typeof es.text.text==="string") return es.text.text;
   return "";
+}
+function extractGenerativeSummary(gs){
+  if(!gs) return "";
+  if(typeof gs==="string") return gs;
+  const candidates = [
+    gs.overview, gs.description, gs.summary, gs.text,
+    gs.overview?.text, gs.description?.text, gs.summary?.text, gs.text?.text,
+    gs.overview?.text?.text, gs.description?.text?.text, gs.summary?.text?.text,
+  ];
+  return candidates.find(v => typeof v === "string" && v.trim()) || "";
 }
 function extractText(v){ if(!v) return ""; if(typeof v==="string") return v; if(typeof v.text==="string") return v.text; if(v.text&&typeof v.text.text==="string") return v.text.text; return ""; }
 // 簡體→繁體（台灣用字）。OpenCC 載入後建立轉換器；未就緒時原樣回傳。
@@ -1484,6 +1585,79 @@ function distanceM(a, b){ // haversine
   return 2*R*Math.asin(Math.sqrt(s));
 }
 
+let routeRenderToken = 0;
+function timeoutAfter(ms, label){
+  return new Promise((_, rej) => setTimeout(() => rej(new Error(label || "timeout")), ms));
+}
+function readMatrixItems(response){
+  return response?.matrix?.rows?.[0]?.items || response?.rows?.[0]?.items || [];
+}
+function applyRouteItems(items, targets, prefix){
+  items.forEach((item, i) => {
+    if (!item || item.condition && item.condition !== "ROUTE_EXISTS") return;
+    const r = targets[i]; if (!r) return;
+    const dur = item.durationMillis ?? (item.duration?.value ? item.duration.value * 1000 : null);
+    const dist = item.distanceMeters ?? item.distance?.value ?? null;
+    if (dur) r[`${prefix}Min`] = Math.max(1, Math.round(dur / 60000));
+    if (dist) r[`${prefix}Meters`] = Math.round(dist);
+  });
+}
+async function routeMatrixItems(targets, travelMode){
+  const [{ RouteMatrix }, { UnitSystem }] = await Promise.all([
+    google.maps.importLibrary("routes"),
+    google.maps.importLibrary("core"),
+  ]);
+  const request = {
+    origins: [state.center],
+    destinations: targets.map(r => r._place || r.loc),
+    travelMode,
+    units: UnitSystem.METRIC,
+    fields: ["distanceMeters","durationMillis","condition"],
+  };
+  const response = await Promise.race([
+    RouteMatrix.computeRouteMatrix(request),
+    timeoutAfter(CONFIG.ROUTE_TIMEOUT_MS, "Routes API 逾時"),
+  ]);
+  return readMatrixItems(response);
+}
+function distanceMatrixItems(targets, travelMode){
+  return new Promise((resolve, reject) => {
+    const svc = new google.maps.DistanceMatrixService();
+    svc.getDistanceMatrix({
+      origins: [state.center],
+      destinations: targets.map(r => r.loc),
+      travelMode,
+      unitSystem: google.maps.UnitSystem.METRIC,
+    }, (res, status) => {
+      if (status !== "OK") { reject(new Error(status)); return; }
+      const elements = res?.rows?.[0]?.elements || [];
+      resolve(elements.map(e => ({
+        condition: e.status === "OK" ? "ROUTE_EXISTS" : e.status,
+        distanceMeters: e.distance?.value,
+        durationMillis: e.duration?.value ? e.duration.value * 1000 : null,
+      })));
+    });
+  });
+}
+async function enrichRoutes(){
+  const token = ++routeRenderToken;
+  const targets = state.ranked.filter(r => r.loc && r.dist != null);
+  if (!targets.length || !hasGoogleApiKey) return;
+  try{
+    await loadGoogle();
+    const [walk, drive] = await Promise.all([
+      routeMatrixItems(targets, "WALKING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.WALKING)),
+      routeMatrixItems(targets, "DRIVING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.DRIVING)),
+    ]);
+    if (token !== routeRenderToken) return;
+    applyRouteItems(walk, targets, "walk");
+    applyRouteItems(drive, targets, "drive");
+    renderList();
+  }catch(e){
+    console.warn("[路線] Google 路線時間取得失敗，保留直線距離估算：", e.message);
+  }
+}
+
 function rankAndRender(){
   let items = state.raw.map(i => ({ ...i, dist: Math.round(distanceM(state.center, i.loc)) }));
   if (state.openOnly) items = items.filter(i => i.openNow === true);
@@ -1512,6 +1686,7 @@ function rankAndRender(){
   renderList();
   if (state.map) renderMarkers();
   enrichTop();        // 只對前 5 家補抓 Google 簡介/評論摘要（省 Atmosphere 費用），完成後再 render
+  enrichRoutes();     // 以 Google 路線服務補上實際步行/開車時間，完成後再 render
 }
 
 // 排名後只對前 5 家補抓 Atmosphere 欄位（reviewSummary/editorialSummary）
@@ -1520,12 +1695,14 @@ async function enrichTop(){
   if (!list.length) return;
   try{
     await Promise.all(list.map(async r=>{
-      // 只抓兩段摘要（已不抓個別 reviews，省 Atmosphere 費用、且詳情只顯示融合摘要）
-      await r._place.fetchFields({ fields:["reviewSummary","editorialSummary"] });
+      // 只抓摘要欄位（已不抓個別 reviews，省 Atmosphere 費用、且詳情只顯示融合摘要）
+      await r._place.fetchFields({ fields:["reviewSummary","editorialSummary","generativeSummary"] });
       const rs = toTW(extractReviewSummary(r._place.reviewSummary));
       const ed = toTW(extractEditorial(r._place.editorialSummary));
+      const gs = toTW(extractGenerativeSummary(r._place.generativeSummary));
       if (rs) r.reviewSummary = rs;
       if (ed) r.summary = ed;
+      if (gs) r.generativeSummary = gs;
     }));
   }catch(_){}
   applyAI();          // 用補抓到的簡介重算上榜理由
@@ -1574,11 +1751,25 @@ function setSummary(){
   $("#status").innerHTML = `${where} · ${scope} · 前 ${state.ranked.length} 家`;
 }
 
+function routeSummary(r){
+  if (r.dist == null) return "";
+  const walk = r.walkMin ? `步行 ${r.walkMin} 分` : `步行約 ${Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN))} 分`;
+  const drive = r.driveMin ? `開車 ${r.driveMin} 分` : "";
+  return [walk, drive].filter(Boolean).join(" · ");
+}
+function routeDetail(r){
+  if (r.dist == null) return "";
+  const parts = [];
+  if (r.walkMin) parts.push(`步行 ${r.walkMin} 分${r.walkMeters?`・${r.walkMeters.toLocaleString()} m`:""}`);
+  if (r.driveMin) parts.push(`開車 ${r.driveMin} 分${r.driveMeters?`・${r.driveMeters.toLocaleString()} m`:""}`);
+  return parts.join("｜");
+}
+
 function cardHTML(r, rank){
   const price = r.priceLevel ? "$".repeat(r.priceLevel) : "";
   // 一般搜尋顯示步行距離；排行榜（dist 為 null）改顯示縣市 + 綜合分數
   const distChip = (r.dist != null)
-    ? `<span class="dist">步行 ${Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN))} 分 · ${r.dist} m</span>`
+    ? `<span class="dist">${escapeHTML(routeSummary(r))} · ${r.dist} m</span>`
     : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
@@ -1589,7 +1780,9 @@ function cardHTML(r, rank){
   // AI 理由：有就顯示，否則 placeholder（Step 3）
   const ai = r.aiReason
     ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
-    : (r.reviewSummary
+    : (r.generativeSummary
+      ? `<div class="ai-reason">Google AI 摘要：${escapeHTML(r.generativeSummary)}</div>`
+      : r.reviewSummary
       ? `<div class="ai-reason">Google 評論摘要：${escapeHTML(r.reviewSummary)}</div>`
       : `<div class="ai-reason placeholder">AI 解讀未啟用</div>`);
   const fallback = "this.style.visibility='hidden'";
@@ -1644,6 +1837,8 @@ function cardHTML(r, rank){
       <div class="detail-inner">
         ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
         ${r.lbFormula?`<div class="line"><span class="k">綜合</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
+        ${routeDetail(r)?`<div class="line"><span class="k">路線</span><span class="v">${escapeHTML(routeDetail(r))}</span></div>`:""}
+        ${r.generativeSummary?`<div class="line"><span class="k">AI摘要</span><span class="v sum3">${escapeHTML(r.generativeSummary)}</span></div>`:""}
         ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v sum3">${escapeHTML(r.reviewSummary)}</span></div>`:""}
         ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
         ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
