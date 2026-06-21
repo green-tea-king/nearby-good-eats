@@ -269,8 +269,9 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 
 /* 展開詳情 */
 .detail{margin-top:0;max-height:0;overflow:hidden;transition:max-height var(--t) ease;}
-.detail.open{max-height:1000px;}
+.detail.open{max-height:1500px;}
 .detail-inner .hours{line-height:1.75;}
+.detail-inner .v b{color:var(--text);font-weight:600;}
 .detail-inner .links a{color:var(--accent-bright);text-decoration:none;border-bottom:1px solid rgba(236,90,106,.4);}
 .detail-inner .links a:active{color:var(--text);}
 .detail-inner{padding-top:16px;margin-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--text-dim);display:flex;flex-direction:column;gap:10px;line-height:1.6;}
@@ -337,9 +338,9 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 
 <!-- ============ 開場 ============ -->
 <section id="splash">
-  <div class="logo">台北 · 步行美食指南</div>
-  <h1>走幾步<br>就吃到好的</h1>
-  <p class="sub">先選位置，再為你選出步行可達、口碑與評鑑兼具的前五家。</p>
+  <div class="logo">吃3小吃</div>
+  <h1>台灣美食地圖</h1>
+  <p class="sub">時間，地點，美食，任選</p>
 
   <div class="entry-list">
     <button class="entry entry-primary" id="btnLocate">
@@ -916,7 +917,9 @@ async function placesSearch() {
     fields: ["id","displayName","location","rating","userRatingCount",
              "priceLevel","priceRange","regularOpeningHours","businessStatus","formattedAddress",
              "nationalPhoneNumber","websiteURI","googleMapsURI","primaryTypeDisplayName","photos",
-             "dineIn","takeout","delivery","reservable","outdoorSeating","allowsDogs",
+             "hasDineIn","hasTakeout","hasDelivery","hasCurbsidePickup","isReservable","hasOutdoorSeating",
+             "allowsDogs","hasLiveMusic","isGoodForChildren","isGoodForGroups","hasMenuForChildren","hasRestroom",
+             "accessibilityOptions","paymentOptions","parkingOptions",
              "servesVegetarianFood","servesBeer","servesWine","servesCocktails",
              "servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee"],
     locationRestriction: { center: state.center, radius: state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius },
@@ -941,9 +944,14 @@ async function placesSearch() {
     typeName: extractText(p.primaryTypeDisplayName),           // 類型（餐廳/咖啡廳…）
     website: p.websiteURI || "",
     mapsUri: p.googleMapsURI || "",
-    // 服務/供應（布林；只在明確 true 才採用）
-    dineIn: p.dineIn===true, takeout: p.takeout===true, delivery: p.delivery===true,
-    reservable: p.reservable===true, outdoor: p.outdoorSeating===true, allowsDogs: p.allowsDogs===true,
+    // 服務/供應/設施（布林；只在明確 true 才採用；JS 欄位名有 has/is 前綴）
+    dineIn: p.hasDineIn===true, takeout: p.hasTakeout===true, delivery: p.hasDelivery===true,
+    curbside: p.hasCurbsidePickup===true, reservable: p.isReservable===true, outdoor: p.hasOutdoorSeating===true,
+    allowsDogs: p.allowsDogs===true, liveMusic: p.hasLiveMusic===true,
+    goodKids: p.isGoodForChildren===true, goodGroups: p.isGoodForGroups===true,
+    menuKids: p.hasMenuForChildren===true, restroom: p.hasRestroom===true,
+    accessStr: accessText(p.accessibilityOptions), payStr: payText(p.paymentOptions), parkStr: parkText(p.parkingOptions),
+    reviews: [],
     servesVeg: p.servesVegetarianFood===true,
     servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
     servesBreakfast: p.servesBreakfast===true, servesLunch: p.servesLunch===true,
@@ -1005,6 +1013,9 @@ function priceRangeText(pr){
   if(e) return `NT$ ${e} 以下`;
   return "";
 }
+function accessText(a){ if(!a) return ""; const t=[]; if(a.hasWheelchairAccessibleEntrance)t.push("輪椅入口"); if(a.hasWheelchairAccessibleSeating)t.push("座位"); if(a.hasWheelchairAccessibleRestroom)t.push("廁所"); if(a.hasWheelchairAccessibleParking)t.push("停車"); return t.length?t.join("・"):""; }
+function payText(p){ if(!p) return ""; if(p.acceptsCashOnly) return "僅收現金"; const t=[]; if(p.acceptsCreditCards)t.push("信用卡"); if(p.acceptsDebitCards)t.push("金融卡"); if(p.acceptsNfc)t.push("行動支付"); return t.length?t.join("・"):""; }
+function parkText(p){ if(!p) return ""; const t=[]; if(p.hasFreeParkingLot)t.push("免費停車場"); if(p.hasPaidParkingLot)t.push("付費停車場"); if(p.hasFreeStreetParking)t.push("免費路邊"); if(p.hasPaidStreetParking)t.push("付費路邊"); if(p.hasValetParking)t.push("代客泊車"); if(p.hasFreeGarageParking||p.hasPaidGarageParking)t.push("室內停車"); return t.length?t.join("・"):""; }
 
 /* ============================================================
    排名：貝氏加權 + 加分 → 排序 → 取前五
@@ -1093,11 +1104,16 @@ async function enrichTop(){
   if (!list.length) return;
   try{
     await Promise.all(list.map(async r=>{
-      await r._place.fetchFields({ fields:["reviewSummary","editorialSummary"] });
+      await r._place.fetchFields({ fields:["reviewSummary","editorialSummary","reviews"] });
       const rs = extractReviewSummary(r._place.reviewSummary);
       const ed = extractEditorial(r._place.editorialSummary);
       if (rs) r.reviewSummary = rs;
       if (ed) r.summary = ed;
+      r.reviews = (r._place.reviews||[]).slice(0,2).map(rv=>({
+        name: extractText(rv.authorAttribution?.displayName) || "訪客",
+        rating: rv.rating || 0,
+        text: (extractText(rv.text) || "").replace(/\s+/g," ").trim()
+      })).filter(rv=>rv.text);
     }));
   }catch(_){}
   applyAI();          // 用補抓到的簡介重算上榜理由
@@ -1176,6 +1192,8 @@ function cardHTML(r, rank){
   if (r.servesAlcohol) feats.push("供應酒");
   if (r.outdoor) feats.push("戶外座位");
   if (r.allowsDogs) feats.push("寵物友善");
+  if (r.goodGroups) feats.push("適合團體");
+  if (r.liveMusic) feats.push("現場音樂");
   const featRow = feats.length ? `<div class="feats">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</div>` : "";
 
   return `
@@ -1209,12 +1227,15 @@ function cardHTML(r, rank){
     <div class="detail">
       <div class="detail-inner">
         ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
-        ${r.reviewSummary
-          ? `<div class="line"><span class="k">評論</span><span class="v">${escapeHTML(r.reviewSummary)}</span></div>`
-          : `<div class="ph">評論摘要 — AI 生成</div>`}
+        ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v">${escapeHTML(r.reviewSummary)}</span></div>`:""}
+        ${(r.reviews&&r.reviews.length)?r.reviews.map(rv=>`<div class="line"><span class="k">評論</span><span class="v"><b>${escapeHTML(rv.name)}</b> ★${rv.rating}　${escapeHTML(rv.text.slice(0,90))}${rv.text.length>90?"…":""}</span></div>`).join(""):""}
         ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
         ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
         ${r.priceText?`<div class="line"><span class="k">價位</span><span class="v">${escapeHTML(r.priceText)}</span></div>`:""}
+        ${(()=>{const t=[];if(r.goodKids)t.push("適合小孩");if(r.goodGroups)t.push("適合團體");if(r.menuKids)t.push("兒童菜單");if(r.restroom)t.push("有廁所");return t.length?`<div class="line"><span class="k">適合</span><span class="v">${escapeHTML(t.join("・"))}</span></div>`:"";})()}
+        ${r.accessStr?`<div class="line"><span class="k">無障礙</span><span class="v">${escapeHTML(r.accessStr)}</span></div>`:""}
+        ${r.payStr?`<div class="line"><span class="k">付款</span><span class="v">${escapeHTML(r.payStr)}</span></div>`:""}
+        ${r.parkStr?`<div class="line"><span class="k">停車</span><span class="v">${escapeHTML(r.parkStr)}</span></div>`:""}
         <div class="line"><span class="k">地址</span><span class="v">${escapeHTML(r.address||"—")}</span></div>
         <div class="line"><span class="k">電話</span><span class="v">${escapeHTML(r.phone||"—")}</span></div>
         ${(r.website||r.mapsUri)?`<div class="line"><span class="k">連結</span><span class="v links">${[r.website?`<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">官方網站</a>`:"", r.mapsUri?`<a href="${escapeHTML(r.mapsUri)}" target="_blank" rel="noopener">Google 地圖</a>`:""].filter(Boolean).join(" · ")}</span></div>`:""}
