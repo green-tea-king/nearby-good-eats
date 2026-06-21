@@ -250,6 +250,10 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 .badge.plate{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.26);}
 .badge.placeholder{display:none;}
 
+/* 服務/供應標籤（中性灰，與彩色評鑑徽章區隔） */
+.feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.feat{font-size:10.5px;letter-spacing:.04em;padding:3px 9px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);color:var(--text-dim);}
+
 /* AI 上榜理由：斜體襯線引文 */
 .ai-reason{
   margin-top:14px;font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;
@@ -532,6 +536,7 @@ const CONFIG = {
   // ── 距離 / 營業 對排名的影響（綜合排序時）
   DISTANCE_PENALTY_PER_100M: 0.04, // 每 100m 扣分
   OPEN_BONUS: 0.05,                // 目前營業中加分
+  MEAL_MATCH_BONUS: 0.06,          // 該店明確供應「當前時段」餐點時加分（讓時段篩選更準）
 
   SORT_DEFAULT: "composite",       // composite | distance | rating
   OPEN_ONLY_DEFAULT: false,        // 「只看營業中」預設
@@ -910,7 +915,10 @@ async function placesSearch() {
     // 初次只抓較便宜欄位（不含 Atmosphere 的 reviewSummary/editorialSummary），排名後只對前 5 家補抓
     fields: ["id","displayName","location","rating","userRatingCount",
              "priceLevel","priceRange","regularOpeningHours","businessStatus","formattedAddress",
-             "nationalPhoneNumber","websiteURI","googleMapsURI","primaryTypeDisplayName","photos"],
+             "nationalPhoneNumber","websiteURI","googleMapsURI","primaryTypeDisplayName","photos",
+             "dineIn","takeout","delivery","reservable","outdoorSeating","allowsDogs",
+             "servesVegetarianFood","servesBeer","servesWine","servesCocktails",
+             "servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee"],
     locationRestriction: { center: state.center, radius: state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius },
     includedPrimaryTypes: mealTypes(),
     maxResultCount: 20,
@@ -933,6 +941,14 @@ async function placesSearch() {
     typeName: extractText(p.primaryTypeDisplayName),           // 類型（餐廳/咖啡廳…）
     website: p.websiteURI || "",
     mapsUri: p.googleMapsURI || "",
+    // 服務/供應（布林；只在明確 true 才採用）
+    dineIn: p.dineIn===true, takeout: p.takeout===true, delivery: p.delivery===true,
+    reservable: p.reservable===true, outdoor: p.outdoorSeating===true, allowsDogs: p.allowsDogs===true,
+    servesVeg: p.servesVegetarianFood===true,
+    servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
+    servesBreakfast: p.servesBreakfast===true, servesLunch: p.servesLunch===true,
+    servesDinner: p.servesDinner===true, servesBrunch: p.servesBrunch===true,
+    servesDessert: p.servesDessert===true, servesCoffee: p.servesCoffee===true,
     summary: "",          // editorialSummary 延後對前 5 家補抓（省 Atmosphere 費用）
     reviewSummary: "",    // 同上，由 enrichTop 補
     _place: p,            // 保留 Place 實例供 fetchFields 補抓
@@ -1018,6 +1034,21 @@ function awardBonus(awards){
   return b;
 }
 
+// 該店明確供應「當前時段」餐點 → 小加分（讓時段篩選更準；資料缺就不加，不硬篩）
+function mealMatchBonus(r){
+  const c = state.category;
+  if (!c || !MEALS[c]) return 0;
+  const matches = {
+    breakfast: r.servesBreakfast,
+    morningtea: r.servesBrunch || r.servesCoffee,
+    lunch: r.servesLunch,
+    afttea: r.servesCoffee || r.servesDessert,
+    dinner: r.servesDinner,
+    dessert: r.servesDessert,
+  }[c];
+  return matches === true ? CONFIG.MEAL_MATCH_BONUS : 0;
+}
+
 function distanceM(a, b){ // haversine
   const R=6371000, toR=x=>x*Math.PI/180;
   const dLat=toR(b.lat-a.lat), dLng=toR(b.lng-a.lng);
@@ -1036,7 +1067,8 @@ function rankAndRender(){
     i.composite = i.bayesScore
       + awardBonus(i.awards)
       - (state.wholeArea ? 0 : (i.dist/100) * CONFIG.DISTANCE_PENALTY_PER_100M)
-      + (i.openNow === true ? CONFIG.OPEN_BONUS : 0);
+      + (i.openNow === true ? CONFIG.OPEN_BONUS : 0)
+      + mealMatchBonus(i);
   });
 
   const cmp = {
@@ -1134,6 +1166,17 @@ function cardHTML(r, rank){
   const photoStrip = photoUrls.length
     ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map(u=>`<img class="ph-img" src="${escapeHTML(u)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="this.remove()">`).join("")}</div>`
     : "";
+  // 服務/供應標籤（只列出明確為 true 的）
+  const feats = [];
+  if (r.dineIn) feats.push("內用");
+  if (r.takeout) feats.push("外帶");
+  if (r.delivery) feats.push("外送");
+  if (r.reservable) feats.push("可訂位");
+  if (r.servesVeg) feats.push("素食");
+  if (r.servesAlcohol) feats.push("供應酒");
+  if (r.outdoor) feats.push("戶外座位");
+  if (r.allowsDogs) feats.push("寵物友善");
+  const featRow = feats.length ? `<div class="feats">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</div>` : "";
 
   return `
   <div class="card">
@@ -1151,6 +1194,7 @@ function cardHTML(r, rank){
       </div>
     </div>
     <div class="badges">${badges}</div>
+    ${featRow}
     ${photoStrip}
     ${ai}
     <div class="actions">
