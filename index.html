@@ -144,6 +144,10 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-row .meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);}
 .rank-row .meta .star{color:var(--accent-bright);}
 .rank-row .meta .bdg{font-size:10px;padding:1px 6px;border-radius:5px;border:1px solid var(--line);color:var(--text-dim);}
+.rank-row .calc{font-family:var(--mono);font-size:10.5px;line-height:1.4;color:var(--text-faint);letter-spacing:.01em;}
+.rank-row .score{flex:none;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:48px;padding-left:6px;}
+.rank-row .score b{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:18px;font-weight:600;color:var(--accent-bright);line-height:1;}
+.rank-row .score i{font-style:normal;font-size:9.5px;letter-spacing:.12em;color:var(--text-faint);}
 .rank-row .crown{flex:none;color:var(--accent-bright);opacity:.9;}
 .rank-row .arr{flex:none;color:var(--text-faint);}
 .rank-row.loading .nm,.rank-row.loading .meta{color:var(--text-faint);}
@@ -701,7 +705,7 @@ $("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
    - 每個縣市用 Place.searchByText 取前段店家，套用與主排名相同的貝氏加權＋評鑑加分，取第一
    - 結果存 localStorage 快取（7 天），避免每次開啟都重打 22 次 API
    ============================================================ */
-const RANK_CACHE_KEY = "twfood_leaderboard_v1";
+const RANK_CACHE_KEY = "twfood_leaderboard_v2";
 const RANK_CACHE_TTL = 7 * 864e5;   // 7 天
 
 async function openLeaderboard(force){
@@ -767,10 +771,11 @@ async function cityChampion(Place, city){
     if (!items.length) return { city, empty:true };
     applyAwards(items);                         // 台北等已收錄縣市可疊加評鑑
     const m = computeM(items);
-    items.forEach(i => { i.composite = bayes(i, m) + awardBonus(i.awards); });
+    items.forEach(i => { i.bScore = bayes(i, m); i.aBonus = awardBonus(i.awards); i.composite = i.bScore + i.aBonus; });
     items.sort((a,b) => b.composite - a.composite);
     const w = items[0];
-    return { city, name:w.name, rating:w.rating, count:w.count, awards:w.awards||[], address:w.address };
+    return { city, name:w.name, rating:w.rating, count:w.count, awards:w.awards||[], address:w.address,
+             composite:w.composite, bScore:w.bScore, aBonus:w.aBonus, m:Math.round(m*100)/100 };
   }catch(_){
     return { city, empty:true };
   }
@@ -782,13 +787,18 @@ function renderRankRows(rows){
     if (r.empty || !r.name) return `<div class="rank-row empty"><span class="city">${escapeHTML(r.city)}</span><div class="body"><span class="nm">查無資料</span></div></div>`;
     const bdg = (r.awards && r.awards.length) ? `<span class="bdg">${r.awards.some(a=>a.guide==="michelin")?"米其林":r.awards.some(a=>a.guide==="bib")?"必比登":"500盤"}</span>` : "";
     const q = encodeURIComponent(r.name + " " + r.city);
+    const C = CONFIG.BAYES.C;
+    const n = r.count.toLocaleString();
+    const calc = (r.composite != null) ? `<span class="calc">貝氏 (${C}×${r.m}＋${n}×${r.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${r.bScore.toFixed(2)}${r.aBonus>0?`　＋評鑑 ${r.aBonus.toFixed(2)}`:``}</span>` : ``;
+    const score = (r.composite != null) ? `<span class="score"><b>${r.composite.toFixed(2)}</b><i>綜合</i></span>` : `<svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>`;
     return `<a class="rank-row" href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">
       <span class="city">${escapeHTML(r.city)}</span>
       <div class="body">
         <span class="nm">${escapeHTML(r.name)}</span>
         <span class="meta"><span class="star">★ ${r.rating.toFixed(1)}</span><span class="count">${r.count.toLocaleString()} 則</span>${bdg}</span>
+        ${calc}
       </div>
-      <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      ${score}
     </a>`;
   }).join("");
 }
