@@ -228,7 +228,7 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 .head{flex:1;min-width:0;padding-top:1px;}
 /* 主卡縮圖 */
 .thumb{flex:none;width:70px;height:70px;border-radius:10px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line);}
-.name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.18;letter-spacing:.005em;}
+.name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.18;letter-spacing:.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 12px;margin-top:8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
 .rating{color:var(--text);font-weight:500;}
 .rating .star{color:var(--gold);}
@@ -900,9 +900,10 @@ async function placesSearch() {
   await loadGoogle();
   const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary("places");
   const req = {
+    // 初次只抓較便宜欄位（不含 Atmosphere 的 reviewSummary/editorialSummary），排名後只對前 5 家補抓
     fields: ["id","displayName","location","rating","userRatingCount",
              "priceLevel","regularOpeningHours","businessStatus","formattedAddress",
-             "nationalPhoneNumber","editorialSummary","photos","reviewSummary"],
+             "nationalPhoneNumber","photos"],
     locationRestriction: { center: state.center, radius: state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius },
     includedPrimaryTypes: mealTypes(),
     maxResultCount: 20,
@@ -920,9 +921,9 @@ async function placesSearch() {
     openNow: isOpenNow(p.regularOpeningHours),
     address: p.formattedAddress || "",
     phone: p.nationalPhoneNumber || "",
-    summary: p.editorialSummary || "",
-    // Google 生成的評論摘要（Atmosphere SKU；zh-TW 有時回空，會自動退回規則摘要）
-    reviewSummary: extractReviewSummary(p.reviewSummary),
+    summary: "",          // editorialSummary 延後對前 5 家補抓（省 Atmosphere 費用）
+    reviewSummary: "",    // 同上，由 enrichTop 補
+    _place: p,            // 保留 Place 實例供 fetchFields 補抓
     // 真實店家照片（Places photos）：縮圖小張、詳情大張，省流量
     photo:    p.photos?.[0]?.getURI({ maxWidth: 200, maxHeight: 200 }) || "",
     photoBig: p.photos?.[0]?.getURI({ maxWidth: 800, maxHeight: 480 }) || "",
@@ -955,6 +956,13 @@ function extractReviewSummary(rs){
   if(typeof rs==="string") return rs;
   if(typeof rs.text==="string") return rs.text;
   if(rs.text && typeof rs.text.text==="string") return rs.text.text;
+  return "";
+}
+function extractEditorial(es){
+  if(!es) return "";
+  if(typeof es==="string") return es;
+  if(typeof es.text==="string") return es.text;
+  if(es.text && typeof es.text.text==="string") return es.text.text;
   return "";
 }
 
@@ -1016,9 +1024,28 @@ function rankAndRender(){
 
   state.ranked = items.slice(0, CONFIG.RESULT_COUNT);
   setStatus(false);
-  applyAI();          // Step 3：填入上榜理由＋評論摘要（demo 同步 / live 非同步後再 render）
+  applyAI();          // 規則文案先上（含 fallback 摘要）
   renderList();
   if (state.map) renderMarkers();
+  enrichTop();        // 只對前 5 家補抓 Google 簡介/評論摘要（省 Atmosphere 費用），完成後再 render
+}
+
+// 排名後只對前 5 家補抓 Atmosphere 欄位（reviewSummary/editorialSummary）；fetchFields 會快取，不重複計費
+async function enrichTop(){
+  if (demoMode) return;
+  const list = state.ranked.filter(r => r._place);
+  if (!list.length) return;
+  try{
+    await Promise.all(list.map(async r=>{
+      await r._place.fetchFields({ fields:["reviewSummary","editorialSummary"] });
+      const rs = extractReviewSummary(r._place.reviewSummary);
+      const ed = extractEditorial(r._place.editorialSummary);
+      if (rs) r.reviewSummary = rs;
+      if (ed) r.summary = ed;
+    }));
+  }catch(_){}
+  applyAI();          // 用補抓到的簡介重算上榜理由
+  renderList();
 }
 
 /* ============================================================
@@ -1028,7 +1055,11 @@ function renderList(){
   const list = $("#list");
   renderOverview(state.ranked.length ? state.overview : "");
   if (!state.ranked.length){
-    list.innerHTML = `<div class="detail-inner"><div class="ph">這個範圍內沒有符合條件的餐廳。<br>試試拉大搜尋半徑，或關閉「只看營業中」。</div></div>`;
+    const narrow = state.category && !["lunch","dinner","all"].includes(state.category);
+    const hint = narrow
+      ? `「${(MEALS[state.category]||{}).label||""}」這個時段附近選擇較少，試試換個時段或選「不限」，也可拉大半徑、關閉「只看營業中」。`
+      : `試試拉大搜尋半徑，或關閉「只看營業中」。`;
+    list.innerHTML = `<div class="detail-inner"><div class="ph">這個範圍內沒有符合條件的餐廳。<br>${hint}</div></div>`;
     setSummary();
     return;
   }
@@ -1312,8 +1343,11 @@ function topAwardText(awards){
 function demoReason(r){
   const walk = Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN));
   const award = topAwardText(r.awards);
+  const ed = (r.summary || "").trim();
+  // 有 Google 官方簡介就優先當開頭（更貼該店）；否則用評鑑
+  const lead = (ed && ed.length <= 26) ? ed : (award ? award + "肯定" : "");
   const bits = [];
-  if (award) bits.push(award + "肯定");
+  if (lead) bits.push(lead);
   bits.push(r.count>=1000
     ? `${r.count.toLocaleString()} 則評論仍守住 ${r.rating.toFixed(1)} 分`
     : `${r.rating.toFixed(1)} 分（${r.count.toLocaleString()} 則）`);
