@@ -108,6 +108,34 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .entry-primary .tx b{color:var(--on-accent);}
 .entry-primary .tx i{color:rgba(255,246,243,.82);}
 .entry-primary:active{filter:brightness(1.05);}
+
+/* ============================================================
+   美食排行榜
+   ============================================================ */
+#rankView{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;}
+.rank-head{flex:none;display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--bg);}
+.rank-back,.rank-refresh{flex:none;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t);}
+.rank-back:active,.rank-refresh:active{color:var(--accent-bright);border-color:var(--accent);}
+.rank-refresh.spin svg{animation:rkspin .8s linear infinite;}
+@keyframes rkspin{to{transform:rotate(360deg);}}
+.rank-titles{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;}
+.rank-titles b{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.01em;color:var(--text);}
+.rank-titles i{font-style:normal;font-size:11.5px;color:var(--text-dim);letter-spacing:.04em;}
+.rank-list{flex:1;overflow-y:auto;padding:8px 14px 4px;}
+.rank-row{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:13px 6px;border-bottom:1px solid var(--line);background:none;}
+.rank-row:last-child{border-bottom:none;}
+.rank-row:active{background:var(--surface);}
+.rank-row .city{flex:none;width:62px;font-size:13px;font-weight:500;color:var(--accent-bright);letter-spacing:.02em;line-height:1.3;}
+.rank-row .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;}
+.rank-row .nm{font-size:15px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rank-row .meta{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-dim);}
+.rank-row .meta .star{color:var(--accent-bright);}
+.rank-row .meta .bdg{font-size:10px;padding:1px 6px;border-radius:5px;border:1px solid var(--line);color:var(--text-dim);}
+.rank-row .crown{flex:none;color:var(--accent-bright);opacity:.9;}
+.rank-row .arr{flex:none;color:var(--text-faint);}
+.rank-row.loading .nm,.rank-row.loading .meta{color:var(--text-faint);}
+.rank-row.empty .nm{color:var(--text-faint);}
+.rank-foot{flex:none;padding:13px 20px 22px;font-size:11px;line-height:1.6;color:var(--text-faint);border-top:1px solid var(--line);}
 #splash .logo{
   font-size:11px;letter-spacing:.34em;color:var(--accent-bright);
   text-transform:uppercase;font-weight:500;
@@ -365,7 +393,27 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
       <span class="tx"><b>用地圖選位置</b><i>在地圖上指定</i></span>
       <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
     </button>
+    <button class="entry" id="btnRanking">
+      <span class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6m12 5h1.5a2.5 2.5 0 0 0 0-5H18M6 4v6a6 6 0 0 0 12 0V4M8 21h8M9 17v4M15 17v4"/></svg></span>
+      <span class="tx"><b>美食排行榜</b><i>各縣市綜合冠軍</i></span>
+      <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
   </div>
+</section>
+
+<!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
+<section id="rankView" class="hidden">
+  <div class="rank-head">
+    <button class="rank-back" id="rankBack" aria-label="返回">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div class="rank-titles"><b>美食排行榜</b><i>全台 22 縣市・綜合評價冠軍</i></div>
+    <button class="rank-refresh" id="rankRefresh" aria-label="重新整理" title="重新整理">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
+    </button>
+  </div>
+  <div class="rank-list" id="rankList"></div>
+  <p class="rank-foot">綜合評價＝Google 評分與評論數的貝氏加權，並疊加米其林／必比登／500盤加分。資料取各縣市搜尋前段店家，每週更新一次。</p>
 </section>
 
 <!-- ============ 主畫面 ============ -->
@@ -611,6 +659,106 @@ $("#btnLocate").addEventListener("click", () => { enterApp(); locateThenSearch()
 $("#btnSearchName").addEventListener("click", () => { enterApp(); openAreaModal(); });
 $("#btnCityArea").addEventListener("click", () => { enterApp(); openAreaModal(); });
 $("#btnMapPick2").addEventListener("click", () => { enterApp(); openPickMap(); });
+$("#btnRanking").addEventListener("click", () => openLeaderboard(false));
+$("#rankBack").addEventListener("click", () => { $("#rankView").classList.add("hidden"); });
+$("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
+
+/* ============================================================
+   美食排行榜：各縣市「綜合評價」冠軍
+   - 每個縣市用 Place.searchByText 取前段店家，套用與主排名相同的貝氏加權＋評鑑加分，取第一
+   - 結果存 localStorage 快取（7 天），避免每次開啟都重打 22 次 API
+   ============================================================ */
+const RANK_CACHE_KEY = "twfood_leaderboard_v1";
+const RANK_CACHE_TTL = 7 * 864e5;   // 7 天
+
+async function openLeaderboard(force){
+  $("#splash").classList.add("hidden");
+  const view = $("#rankView"); view.classList.remove("hidden");
+  const listEl = $("#rankList");
+
+  // 先嘗試快取
+  if (!force){
+    try{
+      const c = JSON.parse(localStorage.getItem(RANK_CACHE_KEY) || "null");
+      if (c && c.rows && (Date.now() - c.t) < RANK_CACHE_TTL){ renderRankRows(c.rows); return; }
+    }catch(_){}
+  }
+
+  if (demoMode){ listEl.innerHTML = `<div class="rank-row empty"><span class="city">—</span><div class="body"><span class="nm">需要 Google 金鑰才能載入排行榜</span></div></div>`; return; }
+
+  // 先畫出 22 縣市的載入骨架
+  renderRankRows(TW_CITIES.map(city => ({ city, loading:true })));
+  const btn = $("#rankRefresh"); btn.classList.add("spin");
+
+  try{
+    await loadGoogle();
+    await ensureAwards();
+    const { Place } = await google.maps.importLibrary("places");
+    const rows = [];
+    // 逐市查詢（小批並行，兼顧速度與配額）
+    const BATCH = 4;
+    for (let i = 0; i < TW_CITIES.length; i += BATCH){
+      const slice = TW_CITIES.slice(i, i + BATCH);
+      const got = await Promise.all(slice.map(city => cityChampion(Place, city)));
+      got.forEach((row, k) => { rows[i + k] = row; });
+      renderRankRows([...rows, ...TW_CITIES.slice(rows.length).map(city => ({ city, loading:true }))].slice(0, TW_CITIES.length));
+    }
+    try{ localStorage.setItem(RANK_CACHE_KEY, JSON.stringify({ t: Date.now(), rows })); }catch(_){}
+    renderRankRows(rows);
+  }catch(e){
+    console.error(e);
+    listEl.innerHTML = `<div class="rank-row empty"><span class="city">—</span><div class="body"><span class="nm">排行榜載入失敗：${escapeHTML(e.message)}</span></div></div>`;
+  }finally{
+    btn.classList.remove("spin");
+  }
+}
+
+// 取某縣市的綜合冠軍
+async function cityChampion(Place, city){
+  try{
+    const res = await Place.searchByText({
+      textQuery: city + " 餐廳",
+      fields: ["id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel"],
+      maxResultCount: 20, language:"zh-TW", region:"tw",
+    });
+    const items = (res.places || [])
+      .filter(p => p.rating && p.userRatingCount)
+      .map(p => ({
+        name: toTW(extractText(p.displayName) || p.displayName || ""),
+        rating: p.rating || 0,
+        count: p.userRatingCount || 0,
+        loc: p.location ? { lat: p.location.lat(), lng: p.location.lng() } : null,
+        address: toTW(p.formattedAddress || ""),
+        awards: [],
+      }));
+    if (!items.length) return { city, empty:true };
+    applyAwards(items);                         // 台北等已收錄縣市可疊加評鑑
+    const m = computeM(items);
+    items.forEach(i => { i.composite = bayes(i, m) + awardBonus(i.awards); });
+    items.sort((a,b) => b.composite - a.composite);
+    const w = items[0];
+    return { city, name:w.name, rating:w.rating, count:w.count, awards:w.awards||[], address:w.address };
+  }catch(_){
+    return { city, empty:true };
+  }
+}
+
+function renderRankRows(rows){
+  $("#rankList").innerHTML = rows.map(r => {
+    if (r.loading) return `<div class="rank-row loading"><span class="city">${escapeHTML(r.city)}</span><div class="body"><span class="nm">查詢中…</span></div></div>`;
+    if (r.empty || !r.name) return `<div class="rank-row empty"><span class="city">${escapeHTML(r.city)}</span><div class="body"><span class="nm">查無資料</span></div></div>`;
+    const bdg = (r.awards && r.awards.length) ? `<span class="bdg">${r.awards.some(a=>a.guide==="michelin")?"米其林":r.awards.some(a=>a.guide==="bib")?"必比登":"500盤"}</span>` : "";
+    const q = encodeURIComponent(r.name + " " + r.city);
+    return `<a class="rank-row" href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">
+      <span class="city">${escapeHTML(r.city)}</span>
+      <div class="body">
+        <span class="nm">${escapeHTML(r.name)}</span>
+        <span class="meta"><span class="star">★ ${r.rating.toFixed(1)}</span><span class="count">${r.count.toLocaleString()} 則</span>${bdg}</span>
+      </div>
+      <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </a>`;
+  }).join("");
+}
 
 function enterApp() {
   $("#splash").classList.add("hidden");
