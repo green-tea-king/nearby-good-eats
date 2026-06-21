@@ -134,7 +134,22 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .ri-list li{font-size:12.5px;color:var(--text-dim);padding-left:14px;position:relative;}
 .ri-list li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);}
 .ri-total{font-size:13px;font-weight:600;color:var(--text);text-align:center;padding:10px;border-radius:8px;background:var(--surface);border:1px solid var(--accent);}
-.rank-list{flex:1;overflow-y:auto;padding:8px 14px 4px;}
+/* 篩選列 */
+.rank-filters{flex:none;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);}
+.rank-filters .fg{display:flex;align-items:center;gap:9px;}
+.rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
+.rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px;}
+.rank-filters .fg-chips::-webkit-scrollbar{display:none;}
+.fchip{flex:none;font-size:12.5px;padding:5px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:all var(--t);}
+.fchip:active{transform:scale(.96);}
+.fchip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:500;}
+.fsel{flex:none;font-family:inherit;font-size:12.5px;padding:5px 10px;border-radius:8px;background:var(--surface);border:1px solid var(--line);color:var(--text);max-width:46%;}
+.fsel:disabled{opacity:.5;}
+.fclear{align-self:flex-end;margin-top:1px;font-size:11.5px;color:var(--accent-bright);padding:2px 4px;}
+.rank-note{padding:34px 22px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
+.detail-inner .calc-v{font-family:var(--mono);font-size:11px;color:var(--accent-bright);line-height:1.5;}
+.rank-list{flex:1;overflow-y:auto;padding:14px 16px 6px;}
+.rank-list .card{margin-bottom:14px;}
 .rank-row{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:13px 6px;border-bottom:1px solid var(--line);background:none;text-decoration:none;color:inherit;}
 .rank-row:last-child{border-bottom:none;}
 .rank-row:active{background:var(--surface);}
@@ -424,11 +439,12 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
     <button class="rank-back" id="rankBack" aria-label="返回">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
     </button>
-    <div class="rank-titles"><b>美食排行榜</b><i>全台 22 縣市・綜合評價冠軍</i></div>
+    <div class="rank-titles"><b>美食排行榜</b><i>全台綜合評價・前 5 名</i></div>
     <button class="rank-refresh" id="rankRefresh" aria-label="重新整理" title="重新整理">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
     </button>
   </div>
+  <div class="rank-filters" id="rankFilters"></div>
   <details class="rank-info">
     <summary><span class="ri-q">綜合評價怎麼算？</span><svg class="ri-chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
     <div class="ri-body">
@@ -446,11 +462,11 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
         </ul>
       </div>
       <div class="ri-total">綜合評價 ＝ 貝氏分數 ＋ 評鑑加分</div>
-      <p class="ri-note">排行榜以此分數取各縣市第一名。距離、營業中、用餐時段等加權只用於「找附近」搜尋，排行榜不計入。</p>
+      <p class="ri-note">未篩選時列全台綜合前 5 名（第 1 名在最上）。距離、營業中、用餐時段等加權只用於「找附近」搜尋，排行榜不計入。上方篩網（菜式／時段／型態／飲食／風格／縣市／區域）為依 Google 類型與店名關鍵字的<b>近似分類</b>，僅供縮小範圍參考。</p>
     </div>
   </details>
   <div class="rank-list" id="rankList"></div>
-  <p class="rank-foot">資料取各縣市搜尋前段店家，存於瀏覽器、每週更新一次（右上重新整理可強制更新）。屬高品質近似榜，非逐家掃描的全域第一。</p>
+  <p class="rank-foot">資料取全台各縣市搜尋前段店家，存於瀏覽器、每週更新一次（右上重新整理可強制更新）。屬高品質近似榜，非逐家掃描的全域第一。</p>
 </section>
 
 <!-- ============ 主畫面 ============ -->
@@ -701,106 +717,261 @@ $("#rankBack").addEventListener("click", () => { $("#rankView").classList.add("h
 $("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
 
 /* ============================================================
-   美食排行榜：各縣市「綜合評價」冠軍
-   - 每個縣市用 Place.searchByText 取前段店家，套用與主排名相同的貝氏加權＋評鑑加分，取第一
-   - 結果存 localStorage 快取（7 天），避免每次開啟都重打 22 次 API
+   美食排行榜：全台「綜合評價」前 5，可用篩網過濾，卡片格式同「附近美食」
+   - 一次撈全台候選（22 縣市各 searchByText 前段），分類＋貝氏排名後存 localStorage（7 天）
+   - 篩選全在前端對候選池操作（不重打 API）；只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const RANK_CACHE_KEY = "twfood_leaderboard_v2";
+const RANK_CACHE_KEY = "twfood_pool_v1";
 const RANK_CACHE_TTL = 7 * 864e5;   // 7 天
+const RANK_TOP = 5;                 // 只列前 5 名
+
+const RANK_FILTERS = [
+  { key:"cuisine", label:"菜式", opts:["中式","西式"] },
+  { key:"meal",    label:"時段", opts:["早餐","早茶","午餐","午茶","晚餐","消夜"] },
+  { key:"type",    label:"型態", opts:["正餐","小吃"] },
+  { key:"diet",    label:"飲食", opts:["葷食","素食"] },
+  { key:"style",   label:"風格", opts:["傳統","現代"] },
+];
+const rankFilter = { cuisine:null, meal:null, type:null, diet:null, style:null, city:"", area:"" };
+let rankPool = null;     // 分類＋排名後的全台候選
+let rankPoolM = 4.0;     // 當批貝氏平均
+const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
 
 async function openLeaderboard(force){
   $("#splash").classList.add("hidden");
-  const view = $("#rankView"); view.classList.remove("hidden");
-  const listEl = $("#rankList");
+  $("#rankView").classList.remove("hidden");
+  buildRankFilterBar();
+  await ensureRankPool(force);
+  renderLeaderboard();
+}
 
-  // 先嘗試快取
+// 撈全台候選池（含分類標籤），存快取
+async function ensureRankPool(force){
   if (!force){
     try{
       const c = JSON.parse(localStorage.getItem(RANK_CACHE_KEY) || "null");
-      if (c && c.rows && (Date.now() - c.t) < RANK_CACHE_TTL){ renderRankRows(c.rows); return; }
+      if (c && c.pool && (Date.now()-c.t) < RANK_CACHE_TTL){ rankPool=c.pool; rankPoolM=c.m; return; }
     }catch(_){}
   }
-
-  if (demoMode){ listEl.innerHTML = `<div class="rank-row empty"><span class="city">—</span><div class="body"><span class="nm">需要 Google 金鑰才能載入排行榜</span></div></div>`; return; }
-
-  // 先畫出 22 縣市的載入骨架
-  renderRankRows(TW_CITIES.map(city => ({ city, loading:true })));
-  const btn = $("#rankRefresh"); btn.classList.add("spin");
-
+  if (demoMode){ rankPool=[]; return; }
+  $("#rankList").innerHTML = `<div class="rank-note">整理全台美食中…</div>`;
+  $("#rankRefresh").classList.add("spin");
   try{
     await loadGoogle();
     await ensureAwards();
     const { Place } = await google.maps.importLibrary("places");
-    const rows = [];
-    // 逐市查詢（小批並行，兼顧速度與配額）
+    let all = [];
     const BATCH = 4;
-    for (let i = 0; i < TW_CITIES.length; i += BATCH){
-      const slice = TW_CITIES.slice(i, i + BATCH);
-      const got = await Promise.all(slice.map(city => cityChampion(Place, city)));
-      got.forEach((row, k) => { rows[i + k] = row; });
-      renderRankRows([...rows, ...TW_CITIES.slice(rows.length).map(city => ({ city, loading:true }))].slice(0, TW_CITIES.length));
+    for (let i=0; i<TW_CITIES.length; i+=BATCH){
+      const got = await Promise.all(TW_CITIES.slice(i,i+BATCH).map(c => cityCandidates(Place, c)));
+      got.forEach(arr => all.push(...arr));
     }
-    try{ localStorage.setItem(RANK_CACHE_KEY, JSON.stringify({ t: Date.now(), rows })); }catch(_){}
-    renderRankRows(rows);
+    const seen = new Set();
+    all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));   // 去重
+    applyAwards(all);
+    const m = computeM(all); rankPoolM = m;
+    all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.composite=x.bScore+x.aBonus; });
+    all.sort((a,b) => b.composite-a.composite);
+    rankPool = all;
+    try{ localStorage.setItem(RANK_CACHE_KEY, JSON.stringify({ t:Date.now(), m, pool:all })); }catch(_){}
   }catch(e){
     console.error(e);
-    listEl.innerHTML = `<div class="rank-row empty"><span class="city">—</span><div class="body"><span class="nm">排行榜載入失敗：${escapeHTML(e.message)}</span></div></div>`;
+    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(e.message)}</div>`;
+    rankPool = null;
   }finally{
-    btn.classList.remove("spin");
+    $("#rankRefresh").classList.remove("spin");
   }
 }
 
-// 取某縣市的綜合冠軍
-async function cityChampion(Place, city){
+async function cityCandidates(Place, city){
   try{
     const res = await Place.searchByText({
       textQuery: city + " 餐廳",
-      fields: ["id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel"],
+      fields: ["id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName"],
       maxResultCount: 20, language:"zh-TW", region:"tw",
     });
-    const items = (res.places || [])
-      .filter(p => p.rating && p.userRatingCount)
-      .map(p => ({
-        name: toTW(extractText(p.displayName) || p.displayName || ""),
-        rating: p.rating || 0,
-        count: p.userRatingCount || 0,
-        loc: p.location ? { lat: p.location.lat(), lng: p.location.lng() } : null,
+    return (res.places || []).filter(p => p.rating && p.userRatingCount).map(p => {
+      const o = {
+        id: p.id, city,
+        name: toTW(extractText(p.displayName) || ""),
+        rating: p.rating || 0, count: p.userRatingCount || 0,
         address: toTW(p.formattedAddress || ""),
+        priceLevel: priceToNum(p.priceLevel),
+        pt: p.primaryType || "",
+        ptd: toTW(extractText(p.primaryTypeDisplayName) || ""),
+        loc: p.location ? { lat:p.location.lat(), lng:p.location.lng() } : null,
         awards: [],
-      }));
-    if (!items.length) return { city, empty:true };
-    applyAwards(items);                         // 台北等已收錄縣市可疊加評鑑
-    const m = computeM(items);
-    items.forEach(i => { i.bScore = bayes(i, m); i.aBonus = awardBonus(i.awards); i.composite = i.bScore + i.aBonus; });
-    items.sort((a,b) => b.composite - a.composite);
-    const w = items[0];
-    return { city, name:w.name, rating:w.rating, count:w.count, awards:w.awards||[], address:w.address,
-             composite:w.composite, bScore:w.bScore, aBonus:w.aBonus, m:Math.round(m*100)/100 };
-  }catch(_){
-    return { city, empty:true };
-  }
+      };
+      o.tags = classifyCandidate(o);
+      return o;
+    });
+  }catch(_){ return []; }
 }
 
-function renderRankRows(rows){
-  $("#rankList").innerHTML = rows.map(r => {
-    if (r.loading) return `<div class="rank-row loading"><span class="city">${escapeHTML(r.city)}</span><div class="body"><span class="nm">查詢中…</span></div></div>`;
-    if (r.empty || !r.name) return `<div class="rank-row empty"><span class="city">${escapeHTML(r.city)}</span><div class="body"><span class="nm">查無資料</span></div></div>`;
-    const bdg = (r.awards && r.awards.length) ? `<span class="bdg">${r.awards.some(a=>a.guide==="michelin")?"米其林":r.awards.some(a=>a.guide==="bib")?"必比登":"500盤"}</span>` : "";
-    const q = encodeURIComponent(r.name + " " + r.city);
-    const C = CONFIG.BAYES.C;
-    const n = r.count.toLocaleString();
-    const calc = (r.composite != null) ? `<span class="calc">貝氏 (${C}×${r.m}＋${n}×${r.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${r.bScore.toFixed(2)}${r.aBonus>0?`　＋評鑑 ${r.aBonus.toFixed(2)}`:``}</span>` : ``;
-    const score = (r.composite != null) ? `<span class="score"><b>${r.composite.toFixed(2)}</b><i>綜合</i></span>` : `<svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>`;
-    return `<a class="rank-row" href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">
-      <span class="city">${escapeHTML(r.city)}</span>
-      <div class="body">
-        <span class="nm">${escapeHTML(r.name)}</span>
-        <span class="meta"><span class="star">★ ${r.rating.toFixed(1)}</span><span class="count">${r.count.toLocaleString()} 則</span>${bdg}</span>
-        ${calc}
-      </div>
-      ${score}
-    </a>`;
-  }).join("");
+// 依 Google 類型 + 店名關鍵字做近似分類（無法 100% 精確，僅供篩選參考）
+function classifyCandidate(o){
+  const s = (o.name + " " + o.ptd + " " + o.pt).toLowerCase();
+  const re = r => r.test(o.name + o.ptd) || r.test(s);
+  const t = { cuisine:[], meal:[], type:[], diet:[], style:[] };
+  // 菜式
+  if (re(/chinese|cantonese|sichuan|hunan|dumpling|hot.?pot|noodle|dim.?sum|中式|中菜|中餐|台菜|台式|川菜|粵|港式|江浙|上海|湘菜|客家|熱炒|牛肉麵|餃|鍋|滷味|燒臘|點心|餛飩|麵食|羊肉|快炒/)) t.cuisine.push("中式");
+  if (re(/italian|french|american|spanish|greek|steak|pizza|hamburger|mediterranean|mexican|bistro|brunch|義式|義大利|法式|法國|美式|西餐|西式|歐|牛排|排餐|披薩|pasta|地中海|漢堡|墨西哥|burger/)) t.cuisine.push("西式");
+  // 時段（Google 時段資料有限，以類型/店名近似）
+  if (re(/breakfast|早餐|晨食|永和豆漿|蛋餅/)) t.meal.push("早餐");
+  if (re(/brunch|早午餐|早茶|飲茶|港式飲茶|港點/)) t.meal.push("早茶");
+  if (re(/午餐|定食|便當|簡餐|商業午餐|自助餐/)) t.meal.push("午餐");
+  if (re(/cafe|coffee|dessert|bakery|tea.?house|下午茶|甜點|咖啡|茶屋|烘焙|蛋糕|甜品|鬆餅/)) t.meal.push("午茶");
+  if (re(/晚餐|餐酒|fine.?dining|無菜單|割烹|懷石|鐵板燒|法餐/)) t.meal.push("晚餐");
+  if (re(/宵夜|消夜|夜市|居酒屋|串燒|串|鹹酥雞|燒烤|熱炒|羊肉爐|薑母鴨/)) t.meal.push("消夜");
+  // 型態
+  const snack = re(/小吃|路邊攤|攤|夜市|滷味|鹹酥雞|豆花|肉圓|米糕|刈包|蚵仔|車輪餅|雞排|grab.?and.?go|fast.?food|meal.?takeaway|快餐/);
+  t.type.push(snack ? "小吃" : "正餐");
+  // 飲食
+  const veg = re(/vegetarian|vegan|素食|蔬食|齋|蔬|純素/);
+  t.diet.push(veg ? "素食" : "葷食");
+  // 風格
+  if (re(/傳統|老店|老字號|古早|百年|家傳|本舖|創立於|阿嬤|老牌/)) t.style.push("傳統");
+  if (re(/fusion|創意|現代|無國界|各國料理|bistro|lab|studio|工坊|選物|餐酒館/) || /[a-z]{3,}/i.test(o.name)) t.style.push("現代");
+  return t;
+}
+
+// 套用篩選 → 取前 5 → 補抓完整欄位 → 以「附近美食」卡片格式渲染
+let rankRenderToken = 0;
+async function renderLeaderboard(){
+  if (demoMode){ $("#rankList").innerHTML = `<div class="rank-note">需要 Google 金鑰才能載入排行榜。</div>`; return; }
+  if (!rankPool){ return; }
+  const f = rankFilter;
+  const list = rankPool.filter(x => {
+    if (f.city && x.city !== f.city) return false;
+    if (f.area && !(x.address||"").includes(f.area)) return false;
+    if (f.cuisine && !(x.tags.cuisine||[]).includes(f.cuisine)) return false;
+    if (f.meal && !(x.tags.meal||[]).includes(f.meal)) return false;
+    if (f.type && !(x.tags.type||[]).includes(f.type)) return false;
+    if (f.diet && !(x.tags.diet||[]).includes(f.diet)) return false;
+    if (f.style && !(x.tags.style||[]).includes(f.style)) return false;
+    return true;
+  });
+  const top = list.slice(0, RANK_TOP);
+  if (!top.length){ $("#rankList").innerHTML = `<div class="rank-note">這個條件下沒有符合的餐廳，試試放寬篩選。</div>`; return; }
+  const token = ++rankRenderToken;
+  $("#rankList").innerHTML = `<div class="rank-note">載入前 ${top.length} 名…</div>`;
+  await fetchRankRich(top);
+  if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
+  const cards = top.map(rankCardData);
+  cards.forEach(c => { c.aiReason = lbReason(c); });
+  $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
+  bindCardEvents($("#rankList"));
+}
+
+// 只對要顯示的前 5 名補抓完整欄位（照片/營業/服務/摘要…），用 id 重建 Place
+async function fetchRankRich(cands){
+  const { Place } = await google.maps.importLibrary("places");
+  await Promise.all(cands.map(async c => {
+    if (rankRich[c.id]) return;
+    try{
+      const p = new Place({ id: c.id });
+      await p.fetchFields({ fields:[
+        "regularOpeningHours","nationalPhoneNumber","websiteURI","googleMapsURI","photos","priceRange",
+        "hasDineIn","hasTakeout","hasDelivery","isReservable","hasOutdoorSeating","allowsDogs","hasLiveMusic",
+        "isGoodForChildren","isGoodForGroups","hasMenuForChildren","hasRestroom",
+        "accessibilityOptions","paymentOptions","parkingOptions",
+        "servesVegetarianFood","servesBeer","servesWine","servesCocktails",
+        "reviewSummary","editorialSummary"
+      ]});
+      rankRich[c.id] = {
+        openNow: isOpenNow(p.regularOpeningHours),
+        hours: (p.regularOpeningHours?.weekdayDescriptions || []).map(toTW),
+        phone: p.nationalPhoneNumber || "", website: p.websiteURI || "", mapsUri: p.googleMapsURI || "",
+        priceText: toTW(priceRangeText(p.priceRange)),
+        photos: (p.photos || []).slice(0,3).map(ph => ph.getURI({ maxWidth:560, maxHeight:420 })),
+        dineIn:p.hasDineIn===true, takeout:p.hasTakeout===true, delivery:p.hasDelivery===true,
+        reservable:p.isReservable===true, outdoor:p.hasOutdoorSeating===true,
+        allowsDogs:p.allowsDogs===true, liveMusic:p.hasLiveMusic===true,
+        goodKids:p.isGoodForChildren===true, goodGroups:p.isGoodForGroups===true,
+        menuKids:p.hasMenuForChildren===true, restroom:p.hasRestroom===true,
+        accessStr:accessText(p.accessibilityOptions), payStr:payText(p.paymentOptions), parkStr:parkText(p.parkingOptions),
+        servesVeg:p.servesVegetarianFood===true,
+        servesAlcohol:(p.servesBeer===true||p.servesWine===true||p.servesCocktails===true),
+        reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
+        summary: toTW(extractEditorial(p.editorialSummary)),
+      };
+    }catch(_){ rankRich[c.id] = {}; }
+  }));
+}
+
+function rankCardData(c){
+  const rich = rankRich[c.id] || {};
+  const C = CONFIG.BAYES.C, m = Math.round(rankPoolM*100)/100, n = c.count.toLocaleString();
+  const formula = `貝氏 (${C}×${m}＋${n}×${c.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${c.bScore.toFixed(2)}`
+    + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``) + `，綜合 ${c.composite.toFixed(2)}`;
+  return Object.assign({
+    name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
+    address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
+    dist:null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:null,
+  }, rich);
+}
+
+// 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）
+function lbReason(c){
+  const award = topAwardText(c.awards);
+  const bits = [];
+  if (award) bits.push(award + "肯定");
+  bits.push(c.count>=1000
+    ? `${c.count.toLocaleString()} 則評論仍守住 ${c.rating.toFixed(1)} 分`
+    : `${c.rating.toFixed(1)} 分（${c.count.toLocaleString()} 則）`);
+  bits.push(`${c.city}・綜合 ${c.composite.toFixed(2)}`);
+  return bits.join("，") + "。";
+}
+
+function bindCardEvents(root){
+  root.querySelectorAll("[data-detail]").forEach(btn => btn.addEventListener("click", () => {
+    const d = btn.closest(".card").querySelector(".detail");
+    d.classList.toggle("open");
+    btn.querySelector(".chev2").style.transform = d.classList.contains("open") ? "rotate(180deg)" : "";
+  }));
+  root.querySelectorAll("[data-nav]").forEach(btn => btn.addEventListener("click", () => {
+    const { lat, lng, name } = btn.dataset;
+    const url = (lat && lng && lat!=="0")
+      ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking&q=${encodeURIComponent(name)}`
+      : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
+    window.open(url, "_blank");
+  }));
+}
+
+/* 篩選列 */
+function buildRankFilterBar(){
+  const bar = $("#rankFilters");
+  let html = RANK_FILTERS.map(g =>
+    `<div class="fg"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
+    + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o?" on":""}" data-fkey="${g.key}" data-fval="${o}">${o}</button>`).join("")
+    + `</div></div>`
+  ).join("");
+  html += `<div class="fg"><span class="fg-lab">地區</span><div class="fg-chips">`
+    + `<select id="rkCity" class="fsel"><option value="">全台</option>`
+    + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
+    + `</select><select id="rkArea" class="fsel"></select></div></div>`;
+  const active = Object.values(rankFilter).some(v => v);
+  html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
+  bar.innerHTML = html;
+
+  bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
+    const k=b.dataset.fkey, v=b.dataset.fval;
+    rankFilter[k] = rankFilter[k]===v ? null : v;
+    buildRankFilterBar(); renderLeaderboard();
+  }));
+  fillRkArea();
+  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; buildRankFilterBar(); renderLeaderboard(); });
+  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; renderLeaderboard(); });
+  const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
+    Object.keys(rankFilter).forEach(k => rankFilter[k] = (k==="city"||k==="area") ? "" : null);
+    buildRankFilterBar(); renderLeaderboard();
+  });
+}
+function fillRkArea(){
+  const as = $("#rkArea"); if (!as) return;
+  const list = TW_AREAS[rankFilter.city] || [];
+  as.innerHTML = `<option value="">區域</option>` + list.map(a => `<option value="${a}"${rankFilter.area===a?" selected":""}>${a}</option>`).join("");
+  as.disabled = !rankFilter.city;
 }
 
 function enterApp() {
@@ -1374,7 +1545,10 @@ function setSummary(){
 
 function cardHTML(r, rank){
   const price = r.priceLevel ? "$".repeat(r.priceLevel) : "";
-  const walk = Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN));
+  // 一般搜尋顯示步行距離；排行榜（dist 為 null）改顯示縣市 + 綜合分數
+  const distChip = (r.dist != null)
+    ? `<span class="dist">步行 ${Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN))} 分 · ${r.dist} m</span>`
+    : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
   // 評鑑徽章：有資料就顯示，否則留 placeholder（Step 2）
@@ -1416,7 +1590,7 @@ function cardHTML(r, rank){
           <span class="count">(${r.count.toLocaleString()})</span>
           ${price?`<span class="price">${price}</span>`:""}
           ${openTxt}
-          <span class="dist">步行 ${walk} 分 · ${r.dist} m</span>
+          ${distChip}
         </div>
       </div>
     </div>
@@ -1436,6 +1610,7 @@ function cardHTML(r, rank){
     <div class="detail">
       <div class="detail-inner">
         ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
+        ${r.lbFormula?`<div class="line"><span class="k">綜合</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
         ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v sum3">${escapeHTML(r.reviewSummary)}</span></div>`:""}
         ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
         ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
