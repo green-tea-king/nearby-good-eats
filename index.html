@@ -228,6 +228,10 @@ main{flex:1;padding:18px 16px 104px;max-width:680px;width:100%;margin:0 auto;}
 .head{flex:1;min-width:0;padding-top:1px;}
 /* 主卡縮圖 */
 .thumb{flex:none;width:70px;height:70px;border-radius:10px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line);}
+/* 卡片內 1–3 張較大照片 */
+.photos{display:flex;gap:6px;margin-top:13px;}
+.ph-img{flex:1;min-width:0;height:118px;object-fit:cover;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);}
+.photos.one .ph-img{height:172px;}
 .name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.18;letter-spacing:.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 12px;margin-top:8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
 .rating{color:var(--text);font-weight:500;}
@@ -925,6 +929,7 @@ async function placesSearch() {
     reviewSummary: "",    // 同上，由 enrichTop 補
     _place: p,            // 保留 Place 實例供 fetchFields 補抓
     // 真實店家照片（Places photos）：縮圖小張、詳情大張，省流量
+    photos:   (p.photos || []).slice(0, 3).map(ph => ph.getURI({ maxWidth: 560, maxHeight: 420 })),
     photo:    p.photos?.[0]?.getURI({ maxWidth: 200, maxHeight: 200 }) || "",
     photoBig: p.photos?.[0]?.getURI({ maxWidth: 800, maxHeight: 480 }) || "",
     awards: [],          // Step 2 由評鑑名單比對填入
@@ -1105,8 +1110,10 @@ function cardHTML(r, rank){
     ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
     : `<div class="ai-reason placeholder">AI 上榜理由 · Step 3 接入</div>`;
   const fallback = "this.style.visibility='hidden'";
-  const thumb = r.photo
-    ? `<img class="thumb" src="${escapeHTML(r.photo)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="${fallback}">`
+  // 卡片內 1–3 張較大照片
+  const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
+  const photoStrip = photoUrls.length
+    ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map(u=>`<img class="ph-img" src="${escapeHTML(u)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="this.remove()">`).join("")}</div>`
     : "";
   const detailPhoto = (r.photoBig || r.photo)
     ? `<img class="photo" src="${escapeHTML(r.photoBig || r.photo)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="${fallback}">`
@@ -1126,9 +1133,9 @@ function cardHTML(r, rank){
           <span class="dist">步行 ${walk} 分 · ${r.dist} m</span>
         </div>
       </div>
-      ${thumb}
     </div>
     <div class="badges">${badges}</div>
+    ${photoStrip}
     ${ai}
     <div class="actions">
       <button class="nav" data-nav data-lat="${r.loc.lat}" data-lng="${r.loc.lng}" data-name="${escapeHTML(r.name)}">
