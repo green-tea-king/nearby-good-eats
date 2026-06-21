@@ -1764,12 +1764,16 @@ function routeDetail(r){
   if (r.driveMin) parts.push(`開車 ${r.driveMin} 分${r.driveMeters?`・${r.driveMeters.toLocaleString()} m`:""}`);
   return parts.join("｜");
 }
+function routeDistanceLabel(r){
+  const meters = r.walkMeters || r.driveMeters || r.dist;
+  return meters ? `${meters.toLocaleString()} m` : "";
+}
 
 function cardHTML(r, rank){
   const price = r.priceLevel ? "$".repeat(r.priceLevel) : "";
   // 一般搜尋顯示步行距離；排行榜（dist 為 null）改顯示縣市 + 綜合分數
   const distChip = (r.dist != null)
-    ? `<span class="dist">${escapeHTML(routeSummary(r))} · ${r.dist} m</span>`
+    ? `<span class="dist">${escapeHTML(routeSummary(r))} · ${escapeHTML(routeDistanceLabel(r))}</span>`
     : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
