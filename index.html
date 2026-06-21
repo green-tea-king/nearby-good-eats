@@ -774,6 +774,7 @@ const rankFilter = { cuisine:null, meal:null, type:null, diet:null, style:null, 
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
+let rankAreaPools = {};  // city|area -> 區域專用候選池
 
 async function openLeaderboard(force){
   $("#splash").classList.add("hidden");
@@ -785,6 +786,7 @@ async function openLeaderboard(force){
 
 // 撈全台候選池（含分類標籤），存快取
 async function ensureRankPool(force){
+  if (force) rankAreaPools = {};
   if (!force){
     try{
       const c = JSON.parse(localStorage.getItem(RANK_CACHE_KEY) || "null");
@@ -821,16 +823,16 @@ async function ensureRankPool(force){
   }
 }
 
-async function cityCandidates(Place, city){
+async function cityCandidates(Place, city, area=""){
   try{
     const res = await Place.searchByText({
-      textQuery: city + " 餐廳",
+      textQuery: (area ? city + area : city) + " 餐廳",
       fields: ["id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName"],
       maxResultCount: 20, language:"zh-TW", region:"tw",
     });
     return (res.places || []).filter(p => p.rating && p.userRatingCount).map(p => {
       const o = {
-        id: p.id, city,
+        id: p.id, city, area,
         name: toTW(extractText(p.displayName) || ""),
         rating: p.rating || 0, count: p.userRatingCount || 0,
         address: toTW(p.formattedAddress || ""),
@@ -844,6 +846,23 @@ async function cityCandidates(Place, city){
       return o;
     });
   }catch(_){ return []; }
+}
+
+async function areaCandidates(city, area){
+  const key = city + "|" + area;
+  if (rankAreaPools[key]) return rankAreaPools[key];
+  await loadGoogle();
+  await ensureAwards();
+  const { Place } = await google.maps.importLibrary("places");
+  let all = await cityCandidates(Place, city, area);
+  const seen = new Set();
+  all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
+  applyAwards(all);
+  const m = all.length ? computeM(all) : rankPoolM;
+  all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.composite=x.bScore+x.aBonus; });
+  all.sort((a,b) => b.composite-a.composite);
+  rankAreaPools[key] = all;
+  return all;
 }
 
 // 依 Google 類型 + 店名關鍵字做近似分類（無法 100% 精確，僅供篩選參考）
@@ -878,10 +897,17 @@ let rankRenderToken = 0;
 async function renderLeaderboard(){
   if (demoMode){ $("#rankList").innerHTML = `<div class="rank-note">需要 Google 金鑰才能載入排行榜。</div>`; return; }
   if (!rankPool){ return; }
+  const token = ++rankRenderToken;
   const f = rankFilter;
-  const list = rankPool.filter(x => {
+  let source = rankPool;
+  if (f.city && f.area){
+    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + f.area)} 美食中…</div>`;
+    source = await areaCandidates(f.city, f.area);
+    if (token !== rankRenderToken) return;
+  }
+  const list = source.filter(x => {
     if (f.city && x.city !== f.city) return false;
-    if (f.area && !(x.address||"").includes(f.area)) return false;
+    if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
     if (f.cuisine && !(x.tags.cuisine||[]).includes(f.cuisine)) return false;
     if (f.meal && !(x.tags.meal||[]).includes(f.meal)) return false;
     if (f.type && !(x.tags.type||[]).includes(f.type)) return false;
@@ -891,7 +917,6 @@ async function renderLeaderboard(){
   });
   const top = list.slice(0, RANK_TOP);
   if (!top.length){ $("#rankList").innerHTML = `<div class="rank-note">這個條件下沒有符合的餐廳，試試放寬篩選。</div>`; return; }
-  const token = ++rankRenderToken;
   $("#rankList").innerHTML = `<div class="rank-note">載入前 ${top.length} 名…</div>`;
   await fetchRankRich(top);
   if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
