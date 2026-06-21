@@ -1007,9 +1007,24 @@ function extractEditorial(es){
 }
 function extractText(v){ if(!v) return ""; if(typeof v==="string") return v; if(typeof v.text==="string") return v.text; if(v.text&&typeof v.text.text==="string") return v.text.text; return ""; }
 // 簡體→繁體（台灣用字）。OpenCC 載入後建立轉換器；未就緒時原樣回傳。
+// Google 的 zh-TW 資料多半已是繁體，只偶有簡體字外洩（如 信义区）。整串丟 OpenCC 反而會把
+// 「同時也是合法繁體字」的字誤改（台→臺、里→裏、郁→鬱、松→鬆…）。因此逐字轉換，並保護這些
+// 一簡對多繁、且自身即為合法繁體的歧義字，讓 Google 既有的正確繁體用字原樣保留。
 let __twConv = null;
-try { if (window.OpenCC) __twConv = OpenCC.Converter({ from:"cn", to:"tw" }); } catch(_){}
-function toTW(s){ if(!s) return s; if(!__twConv){ try{ if(window.OpenCC) __twConv = OpenCC.Converter({from:"cn",to:"tw"}); }catch(_){ } } try{ return __twConv ? __twConv(s) : s; }catch(_){ return s; } }
+function __initConv(){ if(!__twConv){ try{ if(window.OpenCC) __twConv = OpenCC.Converter({from:"cn",to:"t"}); }catch(_){ } } return __twConv; }
+__initConv();
+const __TW_PROTECT = new Set("台后里面松郁余谷系范干表制准板几卜斗才困占卷升游折念划凶沈丑向咸夸著只云");
+function toTW(s){
+  if(!s) return s;
+  const conv = __initConv();
+  if(!conv) return s;
+  let out="";
+  for(const ch of s){
+    if(ch.charCodeAt(0) < 0x4e00 || __TW_PROTECT.has(ch)){ out += ch; continue; }   // 非漢字或歧義字：原樣
+    try{ out += conv(ch); }catch(_){ out += ch; }
+  }
+  return out;
+}
 // 價位範圍：Places priceRange（Money: units 字串 + currencyCode）→ 「NT$ 200 – 400」
 function priceRangeText(pr){
   if(!pr) return "";
