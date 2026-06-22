@@ -298,7 +298,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 }
 .card:first-child{border-color:rgba(200,16,46,.3);box-shadow:0 0 0 1px rgba(200,16,46,.12), 0 18px 40px -28px rgba(0,0,0,.8);}
 @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-.card .top{display:flex;gap:14px;align-items:flex-start;}
+.card .top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:flex-start;}
 .rank-badge{
   flex:none;width:30px;height:30px;display:flex;align-items:flex-start;justify-content:center;
   font-family:var(--serif);font-weight:600;font-size:24px;line-height:1;color:var(--gold);background:none;border:none;
@@ -315,6 +315,10 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 12px;margin-top:8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
 .rating{color:var(--text);font-weight:500;}
 .rating .star{color:var(--gold);}
+.rating-focus{flex:none;min-width:72px;border:1px solid rgba(154,120,28,.34);background:var(--gold-weak);border-radius:12px;padding:7px 8px 6px;display:flex;flex-direction:column;align-items:center;gap:1px;color:var(--gold);font-family:var(--mono);font-variant-numeric:tabular-nums;line-height:1;}
+.rating-focus .score{display:flex;align-items:center;gap:3px;font-size:20px;font-weight:700;color:var(--text);}
+.rating-focus .score .star{font-size:13px;color:var(--gold);}
+.rating-focus .reviews{font-size:10.5px;color:var(--text-dim);white-space:nowrap;}
 .open-now{color:var(--green);font-weight:500;}
 .closed{color:var(--accent-bright);}
 .price{letter-spacing:1.5px;color:var(--text-faint);}
@@ -1841,12 +1845,14 @@ function cardHTML(r, rank){
       <div class="head">
         <div class="name">${escapeHTML(r.name)}</div>
         <div class="meta">
-          <span class="rating"><span class="star">★</span> ${r.rating.toFixed(1)}</span>
-          <span class="count">(${r.count.toLocaleString()})</span>
           ${price?`<span class="price">${price}</span>`:""}
           ${openTxt}
           ${distChip}
         </div>
+      </div>
+      <div class="rating-focus" aria-label="Google 評分 ${r.rating.toFixed(1)}，${r.count.toLocaleString()} 則評論">
+        <span class="score"><span class="star">★</span>${r.rating.toFixed(1)}</span>
+        <span class="reviews">${r.count.toLocaleString()} 則</span>
       </div>
     </div>
     <div class="badges">${badges}</div>
