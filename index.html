@@ -36,6 +36,9 @@
   --gold:#C8A24C;          /* 星金 */
   --gold-weak:rgba(200,162,76,.15);
   --green:#5FB98A;         /* 營業中 */
+  --scroll-track:#0E0C0D;
+  --scroll-thumb:rgba(168,157,152,.24);
+  --scroll-thumb-hover:rgba(168,157,152,.36);
   /* 評鑑徽章 */
   --michelin:#D8B25E;      /* 米其林＝金 */
   --bib:#EC5A6A;           /* 必比登＝紅 */
@@ -65,6 +68,9 @@
   --gold:#9A781C;
   --gold-weak:rgba(154,120,28,.13);
   --green:#2E8B5E;
+  --scroll-track:#F7F3EE;
+  --scroll-thumb:rgba(107,98,92,.28);
+  --scroll-thumb-hover:rgba(107,98,92,.42);
   --michelin:#9A781C;
   --bib:#C8102E;
   --plate:#3C7E97;
@@ -72,6 +78,18 @@
 
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;}
+html,body,#splash,.rank-list,.rank-info-sheet{
+  scrollbar-width:thin;
+  scrollbar-color:var(--scroll-thumb) var(--scroll-track);
+}
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-track{background:var(--scroll-track);}
+::-webkit-scrollbar-thumb{
+  background:var(--scroll-thumb);
+  border:2px solid var(--scroll-track);
+  border-radius:999px;
+}
+::-webkit-scrollbar-thumb:hover{background:var(--scroll-thumb-hover);}
 body{
   background:var(--bg);
   color:var(--text);
