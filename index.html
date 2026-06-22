@@ -510,7 +510,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
         </ul>
       </div>
       <div class="ri-total">綜合評價 ＝ 貝氏分數 ＋ 評鑑加分</div>
-      <p class="ri-note">未篩選時列全台綜合前 5 名（第 1 名在最上）。距離、營業中、用餐時段等加權只用於「找附近」搜尋，排行榜不計入。上方篩網（菜式／時段／型態／飲食／風格／縣市／區域）為依 Google 類型與店名關鍵字的<b>近似分類</b>，僅供縮小範圍參考。</p>
+      <p class="ri-note">未篩選時列全台綜合前 5 名（第 1 名在最上）。濾網優先使用 Google 真欄位（評分、評論數、價位、素食、適合團體、可訂位等），其次把「聚餐、吃到飽、素食」等條件加入 Google 搜尋詞；菜式、風格等則屬近似分類。若未來接上後端 AI，可再用 Google 真資料做二次標籤判斷。</p>
     </div>
   </details>
   <div class="rank-list" id="rankList"></div>
@@ -714,6 +714,11 @@ const CONFIG = {
     API_KEY: "",             // live 模式才需要；上線請走後端代理，勿把金鑰放前端
     MODEL: "claude-sonnet-4-6",
   },
+  AI_FILTER: {
+    MODE: "off",             // off＝不用 AI 過濾｜proxy＝呼叫後端分類服務
+    ENDPOINT: "",            // 後端應回 {items:[{id,tags:{occasion:["聚餐"], service:["吃到飽"]}, confidence:{occasion:.8}}]}
+    MAX_ITEMS: 80,
+  },
 };
 
 /* ============================================================
@@ -788,13 +793,13 @@ $("#rankFilterBtn").addEventListener("click", () => {
 const RANK_TOP = 5;                 // 只列前 5 名
 
 const RANK_FILTERS = [
-  { key:"cuisine", label:"菜式", opts:["中式","西式"] },
-  { key:"meal",    label:"時段", opts:["早餐","早茶","午餐","午茶","晚餐","消夜"] },
-  { key:"type",    label:"型態", opts:["正餐","小吃"] },
-  { key:"service", label:"方式", opts:["單點","吃到飽"] },
-  { key:"occasion",label:"情境", opts:["聚餐","獨享"] },
-  { key:"diet",    label:"飲食", opts:["葷食","素食"] },
-  { key:"style",   label:"風格", opts:["傳統","現代"] },
+  { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
+  { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐"}, {label:"早茶", query:"早茶"}, {label:"午餐", query:"午餐"}, {label:"午茶", query:"下午茶"}, {label:"晚餐", query:"晚餐"}, {label:"消夜", query:"宵夜"}] },
+  { key:"type",    label:"型態", tier:"search", opts:[{label:"正餐", query:"餐廳"}, {label:"小吃", query:"小吃"}] },
+  { key:"service", label:"方式", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽"}] },
+  { key:"occasion",label:"情境", tier:"search", opts:[{label:"聚餐", query:"聚餐 適合團體 可訂位"}, {label:"獨享", query:"一個人 用餐"}] },
+  { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食"}] },
+  { key:"style",   label:"風格", tier:"search", opts:[{label:"傳統", query:"老店 傳統"}, {label:"現代", query:"現代 創意"}] },
 ];
 const rankFilter = { cuisine:null, meal:null, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
@@ -847,7 +852,11 @@ async function cityCandidates(Place, city, area=""){
   try{
     const res = await Place.searchByText({
       textQuery: (area ? city + area : city) + " 餐廳",
-      fields: ["id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName","reviewSummary","editorialSummary","generativeSummary"],
+      fields: [
+        "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
+        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","isGoodForGroups","isReservable",
+        "reviewSummary","editorialSummary","generativeSummary"
+      ],
       maxResultCount: 20, language:"zh-TW", region:"tw",
     });
     return (res.places || []).filter(p => p.rating && p.userRatingCount).map(p => {
@@ -863,6 +872,10 @@ async function cityCandidates(Place, city, area=""){
         reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
         summary: toTW(extractEditorial(p.editorialSummary)),
         generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
+        servesVeg: p.servesVegetarianFood===true,
+        servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
+        goodGroups: p.isGoodForGroups===true,
+        reservable: p.isReservable===true,
         awards: [],
       };
       o.tags = classifyCandidate(o);
@@ -872,10 +885,11 @@ async function cityCandidates(Place, city, area=""){
 }
 
 function rankQueryTerms(f){
-  const terms = ["cuisine","meal","type","diet","style"].map(k => f[k]).filter(Boolean);
-  if (f.service === "吃到飽") terms.push("吃到飽");
-  if (f.occasion === "聚餐") terms.push("聚餐");
-  return terms;
+  return RANK_FILTERS.map(g => {
+    const selected = f[g.key];
+    const opt = g.opts.find(o => o.label === selected);
+    return opt?.query || "";
+  }).filter(Boolean);
 }
 
 async function areaCandidates(city, area, f=rankFilter){
@@ -919,10 +933,10 @@ function classifyCandidate(o){
   const buffet = re(/吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|饗食|漢來海港|旭集|饗饗|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋/);
   t.service.push(buffet ? "吃到飽" : "單點");
   // 情境：聚餐偏向火鍋、燒肉、合菜、餐酒館、可訂位/適合團體；未命中者預設為獨享
-  const groupMeal = re(/聚餐|合菜|桌菜|包廂|宴會|火鍋|鍋物|燒肉|烤肉|居酒屋|餐酒館|熱炒|buffet|吃到飽|多人|family|group|hot.?pot|barbecue|bbq|bistro/);
+  const groupMeal = o.goodGroups || o.reservable || re(/聚餐|合菜|桌菜|包廂|宴會|火鍋|鍋物|燒肉|烤肉|居酒屋|餐酒館|熱炒|buffet|吃到飽|多人|family|group|hot.?pot|barbecue|bbq|bistro/);
   t.occasion.push(groupMeal ? "聚餐" : "獨享");
   // 飲食
-  const veg = re(/vegetarian|vegan|素食|蔬食|齋|蔬|純素/);
+  const veg = o.servesVeg || re(/vegetarian|vegan|素食|蔬食|齋|蔬|純素/);
   t.diet.push(veg ? "素食" : "葷食");
   // 風格
   if (re(/傳統|老店|老字號|古早|百年|家傳|本舖|創立於|阿嬤|老牌/)) t.style.push("傳統");
@@ -932,27 +946,75 @@ function classifyCandidate(o){
 
 // 套用篩選 → 取前 5 → 補抓完整欄位 → 以「附近美食」卡片格式渲染
 let rankRenderToken = 0;
+function rankTagMatch(item, key, value){
+  return (item.queryTerms||[]).includes(value)
+    || (item.tags?.[key]||[]).includes(value)
+    || (item.aiTags?.[key]||[]).includes(value);
+}
+function activeRankFilters(f){
+  return RANK_FILTERS.filter(g => f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
+}
+async function enrichAiFilterTags(items, f){
+  if (CONFIG.AI_FILTER.MODE !== "proxy" || !CONFIG.AI_FILTER.ENDPOINT) return;
+  const active = activeRankFilters(f);
+  if (!active.length) return;
+  const targets = items.filter(x => !x.aiTags).slice(0, CONFIG.AI_FILTER.MAX_ITEMS);
+  if (!targets.length) return;
+  try{
+    const payload = {
+      filters: active,
+      items: targets.map(x => ({
+        id:x.id, name:x.name, type:x.ptd || x.pt || "", address:x.address || "",
+        rating:x.rating, count:x.count, priceLevel:x.priceLevel,
+        reviewSummary:x.reviewSummary || "", editorialSummary:x.summary || "", generativeSummary:x.generativeSummary || "",
+        googleFlags:{
+          servesVeg:x.servesVeg===true, servesAlcohol:x.servesAlcohol===true,
+          goodGroups:x.goodGroups===true, reservable:x.reservable===true,
+        },
+      })),
+    };
+    const res = await fetch(CONFIG.AI_FILTER.ENDPOINT, {
+      method:"POST",
+      headers:{ "content-type":"application/json" },
+      body:JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    const byId = new Map((data.items || []).map(x => [x.id, x]));
+    targets.forEach(x => {
+      const ai = byId.get(x.id);
+      if (!ai) return;
+      x.aiTags = ai.tags || {};
+      x.aiConfidence = ai.confidence || {};
+    });
+  }catch(e){
+    console.warn("[AI Filter] 後端分類失敗，改用 Google 硬欄位與搜尋詞：", e.message);
+  }
+}
 async function renderLeaderboard(){
   if (!hasGoogleApiKey){ $("#rankList").innerHTML = `<div class="rank-note">需要 Google 金鑰才能載入排行榜。</div>`; return; }
   if (!rankPool){ return; }
   const token = ++rankRenderToken;
   const f = rankFilter;
   let source = rankPool;
-  if (f.city && f.area){
-    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + f.area)} 美食中…</div>`;
+  const searchTerms = rankQueryTerms(f);
+  if (f.city && (f.area || searchTerms.length)){
+    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
     source = await areaCandidates(f.city, f.area);
     if (token !== rankRenderToken) return;
   }
+  await enrichAiFilterTags(source, f);
+  if (token !== rankRenderToken) return;
   const list = source.filter(x => {
     if (f.city && x.city !== f.city) return false;
     if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
-    if (f.cuisine && !(x.queryTerms||[]).includes(f.cuisine) && !(x.tags.cuisine||[]).includes(f.cuisine)) return false;
-    if (f.meal && !(x.queryTerms||[]).includes(f.meal) && !(x.tags.meal||[]).includes(f.meal)) return false;
-    if (f.type && !(x.queryTerms||[]).includes(f.type) && !(x.tags.type||[]).includes(f.type)) return false;
-    if (f.service && !(x.queryTerms||[]).includes(f.service) && !(x.tags.service||[]).includes(f.service)) return false;
-    if (f.occasion && !(x.queryTerms||[]).includes(f.occasion) && !(x.tags.occasion||[]).includes(f.occasion)) return false;
-    if (f.diet && !(x.queryTerms||[]).includes(f.diet) && !(x.tags.diet||[]).includes(f.diet)) return false;
-    if (f.style && !(x.queryTerms||[]).includes(f.style) && !(x.tags.style||[]).includes(f.style)) return false;
+    if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
+    if (f.meal && !rankTagMatch(x, "meal", f.meal)) return false;
+    if (f.type && !rankTagMatch(x, "type", f.type)) return false;
+    if (f.service && !rankTagMatch(x, "service", f.service)) return false;
+    if (f.occasion && !rankTagMatch(x, "occasion", f.occasion)) return false;
+    if (f.diet && !rankTagMatch(x, "diet", f.diet)) return false;
+    if (f.style && !rankTagMatch(x, "style", f.style)) return false;
     return true;
   });
   const top = list.slice(0, RANK_TOP);
@@ -1038,7 +1100,7 @@ function buildRankFilterBar(){
   const bar = $("#rankFilters");
   let html = RANK_FILTERS.map(g =>
     `<div class="fg"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
-    + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o?" on":""}" data-fkey="${g.key}" data-fval="${o}">${o}</button>`).join("")
+    + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
     + `</div></div>`
   ).join("");
   html += `<div class="fg"><span class="fg-lab">地區</span><div class="fg-chips">`
