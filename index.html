@@ -769,10 +769,11 @@ const RANK_FILTERS = [
   { key:"cuisine", label:"菜式", opts:["中式","西式"] },
   { key:"meal",    label:"時段", opts:["早餐","早茶","午餐","午茶","晚餐","消夜"] },
   { key:"type",    label:"型態", opts:["正餐","小吃"] },
+  { key:"service", label:"方式", opts:["單點","吃到飽"] },
   { key:"diet",    label:"飲食", opts:["葷食","素食"] },
   { key:"style",   label:"風格", opts:["傳統","現代"] },
 ];
-const rankFilter = { cuisine:null, meal:null, type:null, diet:null, style:null, city:"", area:"" };
+const rankFilter = { cuisine:null, meal:null, type:null, service:null, diet:null, style:null, city:"", area:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
@@ -846,7 +847,9 @@ async function cityCandidates(Place, city, area=""){
 }
 
 function rankQueryTerms(f){
-  return ["cuisine","meal","type","diet","style"].map(k => f[k]).filter(Boolean);
+  const terms = ["cuisine","meal","type","diet","style"].map(k => f[k]).filter(Boolean);
+  if (f.service === "吃到飽") terms.push("吃到飽");
+  return terms;
 }
 
 async function areaCandidates(city, area, f=rankFilter){
@@ -872,7 +875,7 @@ async function areaCandidates(city, area, f=rankFilter){
 function classifyCandidate(o){
   const s = (o.name + " " + o.ptd + " " + o.pt).toLowerCase();
   const re = r => r.test(o.name + o.ptd) || r.test(s);
-  const t = { cuisine:[], meal:[], type:[], diet:[], style:[] };
+  const t = { cuisine:[], meal:[], type:[], service:[], diet:[], style:[] };
   // 菜式
   if (re(/chinese|cantonese|sichuan|hunan|dumpling|hot.?pot|noodle|dim.?sum|中式|中菜|中餐|台菜|台式|川菜|粵|港式|江浙|上海|湘菜|客家|熱炒|牛肉麵|餃|鍋|滷味|燒臘|點心|餛飩|麵食|羊肉|快炒/)) t.cuisine.push("中式");
   if (re(/italian|french|american|spanish|greek|steak|pizza|hamburger|mediterranean|mexican|bistro|brunch|義式|義大利|法式|法國|美式|西餐|西式|歐|牛排|排餐|披薩|pasta|地中海|漢堡|墨西哥|burger/)) t.cuisine.push("西式");
@@ -886,6 +889,9 @@ function classifyCandidate(o){
   // 型態
   const snack = re(/小吃|路邊攤|攤|夜市|滷味|鹹酥雞|豆花|肉圓|米糕|刈包|蚵仔|車輪餅|雞排|grab.?and.?go|fast.?food|meal.?takeaway|快餐/);
   t.type.push(snack ? "小吃" : "正餐");
+  // 方式：Google 沒有固定「單點/吃到飽」欄位，用店名與類型關鍵字近似；未命中吃到飽者視為單點
+  const buffet = re(/吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|饗食|漢來海港|旭集|饗饗|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋/);
+  t.service.push(buffet ? "吃到飽" : "單點");
   // 飲食
   const veg = re(/vegetarian|vegan|素食|蔬食|齋|蔬|純素/);
   t.diet.push(veg ? "素食" : "葷食");
@@ -914,6 +920,7 @@ async function renderLeaderboard(){
     if (f.cuisine && !(x.queryTerms||[]).includes(f.cuisine) && !(x.tags.cuisine||[]).includes(f.cuisine)) return false;
     if (f.meal && !(x.queryTerms||[]).includes(f.meal) && !(x.tags.meal||[]).includes(f.meal)) return false;
     if (f.type && !(x.queryTerms||[]).includes(f.type) && !(x.tags.type||[]).includes(f.type)) return false;
+    if (f.service && !(x.queryTerms||[]).includes(f.service) && !(x.tags.service||[]).includes(f.service)) return false;
     if (f.diet && !(x.queryTerms||[]).includes(f.diet) && !(x.tags.diet||[]).includes(f.diet)) return false;
     if (f.style && !(x.queryTerms||[]).includes(f.style) && !(x.tags.style||[]).includes(f.style)) return false;
     return true;
