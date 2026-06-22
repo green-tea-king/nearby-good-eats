@@ -757,15 +757,89 @@ let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
 let rankAreaPools = {};  // city|area -> 區域專用候選池
+let rankContextReady = false;
+let rankAutoMeal = false;
 
 async function openLeaderboard(force){
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
+  if (!rankContextReady){
+    applyCurrentMealToRankFilter();
+    buildRankFilterBar();
+    $("#rankFilters").classList.add("hidden");
+    $("#rankList").innerHTML = `<div class="rank-note">依現在時間與位置設定排行榜…</div>`;
+    await applyCurrentAreaToRankFilter();
+    rankContextReady = true;
+  }
   buildRankFilterBar();
   $("#rankFilters").classList.add("hidden");
   $("#rankFilterBtn").setAttribute("aria-expanded", "false");
   await ensureRankPool(force);
   renderLeaderboard();
+}
+
+function applyCurrentMealToRankFilter(){
+  const meal = MEALS[currentMealKey()]?.label;
+  if (meal){
+    rankFilter.meal = meal;
+    rankAutoMeal = true;
+  }
+}
+
+function currentPosition(){
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) return reject(new Error("geolocation unavailable"));
+    navigator.geolocation.getCurrentPosition(
+      pos => resolve({ lat:pos.coords.latitude, lng:pos.coords.longitude }),
+      reject,
+      { enableHighAccuracy:true, timeout:8000, maximumAge:60000 }
+    );
+  });
+}
+
+function normalizeTaiwanCity(name){
+  return (name || "").replace(/台/g, "臺");
+}
+
+function matchTaiwanArea(city, area){
+  const normalizedCity = normalizeTaiwanCity(city);
+  const matchedCity = TW_CITIES.find(c => c === normalizedCity) || "";
+  const areas = TW_AREAS[matchedCity] || [];
+  const matchedArea = areas.find(a => a === area) || areas.find(a => area && (a.includes(area) || area.includes(a))) || "";
+  return { city:matchedCity, area:matchedArea };
+}
+
+function cityAreaFromGeocode(results){
+  for (const r of results || []){
+    const comp = r.address_components || [];
+    const get = t => {
+      const x = comp.find(c => c.types.includes(t));
+      return x ? x.long_name : "";
+    };
+    const matched = matchTaiwanArea(
+      get("administrative_area_level_1"),
+      get("administrative_area_level_2") || get("administrative_area_level_3") || get("sublocality_level_1")
+    );
+    if (matched.city) return matched;
+  }
+  return { city:"", area:"" };
+}
+
+async function applyCurrentAreaToRankFilter(){
+  if (!hasGoogleApiKey) return;
+  try{
+    const center = await currentPosition();
+    await loadGoogle();
+    const { Geocoder } = await google.maps.importLibrary("geocoding");
+    const res = await new Geocoder().geocode({ location:center, language:"zh-TW", region:"tw" });
+    const { city, area } = cityAreaFromGeocode(res.results);
+    if (city){
+      rankFilter.city = city;
+      rankFilter.area = area;
+    }
+  }catch(e){
+    console.warn("[Leaderboard] 無法自動帶入地區：", e.message || e);
+  }
 }
 
 // 撈全台候選池（含分類標籤），每次開啟重新查 Google
@@ -956,11 +1030,11 @@ async function renderLeaderboard(){
   }
   await enrichAiFilterTags(source, f);
   if (token !== rankRenderToken) return;
-  const list = source.filter(x => {
+  const applyRankFilters = (items, relaxAutoMeal=false) => items.filter(x => {
     if (f.city && x.city !== f.city) return false;
     if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
     if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
-    if (f.meal && !rankTagMatch(x, "meal", f.meal)) return false;
+    if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
     if (f.type && !rankTagMatch(x, "type", f.type)) return false;
     if (f.service && !rankTagMatch(x, "service", f.service)) return false;
     if (f.occasion && !rankTagMatch(x, "occasion", f.occasion)) return false;
@@ -968,6 +1042,15 @@ async function renderLeaderboard(){
     if (f.style && !rankTagMatch(x, "style", f.style)) return false;
     return true;
   });
+  let list = applyRankFilters(source, false);
+  if (!list.length && rankAutoMeal && f.meal){
+    let relaxedSource = source;
+    if (f.city && (f.area || searchTerms.length)){
+      relaxedSource = await areaCandidates(f.city, f.area, { ...f, meal:null });
+      if (token !== rankRenderToken) return;
+    }
+    list = applyRankFilters(relaxedSource, true);
+  }
   const top = list.slice(0, RANK_TOP);
   if (!top.length){ $("#rankList").innerHTML = `<div class="rank-note">這個條件下沒有符合的餐廳，試試放寬篩選。</div>`; return; }
   $("#rankList").innerHTML = `<div class="rank-note">載入前 ${top.length} 名…</div>`;
@@ -1064,6 +1147,7 @@ function buildRankFilterBar(){
 
   bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
     const k=b.dataset.fkey, v=b.dataset.fval;
+    if (k === "meal") rankAutoMeal = false;
     rankFilter[k] = rankFilter[k]===v ? null : v;
     buildRankFilterBar(); renderLeaderboard();
   }));
@@ -1072,6 +1156,7 @@ function buildRankFilterBar(){
   $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; renderLeaderboard(); });
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
     Object.keys(rankFilter).forEach(k => rankFilter[k] = (k==="city"||k==="area") ? "" : null);
+    rankAutoMeal = false;
     buildRankFilterBar(); renderLeaderboard();
   });
 }
