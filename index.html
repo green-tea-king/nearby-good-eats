@@ -671,6 +671,10 @@ const CONFIG = {
     m: 4.0,  // 全體平均分基準值（理想上由當批結果動態計算，見 computeM）
     DYNAMIC_M: true, // true＝用當批結果平均覆蓋上面的 m
   },
+  REVIEW_COUNT_BONUS: {
+    SCALE: 0.03, // 評論量信心加分：同星等時評論數多者更前
+    CAP: 0.18,   // 避免超大店只靠評論數壓過品質
+  },
 
   // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
   AWARD_BONUS: {
@@ -806,7 +810,7 @@ async function ensureRankPool(force){
     all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));   // 去重
     applyAwards(all);
     const m = computeM(all); rankPoolM = m;
-    all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.composite=x.bScore+x.aBonus; });
+    all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.rBonus=reviewCountBonus(x.count); x.composite=x.bScore+x.aBonus+x.rBonus; });
     all.sort((a,b) => b.composite-a.composite);
     rankPool = all;
   }catch(e){
@@ -865,7 +869,7 @@ async function areaCandidates(city, area, f=rankFilter){
   all.forEach(x => { x.area = area; x.queryTerms = terms; });
   applyAwards(all);
   const m = all.length ? computeM(all) : rankPoolM;
-  all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.composite=x.bScore+x.aBonus; });
+  all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.rBonus=reviewCountBonus(x.count); x.composite=x.bScore+x.aBonus+x.rBonus; });
   all.sort((a,b) => b.composite-a.composite);
   rankAreaPools[key] = all;
   return all;
@@ -977,6 +981,7 @@ function rankCardData(c){
   const rich = rankRich[c.id] || {};
   const C = CONFIG.BAYES.C, m = Math.round(rankPoolM*100)/100, n = c.count.toLocaleString();
   const formula = `貝氏 (${C}×${m}＋${n}×${c.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${c.bScore.toFixed(2)}`
+    + (c.rBonus>0 ? `，＋評論量 ${c.rBonus.toFixed(2)}` : ``)
     + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``) + `，綜合 ${c.composite.toFixed(2)}`;
   return Object.assign({
     name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
@@ -1557,6 +1562,11 @@ function bayes(item, m){
   return (C * m + item.count * item.rating) / (C + item.count);
 }
 
+function reviewCountBonus(count){
+  const cfg = CONFIG.REVIEW_COUNT_BONUS;
+  return Math.min(Math.log10((count || 0) + 1) * cfg.SCALE, cfg.CAP);
+}
+
 function awardBonus(awards){
   let b = 0;
   for (const a of (awards||[])) {
@@ -1673,7 +1683,9 @@ function rankAndRender(){
   const m = computeM(items);
   items.forEach(i => {
     i.bayesScore = bayes(i, m);
+    i.reviewCountBonus = reviewCountBonus(i.count);
     i.composite = i.bayesScore
+      + i.reviewCountBonus
       + awardBonus(i.awards)
       - (state.wholeArea ? 0 : (i.dist/100) * CONFIG.DISTANCE_PENALTY_PER_100M)
       + (i.openNow === true ? CONFIG.OPEN_BONUS : 0)
