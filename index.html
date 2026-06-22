@@ -131,8 +131,8 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
    ============================================================ */
 #rankView{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;align-items:center;}
 .rank-head{flex:none;display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--bg);width:100%;max-width:480px;}
-.rank-back,.rank-refresh{flex:none;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t);}
-.rank-back:active,.rank-refresh:active{color:var(--accent-bright);border-color:var(--accent);}
+.rank-back,.rank-refresh,.rank-filter-btn{flex:none;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t);}
+.rank-back:active,.rank-refresh:active,.rank-filter-btn:active{color:var(--accent-bright);border-color:var(--accent);}
 .rank-refresh.spin svg{animation:rkspin .8s linear infinite;}
 @keyframes rkspin{to{transform:rotate(360deg);}}
 .rank-titles{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;}
@@ -152,7 +152,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .ri-list li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);}
 .ri-total{font-size:13px;font-weight:600;color:var(--text);text-align:center;padding:10px;border-radius:8px;background:var(--surface);border:1px solid var(--accent);}
 /* 篩選列 */
-.rank-filters{flex:none;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;}
+.rank-filters{flex:none;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;background:var(--bg);}
 .rank-filters .fg{display:flex;align-items:center;gap:9px;}
 .rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
 .rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px;}
@@ -236,6 +236,7 @@ header{
 .scope-btn .chev{margin-left:auto;color:var(--text-faint);flex:none;}
 .icon-btn{flex:none;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);color:var(--text-dim);transition:border-color var(--t),color var(--t);}
 .icon-btn:active{border-color:var(--accent);color:var(--accent);}
+.control-drawer{margin-top:10px;border-top:1px solid var(--line-soft);padding-top:12px;}
 
 /* 情境比較 callout */
 #overview{background:linear-gradient(var(--accent-weak),var(--accent-weak)),var(--surface);
@@ -484,11 +485,14 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
     </button>
     <div class="rank-titles"><b>美食排行榜</b><i>全台綜合評價・前 5 名</i></div>
+    <button class="rank-filter-btn" id="rankFilterBtn" aria-label="開啟濾網" title="濾網">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
     <button class="rank-refresh" id="rankRefresh" aria-label="重新整理" title="重新整理">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
     </button>
   </div>
-  <div class="rank-filters" id="rankFilters"></div>
+  <div class="rank-filters hidden" id="rankFilters"></div>
   <details class="rank-info">
     <summary><span class="ri-q">綜合評價怎麼算？</span><svg class="ri-chev" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
     <div class="ri-body">
@@ -527,6 +531,9 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </span>
       </button>
+      <button class="icon-btn" id="filterMenuBtn" aria-label="開啟功能與濾網" title="功能與濾網">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
       <button class="icon-btn" id="themeBtn" aria-label="切換明暗主題" title="切換明暗主題">
         <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
       </button>
@@ -543,6 +550,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
       </div>
     </div>
 
+    <div id="controlDrawer" class="control-drawer hidden">
     <div class="sorts" role="group" aria-label="排序">
       <button class="sort-chip" data-sort="composite" aria-pressed="true">綜合</button>
       <button class="sort-chip" data-sort="distance" aria-pressed="false">距離</button>
@@ -574,6 +582,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
         <button class="pchip" data-price="3" aria-pressed="false">$$$</button>
         <button class="pchip" data-price="4" aria-pressed="false">$$$$</button>
       </div>
+    </div>
     </div>
     </div>
   </header>
@@ -765,6 +774,11 @@ $("#btnMapPick2").addEventListener("click", () => { enterApp(); openPickMap(); }
 $("#btnRanking").addEventListener("click", () => openLeaderboard(false));
 $("#rankBack").addEventListener("click", () => { $("#rankView").classList.add("hidden"); });
 $("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
+$("#rankFilterBtn").addEventListener("click", () => {
+  const panel = $("#rankFilters");
+  panel.classList.toggle("hidden");
+  $("#rankFilterBtn").setAttribute("aria-expanded", String(!panel.classList.contains("hidden")));
+});
 
 /* ============================================================
    美食排行榜：全台「綜合評價」前 5，可用篩網過濾，卡片格式同「附近美食」
@@ -792,6 +806,8 @@ async function openLeaderboard(force){
   $("#splash").classList.add("hidden");
   $("#rankView").classList.remove("hidden");
   buildRankFilterBar();
+  $("#rankFilters").classList.add("hidden");
+  $("#rankFilterBtn").setAttribute("aria-expanded", "false");
   await ensureRankPool(force);
   renderLeaderboard();
 }
@@ -1091,6 +1107,11 @@ function syncControls() {
 }
 
 $("#scopeBtn").addEventListener("click", () => $("#scopePanel").classList.toggle("hidden"));
+$("#filterMenuBtn").addEventListener("click", () => {
+  const drawer = $("#controlDrawer");
+  drawer.classList.toggle("hidden");
+  $("#filterMenuBtn").setAttribute("aria-expanded", String(!drawer.classList.contains("hidden")));
+});
 $("#radius").addEventListener("input", e => {
   $("#radiusVal").textContent = e.target.value;
   $("#walkMin").textContent = Math.round(e.target.value / CONFIG.WALK_SPEED_M_PER_MIN);
