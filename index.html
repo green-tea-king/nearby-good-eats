@@ -766,13 +766,14 @@ const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_FILTERS = [
   { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐"}, {label:"早茶", query:"早茶"}, {label:"午餐", query:"午餐"}, {label:"午茶", query:"下午茶"}, {label:"晚餐", query:"晚餐"}, {label:"消夜", query:"宵夜"}] },
+  { key:"open",    label:"營業", tier:"hard", opts:[{label:"不限"}, {label:"營業中"}] },
   { key:"type",    label:"型態", tier:"search", opts:[{label:"正餐", query:"餐廳"}, {label:"小吃", query:"小吃"}] },
   { key:"service", label:"方式", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽"}] },
   { key:"occasion",label:"情境", tier:"search", opts:[{label:"聚餐", query:"聚餐 適合團體 可訂位"}, {label:"獨享", query:"一個人 用餐"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食"}] },
   { key:"style",   label:"風格", tier:"search", opts:[{label:"傳統", query:"老店 傳統"}, {label:"現代", query:"現代 創意"}] },
 ];
-const rankFilter = { cuisine:null, meal:null, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
+const rankFilter = { cuisine:null, meal:null, open:"不限", type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
@@ -900,7 +901,7 @@ async function cityCandidates(Place, city, area=""){
       fields: [
         "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
         "servesVegetarianFood","servesBeer","servesWine","servesCocktails","isGoodForGroups","isReservable",
-        "reviewSummary","editorialSummary","generativeSummary"
+        "regularOpeningHours","reviewSummary","editorialSummary","generativeSummary"
       ],
       maxResultCount: 20, language:"zh-TW", region:"tw",
     });
@@ -921,6 +922,7 @@ async function cityCandidates(Place, city, area=""){
         servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
         goodGroups: p.isGoodForGroups===true,
         reservable: p.isReservable===true,
+        openNow: isOpenNow(p.regularOpeningHours),
         awards: [],
       };
       o.tags = classifyCandidate(o);
@@ -997,7 +999,7 @@ function rankTagMatch(item, key, value){
     || (item.aiTags?.[key]||[]).includes(value);
 }
 function activeRankFilters(f){
-  return RANK_FILTERS.filter(g => f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
+  return RANK_FILTERS.filter(g => f[g.key] && !(g.key === "open" && f[g.key] === "不限")).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
 }
 async function enrichAiFilterTags(items, f){
   if (CONFIG.AI_FILTER.MODE !== "proxy" || !CONFIG.AI_FILTER.ENDPOINT) return;
@@ -1055,6 +1057,7 @@ async function renderLeaderboard(){
     if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
     if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
     if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
+    if (f.open === "營業中" && x.openNow !== true) return false;
     if (f.type && !rankTagMatch(x, "type", f.type)) return false;
     if (f.service && !rankTagMatch(x, "service", f.service)) return false;
     if (f.occasion && !rankTagMatch(x, "occasion", f.occasion)) return false;
@@ -1161,21 +1164,21 @@ function buildRankFilterBar(){
     + `<select id="rkCity" class="fsel"><option value="">全台</option>`
     + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
     + `</select><select id="rkArea" class="fsel"></select></div></div>`;
-  const active = Object.values(rankFilter).some(v => v);
+  const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v==="不限"));
   html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
   bar.innerHTML = html;
 
   bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
     const k=b.dataset.fkey, v=b.dataset.fval;
     if (k === "meal") rankAutoMeal = false;
-    rankFilter[k] = rankFilter[k]===v ? null : v;
+    rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
     buildRankFilterBar(); renderLeaderboard();
   }));
   fillRkArea();
   $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; buildRankFilterBar(); renderLeaderboard(); });
   $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; renderLeaderboard(); });
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
-    Object.keys(rankFilter).forEach(k => rankFilter[k] = (k==="city"||k==="area") ? "" : null);
+    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? "不限" : ((k==="city"||k==="area") ? "" : null));
     rankAutoMeal = false;
     buildRankFilterBar(); renderLeaderboard();
   });
