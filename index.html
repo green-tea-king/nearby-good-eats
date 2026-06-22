@@ -764,13 +764,13 @@ document.addEventListener("keydown", e => {
 const RANK_TOP = 5;                 // 只列前 5 名
 
 const RANK_FILTERS = [
-  { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
-  { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐"}, {label:"早茶", query:"早茶"}, {label:"午餐", query:"午餐"}, {label:"午茶", query:"下午茶"}, {label:"晚餐", query:"晚餐"}, {label:"消夜", query:"宵夜"}] },
   { key:"open",    label:"營業", tier:"hard", opts:[{label:"不限"}, {label:"營業中"}] },
-  { key:"type",    label:"型態", tier:"search", opts:[{label:"正餐", query:"餐廳"}, {label:"小吃", query:"小吃"}] },
-  { key:"service", label:"方式", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽"}] },
+  { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐"}, {label:"早茶", query:"早茶"}, {label:"午餐", query:"午餐"}, {label:"午茶", query:"下午茶"}, {label:"晚餐", query:"晚餐"}, {label:"消夜", query:"宵夜"}] },
+  { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽"}] },
   { key:"occasion",label:"情境", tier:"search", opts:[{label:"聚餐", query:"聚餐 適合團體 可訂位"}, {label:"獨享", query:"一個人 用餐"}] },
+  { key:"type",    label:"型態", tier:"search", opts:[{label:"正餐", query:"餐廳"}, {label:"小吃", query:"小吃"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食"}] },
+  { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
   { key:"style",   label:"風格", tier:"search", opts:[{label:"傳統", query:"老店 傳統"}, {label:"現代", query:"現代 創意"}] },
 ];
 const rankFilter = { cuisine:null, meal:null, open:"不限", type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
@@ -1155,15 +1155,15 @@ function bindCardEvents(root){
 /* 篩選列 */
 function buildRankFilterBar(){
   const bar = $("#rankFilters");
-  let html = RANK_FILTERS.map(g =>
+  let html = `<div class="fg"><span class="fg-lab">地區</span><div class="fg-chips">`
+    + `<select id="rkCity" class="fsel"><option value="">全台</option>`
+    + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
+    + `</select><select id="rkArea" class="fsel"></select></div></div>`;
+  html += RANK_FILTERS.map(g =>
     `<div class="fg"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
     + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
     + `</div></div>`
   ).join("");
-  html += `<div class="fg"><span class="fg-lab">地區</span><div class="fg-chips">`
-    + `<select id="rkCity" class="fsel"><option value="">全台</option>`
-    + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
-    + `</select><select id="rkArea" class="fsel"></select></div></div>`;
   const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v==="不限"));
   html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
   bar.innerHTML = html;
