@@ -759,11 +759,23 @@ const hasGoogleApiKey = !!CONFIG.GOOGLE_API_KEY;
 /* ============================================================
    開場流程
    ============================================================ */
+function closeRankFilters(){
+  $("#rankFilters")?.classList.add("hidden");
+  $("#rankFilterBtn")?.setAttribute("aria-expanded", "false");
+}
+
 $("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
 $("#rankFilterBtn").addEventListener("click", () => {
   const panel = $("#rankFilters");
   panel.classList.toggle("hidden");
   $("#rankFilterBtn").setAttribute("aria-expanded", String(!panel.classList.contains("hidden")));
+});
+document.addEventListener("click", e => {
+  const panel = $("#rankFilters");
+  const btn = $("#rankFilterBtn");
+  if (!panel || panel.classList.contains("hidden")) return;
+  if (panel.contains(e.target) || btn?.contains(e.target)) return;
+  closeRankFilters();
 });
 $("#rankInfoBtn").addEventListener("click", () => $("#rankInfoModal").classList.remove("hidden"));
 $("#rankInfoClose").addEventListener("click", () => $("#rankInfoModal").classList.add("hidden"));
@@ -772,6 +784,7 @@ $("#rankInfoModal").addEventListener("click", e => {
 });
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") $("#rankInfoModal")?.classList.add("hidden");
+  if (e.key === "Escape") closeRankFilters();
 });
 
 /* ============================================================
