@@ -795,6 +795,7 @@ document.addEventListener("keydown", e => {
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
 const RANK_TOP = 5;                 // 只列前 5 名
+const RANK_DEFAULT_OPEN = "營業中";
 
 const RANK_FILTERS = [
   { key:"open",    label:"營業", tier:"hard", opts:[{label:"不限"}, {label:"營業中"}] },
@@ -806,7 +807,7 @@ const RANK_FILTERS = [
   { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
   { key:"style",   label:"風格", tier:"search", opts:[{label:"傳統", query:"老店 傳統"}, {label:"現代", query:"現代 創意"}] },
 ];
-const rankFilter = { cuisine:null, meal:null, open:"不限", type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
+const rankFilter = { cuisine:null, meal:null, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
@@ -1056,7 +1057,7 @@ function rankTagMatch(item, key, value){
     || (item.aiTags?.[key]||[]).includes(value);
 }
 function activeRankFilters(f){
-  return RANK_FILTERS.filter(g => f[g.key] && !(g.key === "open" && f[g.key] === "不限")).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
+  return RANK_FILTERS.filter(g => g.key !== "open" && f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
 }
 async function enrichAiFilterTags(items, f){
   if (CONFIG.AI_FILTER.MODE !== "proxy" || !CONFIG.AI_FILTER.ENDPOINT) return;
@@ -1224,7 +1225,7 @@ function buildRankFilterBar(){
     + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
     + `</div></div>`
   ).join("");
-  const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v==="不限"));
+  const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN));
   html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
   bar.innerHTML = html;
 
@@ -1239,7 +1240,7 @@ function buildRankFilterBar(){
   $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; renderLeaderboard(); });
   $("#rkLocate")?.addEventListener("click", e => locateRankArea(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
-    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? "不限" : ((k==="city"||k==="area") ? "" : null));
+    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : ((k==="city"||k==="area") ? "" : null));
     rankAutoMeal = false;
     buildRankFilterBar(); renderLeaderboard();
   });
