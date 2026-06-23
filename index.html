@@ -180,6 +180,9 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .fchip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:500;}
 .fsel{flex:none;font-family:inherit;font-size:12.5px;padding:5px 10px;border-radius:8px;background:var(--surface);border:1px solid var(--line);color:var(--text);max-width:46%;}
 .fsel:disabled{opacity:.5;}
+.flocate{flex:none;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t),transform var(--t);}
+.flocate:active{transform:scale(.96);color:var(--accent-bright);border-color:var(--accent);}
+.flocate.locating svg{animation:rkspin .8s linear infinite;}
 .fclear{align-self:flex-end;margin-top:1px;font-size:11.5px;color:var(--accent-bright);padding:2px 4px;}
 .rank-note{padding:34px 22px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
 .detail-inner .calc-v{font-family:var(--mono);font-size:11px;color:var(--accent-bright);line-height:1.5;}
@@ -877,7 +880,7 @@ function cityAreaFromGeocode(results){
 }
 
 async function applyCurrentAreaToRankFilter(){
-  if (!hasGoogleApiKey) return;
+  if (!hasGoogleApiKey) return false;
   try{
     const center = await currentPosition();
     await loadGoogle();
@@ -887,9 +890,33 @@ async function applyCurrentAreaToRankFilter(){
     if (city){
       rankFilter.city = city;
       rankFilter.area = area;
+      return true;
     }
   }catch(e){
     console.warn("[Leaderboard] 無法自動帶入地區：", e.message || e);
+  }
+  return false;
+}
+
+async function locateRankArea(btn){
+  if (btn){
+    btn.disabled = true;
+    btn.classList.add("locating");
+    btn.setAttribute("aria-busy", "true");
+  }
+  const ok = await applyCurrentAreaToRankFilter();
+  if (ok){
+    const label = rankFilter.city + (rankFilter.area || "");
+    buildRankFilterBar();
+    renderLeaderboard();
+    toast(`已定位到 ${label}`);
+  }else{
+    toast("無法取得目前位置，請確認定位權限");
+    if (btn){
+      btn.disabled = false;
+      btn.classList.remove("locating");
+      btn.removeAttribute("aria-busy");
+    }
   }
 }
 
@@ -1188,7 +1215,10 @@ function buildRankFilterBar(){
   let html = `<div class="fg"><span class="fg-lab">地區</span><div class="fg-chips">`
     + `<select id="rkCity" class="fsel"><option value="">全台</option>`
     + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
-    + `</select><select id="rkArea" class="fsel"></select></div></div>`;
+    + `</select><select id="rkArea" class="fsel"></select>`
+    + `<button class="flocate" id="rkLocate" type="button" aria-label="使用目前位置" title="使用目前位置">`
+    + `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`
+    + `</button></div></div>`;
   html += RANK_FILTERS.map(g =>
     `<div class="fg"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
     + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
@@ -1207,6 +1237,7 @@ function buildRankFilterBar(){
   fillRkArea();
   $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; buildRankFilterBar(); renderLeaderboard(); });
   $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; renderLeaderboard(); });
+  $("#rkLocate")?.addEventListener("click", e => locateRankArea(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
     Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? "不限" : ((k==="city"||k==="area") ? "" : null));
     rankAutoMeal = false;
