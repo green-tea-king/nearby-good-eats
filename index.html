@@ -765,6 +765,22 @@ function closeRankFilters(){
   $("#rankFilters")?.classList.add("hidden");
   $("#rankFilterBtn")?.setAttribute("aria-expanded", "false");
 }
+function rankFiltersOpen(){
+  const panel = $("#rankFilters");
+  return !!panel && !panel.classList.contains("hidden");
+}
+function rankFilterEventInside(e){
+  const panel = $("#rankFilters");
+  const btn = $("#rankFilterBtn");
+  if (!panel) return false;
+  const path = typeof e.composedPath === "function" ? e.composedPath() : [];
+  return path.includes(panel) || path.includes(btn) || panel.contains(e.target) || btn?.contains(e.target);
+}
+function closeRankFiltersFromOutside(e){
+  if (!rankFiltersOpen()) return;
+  if (rankFilterEventInside(e)) return;
+  closeRankFilters();
+}
 
 $("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
 $("#rankFilterBtn").addEventListener("click", () => {
@@ -772,13 +788,14 @@ $("#rankFilterBtn").addEventListener("click", () => {
   panel.classList.toggle("hidden");
   $("#rankFilterBtn").setAttribute("aria-expanded", String(!panel.classList.contains("hidden")));
 });
-document.addEventListener("click", e => {
-  const panel = $("#rankFilters");
-  const btn = $("#rankFilterBtn");
-  if (!panel || panel.classList.contains("hidden")) return;
-  if (panel.contains(e.target) || btn?.contains(e.target)) return;
-  closeRankFilters();
-});
+document.addEventListener("pointerdown", closeRankFiltersFromOutside, true);
+document.addEventListener("click", closeRankFiltersFromOutside, true);
+document.addEventListener("wheel", closeRankFiltersFromOutside, { capture:true, passive:true });
+document.addEventListener("scroll", closeRankFiltersFromOutside, true);
+document.addEventListener("touchmove", closeRankFiltersFromOutside, { capture:true, passive:true });
+document.addEventListener("gesturestart", closeRankFiltersFromOutside, { capture:true, passive:true });
+window.addEventListener("resize", () => { if (rankFiltersOpen()) closeRankFilters(); }, { passive:true });
+window.visualViewport?.addEventListener("resize", () => { if (rankFiltersOpen()) closeRankFilters(); }, { passive:true });
 $("#rankInfoBtn").addEventListener("click", () => $("#rankInfoModal").classList.remove("hidden"));
 $("#rankInfoClose").addEventListener("click", () => $("#rankInfoModal").classList.add("hidden"));
 $("#rankInfoModal").addEventListener("click", e => {
