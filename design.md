@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.24.16
+版本：2026.06.24.17
 
 ## 專案目標
 
@@ -95,6 +95,9 @@
 - 前台會把使用紀錄寫入 Firestore `usageEvents`：
   - `login`
   - `leaderboard_open`
+  - `leaderboard_result`
+  - `search_result`
+  - `route_result`
   - `refresh`
   - `filter_change`
   - `filter_clear`
@@ -102,7 +105,7 @@
   - `navigation_open`
   - `share_copy`
   - `detail_toggle`
-- `admin.html` 讀取當日 `usageEvents`，顯示今日事件數、今日使用者、排行榜 / 搜尋事件、分享事件與最新使用紀錄。
+- `admin.html` 可切換今日、7 天、30 天，顯示事件數、使用者、工作階段、查詢 / 排行榜、濾網操作、分享 / 導航，並提供事件分布、活躍使用者、熱門濾網、熱門餐廳行為、查詢結果紀錄、最新紀錄與 CSV 匯出。
 
 目前 `firebase-config.js` 已設定 `requireSignIn:true`。若 Firebase web config 尚未填入，網站會停在登入設定提示，避免未登入使用。啟用步驟：
 
@@ -270,8 +273,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.24.16
-畫面顯示 = v06.24.16
+VERSION = 2026.06.24.17
+畫面顯示 = v06.24.17
 ```
 
 ## 維護注意事項

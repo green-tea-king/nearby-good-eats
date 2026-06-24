@@ -10,31 +10,47 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <style>
-:root{--bg:#0E0C0D;--surface:#161213;--surface-2:#1F1819;--line:#2B2225;--text:#F2ECE6;--text-dim:#A89D98;--text-faint:#776B67;--accent:#C8102E;--accent-bright:#EC5A6A;--on-accent:#FFF6F3;--green:#5FB98A;--radius:12px;--sans:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Segoe UI Mono","Noto Sans TC",monospace;}
+:root{--bg:#0E0C0D;--surface:#161213;--surface-2:#1F1819;--line:#2B2225;--text:#F2ECE6;--text-dim:#A89D98;--text-faint:#776B67;--accent:#C8102E;--accent-bright:#EC5A6A;--on-accent:#FFF6F3;--green:#5FB98A;--gold:#D8AE42;--radius:12px;--sans:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Segoe UI Mono","Noto Sans TC",monospace;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{min-height:100vh;background:var(--bg);color:var(--text);font-family:var(--sans);display:flex;justify-content:center;}
 button{font-family:inherit;color:inherit;border:none;background:none;cursor:pointer;}
-.wrap{width:100%;max-width:760px;padding:22px 16px 42px;}
-.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;}
+.wrap{width:100%;max-width:900px;padding:22px 16px 42px;}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;}
 h1{font-size:22px;font-weight:650;letter-spacing:.02em;}
 .sub{font-size:12px;color:var(--text-dim);margin-top:4px;}
+.actions,.range{display:flex;gap:8px;flex-wrap:wrap;}
 .btn{padding:9px 14px;border-radius:9px;background:var(--surface);border:1px solid var(--line);font-size:13px;}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);}
-.status{padding:13px 14px;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);color:var(--text-dim);font-size:13px;margin-bottom:14px;}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px;}
-.metric{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;}
+.btn.primary,.btn.active{background:var(--accent);border-color:var(--accent);color:var(--on-accent);}
+.btn:disabled{opacity:.45;cursor:not-allowed;}
+.status{padding:13px 14px;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);color:var(--text-dim);font-size:13px;margin-bottom:12px;}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px;}
+.metric{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;min-height:86px;}
 .metric b{display:block;font-family:var(--mono);font-size:24px;line-height:1.1;}
 .metric span{font-size:12px;color:var(--text-dim);}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:12px;}
+.metric small{display:block;margin-top:6px;color:var(--text-faint);font-size:11px;}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.panel.wide{grid-column:1/-1;}
 .panel h2{font-size:14px;padding:12px 14px;border-bottom:1px solid var(--line);color:var(--accent-bright);}
+.list{padding:8px 0;}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--line);}
+.row:last-child{border-bottom:none;}
+.name{min-width:0;color:var(--text);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.meta{color:var(--text-dim);font-size:11px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.num{font-family:var(--mono);color:var(--gold);font-size:13px;}
+.bar{grid-column:1/-1;height:5px;background:var(--surface-2);border-radius:99px;overflow:hidden;}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px;}
 table{width:100%;border-collapse:collapse;font-size:12px;}
 th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
 th{color:var(--text-faint);font-weight:500;}
 td{color:var(--text-dim);}
 tr:last-child td{border-bottom:none;}
-.pill{display:inline-flex;padding:2px 7px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);font-size:11px;}
+.pill{display:inline-flex;padding:2px 7px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);font-size:11px;white-space:nowrap;}
+.empty{padding:18px 14px;color:var(--text-dim);font-size:13px;}
 .hidden{display:none!important;}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.head .actions{width:100%;display:flex;gap:8px}.head .actions .btn{flex:1}}
+@media(max-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}.panels{grid-template-columns:1fr;}.toolbar{align-items:flex-start;flex-direction:column;}.toolbar .actions{width:100%;}.toolbar .actions .btn{flex:1;}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.head .actions{width:100%;}.head .actions .btn{flex:1}.wrap{padding-inline:14px;}th:nth-child(2),td:nth-child(2){display:none;}}
 </style>
 </head>
 <body>
@@ -42,81 +58,253 @@ tr:last-child td{border-bottom:none;}
   <header class="head">
     <div>
       <h1>在地美食榜後台</h1>
-      <p class="sub">Google 登入使用紀錄與 API 使用概況</p>
+      <p class="sub">Google 登入使用紀錄、查詢結果與用戶行為統計</p>
     </div>
     <div class="actions">
       <button class="btn primary" id="loginBtn">Google 登入</button>
       <button class="btn hidden" id="logoutBtn">登出</button>
     </div>
   </header>
+
   <div class="status" id="status">讀取中...</div>
-  <section class="grid hidden" id="metrics">
-    <div class="metric"><b id="mEvents">0</b><span>今日事件數</span></div>
-    <div class="metric"><b id="mUsers">0</b><span>今日使用者</span></div>
-    <div class="metric"><b id="mSearch">0</b><span>排行榜 / 搜尋</span></div>
-    <div class="metric"><b id="mShare">0</b><span>分享連結</span></div>
+
+  <section class="toolbar hidden" id="adminTools">
+    <div class="range" id="rangeBtns">
+      <button class="btn active" type="button" data-days="1">今日</button>
+      <button class="btn" type="button" data-days="7">7 天</button>
+      <button class="btn" type="button" data-days="30">30 天</button>
+    </div>
+    <div class="actions">
+      <button class="btn" type="button" id="refreshBtn">重新整理</button>
+      <button class="btn" type="button" id="exportBtn">匯出 CSV</button>
+    </div>
   </section>
-  <section class="panel hidden" id="eventPanel">
-    <h2>最新使用紀錄</h2>
-    <table>
-      <thead><tr><th>時間</th><th>使用者</th><th>事件</th><th>內容</th></tr></thead>
-      <tbody id="eventRows"></tbody>
-    </table>
+
+  <section class="grid hidden" id="metrics">
+    <div class="metric"><b id="mEvents">0</b><span>事件數</span><small id="mRange">目前期間</small></div>
+    <div class="metric"><b id="mUsers">0</b><span>使用者</span><small>不重複 Google 帳戶</small></div>
+    <div class="metric"><b id="mSessions">0</b><span>工作階段</span><small>同瀏覽器 session 合併</small></div>
+    <div class="metric"><b id="mSearch">0</b><span>查詢 / 排行榜</span><small>含刷新與結果事件</small></div>
+    <div class="metric"><b id="mFilters">0</b><span>濾網操作</span><small>看使用者怎麼篩</small></div>
+    <div class="metric"><b id="mShare">0</b><span>分享 / 導航</span><small>高意圖行為</small></div>
+  </section>
+
+  <section class="panels hidden" id="dashboard">
+    <section class="panel">
+      <h2>事件分布</h2>
+      <div class="list" id="eventTypeRows"></div>
+    </section>
+    <section class="panel">
+      <h2>活躍使用者</h2>
+      <div class="list" id="userRows"></div>
+    </section>
+    <section class="panel">
+      <h2>熱門濾網</h2>
+      <div class="list" id="filterRows"></div>
+    </section>
+    <section class="panel">
+      <h2>熱門餐廳行為</h2>
+      <div class="list" id="placeRows"></div>
+    </section>
+    <section class="panel wide">
+      <h2>查詢結果紀錄</h2>
+      <table>
+        <thead><tr><th>時間</th><th>模式</th><th>結果</th><th>條件 / 前段名單</th></tr></thead>
+        <tbody id="resultRows"></tbody>
+      </table>
+    </section>
+    <section class="panel wide">
+      <h2>最新使用紀錄</h2>
+      <table>
+        <thead><tr><th>時間</th><th>使用者</th><th>事件</th><th>內容</th></tr></thead>
+        <tbody id="eventRows"></tbody>
+      </table>
+    </section>
   </section>
 </main>
 <script>
 const cfg = window.APP_FIREBASE_CONFIG || {};
 const firebaseCfg = cfg.firebase || {};
 const adminEmails = new Set((cfg.adminEmails || []).map(x => String(x).toLowerCase()));
+const eventLabels = {
+  login:"登入",
+  leaderboard_open:"開啟排行榜",
+  leaderboard_result:"排行榜結果",
+  search_result:"搜尋結果",
+  route_result:"路線估算",
+  refresh:"重新整理",
+  filter_change:"濾網變更",
+  filter_clear:"清除濾網",
+  locate_origin:"定位",
+  navigation_open:"導航",
+  share_copy:"分享",
+  detail_toggle:"詳情",
+};
 let auth = null;
 let db = null;
+let currentUser = null;
+let currentDays = 1;
+let currentEvents = [];
 
 function configured(){
   return !!(firebaseCfg.apiKey && firebaseCfg.authDomain && firebaseCfg.projectId && firebaseCfg.appId);
 }
 function $(id){ return document.getElementById(id); }
 function setStatus(text){ $("status").textContent = text; }
+function escapeHtml(s){
+  return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" }[c]));
+}
 function fmtTime(ts){
   const d = ts?.toDate ? ts.toDate() : new Date(ts || Date.now());
   return d.toLocaleString("zh-TW", { hour12:false });
 }
+function fmtRange(days){
+  if (days === 1) return "今日";
+  return `近 ${days} 天`;
+}
+function rangeStart(days){
+  const d = new Date();
+  d.setHours(0,0,0,0);
+  if (days > 1) d.setDate(d.getDate() - days + 1);
+  return d;
+}
+function eventName(type){
+  return eventLabels[type] || type || "未知";
+}
 function payloadText(data){
   const p = data.payload || {};
-  return Object.entries(p).slice(0,4).map(([k,v]) => `${k}: ${typeof v === "object" ? JSON.stringify(v) : v}`).join(" / ");
+  return Object.entries(p)
+    .filter(([,v]) => v !== "" && v != null)
+    .slice(0,5)
+    .map(([k,v]) => `${k}: ${Array.isArray(v) ? v.map(x => x?.name || x).join(", ") : (typeof v === "object" ? JSON.stringify(v) : v)}`)
+    .join(" / ");
 }
 function isAdminUser(user){
   return !!user?.email && adminEmails.has(user.email.toLowerCase());
+}
+function countBy(items, keyFn){
+  const map = new Map();
+  items.forEach(item => {
+    const key = keyFn(item);
+    if (!key) return;
+    const prev = map.get(key) || { key, count:0, meta:"" };
+    prev.count += 1;
+    map.set(key, prev);
+  });
+  return [...map.values()].sort((a,b) => b.count - a.count || a.key.localeCompare(b.key, "zh-Hant"));
+}
+function renderTopRows(id, rows, opts={}){
+  const max = Math.max(1, ...rows.map(r => r.count));
+  const limit = opts.limit || 8;
+  $(id).innerHTML = rows.slice(0, limit).map(r => `
+    <div class="row">
+      <div>
+        <div class="name">${escapeHtml(r.label || r.key)}</div>
+        ${r.meta ? `<div class="meta">${escapeHtml(r.meta)}</div>` : ""}
+      </div>
+      <div class="num">${r.count}</div>
+      <div class="bar"><i style="width:${Math.max(7, Math.round(r.count / max * 100))}%"></i></div>
+    </div>`).join("") || `<div class="empty">目前沒有資料</div>`;
+}
+function filterLabel(e){
+  const p = e.payload || {};
+  if (p.key && p.value) return `${p.key}: ${p.value}`;
+  if (p.key && p.selected != null) return `${p.key}: ${p.selected ? "選取" : "取消"}`;
+  if (p.city || p.area || p.village) return [p.city, p.area, p.village].filter(Boolean).join(" ");
+  return "";
+}
+function placeLabel(e){
+  const p = e.payload || {};
+  if (p.name) return p.name;
+  if (p.top && Array.isArray(p.top) && p.top[0]?.name) return p.top[0].name;
+  return "";
+}
+function resultDetail(e){
+  const p = e.payload || {};
+  const filters = [p.city, p.area, p.village, p.meal, p.open, p.travel].filter(Boolean).join(" · ");
+  const top = Array.isArray(p.top) ? p.top.map(x => x?.name).filter(Boolean).slice(0,5).join("、") : "";
+  return [filters, top].filter(Boolean).join("｜");
+}
+function downloadCsv(){
+  const header = ["time","email","type","sessionId","path","payload"];
+  const lines = currentEvents.map(e => [
+    fmtTime(e.createdAt),
+    e.email || "",
+    e.type || "",
+    e.sessionId || "",
+    e.path || "",
+    JSON.stringify(e.payload || {}).replace(/\r?\n/g, " "),
+  ]);
+  const csv = [header, ...lines].map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\r\n");
+  const blob = new Blob(["\uFEFF" + csv], { type:"text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `nearby-good-eats-usage-${fmtRange(currentDays).replace(/\s/g, "")}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 async function loadAdminStats(user){
   if (!isAdminUser(user)){
     setStatus(`目前登入：${user.email}。此帳號不是後台管理員。`);
     return;
   }
-  setStatus(`目前登入：${user.email}`);
-  const today = new Date(); today.setHours(0,0,0,0);
+  setStatus(`讀取 ${fmtRange(currentDays)} 統計中...`);
   const snap = await db.collection("usageEvents")
-    .where("createdAt", ">=", firebase.firestore.Timestamp.fromDate(today))
+    .where("createdAt", ">=", firebase.firestore.Timestamp.fromDate(rangeStart(currentDays)))
     .orderBy("createdAt", "desc")
-    .limit(200)
+    .limit(1000)
     .get();
-  const events = snap.docs.map(d => ({ id:d.id, ...d.data() }));
+  currentEvents = snap.docs.map(d => ({ id:d.id, ...d.data() }));
+  renderStats(user, currentEvents);
+}
+function renderStats(user, events){
   const users = new Set(events.map(e => e.email).filter(Boolean));
+  const sessions = new Set(events.map(e => e.sessionId).filter(Boolean));
+  const queryTypes = new Set(["leaderboard_open","leaderboard_result","search_result","refresh"]);
+  const intentTypes = new Set(["share_copy","navigation_open"]);
   $("mEvents").textContent = events.length;
   $("mUsers").textContent = users.size;
-  $("mSearch").textContent = events.filter(e => ["leaderboard_open","filter_change","locate_origin","refresh"].includes(e.type)).length;
-  $("mShare").textContent = events.filter(e => e.type === "share_copy").length;
-  $("metrics").classList.remove("hidden");
-  $("eventPanel").classList.remove("hidden");
-  $("eventRows").innerHTML = events.slice(0,50).map(e => `
+  $("mSessions").textContent = sessions.size;
+  $("mSearch").textContent = events.filter(e => queryTypes.has(e.type)).length;
+  $("mFilters").textContent = events.filter(e => ["filter_change","filter_clear","locate_origin"].includes(e.type)).length;
+  $("mShare").textContent = events.filter(e => intentTypes.has(e.type)).length;
+  $("mRange").textContent = fmtRange(currentDays);
+
+  renderTopRows("eventTypeRows", countBy(events, e => e.type).map(r => ({ ...r, label:eventName(r.key) })));
+  renderTopRows("userRows", countBy(events, e => e.email).map(r => ({ ...r, meta:"事件數" })));
+  renderTopRows("filterRows", countBy(events.filter(e => e.type === "filter_change" || e.type === "locate_origin"), filterLabel));
+  renderTopRows("placeRows", countBy(events.filter(e => ["share_copy","navigation_open","detail_toggle","leaderboard_result"].includes(e.type)), placeLabel));
+
+  const resultEvents = events.filter(e => ["leaderboard_result","search_result","route_result"].includes(e.type));
+  $("resultRows").innerHTML = resultEvents.slice(0,50).map(e => `
+    <tr>
+      <td>${fmtTime(e.createdAt)}</td>
+      <td><span class="pill">${escapeHtml(eventName(e.type))}</span></td>
+      <td>${escapeHtml(e.payload?.shownCount ?? e.payload?.resultCount ?? e.payload?.targetCount ?? "")}</td>
+      <td>${escapeHtml(resultDetail(e) || payloadText(e))}</td>
+    </tr>`).join("") || `<tr><td colspan="4">目前沒有查詢結果事件</td></tr>`;
+
+  $("eventRows").innerHTML = events.slice(0,80).map(e => `
     <tr>
       <td>${fmtTime(e.createdAt)}</td>
       <td>${escapeHtml(e.email || "")}</td>
-      <td><span class="pill">${escapeHtml(e.type || "")}</span></td>
+      <td><span class="pill">${escapeHtml(eventName(e.type))}</span></td>
       <td>${escapeHtml(payloadText(e))}</td>
-    </tr>`).join("") || `<tr><td colspan="4">今天還沒有紀錄</td></tr>`;
+    </tr>`).join("") || `<tr><td colspan="4">目前沒有使用紀錄</td></tr>`;
+
+  $("metrics").classList.remove("hidden");
+  $("dashboard").classList.remove("hidden");
+  $("adminTools").classList.remove("hidden");
+  setStatus(`目前登入：${user.email}。已載入 ${fmtRange(currentDays)} ${events.length} 筆事件。`);
 }
-function escapeHtml(s){
-  return String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" }[c]));
+async function refreshStats(){
+  if (!currentUser) return;
+  try{
+    await loadAdminStats(currentUser);
+  }catch(e){
+    setStatus(`後台讀取失敗：${e.message}`);
+  }
 }
 async function init(){
   if (!configured()){
@@ -129,13 +317,24 @@ async function init(){
   db = firebase.firestore();
   $("loginBtn").addEventListener("click", () => auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()));
   $("logoutBtn").addEventListener("click", () => auth.signOut());
+  $("refreshBtn").addEventListener("click", refreshStats);
+  $("exportBtn").addEventListener("click", downloadCsv);
+  $("rangeBtns").addEventListener("click", e => {
+    const btn = e.target.closest("[data-days]");
+    if (!btn) return;
+    currentDays = Number(btn.dataset.days);
+    [...$("rangeBtns").querySelectorAll("[data-days]")].forEach(b => b.classList.toggle("active", b === btn));
+    refreshStats();
+  });
   auth.onAuthStateChanged(user => {
+    currentUser = user || null;
     $("loginBtn").classList.toggle("hidden", !!user);
     $("logoutBtn").classList.toggle("hidden", !user);
     $("metrics").classList.add("hidden");
-    $("eventPanel").classList.add("hidden");
+    $("dashboard").classList.add("hidden");
+    $("adminTools").classList.add("hidden");
     if (!user) { setStatus("請使用 Google 帳戶登入。"); return; }
-    loadAdminStats(user).catch(e => setStatus(`後台讀取失敗：${e.message}`));
+    refreshStats();
   });
 }
 init();
