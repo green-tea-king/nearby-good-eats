@@ -1067,7 +1067,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.24";
+const APP_VERSION_FALLBACK = "2026.06.24.25";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -3082,14 +3082,14 @@ function cardHTML(r, rank){
   const certBadges = certificationBadges(r).map(certBadgeHTML).join("");
   const badges = awardBadges + certBadges;
   const confidence = confidenceHTML(r);
-  // AI 理由：有就顯示，否則 placeholder（Step 3）
+  // 摘要：優先顯示 AI 理由，其次 Google 摘要；沒有摘要時不佔版面。
   const ai = r.aiReason
     ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
     : (r.generativeSummary
       ? `<div class="ai-reason">Google AI 摘要：${escapeHTML(r.generativeSummary)}</div>`
       : r.reviewSummary
       ? `<div class="ai-reason">Google 評論摘要：${escapeHTML(r.reviewSummary)}</div>`
-      : `<div class="ai-reason placeholder">AI 解讀未啟用</div>`);
+      : "");
   const fallback = "this.style.visibility='hidden'";
   // 卡片內 1–3 張較大照片
   const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
