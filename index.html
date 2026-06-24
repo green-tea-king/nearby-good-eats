@@ -361,6 +361,10 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge.michelin::before{content:"✦";font-size:9px;}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
 .badge.plate{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.26);}
+.badge.cert{background:rgba(95,185,138,.11);color:var(--green);border-color:rgba(95,185,138,.28);}
+.badge.cert-strong{background:var(--gold-weak);color:var(--gold);border-color:rgba(200,162,76,.3);}
+.badge.cert-service{background:rgba(143,179,196,.10);color:var(--plate);border-color:rgba(143,179,196,.24);}
+.badge.cert::before,.badge.cert-strong::before,.badge.cert-service::before{content:"✓";font-size:10px;}
 .badge.placeholder{display:none;}
 
 /* 服務/供應標籤（中性灰，與彩色評鑑徽章區隔） */
@@ -946,7 +950,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.14";
+const APP_VERSION_FALLBACK = "2026.06.24.15";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2555,10 +2559,10 @@ function cardHTML(r, rank){
     : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
-  // 評鑑徽章：有資料就顯示，否則留 placeholder（Step 2）
-  const badges = (r.awards && r.awards.length)
-    ? r.awards.map(badgeHTML).join("")
-    : "";  // 無評鑑就不顯示徽章（Step 2 已接真實名單）
+  // 獎牌 / 認證：外部評鑑 + Google 真欄位認證
+  const awardBadges = (r.awards && r.awards.length) ? r.awards.map(badgeHTML).join("") : "";
+  const certBadges = certificationBadges(r).map(certBadgeHTML).join("");
+  const badges = awardBadges + certBadges;
   // AI 理由：有就顯示，否則 placeholder（Step 3）
   const ai = r.aiReason
     ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
@@ -2648,6 +2652,26 @@ function badgeHTML(a){
   if (a.guide==="bib") return `<span class="badge bib">必比登<span class="yr">${a.year||""}</span></span>`;
   if (a.guide==="500plate") return `<span class="badge plate">500盤 ${a.level}<span class="yr">${a.year||""}</span></span>`;
   return "";
+}
+
+function certificationBadges(r){
+  const certs = [];
+  if (r.rating >= 4.8 && r.count >= 100) certs.push({ label:"高分認證", note:r.rating.toFixed(1), cls:"cert-strong" });
+  if (r.count >= 10000) certs.push({ label:"萬則口碑", note:"Google", cls:"cert-strong" });
+  else if (r.count >= 1000) certs.push({ label:"千則口碑", note:"Google", cls:"cert" });
+  if (r.reservable) certs.push({ label:"可訂位", note:"Google", cls:"cert-service" });
+  if (r.goodGroups) certs.push({ label:"聚餐友善", note:"Google", cls:"cert-service" });
+  if (r.servesVeg) certs.push({ label:"素食友善", note:"Google", cls:"cert-service" });
+  if (r.outdoor) certs.push({ label:"戶外座位", note:"Google", cls:"cert-service" });
+  if (r.allowsDogs) certs.push({ label:"寵物友善", note:"Google", cls:"cert-service" });
+  if (r.liveMusic) certs.push({ label:"現場音樂", note:"Google", cls:"cert-service" });
+  if (r.accessStr) certs.push({ label:"無障礙資訊", note:"Google", cls:"cert-service" });
+  if (r.parkStr) certs.push({ label:"停車資訊", note:"Google", cls:"cert-service" });
+  return certs.slice(0, 8);
+}
+
+function certBadgeHTML(c){
+  return `<span class="badge ${escapeHTML(c.cls || "cert")}">${escapeHTML(c.label)}${c.note?`<span class="yr">${escapeHTML(c.note)}</span>`:""}</span>`;
 }
 
 /* ============================================================
