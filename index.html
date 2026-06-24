@@ -1057,7 +1057,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.21";
+const APP_VERSION_FALLBACK = "2026.06.24.22";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1795,14 +1795,48 @@ function rankTagMatch(item, key, value){
     || (item.tags?.[key]||[]).includes(value)
     || (item.aiTags?.[key]||[]).includes(value);
 }
+function normalizeKeywordValue(value){
+  return String(value || "")
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/臺/g, "台")
+    .replace(/魯肉/g, "滷肉");
+}
+function keywordVariants(keyword){
+  const base = normalizeKeywordValue(keyword);
+  if (!base) return [];
+  const variants = new Set([base]);
+  variants.add(base.replace(/滷肉/g, "魯肉"));
+  variants.add(base.replace(/台/g, "臺"));
+  variants.add(base.replace(/麵線/g, "面線"));
+  variants.add(base.replace(/面線/g, "麵線"));
+  return [...variants].filter(Boolean);
+}
+function keywordTokens(keyword){
+  return String(keyword || "").split(/[\s,，、]+/).map(normalizeKeywordValue).filter(Boolean);
+}
+function keywordStrength(item, keyword){
+  const variants = keywordVariants(keyword);
+  if (!variants.length) return 0;
+  const fields = [
+    { weight:8, text:item.name },
+    { weight:5, text:[item.ptd, item.typeName, item.pt].join(" ") },
+    { weight:4, text:[item.reviewSummary, item.summary, item.generativeSummary].join(" ") },
+    { weight:2, text:item.address },
+  ].map(x => ({ weight:x.weight, text:normalizeKeywordValue(x.text) }));
+  let best = 0;
+  for (const v of variants){
+    for (const f of fields){
+      if (f.text.includes(v)) best = Math.max(best, f.weight + Math.min(v.length, 8) / 10);
+    }
+  }
+  if (best) return best;
+  const tokens = keywordTokens(keyword);
+  if (tokens.length > 1 && tokens.every(t => fields.some(f => f.text.includes(t)))) return 1.5;
+  return 0;
+}
 function keywordMatch(item, keyword){
-  const kw = String(keyword || "").trim().toLowerCase();
-  if (!kw) return true;
-  const text = [
-    item.name, item.address, item.ptd, item.typeName, item.reviewSummary, item.summary, item.generativeSummary,
-    ...(item.queryTerms || []),
-  ].filter(Boolean).join(" ").toLowerCase();
-  return text.includes(kw);
+  return keywordStrength(item, keyword) > 0;
 }
 function activeRankFilters(f){
   const active = RANK_FILTERS.filter(g => !["open","travel"].includes(g.key) && f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
@@ -1923,6 +1957,9 @@ async function renderLeaderboard(){
     }
     list = applyRankFilters(relaxedSource, true);
   }
+  if (f.keyword){
+    list.sort((a,b) => (keywordStrength(b, f.keyword) - keywordStrength(a, f.keyword)) || (b.composite - a.composite));
+  }
   const top = list.slice(0, RANK_TOP);
   if (!top.length){
     trackUsage("leaderboard_result", {
@@ -1937,7 +1974,10 @@ async function renderLeaderboard(){
       travel:f.travel || "",
       open:f.open || "",
     });
-    $("#rankList").innerHTML = `<div class="rank-note">這個條件下沒有符合的餐廳。<div class="empty-actions">
+    const emptyText = f.keyword
+      ? `找不到實際資料包含「${escapeHTML(f.keyword)}」的餐廳。關鍵字是強條件，不顯示不相干店家。`
+      : "這個條件下沒有符合的餐廳。";
+    $("#rankList").innerHTML = `<div class="rank-note">${emptyText}<div class="empty-actions">
       ${f.keyword ? `<button data-empty-action="clear-keyword">取消關鍵字</button>` : ""}
       ${f.village ? `<button data-empty-action="clear-village">取消里</button>` : ""}
       ${f.area ? `<button data-empty-action="clear-area">改看全區</button>` : ""}
