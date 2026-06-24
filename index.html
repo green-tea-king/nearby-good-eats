@@ -15,6 +15,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
+<script src="firebase-config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 <style>
 /* ============================================================
    設計 tokens（暗色，集中於 CSS variables；將來加淺色模式只需多定義一組）
@@ -457,6 +461,14 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .pick-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);z-index:46;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.55));}
 .pick-confirm{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(26px + env(safe-area-inset-bottom,0));z-index:47;background:var(--accent);color:var(--on-accent);border:none;border-radius:999px;padding:14px 32px;font-size:15px;font-weight:500;letter-spacing:.05em;box-shadow:0 14px 36px -10px rgba(200,16,46,.6);transition:transform var(--t),filter var(--t);}
 .pick-confirm:active{transform:translateX(-50%) scale(.97);filter:brightness(1.06);}
+.auth-gate{position:fixed;inset:0;z-index:90;background:rgba(14,12,13,.96);display:flex;align-items:center;justify-content:center;padding:24px;}
+.auth-card{width:100%;max-width:360px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 18px 60px rgba(0,0,0,.45);}
+.auth-card h2{font-size:22px;line-height:1.25;margin-bottom:8px;font-weight:650;}
+.auth-card p{font-size:13px;line-height:1.7;color:var(--text-dim);margin-bottom:16px;}
+.auth-card button{width:100%;padding:12px 14px;border-radius:10px;background:var(--accent);border:1px solid var(--accent);color:var(--on-accent);font-size:14px;font-weight:600;}
+.auth-card .auth-note{margin-top:12px;font-size:11px;color:var(--text-faint);}
+.auth-user{position:fixed;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0));z-index:65;max-width:min(260px,72vw);padding:7px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:11px;color:var(--text-dim);display:flex;align-items:center;gap:8px;}
+.auth-user button{color:var(--accent-bright);font-size:11px;}
 @media(max-width:780px) and (max-height:720px){
   .splash-shell{justify-content:flex-start;gap:14px;}
   #splash h1{font-size:34px;margin:14px 0 8px;}
@@ -467,6 +479,15 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 </style>
 </head>
 <body>
+<div class="auth-gate hidden" id="authGate">
+  <div class="auth-card">
+    <h2>登入在地美食榜</h2>
+    <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
+    <button id="googleLoginBtn" type="button">使用 Google 登入</button>
+    <p class="auth-note" id="authGateNote">若尚未設定 Firebase，登入功能會保持關閉，正式站仍可正常瀏覽。</p>
+  </div>
+</div>
+<div class="auth-user hidden" id="authUser"><span id="authUserText"></span><button id="logoutBtn" type="button">登出</button></div>
 
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
@@ -719,6 +740,12 @@ const CONFIG = {
     ENDPOINT: "",            // 後端應回 {items:[{id,tags:{occasion:["聚餐"], service:["吃到飽"]}, confidence:{occasion:.8}}]}
     MAX_ITEMS: 80,
   },
+  AUTH: window.APP_FIREBASE_CONFIG || {
+    requireSignIn: false,
+    logUsage: true,
+    adminEmails: [],
+    firebase: { apiKey:"", authDomain:"", projectId:"", appId:"" },
+  },
 };
 
 /* ============================================================
@@ -768,6 +795,95 @@ const state = {
 
 const $ = sel => document.querySelector(sel);
 const hasGoogleApiKey = !!CONFIG.GOOGLE_API_KEY;
+const authState = { enabled:false, configured:false, user:null, db:null, sessionId:globalThis.crypto?.randomUUID?.() || String(Date.now()) };
+let appBooted = false;
+
+function firebaseAuthConfigured(){
+  const cfg = CONFIG.AUTH?.firebase || {};
+  return !!(cfg.apiKey && cfg.authDomain && cfg.projectId && cfg.appId);
+}
+function adminEmails(){
+  return new Set((CONFIG.AUTH?.adminEmails || []).map(x => String(x).toLowerCase()));
+}
+function isAdminUser(user=authState.user){
+  return !!user?.email && adminEmails().has(user.email.toLowerCase());
+}
+function updateAuthUi(){
+  const gate = $("#authGate");
+  const userBox = $("#authUser");
+  const userText = $("#authUserText");
+  if (authState.enabled && !authState.user){
+    gate?.classList.remove("hidden");
+  }else{
+    gate?.classList.add("hidden");
+  }
+  if (authState.user){
+    userText.textContent = authState.user.email + (isAdminUser() ? " · 管理員" : "");
+    userBox?.classList.remove("hidden");
+  }else{
+    userBox?.classList.add("hidden");
+  }
+}
+async function initAuth(){
+  authState.configured = firebaseAuthConfigured();
+  authState.enabled = !!(CONFIG.AUTH?.requireSignIn && authState.configured);
+  if (!authState.configured){
+    console.info("[Auth] Firebase 尚未設定，登入與使用紀錄未啟用。");
+    return;
+  }
+  firebase.initializeApp(CONFIG.AUTH.firebase);
+  const auth = firebase.auth();
+  authState.db = firebase.firestore();
+  $("#googleLoginBtn")?.addEventListener("click", () => auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()));
+  $("#logoutBtn")?.addEventListener("click", () => auth.signOut());
+  auth.onAuthStateChanged(user => {
+    authState.user = user || null;
+    updateAuthUi();
+    if (user){
+      upsertUserProfile(user);
+      trackUsage("login", { admin:isAdminUser(user) });
+      bootApp();
+    }
+  });
+  updateAuthUi();
+}
+async function upsertUserProfile(user){
+  if (!authState.db || !user) return;
+  try{
+    await authState.db.collection("users").doc(user.uid).set({
+      uid:user.uid,
+      email:user.email || "",
+      displayName:user.displayName || "",
+      photoURL:user.photoURL || "",
+      isAdmin:isAdminUser(user),
+      lastSeenAt:firebase.firestore.FieldValue.serverTimestamp(),
+    }, { merge:true });
+  }catch(e){
+    console.warn("[Auth] 使用者資料寫入失敗：", e.message);
+  }
+}
+async function trackUsage(type, payload={}){
+  if (!CONFIG.AUTH?.logUsage || !authState.db || !authState.user) return;
+  try{
+    await authState.db.collection("usageEvents").add({
+      type,
+      payload,
+      uid:authState.user.uid,
+      email:authState.user.email || "",
+      sessionId:authState.sessionId,
+      path:location.pathname + location.search + location.hash,
+      userAgent:navigator.userAgent,
+      createdAt:firebase.firestore.FieldValue.serverTimestamp(),
+    });
+  }catch(e){
+    console.warn("[Usage] 紀錄失敗：", e.message);
+  }
+}
+function bootApp(){
+  if (appBooted) return;
+  appBooted = true;
+  startFromRoute();
+}
 
 /* ============================================================
    開場流程
@@ -793,7 +909,10 @@ function closeRankFiltersFromOutside(e){
   closeRankFilters();
 }
 
-$("#rankRefresh").addEventListener("click", () => openLeaderboard(true));
+$("#rankRefresh").addEventListener("click", () => {
+  trackUsage("refresh", { view:"leaderboard" });
+  openLeaderboard(true);
+});
 $("#rankFilterBtn").addEventListener("click", () => {
   const panel = $("#rankFilters");
   panel.classList.toggle("hidden");
@@ -822,7 +941,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.11";
+const APP_VERSION_FALLBACK = "2026.06.24.12";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -985,6 +1104,7 @@ async function fetchSharedPlaceCard(placeId){
 
 async function openLeaderboard(force){
   sharedPlaceRoute = null;
+  trackUsage("leaderboard_open", { force:!!force, meal:rankFilter.meal || "", travel:rankFilter.travel || "", open:rankFilter.open || "" });
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
   if (!rankContextReady){
@@ -1175,6 +1295,7 @@ async function locateRankOrigin(btn){
     rankNearbyPools = {};
     buildRankFilterBar();
     renderLeaderboard();
+    trackUsage("locate_origin", { label:rankOriginLabel, travel:rankFilter.travel || "" });
     toast(`定位：${rankOriginLabel}`);
   }else{
     toast("無法取得目前位置，請確認定位權限");
@@ -1570,6 +1691,7 @@ function bindCardEvents(root){
     const d = btn.closest(".card").querySelector(".detail");
     d.classList.toggle("open");
     btn.querySelector(".chev2").style.transform = d.classList.contains("open") ? "rotate(180deg)" : "";
+    trackUsage("detail_toggle", { open:d.classList.contains("open"), placeId:btn.closest(".card")?.querySelector("[data-share]")?.dataset.placeId || "" });
   }));
   root.querySelectorAll("[data-nav]").forEach(btn => btn.addEventListener("click", () => {
     const { lat, lng, name } = btn.dataset;
@@ -1577,6 +1699,7 @@ function bindCardEvents(root){
     const url = (lat && lng && lat!=="0")
       ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=${travelMode}&q=${encodeURIComponent(name)}`
       : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
+    trackUsage("navigation_open", { name, travelMode });
     window.open(url, "_blank");
   }));
   root.querySelectorAll("[data-share]").forEach(btn => btn.addEventListener("click", () => shareCard(btn)));
@@ -1595,6 +1718,7 @@ async function shareCard(btn){
   const { placeId, name, rating, count, address } = btn.dataset;
   if (!placeId){ toast("這張卡片目前沒有可分享連結"); return; }
   const url = placeShareUrl(placeId);
+  trackUsage("share_copy", { placeId, name, rating, count:Number(count || 0) });
   await copyShareUrl(url);
 }
 
@@ -1628,18 +1752,20 @@ function buildRankFilterBar(){
     } else {
       rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
     }
+    trackUsage("filter_change", { key:k, value:rankFilter[k] || "", selected:v });
     buildRankFilterBar(); renderLeaderboard();
   }));
   fillRkArea();
   fillRkVillage();
-  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); buildRankFilterBar(); renderLeaderboard(); });
-  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); fillRkVillage(); renderLeaderboard(); });
-  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter(); renderLeaderboard(); });
+  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); trackUsage("filter_change", { key:"city", value:rankFilter.city }); buildRankFilterBar(); renderLeaderboard(); });
+  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); trackUsage("filter_change", { key:"area", city:rankFilter.city, value:rankFilter.area }); fillRkVillage(); renderLeaderboard(); });
+  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter(); trackUsage("filter_change", { key:"village", city:rankFilter.city, area:rankFilter.area, value:rankFilter.village }); renderLeaderboard(); });
   $("#rkTravelLocate")?.addEventListener("click", e => locateRankOrigin(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
     Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
     rankAutoMeal = false;
     rankOriginLabel = "";
+    trackUsage("filter_clear", {});
     buildRankFilterBar(); renderLeaderboard();
   });
 }
@@ -2733,7 +2859,9 @@ function startFromRoute(){
 
 window.addEventListener("popstate", startFromRoute);
 loadAppVersion();
-startFromRoute();
+initAuth().finally(() => {
+  if (!authState.enabled) bootApp();
+});
 
 </script>
 </body>

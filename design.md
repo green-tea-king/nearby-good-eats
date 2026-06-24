@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.24.11
+版本：2026.06.24.12
 
 ## 專案目標
 
@@ -16,6 +16,10 @@
 ## 主要檔案
 
 - `index.html`：主要 App，包含 HTML、CSS、JavaScript。
+- `admin.html`：Firebase 後台統計頁，登入管理員可看使用紀錄。
+- `firebase-config.js`：Firebase Auth / Firestore 設定，未填寫前登入功能保持關閉。
+- `firestore.rules`：Firestore 安全規則，限制使用者只能寫自己的使用紀錄、管理員可讀後台資料。
+- `firebase.json`：Firebase CLI 使用的 Firestore 規則設定。
 - `VERSION`：正式版本號，格式為 `YYYY.MM.DD.N`。
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
@@ -29,7 +33,7 @@
 
 1. 頁首
    - 左側 Logo。
-   - Logo 右側小字版本號，例如 `v06.24.11`。
+   - Logo 右側小字版本號，例如 `v06.24.12`。
    - 右側功能按鈕：評分說明、濾網、重新整理。
 
 2. 濾網面板
@@ -79,6 +83,34 @@
 - 近似 / AI 濾網：Google 沒有直接欄位時，先以店名、類型、摘要、Google flags 判斷，後續可接後端 AI proxy 強化。
 
 ## 資料來源與 API
+
+### Google 登入與後台統計
+
+採用 B 模式：
+
+- 任何 Google 帳戶都可以登入使用。
+- 只有 `firebase-config.js` 的 `adminEmails`，且 Firestore `admins/<email>` 文件存在的帳號，可以讀取後台統計。
+- 前台會把使用紀錄寫入 Firestore `usageEvents`：
+  - `login`
+  - `leaderboard_open`
+  - `refresh`
+  - `filter_change`
+  - `filter_clear`
+  - `locate_origin`
+  - `navigation_open`
+  - `share_copy`
+  - `detail_toggle`
+- `admin.html` 讀取當日 `usageEvents`，顯示今日事件數、今日使用者、排行榜 / 搜尋事件、分享事件與最新使用紀錄。
+
+目前 Firebase 設定檔預設未啟用，避免尚未填 config 前鎖死正式站。啟用步驟：
+
+1. 在 Firebase Console 建立 Web App。
+2. 啟用 Authentication 的 Google provider。
+3. 啟用 Firestore。
+4. 將 Firebase web config 填入 `firebase-config.js`。
+5. 將 `requireSignIn` 改為 `true`。
+6. 在 Firestore 建立 `admins/<管理員 Gmail>` 文件。
+7. 部署 `firestore.rules`。
 
 ### Google APIs
 
@@ -233,8 +265,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.24.11
-畫面顯示 = v06.24.11
+VERSION = 2026.06.24.12
+畫面顯示 = v06.24.12
 ```
 
 ## 維護注意事項
