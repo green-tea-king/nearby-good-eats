@@ -736,8 +736,8 @@ const CONFIG = {
     DYNAMIC_M: true, // true＝用當批結果平均覆蓋上面的 m
   },
   REVIEW_COUNT_BONUS: {
-    SCALE: 0.03, // 評論量信心加分：同星等時評論數多者更前
-    CAP: 0.18,   // 避免超大店只靠評論數壓過品質
+    SCALE: 0.06, // 評論量信心加分：同星等時評論數多者更前
+    CAP: 0.32,   // 避免超大店只靠評論數壓過品質
   },
 
   // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
@@ -1067,7 +1067,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.23";
+const APP_VERSION_FALLBACK = "2026.06.24.24";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
