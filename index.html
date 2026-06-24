@@ -471,6 +471,8 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .auth-card button{width:100%;padding:12px 14px;border-radius:10px;background:var(--accent);border:1px solid var(--accent);color:var(--on-accent);font-size:14px;font-weight:600;}
 .auth-card .auth-note{margin-top:12px;font-size:11px;color:var(--text-faint);}
 .auth-user{position:fixed;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0));z-index:65;max-width:min(260px,72vw);padding:7px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:11px;color:var(--text-dim);display:flex;align-items:center;gap:8px;}
+.auth-user a{color:var(--text);text-decoration:none;}
+.auth-user a:active{color:var(--accent-bright);}
 .auth-user button{color:var(--accent-bright);font-size:11px;}
 @media(max-width:780px) and (max-height:720px){
   .splash-shell{justify-content:flex-start;gap:14px;}
@@ -490,7 +492,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <p class="auth-note" id="authGateNote">登入門檻已啟用。若按鈕無法使用，請先填寫 Firebase 設定。</p>
   </div>
 </div>
-<div class="auth-user hidden" id="authUser"><span id="authUserText"></span><button id="logoutBtn" type="button">登出</button></div>
+<div class="auth-user hidden" id="authUser"><span id="authUserText"></span><a class="hidden" id="adminLink" href="admin.html">管理員</a><button id="logoutBtn" type="button">登出</button></div>
 
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
@@ -814,15 +816,20 @@ function updateAuthUi(){
   const gate = $("#authGate");
   const userBox = $("#authUser");
   const userText = $("#authUserText");
+  const adminLink = $("#adminLink");
   if (authState.enabled && !authState.user){
     gate?.classList.remove("hidden");
   }else{
     gate?.classList.add("hidden");
   }
   if (authState.user){
-    userText.textContent = authState.user.email + (isAdminUser() ? " · 管理員" : "");
+    const isAdmin = isAdminUser();
+    userText.textContent = authState.user.email + (isAdmin ? " ·" : "");
+    adminLink?.classList.toggle("hidden", !isAdmin);
     userBox?.classList.remove("hidden");
   }else{
+    if (userText) userText.textContent = "";
+    adminLink?.classList.add("hidden");
     userBox?.classList.add("hidden");
   }
 }
@@ -950,7 +957,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.15";
+const APP_VERSION_FALLBACK = "2026.06.24.16";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
