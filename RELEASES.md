@@ -20,6 +20,7 @@
 - `firebase-config.js`
 - `firebase.json`
 - `firestore.rules`
+- `functions/`（不含 node_modules）
 - `assets/`
 - `VERSION`
 - `release-manifest.json`

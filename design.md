@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.24.18
+版本：2026.06.24.19
 
 ## 專案目標
 
@@ -18,9 +18,11 @@
 - `index.html`：主要 App，包含 HTML、CSS、JavaScript。
 - `admin.html`：Firebase 後台統計頁，登入管理員可看使用紀錄。
 - `assets/app-settings.js`：公開的非機密執行設定，集中管理資料檔路徑。
+- `assets/filter-rules.js`：排行榜濾網定義與精準度層級。
 - `firebase-config.js`：Firebase Auth / Firestore 設定，未填寫前登入功能保持關閉。
 - `firestore.rules`：Firestore 安全規則，限制使用者只能寫自己的使用紀錄、管理員可讀後台資料。
 - `firebase.json`：Firebase CLI 使用的 Firestore 規則設定。
+- `functions/`：Firebase Cloud Functions proxy 原始碼，負責驗證登入、代打 Google Places / Routes、AI 分類與 API 事件記錄。
 - `VERSION`：正式版本號，格式為 `YYYY.MM.DD.N`。
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
@@ -132,7 +134,9 @@
 - Routes API
 - Distance Matrix API fallback
 
-Google API key 放在 `index.html` 的 `CONFIG.GOOGLE_API_KEY`。這是前端靜態站，因此必須在 Google Cloud Console 設定 HTTP referrer 限制，避免 key 被濫用。
+Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`functions/` 已建立 `api` 與 `photo` proxy，會驗證 Firebase ID token、使用 `GOOGLE_MAPS_API_KEY` Secret 代打 Google API，並寫入 `apiEvents`。
+
+目前 Firebase 專案仍需要升級 Blaze 才能啟用 Secret Manager / Cloud Functions。升級前，正式 GitHub Pages 仍透過 `assets/app-settings.js` 的 `googleMapsApiKey` fallback 運作；此 key 必須在 Google Cloud Console 設定 HTTP referrer 與 API 限制。
 
 ### 餐廳資料流程
 
@@ -220,7 +224,7 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 
 ```js
 AI_FILTER: {
-  MODE: "off",
+  MODE: "proxy",
   ENDPOINT: "",
   MAX_ITEMS: 80,
 }
@@ -298,8 +302,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.24.18
-畫面顯示 = v06.24.18
+VERSION = 2026.06.24.19
+畫面顯示 = v06.24.19
 ```
 
 ## 維護注意事項

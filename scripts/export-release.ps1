@@ -31,6 +31,11 @@ Copy-Item -Force (Join-Path $RepoRoot "firebase.json") $ReleaseDir
 Copy-Item -Force (Join-Path $RepoRoot "firestore.rules") $ReleaseDir
 Copy-Item -Force (Join-Path $RepoRoot "VERSION") $ReleaseDir
 Copy-Item -Recurse -Force (Join-Path $RepoRoot "assets") $ReleaseDir
+$FunctionsReleaseDir = Join-Path $ReleaseDir "functions"
+New-Item -ItemType Directory -Force $FunctionsReleaseDir | Out-Null
+Copy-Item -Force (Join-Path $RepoRoot "functions\index.js") $FunctionsReleaseDir
+Copy-Item -Force (Join-Path $RepoRoot "functions\package.json") $FunctionsReleaseDir
+Copy-Item -Force (Join-Path $RepoRoot "functions\package-lock.json") $FunctionsReleaseDir
 
 $Commit = ""
 try {
@@ -51,6 +56,7 @@ $Manifest = [ordered]@{
     "firebase-config.js",
     "firebase.json",
     "firestore.rules",
+    "functions/",
     "assets/",
     "VERSION"
   )

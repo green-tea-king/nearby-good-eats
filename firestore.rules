@@ -22,6 +22,11 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    match /apiEvents/{eventId} {
+      allow read: if isAdmin();
+      allow create, update, delete: if false;
+    }
+
     match /users/{uid} {
       allow read: if isOwner(uid) || isAdmin();
       allow create, update: if isOwner(uid);

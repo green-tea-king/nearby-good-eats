@@ -87,6 +87,8 @@ tr:last-child td{border-bottom:none;}
     <div class="metric"><b id="mSearch">0</b><span>查詢 / 排行榜</span><small>含刷新與結果事件</small></div>
     <div class="metric"><b id="mFilters">0</b><span>濾網操作</span><small>看使用者怎麼篩</small></div>
     <div class="metric"><b id="mShare">0</b><span>分享 / 導航</span><small>高意圖行為</small></div>
+    <div class="metric"><b id="mApiCalls">0</b><span>API 呼叫</span><small>Functions proxy</small></div>
+    <div class="metric"><b id="mApiErrors">0%</b><span>API 錯誤率</span><small id="mApiUnits">估算單位 0</small></div>
   </section>
 
   <section class="panels hidden" id="dashboard">
@@ -105,6 +107,14 @@ tr:last-child td{border-bottom:none;}
     <section class="panel">
       <h2>熱門餐廳行為</h2>
       <div class="list" id="placeRows"></div>
+    </section>
+    <section class="panel">
+      <h2>API 動作分布</h2>
+      <div class="list" id="apiActionRows"></div>
+    </section>
+    <section class="panel">
+      <h2>API 錯誤</h2>
+      <div class="list" id="apiErrorRows"></div>
     </section>
     <section class="panel wide">
       <h2>查詢結果紀錄</h2>
@@ -145,6 +155,7 @@ let db = null;
 let currentUser = null;
 let currentDays = 1;
 let currentEvents = [];
+let currentApiEvents = [];
 
 function configured(){
   return !!(firebaseCfg.apiKey && firebaseCfg.authDomain && firebaseCfg.projectId && firebaseCfg.appId);
@@ -226,16 +237,34 @@ function resultDetail(e){
   return [filters, top].filter(Boolean).join("｜");
 }
 function downloadCsv(){
-  const header = ["time","email","type","sessionId","path","payload"];
-  const lines = currentEvents.map(e => [
+  const header = ["kind","time","email","type","sessionId","path","payload","ok","latencyMs","estimatedUnits","error"];
+  const usageLines = currentEvents.map(e => [
+    "usage",
     fmtTime(e.createdAt),
     e.email || "",
     e.type || "",
     e.sessionId || "",
     e.path || "",
     JSON.stringify(e.payload || {}).replace(/\r?\n/g, " "),
+    "",
+    "",
+    "",
+    "",
   ]);
-  const csv = [header, ...lines].map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\r\n");
+  const apiLines = currentApiEvents.map(e => [
+    "api",
+    fmtTime(e.createdAt),
+    e.email || "",
+    e.action || "",
+    "",
+    "",
+    "",
+    e.ok === false ? "false" : "true",
+    e.latencyMs || "",
+    e.estimatedUnits || "",
+    e.error || "",
+  ]);
+  const csv = [header, ...usageLines, ...apiLines].map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\r\n");
   const blob = new Blob(["\uFEFF" + csv], { type:"text/csv;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -250,15 +279,16 @@ async function loadAdminStats(user){
     return;
   }
   setStatus(`讀取 ${fmtRange(currentDays)} 統計中...`);
-  const snap = await db.collection("usageEvents")
-    .where("createdAt", ">=", firebase.firestore.Timestamp.fromDate(rangeStart(currentDays)))
-    .orderBy("createdAt", "desc")
-    .limit(1000)
-    .get();
-  currentEvents = snap.docs.map(d => ({ id:d.id, ...d.data() }));
-  renderStats(user, currentEvents);
+  const since = firebase.firestore.Timestamp.fromDate(rangeStart(currentDays));
+  const [usageSnap, apiSnap] = await Promise.all([
+    db.collection("usageEvents").where("createdAt", ">=", since).orderBy("createdAt", "desc").limit(1000).get(),
+    db.collection("apiEvents").where("createdAt", ">=", since).orderBy("createdAt", "desc").limit(1000).get().catch(() => ({ docs:[] })),
+  ]);
+  currentEvents = usageSnap.docs.map(d => ({ id:d.id, ...d.data() }));
+  currentApiEvents = apiSnap.docs.map(d => ({ id:d.id, ...d.data() }));
+  renderStats(user, currentEvents, currentApiEvents);
 }
-function renderStats(user, events){
+function renderStats(user, events, apiEvents=[]){
   const users = new Set(events.map(e => e.email).filter(Boolean));
   const sessions = new Set(events.map(e => e.sessionId).filter(Boolean));
   const queryTypes = new Set(["leaderboard_open","leaderboard_result","search_result","refresh"]);
@@ -270,11 +300,18 @@ function renderStats(user, events){
   $("mFilters").textContent = events.filter(e => ["filter_change","filter_clear","locate_origin"].includes(e.type)).length;
   $("mShare").textContent = events.filter(e => intentTypes.has(e.type)).length;
   $("mRange").textContent = fmtRange(currentDays);
+  const apiErrors = apiEvents.filter(e => e.ok === false);
+  const apiUnits = apiEvents.reduce((sum, e) => sum + Number(e.estimatedUnits || 0), 0);
+  $("mApiCalls").textContent = apiEvents.length;
+  $("mApiErrors").textContent = apiEvents.length ? `${Math.round(apiErrors.length / apiEvents.length * 100)}%` : "0%";
+  $("mApiUnits").textContent = `估算單位 ${apiUnits}`;
 
   renderTopRows("eventTypeRows", countBy(events, e => e.type).map(r => ({ ...r, label:eventName(r.key) })));
   renderTopRows("userRows", countBy(events, e => e.email).map(r => ({ ...r, meta:"事件數" })));
   renderTopRows("filterRows", countBy(events.filter(e => e.type === "filter_change" || e.type === "locate_origin"), filterLabel));
   renderTopRows("placeRows", countBy(events.filter(e => ["share_copy","navigation_open","detail_toggle","leaderboard_result"].includes(e.type)), placeLabel));
+  renderTopRows("apiActionRows", countBy(apiEvents, e => e.action).map(r => ({ ...r, meta:"呼叫次數" })));
+  renderTopRows("apiErrorRows", countBy(apiEvents.filter(e => e.ok === false), e => e.error || e.action).map(r => ({ ...r, meta:"錯誤次數" })));
 
   const resultEvents = events.filter(e => ["leaderboard_result","search_result","route_result"].includes(e.type));
   $("resultRows").innerHTML = resultEvents.slice(0,50).map(e => `
@@ -296,7 +333,7 @@ function renderStats(user, events){
   $("metrics").classList.remove("hidden");
   $("dashboard").classList.remove("hidden");
   $("adminTools").classList.remove("hidden");
-  setStatus(`目前登入：${user.email}。已載入 ${fmtRange(currentDays)} ${events.length} 筆事件。`);
+  setStatus(`目前登入：${user.email}。已載入 ${fmtRange(currentDays)} ${events.length} 筆使用事件、${apiEvents.length} 筆 API 事件。`);
 }
 async function refreshStats(){
   if (!currentUser) return;
