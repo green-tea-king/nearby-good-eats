@@ -483,7 +483,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <h2>登入在地美食榜</h2>
     <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
     <button id="googleLoginBtn" type="button">使用 Google 登入</button>
-    <p class="auth-note" id="authGateNote">若尚未設定 Firebase，登入功能會保持關閉，正式站仍可正常瀏覽。</p>
+    <p class="auth-note" id="authGateNote">登入門檻已啟用。若按鈕無法使用，請先填寫 Firebase 設定。</p>
   </div>
 </div>
 <div class="auth-user hidden" id="authUser"><span id="authUserText"></span><button id="logoutBtn" type="button">登出</button></div>
@@ -739,7 +739,7 @@ const CONFIG = {
     MAX_ITEMS: 80,
   },
   AUTH: window.APP_FIREBASE_CONFIG || {
-    requireSignIn: false,
+    requireSignIn: true,
     logUsage: true,
     adminEmails: [],
     firebase: { apiKey:"", authDomain:"", projectId:"", appId:"" },
@@ -824,8 +824,15 @@ function updateAuthUi(){
 }
 async function initAuth(){
   authState.configured = firebaseAuthConfigured();
-  authState.enabled = !!(CONFIG.AUTH?.requireSignIn && authState.configured);
+  authState.enabled = !!CONFIG.AUTH?.requireSignIn;
   if (!authState.configured){
+    if (authState.enabled){
+      $("#authGateText").textContent = "Google 登入門檻已啟用，但 Firebase 尚未設定，暫時無法使用網站。";
+      $("#authGateNote").textContent = "請填寫 firebase-config.js 的 Firebase web app config 後再登入。";
+      $("#googleLoginBtn").disabled = true;
+      updateAuthUi();
+      return;
+    }
     console.info("[Auth] Firebase 尚未設定，登入與使用紀錄未啟用。");
     return;
   }
@@ -939,7 +946,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.13";
+const APP_VERSION_FALLBACK = "2026.06.24.14";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;

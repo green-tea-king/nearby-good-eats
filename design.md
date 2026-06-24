@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.24.13
+版本：2026.06.24.14
 
 ## 專案目標
 
@@ -33,7 +33,7 @@
 
 1. 頁首
    - 左側 Logo。
-   - Logo 右側小字版本號，例如 `v06.24.13`。
+   - Logo 右側小字版本號，例如 `v06.24.14`。
    - 右側功能按鈕：評分說明、濾網、重新整理。
 
 2. 濾網面板
@@ -88,6 +88,7 @@
 
 採用 B 模式：
 
+- 網站必須登入 Google 帳戶才能使用。
 - 任何 Google 帳戶都可以登入使用。
 - 只有 `firebase-config.js` 的 `adminEmails`，且 Firestore `admins/<email>` 文件存在的帳號，可以讀取後台統計。
 - 前台會把使用紀錄寫入 Firestore `usageEvents`：
@@ -102,13 +103,13 @@
   - `detail_toggle`
 - `admin.html` 讀取當日 `usageEvents`，顯示今日事件數、今日使用者、排行榜 / 搜尋事件、分享事件與最新使用紀錄。
 
-目前 Firebase 設定檔預設未啟用，避免尚未填 config 前鎖死正式站。啟用步驟：
+目前 `firebase-config.js` 已設定 `requireSignIn:true`。若 Firebase web config 尚未填入，網站會停在登入設定提示，避免未登入使用。啟用步驟：
 
 1. 在 Firebase Console 建立 Web App。
 2. 啟用 Authentication 的 Google provider。
 3. 啟用 Firestore。
 4. 將 Firebase web config 填入 `firebase-config.js`。
-5. 將 `requireSignIn` 改為 `true`。
+5. 確認 `requireSignIn` 維持 `true`。
 6. 在 Firestore 建立 `admins/<管理員 Gmail>` 文件。
 7. 部署 `firestore.rules`。
 
@@ -265,8 +266,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.24.13
-畫面顯示 = v06.24.13
+VERSION = 2026.06.24.14
+畫面顯示 = v06.24.14
 ```
 
 ## 維護注意事項
