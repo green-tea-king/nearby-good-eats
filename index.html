@@ -176,6 +176,8 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
 .rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px;}
 .rank-filters .fg-chips::-webkit-scrollbar{display:none;}
+.rank-filters .fg-location .fg-chips{display:grid;grid-template-columns:minmax(76px,1fr) minmax(76px,1fr) minmax(76px,1fr) 32px;overflow:visible;}
+.rank-filters .fg-location .fsel{width:100%;max-width:none;}
 .fchip{flex:none;font-size:12.5px;padding:5px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:all var(--t);}
 .fchip:active{transform:scale(.96);}
 .fchip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:500;}
@@ -816,7 +818,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.4";
+const APP_VERSION_FALLBACK = "2026.06.24.5";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
@@ -832,7 +834,7 @@ const RANK_FILTERS = [
   { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
   { key:"style",   label:"風格", tier:"search", opts:[{label:"傳統", query:"老店 傳統"}, {label:"現代", query:"現代 創意"}] },
 ];
-const rankFilter = { cuisine:null, meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
+const rankFilter = { cuisine:null, meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"", village:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
@@ -840,6 +842,8 @@ let rankAreaPools = {};  // city|area -> 區域專用候選池
 let rankContextReady = false;
 let rankAutoMeal = false;
 let sharedPlaceRoute = null;
+let villageData = null;
+let villageDataPromise = null;
 
 async function loadAppVersion(){
   const el = $("#appVersion");
@@ -1004,6 +1008,40 @@ function matchTaiwanArea(city, area){
   return { city:matchedCity, area:matchedArea };
 }
 
+async function loadVillageData(){
+  if (villageData) return villageData;
+  if (!villageDataPromise){
+    villageDataPromise = fetch("assets/taiwan-villages.json", { cache:"force-cache" })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(json => {
+        villageData = json.data || {};
+        return villageData;
+      })
+      .catch(e => {
+        console.warn("[村里] 載入村里資料失敗：", e.message);
+        villageData = {};
+        return villageData;
+      });
+  }
+  return villageDataPromise;
+}
+function villagesFor(city, area){
+  return villageData?.[city]?.[area] || [];
+}
+async function matchTaiwanVillage(city, area, geocodeResults){
+  if (!city || !area) return "";
+  await loadVillageData();
+  const villages = villagesFor(city, area);
+  if (!villages.length) return "";
+  const text = (geocodeResults || []).map(r =>
+    [r.formatted_address, ...(r.address_components || []).map(c => c.long_name)].filter(Boolean).join(" ")
+  ).join(" ");
+  return villages.find(v => text.includes(v)) || "";
+}
+
 function cityAreaFromGeocode(results){
   for (const r of results || []){
     const comp = r.address_components || [];
@@ -1032,6 +1070,7 @@ async function applyCurrentAreaToRankFilter(){
     if (city){
       rankFilter.city = city;
       rankFilter.area = area;
+      rankFilter.village = await matchTaiwanVillage(city, area, res.results);
       return true;
     }
   }catch(e){
@@ -1140,15 +1179,17 @@ function rankQueryTerms(f){
 
 async function areaCandidates(city, area, f=rankFilter){
   const terms = rankQueryTerms(f);
-  const key = [city, area, ...terms].join("|");
+  const village = f.village || "";
+  const key = [city, area, village, ...terms].join("|");
   if (rankAreaPools[key]) return rankAreaPools[key];
   await loadGoogle();
   await ensureAwards();
   const { Place } = await google.maps.importLibrary("places");
-  let all = await cityCandidates(Place, city, area + (terms.length ? " " + terms.join(" ") : ""));
+  const locationTerms = [area, village].filter(Boolean).join(" ");
+  let all = await cityCandidates(Place, city, locationTerms + (terms.length ? " " + terms.join(" ") : ""));
   const seen = new Set();
   all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
-  all.forEach(x => { x.area = area; x.queryTerms = terms; });
+  all.forEach(x => { x.area = area; x.village = village; x.queryTerms = terms; });
   applyAwards(all);
   const m = all.length ? computeM(all) : rankPoolM;
   all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.rBonus=reviewCountBonus(x.count); x.composite=x.bScore+x.aBonus+x.rBonus; });
@@ -1244,8 +1285,8 @@ async function renderLeaderboard(){
   const f = rankFilter;
   let source = rankPool;
   const searchTerms = rankQueryTerms(f);
-  if (f.city && (f.area || searchTerms.length)){
-    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
+  if (f.city && (f.area || f.village || searchTerms.length)){
+    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (f.village || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
     source = await areaCandidates(f.city, f.area);
     if (token !== rankRenderToken) return;
   }
@@ -1254,6 +1295,7 @@ async function renderLeaderboard(){
   const applyRankFilters = (items, relaxAutoMeal=false) => items.filter(x => {
     if (f.city && x.city !== f.city) return false;
     if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
+    if (f.village && !(x.address||"").includes(f.village)) return false;
     if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
     if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
     if (f.open === "營業中" && x.openNow !== true) return false;
@@ -1267,7 +1309,7 @@ async function renderLeaderboard(){
   let list = applyRankFilters(source, false);
   if (!list.length && rankAutoMeal && f.meal){
     let relaxedSource = source;
-    if (f.city && (f.area || searchTerms.length)){
+    if (f.city && (f.area || f.village || searchTerms.length)){
       relaxedSource = await areaCandidates(f.city, f.area, { ...f, meal:null });
       if (token !== rankRenderToken) return;
     }
@@ -1396,10 +1438,10 @@ async function shareCard(btn){
 /* 篩選列 */
 function buildRankFilterBar(){
   const bar = $("#rankFilters");
-  let html = `<div class="fg"><span class="fg-lab">地區</span><div class="fg-chips">`
+  let html = `<div class="fg fg-location"><span class="fg-lab">地區</span><div class="fg-chips">`
     + `<select id="rkCity" class="fsel"><option value="">全台</option>`
     + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
-    + `</select><select id="rkArea" class="fsel"></select>`
+    + `</select><select id="rkArea" class="fsel"></select><select id="rkVillage" class="fsel"></select>`
     + `<button class="flocate" id="rkLocate" type="button" aria-label="使用目前位置" title="使用目前位置">`
     + `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`
     + `</button></div></div>`;
@@ -1419,11 +1461,13 @@ function buildRankFilterBar(){
     buildRankFilterBar(); renderLeaderboard();
   }));
   fillRkArea();
-  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; buildRankFilterBar(); renderLeaderboard(); });
-  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; renderLeaderboard(); });
+  fillRkVillage();
+  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; buildRankFilterBar(); renderLeaderboard(); });
+  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; fillRkVillage(); renderLeaderboard(); });
+  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; renderLeaderboard(); });
   $("#rkLocate")?.addEventListener("click", e => locateRankArea(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
-    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area") ? "" : null)));
+    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
     rankAutoMeal = false;
     buildRankFilterBar(); renderLeaderboard();
   });
@@ -1433,6 +1477,27 @@ function fillRkArea(){
   const list = TW_AREAS[rankFilter.city] || [];
   as.innerHTML = `<option value="">區域</option>` + list.map(a => `<option value="${a}"${rankFilter.area===a?" selected":""}>${a}</option>`).join("");
   as.disabled = !rankFilter.city;
+}
+function fillRkVillage(){
+  const vs = $("#rkVillage"); if (!vs) return;
+  if (!rankFilter.city || !rankFilter.area){
+    vs.innerHTML = `<option value="">里</option>`;
+    vs.disabled = true;
+    return;
+  }
+  if (!villageData){
+    vs.innerHTML = `<option value="">載入里</option>`;
+    vs.disabled = true;
+    loadVillageData().then(() => {
+      const fresh = $("#rkVillage");
+      if (fresh && rankFilter.city && rankFilter.area) fillRkVillage();
+    });
+    return;
+  }
+  const list = villagesFor(rankFilter.city, rankFilter.area);
+  if (rankFilter.village && !list.includes(rankFilter.village)) rankFilter.village = "";
+  vs.innerHTML = `<option value="">里</option>` + list.map(v => `<option value="${v}"${rankFilter.village===v?" selected":""}>${v}</option>`).join("");
+  vs.disabled = !list.length;
 }
 
 function enterApp() {
