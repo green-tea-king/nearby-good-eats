@@ -15,8 +15,11 @@
 輸出內容包含：
 
 - `index.html`
+- `admin.html`
 - `awards-taipei.json`
+- `firebase-config.js`
+- `firebase.json`
+- `firestore.rules`
 - `assets/`
 - `VERSION`
 - `release-manifest.json`
-

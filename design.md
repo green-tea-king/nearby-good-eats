@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.24.17
+版本：2026.06.24.18
 
 ## 專案目標
 
@@ -17,13 +17,16 @@
 
 - `index.html`：主要 App，包含 HTML、CSS、JavaScript。
 - `admin.html`：Firebase 後台統計頁，登入管理員可看使用紀錄。
+- `assets/app-settings.js`：公開的非機密執行設定，集中管理資料檔路徑。
 - `firebase-config.js`：Firebase Auth / Firestore 設定，未填寫前登入功能保持關閉。
 - `firestore.rules`：Firestore 安全規則，限制使用者只能寫自己的使用紀錄、管理員可讀後台資料。
 - `firebase.json`：Firebase CLI 使用的 Firestore 規則設定。
 - `VERSION`：正式版本號，格式為 `YYYY.MM.DD.N`。
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
+- `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
-- `awards-taipei.json`：餐廳評鑑名單，用於米其林、必比登、500 盤等加權。
+- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤等加權；目前覆蓋台北，資料結構可擴充全台。
+- `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/export-release.ps1`：版本匯出腳本。
 - `RELEASES.md`：版本匯出流程備註。
 
@@ -106,6 +109,8 @@
   - `share_copy`
   - `detail_toggle`
 - `admin.html` 可切換今日、7 天、30 天，顯示事件數、使用者、工作階段、查詢 / 排行榜、濾網操作、分享 / 導航，並提供事件分布、活躍使用者、熱門濾網、熱門餐廳行為、查詢結果紀錄、最新紀錄與 CSV 匯出。
+- 登入 UX 會顯示登入中、錯誤訊息；popup 被阻擋時改用 redirect 登入。Firebase 未允許網域或未啟用 Google provider 時會在登入卡片提示。
+- 定位只用於附近餐廳與步行 / 開車估算；後台事件只記錄定位文字標籤與操作，不寫入精確經緯度。
 
 目前 `firebase-config.js` 已設定 `requireSignIn:true`。若 Firebase web config 尚未填入，網站會停在登入設定提示，避免未登入使用。啟用步驟：
 
@@ -227,6 +232,26 @@ AI_FILTER: {
 Google Places 真資料 -> 後端 AI 分類 -> 回傳 tags + confidence -> 前端套用濾網
 ```
 
+前端呼叫 AI proxy 時會帶 Firebase ID token，後端必須先驗證登入者：
+
+```http
+Authorization: Bearer <Firebase ID token>
+```
+
+後端回傳格式：
+
+```json
+{
+  "items": [
+    {
+      "id": "google-place-id",
+      "tags": { "occasion": ["聚餐"], "service": ["吃到飽"] },
+      "confidence": { "occasion": 0.82, "service": 0.76 }
+    }
+  ]
+}
+```
+
 可由 AI 判斷的欄位：
 
 - 是否適合聚餐
@@ -273,8 +298,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.24.17
-畫面顯示 = v06.24.17
+VERSION = 2026.06.24.18
+畫面顯示 = v06.24.18
 ```
 
 ## 維護注意事項

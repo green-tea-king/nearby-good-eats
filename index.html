@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
+<script src="assets/app-settings.js"></script>
 <script src="firebase-config.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -192,6 +193,8 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .flocate:active{transform:scale(.96);color:var(--accent-bright);border-color:var(--accent);}
 .flocate.locating svg{animation:rkspin .8s linear infinite;}
 .origin-hint{flex-basis:100%;font-size:11px;line-height:1.35;color:var(--text-faint);padding:1px 0 0 2px;}
+.filter-precision{font-size:10.5px;line-height:1.45;color:var(--text-faint);padding:2px 2px 0 43px;}
+.filter-precision b{color:var(--text-dim);font-weight:500;}
 .fclear{align-self:flex-end;margin-top:1px;font-size:11.5px;color:var(--accent-bright);padding:2px 4px;}
 .rank-note{padding:34px 22px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
 .detail-inner .calc-v{font-family:var(--mono);font-size:11px;color:var(--accent-bright);line-height:1.5;}
@@ -469,7 +472,11 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .auth-card h2{font-size:22px;line-height:1.25;margin-bottom:8px;font-weight:650;}
 .auth-card p{font-size:13px;line-height:1.7;color:var(--text-dim);margin-bottom:16px;}
 .auth-card button{width:100%;padding:12px 14px;border-radius:10px;background:var(--accent);border:1px solid var(--accent);color:var(--on-accent);font-size:14px;font-weight:600;}
+.auth-card button:disabled{opacity:.58;cursor:not-allowed;}
 .auth-card .auth-note{margin-top:12px;font-size:11px;color:var(--text-faint);}
+.auth-card .privacy-note{margin-top:8px;font-size:11px;color:var(--text-faint);line-height:1.55;}
+.auth-error{display:none;margin-top:10px;padding:9px 10px;border-radius:9px;background:rgba(200,16,46,.14);border:1px solid rgba(200,16,46,.34);color:var(--accent-bright);font-size:12px;line-height:1.55;}
+.auth-error.show{display:block;}
 .auth-user{position:fixed;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0));z-index:65;max-width:min(260px,72vw);padding:7px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:11px;color:var(--text-dim);display:flex;align-items:center;gap:8px;}
 .auth-user a{color:var(--text);text-decoration:none;}
 .auth-user a:active{color:var(--accent-bright);}
@@ -489,7 +496,9 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <h2>登入在地美食榜</h2>
     <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
     <button id="googleLoginBtn" type="button">使用 Google 登入</button>
+    <div class="auth-error" id="authError"></div>
     <p class="auth-note" id="authGateNote">登入門檻已啟用。若按鈕無法使用，請先填寫 Firebase 設定。</p>
+    <p class="privacy-note">定位只用於查詢附近餐廳與估算步行/開車時間；後台記錄操作事件與定位文字標籤，不寫入精確經緯度。</p>
   </div>
 </div>
 <div class="auth-user hidden" id="authUser"><span id="authUserText"></span><a class="hidden" id="adminLink" href="admin.html">管理員</a><button id="logoutBtn" type="button">登出</button></div>
@@ -685,6 +694,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 /* ============================================================
    CONFIG — 所有可調權重集中此處，改一個數字即生效
    ============================================================ */
+const APP_SETTINGS = window.APP_SETTINGS || {};
 const CONFIG = {
   // ── Google 金鑰：必填。資料只走真實 Google Places / Geocoding。
   //    上線前填入並設定 referrer + API 範圍限制
@@ -730,8 +740,10 @@ const CONFIG = {
   SORT_DEFAULT: "composite",       // composite | distance | rating
   OPEN_ONLY_DEFAULT: false,        // 「只看營業中」預設
 
-  // ── 評鑑名單（Step 2）：獨立 JSON 檔（做法 1）；file:// 預覽時 fetch 失敗會自動退回內嵌備援
-  AWARDS_URL: "awards-taipei.json",
+  // ── 評鑑 / 認證規則：獨立資料檔，避免徽章邏輯散在畫面程式中
+  AWARDS_URL: APP_SETTINGS.awardsUrl || "assets/awards-taiwan.json",
+  CERT_BADGES_URL: APP_SETTINGS.certificationBadgesUrl || "assets/certification-badges.json",
+  VILLAGES_URL: APP_SETTINGS.villagesUrl || "assets/taiwan-villages.json",
 
   // ── AI 解讀（Step 3）
   AI: {
@@ -812,6 +824,26 @@ function adminEmails(){
 function isAdminUser(user=authState.user){
   return !!user?.email && adminEmails().has(user.email.toLowerCase());
 }
+function setAuthBusy(on){
+  const btn = $("#googleLoginBtn");
+  if (!btn) return;
+  btn.disabled = !!on;
+  btn.textContent = on ? "登入中..." : "使用 Google 登入";
+}
+function showAuthError(message=""){
+  const el = $("#authError");
+  if (!el) return;
+  el.textContent = message;
+  el.classList.toggle("show", !!message);
+}
+function authErrorMessage(error){
+  const code = error?.code || "";
+  if (code.includes("popup-closed")) return "登入視窗已關閉，請重新點選登入。";
+  if (code.includes("popup-blocked")) return "瀏覽器阻擋了登入視窗，正在改用跳轉登入。";
+  if (code.includes("unauthorized-domain")) return "Firebase 尚未允許這個網域登入，請到 Authentication 加入 Authorized domains。";
+  if (code.includes("operation-not-allowed")) return "Firebase 尚未啟用 Google 登入 provider。";
+  return error?.message || "Google 登入失敗，請稍後再試。";
+}
 function updateAuthUi(){
   const gate = $("#authGate");
   const userBox = $("#authUser");
@@ -849,11 +881,40 @@ async function initAuth(){
   }
   firebase.initializeApp(CONFIG.AUTH.firebase);
   const auth = firebase.auth();
+  auth.languageCode = "zh-TW";
   authState.db = firebase.firestore();
-  $("#googleLoginBtn")?.addEventListener("click", () => auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()));
-  $("#logoutBtn")?.addEventListener("click", () => auth.signOut());
+  const provider = new firebase.auth.GoogleAuthProvider();
+  provider.setCustomParameters({ prompt:"select_account" });
+  try{
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    await auth.getRedirectResult();
+  }catch(e){
+    showAuthError(authErrorMessage(e));
+  }
+  $("#googleLoginBtn")?.addEventListener("click", async () => {
+    showAuthError("");
+    setAuthBusy(true);
+    try{
+      await auth.signInWithPopup(provider);
+    }catch(e){
+      const msg = authErrorMessage(e);
+      showAuthError(msg);
+      if ((e?.code || "").includes("popup-blocked")){
+        await auth.signInWithRedirect(provider);
+        return;
+      }
+    }finally{
+      setAuthBusy(false);
+    }
+  });
+  $("#logoutBtn")?.addEventListener("click", async () => {
+    await auth.signOut();
+    toast("已登出");
+  });
   auth.onAuthStateChanged(user => {
     authState.user = user || null;
+    setAuthBusy(false);
+    if (user) showAuthError("");
     updateAuthUi();
     if (user){
       upsertUserProfile(user);
@@ -898,6 +959,7 @@ async function trackUsage(type, payload={}){
 function bootApp(){
   if (appBooted) return;
   appBooted = true;
+  ensureCertificationRules();
   startFromRoute();
 }
 
@@ -957,7 +1019,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.17";
+const APP_VERSION_FALLBACK = "2026.06.24.18";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -985,6 +1047,7 @@ let sharedPlaceRoute = null;
 let villageData = null;
 let villageDataPromise = null;
 let rankOriginLabel = "";
+let locationPrivacyNotified = false;
 
 function hasRankLocationFilter(f=rankFilter){
   return !!(f.city || f.area || f.village);
@@ -1003,6 +1066,11 @@ function activeRankTravel(){
 }
 function isWalkableRankMode(f=rankFilter){
   return f.travel === "走路" && !hasRankLocationFilter(f) && !!state.center;
+}
+function notifyLocationPrivacyOnce(){
+  if (locationPrivacyNotified) return;
+  locationPrivacyNotified = true;
+  toast("定位只用於附近餐廳與路線估算，不會寫入精確經緯度");
 }
 
 async function loadAppVersion(){
@@ -1181,7 +1249,7 @@ function cityAreaFromAddress(address){
 async function loadVillageData(){
   if (villageData) return villageData;
   if (!villageDataPromise){
-    villageDataPromise = fetch("assets/taiwan-villages.json", { cache:"force-cache" })
+    villageDataPromise = fetch(CONFIG.VILLAGES_URL, { cache:"force-cache" })
       .then(res => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
@@ -1280,6 +1348,7 @@ function rankOriginFromGeocode(results, city, area, village){
 
 async function applyCurrentOriginToRankTravel(){
   try{
+    notifyLocationPrivacyOnce();
     const center = await currentPosition();
     state.center = center;
     rankOriginLabel = "目前位置";
@@ -1323,6 +1392,55 @@ async function locateRankOrigin(btn){
   }
 }
 
+function normalizeRankPlace(p, context={}){
+  const address = toTW(p.formattedAddress || "");
+  const parsedArea = cityAreaFromAddress(address);
+  const city = context.city || parsedArea.city || "";
+  const area = context.area || parsedArea.area || "";
+  const o = {
+    id: p.id,
+    city,
+    area,
+    village: context.village || "",
+    name: toTW(extractText(p.displayName) || ""),
+    rating: p.rating || 0,
+    count: p.userRatingCount || 0,
+    address,
+    priceLevel: priceToNum(p.priceLevel),
+    pt: p.primaryType || "",
+    ptd: toTW(extractText(p.primaryTypeDisplayName) || ""),
+    loc: p.location ? { lat:p.location.lat(), lng:p.location.lng() } : null,
+    reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
+    summary: toTW(extractEditorial(p.editorialSummary)),
+    generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
+    servesVeg: p.servesVegetarianFood===true,
+    servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
+    goodGroups: p.isGoodForGroups===true,
+    reservable: p.isReservable===true,
+    openNow: isOpenNow(p.regularOpeningHours),
+    queryTerms: context.queryTerms || [],
+    awards: [],
+  };
+  if (context.center && o.loc) o.dist = Math.round(distanceM(context.center, o.loc));
+  o.tags = classifyCandidate(o);
+  return o;
+}
+function finalizeRankCandidates(items, { sortDistance=false }={}){
+  const seen = new Set();
+  const all = items.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
+  applyAwards(all);
+  const m = all.length ? computeM(all) : rankPoolM;
+  if (all.length) rankPoolM = m;
+  all.forEach(x => {
+    x.bScore = bayes(x, m);
+    x.aBonus = awardBonus(x.awards);
+    x.rBonus = reviewCountBonus(x.count);
+    x.composite = x.bScore + x.aBonus + x.rBonus;
+  });
+  all.sort((a,b) => (b.composite - a.composite) || (sortDistance ? ((a.dist || 0) - (b.dist || 0)) : 0));
+  return all;
+}
+
 // 撈全台候選池（含分類標籤），每次開啟重新查 Google
 async function ensureRankPool(force){
   if (force) rankAreaPools = {};
@@ -1338,13 +1456,7 @@ async function ensureRankPool(force){
       const got = await Promise.all(TW_CITIES.slice(i,i+BATCH).map(c => cityCandidates(Place, c)));
       got.forEach(arr => all.push(...arr));
     }
-    const seen = new Set();
-    all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));   // 去重
-    applyAwards(all);
-    const m = computeM(all); rankPoolM = m;
-    all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.rBonus=reviewCountBonus(x.count); x.composite=x.bScore+x.aBonus+x.rBonus; });
-    all.sort((a,b) => b.composite-a.composite);
-    rankPool = all;
+    rankPool = finalizeRankCandidates(all);
   }catch(e){
     console.error(e);
     $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(e.message)}</div>`;
@@ -1365,29 +1477,9 @@ async function cityCandidates(Place, city, area=""){
       ],
       maxResultCount: 20, language:"zh-TW", region:"tw",
     });
-    return (res.places || []).filter(p => p.rating && p.userRatingCount).map(p => {
-      const o = {
-        id: p.id, city, area,
-        name: toTW(extractText(p.displayName) || ""),
-        rating: p.rating || 0, count: p.userRatingCount || 0,
-        address: toTW(p.formattedAddress || ""),
-        priceLevel: priceToNum(p.priceLevel),
-        pt: p.primaryType || "",
-        ptd: toTW(extractText(p.primaryTypeDisplayName) || ""),
-        loc: p.location ? { lat:p.location.lat(), lng:p.location.lng() } : null,
-        reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
-        summary: toTW(extractEditorial(p.editorialSummary)),
-        generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
-        servesVeg: p.servesVegetarianFood===true,
-        servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
-        goodGroups: p.isGoodForGroups===true,
-        reservable: p.isReservable===true,
-        openNow: isOpenNow(p.regularOpeningHours),
-        awards: [],
-      };
-      o.tags = classifyCandidate(o);
-      return o;
-    });
+    return (res.places || [])
+      .filter(p => p.rating && p.userRatingCount)
+      .map(p => normalizeRankPlace(p, { city, area }));
   }catch(_){ return []; }
 }
 
@@ -1409,13 +1501,8 @@ async function areaCandidates(city, area, f=rankFilter){
   const { Place } = await google.maps.importLibrary("places");
   const locationTerms = [area, village].filter(Boolean).join(" ");
   let all = await cityCandidates(Place, city, locationTerms + (terms.length ? " " + terms.join(" ") : ""));
-  const seen = new Set();
-  all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
   all.forEach(x => { x.area = area; x.village = village; x.queryTerms = terms; });
-  applyAwards(all);
-  const m = all.length ? computeM(all) : rankPoolM;
-  all.forEach(x => { x.bScore=bayes(x,m); x.aBonus=awardBonus(x.awards); x.rBonus=reviewCountBonus(x.count); x.composite=x.bScore+x.aBonus+x.rBonus; });
-  all.sort((a,b) => b.composite-a.composite);
+  all = finalizeRankCandidates(all);
   rankAreaPools[key] = all;
   return all;
 }
@@ -1446,46 +1533,10 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
     language:"zh-TW",
     region:"tw",
   });
-  let all = (res.places || []).filter(p => p.rating && p.userRatingCount && p.location).map(p => {
-    const address = toTW(p.formattedAddress || "");
-    const placeArea = cityAreaFromAddress(address);
-    const o = {
-      id: p.id,
-      city: placeArea.city,
-      area: placeArea.area,
-      name: toTW(extractText(p.displayName) || ""),
-      rating: p.rating || 0,
-      count: p.userRatingCount || 0,
-      address,
-      priceLevel: priceToNum(p.priceLevel),
-      pt: p.primaryType || "",
-      ptd: toTW(extractText(p.primaryTypeDisplayName) || ""),
-      loc: { lat:p.location.lat(), lng:p.location.lng() },
-      reviewSummary: "",
-      summary: "",
-      generativeSummary: "",
-      servesVeg: p.servesVegetarianFood===true,
-      servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
-      goodGroups: p.isGoodForGroups===true,
-      reservable: p.isReservable===true,
-      openNow: isOpenNow(p.regularOpeningHours),
-      awards: [],
-    };
-    o.dist = Math.round(distanceM(state.center, o.loc));
-    o.tags = classifyCandidate(o);
-    return o;
-  });
-  const seen = new Set();
-  all = all.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
-  applyAwards(all);
-  const m = all.length ? computeM(all) : rankPoolM;
-  all.forEach(x => {
-    x.bScore = bayes(x, m);
-    x.aBonus = awardBonus(x.awards);
-    x.rBonus = reviewCountBonus(x.count);
-    x.composite = x.bScore + x.aBonus + x.rBonus;
-  });
-  all.sort((a,b) => (b.composite - a.composite) || ((a.dist || 0) - (b.dist || 0)));
+  let all = (res.places || [])
+    .filter(p => p.rating && p.userRatingCount && p.location)
+    .map(p => normalizeRankPlace(p, { center:state.center, queryTerms:terms }));
+  all = finalizeRankCandidates(all, { sortDistance:true });
   rankNearbyPools[key] = all;
   return all;
 }
@@ -1552,9 +1603,13 @@ async function enrichAiFilterTags(items, f){
         },
       })),
     };
+    const idToken = authState.user?.getIdToken ? await authState.user.getIdToken() : "";
     const res = await fetch(CONFIG.AI_FILTER.ENDPOINT, {
       method:"POST",
-      headers:{ "content-type":"application/json" },
+      headers:{
+        "content-type":"application/json",
+        ...(idToken ? { authorization:`Bearer ${idToken}` } : {}),
+      },
       body:JSON.stringify(payload),
     });
     if (!res.ok) throw new Error("HTTP " + res.status);
@@ -1569,6 +1624,18 @@ async function enrichAiFilterTags(items, f){
   }catch(e){
     console.warn("[AI Filter] 後端分類失敗，改用 Google 硬欄位與搜尋詞：", e.message);
   }
+}
+function rankFilterPrecisionText(){
+  const active = activeRankFilters(rankFilter);
+  const hasAi = CONFIG.AI_FILTER.MODE === "proxy" && !!CONFIG.AI_FILTER.ENDPOINT;
+  if (!active.length){
+    return "營業、素食、適合團體等優先採 Google 真欄位；吃法、情境、菜式會搭配搜尋詞與近似判斷。";
+  }
+  const tiers = new Set(active.map(x => x.tier));
+  const parts = [];
+  if (tiers.has("hard")) parts.push("真資料硬篩");
+  if (tiers.has("search")) parts.push(hasAi ? "搜尋詞 + AI判讀" : "搜尋詞 + 近似判斷");
+  return parts.join(" / ") || "近似判斷";
 }
 async function renderLeaderboard(){
   if (!hasGoogleApiKey){ $("#rankList").innerHTML = `<div class="rank-note">需要 Google 金鑰才能載入排行榜。</div>`; return; }
@@ -1638,6 +1705,7 @@ async function renderLeaderboard(){
     return;
   }
   $("#rankList").innerHTML = `<div class="rank-note">載入前 ${top.length} 名…</div>`;
+  await ensureCertificationRules();
   await fetchRankRich(top);
   if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
   const cards = top.map(rankCardData);
@@ -1787,6 +1855,7 @@ function buildRankFilterBar(){
     + `</div></div>`
   ).join("");
   const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
+  html += `<div class="filter-precision"><b>判斷來源</b>：${escapeHTML(rankFilterPrecisionText())}</div>`;
   html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
   bar.innerHTML = html;
 
@@ -1855,6 +1924,7 @@ function enterApp() {
 function locateThenSearch() {
   state.wholeArea = false;   // 目前位置一律步行模式
   setStatus(true, "定位中…");
+  notifyLocationPrivacyOnce();
   if (!navigator.geolocation) {
     toast("無法使用定位，改用預設中心搜尋真實資料");
     state.center = { ...CONFIG.DEFAULT_CENTER };
@@ -2173,6 +2243,7 @@ async function submitArea(){
 async function search() {
   setStatus(true, "搜尋附近餐廳…");
   try {
+    await ensureCertificationRules();
     state.raw = await placesSearch();
     trackUsage("search_result", {
       resultCount:state.raw.length,
@@ -2701,20 +2772,73 @@ function badgeHTML(a){
   return "";
 }
 
+const CERT_BADGE_RULES_FALLBACK = [
+  { label:"高分認證", cls:"cert-strong", note:{ field:"rating", format:"fixed1" }, all:[{ field:"rating", op:">=", value:4.8 }, { field:"count", op:">=", value:100 }] },
+  { label:"萬則口碑", cls:"cert-strong", note:{ text:"Google" }, all:[{ field:"count", op:">=", value:10000 }] },
+  { label:"千則口碑", cls:"cert", note:{ text:"Google" }, all:[{ field:"count", op:">=", value:1000 }, { field:"count", op:"<", value:10000 }] },
+  { label:"可訂位", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"reservable", op:"truthy" }] },
+  { label:"聚餐友善", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"goodGroups", op:"truthy" }] },
+  { label:"素食友善", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"servesVeg", op:"truthy" }] },
+  { label:"戶外座位", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"outdoor", op:"truthy" }] },
+  { label:"寵物友善", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"allowsDogs", op:"truthy" }] },
+  { label:"現場音樂", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"liveMusic", op:"truthy" }] },
+  { label:"無障礙資訊", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"accessStr", op:"nonempty" }] },
+  { label:"停車資訊", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"parkStr", op:"nonempty" }] },
+];
+let certBadgeRules = CERT_BADGE_RULES_FALLBACK;
+let certBadgeRulesPromise = null;
+
+function readField(obj, path){
+  return String(path || "").split(".").filter(Boolean).reduce((o,k) => o == null ? undefined : o[k], obj);
+}
+function compareRule(r, cond){
+  const actual = readField(r, cond.field);
+  switch (cond.op){
+    case ">=": return Number(actual || 0) >= Number(cond.value);
+    case ">": return Number(actual || 0) > Number(cond.value);
+    case "<=": return Number(actual || 0) <= Number(cond.value);
+    case "<": return Number(actual || 0) < Number(cond.value);
+    case "==": return actual === cond.value;
+    case "!=": return actual !== cond.value;
+    case "truthy": return !!actual;
+    case "nonempty": return String(actual || "").trim().length > 0;
+    default: return false;
+  }
+}
+function certRuleMatches(r, rule){
+  const all = Array.isArray(rule.all) ? rule.all : [];
+  const any = Array.isArray(rule.any) ? rule.any : [];
+  return (!all.length || all.every(cond => compareRule(r, cond)))
+    && (!any.length || any.some(cond => compareRule(r, cond)));
+}
+function certNote(r, note){
+  if (!note) return "";
+  if (note.text) return note.text;
+  const value = readField(r, note.field);
+  if (value == null || value === "") return "";
+  if (note.format === "fixed1") return Number(value).toFixed(1);
+  return String(value);
+}
+async function ensureCertificationRules(){
+  if (certBadgeRulesPromise) return certBadgeRulesPromise;
+  certBadgeRulesPromise = fetch(CONFIG.CERT_BADGES_URL, { cache:"force-cache" })
+    .then(res => res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`)))
+    .then(data => {
+      certBadgeRules = Array.isArray(data.rules) && data.rules.length ? data.rules : CERT_BADGE_RULES_FALLBACK;
+      return certBadgeRules;
+    })
+    .catch(e => {
+      console.warn("[認證] 認證規則載入失敗，使用內建規則：", e.message);
+      certBadgeRules = CERT_BADGE_RULES_FALLBACK;
+      return certBadgeRules;
+    });
+  return certBadgeRulesPromise;
+}
 function certificationBadges(r){
-  const certs = [];
-  if (r.rating >= 4.8 && r.count >= 100) certs.push({ label:"高分認證", note:r.rating.toFixed(1), cls:"cert-strong" });
-  if (r.count >= 10000) certs.push({ label:"萬則口碑", note:"Google", cls:"cert-strong" });
-  else if (r.count >= 1000) certs.push({ label:"千則口碑", note:"Google", cls:"cert" });
-  if (r.reservable) certs.push({ label:"可訂位", note:"Google", cls:"cert-service" });
-  if (r.goodGroups) certs.push({ label:"聚餐友善", note:"Google", cls:"cert-service" });
-  if (r.servesVeg) certs.push({ label:"素食友善", note:"Google", cls:"cert-service" });
-  if (r.outdoor) certs.push({ label:"戶外座位", note:"Google", cls:"cert-service" });
-  if (r.allowsDogs) certs.push({ label:"寵物友善", note:"Google", cls:"cert-service" });
-  if (r.liveMusic) certs.push({ label:"現場音樂", note:"Google", cls:"cert-service" });
-  if (r.accessStr) certs.push({ label:"無障礙資訊", note:"Google", cls:"cert-service" });
-  if (r.parkStr) certs.push({ label:"停車資訊", note:"Google", cls:"cert-service" });
-  return certs.slice(0, 8);
+  return certBadgeRules
+    .filter(rule => certRuleMatches(r, rule))
+    .map(rule => ({ label:rule.label, note:certNote(r, rule.note), cls:rule.cls || "cert" }))
+    .slice(0, 8);
 }
 
 function certBadgeHTML(c){

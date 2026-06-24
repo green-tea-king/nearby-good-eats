@@ -1,0 +1,40 @@
+{
+  "version": "2026.06.24.18",
+  "description": "餐廳卡片認證徽章規則。只使用 Google Places 真實欄位或既有餐廳資料，不產生假認證。",
+  "rules": [
+    {
+      "label": "高分認證",
+      "cls": "cert-strong",
+      "note": { "field": "rating", "format": "fixed1" },
+      "all": [
+        { "field": "rating", "op": ">=", "value": 4.8 },
+        { "field": "count", "op": ">=", "value": 100 }
+      ]
+    },
+    {
+      "label": "萬則口碑",
+      "cls": "cert-strong",
+      "note": { "text": "Google" },
+      "all": [
+        { "field": "count", "op": ">=", "value": 10000 }
+      ]
+    },
+    {
+      "label": "千則口碑",
+      "cls": "cert",
+      "note": { "text": "Google" },
+      "all": [
+        { "field": "count", "op": ">=", "value": 1000 },
+        { "field": "count", "op": "<", "value": 10000 }
+      ]
+    },
+    { "label": "可訂位", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "reservable", "op": "truthy" }] },
+    { "label": "聚餐友善", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "goodGroups", "op": "truthy" }] },
+    { "label": "素食友善", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "servesVeg", "op": "truthy" }] },
+    { "label": "戶外座位", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "outdoor", "op": "truthy" }] },
+    { "label": "寵物友善", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "allowsDogs", "op": "truthy" }] },
+    { "label": "現場音樂", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "liveMusic", "op": "truthy" }] },
+    { "label": "無障礙資訊", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "accessStr", "op": "nonempty" }] },
+    { "label": "停車資訊", "cls": "cert-service", "note": { "text": "Google" }, "all": [{ "field": "parkStr", "op": "nonempty" }] }
+  ]
+}

@@ -24,7 +24,11 @@ $ZipPath = "$ReleaseDir.zip"
 New-Item -ItemType Directory -Force $ReleaseDir | Out-Null
 
 Copy-Item -Force (Join-Path $RepoRoot "index.html") $ReleaseDir
+Copy-Item -Force (Join-Path $RepoRoot "admin.html") $ReleaseDir
 Copy-Item -Force (Join-Path $RepoRoot "awards-taipei.json") $ReleaseDir
+Copy-Item -Force (Join-Path $RepoRoot "firebase-config.js") $ReleaseDir
+Copy-Item -Force (Join-Path $RepoRoot "firebase.json") $ReleaseDir
+Copy-Item -Force (Join-Path $RepoRoot "firestore.rules") $ReleaseDir
 Copy-Item -Force (Join-Path $RepoRoot "VERSION") $ReleaseDir
 Copy-Item -Recurse -Force (Join-Path $RepoRoot "assets") $ReleaseDir
 
@@ -42,7 +46,11 @@ $Manifest = [ordered]@{
   source = $RepoRoot.Path
   files = @(
     "index.html",
+    "admin.html",
     "awards-taipei.json",
+    "firebase-config.js",
+    "firebase.json",
+    "firestore.rules",
     "assets/",
     "VERSION"
   )
