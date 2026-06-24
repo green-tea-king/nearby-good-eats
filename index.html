@@ -816,11 +816,13 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.3";
+const APP_VERSION_FALLBACK = "2026.06.24.4";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
+const RANK_DEFAULT_TRAVEL = "走路";
 
 const RANK_FILTERS = [
+  { key:"travel",  label:"交通", tier:"route", opts:[{label:"走路"}, {label:"開車"}] },
   { key:"open",    label:"營業", tier:"hard", opts:[{label:"不限"}, {label:"營業中"}] },
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐"}, {label:"早茶", query:"早茶"}, {label:"午餐", query:"午餐"}, {label:"午茶", query:"下午茶"}, {label:"晚餐", query:"晚餐"}, {label:"消夜", query:"宵夜"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽"}] },
@@ -830,7 +832,7 @@ const RANK_FILTERS = [
   { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
   { key:"style",   label:"風格", tier:"search", opts:[{label:"傳統", query:"老店 傳統"}, {label:"現代", query:"現代 創意"}] },
 ];
-const rankFilter = { cuisine:null, meal:null, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
+const rankFilter = { cuisine:null, meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
@@ -1022,6 +1024,7 @@ async function applyCurrentAreaToRankFilter(){
   if (!hasGoogleApiKey) return false;
   try{
     const center = await currentPosition();
+    state.center = center;
     await loadGoogle();
     const { Geocoder } = await google.maps.importLibrary("geocoding");
     const res = await new Geocoder().geocode({ location:center, language:"zh-TW", region:"tw" });
@@ -1195,7 +1198,7 @@ function rankTagMatch(item, key, value){
     || (item.aiTags?.[key]||[]).includes(value);
 }
 function activeRankFilters(f){
-  return RANK_FILTERS.filter(g => g.key !== "open" && f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
+  return RANK_FILTERS.filter(g => !["open","travel"].includes(g.key) && f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
 }
 async function enrichAiFilterTags(items, f){
   if (CONFIG.AI_FILTER.MODE !== "proxy" || !CONFIG.AI_FILTER.ENDPOINT) return;
@@ -1276,6 +1279,8 @@ async function renderLeaderboard(){
   await fetchRankRich(top);
   if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
   const cards = top.map(rankCardData);
+  await enrichRankCardRoutes(cards);
+  if (token !== rankRenderToken) return;
   $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
   bindCardEvents($("#rankList"));
 }
@@ -1327,9 +1332,25 @@ function rankCardData(c){
   return Object.assign({
     id:c.id, name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
-    dist:null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:null,
+    dist:c.loc ? Math.round(distanceM(state.center, c.loc)) : null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:null,
     reviewSummary:c.reviewSummary || "", summary:c.summary || "", generativeSummary:c.generativeSummary || "",
   }, rich);
+}
+
+async function enrichRankCardRoutes(cards){
+  const targets = cards.filter(r => r.loc && r.dist != null);
+  if (!targets.length || !hasGoogleApiKey) return;
+  try{
+    await loadGoogle();
+    const [walk, drive] = await Promise.all([
+      routeMatrixItems(targets, "WALKING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.WALKING)),
+      routeMatrixItems(targets, "DRIVING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.DRIVING)),
+    ]);
+    applyRouteItems(walk, targets, "walk");
+    applyRouteItems(drive, targets, "drive");
+  }catch(e){
+    console.warn("[排行榜路線] Google 路線時間取得失敗，保留直線距離估算：", e.message);
+  }
 }
 
 // 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）。c 為卡片物件，縣市存於 lbCity
@@ -1341,8 +1362,9 @@ function bindCardEvents(root){
   }));
   root.querySelectorAll("[data-nav]").forEach(btn => btn.addEventListener("click", () => {
     const { lat, lng, name } = btn.dataset;
+    const travelMode = rankFilter.travel === "開車" ? "driving" : "walking";
     const url = (lat && lng && lat!=="0")
-      ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking&q=${encodeURIComponent(name)}`
+      ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=${travelMode}&q=${encodeURIComponent(name)}`
       : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
     window.open(url, "_blank");
   }));
@@ -1386,14 +1408,14 @@ function buildRankFilterBar(){
     + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
     + `</div></div>`
   ).join("");
-  const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN));
+  const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
   html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
   bar.innerHTML = html;
 
   bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
     const k=b.dataset.fkey, v=b.dataset.fval;
     if (k === "meal") rankAutoMeal = false;
-    rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
+    rankFilter[k] = (k === "open" || k === "travel") ? v : (rankFilter[k]===v ? null : v);
     buildRankFilterBar(); renderLeaderboard();
   }));
   fillRkArea();
@@ -1401,7 +1423,7 @@ function buildRankFilterBar(){
   $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; renderLeaderboard(); });
   $("#rkLocate")?.addEventListener("click", e => locateRankArea(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
-    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : ((k==="city"||k==="area") ? "" : null));
+    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area") ? "" : null)));
     rankAutoMeal = false;
     buildRankFilterBar(); renderLeaderboard();
   });
@@ -2138,9 +2160,11 @@ function setSummary(){
 
 function routeSummary(r){
   if (r.dist == null) return "";
+  if (rankFilter.travel === "開車"){
+    return r.driveMin ? `開車 ${r.driveMin} 分` : `開車估算中`;
+  }
   const walk = r.walkMin ? `步行 ${r.walkMin} 分` : `步行約 ${Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN))} 分`;
-  const drive = r.driveMin ? `開車 ${r.driveMin} 分` : "";
-  return [walk, drive].filter(Boolean).join(" · ");
+  return walk;
 }
 function routeDetail(r){
   if (r.dist == null) return "";
@@ -2150,7 +2174,7 @@ function routeDetail(r){
   return parts.join("｜");
 }
 function routeDistanceLabel(r){
-  const meters = r.walkMeters || r.driveMeters || r.dist;
+  const meters = rankFilter.travel === "開車" ? (r.driveMeters || r.dist) : (r.walkMeters || r.dist);
   return meters ? `${meters.toLocaleString()} m` : "";
 }
 
@@ -2160,7 +2184,7 @@ function cardHTML(r, rank){
   const price = r.priceLevel ? "$".repeat(r.priceLevel) : "";
   // 一般搜尋顯示步行距離；排行榜（dist 為 null）改顯示縣市 + 綜合分數
   const distChip = (r.dist != null)
-    ? `<span class="dist">${escapeHTML(routeSummary(r))} · ${escapeHTML(routeDistanceLabel(r))}</span>`
+    ? `<span class="dist">${r.lbCity?`${escapeHTML(r.lbCity)} · `:""}${escapeHTML(routeSummary(r))} · ${escapeHTML(routeDistanceLabel(r))}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>`
     : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
