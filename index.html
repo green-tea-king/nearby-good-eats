@@ -176,8 +176,9 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
 .rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px;}
 .rank-filters .fg-chips::-webkit-scrollbar{display:none;}
-.rank-filters .fg-location .fg-chips{display:grid;grid-template-columns:minmax(76px,1fr) minmax(76px,1fr) minmax(76px,1fr) 32px;overflow:visible;}
+.rank-filters .fg-location .fg-chips{display:grid;grid-template-columns:minmax(76px,1fr) minmax(76px,1fr) minmax(76px,1fr);overflow:visible;}
 .rank-filters .fg-location .fsel{width:100%;max-width:none;}
+.rank-filters .fg-travel .fg-chips{align-items:center;flex-wrap:wrap;overflow:visible;}
 .fchip{flex:none;font-size:12.5px;padding:5px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:all var(--t);}
 .fchip:active{transform:scale(.96);}
 .fchip.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:500;}
@@ -186,6 +187,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .flocate{flex:none;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t),transform var(--t);}
 .flocate:active{transform:scale(.96);color:var(--accent-bright);border-color:var(--accent);}
 .flocate.locating svg{animation:rkspin .8s linear infinite;}
+.origin-hint{flex-basis:100%;font-size:11px;line-height:1.35;color:var(--text-faint);padding:1px 0 0 2px;}
 .fclear{align-self:flex-end;margin-top:1px;font-size:11.5px;color:var(--accent-bright);padding:2px 4px;}
 .rank-note{padding:34px 22px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
 .detail-inner .calc-v{font-family:var(--mono);font-size:11px;color:var(--accent-bright);line-height:1.5;}
@@ -818,7 +820,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.6";
+const APP_VERSION_FALLBACK = "2026.06.24.7";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -844,6 +846,7 @@ let rankAutoMeal = false;
 let sharedPlaceRoute = null;
 let villageData = null;
 let villageDataPromise = null;
+let rankOriginLabel = "";
 
 function hasRankLocationFilter(){
   return !!(rankFilter.city || rankFilter.area || rankFilter.village);
@@ -855,6 +858,7 @@ function clearRankLocationFilter(){
 }
 function clearRankTravelFilter(){
   rankFilter.travel = RANK_DEFAULT_TRAVEL;
+  rankOriginLabel = "";
 }
 function activeRankTravel(){
   return rankFilter.travel || "走路";
@@ -1108,6 +1112,44 @@ async function locateRankArea(btn){
     renderLeaderboard();
     toast(`已定位到 ${label}`);
   }else{
+    toast("無法取得目前位置，請確認定位權限");
+    if (btn){
+      btn.disabled = false;
+      btn.classList.remove("locating");
+      btn.removeAttribute("aria-busy");
+    }
+  }
+}
+
+function rankOriginFromGeocode(results, city, area, village){
+  const locationParts = [city, area, village].filter(Boolean).join("");
+  if (locationParts) return locationParts;
+  return shortAreaLabel(results || []) || results?.[0]?.formatted_address || "目前位置";
+}
+
+async function locateRankOrigin(btn){
+  if (btn){
+    btn.disabled = true;
+    btn.classList.add("locating");
+    btn.setAttribute("aria-busy", "true");
+  }
+  try{
+    if (!hasGoogleApiKey) throw new Error("Google API key 未設定");
+    const center = await currentPosition();
+    state.center = center;
+    await loadGoogle();
+    const { Geocoder } = await google.maps.importLibrary("geocoding");
+    const res = await new Geocoder().geocode({ location:center, language:"zh-TW", region:"tw" });
+    const { city, area } = cityAreaFromGeocode(res.results);
+    const village = await matchTaiwanVillage(city, area, res.results);
+    rankOriginLabel = rankOriginFromGeocode(res.results, city, area, village);
+    clearRankLocationFilter();
+    if (!rankFilter.travel) rankFilter.travel = "走路";
+    buildRankFilterBar();
+    renderLeaderboard();
+    toast(`定位：${rankOriginLabel}`);
+  }catch(e){
+    console.warn("[Leaderboard] 無法設定交通定位：", e.message || e);
     toast("無法取得目前位置，請確認定位權限");
     if (btn){
       btn.disabled = false;
@@ -1458,12 +1500,13 @@ function buildRankFilterBar(){
     + `<select id="rkCity" class="fsel"><option value="">全台</option>`
     + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
     + `</select><select id="rkArea" class="fsel"></select><select id="rkVillage" class="fsel"></select>`
-    + `<button class="flocate" id="rkLocate" type="button" aria-label="使用目前位置" title="使用目前位置">`
-    + `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>`
-    + `</button></div></div>`;
+    + `</div></div>`;
   html += RANK_FILTERS.map(g =>
-    `<div class="fg"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
+    `<div class="fg${g.key==="travel" ? " fg-travel" : ""}"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
     + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
+    + (g.key==="travel"
+      ? `<button class="flocate" id="rkTravelLocate" type="button" aria-label="定位交通起點" title="定位交通起點"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></button>${rankOriginLabel ? `<span class="origin-hint">定位：${escapeHTML(rankOriginLabel)}</span>` : ""}`
+      : "")
     + `</div></div>`
   ).join("");
   const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
@@ -1476,6 +1519,7 @@ function buildRankFilterBar(){
     if (k === "travel"){
       rankFilter.travel = rankFilter.travel === v ? RANK_DEFAULT_TRAVEL : v;
       if (rankFilter.travel) clearRankLocationFilter();
+      else rankOriginLabel = "";
     } else {
       rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
     }
@@ -1486,10 +1530,11 @@ function buildRankFilterBar(){
   $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); buildRankFilterBar(); renderLeaderboard(); });
   $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); fillRkVillage(); renderLeaderboard(); });
   $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter(); renderLeaderboard(); });
-  $("#rkLocate")?.addEventListener("click", e => locateRankArea(e.currentTarget));
+  $("#rkTravelLocate")?.addEventListener("click", e => locateRankOrigin(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
     Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
     rankAutoMeal = false;
+    rankOriginLabel = "";
     buildRankFilterBar(); renderLeaderboard();
   });
 }
