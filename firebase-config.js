@@ -5,12 +5,15 @@ window.APP_FIREBASE_CONFIG = {
   requireSignIn: true,
   logUsage: true,
   adminEmails: [
-    // "your-admin@gmail.com"
+    "rh.taipei@gmail.com",
   ],
   firebase: {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    appId: "",
+    apiKey: "AIzaSyAHbI6-BXMvchcZaXw1x1ZTbvT0D5F47f4",
+    authDomain: "nearby-good-eats.firebaseapp.com",
+    projectId: "nearby-good-eats",
+    storageBucket: "nearby-good-eats.firebasestorage.app",
+    messagingSenderId: "558275102407",
+    appId: "1:558275102407:web:55ee8cfad859bc8561e0e2",
+    measurementId: "G-GM94G0GBEY",
   },
 };
