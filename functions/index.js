@@ -243,15 +243,28 @@ async function googleJson(url, options = {}) {
 }
 
 async function textSearch(payload) {
+  const body = {
+    textQuery: payload.textQuery,
+    maxResultCount: Math.min(Number(payload.maxResultCount || 20), 20),
+    languageCode: "zh-TW",
+    regionCode: "TW",
+  };
+  const bias = payload.locationBias || null;
+  if (bias?.center && Number.isFinite(Number(bias.center.lat)) && Number.isFinite(Number(bias.center.lng))) {
+    body.locationBias = {
+      circle: {
+        center: {
+          latitude: Number(bias.center.lat),
+          longitude: Number(bias.center.lng),
+        },
+        radius: Math.min(Number(bias.radius || 800), 5000),
+      },
+    };
+  }
   const data = await googleJson("https://places.googleapis.com/v1/places:searchText", {
     method: "POST",
     headers: { "x-goog-fieldmask": FIELD_MASK },
-    body: JSON.stringify({
-      textQuery: payload.textQuery,
-      maxResultCount: Math.min(Number(payload.maxResultCount || 20), 20),
-      languageCode: "zh-TW",
-      regionCode: "TW",
-    }),
+    body: JSON.stringify(body),
   });
   return { items: (data.places || []).map(normalizePlace) };
 }
