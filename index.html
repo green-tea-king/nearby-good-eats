@@ -818,10 +818,10 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.5";
+const APP_VERSION_FALLBACK = "2026.06.24.6";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
-const RANK_DEFAULT_TRAVEL = "走路";
+const RANK_DEFAULT_TRAVEL = null;
 
 const RANK_FILTERS = [
   { key:"travel",  label:"交通", tier:"route", opts:[{label:"走路"}, {label:"開車"}] },
@@ -844,6 +844,21 @@ let rankAutoMeal = false;
 let sharedPlaceRoute = null;
 let villageData = null;
 let villageDataPromise = null;
+
+function hasRankLocationFilter(){
+  return !!(rankFilter.city || rankFilter.area || rankFilter.village);
+}
+function clearRankLocationFilter(){
+  rankFilter.city = "";
+  rankFilter.area = "";
+  rankFilter.village = "";
+}
+function clearRankTravelFilter(){
+  rankFilter.travel = RANK_DEFAULT_TRAVEL;
+}
+function activeRankTravel(){
+  return rankFilter.travel || "走路";
+}
 
 async function loadAppVersion(){
   const el = $("#appVersion");
@@ -1071,6 +1086,7 @@ async function applyCurrentAreaToRankFilter(){
       rankFilter.city = city;
       rankFilter.area = area;
       rankFilter.village = await matchTaiwanVillage(city, area, res.results);
+      clearRankTravelFilter();
       return true;
     }
   }catch(e){
@@ -1404,7 +1420,7 @@ function bindCardEvents(root){
   }));
   root.querySelectorAll("[data-nav]").forEach(btn => btn.addEventListener("click", () => {
     const { lat, lng, name } = btn.dataset;
-    const travelMode = rankFilter.travel === "開車" ? "driving" : "walking";
+    const travelMode = activeRankTravel() === "開車" ? "driving" : "walking";
     const url = (lat && lng && lat!=="0")
       ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=${travelMode}&q=${encodeURIComponent(name)}`
       : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
@@ -1457,14 +1473,19 @@ function buildRankFilterBar(){
   bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
     const k=b.dataset.fkey, v=b.dataset.fval;
     if (k === "meal") rankAutoMeal = false;
-    rankFilter[k] = (k === "open" || k === "travel") ? v : (rankFilter[k]===v ? null : v);
+    if (k === "travel"){
+      rankFilter.travel = rankFilter.travel === v ? RANK_DEFAULT_TRAVEL : v;
+      if (rankFilter.travel) clearRankLocationFilter();
+    } else {
+      rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
+    }
     buildRankFilterBar(); renderLeaderboard();
   }));
   fillRkArea();
   fillRkVillage();
-  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; buildRankFilterBar(); renderLeaderboard(); });
-  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; fillRkVillage(); renderLeaderboard(); });
-  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; renderLeaderboard(); });
+  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); buildRankFilterBar(); renderLeaderboard(); });
+  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); fillRkVillage(); renderLeaderboard(); });
+  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter(); renderLeaderboard(); });
   $("#rkLocate")?.addEventListener("click", e => locateRankArea(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
     Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
@@ -2225,7 +2246,7 @@ function setSummary(){
 
 function routeSummary(r){
   if (r.dist == null) return "";
-  if (rankFilter.travel === "開車"){
+  if (activeRankTravel() === "開車"){
     return r.driveMin ? `開車 ${r.driveMin} 分` : `開車估算中`;
   }
   const walk = r.walkMin ? `步行 ${r.walkMin} 分` : `步行約 ${Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN))} 分`;
@@ -2239,7 +2260,7 @@ function routeDetail(r){
   return parts.join("｜");
 }
 function routeDistanceLabel(r){
-  const meters = rankFilter.travel === "開車" ? (r.driveMeters || r.dist) : (r.walkMeters || r.dist);
+  const meters = activeRankTravel() === "開車" ? (r.driveMeters || r.dist) : (r.walkMeters || r.dist);
   return meters ? `${meters.toLocaleString()} m` : "";
 }
 
