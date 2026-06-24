@@ -372,6 +372,10 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .actions button:active{filter:brightness(1.08);}
 .actions .nav{background:var(--accent);color:var(--on-accent);font-weight:500;border-color:var(--accent);}
 .actions .nav:active{background:var(--accent);}
+.actions .share{flex:.72;color:var(--text-dim);}
+.actions .share:active{border-color:var(--accent);color:var(--accent-bright);}
+.rank-route-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 14px;color:var(--text-dim);font-size:12px;}
+.rank-route-tools button{flex:none;padding:8px 12px;border-radius:9px;background:var(--surface);border:1px solid var(--line);color:var(--text);}
 
 /* 展開詳情 */
 .detail{margin-top:0;max-height:0;overflow:hidden;transition:max-height var(--t) ease;}
@@ -812,7 +816,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.2";
+const APP_VERSION_FALLBACK = "2026.06.24.3";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 
@@ -833,6 +837,7 @@ const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓�
 let rankAreaPools = {};  // city|area -> 區域專用候選池
 let rankContextReady = false;
 let rankAutoMeal = false;
+let sharedPlaceRoute = null;
 
 async function loadAppVersion(){
   const el = $("#appVersion");
@@ -852,7 +857,103 @@ async function loadAppVersion(){
   }
 }
 
+function currentSharedPlaceId(){
+  const params = new URLSearchParams(location.search);
+  const fromQuery = params.get("place");
+  if (fromQuery) return fromQuery.trim();
+  const hash = location.hash.match(/^#place=([^&]+)/);
+  return hash ? decodeURIComponent(hash[1]).trim() : "";
+}
+function placeShareUrl(placeId){
+  const url = new URL(location.href);
+  url.search = "";
+  url.hash = "";
+  url.searchParams.set("place", placeId);
+  return url.toString();
+}
+function clearSharedPlaceRoute(){
+  sharedPlaceRoute = null;
+  const url = new URL(location.href);
+  url.searchParams.delete("place");
+  url.hash = "";
+  history.pushState({}, "", url.pathname + url.search + url.hash);
+  openLeaderboard(true);
+}
+async function openSharedPlaceRoute(placeId){
+  sharedPlaceRoute = placeId;
+  $("#splash")?.classList.add("hidden");
+  $("#rankView").classList.remove("hidden");
+  closeRankFilters();
+  $("#rankFilters").classList.add("hidden");
+  $("#rankList").innerHTML = `<div class="rank-note">載入分享卡片…</div>`;
+  try{
+    const card = await fetchSharedPlaceCard(placeId);
+    if (sharedPlaceRoute !== placeId) return;
+    $("#rankList").innerHTML = `
+      <div class="rank-route-tools">
+        <span>分享卡片</span>
+        <button type="button" id="rankRouteHome">看完整排行榜</button>
+      </div>
+      ${cardHTML(card, 1)}`;
+    $("#rankRouteHome")?.addEventListener("click", clearSharedPlaceRoute);
+    bindCardEvents($("#rankList"));
+  }catch(e){
+    $("#rankList").innerHTML = `
+      <div class="rank-note">分享卡片載入失敗：${escapeHTML(e.message || "找不到餐廳")}</div>
+      <div class="rank-route-tools"><span></span><button type="button" id="rankRouteHome">看完整排行榜</button></div>`;
+    $("#rankRouteHome")?.addEventListener("click", clearSharedPlaceRoute);
+  }
+}
+async function fetchSharedPlaceCard(placeId){
+  await loadGoogle();
+  const { Place } = await google.maps.importLibrary("places");
+  const p = new Place({ id: placeId });
+  await p.fetchFields({ fields:[
+    "displayName","location","rating","userRatingCount","priceLevel","priceRange","regularOpeningHours","businessStatus",
+    "formattedAddress","nationalPhoneNumber","websiteURI","googleMapsURI","primaryTypeDisplayName","photos",
+    "hasDineIn","hasTakeout","hasDelivery","isReservable","hasOutdoorSeating","allowsDogs","hasLiveMusic",
+    "isGoodForChildren","isGoodForGroups","hasMenuForChildren","hasRestroom",
+    "accessibilityOptions","paymentOptions","parkingOptions",
+    "servesVegetarianFood","servesBeer","servesWine","servesCocktails",
+    "reviewSummary","editorialSummary","generativeSummary"
+  ]});
+  if (!p.location) throw new Error("這個餐廳沒有座標資料");
+  const name = toTW(extractText(p.displayName) || "");
+  if (!name) throw new Error("找不到這個餐廳");
+  return {
+    id: placeId,
+    name,
+    loc: { lat:p.location.lat(), lng:p.location.lng() },
+    rating: p.rating || 0,
+    count: p.userRatingCount || 0,
+    priceLevel: priceToNum(p.priceLevel),
+    openNow: isOpenNow(p.regularOpeningHours),
+    address: toTW(p.formattedAddress || ""),
+    phone: p.nationalPhoneNumber || "",
+    hours: (p.regularOpeningHours?.weekdayDescriptions || []).map(toTW),
+    priceText: toTW(priceRangeText(p.priceRange)),
+    typeName: toTW(extractText(p.primaryTypeDisplayName)),
+    website: p.websiteURI || "",
+    mapsUri: p.googleMapsURI || "",
+    photos: (p.photos || []).slice(0,3).map(ph => ph.getURI({ maxWidth:560, maxHeight:420 })),
+    dineIn:p.hasDineIn===true, takeout:p.hasTakeout===true, delivery:p.hasDelivery===true,
+    reservable:p.isReservable===true, outdoor:p.hasOutdoorSeating===true,
+    allowsDogs:p.allowsDogs===true, liveMusic:p.hasLiveMusic===true,
+    goodKids:p.isGoodForChildren===true, goodGroups:p.isGoodForGroups===true,
+    menuKids:p.hasMenuForChildren===true, restroom:p.hasRestroom===true,
+    accessStr:accessText(p.accessibilityOptions), payStr:payText(p.paymentOptions), parkStr:parkText(p.parkingOptions),
+    servesVeg:p.servesVegetarianFood===true,
+    servesAlcohol:(p.servesBeer===true||p.servesWine===true||p.servesCocktails===true),
+    reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
+    summary: toTW(extractEditorial(p.editorialSummary)),
+    generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
+    awards: [],
+    dist:null,
+  };
+}
+
 async function openLeaderboard(force){
+  sharedPlaceRoute = null;
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
   if (!rankContextReady){
@@ -1224,7 +1325,7 @@ function rankCardData(c){
     + (c.rBonus>0 ? `，＋評論量 ${c.rBonus.toFixed(2)}` : ``)
     + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``) + `，綜合 ${c.composite.toFixed(2)}`;
   return Object.assign({
-    name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
+    id:c.id, name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
     dist:null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:null,
     reviewSummary:c.reviewSummary || "", summary:c.summary || "", generativeSummary:c.generativeSummary || "",
@@ -1245,6 +1346,29 @@ function bindCardEvents(root){
       : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
     window.open(url, "_blank");
   }));
+  root.querySelectorAll("[data-share]").forEach(btn => btn.addEventListener("click", () => shareCard(btn)));
+}
+
+async function shareCard(btn){
+  const { placeId, name, rating, count, address } = btn.dataset;
+  if (!placeId){ toast("這張卡片目前沒有可分享連結"); return; }
+  const url = placeShareUrl(placeId);
+  const title = `${name}｜在地美食榜`;
+  const text = `${name} · Google ${rating || "-"} 星 · ${Number(count || 0).toLocaleString()} 則評論${address ? `\n${address}` : ""}`;
+  try{
+    if (navigator.share){
+      await navigator.share({ title, text, url });
+      return;
+    }
+  }catch(e){
+    if (e.name === "AbortError") return;
+  }
+  try{
+    await navigator.clipboard.writeText(url);
+    toast("已複製分享連結");
+  }catch(_){
+    window.prompt("複製分享連結", url);
+  }
 }
 
 /* 篩選列 */
@@ -1996,16 +2120,7 @@ function renderList(){
   }
   setSummary();
   list.innerHTML = state.ranked.map((r,i)=>cardHTML(r,i+1)).join("");
-  // 綁定展開 / 導航
-  list.querySelectorAll("[data-detail]").forEach(btn=>btn.addEventListener("click",()=>{
-    const d = btn.closest(".card").querySelector(".detail");
-    d.classList.toggle("open");
-    btn.querySelector(".chev2").style.transform = d.classList.contains("open")?"rotate(180deg)":"";
-  }));
-  list.querySelectorAll("[data-nav]").forEach(btn=>btn.addEventListener("click",()=>{
-    const {lat,lng,name} = btn.dataset;
-    window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_id=&travelmode=walking&q=${encodeURIComponent(name)}`,"_blank");
-  }));
+  bindCardEvents(list);
 }
 
 function renderOverview(text){
@@ -2040,6 +2155,8 @@ function routeDistanceLabel(r){
 }
 
 function cardHTML(r, rank){
+  const placeId = r.id || "";
+  const shareUrl = placeId ? placeShareUrl(placeId) : "";
   const price = r.priceLevel ? "$".repeat(r.priceLevel) : "";
   // 一般搜尋顯示步行距離；排行榜（dist 為 null）改顯示縣市 + 綜合分數
   const distChip = (r.dist != null)
@@ -2080,7 +2197,7 @@ function cardHTML(r, rank){
   const featRow = feats.length ? `<div class="feats">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</div>` : "";
 
   return `
-  <div class="card">
+  <div class="card" data-place-id="${escapeHTML(placeId)}">
     <div class="top">
       <div class="rank-badge">${rank}</div>
       <div class="head">
@@ -2105,6 +2222,10 @@ function cardHTML(r, rank){
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
         導航
       </button>
+      <button class="share" data-share data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-rating="${r.rating.toFixed(1)}" data-count="${r.count}" data-address="${escapeHTML(r.address||"")}">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+        分享
+      </button>
       <button data-detail>詳情 <span class="chev2" style="display:inline-block;transition:transform var(--t)">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
       </button>
@@ -2125,7 +2246,7 @@ function cardHTML(r, rank){
         ${r.parkStr?`<div class="line"><span class="k">停車</span><span class="v">${escapeHTML(r.parkStr)}</span></div>`:""}
         <div class="line"><span class="k">地址</span><span class="v">${escapeHTML(r.address||"—")}</span></div>
         <div class="line"><span class="k">電話</span><span class="v">${escapeHTML(r.phone||"—")}</span></div>
-        ${(r.website||r.mapsUri)?`<div class="line"><span class="k">連結</span><span class="v links">${[r.website?`<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">官方網站</a>`:"", r.mapsUri?`<a href="${escapeHTML(r.mapsUri)}" target="_blank" rel="noopener">Google 地圖</a>`:""].filter(Boolean).join(" · ")}</span></div>`:""}
+        ${(r.website||r.mapsUri||shareUrl)?`<div class="line"><span class="k">連結</span><span class="v links">${[shareUrl?`<a href="${escapeHTML(shareUrl)}" target="_blank" rel="noopener">分享卡片</a>`:"", r.website?`<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">官方網站</a>`:"", r.mapsUri?`<a href="${escapeHTML(r.mapsUri)}" target="_blank" rel="noopener">Google 地圖</a>`:""].filter(Boolean).join(" · ")}</span></div>`:""}
       </div>
     </div>
   </div>`;
@@ -2344,8 +2465,15 @@ async function aiLive(items){
   renderList();
 }
 
+function startFromRoute(){
+  const placeId = currentSharedPlaceId();
+  if (placeId) openSharedPlaceRoute(placeId);
+  else openLeaderboard(false);
+}
+
+window.addEventListener("popstate", startFromRoute);
 loadAppVersion();
-openLeaderboard(false);
+startFromRoute();
 
 </script>
 </body>
