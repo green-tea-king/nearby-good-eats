@@ -1019,9 +1019,19 @@ function rankFilterEventInside(e){
   const path = typeof e.composedPath === "function" ? e.composedPath() : [];
   return path.includes(panel) || path.includes(btn) || panel.contains(e.target) || btn?.contains(e.target);
 }
+function rankFilterHasFocus(){
+  const panel = $("#rankFilters");
+  return !!panel && panel.contains(document.activeElement);
+}
 function closeRankFiltersFromOutside(e){
   if (!rankFiltersOpen()) return;
   if (rankFilterEventInside(e)) return;
+  if ((e.type === "scroll" || e.type === "resize") && rankFilterHasFocus()) return;
+  closeRankFilters();
+}
+function closeRankFiltersFromViewportChange(e){
+  if (!rankFiltersOpen()) return;
+  if (rankFilterHasFocus()) return;
   closeRankFilters();
 }
 
@@ -1040,8 +1050,8 @@ document.addEventListener("wheel", closeRankFiltersFromOutside, { capture:true, 
 document.addEventListener("scroll", closeRankFiltersFromOutside, true);
 document.addEventListener("touchmove", closeRankFiltersFromOutside, { capture:true, passive:true });
 document.addEventListener("gesturestart", closeRankFiltersFromOutside, { capture:true, passive:true });
-window.addEventListener("resize", () => { if (rankFiltersOpen()) closeRankFilters(); }, { passive:true });
-window.visualViewport?.addEventListener("resize", () => { if (rankFiltersOpen()) closeRankFilters(); }, { passive:true });
+window.addEventListener("resize", closeRankFiltersFromViewportChange, { passive:true });
+window.visualViewport?.addEventListener("resize", closeRankFiltersFromViewportChange, { passive:true });
 $("#rankInfoBtn").addEventListener("click", () => $("#rankInfoModal").classList.remove("hidden"));
 $("#rankInfoClose").addEventListener("click", () => $("#rankInfoModal").classList.add("hidden"));
 $("#rankInfoModal").addEventListener("click", e => {
@@ -1057,7 +1067,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.22";
+const APP_VERSION_FALLBACK = "2026.06.24.23";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
