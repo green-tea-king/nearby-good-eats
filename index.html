@@ -214,7 +214,6 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-row .arr{flex:none;color:var(--text-faint);}
 .rank-row.loading .nm,.rank-row.loading .meta{color:var(--text-faint);}
 .rank-row.empty .nm{color:var(--text-faint);}
-.rank-foot{flex:none;padding:13px 20px 22px;font-size:11px;line-height:1.6;color:var(--text-faint);border-top:1px solid var(--line);width:100%;max-width:480px;}
 #splash .logo{
   font-size:11px;letter-spacing:.34em;color:var(--accent-bright);
   text-transform:uppercase;font-weight:500;
@@ -505,7 +504,6 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
   </div>
   <div class="rank-filters hidden" id="rankFilters"></div>
   <div class="rank-list" id="rankList"></div>
-  <p class="rank-foot">資料取全台各縣市搜尋前段店家，存於瀏覽器、每週更新一次（右上重新整理可強制更新）。屬高品質近似榜，非逐家掃描的全域第一。</p>
 </section>
 
 <div id="rankInfoModal" class="rank-info-modal hidden" role="dialog" aria-modal="true" aria-labelledby="rankInfoTitle">
@@ -941,7 +939,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.12";
+const APP_VERSION_FALLBACK = "2026.06.24.13";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
