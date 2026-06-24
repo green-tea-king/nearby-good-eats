@@ -822,7 +822,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.10";
+const APP_VERSION_FALLBACK = "2026.06.24.11";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1582,17 +1582,10 @@ function bindCardEvents(root){
   root.querySelectorAll("[data-share]").forEach(btn => btn.addEventListener("click", () => shareCard(btn)));
 }
 
-function shouldUseNativeShare(data){
-  const mobileLike = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-    || (navigator.maxTouchPoints > 1 && matchMedia("(max-width: 768px)").matches);
-  if (!mobileLike || !navigator.share) return false;
-  return !navigator.canShare || navigator.canShare(data);
-}
-
 async function copyShareUrl(url){
   try{
     await navigator.clipboard.writeText(url);
-    toast("已複製分享連結");
+    toast("已複製分享連結，可貼給朋友");
   }catch(_){
     window.prompt("複製分享連結", url);
   }
@@ -1602,17 +1595,6 @@ async function shareCard(btn){
   const { placeId, name, rating, count, address } = btn.dataset;
   if (!placeId){ toast("這張卡片目前沒有可分享連結"); return; }
   const url = placeShareUrl(placeId);
-  const title = `${name}｜在地美食榜`;
-  const text = `${name} · Google ${rating || "-"} 星 · ${Number(count || 0).toLocaleString()} 則評論${address ? `\n${address}` : ""}`;
-  const shareData = { title, text, url };
-  try{
-    if (shouldUseNativeShare(shareData)){
-      await navigator.share(shareData);
-      return;
-    }
-  }catch(e){
-    if (e.name === "AbortError") return;
-  }
   await copyShareUrl(url);
 }
 
