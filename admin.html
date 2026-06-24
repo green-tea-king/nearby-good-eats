@@ -89,6 +89,7 @@ tr:last-child td{border-bottom:none;}
     <div class="metric"><b id="mShare">0</b><span>分享 / 導航</span><small>高意圖行為</small></div>
     <div class="metric"><b id="mApiCalls">0</b><span>API 呼叫</span><small>Functions proxy</small></div>
     <div class="metric"><b id="mApiErrors">0%</b><span>API 錯誤率</span><small id="mApiUnits">估算單位 0</small></div>
+    <div class="metric"><b id="mApiCost">$0.00</b><span>API 粗估成本</span><small>依 proxy action 估算</small></div>
   </section>
 
   <section class="panels hidden" id="dashboard">
@@ -115,6 +116,14 @@ tr:last-child td{border-bottom:none;}
     <section class="panel">
       <h2>API 錯誤</h2>
       <div class="list" id="apiErrorRows"></div>
+    </section>
+    <section class="panel">
+      <h2>API 使用者排行</h2>
+      <div class="list" id="apiUserRows"></div>
+    </section>
+    <section class="panel">
+      <h2>配額 / 異常封鎖</h2>
+      <div class="list" id="quotaRows"></div>
     </section>
     <section class="panel wide">
       <h2>查詢結果紀錄</h2>
@@ -237,7 +246,7 @@ function resultDetail(e){
   return [filters, top].filter(Boolean).join("｜");
 }
 function downloadCsv(){
-  const header = ["kind","time","email","type","sessionId","path","payload","ok","latencyMs","estimatedUnits","error"];
+  const header = ["kind","time","email","type","sessionId","path","payload","ok","latencyMs","estimatedUnits","estimatedCostUsd","quotaBlocked","quotaRemaining","error"];
   const usageLines = currentEvents.map(e => [
     "usage",
     fmtTime(e.createdAt),
@@ -246,6 +255,9 @@ function downloadCsv(){
     e.sessionId || "",
     e.path || "",
     JSON.stringify(e.payload || {}).replace(/\r?\n/g, " "),
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -262,6 +274,9 @@ function downloadCsv(){
     e.ok === false ? "false" : "true",
     e.latencyMs || "",
     e.estimatedUnits || "",
+    e.estimatedCostUsd || "",
+    e.quotaBlocked === true ? "true" : "false",
+    e.quotaRemaining ?? "",
     e.error || "",
   ]);
   const csv = [header, ...usageLines, ...apiLines].map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(",")).join("\r\n");
@@ -302,9 +317,11 @@ function renderStats(user, events, apiEvents=[]){
   $("mRange").textContent = fmtRange(currentDays);
   const apiErrors = apiEvents.filter(e => e.ok === false);
   const apiUnits = apiEvents.reduce((sum, e) => sum + Number(e.estimatedUnits || 0), 0);
+  const apiCost = apiEvents.reduce((sum, e) => sum + Number(e.estimatedCostUsd || 0), 0);
   $("mApiCalls").textContent = apiEvents.length;
   $("mApiErrors").textContent = apiEvents.length ? `${Math.round(apiErrors.length / apiEvents.length * 100)}%` : "0%";
   $("mApiUnits").textContent = `估算單位 ${apiUnits}`;
+  $("mApiCost").textContent = `$${apiCost.toFixed(2)}`;
 
   renderTopRows("eventTypeRows", countBy(events, e => e.type).map(r => ({ ...r, label:eventName(r.key) })));
   renderTopRows("userRows", countBy(events, e => e.email).map(r => ({ ...r, meta:"事件數" })));
@@ -312,6 +329,13 @@ function renderStats(user, events, apiEvents=[]){
   renderTopRows("placeRows", countBy(events.filter(e => ["share_copy","navigation_open","detail_toggle","leaderboard_result"].includes(e.type)), placeLabel));
   renderTopRows("apiActionRows", countBy(apiEvents, e => e.action).map(r => ({ ...r, meta:"呼叫次數" })));
   renderTopRows("apiErrorRows", countBy(apiEvents.filter(e => e.ok === false), e => e.error || e.action).map(r => ({ ...r, meta:"錯誤次數" })));
+  renderTopRows("apiUserRows", countBy(apiEvents, e => e.email || e.uid).map(r => {
+    const userEvents = apiEvents.filter(e => (e.email || e.uid) === r.key);
+    const cost = userEvents.reduce((sum, e) => sum + Number(e.estimatedCostUsd || 0), 0);
+    const blocked = userEvents.filter(e => e.quotaBlocked === true).length;
+    return { ...r, meta:`粗估 $${cost.toFixed(2)} / 封鎖 ${blocked}` };
+  }));
+  renderTopRows("quotaRows", countBy(apiEvents.filter(e => e.quotaBlocked === true), e => e.email || e.uid || e.action).map(r => ({ ...r, meta:"超過每日搜尋上限" })));
 
   const resultEvents = events.filter(e => ["leaderboard_result","search_result","route_result"].includes(e.type));
   $("resultRows").innerHTML = resultEvents.slice(0,50).map(e => `

@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.24.25
+版本：2026.06.24.32
 
 ## 專案目標
 
@@ -17,7 +17,7 @@
 
 - `index.html`：主要 App，包含 HTML、CSS、JavaScript。
 - `admin.html`：Firebase 後台統計頁，登入管理員可看使用紀錄。
-- `assets/app-settings.js`：公開的非機密執行設定，集中管理資料檔路徑。
+- `assets/app-settings.js`：公開的非機密執行設定，集中管理後端 proxy 與資料檔路徑；不得放 Google Maps secret key。
 - `assets/filter-rules.js`：排行榜濾網定義與精準度層級。
 - `firebase-config.js`：Firebase Auth / Firestore 設定，未填寫前登入功能保持關閉。
 - `firestore.rules`：Firestore 安全規則，限制使用者只能寫自己的使用紀錄、管理員可讀後台資料。
@@ -27,7 +27,7 @@
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
-- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤等加權；目前覆蓋台北，資料結構可擴充全台。
+- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤等加權；已擴充 2025 500 盤全台名單，並保留官方來源 URL。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/export-release.ps1`：版本匯出腳本。
 - `RELEASES.md`：版本匯出流程備註。
@@ -52,7 +52,7 @@
    - 顯示排行、店名、Google 評分、評論數、營業狀態、地區、路線時間、綜合分數。
    - 顯示外部評鑑獎牌與 Google 真欄位認證章，例如米其林、必比登、500 盤、高分認證、千則口碑、可訂位、聚餐友善、素食友善。
    - 顯示服務標籤，例如內用、外帶、外送、可訂位、素食、供應酒、適合團體。
-   - 顯示 Google 照片、Google AI 摘要或評論摘要。
+   - 顯示 Google 照片、Google 摘要或評論摘要。
    - 沒有摘要資料時不顯示 placeholder，避免讓使用者誤會功能壞掉。
    - 動作按鈕：導航、分享、詳情。
    - 分享按鈕固定複製獨立卡片連結，避免不同系統分享面板沒有可用目標時跳出錯誤。
@@ -89,7 +89,12 @@
 
 - 硬濾網：Google 欄位能直接支援者，例如營業中、素食、可訂位、適合團體。
 - 搜尋詞強化：把關鍵字與近似濾網直接丟進 Google Places Text Search，例如麵線、吃到飽、聚餐、小吃。
-- 關鍵字是強條件：Google 回傳候選後，仍必須在店名、類型、地址、Google 摘要或評論摘要實際命中關鍵字才顯示；不符合時寧可 0 筆，不顯示不相干店家。
+- 關鍵字是強條件：Google 回傳候選後，仍必須在店名、類型、Google 摘要或評論摘要實際命中關鍵字才顯示；不符合時寧可 0 筆，不顯示不相干店家。
+- 關鍵字支援多詞，例如 `滷肉飯 排骨湯`。多詞採 AND 條件，每個詞都必須命中；卡片會標示命中來源，例如店名、類型、評論摘要、Google 摘要。
+- 關鍵字無結果時只提供「放寬關鍵字」或取消條件，不改用不相干推薦。
+- `吃到飽` 是高風險近似濾網，不能只因為搜尋詞命中就通過；結果必須在店名、類型、地址、Google 摘要或評論摘要出現吃到飽、自助餐、buffet、放題、無限供應或已知吃到飽品牌等明確證據。
+- 行政區與里會先 geocode 成座標，作為 Google Places Text Search 的 location bias；搜尋仍保留文字條件，但不只靠地址文字比對。
+- 排行榜會做分店 / 連鎖店分群，先依綜合分數排序，同品牌多分店只保留最高分卡片，卡片上提示合併的同品牌數量。
 - 近似 / AI 濾網：Google 沒有直接欄位時，先以店名、類型、摘要、Google flags 判斷，後續可接後端 AI proxy 強化。
 
 ## 資料來源與 API
@@ -139,14 +144,18 @@
 - Routes API
 - Distance Matrix API fallback
 
-Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`functions/` 已建立 `api` 與 `photo` proxy，會驗證 Firebase ID token、使用 `GOOGLE_MAPS_API_KEY` Secret 代打 Google API，並寫入 `apiEvents`。
+Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`functions/` 已建立 `api` 與 `photo` proxy，會驗證 Firebase ID token、可驗證 `X-Firebase-AppCheck` token、使用 `GOOGLE_MAPS_API_KEY` Secret 代打 Google API，並寫入 `apiEvents`。
 
-目前 Firebase 專案仍需要升級 Blaze 才能啟用 Secret Manager / Cloud Functions。升級前，正式 GitHub Pages 仍透過 `assets/app-settings.js` 的 `googleMapsApiKey` fallback 運作；此 key 必須在 Google Cloud Console 設定 HTTP referrer 與 API 限制。
+目前先部署 GitHub Pages 靜態版，`assets/app-settings.js` 暫時使用 Google Maps browser key fallback，不走 Firebase Functions proxy，避免 Blaze 付費門檻阻塞上線。這個 key 必須在 Google Cloud 設定 HTTP referrer 與 API 限制。若後續出現濫用或成本風險，再回到 Functions proxy / App Check / rate limit 架構。
+
+搜尋類 API (`textSearch`、`nearbySearch`) 套用每日使用者配額：一般使用者每天 30 次搜尋，管理員不限。一次排行榜整理即使內部查多個縣市，也會用同一個 quota key 合併計算成一次使用者搜尋。
+
+`apiEvents` 會記錄 action、成功/失敗、延遲、估算單位、粗估成本、App Check 狀態、配額剩餘與配額封鎖。`admin.html` 會顯示 API 次數、錯誤率、成本估算、API 使用者排行與錯誤/配額排行。成本估算只供控管趨勢，正式帳務仍以 Google Cloud Billing 為準。
 
 ### 餐廳資料流程
 
-1. 載入 Google Maps JavaScript API。
-2. 依地區與濾網組合呼叫 Google Places。
+1. 前端登入 Firebase Auth 並呼叫 Firebase Functions proxy。
+2. 後端依地區與濾網組合呼叫 Google Places / Routes。
 3. 取得餐廳基本資料：名稱、座標、評分、評論數、營業狀態、地址、類型、照片、服務欄位。
 4. 用評鑑資料比對餐廳。
 5. 計算綜合分數。
@@ -183,7 +192,7 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 - 評論量加分用 `log10(n+1) * 0.06` 計算，上限 `0.32`，讓同星等時評論數多者明顯更前，但避免評論數超大的店過度壓過品質。
 - 米其林、必比登、500 盤會有額外加分。
 - 卡片認證章分兩類：
-  - 外部評鑑獎牌：來自 `awards-taipei.json`，目前支援米其林、必比登、500 盤。
+  - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援米其林、必比登、500 盤；全台 500 盤資料帶縣市欄位，避免同名餐廳跨縣市誤標。
   - Google 真欄位認證：由 Google rating / userRatingCount / Places 服務欄位產生，例如高分認證、千則口碑、可訂位、聚餐友善、素食友善、戶外座位、寵物友善、無障礙資訊。
 
 這個設計是為了處理「同樣 4 顆星，但評論數多者可信度應較高」的問題。
@@ -205,6 +214,17 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 - 可用 Google Place ID 重新抓取單一餐廳真實資料。
 
 分享頁會顯示單張餐廳卡片，並提供「看完整排行榜」回到主排行榜。
+頁面提供基本 OG / Twitter metadata；分享卡片載入成功後，前端會用該店名稱、評分、地址與照片更新 metadata。若社群平台需要伺服器端預覽圖，後續可把 `?place=` 交給 Functions 產生動態分享頁。
+分享按鈕固定 copy link。Clipboard API 失敗時改用隱藏 textarea fallback，不呼叫系統分享面板，也不跳系統錯誤。
+
+## 圖片與手機互動
+
+- 餐廳照片使用 `loading="lazy"` 與 `decoding="async"`。
+- 錯圖不移除 DOM，而是標記 `is-broken` 保留固定高度，避免卡片高度跳動。
+- 照片列使用固定 grid 高度：三張圖 118px，單張圖 172px。
+- 手機關鍵字與地點輸入框使用 16px 字級，避免 iOS 聚焦時自動放大造成版面跳動。
+- 濾網、說明、地區彈窗、地圖選點與地圖頁會建立暫態 history；手機返回鍵優先關閉最上層 UI，沒有開啟 UI 時才處理分享路由或瀏覽器返回。
+- 濾網彈窗在外圍點擊、滾動、縮放時會收回；輸入框聚焦期間保留，避免鍵盤開合時誤關。
 
 ## 交通模式
 
@@ -238,7 +258,7 @@ AI_FILTER: {
 正確方向不是把 AI API key 放前端，而是建立後端或 serverless proxy：
 
 ```text
-Google Places 真資料 -> 後端 AI 分類 -> 回傳 tags + confidence -> 前端套用濾網
+Google Places 真資料 -> 後端 AI 分類 -> 回傳 tags + confidence + reason + sources -> 前端套用濾網與顯示判讀依據
 ```
 
 前端呼叫 AI proxy 時會帶 Firebase ID token，後端必須先驗證登入者：
@@ -255,11 +275,23 @@ Authorization: Bearer <Firebase ID token>
     {
       "id": "google-place-id",
       "tags": { "occasion": ["聚餐"], "service": ["吃到飽"] },
-      "confidence": { "occasion": 0.82, "service": 0.76 }
+      "confidence": { "occasion": 0.82, "service": 0.76 },
+      "reason": "AI 分類：聚餐 82%、吃到飽 76%。依據：Google flags、評論摘要。",
+      "sources": {
+        "occasion": [
+          { "field": "googleFlags.goodGroups", "label": "Google flags", "evidence": "適合團體" },
+          { "field": "reviewSummary", "label": "評論摘要", "evidence": "適合多人聚餐" }
+        ],
+        "service": [
+          { "field": "name", "label": "店名", "evidence": "吃到飽" }
+        ]
+      }
     }
   ]
 }
 ```
+
+前端不放 AI API key，也不再把 Google 摘要偽裝成 AI 解讀。卡片只有在後端 `aiClassify` 回傳 `reason` 時才顯示 `AI 判讀`，並附來源摘要，例如 `Google flags`、`店名`、`評論摘要`、`Google 摘要`。
 
 可由 AI 判斷的欄位：
 
@@ -307,14 +339,14 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.24.25
-畫面顯示 = v06.24.25
+VERSION = 2026.06.24.32
+畫面顯示 = v06.24.32
 ```
 
 ## 維護注意事項
 
 - 不要加入假餐廳資料或死資料。
-- Google API key 必須設定 referrer 與 API 限制。
+- Google API key 必須留在後端 Secret；若另設測試 key，也必須設定 referrer 與 API 限制。
 - 所有新濾網都要確認是否真的會影響 Google 查詢、硬過濾或 AI 判斷，不要只做 UI。
 - 手機 360px 寬度一定要檢查，避免濾網、卡片按鈕或文字擠版。
 - 分享路由必須保持 `?place=` 可直接打開。

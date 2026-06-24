@@ -2,10 +2,22 @@ const admin = require("firebase-admin");
 const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const { logger } = require("firebase-functions");
+const crypto = require("crypto");
 
 admin.initializeApp();
 const db = admin.firestore();
 const GOOGLE_MAPS_API_KEY = defineSecret("GOOGLE_MAPS_API_KEY");
+const REQUIRE_APP_CHECK = process.env.REQUIRE_APP_CHECK === "true";
+const DAILY_SEARCH_LIMIT = Number(process.env.DAILY_SEARCH_LIMIT || 30);
+const SEARCH_ACTIONS = new Set(["textSearch", "nearbySearch"]);
+const API_COST_USD = {
+  textSearch: 0.032,
+  nearbySearch: 0.032,
+  placeDetails: 0.017,
+  routeMatrix: 0.01,
+  geocode: 0.005,
+  aiClassify: 0,
+};
 
 const ALLOWED_ORIGINS = new Set([
   "https://green-tea-king.github.io",
@@ -113,19 +125,136 @@ function cors(req, res) {
     res.set("Access-Control-Allow-Origin", origin);
     res.set("Vary", "Origin");
   }
-  res.set("Access-Control-Allow-Headers", "authorization, content-type");
+  res.set("Access-Control-Allow-Headers", "authorization, content-type, x-firebase-appcheck");
   res.set("Access-Control-Allow-Methods", "POST, OPTIONS");
+}
+
+function httpError(message, status, extra = {}) {
+  const err = new Error(message);
+  err.status = status;
+  Object.assign(err, extra);
+  return err;
 }
 
 async function requireUser(req) {
   const header = req.headers.authorization || "";
   const match = header.match(/^Bearer\s+(.+)$/i);
   if (!match) {
-    const err = new Error("missing auth token");
-    err.status = 401;
-    throw err;
+    throw httpError("missing auth token", 401);
   }
   return admin.auth().verifyIdToken(match[1]);
+}
+
+async function verifyAppCheck(req) {
+  const token = req.headers["x-firebase-appcheck"] || req.headers["X-Firebase-AppCheck"];
+  if (!token) {
+    if (REQUIRE_APP_CHECK) throw httpError("missing app check token", 401, { appCheckMissing: true });
+    return { ok: false, required: false, missing: true };
+  }
+  try {
+    const decoded = await admin.appCheck().verifyToken(String(token));
+    return { ok: true, appId: decoded.appId || "" };
+  } catch (e) {
+    if (REQUIRE_APP_CHECK) throw httpError("invalid app check token", 401, { appCheckInvalid: true });
+    return { ok: false, required: false, error: e.message };
+  }
+}
+
+async function isAdminEmail(email) {
+  const normalized = String(email || "").toLowerCase();
+  if (!normalized) return false;
+  try {
+    const snap = await db.collection("admins").doc(normalized).get();
+    if (snap.exists) return true;
+  } catch (e) {
+    logger.warn("admin lookup failed", { email: normalized, error: e.message });
+  }
+  return normalized === "rh.taipei@gmail.com";
+}
+
+function taipeiDayKey(date = new Date()) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Taipei",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
+}
+
+function hashKey(value) {
+  return crypto.createHash("sha256").update(String(value || "")).digest("hex").slice(0, 32);
+}
+
+function stripInternalPayload(payload = {}) {
+  const clean = { ...payload };
+  delete clean.__quota;
+  return clean;
+}
+
+function estimatedUnits(action) {
+  if (action === "routeMatrix") return 2;
+  if (action === "aiClassify") return 0;
+  return 1;
+}
+
+function estimatedCostUsd(action) {
+  return Number(API_COST_USD[action] || 0);
+}
+
+async function enforceSearchQuota(decoded, action, payload = {}) {
+  if (!SEARCH_ACTIONS.has(action)) {
+    return { quotaCharged: false, quotaAdmin: false, quotaLimit: DAILY_SEARCH_LIMIT, quotaRemaining: null };
+  }
+  const adminUser = await isAdminEmail(decoded.email || "");
+  if (adminUser) {
+    return { quotaCharged: false, quotaAdmin: true, quotaLimit: null, quotaRemaining: null };
+  }
+  const day = taipeiDayKey();
+  const quotaDoc = db.collection("quotaUsage").doc(`${decoded.uid}_${day}`);
+  const quotaKey = String(payload.__quota?.key || `${action}:${JSON.stringify(stripInternalPayload(payload)).slice(0, 1200)}`);
+  const requestDoc = quotaDoc.collection("requests").doc(hashKey(quotaKey));
+  const requestHash = requestDoc.id;
+  let quotaResult = { quotaCharged: false, quotaAdmin: false, quotaLimit: DAILY_SEARCH_LIMIT, quotaRemaining: DAILY_SEARCH_LIMIT };
+  await db.runTransaction(async (tx) => {
+    const [quotaSnap, requestSnap] = await Promise.all([tx.get(quotaDoc), tx.get(requestDoc)]);
+    const currentCount = Number(quotaSnap.data()?.searchCount || 0);
+    if (requestSnap.exists) {
+      quotaResult = {
+        quotaCharged: false,
+        quotaAdmin: false,
+        quotaLimit: DAILY_SEARCH_LIMIT,
+        quotaRemaining: Math.max(0, DAILY_SEARCH_LIMIT - currentCount),
+      };
+      return;
+    }
+    if (currentCount >= DAILY_SEARCH_LIMIT) {
+      throw httpError("今日搜尋額度已用完（30次）", 429, {
+        quotaBlocked: true,
+        quotaLimit: DAILY_SEARCH_LIMIT,
+        quotaRemaining: 0,
+      });
+    }
+    tx.set(requestDoc, {
+      action,
+      keyHash: requestHash,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+    });
+    tx.set(quotaDoc, {
+      uid: decoded.uid,
+      email: decoded.email || "",
+      day,
+      searchCount: currentCount + 1,
+      limit: DAILY_SEARCH_LIMIT,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+    quotaResult = {
+      quotaCharged: true,
+      quotaAdmin: false,
+      quotaLimit: DAILY_SEARCH_LIMIT,
+      quotaRemaining: Math.max(0, DAILY_SEARCH_LIMIT - currentCount - 1),
+    };
+  });
+  return quotaResult;
 }
 
 function textOf(v) {
@@ -134,10 +263,28 @@ function textOf(v) {
   return v.text || "";
 }
 
+function photoSignature(name, exp) {
+  return crypto.createHmac("sha256", googleApiKey("PHOTOS"))
+    .update(`${name}|${exp}`)
+    .digest("base64url");
+}
+
+function validPhotoSignature(name, exp, sig) {
+  const expires = Number(exp || 0);
+  if (!name || !sig || !Number.isFinite(expires) || Date.now() > expires) return false;
+  const expected = Buffer.from(photoSignature(name, expires));
+  const actual = Buffer.from(String(sig));
+  return expected.length === actual.length && crypto.timingSafeEqual(expected, actual);
+}
+
 function photoUrls(place) {
   return (place.photos || []).slice(0, 3).map((ph) => {
-    const name = encodeURIComponent(ph.name || "");
-    return name ? `https://us-central1-nearby-good-eats.cloudfunctions.net/photo?name=${name}` : "";
+    const rawName = ph.name || "";
+    if (!rawName) return "";
+    const exp = Date.now() + 24 * 60 * 60 * 1000;
+    const name = encodeURIComponent(rawName);
+    const sig = encodeURIComponent(photoSignature(rawName, exp));
+    return `https://us-central1-nearby-good-eats.cloudfunctions.net/photo?name=${name}&exp=${exp}&sig=${sig}`;
   }).filter(Boolean);
 }
 
@@ -223,8 +370,12 @@ function openNow(oh) {
   return false;
 }
 
-async function googleJson(url, options = {}) {
-  const key = GOOGLE_MAPS_API_KEY.value();
+function googleApiKey(purpose = "PLACES") {
+  return process.env[`GOOGLE_${purpose}_API_KEY`] || GOOGLE_MAPS_API_KEY.value();
+}
+
+async function googleJson(url, options = {}, purpose = "PLACES") {
+  const key = googleApiKey(purpose);
   const res = await fetch(url, {
     ...options,
     headers: {
@@ -265,7 +416,7 @@ async function textSearch(payload) {
     method: "POST",
     headers: { "x-goog-fieldmask": FIELD_MASK },
     body: JSON.stringify(body),
-  });
+  }, "PLACES");
   return { items: (data.places || []).map(normalizePlace) };
 }
 
@@ -287,7 +438,7 @@ async function nearbySearch(payload) {
         },
       },
     }),
-  });
+  }, "PLACES");
   return { items: (data.places || []).map(normalizePlace) };
 }
 
@@ -301,7 +452,7 @@ async function placeDetails(payload) {
   const data = await googleJson(`https://places.googleapis.com/v1/places/${encodeURIComponent(id)}`, {
     method: "GET",
     headers: { "x-goog-fieldmask": DETAIL_FIELDS },
-  });
+  }, "PLACES");
   return { item: normalizePlace(data) };
 }
 
@@ -318,7 +469,7 @@ async function routeMatrix(payload) {
       travelMode: mode,
       units: "METRIC",
     }),
-  });
+  }, "ROUTES");
   const rows = Array.isArray(data) ? data : [];
   const items = targets.map((_, i) => {
     const row = rows.find((x) => x.destinationIndex === i) || {};
@@ -332,48 +483,136 @@ async function routeMatrix(payload) {
   return { items };
 }
 
+async function geocode(payload) {
+  const address = String(payload.address || "").trim();
+  if (!address) throw httpError("missing address", 400);
+  const params = new URLSearchParams({
+    address,
+    region: "tw",
+    language: "zh-TW",
+    key: googleApiKey("GEOCODE"),
+  });
+  const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?${params.toString()}`);
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || data.status !== "OK") {
+    throw httpError(`Geocode ${data.status || res.status}: ${data.error_message || "not found"}`, res.ok ? 404 : res.status);
+  }
+  const first = data.results?.[0] || {};
+  const loc = first.geometry?.location || {};
+  return {
+    center: Number.isFinite(Number(loc.lat)) && Number.isFinite(Number(loc.lng)) ? { lat:Number(loc.lat), lng:Number(loc.lng) } : null,
+    formattedAddress: first.formatted_address || "",
+    placeId: first.place_id || "",
+  };
+}
+
+function pushSource(list, field, label, evidence = "") {
+  if (!list.some(x => x.field === field && x.evidence === evidence)) {
+    list.push({ field, label, evidence:String(evidence || "").slice(0, 42) });
+  }
+}
+
+function sourceMatches(item, re) {
+  const fields = [
+    ["name", "店名", item.name],
+    ["type", "類型", item.type],
+    ["reviewSummary", "評論摘要", item.reviewSummary],
+    ["generativeSummary", "Google 摘要", item.generativeSummary],
+    ["editorialSummary", "Google 摘要", item.editorialSummary],
+  ];
+  const hits = [];
+  for (const [field, label, value] of fields) {
+    const text = String(value || "");
+    if (text && re.test(text.toLowerCase())) pushSource(hits, field, label, text);
+  }
+  return hits;
+}
+
+function sourceLabels(sources) {
+  return [...new Set(Object.values(sources).flat().map(x => x.label).filter(Boolean))];
+}
+
+function reasonFrom(tags, confidence, sources) {
+  const picked = [];
+  for (const key of ["service", "occasion", "diet", "cuisine", "style"]) {
+    const tag = tags[key]?.[0];
+    if (!tag) continue;
+    const score = confidence[key] != null ? ` ${Math.round(confidence[key] * 100)}%` : "";
+    picked.push(`${tag}${score}`);
+  }
+  const src = sourceLabels(sources).slice(0, 3).join("、") || "後端規則";
+  return picked.length ? `AI 分類：${picked.join("、")}。依據：${src}。` : `AI 分類：依據 ${src} 判讀。`;
+}
+
 function classifyOne(item) {
-  const text = `${item.name || ""} ${item.type || ""} ${item.address || ""} ${item.reviewSummary || ""} ${item.editorialSummary || ""} ${item.generativeSummary || ""}`.toLowerCase();
-  const has = (re) => re.test(text);
   const tags = { occasion: [], service: [], cuisine: [], style: [], type: [], diet: [] };
   const confidence = {};
-  if (item.googleFlags?.goodGroups || item.googleFlags?.reservable || has(/聚餐|包廂|火鍋|燒肉|合菜|桌菜|buffet|吃到飽|group|family|bbq|hot.?pot/)) {
-    tags.occasion.push("聚餐"); confidence.occasion = item.googleFlags?.goodGroups ? 0.9 : 0.72;
+  const sources = { occasion: [], service: [], cuisine: [], style: [], type: [], diet: [] };
+  const flags = item.googleFlags || {};
+
+  if (flags.goodGroups) pushSource(sources.occasion, "googleFlags.goodGroups", "Google flags", "適合團體");
+  if (flags.reservable) pushSource(sources.occasion, "googleFlags.reservable", "Google flags", "可訂位");
+  sourceMatches(item, /聚餐|包廂|火鍋|燒肉|合菜|桌菜|buffet|吃到飽|group|family|bbq|hot.?pot/).forEach(s => sources.occasion.push(s));
+  if (sources.occasion.length) {
+    tags.occasion.push("聚餐"); confidence.occasion = flags.goodGroups ? 0.9 : 0.72;
   } else {
     tags.occasion.push("獨享"); confidence.occasion = 0.58;
+    pushSource(sources.occasion, "negativeEvidence", "未命中來源", "未命中聚餐特徵");
   }
-  if (has(/吃到飽|自助餐|buffet|all.?you.?can.?eat|放題|饗食|旭集|饗饗|海港/)) {
+
+  sourceMatches(item, /吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|無限供應|無限暢食|任食|任點任食|饗食天堂|漢來海港|旭集|饗饗|島語|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋|欣葉日本料理|果然匯|蓮池閣/).forEach(s => sources.service.push(s));
+  if (sources.service.length) {
     tags.service.push("吃到飽"); confidence.service = 0.82;
   } else {
     tags.service.push("單點"); confidence.service = 0.56;
+    pushSource(sources.service, "negativeEvidence", "未命中來源", "未命中吃到飽證據");
   }
-  if (item.googleFlags?.servesVeg || has(/素食|蔬食|vegan|vegetarian/)) {
-    tags.diet.push("素食"); confidence.diet = item.googleFlags?.servesVeg ? 0.9 : 0.7;
+
+  if (flags.servesVeg) pushSource(sources.diet, "googleFlags.servesVeg", "Google flags", "素食");
+  sourceMatches(item, /素食|蔬食|vegan|vegetarian/).forEach(s => sources.diet.push(s));
+  if (sources.diet.length) {
+    tags.diet.push("素食"); confidence.diet = flags.servesVeg ? 0.9 : 0.7;
   } else {
     tags.diet.push("葷食"); confidence.diet = 0.55;
+    pushSource(sources.diet, "negativeEvidence", "未命中來源", "未命中素食證據");
   }
-  if (has(/中式|台菜|牛肉麵|火鍋|粵|川菜|江浙|麵|餃/)) tags.cuisine.push("中式");
-  if (has(/西式|義式|法式|美式|pizza|pasta|burger|steak|bistro/)) tags.cuisine.push("西式");
-  if (has(/老店|傳統|古早|老字號/)) tags.style.push("傳統");
-  if (has(/創意|現代|fusion|bistro|無國界|餐酒館/)) tags.style.push("現代");
-  return { id: item.id, tags, confidence };
+
+  const chineseSources = sourceMatches(item, /中式|台菜|牛肉麵|火鍋|粵|川菜|江浙|麵|餃/);
+  if (chineseSources.length) { tags.cuisine.push("中式"); confidence.cuisine = 0.68; sources.cuisine.push(...chineseSources); }
+  const westernSources = sourceMatches(item, /西式|義式|法式|美式|pizza|pasta|burger|steak|bistro/);
+  if (westernSources.length) { tags.cuisine.push("西式"); confidence.cuisine = Math.max(confidence.cuisine || 0, 0.68); sources.cuisine.push(...westernSources); }
+
+  const traditionalSources = sourceMatches(item, /老店|傳統|古早|老字號/);
+  if (traditionalSources.length) { tags.style.push("傳統"); confidence.style = 0.64; sources.style.push(...traditionalSources); }
+  const modernSources = sourceMatches(item, /創意|現代|fusion|bistro|無國界|餐酒館/);
+  if (modernSources.length) { tags.style.push("現代"); confidence.style = Math.max(confidence.style || 0, 0.64); sources.style.push(...modernSources); }
+
+  return { id:item.id, tags, confidence, reason:reasonFrom(tags, confidence, sources), sources };
 }
 
 async function aiClassify(payload) {
   return { items: (payload.items || []).map(classifyOne) };
 }
 
-const handlers = { textSearch, nearbySearch, placeDetails, routeMatrix, aiClassify };
+const handlers = { textSearch, nearbySearch, placeDetails, routeMatrix, geocode, aiClassify };
 
 async function logApiEvent(decoded, action, started, ok, extra = {}) {
   try {
     await db.collection("apiEvents").add({
-      uid: decoded.uid,
-      email: decoded.email || "",
+      uid: decoded?.uid || "",
+      email: decoded?.email || "",
       action,
       ok,
       latencyMs: Date.now() - started,
-      estimatedUnits: extra.estimatedUnits || 1,
+      estimatedUnits: extra.estimatedUnits ?? estimatedUnits(action),
+      estimatedCostUsd: extra.estimatedCostUsd ?? estimatedCostUsd(action),
+      quotaCharged: extra.quotaCharged === true,
+      quotaAdmin: extra.quotaAdmin === true,
+      quotaBlocked: extra.quotaBlocked === true,
+      quotaLimit: extra.quotaLimit ?? null,
+      quotaRemaining: extra.quotaRemaining ?? null,
+      appCheck: extra.appCheck === true,
+      appId: extra.appId || "",
       error: extra.error || "",
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
     });
@@ -391,24 +630,43 @@ exports.api = onRequest({ region: "us-central1", secrets: [GOOGLE_MAPS_API_KEY],
   const started = Date.now();
   let decoded = null;
   let action = "";
+  let appCheck = { ok: false };
   try {
     if (req.method !== "POST") {
       res.status(405).json({ error: "method not allowed" });
       return;
     }
     decoded = await requireUser(req);
+    appCheck = await verifyAppCheck(req);
     action = String(req.body?.action || "");
     const handler = handlers[action];
     if (!handler) {
-      const err = new Error("unknown action");
-      err.status = 400;
-      throw err;
+      throw httpError("unknown action", 400);
     }
-    const result = await handler(req.body?.payload || {});
-    await logApiEvent(decoded, action, started, true, { estimatedUnits: action === "routeMatrix" ? 2 : 1 });
+    const rawPayload = req.body?.payload || {};
+    const quota = await enforceSearchQuota(decoded, action, rawPayload);
+    const result = await handler(stripInternalPayload(rawPayload));
+    await logApiEvent(decoded, action, started, true, {
+      ...quota,
+      estimatedUnits: estimatedUnits(action),
+      estimatedCostUsd: estimatedCostUsd(action),
+      appCheck: appCheck.ok,
+      appId: appCheck.appId || "",
+    });
     res.json(result);
   } catch (e) {
-    if (decoded) await logApiEvent(decoded, action || "unknown", started, false, { error: e.message });
+    if (decoded) {
+      await logApiEvent(decoded, action || "unknown", started, false, {
+        error: e.message,
+        quotaBlocked: e.quotaBlocked === true,
+        quotaLimit: e.quotaLimit ?? null,
+        quotaRemaining: e.quotaRemaining ?? null,
+        appCheck: appCheck.ok,
+        appId: appCheck.appId || "",
+        estimatedUnits: 0,
+        estimatedCostUsd: 0,
+      });
+    }
     logger.error("api failed", e);
     res.status(e.status || 500).json({ error: e.message || "server error" });
   }
@@ -422,7 +680,11 @@ exports.photo = onRequest({ region: "us-central1", secrets: [GOOGLE_MAPS_API_KEY
       res.status(400).send("missing photo name");
       return;
     }
-    const url = `https://places.googleapis.com/v1/${rawName}/media?maxWidthPx=720&key=${GOOGLE_MAPS_API_KEY.value()}`;
+    if (!validPhotoSignature(rawName, req.query.exp, req.query.sig)) {
+      res.status(403).send("invalid photo signature");
+      return;
+    }
+    const url = `https://places.googleapis.com/v1/${rawName}/media?maxWidthPx=720&key=${googleApiKey("PHOTOS")}`;
     const upstream = await fetch(url, { redirect: "follow" });
     if (!upstream.ok) {
       res.status(upstream.status).send("photo unavailable");

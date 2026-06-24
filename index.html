@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>在地美食榜</title>
 <meta name="theme-color" content="#0E0C0D" />
+<meta name="description" content="在地美食榜：用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="在地美食榜" />
+<meta property="og:title" content="在地美食榜" />
+<meta property="og:description" content="用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。" />
+<meta property="og:image" content="assets/local-food-rank-logo.png" />
+<meta property="og:url" content="https://green-tea-king.github.io/nearby-good-eats/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在地美食榜" />
+<meta name="twitter:description" content="用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。" />
+<meta name="twitter:image" content="assets/local-food-rank-logo.png" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="在地美食榜" />
@@ -21,6 +32,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
 <style>
 /* ============================================================
    設計 tokens（暗色，集中於 CSS variables；將來加淺色模式只需多定義一組）
@@ -185,7 +197,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-filters .fg-location .fg-chips{display:grid;grid-template-columns:minmax(76px,1fr) minmax(76px,1fr) minmax(76px,1fr);overflow:visible;}
 .rank-filters .fg-location .fsel{width:100%;max-width:none;}
 .rank-filters .fg-keyword .fg-chips{display:grid;grid-template-columns:minmax(0,1fr) auto;overflow:visible;}
-.keyword-input{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:13px;padding:9px 11px;outline:none;}
+.keyword-input{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:16px;padding:8px 11px;outline:none;}
 .keyword-input::placeholder{color:var(--text-faint);}
 .keyword-apply{background:var(--accent);border:1px solid var(--accent);color:var(--on-accent);border-radius:10px;padding:0 13px;font-size:12px;font-weight:500;}
 .rank-filters .fg-travel .fg-chips{align-items:center;flex-wrap:wrap;overflow:visible;}
@@ -200,6 +212,8 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .origin-hint{flex-basis:100%;font-size:11px;line-height:1.35;color:var(--text-faint);padding:1px 0 0 2px;}
 .filter-precision{font-size:10.5px;line-height:1.45;color:var(--text-faint);padding:2px 2px 0 43px;}
 .filter-precision b{color:var(--text-dim);font-weight:500;}
+.mode-hint{font-size:10.5px;line-height:1.45;color:var(--text-dim);padding:2px 2px 0 43px;}
+.mode-hint b{color:var(--accent-bright);font-weight:600;}
 .fclear{align-self:flex-end;margin-top:1px;font-size:11.5px;color:var(--accent-bright);padding:2px 4px;}
 .rank-note{padding:34px 22px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
 .empty-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px;}
@@ -348,8 +362,10 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 /* 主卡縮圖 */
 .thumb{flex:none;width:70px;height:70px;border-radius:10px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line);}
 /* 卡片內 1–3 張較大照片 */
-.photos{display:flex;gap:6px;margin-top:13px;}
-.ph-img{flex:1;min-width:0;height:118px;object-fit:cover;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);}
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:13px;min-height:118px;}
+.photos.one{grid-template-columns:1fr;min-height:172px;}
+.ph-img{width:100%;min-width:0;height:118px;object-fit:cover;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);transition:opacity var(--t);}
+.ph-img.is-broken{opacity:0;}
 .photos.one .ph-img{height:172px;}
 .name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.18;letter-spacing:.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 12px;margin-top:8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
@@ -379,6 +395,11 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .confidence-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
 .confidence-pill{font-size:10.5px;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:3px 7px;}
 .confidence-pill b{color:var(--text);font-weight:500;}
+.keyword-hits{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.keyword-hit{font-size:10.5px;color:var(--text-dim);background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.22);border-radius:999px;padding:3px 8px;}
+.keyword-hit b{color:var(--accent-bright);font-weight:600;}
+.branch-group{display:inline-flex;margin-top:8px;font-size:10.5px;color:var(--text-dim);background:rgba(143,179,196,.10);border:1px solid rgba(143,179,196,.22);border-radius:999px;padding:3px 8px;}
+.distance-relaxed{display:inline-flex;margin-top:8px;font-size:10.5px;color:var(--gold);background:var(--gold-weak);border:1px solid rgba(200,162,76,.28);border-radius:999px;padding:3px 8px;}
 
 /* 服務/供應標籤（中性灰，與彩色評鑑徽章區隔） */
 .feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
@@ -389,6 +410,8 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
   margin-top:14px;font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;
   color:var(--text);border-left:2px solid var(--accent);padding:2px 0 2px 14px;letter-spacing:.01em;
 }
+.ai-reason b{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.08em;color:var(--accent-bright);margin-bottom:4px;}
+.ai-source{display:block;margin-top:5px;font-family:var(--sans);font-style:normal;font-size:10.5px;line-height:1.45;color:var(--text-dim);}
 .ai-reason.placeholder{color:var(--text-dim);border-left-color:var(--line);}
 
 .actions{display:flex;gap:9px;margin-top:16px;}
@@ -448,7 +471,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 #areaModal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-end;justify-content:center;}
 #areaModal .sheet{background:var(--surface);border-top:1px solid var(--line);border-radius:22px 22px 0 0;width:100%;max-width:480px;padding:22px 18px calc(22px + env(safe-area-inset-bottom,0));display:flex;flex-direction:column;gap:15px;animation:rise var(--t) ease both;}
 .sheet-head{display:flex;align-items:center;justify-content:space-between;font-family:var(--serif);font-size:20px;font-weight:600;}
-#areaInput{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 14px;font-size:15px;color:var(--text);font-family:inherit;transition:border-color var(--t);}
+#areaInput{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-sm);padding:13px 14px;font-size:16px;color:var(--text);font-family:inherit;transition:border-color var(--t);}
 #areaInput::placeholder{color:var(--text-faint);}
 #areaInput:focus{outline:none;border-color:var(--accent);}
 .autocomplete-list{display:flex;flex-direction:column;gap:6px;margin-top:-7px;}
@@ -715,6 +738,10 @@ const CONFIG = {
   API_PROXY: {
     ENDPOINT: APP_SETTINGS.apiBaseUrl || "",
   },
+  APP_CHECK: {
+    SITE_KEY: APP_SETTINGS.appCheckSiteKey || "",
+    DEBUG_TOKEN: APP_SETTINGS.appCheckDebugToken || false,
+  },
   // 向量地圖 ID（Google Cloud 地圖管理建立）：進階標記必需，並可套雲端深色樣式
   MAP_ID: "e5fbf85715cf5a5051abcc7b",
 
@@ -761,15 +788,13 @@ const CONFIG = {
   CERT_BADGES_URL: APP_SETTINGS.certificationBadgesUrl || "assets/certification-badges.json",
   VILLAGES_URL: APP_SETTINGS.villagesUrl || "assets/taiwan-villages.json",
 
-  // ── AI 解讀（Step 3）
+  // ── AI 解讀：前端不放 AI key，分類只接受後端 proxy 回傳
   AI: {
-    MODE: "off",             // off＝不假裝 AI 解讀｜live＝呼叫 Claude
-    API_KEY: "",             // live 模式才需要；上線請走後端代理，勿把金鑰放前端
-    MODEL: "claude-sonnet-4-6",
+    MODE: "off",
   },
   AI_FILTER: {
     MODE: "proxy",           // off＝不用 AI 過濾｜proxy＝呼叫後端分類服務
-    ENDPOINT: "",            // 後端應回 {items:[{id,tags:{occasion:["聚餐"], service:["吃到飽"]}, confidence:{occasion:.8}}]}
+    ENDPOINT: "",            // 後端回 {items:[{id,tags,confidence,reason,sources}]}
     MAX_ITEMS: 80,
   },
   AUTH: window.APP_FIREBASE_CONFIG || {
@@ -829,7 +854,7 @@ const $ = sel => document.querySelector(sel);
 const hasGoogleApiKey = !!CONFIG.GOOGLE_API_KEY;
 const hasApiProxy = !!CONFIG.API_PROXY.ENDPOINT;
 const hasDataApi = hasApiProxy || hasGoogleApiKey;
-const authState = { enabled:false, configured:false, user:null, db:null, sessionId:globalThis.crypto?.randomUUID?.() || String(Date.now()) };
+const authState = { enabled:false, configured:false, user:null, db:null, appCheck:null, sessionId:globalThis.crypto?.randomUUID?.() || String(Date.now()) };
 let appBooted = false;
 
 function firebaseAuthConfigured(){
@@ -902,6 +927,11 @@ async function initAuth(){
     return;
   }
   firebase.initializeApp(CONFIG.AUTH.firebase);
+  if (CONFIG.APP_CHECK.SITE_KEY && firebase.appCheck){
+    if (CONFIG.APP_CHECK.DEBUG_TOKEN) self.FIREBASE_APPCHECK_DEBUG_TOKEN = CONFIG.APP_CHECK.DEBUG_TOKEN;
+    authState.appCheck = firebase.appCheck();
+    authState.appCheck.activate(CONFIG.APP_CHECK.SITE_KEY, true);
+  }
   const auth = firebase.auth();
   auth.languageCode = "zh-TW";
   authState.db = firebase.firestore();
@@ -978,20 +1008,39 @@ async function trackUsage(type, payload={}){
     console.warn("[Usage] 紀錄失敗：", e.message);
   }
 }
-async function apiProxy(action, payload={}){
+function searchQuotaKey(scope, parts={}){
+  return [scope, authState.sessionId, Date.now(), JSON.stringify(parts)].join("|");
+}
+async function appCheckHeaders(){
+  if (!authState.appCheck?.getToken) return {};
+  try{
+    const token = await authState.appCheck.getToken(false);
+    return token?.token ? { "X-Firebase-AppCheck": token.token } : {};
+  }catch(e){
+    console.warn("[App Check] token unavailable", e.message);
+    return {};
+  }
+}
+async function apiProxy(action, payload={}, opts={}){
   if (!hasApiProxy) throw new Error("API proxy 未設定");
   if (!authState.user?.getIdToken) throw new Error("請先登入 Google");
   const token = await authState.user.getIdToken();
+  const outboundPayload = opts.quotaKey ? { ...payload, __quota:{ key:opts.quotaKey } } : payload;
   const res = await fetch(CONFIG.API_PROXY.ENDPOINT, {
     method:"POST",
     headers:{
       "content-type":"application/json",
       authorization:`Bearer ${token}`,
+      ...(await appCheckHeaders()),
     },
-    body:JSON.stringify({ action, payload }),
+    body:JSON.stringify({ action, payload:outboundPayload }),
   });
   const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.error || `API proxy ${res.status}`);
+  if (!res.ok){
+    const err = new Error(data.error || `API proxy ${res.status}`);
+    err.status = res.status;
+    throw err;
+  }
   return data;
 }
 function bootApp(){
@@ -1007,6 +1056,30 @@ function bootApp(){
 function closeRankFilters(){
   $("#rankFilters")?.classList.add("hidden");
   $("#rankFilterBtn")?.setAttribute("aria-expanded", "false");
+}
+function pushTransientUiHistory(){
+  if (history.state?.uiTransient) return;
+  history.pushState({ ...(history.state || {}), uiTransient:true }, "", location.href);
+}
+function closeTopTransientUi(){
+  const info = $("#rankInfoModal");
+  if (info && !info.classList.contains("hidden")) { info.classList.add("hidden"); return true; }
+  const pick = $("#pickView");
+  if (pick && !pick.classList.contains("hidden")) { pick.classList.add("hidden"); return true; }
+  const area = $("#areaModal");
+  if (area && !area.classList.contains("hidden")) { closeAreaModal(); return true; }
+  const map = $("#mapView");
+  if (map && !map.classList.contains("hidden")) { map.classList.add("hidden"); return true; }
+  if (rankFiltersOpen()) { closeRankFilters(); return true; }
+  const drawer = $("#controlDrawer");
+  if (drawer && !drawer.classList.contains("hidden")) {
+    drawer.classList.add("hidden");
+    $("#filterMenuBtn")?.setAttribute("aria-expanded", "false");
+    return true;
+  }
+  const scope = $("#scopePanel");
+  if (scope && !scope.classList.contains("hidden")) { scope.classList.add("hidden"); return true; }
+  return false;
 }
 function rankFiltersOpen(){
   const panel = $("#rankFilters");
@@ -1041,8 +1114,10 @@ $("#rankRefresh").addEventListener("click", () => {
 });
 $("#rankFilterBtn").addEventListener("click", () => {
   const panel = $("#rankFilters");
+  const opening = panel.classList.contains("hidden");
   panel.classList.toggle("hidden");
-  $("#rankFilterBtn").setAttribute("aria-expanded", String(!panel.classList.contains("hidden")));
+  $("#rankFilterBtn").setAttribute("aria-expanded", String(opening));
+  if (opening) pushTransientUiHistory();
 });
 document.addEventListener("pointerdown", closeRankFiltersFromOutside, true);
 document.addEventListener("click", closeRankFiltersFromOutside, true);
@@ -1052,14 +1127,16 @@ document.addEventListener("touchmove", closeRankFiltersFromOutside, { capture:tr
 document.addEventListener("gesturestart", closeRankFiltersFromOutside, { capture:true, passive:true });
 window.addEventListener("resize", closeRankFiltersFromViewportChange, { passive:true });
 window.visualViewport?.addEventListener("resize", closeRankFiltersFromViewportChange, { passive:true });
-$("#rankInfoBtn").addEventListener("click", () => $("#rankInfoModal").classList.remove("hidden"));
+$("#rankInfoBtn").addEventListener("click", () => {
+  $("#rankInfoModal").classList.remove("hidden");
+  pushTransientUiHistory();
+});
 $("#rankInfoClose").addEventListener("click", () => $("#rankInfoModal").classList.add("hidden"));
 $("#rankInfoModal").addEventListener("click", e => {
   if (e.target.id === "rankInfoModal") $("#rankInfoModal").classList.add("hidden");
 });
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape") $("#rankInfoModal")?.classList.add("hidden");
-  if (e.key === "Escape") closeRankFilters();
+  if (e.key === "Escape") closeTopTransientUi();
 });
 
 /* ============================================================
@@ -1067,7 +1144,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.24.25";
+const APP_VERSION_FALLBACK = "2026.06.24.32";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1076,7 +1153,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"travel",  label:"交通", tier:"route", opts:[{label:"走路"}, {label:"開車"}] },
   { key:"open",    label:"營業", tier:"hard", opts:[{label:"不限"}, {label:"營業中"}] },
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐"}, {label:"早茶", query:"早茶"}, {label:"午餐", query:"午餐"}, {label:"午茶", query:"下午茶"}, {label:"晚餐", query:"晚餐"}, {label:"消夜", query:"宵夜"}] },
-  { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽"}] },
+  { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat"}] },
   { key:"occasion",label:"情境", tier:"search", opts:[{label:"聚餐", query:"聚餐 適合團體 可訂位"}, {label:"獨享", query:"一個人 用餐"}] },
   { key:"type",    label:"型態", tier:"search", opts:[{label:"正餐", query:"餐廳"}, {label:"小吃", query:"小吃"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食"}] },
@@ -1090,6 +1167,7 @@ const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓�
 let rankAreaPools = {};  // city|area -> 區域專用候選池
 let rankKeywordPools = {}; // keyword/searchTerms -> 全台關鍵字候選池
 let rankNearbyPools = {}; // origin|radius|filters -> 定位點附近候選池
+let rankGeocodeCache = {};
 let rankContextReady = false;
 let rankAutoMeal = false;
 let sharedPlaceRoute = null;
@@ -1101,20 +1179,33 @@ let locationPrivacyNotified = false;
 function hasRankLocationFilter(f=rankFilter){
   return !!(f.city || f.area || f.village);
 }
-function clearRankLocationFilter(){
+function clearRankLocationFilter({ notify=false }={}){
+  const hadLocation = hasRankLocationFilter();
   rankFilter.city = "";
   rankFilter.area = "";
   rankFilter.village = "";
+  if (notify && hadLocation) toast("已切換交通模式，地區條件已清除");
 }
-function clearRankTravelFilter(){
+function clearRankTravelFilter({ notify=false }={}){
+  const hadTravel = !!rankFilter.travel || !!rankOriginLabel;
   rankFilter.travel = RANK_DEFAULT_TRAVEL;
   rankOriginLabel = "";
+  if (notify && hadTravel) toast("已切換地區模式，交通與定位條件已清除");
 }
 function activeRankTravel(){
   return rankFilter.travel || "走路";
 }
 function isWalkableRankMode(f=rankFilter){
   return f.travel === "走路" && !hasRankLocationFilter(f) && !!state.center;
+}
+function rankModeHintText(){
+  if (hasRankLocationFilter()){
+    return `地區模式：使用 ${[rankFilter.city, rankFilter.area, rankFilter.village].filter(Boolean).join(" ")}，交通距離條件停用。`;
+  }
+  if (rankFilter.travel){
+    return `交通模式：以${rankOriginLabel || "目前定位點"}計算${rankFilter.travel}距離，地區條件停用。`;
+  }
+  return "全台模式：未套用地區或交通距離。";
 }
 function notifyLocationPrivacyOnce(){
   if (locationPrivacyNotified) return;
@@ -1154,12 +1245,41 @@ function placeShareUrl(placeId){
   url.searchParams.set("place", placeId);
   return url.toString();
 }
+function absoluteAssetUrl(path){
+  return new URL(path, location.href).toString();
+}
+function setMeta(selector, attr, value){
+  let el = document.head.querySelector(selector);
+  if (!el){
+    el = document.createElement("meta");
+    if (selector.startsWith("meta[property=")) el.setAttribute("property", selector.match(/"([^"]+)"/)?.[1] || "");
+    if (selector.startsWith("meta[name=")) el.setAttribute("name", selector.match(/"([^"]+)"/)?.[1] || "");
+    document.head.appendChild(el);
+  }
+  el.setAttribute(attr, value);
+}
+function setShareMetadata({ title="在地美食榜", description="用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。", url=location.href, image="" }={}){
+  const img = image || absoluteAssetUrl("assets/local-food-rank-logo.png");
+  document.title = title;
+  setMeta('meta[name="description"]', "content", description);
+  setMeta('meta[property="og:title"]', "content", title);
+  setMeta('meta[property="og:description"]', "content", description);
+  setMeta('meta[property="og:url"]', "content", url);
+  setMeta('meta[property="og:image"]', "content", img);
+  setMeta('meta[name="twitter:title"]', "content", title);
+  setMeta('meta[name="twitter:description"]', "content", description);
+  setMeta('meta[name="twitter:image"]', "content", img);
+}
+function resetShareMetadata(){
+  setShareMetadata({ title:"在地美食榜", url:new URL(location.pathname, location.href).toString() });
+}
 function clearSharedPlaceRoute(){
   sharedPlaceRoute = null;
   const url = new URL(location.href);
   url.searchParams.delete("place");
   url.hash = "";
   history.pushState({}, "", url.pathname + url.search + url.hash);
+  resetShareMetadata();
   openLeaderboard(true);
 }
 async function openSharedPlaceRoute(placeId){
@@ -1172,6 +1292,13 @@ async function openSharedPlaceRoute(placeId){
   try{
     const card = await fetchSharedPlaceCard(placeId);
     if (sharedPlaceRoute !== placeId) return;
+    const shareUrl = placeShareUrl(placeId);
+    setShareMetadata({
+      title:`${card.name}｜在地美食榜`,
+      description:`Google 評分 ${card.rating || "—"}${card.count ? `，${Number(card.count).toLocaleString()} 則評論` : ""}${card.address ? `｜${card.address}` : ""}`,
+      url:shareUrl,
+      image:card.photoBig || card.photo || card.photos?.[0] || "",
+    });
     $("#rankList").innerHTML = `
       <div class="share-hero">
         <b>${escapeHTML(card.name)}</b>
@@ -1255,6 +1382,7 @@ async function fetchSharedPlaceCard(placeId){
 
 async function openLeaderboard(force){
   sharedPlaceRoute = null;
+  resetShareMetadata();
   trackUsage("leaderboard_open", { force:!!force, keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", travel:rankFilter.travel || "", open:rankFilter.open || "" });
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
@@ -1311,6 +1439,34 @@ function cityAreaFromAddress(address){
   const city = TW_CITIES.find(c => text.includes(c)) || "";
   const area = city ? (TW_AREAS[city] || []).find(a => text.includes(a)) || "" : "";
   return { city, area };
+}
+
+async function geocodeTaiwanScope(city, area="", village=""){
+  const label = [city, area, village].filter(Boolean).join("");
+  if (!label) return null;
+  if (rankGeocodeCache[label]) return rankGeocodeCache[label];
+  try{
+    let geo = null;
+    if (hasApiProxy){
+      geo = await apiProxy("geocode", { address:label });
+    }else if (hasGoogleApiKey){
+      await loadGoogle();
+      const { Geocoder } = await google.maps.importLibrary("geocoding");
+      const res = await new Geocoder().geocode({ address:label, region:"tw", language:"zh-TW" });
+      const g = res.results?.[0];
+      if (g) geo = {
+        center:{ lat:g.geometry.location.lat(), lng:g.geometry.location.lng() },
+        formattedAddress:g.formatted_address || "",
+        placeId:g.place_id || "",
+      };
+    }
+    if (geo?.center) rankGeocodeCache[label] = geo;
+    return geo?.center ? geo : null;
+  }catch(e){
+    console.warn("[地區座標] 無法 geocode：", label, e.message || e);
+    rankGeocodeCache[label] = null;
+    return null;
+  }
 }
 
 async function loadVillageData(){
@@ -1543,6 +1699,48 @@ function rankCandidateFromProxy(x, context={}){
   o.tags = classifyCandidate(o);
   return o;
 }
+function branchGroupKey(item){
+  const raw = String(item.name || "").trim();
+  const normalizedRaw = normalizeKeywordValue(raw);
+  if (!raw || normalizedRaw.length < 4) return `place:${item.id}`;
+  let base = raw
+    .replace(/[（(][^）)]*(店|門市|分店|旗艦|百貨|商場|中心|館|區|市)[^）)]*[）)]/g, " ")
+    .replace(/[｜|／/].*$/g, " ")
+    .replace(/[-－–—].*$/g, " ")
+    .replace(/\s+(台北|臺北|新北|桃園|新竹|臺中|台中|臺南|台南|高雄|基隆|宜蘭|苗栗|彰化|南投|雲林|嘉義|屏東|花蓮|臺東|台東|澎湖|金門|連江)?[\u4e00-\u9fffA-Za-z0-9]*(店|門市|分店|旗艦店|概念店|館|中心|百貨|商場)$/u, " ")
+    .trim();
+  const normalizedBase = normalizeKeywordValue(base);
+  const changed = normalizedBase && normalizedBase !== normalizedRaw;
+  if (!changed || normalizedBase.length < 4) return `place:${item.id}`;
+  return `brand:${normalizedBase}`;
+}
+function groupRankBranches(sorted){
+  const groups = new Map();
+  const orderedGroups = [];
+  sorted.forEach(item => {
+    const key = branchGroupKey(item);
+    if (key.startsWith("place:")){
+      orderedGroups.push({ key, items:[item] });
+      return;
+    }
+    if (!groups.has(key)){
+      const group = { key, items:[] };
+      groups.set(key, group);
+      orderedGroups.push(group);
+    }
+    groups.get(key).items.push(item);
+  });
+  return orderedGroups.map(group => {
+    const primary = group.items[0];
+    if (group.items.length > 1){
+      primary.branchGroup = {
+        count:group.items.length,
+        names:group.items.slice(1, 4).map(x => x.name),
+      };
+    }
+    return primary;
+  });
+}
 function finalizeRankCandidates(items, { sortDistance=false }={}){
   const seen = new Set();
   const all = items.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
@@ -1556,11 +1754,12 @@ function finalizeRankCandidates(items, { sortDistance=false }={}){
     x.composite = x.bScore + x.aBonus + x.rBonus;
   });
   all.sort((a,b) => (b.composite - a.composite) || (sortDistance ? ((a.dist || 0) - (b.dist || 0)) : 0));
-  return all;
+  return groupRankBranches(all);
 }
 
 // 撈全台候選池（含分類標籤），每次開啟重新查 Google
 async function ensureRankPool(force){
+  if (rankPool && !force) return;
   if (force){
     rankAreaPools = {};
     rankKeywordPools = {};
@@ -1577,8 +1776,9 @@ async function ensureRankPool(force){
     }
     let all = [];
     const BATCH = 4;
+    const quotaKey = searchQuotaKey("rank-pool", { force:!!force });
     for (let i=0; i<TW_CITIES.length; i+=BATCH){
-      const got = await Promise.all(TW_CITIES.slice(i,i+BATCH).map(c => cityCandidates(Place, c)));
+      const got = await Promise.all(TW_CITIES.slice(i,i+BATCH).map(c => cityCandidates(Place, c, "", quotaKey)));
       got.forEach(arr => all.push(...arr));
     }
     rankPool = finalizeRankCandidates(all);
@@ -1591,11 +1791,11 @@ async function ensureRankPool(force){
   }
 }
 
-async function cityCandidates(Place, city, area=""){
+async function cityCandidates(Place, city, area="", quotaKey=""){
   try{
     if (hasApiProxy){
       const textQuery = (area ? city + area : city) + " 餐廳";
-      const data = await apiProxy("textSearch", { textQuery, maxResultCount:20 });
+      const data = await apiProxy("textSearch", { textQuery, maxResultCount:20 }, { quotaKey });
       return (data.items || [])
         .filter(p => p.rating && p.count)
         .map(p => rankCandidateFromProxy(p, { city, area }));
@@ -1622,7 +1822,7 @@ async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
         textQuery,
         maxResultCount:20,
         locationBias:opts.locationBias || null,
-      });
+      }, { quotaKey:opts.quotaKey || "" });
       return (data.items || [])
         .filter(p => p.rating && p.count)
         .map(p => rankCandidateFromProxy(p, context));
@@ -1654,7 +1854,7 @@ function rankQueryTerms(f){
   return [...new Set(terms)];
 }
 
-async function areaCandidates(city, area, f=rankFilter){
+async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
   const terms = rankQueryTerms(f);
   const village = f.village || "";
   const key = [city, area, village, ...terms].join("|");
@@ -1666,14 +1866,32 @@ async function areaCandidates(city, area, f=rankFilter){
     ({ Place } = await google.maps.importLibrary("places"));
   }
   const locationTerms = [area, village].filter(Boolean).join(" ");
-  let all = await cityCandidates(Place, city, locationTerms + (terms.length ? " " + terms.join(" ") : ""));
-  all.forEach(x => { x.area = area; x.village = village; x.queryTerms = terms; });
+  const geo = await geocodeTaiwanScope(city, area, village);
+  const textQuery = `${city}${locationTerms} ${terms.join(" ")} 餐廳`.trim();
+  let all = await textSearchRankCandidates(Place, textQuery, {
+    city,
+    area,
+    village,
+    queryTerms:terms,
+    areaScopeKey:key,
+    areaCenter:geo?.center || null,
+  }, {
+    quotaKey,
+    locationBias:geo?.center ? { center:geo.center, radius:village ? 1500 : 4500 } : null,
+  });
+  all.forEach(x => {
+    x.area = area;
+    x.village = village;
+    x.queryTerms = terms;
+    x.areaScopeKey = key;
+    x.areaCenter = geo?.center || null;
+  });
   all = finalizeRankCandidates(all);
   rankAreaPools[key] = all;
   return all;
 }
 
-async function keywordCandidates(f=rankFilter){
+async function keywordCandidates(f=rankFilter, quotaKey=""){
   const terms = rankQueryTerms(f);
   const key = terms.join("|");
   if (rankKeywordPools[key]) return rankKeywordPools[key];
@@ -1688,7 +1906,7 @@ async function keywordCandidates(f=rankFilter){
   for (let i=0; i<TW_CITIES.length; i+=BATCH){
     const got = await Promise.all(TW_CITIES.slice(i,i+BATCH).map(c => {
       const textQuery = `${c} ${terms.join(" ")} 餐廳`.trim();
-      return textSearchRankCandidates(Place, textQuery, { city:c, queryTerms:terms });
+      return textSearchRankCandidates(Place, textQuery, { city:c, queryTerms:terms }, { quotaKey });
     }));
     got.forEach(arr => all.push(...arr));
   }
@@ -1703,7 +1921,7 @@ function rankMealTypes(f=rankFilter){
   return meal ? meal.types : ["restaurant","cafe","meal_takeaway","bakery"];
 }
 
-async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RADIUS_M){
+async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RADIUS_M, quotaKey=""){
   const terms = rankQueryTerms(f);
   const centerKey = `${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}`;
   const key = [centerKey, radius, ...terms].join("|");
@@ -1721,6 +1939,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
       queryTerms:terms,
     }, {
       locationBias:{ center:state.center, radius },
+      quotaKey,
     });
     all = finalizeRankCandidates(all.filter(x => x.loc && (!x.dist || x.dist <= radius)), { sortDistance:true });
     rankNearbyPools[key] = all;
@@ -1733,7 +1952,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
       radius,
       includedPrimaryTypes:rankMealTypes(f),
       maxResultCount:20,
-    });
+    }, { quotaKey });
     let all = (data.items || [])
       .filter(p => p.rating && p.count && p.loc)
       .map(p => rankCandidateFromProxy(p, { center:state.center, queryTerms:terms }));
@@ -1784,7 +2003,7 @@ function classifyCandidate(o){
   const snack = re(/小吃|路邊攤|攤|夜市|滷味|鹹酥雞|豆花|肉圓|米糕|刈包|蚵仔|車輪餅|雞排|grab.?and.?go|fast.?food|meal.?takeaway|快餐/);
   t.type.push(snack ? "小吃" : "正餐");
   // 方式：Google 沒有固定「單點/吃到飽」欄位，用店名與類型關鍵字近似；未命中吃到飽者視為單點
-  const buffet = re(/吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|饗食|漢來海港|旭集|饗饗|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋/);
+  const buffet = re(BUFFET_EVIDENCE_RE);
   t.service.push(buffet ? "吃到飽" : "單點");
   // 情境：聚餐偏向火鍋、燒肉、合菜、餐酒館、可訂位/適合團體；未命中者預設為獨享
   const groupMeal = o.goodGroups || o.reservable || re(/聚餐|合菜|桌菜|包廂|宴會|火鍋|鍋物|燒肉|烤肉|居酒屋|餐酒館|熱炒|buffet|吃到飽|多人|family|group|hot.?pot|barbecue|bbq|bistro/);
@@ -1800,7 +2019,29 @@ function classifyCandidate(o){
 
 // 套用篩選 → 取前 5 → 補抓完整欄位 → 以「附近美食」卡片格式渲染
 let rankRenderToken = 0;
+const BUFFET_EVIDENCE_RE = /吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|無限供應|無限暢食|任食|任點任食|吃飽飽|饗食天堂|漢來海港|旭集|饗饗|島語|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋|欣葉日本料理|果然匯|蓮池閣|饗泰多/;
+function rankEvidenceText(item){
+  return [
+    item.name,
+    item.ptd,
+    item.typeName,
+    item.pt,
+    item.address,
+    item.reviewSummary,
+    item.summary,
+    item.generativeSummary,
+  ].filter(Boolean).join(" ");
+}
+function hasBuffetEvidence(item){
+  return BUFFET_EVIDENCE_RE.test(rankEvidenceText(item));
+}
+function rankServiceMatch(item, value){
+  if (value === "吃到飽") return hasBuffetEvidence(item);
+  if (value === "單點") return !hasBuffetEvidence(item);
+  return (item.tags?.service||[]).includes(value) || (item.aiTags?.service||[]).includes(value);
+}
 function rankTagMatch(item, key, value){
+  if (key === "service") return rankServiceMatch(item, value);
   return (item.queryTerms||[]).includes(value)
     || (item.tags?.[key]||[]).includes(value)
     || (item.aiTags?.[key]||[]).includes(value);
@@ -1812,12 +2053,14 @@ function normalizeKeywordValue(value){
     .replace(/臺/g, "台")
     .replace(/魯肉/g, "滷肉");
 }
-function keywordVariants(keyword){
-  const base = normalizeKeywordValue(keyword);
+function keywordTermVariants(term){
+  const base = normalizeKeywordValue(term);
   if (!base) return [];
   const variants = new Set([base]);
   variants.add(base.replace(/滷肉/g, "魯肉"));
+  variants.add(base.replace(/魯肉/g, "滷肉"));
   variants.add(base.replace(/台/g, "臺"));
+  variants.add(base.replace(/臺/g, "台"));
   variants.add(base.replace(/麵線/g, "面線"));
   variants.add(base.replace(/面線/g, "麵線"));
   return [...variants].filter(Boolean);
@@ -1825,28 +2068,70 @@ function keywordVariants(keyword){
 function keywordTokens(keyword){
   return String(keyword || "").split(/[\s,，、]+/).map(normalizeKeywordValue).filter(Boolean);
 }
-function keywordStrength(item, keyword){
-  const variants = keywordVariants(keyword);
-  if (!variants.length) return 0;
-  const fields = [
-    { weight:8, text:item.name },
-    { weight:5, text:[item.ptd, item.typeName, item.pt].join(" ") },
-    { weight:4, text:[item.reviewSummary, item.summary, item.generativeSummary].join(" ") },
-    { weight:2, text:item.address },
-  ].map(x => ({ weight:x.weight, text:normalizeKeywordValue(x.text) }));
-  let best = 0;
-  for (const v of variants){
+function rawKeywordTokens(keyword){
+  return String(keyword || "").split(/[\s,，、]+/).map(x => x.trim()).filter(Boolean);
+}
+function keywordSourceFields(item){
+  return [
+    { key:"name", label:"店名", weight:8, text:item.name },
+    { key:"type", label:"類型", weight:5, text:[item.ptd, item.typeName, item.pt].join(" ") },
+    { key:"review", label:"評論摘要", weight:4, text:item.reviewSummary },
+    { key:"summary", label:"Google 摘要", weight:3.5, text:[item.summary, item.generativeSummary].join(" ") },
+    { key:"address", label:"地址", weight:1.5, text:item.address },
+  ].map(x => ({ ...x, normalized:normalizeKeywordValue(x.text) }));
+}
+function keywordMatchDetails(item, keyword){
+  const rawTokens = rawKeywordTokens(keyword);
+  const terms = rawTokens.length > 1 ? rawTokens : [String(keyword || "").trim()].filter(Boolean);
+  if (!terms.length) return { ok:true, score:0, hits:[], missing:[] };
+  const fields = keywordSourceFields(item);
+  const hits = [];
+  const missing = [];
+  let score = 0;
+  for (const term of terms){
+    const variants = keywordTermVariants(term);
+    let best = null;
     for (const f of fields){
-      if (f.text.includes(v)) best = Math.max(best, f.weight + Math.min(v.length, 8) / 10);
+      const found = variants.find(v => f.normalized.includes(v));
+      if (!found) continue;
+      const candidate = { term, source:f.label, field:f.key, score:f.weight + Math.min(found.length, 8) / 10 };
+      if (!best || candidate.score > best.score) best = candidate;
+    }
+    if (best){
+      hits.push(best);
+      score += best.score;
+    }else{
+      missing.push(term);
     }
   }
-  if (best) return best;
-  const tokens = keywordTokens(keyword);
-  if (tokens.length > 1 && tokens.every(t => fields.some(f => f.text.includes(t)))) return 1.5;
-  return 0;
+  return { ok:missing.length === 0, score, hits, missing };
+}
+function keywordStrength(item, keyword){
+  const details = keywordMatchDetails(item, keyword);
+  return details.ok ? details.score : 0;
 }
 function keywordMatch(item, keyword){
-  return keywordStrength(item, keyword) > 0;
+  return keywordMatchDetails(item, keyword).ok;
+}
+function keywordHitSummaryHTML(hit){
+  if (!hit?.hits?.length) return "";
+  const grouped = new Map();
+  hit.hits.forEach(h => {
+    if (!grouped.has(h.source)) grouped.set(h.source, []);
+    grouped.get(h.source).push(h.term);
+  });
+  return `<div class="keyword-hits">` + [...grouped.entries()].map(([source, terms]) =>
+    `<span class="keyword-hit"><b>${escapeHTML(source)}</b>：${escapeHTML([...new Set(terms)].join("、"))}</span>`
+  ).join("") + `</div>`;
+}
+function relaxedKeywordValue(keyword){
+  const tokens = rawKeywordTokens(keyword);
+  if (tokens.length <= 1) return "";
+  return tokens.slice(0, -1).join(" ");
+}
+function keywordRelaxLabel(keyword){
+  const relaxed = relaxedKeywordValue(keyword);
+  return relaxed ? `放寬關鍵字為「${relaxed}」` : "清除關鍵字";
 }
 function activeRankFilters(f){
   const active = RANK_FILTERS.filter(g => !["open","travel"].includes(g.key) && f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
@@ -1894,6 +2179,9 @@ async function enrichAiFilterTags(items, f){
       if (!ai) return;
       x.aiTags = ai.tags || {};
       x.aiConfidence = ai.confidence || {};
+      x.aiReason = ai.reason || "";
+      x.aiSources = ai.sources || {};
+      x.aiSourceLabels = [...new Set(Object.values(x.aiSources).flat().map(s => s.label).filter(Boolean))];
     });
   }catch(e){
     console.warn("[AI Filter] 後端分類失敗，改用 Google 硬欄位與搜尋詞：", e.message);
@@ -1901,7 +2189,7 @@ async function enrichAiFilterTags(items, f){
 }
 function rankFilterPrecisionText(){
   const active = activeRankFilters(rankFilter);
-  const hasAi = CONFIG.AI_FILTER.MODE === "proxy" && !!CONFIG.AI_FILTER.ENDPOINT;
+  const hasAi = CONFIG.AI_FILTER.MODE === "proxy" && (!!CONFIG.AI_FILTER.ENDPOINT || hasApiProxy);
   if (!active.length){
     return "營業、素食、適合團體等優先採 Google 真欄位；吃法、情境、菜式會搭配搜尋詞與近似判斷。";
   }
@@ -1919,17 +2207,27 @@ async function renderLeaderboard(){
   let source = rankPool;
   const searchTerms = rankQueryTerms(f);
   const useNearby = isWalkableRankMode(f);
+  const renderQuotaKey = searchQuotaKey("leaderboard", {
+    city:f.city || "",
+    area:f.area || "",
+    village:f.village || "",
+    keyword:f.keyword || "",
+    meal:f.meal || "",
+    travel:f.travel || "",
+    open:f.open || "",
+    nearby:useNearby,
+  });
   if (useNearby){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} 步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內美食中…</div>`;
-    source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_RADIUS_M);
+    source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_RADIUS_M, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }else if (f.city && (f.area || f.village || searchTerms.length)){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (f.village || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
-    source = await areaCandidates(f.city, f.area);
+    source = await areaCandidates(f.city, f.area, f, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }else if (searchTerms.length){
     $("#rankList").innerHTML = `<div class="rank-note">整理全台 ${escapeHTML(searchTerms.join(" "))} 美食中…</div>`;
-    source = await keywordCandidates(f);
+    source = await keywordCandidates(f, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }
   await enrichAiFilterTags(source, f);
@@ -1938,7 +2236,11 @@ async function renderLeaderboard(){
     if (f.city && x.city !== f.city) return false;
     if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
     if (f.village && !(x.address||"").includes(f.village)) return false;
-    if (f.keyword && !keywordMatch(x, f.keyword)) return false;
+    if (f.keyword){
+      const hit = keywordMatchDetails(x, f.keyword);
+      if (!hit.ok) return false;
+      x.keywordHit = hit;
+    }
     if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
     if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
     if (f.open === "營業中" && x.openNow !== true) return false;
@@ -1950,19 +2252,21 @@ async function renderLeaderboard(){
     return true;
   });
   let list = applyRankFilters(source, false);
+  let distanceRelaxed = false;
   if (!list.length && useNearby){
     $("#rankList").innerHTML = `<div class="rank-note">步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內選擇較少，放寬到 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m…</div>`;
-    source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_FALLBACK_M);
+    source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_FALLBACK_M, renderQuotaKey);
     if (token !== rankRenderToken) return;
     list = applyRankFilters(source, false);
+    distanceRelaxed = true;
   }
   if (!list.length && rankAutoMeal && f.meal){
     let relaxedSource = source;
     if (useNearby){
-      relaxedSource = await nearbyRankCandidates({ ...f, meal:null }, CONFIG.RANK_WALKABLE_FALLBACK_M);
+      relaxedSource = await nearbyRankCandidates({ ...f, meal:null }, CONFIG.RANK_WALKABLE_FALLBACK_M, renderQuotaKey);
       if (token !== rankRenderToken) return;
     }else if (f.city && (f.area || f.village || searchTerms.length)){
-      relaxedSource = await areaCandidates(f.city, f.area, { ...f, meal:null });
+      relaxedSource = await areaCandidates(f.city, f.area, { ...f, meal:null }, renderQuotaKey);
       if (token !== rankRenderToken) return;
     }
     list = applyRankFilters(relaxedSource, true);
@@ -1970,7 +2274,14 @@ async function renderLeaderboard(){
   if (f.keyword){
     list.sort((a,b) => (keywordStrength(b, f.keyword) - keywordStrength(a, f.keyword)) || (b.composite - a.composite));
   }
-  const top = list.slice(0, RANK_TOP);
+  const top = list.slice(0, RANK_TOP).map(x => {
+    if (!distanceRelaxed) return x;
+    return Object.assign(x, {
+      distanceRelaxed:true,
+      distanceRelaxedFrom:CONFIG.RANK_WALKABLE_RADIUS_M,
+      distanceRelaxedTo:CONFIG.RANK_WALKABLE_FALLBACK_M,
+    });
+  });
   if (!top.length){
     trackUsage("leaderboard_result", {
       mode:useNearby ? "walkable" : (f.city ? "area" : "pool"),
@@ -1983,12 +2294,16 @@ async function renderLeaderboard(){
       meal:f.meal || "",
       travel:f.travel || "",
       open:f.open || "",
+      distanceRelaxed,
     });
     const emptyText = f.keyword
       ? `找不到實際資料包含「${escapeHTML(f.keyword)}」的餐廳。關鍵字是強條件，不顯示不相干店家。`
-      : "這個條件下沒有符合的餐廳。";
+      : (distanceRelaxed
+        ? `已放寬到步行 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m，仍沒有符合的餐廳。`
+        : "這個條件下沒有符合的餐廳。");
     $("#rankList").innerHTML = `<div class="rank-note">${emptyText}<div class="empty-actions">
       ${f.keyword ? `<button data-empty-action="clear-keyword">取消關鍵字</button>` : ""}
+      ${f.keyword && relaxedKeywordValue(f.keyword) ? `<button data-empty-action="relax-keyword">${escapeHTML(keywordRelaxLabel(f.keyword))}</button>` : ""}
       ${f.village ? `<button data-empty-action="clear-village">取消里</button>` : ""}
       ${f.area ? `<button data-empty-action="clear-area">改看全區</button>` : ""}
       ${f.service ? `<button data-empty-action="clear-service">取消吃法</button>` : ""}
@@ -2017,6 +2332,7 @@ async function renderLeaderboard(){
     meal:f.meal || "",
     travel:f.travel || "",
     open:f.open || "",
+    distanceRelaxed,
     top:cards.slice(0, RANK_TOP).map(c => ({
       placeId:c.id,
       name:c.name,
@@ -2033,11 +2349,12 @@ function bindEmptyStateActions(){
   $("#rankList")?.querySelectorAll("[data-empty-action]").forEach(btn => btn.addEventListener("click", () => {
     const action = btn.dataset.emptyAction;
     if (action === "clear-keyword") { rankFilter.keyword = ""; rankKeywordPools = {}; rankNearbyPools = {}; }
+    if (action === "relax-keyword") { rankFilter.keyword = relaxedKeywordValue(rankFilter.keyword); rankKeywordPools = {}; rankNearbyPools = {}; }
     if (action === "clear-village") rankFilter.village = "";
     if (action === "clear-area") { rankFilter.area = ""; rankFilter.village = ""; }
     if (action === "clear-service") rankFilter.service = null;
     if (action === "open-any") rankFilter.open = "不限";
-    if (action === "drive") { rankFilter.travel = "開車"; clearRankLocationFilter(); }
+    if (action === "drive") { rankFilter.travel = "開車"; clearRankLocationFilter({ notify:true }); }
     if (action === "clear-all") {
       Object.assign(rankFilter, { keyword:"", cuisine:null, meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"", village:"" });
       rankKeywordPools = {};
@@ -2109,8 +2426,17 @@ function rankCardData(c){
   return Object.assign({
     id:c.id, name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
-    dist:c.loc ? Math.round(distanceM(state.center, c.loc)) : null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:null,
+    dist:c.loc ? Math.round(distanceM(state.center, c.loc)) : null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:c.aiReason || "",
     reviewSummary:c.reviewSummary || "", summary:c.summary || "", generativeSummary:c.generativeSummary || "",
+    keywordHit:c.keywordHit || null,
+    branchGroup:c.branchGroup || null,
+    aiTags:c.aiTags || {},
+    aiConfidence:c.aiConfidence || {},
+    aiSources:c.aiSources || {},
+    aiSourceLabels:c.aiSourceLabels || [],
+    distanceRelaxed:c.distanceRelaxed === true,
+    distanceRelaxedFrom:c.distanceRelaxedFrom || null,
+    distanceRelaxedTo:c.distanceRelaxedTo || null,
   }, rich);
 }
 
@@ -2164,7 +2490,18 @@ async function copyShareUrl(url){
     await navigator.clipboard.writeText(url);
     toast("已複製分享連結，可貼給朋友");
   }catch(_){
-    window.prompt("複製分享連結", url);
+    const ta = document.createElement("textarea");
+    ta.value = url;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    ta.style.top = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    const ok = document.execCommand?.("copy");
+    ta.remove();
+    toast(ok ? "已複製分享連結，可貼給朋友" : "無法自動複製，請長按連結複製");
   }
 }
 
@@ -2197,6 +2534,7 @@ function buildRankFilterBar(){
     + `</div></div>`
   ).join("");
   const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
+  html += `<div class="mode-hint"><b>目前模式</b>：${escapeHTML(rankModeHintText())}</div>`;
   html += `<div class="filter-precision"><b>判斷來源</b>：${escapeHTML(rankFilterPrecisionText())}</div>`;
   html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
   bar.innerHTML = html;
@@ -2206,7 +2544,7 @@ function buildRankFilterBar(){
     if (k === "meal") rankAutoMeal = false;
     if (k === "travel"){
       rankFilter.travel = rankFilter.travel === v ? RANK_DEFAULT_TRAVEL : v;
-      if (rankFilter.travel) clearRankLocationFilter();
+      if (rankFilter.travel) clearRankLocationFilter({ notify:true });
       else rankOriginLabel = "";
     } else {
       rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
@@ -2232,9 +2570,9 @@ function buildRankFilterBar(){
   });
   fillRkArea();
   fillRkVillage();
-  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); trackUsage("filter_change", { key:"city", value:rankFilter.city }); buildRankFilterBar(); renderLeaderboard(); });
-  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter(); trackUsage("filter_change", { key:"area", city:rankFilter.city, value:rankFilter.area }); fillRkVillage(); renderLeaderboard(); });
-  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter(); trackUsage("filter_change", { key:"village", city:rankFilter.city, area:rankFilter.area, value:rankFilter.village }); renderLeaderboard(); });
+  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"city", value:rankFilter.city }); buildRankFilterBar(); renderLeaderboard(); });
+  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"area", city:rankFilter.city, value:rankFilter.area }); fillRkVillage(); renderLeaderboard(); });
+  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"village", city:rankFilter.city, area:rankFilter.area, value:rankFilter.village }); renderLeaderboard(); });
   $("#rkTravelLocate")?.addEventListener("click", e => locateRankOrigin(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
     Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
@@ -2313,11 +2651,18 @@ function syncControls() {
     c.setAttribute("aria-pressed", c.dataset.cat === state.category));
 }
 
-$("#scopeBtn").addEventListener("click", () => $("#scopePanel").classList.toggle("hidden"));
+$("#scopeBtn").addEventListener("click", () => {
+  const panel = $("#scopePanel");
+  const opening = panel.classList.contains("hidden");
+  panel.classList.toggle("hidden");
+  if (opening) pushTransientUiHistory();
+});
 $("#filterMenuBtn").addEventListener("click", () => {
   const drawer = $("#controlDrawer");
+  const opening = drawer.classList.contains("hidden");
   drawer.classList.toggle("hidden");
   $("#filterMenuBtn").setAttribute("aria-expanded", String(!drawer.classList.contains("hidden")));
+  if (opening) pushTransientUiHistory();
 });
 $("#radius").addEventListener("input", e => {
   $("#radiusVal").textContent = e.target.value;
@@ -2417,7 +2762,10 @@ async function pickCityArea(){
 })();
 
 function openAreaModal(){
-  $("#areaModal").classList.remove("hidden");
+  const modal = $("#areaModal");
+  const opening = modal.classList.contains("hidden");
+  modal.classList.remove("hidden");
+  if (opening) pushTransientUiHistory();
   clearAreaSuggestions();
   setTimeout(()=>$("#areaInput").focus(), 50);
 }
@@ -2521,7 +2869,10 @@ $("#pickConfirm").addEventListener("click", confirmPick);
 async function openPickMap(){
   if (!hasGoogleApiKey){ toast("地圖選位置需要 Google 金鑰"); return; }
   closeAreaModal();
-  $("#pickView").classList.remove("hidden");
+  const view = $("#pickView");
+  const opening = view.classList.contains("hidden");
+  view.classList.remove("hidden");
+  if (opening) pushTransientUiHistory();
   try{
     await loadGoogle();
     const { Map } = await google.maps.importLibrary("maps");
@@ -2657,12 +3008,17 @@ function loadGoogle() {
 
 async function placesSearch() {
   if (hasApiProxy){
+    const quotaKey = searchQuotaKey("nearby-search", {
+      category:state.category,
+      center:`${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}`,
+      radius:state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius,
+    });
     const data = await apiProxy("nearbySearch", {
       center:state.center,
       radius:state.wholeArea ? CONFIG.DISTRICT_RADIUS_M : state.radius,
       includedPrimaryTypes:mealTypes(),
       maxResultCount:20,
-    });
+    }, { quotaKey });
     return (data.items || []).map(x => {
       const o = rankCandidateFromProxy(x, { center:state.center });
       return Object.assign(o, {
@@ -2727,7 +3083,7 @@ async function placesSearch() {
     photo:    p.photos?.[0]?.getURI({ maxWidth: 200, maxHeight: 200 }) || "",
     photoBig: p.photos?.[0]?.getURI({ maxWidth: 800, maxHeight: 480 }) || "",
     awards: [],          // Step 2 由評鑑名單比對填入
-    aiReason: null,      // Step 3 由 Claude 填入
+    aiReason: null,      // 後端 AI 分類 reason；前端不自行產生
   }));
 }
 function priceToNum(pl){const map={
@@ -3082,19 +3438,22 @@ function cardHTML(r, rank){
   const certBadges = certificationBadges(r).map(certBadgeHTML).join("");
   const badges = awardBadges + certBadges;
   const confidence = confidenceHTML(r);
-  // 摘要：優先顯示 AI 理由，其次 Google 摘要；沒有摘要時不佔版面。
+  const keywordHits = keywordHitSummaryHTML(r.keywordHit);
+  const branchGroup = r.branchGroup?.count > 1
+    ? `<div class="branch-group">同品牌 ${r.branchGroup.count} 間，保留最高分${r.branchGroup.names?.length ? `：${escapeHTML(r.branchGroup.names.join("、"))}` : ""}</div>`
+    : "";
+  const distanceRelaxed = r.distanceRelaxed
+    ? `<div class="distance-relaxed">已放寬距離：${Number(r.distanceRelaxedFrom || CONFIG.RANK_WALKABLE_RADIUS_M).toLocaleString()}m → ${Number(r.distanceRelaxedTo || CONFIG.RANK_WALKABLE_FALLBACK_M).toLocaleString()}m</div>`
+    : "";
+  // AI 判讀只顯示後端分類結果；Google 摘要留在詳情，不偽裝成 AI 解讀。
+  const aiSourceText = (r.aiSourceLabels || []).slice(0, 4).join("、");
   const ai = r.aiReason
-    ? `<div class="ai-reason">${escapeHTML(r.aiReason)}</div>`
-    : (r.generativeSummary
-      ? `<div class="ai-reason">Google AI 摘要：${escapeHTML(r.generativeSummary)}</div>`
-      : r.reviewSummary
-      ? `<div class="ai-reason">Google 評論摘要：${escapeHTML(r.reviewSummary)}</div>`
-      : "");
-  const fallback = "this.style.visibility='hidden'";
+    ? `<div class="ai-reason"><b>AI 判讀</b>${escapeHTML(r.aiReason)}${aiSourceText ? `<span class="ai-source">來源：${escapeHTML(aiSourceText)}</span>` : ""}</div>`
+    : "";
   // 卡片內 1–3 張較大照片
   const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
   const photoStrip = photoUrls.length
-    ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map(u=>`<img class="ph-img" src="${escapeHTML(u)}" alt="${escapeHTML(r.name)}" loading="lazy" onerror="this.remove()">`).join("")}</div>`
+    ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>`<img class="ph-img" src="${escapeHTML(u)}" alt="${escapeHTML(r.name)}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" ${i===0 && rank===1 ? `fetchpriority="high"` : ""} onerror="this.classList.add('is-broken');this.removeAttribute('src');">`).join("")}</div>`
     : "";
   // 服務/供應標籤（只列出明確為 true 的）
   const feats = [];
@@ -3129,6 +3488,9 @@ function cardHTML(r, rank){
     </div>
     <div class="badges">${badges}</div>
     ${confidence}
+    ${keywordHits}
+    ${branchGroup}
+    ${distanceRelaxed}
     ${featRow}
     ${photoStrip}
     ${ai}
@@ -3150,7 +3512,7 @@ function cardHTML(r, rank){
         ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
         ${r.lbFormula?`<div class="line"><span class="k">綜合</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
         ${routeDetail(r)?`<div class="line"><span class="k">路線</span><span class="v">${escapeHTML(routeDetail(r))}</span></div>`:""}
-        ${r.generativeSummary?`<div class="line"><span class="k">AI摘要</span><span class="v sum3">${escapeHTML(r.generativeSummary)}</span></div>`:""}
+        ${r.generativeSummary?`<div class="line"><span class="k">Google</span><span class="v sum3">${escapeHTML(r.generativeSummary)}</span></div>`:""}
         ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v sum3">${escapeHTML(r.reviewSummary)}</span></div>`:""}
         ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
         ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
@@ -3254,7 +3616,10 @@ $("#fab").addEventListener("click", openMap);
 $("#backToList").addEventListener("click", ()=>$("#mapView").classList.add("hidden"));
 
 async function openMap(){
-  $("#mapView").classList.remove("hidden");
+  const view = $("#mapView");
+  const opening = view.classList.contains("hidden");
+  view.classList.remove("hidden");
+  if (opening) pushTransientUiHistory();
   if (!hasGoogleApiKey){
     $("#map").classList.add("hidden");
     const fb = $("#mapFallback"); fb.classList.remove("hidden");
@@ -3338,12 +3703,21 @@ function normName(s){
     .toLowerCase();
 }
 
+function awardCityMatches(rest, entry){
+  if (!entry?.city) return true;
+  const awardCity = normalizeTaiwanCity(entry.city);
+  const restCity = normalizeTaiwanCity(rest.city || rest.lbCity || cityAreaFromAddress(rest.address || "").city || "");
+  if (!restCity) return true;
+  return restCity === awardCity;
+}
+
 // 比對：完全相等→high；包含關係→medium（地址可升級為 high）
 function matchAward(rest, list){
   const rn = normName(rest.name);
   if (!rn) return { entry:null, conf:"none" };
   let best=null, conf="none";
   for (const e of list){
+    if (!awardCityMatches(rest, e)) continue;
     const en = normName(e.name);
     if (!en) continue;
     if (en === rn){ best=e; conf="high"; break; }
@@ -3385,72 +3759,12 @@ function applyAwards(items){
 }
 
 /* ============================================================
-   Step 3 — AI 解讀：一次處理五家，填上榜理由＋評論摘要
-   AI 只解讀真實資料，不碰計算與定位、不杜撰
+   Legacy hook: 前端不再直接呼叫 AI，也不在沒有後端分類時顯示假解讀。
+   排行榜 AI 分類統一走 apiProxy("aiClassify")。
    ============================================================ */
 function applyAI(){
-  if (CONFIG.AI.MODE==="live" && CONFIG.AI.API_KEY){
-    state.ranked.forEach(r=>{ r.aiReason=r.aiReason||"分析中…"; });
-    aiLive(state.ranked);   // 非同步，完成後自行 renderList
-  } else {
-    state.ranked.forEach(r=>{ r.aiReason=""; });
-    state.overview = "";
-  }
-}
-
-// live AI 無 overview 時，僅用目前真實欄位組一句整體比較
-function buildOverview(items){
-  if (!items || items.length < 2) return "";
-  const top = items[0];
-  const nearest = [...items].sort((a,b)=>a.dist-b.dist)[0];
-  const starred = items.find(r=>(r.awards||[]).some(a=>a.guide==="michelin"));
-  const cheap = [...items].filter(r=>r.priceLevel===1).sort((a,b)=>b.rating-a.rating)[0];
-  const parts = [`綜合最穩 → ${top.name}`];
-  if (nearest && nearest!==top) parts.push(`最近 → ${nearest.name}（步行 ${Math.max(1,Math.round(nearest.dist/CONFIG.WALK_SPEED_M_PER_MIN))} 分）`);
-  if (starred) parts.push(`想吃米其林 → ${starred.name}`);
-  else if (cheap) parts.push(`想平價 → ${cheap.name}`);
-  return parts.join("；") + "。";
-}
-
-// 真實呼叫 Claude（一次五家）。上線建議改走後端代理，勿在前端帶金鑰。
-async function aiLive(items){
-  try{
-    const payload = items.map((r,i)=>({
-      rank:i+1, name:r.name, rating:r.rating, count:r.count,
-      priceLevel:r.priceLevel, openNow:r.openNow,
-      walkMin: Math.round(r.dist/CONFIG.WALK_SPEED_M_PER_MIN),
-      awards: r.awards, editorialSummary: r.summary, reviewSummary: r.reviewSummary,
-    }));
-    const system = "你是在地步行覓食嚮導。只依據使用者提供的每家餐廳資料，產生繁體中文短評，"
-      + "嚴禁杜撰未提供的事實。回傳純 JSON 物件 {overview, items}："
-      + "items 為陣列，長度與輸入相同，每筆含 reason（為何排此名，≤30字）與 summary（評論特徵，≤30字）；"
-      + "overview 為一句情境比較（例：想快選 A、想坐久選 B，≤40字）。只輸出 JSON。";
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
-      method:"POST",
-      headers:{
-        "content-type":"application/json",
-        "x-api-key":CONFIG.AI.API_KEY,
-        "anthropic-version":"2023-06-01",
-        "anthropic-dangerous-direct-browser-access":"true",
-      },
-      body: JSON.stringify({
-        model: CONFIG.AI.MODEL, max_tokens: 1024, system,
-        messages:[{ role:"user", content: JSON.stringify(payload) }],
-      }),
-    });
-    if(!res.ok) throw new Error("HTTP "+res.status);
-    const data = await res.json();
-    const text = data.content?.[0]?.text || "{}";
-    const obj = JSON.parse(text.match(/\{[\s\S]*\}/)[0]);
-    const arr = obj.items || [];
-    items.forEach((r,i)=>{ r.aiReason=arr[i]?.reason||""; r.reviewSummary=arr[i]?.summary||""; });
-    state.overview = obj.overview || buildOverview(items);
-  }catch(e){
-    console.warn("[AI] live 失敗，不使用假 AI 文案：", e.message);
-    items.forEach(r=>{ r.aiReason=""; });
-    state.overview = "";
-  }
-  renderList();
+  state.ranked.forEach(r=>{ r.aiReason = ""; });
+  state.overview = "";
 }
 
 function startFromRoute(){
@@ -3459,7 +3773,10 @@ function startFromRoute(){
   else openLeaderboard(false);
 }
 
-window.addEventListener("popstate", startFromRoute);
+window.addEventListener("popstate", () => {
+  if (closeTopTransientUi()) return;
+  startFromRoute();
+});
 loadAppVersion();
 initAuth().finally(() => {
   if (!authState.enabled) bootApp();

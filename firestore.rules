@@ -27,6 +27,16 @@ service cloud.firestore {
       allow create, update, delete: if false;
     }
 
+    match /quotaUsage/{quotaId} {
+      allow read: if isAdmin();
+      allow create, update, delete: if false;
+
+      match /requests/{requestId} {
+        allow read: if isAdmin();
+        allow create, update, delete: if false;
+      }
+    }
+
     match /users/{uid} {
       allow read: if isOwner(uid) || isAdmin();
       allow create, update: if isOwner(uid);
