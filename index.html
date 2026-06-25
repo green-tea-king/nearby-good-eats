@@ -751,6 +751,9 @@ const CONFIG = {
   RANK_WALKABLE_FALLBACK_M: 2000,   // 附近結果過少時的保底範圍
   DISTRICT_RADIUS_M: 3000,   // 選「區」時的範圍：涵蓋全區、忽略步行距離
   WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
+  RANK_WALK_MAX_MIN: 15,     // 交通篩選：走路 15 分鐘內
+  RANK_DRIVE_MAX_MIN: 30,    // 交通篩選：開車 30 分鐘內
+  RANK_ROUTE_PREFETCH_COUNT: 20,
   ROUTE_TIMEOUT_MS: 7000,    // Routes API 逾時後保留直線距離估算，不阻塞畫面
   RESULT_COUNT: 5,           // 取前幾家
   DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 定位失敗時仍用真實 Google 資料搜尋的預設中心
@@ -1144,10 +1147,12 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.25.2";
+const APP_VERSION_FALLBACK = "2026.06.25.3";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
+const RANK_TRAVEL_WALK = "走路";
+const RANK_TRAVEL_DRIVE = "開車";
 
 const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"travel",  label:"交通", tier:"route", opts:[{label:"走路"}, {label:"開車"}] },
@@ -1197,6 +1202,31 @@ function activeRankTravel(){
 }
 function isWalkableRankMode(f=rankFilter){
   return f.travel === "走路" && !hasRankLocationFilter(f) && !!state.center;
+}
+function isTravelRankMode(f=rankFilter){
+  return !!f.travel && !hasRankLocationFilter(f) && !!state.center;
+}
+function rankTravelLimitMin(travel=activeRankTravel()){
+  if (travel === RANK_TRAVEL_DRIVE) return CONFIG.RANK_DRIVE_MAX_MIN;
+  if (travel === RANK_TRAVEL_WALK) return CONFIG.RANK_WALK_MAX_MIN;
+  return null;
+}
+function rankRouteMin(r, travel=activeRankTravel()){
+  return travel === RANK_TRAVEL_DRIVE ? r.driveMin : r.walkMin;
+}
+function isWithinRankTravelLimit(r, travel=activeRankTravel()){
+  const limit = rankTravelLimitMin(travel);
+  if (!limit) return true;
+  const routedMin = rankRouteMin(r, travel);
+  if (routedMin != null) return routedMin <= limit;
+  if (travel === RANK_TRAVEL_WALK && r.dist != null){
+    return Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN)) <= limit;
+  }
+  return false;
+}
+function rankTravelLimitText(travel=activeRankTravel()){
+  const limit = rankTravelLimitMin(travel);
+  return limit ? `${travel} ${limit} 分鐘內` : "";
 }
 function rankModeHintText(){
   if (hasRankLocationFilter()){
@@ -2274,7 +2304,8 @@ async function renderLeaderboard(){
   if (f.keyword){
     list.sort((a,b) => (keywordStrength(b, f.keyword) - keywordStrength(a, f.keyword)) || (b.composite - a.composite));
   }
-  const top = list.slice(0, RANK_TOP).map(x => {
+  const prefetchCount = isTravelRankMode(f) ? Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT) : RANK_TOP;
+  const top = list.slice(0, prefetchCount).map(x => {
     if (!distanceRelaxed) return x;
     return Object.assign(x, {
       distanceRelaxed:true,
@@ -2318,9 +2349,38 @@ async function renderLeaderboard(){
   await ensureCertificationRules();
   await fetchRankRich(top);
   if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
-  const cards = top.map(rankCardData);
+  let cards = top.map(rankCardData);
   await enrichRankCardRoutes(cards);
   if (token !== rankRenderToken) return;
+  if (isTravelRankMode(f)){
+    const beforeLimit = cards.length;
+    cards = cards.filter(c => isWithinRankTravelLimit(c, f.travel)).slice(0, RANK_TOP);
+    if (!cards.length){
+      trackUsage("leaderboard_result", {
+        mode:"route_limit",
+        resultCount:list.length,
+        shownCount:0,
+        city:f.city || "",
+        area:f.area || "",
+        village:f.village || "",
+        keyword:f.keyword || "",
+        meal:f.meal || "",
+        travel:f.travel || "",
+        open:f.open || "",
+        distanceRelaxed,
+        routeLimitMin:rankTravelLimitMin(f.travel),
+        routePrefetchCount:beforeLimit,
+      });
+      $("#rankList").innerHTML = `<div class="rank-note">${escapeHTML(rankTravelLimitText(f.travel))}沒有符合的餐廳。<div class="empty-actions">
+        ${f.travel === RANK_TRAVEL_WALK ? `<button data-empty-action="drive">改開車</button>` : ""}
+        <button data-empty-action="clear-all">清除篩選</button>
+      </div></div>`;
+      bindEmptyStateActions();
+      return;
+    }
+  }else{
+    cards = cards.slice(0, RANK_TOP);
+  }
   trackUsage("leaderboard_result", {
     mode:useNearby ? "walkable" : (f.city ? "area" : "pool"),
     resultCount:list.length,
@@ -2333,7 +2393,8 @@ async function renderLeaderboard(){
     travel:f.travel || "",
     open:f.open || "",
     distanceRelaxed,
-    top:cards.slice(0, RANK_TOP).map(c => ({
+    routeLimitMin:isTravelRankMode(f) ? rankTravelLimitMin(f.travel) : null,
+    top:cards.map(c => ({
       placeId:c.id,
       name:c.name,
       rating:c.rating,
