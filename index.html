@@ -580,7 +580,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
         </ul>
       </div>
       <div class="ri-total">綜合評價 ＝ 貝氏分數 ＋ 評鑑加分</div>
-      <p class="ri-note">未篩選時列全台綜合前 5 名（第 1 名在最上）。濾網優先使用 Google 真欄位（評分、評論數、價位、素食、適合團體、可訂位等），其次把「聚餐、吃到飽、素食」等條件加入 Google 搜尋詞；菜式、風格等則屬近似分類。若未來接上後端 AI，可再用 Google 真資料做二次標籤判斷。</p>
+      <p class="ri-note">未篩選時列全台綜合前 5 名（第 1 名在最上）。濾網優先使用 Google 真欄位（評分、評論數、價位、素食、適合團體、可訂位等），其次把「聚餐、吃到飽、素食」等條件加入 Google 搜尋詞；風格等則屬近似分類。若未來接上後端 AI，可再用 Google 真資料做二次標籤判斷。</p>
     </div>
   </div>
 </div>
@@ -1147,7 +1147,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.25.4";
+const APP_VERSION_FALLBACK = "2026.06.25.5";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1162,10 +1162,9 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"occasion",label:"情境", tier:"search", opts:[{label:"聚餐", query:"聚餐 適合團體 可訂位"}, {label:"獨享", query:"一個人 用餐"}] },
   { key:"type",    label:"型態", tier:"search", opts:[{label:"正餐", query:"餐廳"}, {label:"小吃", query:"小吃"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食"}] },
-  { key:"cuisine", label:"菜式", tier:"search", opts:[{label:"中式", query:"中式"}, {label:"西式", query:"西式"}] },
   { key:"style",   label:"風格", tier:"search", opts:[{label:"傳統", query:"老店 傳統"}, {label:"現代", query:"現代 創意"}] },
 ];
-const rankFilter = { keyword:"", cuisine:null, meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"", village:"" };
+const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"", village:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
@@ -2019,7 +2018,7 @@ function classifyCandidate(o){
   const s = (o.name + " " + o.ptd + " " + o.pt).toLowerCase();
   const re = r => r.test(o.name + o.ptd) || r.test(s);
   const t = { cuisine:[], meal:[], type:[], service:[], occasion:[], diet:[], style:[] };
-  // 菜式
+  // 內部分類標籤
   if (re(/chinese|cantonese|sichuan|hunan|dumpling|hot.?pot|noodle|dim.?sum|中式|中菜|中餐|台菜|台式|川菜|粵|港式|江浙|上海|湘菜|客家|熱炒|牛肉麵|餃|鍋|滷味|燒臘|點心|餛飩|麵食|羊肉|快炒/)) t.cuisine.push("中式");
   if (re(/italian|french|american|spanish|greek|steak|pizza|hamburger|mediterranean|mexican|bistro|brunch|義式|義大利|法式|法國|美式|西餐|西式|歐|牛排|排餐|披薩|pasta|地中海|漢堡|墨西哥|burger/)) t.cuisine.push("西式");
   // 時段（Google 時段資料有限，以類型/店名近似）
@@ -2221,7 +2220,7 @@ function rankFilterPrecisionText(){
   const active = activeRankFilters(rankFilter);
   const hasAi = CONFIG.AI_FILTER.MODE === "proxy" && (!!CONFIG.AI_FILTER.ENDPOINT || hasApiProxy);
   if (!active.length){
-    return "營業、素食、適合團體等優先採 Google 真欄位；吃法、情境、菜式會搭配搜尋詞與近似判斷。";
+    return "營業、素食、適合團體等優先採 Google 真欄位；吃法、情境、風格會搭配搜尋詞與近似判斷。";
   }
   const tiers = new Set(active.map(x => x.tier));
   const parts = [];
@@ -2271,7 +2270,6 @@ async function renderLeaderboard(){
       if (!hit.ok) return false;
       x.keywordHit = hit;
     }
-    if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
     if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
     if (f.open === "營業中" && x.openNow !== true) return false;
     if (f.type && !rankTagMatch(x, "type", f.type)) return false;
@@ -2417,7 +2415,7 @@ function bindEmptyStateActions(){
     if (action === "open-any") rankFilter.open = "不限";
     if (action === "drive") { rankFilter.travel = "開車"; clearRankLocationFilter({ notify:true }); }
     if (action === "clear-all") {
-      Object.assign(rankFilter, { keyword:"", cuisine:null, meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"", village:"" });
+      Object.assign(rankFilter, { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, type:null, service:null, occasion:null, diet:null, style:null, city:"", area:"", village:"" });
       rankKeywordPools = {};
       rankNearbyPools = {};
       rankOriginLabel = "";
