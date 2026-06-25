@@ -1144,7 +1144,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.25.1";
+const APP_VERSION_FALLBACK = "2026.06.25.2";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2999,7 +2999,7 @@ function loadGoogle() {
   if (gmapsReady) return gmapsReady;
   gmapsReady = new Promise((res, rej) => {
     const s = document.createElement("script");
-    s.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIG.GOOGLE_API_KEY}&v=weekly&libraries=places,marker,routes`;
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${CONFIG.GOOGLE_API_KEY}&v=weekly&loading=async&libraries=places,marker,routes`;
     s.async = true; s.onload = res; s.onerror = () => rej(new Error("Google Maps 載入失敗"));
     document.head.appendChild(s);
   });
