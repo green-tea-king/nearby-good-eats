@@ -2,7 +2,7 @@
 // Keep it HTTP-referrer restricted in Google Cloud; move back to apiBaseUrl proxy later if abuse appears.
 window.APP_SETTINGS = {
   apiBaseUrl: "",
-  googleMapsApiKey: "AIzaSyDjO79KBBzCxFx_Xc2aK4umJULdQCefPDY",
+  googleMapsApiKey: "AIzaSyBtViT280p8qtdm4PT2QUnMypdMssTV1-k",
   // Fill after registering the Web app in Firebase App Check. Empty keeps App Check optional on the proxy.
   appCheckSiteKey: "",
   appCheckDebugToken: false,
