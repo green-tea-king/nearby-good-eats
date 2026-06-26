@@ -749,6 +749,8 @@ const CONFIG = {
   DEFAULT_RADIUS_M: 800,     // 步行半徑預設（公尺）
   RANK_WALKABLE_RADIUS_M: 800,      // 排行榜預設：定位點步行可到範圍
   RANK_WALKABLE_FALLBACK_M: 2000,   // 附近結果過少時的保底範圍
+  RANK_WALK_RADIUS_STEPS_M: [800, 1200, 1600, 2000, 3000, 5000],
+  RANK_DRIVE_RADIUS_STEPS_M: [3000, 5000, 8000, 12000, 20000, 30000],
   DISTRICT_RADIUS_M: 3000,   // 選「區」時的範圍：涵蓋全區、忽略步行距離
   WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
   RANK_WALK_MAX_MIN: 15,     // 交通篩選：走路 15 分鐘內
@@ -1147,7 +1149,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.26.4";
+const APP_VERSION_FALLBACK = "2026.06.26.5";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2022,6 +2024,25 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   return all;
 }
 
+function rankTravelRadiusSteps(travel=activeRankTravel()){
+  const steps = travel === RANK_TRAVEL_DRIVE
+    ? CONFIG.RANK_DRIVE_RADIUS_STEPS_M
+    : CONFIG.RANK_WALK_RADIUS_STEPS_M;
+  return [...new Set((steps || []).filter(n => Number(n) > 0).map(n => Number(n)))].sort((a,b) => a - b);
+}
+
+function mergeRankCandidates(lists, { sortDistance=false }={}){
+  const seen = new Set();
+  const merged = [];
+  lists.flat().forEach(item => {
+    if (!item?.id || seen.has(item.id)) return;
+    seen.add(item.id);
+    merged.push(item);
+  });
+  merged.sort((a,b) => (b.composite - a.composite) || (sortDistance ? ((a.dist || 0) - (b.dist || 0)) : 0));
+  return groupRankBranches(merged);
+}
+
 const MEAL_FILTER_RULES = {
   "早餐": { flags:["servesBreakfast"], re:/breakfast|早餐|晨食|永和豆漿|蛋餅|飯糰|燒餅|油條/ },
   "早茶": { flags:["servesBrunch","servesCoffee"], re:/brunch|早午餐|早茶|飲茶|港式飲茶|港點|茶餐廳/ },
@@ -2281,6 +2302,7 @@ async function renderLeaderboard(){
   const f = rankFilter;
   let source = rankPool;
   const searchTerms = rankQueryTerms(f);
+  const useTravel = isTravelRankMode(f);
   const useNearby = isWalkableRankMode(f);
   const renderQuotaKey = searchQuotaKey("leaderboard", {
     city:f.city || "",
@@ -2290,9 +2312,11 @@ async function renderLeaderboard(){
     meal:f.meal || "",
     travel:f.travel || "",
     open:f.open || "",
-    nearby:useNearby,
+    nearby:useTravel,
   });
-  if (useNearby){
+  if (useTravel){
+    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} ${escapeHTML(rankTravelLimitText(f.travel))}美食中…</div>`;
+  }else if (useNearby){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} 步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內美食中…</div>`;
     source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_RADIUS_M, renderQuotaKey);
     if (token !== rankRenderToken) return;
@@ -2322,6 +2346,123 @@ async function renderLeaderboard(){
     if (f.diet && !rankTagMatch(x, "diet", f.diet)) return false;
     return true;
   });
+  if (useTravel){
+    const radii = rankTravelRadiusSteps(f.travel);
+    const firstRadius = radii[0] || CONFIG.RANK_WALKABLE_RADIUS_M;
+    const collectedSources = [];
+    let cards = [];
+    let bestCards = [];
+    let list = [];
+    let distanceRelaxed = false;
+    let routeLimitRelaxed = false;
+    let finalRadius = firstRadius;
+    await ensureCertificationRules();
+    for (let i=0; i<radii.length; i++){
+      const radius = radii[i];
+      finalRadius = radius;
+      distanceRelaxed = radius > firstRadius;
+      $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} ${escapeHTML(f.travel || activeRankTravel())}同心圓 ${Number(radius).toLocaleString()}m 內美食中…</div>`;
+      const radiusSource = await nearbyRankCandidates(f, radius, renderQuotaKey);
+      if (token !== rankRenderToken) return;
+      collectedSources.push(radiusSource);
+      source = mergeRankCandidates(collectedSources, { sortDistance:true });
+      await enrichAiFilterTags(source, f);
+      if (token !== rankRenderToken) return;
+      list = applyRankFilters(source, false);
+      if (!list.length && rankAutoMeal && f.meal){
+        const relaxedSources = [];
+        for (const r of radii.slice(0, i + 1)){
+          relaxedSources.push(await nearbyRankCandidates({ ...f, meal:null }, r, renderQuotaKey));
+          if (token !== rankRenderToken) return;
+        }
+        list = applyRankFilters(mergeRankCandidates(relaxedSources, { sortDistance:true }), true);
+      }
+      if (f.keyword){
+        list.sort((a,b) => (keywordStrength(b, f.keyword) - keywordStrength(a, f.keyword)) || (b.composite - a.composite));
+      }
+      const prefetchCount = Math.min(
+        list.length,
+        Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * (i + 1))
+      );
+      const routeCandidates = list.slice(0, prefetchCount).map(x => Object.assign(x, {
+        distanceRelaxed,
+        distanceRelaxedFrom:firstRadius,
+        distanceRelaxedTo:radius,
+      }));
+      if (!routeCandidates.length) continue;
+      await fetchRankRich(routeCandidates);
+      if (token !== rankRenderToken) return;
+      const routeCards = routeCandidates.map(rankCardData);
+      await enrichRankCardRoutes(routeCards);
+      if (token !== rankRenderToken) return;
+      const withinLimit = routeCards.filter(c => isWithinRankTravelLimit(c, f.travel)).slice(0, RANK_TOP);
+      bestCards = withinLimit.length >= bestCards.length ? withinLimit : bestCards;
+      if (withinLimit.length >= RANK_TOP){
+        cards = withinLimit;
+        break;
+      }
+      if (i === radii.length - 1){
+        const outsideLimit = routeCards
+          .filter(c => !isWithinRankTravelLimit(c, f.travel))
+          .sort((a,b) => (rankRouteMin(a, f.travel) ?? 9999) - (rankRouteMin(b, f.travel) ?? 9999));
+        cards = [...withinLimit, ...outsideLimit].slice(0, RANK_TOP);
+        routeLimitRelaxed = cards.length > withinLimit.length;
+      }
+    }
+    if (!cards.length) cards = bestCards.slice(0, RANK_TOP);
+    if (!cards.length){
+      trackUsage("leaderboard_result", {
+        mode:"route_expand",
+        resultCount:list.length,
+        shownCount:0,
+        city:f.city || "",
+        area:f.area || "",
+        village:f.village || "",
+        keyword:f.keyword || "",
+        meal:f.meal || "",
+        travel:f.travel || "",
+        open:f.open || "",
+        distanceRelaxed,
+        routeLimitMin:rankTravelLimitMin(f.travel),
+        routeMaxRadiusM:finalRadius,
+      });
+      $("#rankList").innerHTML = `<div class="rank-note">${escapeHTML(f.travel || activeRankTravel())}同心圓已放寬到 ${Number(finalRadius).toLocaleString()}m，仍沒有符合的餐廳。<div class="empty-actions">
+        ${f.keyword ? `<button data-empty-action="clear-keyword">取消關鍵字</button>` : ""}
+        ${f.service ? `<button data-empty-action="clear-service">取消吃法</button>` : ""}
+        ${f.open === "營業中" ? `<button data-empty-action="open-any">不限營業</button>` : ""}
+        <button data-empty-action="clear-all">清除篩選</button>
+      </div></div>`;
+      bindEmptyStateActions();
+      return;
+    }
+    trackUsage("leaderboard_result", {
+      mode:"route_expand",
+      resultCount:list.length,
+      shownCount:cards.length,
+      city:f.city || "",
+      area:f.area || "",
+      village:f.village || "",
+      keyword:f.keyword || "",
+      meal:f.meal || "",
+      travel:f.travel || "",
+      open:f.open || "",
+      distanceRelaxed,
+      routeLimitRelaxed,
+      routeLimitMin:rankTravelLimitMin(f.travel),
+      routeMaxRadiusM:finalRadius,
+      top:cards.map(c => ({
+        placeId:c.id,
+        name:c.name,
+        rating:c.rating,
+        count:c.count,
+        composite:Number(c.composite?.toFixed?.(2) || 0),
+        routeMin:rankRouteMin(c, f.travel) || null,
+      })),
+    });
+    $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
+    bindCardEvents($("#rankList"));
+    return;
+  }
   let list = applyRankFilters(source, false);
   let distanceRelaxed = false;
   if (!list.length && useNearby){
