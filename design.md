@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.26.6
+版本：2026.06.26.7
 
 ## 專案目標
 
@@ -211,6 +211,7 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 - GitHub Pages 是靜態站，不需要伺服器 rewrite。
 - 直接打開網址時，前端能讀取 query string。
 - 可用 Google Place ID 重新抓取單一餐廳真實資料。
+- 完整欄位依 `place_id` 快取在 `rankRich`，同一店家不重複抓 detail；每次 detail prefetch 最多 10 筆。
 
 分享頁會顯示單張餐廳卡片，並提供「看完整排行榜」回到主排行榜。
 頁面提供基本 OG / Twitter metadata；分享卡片載入成功後，前端會用該店名稱、評分、地址與照片更新 metadata。若社群平台需要伺服器端預覽圖，後續可把 `?place=` 交給 Functions 產生動態分享頁。
@@ -219,6 +220,7 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 ## 圖片與手機互動
 
 - 餐廳照片使用 `loading="lazy"` 與 `decoding="async"`。
+- 卡片照片 URL 先放在 `data-lazy-src`，接近視窗才寫入 `src`；首張第一名照片可 eager 載入，兼顧首屏與流量。
 - 錯圖不移除 DOM，而是標記 `is-broken` 保留固定高度，避免卡片高度跳動。
 - 照片列使用固定 grid 高度：三張圖 118px，單張圖 172px。
 - 餐廳卡片小圖可點擊放大；放大層可用背景、關閉按鈕或 Esc 關閉。
@@ -339,8 +341,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.26.6
-畫面顯示 = v06.26.6
+VERSION = 2026.06.26.7
+畫面顯示 = v06.26.7
 ```
 
 ## 維護注意事項
