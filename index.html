@@ -364,7 +364,9 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 /* 卡片內 1–3 張較大照片 */
 .photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:13px;min-height:118px;}
 .photos.one{grid-template-columns:1fr;min-height:172px;}
-.ph-img{width:100%;min-width:0;height:118px;object-fit:cover;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);transition:opacity var(--t);}
+.ph-img{width:100%;min-width:0;height:118px;object-fit:cover;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);transition:opacity var(--t),transform var(--t);}
+.ph-img:not(.is-broken){cursor:zoom-in;}
+.ph-img:not(.is-broken):active{transform:scale(.985);}
 .ph-img.is-broken{opacity:0;}
 .photos.one .ph-img{height:172px;}
 .name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.18;letter-spacing:.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
@@ -517,6 +519,11 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .auth-user a{color:var(--text);text-decoration:none;}
 .auth-user a:active{color:var(--accent-bright);}
 .auth-user button{color:var(--accent-bright);font-size:11px;}
+.photo-lightbox{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);}
+.photo-lightbox.hidden{display:none;}
+.photo-lightbox img{max-width:min(100%,720px);max-height:82vh;border-radius:12px;border:1px solid rgba(255,255,255,.18);box-shadow:0 24px 70px rgba(0,0,0,.55);object-fit:contain;background:#050505;}
+.photo-lightbox-close{position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(20,18,18,.82);color:#fff;font-size:28px;line-height:1;display:flex;align-items:center;justify-content:center;}
+.photo-lightbox-caption{position:absolute;left:18px;right:18px;bottom:18px;color:rgba(255,255,255,.86);font-size:13px;line-height:1.4;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.7);}
 @media(max-width:780px) and (max-height:720px){
   .splash-shell{justify-content:flex-start;gap:14px;}
   #splash h1{font-size:34px;margin:14px 0 8px;}
@@ -538,6 +545,11 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
   </div>
 </div>
 <div class="auth-user hidden" id="authUser"><span id="authUserText"></span><a class="hidden" id="adminLink" href="admin.html">管理員</a><button id="logoutBtn" type="button">登出</button></div>
+<div class="photo-lightbox hidden" id="photoLightbox" role="dialog" aria-modal="true" aria-label="餐廳照片預覽">
+  <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="關閉照片">×</button>
+  <img id="photoLightboxImg" alt="">
+  <div class="photo-lightbox-caption" id="photoLightboxCaption"></div>
+</div>
 
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
@@ -1062,11 +1074,36 @@ function closeRankFilters(){
   $("#rankFilters")?.classList.add("hidden");
   $("#rankFilterBtn")?.setAttribute("aria-expanded", "false");
 }
+function openPhotoLightbox(src, caption=""){
+  if (!src) return;
+  const box = $("#photoLightbox");
+  const img = $("#photoLightboxImg");
+  if (!box || !img) return;
+  img.src = src;
+  img.alt = caption || "餐廳照片";
+  $("#photoLightboxCaption").textContent = caption || "";
+  box.classList.remove("hidden");
+  pushTransientUiHistory();
+  trackUsage("photo_preview_open", { caption });
+}
+function closePhotoLightbox(){
+  const box = $("#photoLightbox");
+  const img = $("#photoLightboxImg");
+  if (!box || box.classList.contains("hidden")) return false;
+  box.classList.add("hidden");
+  if (img) {
+    img.removeAttribute("src");
+    img.alt = "";
+  }
+  $("#photoLightboxCaption").textContent = "";
+  return true;
+}
 function pushTransientUiHistory(){
   if (history.state?.uiTransient) return;
   history.pushState({ ...(history.state || {}), uiTransient:true }, "", location.href);
 }
 function closeTopTransientUi(){
+  if (closePhotoLightbox()) return true;
   const info = $("#rankInfoModal");
   if (info && !info.classList.contains("hidden")) { info.classList.add("hidden"); return true; }
   const pick = $("#pickView");
@@ -1140,6 +1177,10 @@ $("#rankInfoClose").addEventListener("click", () => $("#rankInfoModal").classLis
 $("#rankInfoModal").addEventListener("click", e => {
   if (e.target.id === "rankInfoModal") $("#rankInfoModal").classList.add("hidden");
 });
+$("#photoLightboxClose").addEventListener("click", closePhotoLightbox);
+$("#photoLightbox").addEventListener("click", e => {
+  if (e.target.id === "photoLightbox") closePhotoLightbox();
+});
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeTopTransientUi();
 });
@@ -1149,7 +1190,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.26.5";
+const APP_VERSION_FALLBACK = "2026.06.26.6";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2716,6 +2757,10 @@ async function enrichRankCardRoutes(cards){
 
 // 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）。c 為卡片物件，縣市存於 lbCity
 function bindCardEvents(root){
+  root.querySelectorAll("[data-photo-preview]").forEach(img => img.addEventListener("click", () => {
+    if (img.classList.contains("is-broken")) return;
+    openPhotoLightbox(img.dataset.photoPreview || img.currentSrc || img.src, img.dataset.caption || img.alt || "");
+  }));
   root.querySelectorAll("[data-detail]").forEach(btn => btn.addEventListener("click", () => {
     const d = btn.closest(".card").querySelector(".detail");
     d.classList.toggle("open");
@@ -3711,7 +3756,7 @@ function cardHTML(r, rank){
   // 卡片內 1–3 張較大照片
   const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
   const photoStrip = photoUrls.length
-    ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>`<img class="ph-img" src="${escapeHTML(u)}" alt="${escapeHTML(r.name)}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" ${i===0 && rank===1 ? `fetchpriority="high"` : ""} onerror="this.classList.add('is-broken');this.removeAttribute('src');">`).join("")}</div>`
+    ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>`<img class="ph-img" src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(r.name)}" alt="${escapeHTML(r.name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" ${i===0 && rank===1 ? `fetchpriority="high"` : ""} onerror="this.classList.add('is-broken');this.removeAttribute('src');">`).join("")}</div>`
     : "";
   // 服務/供應標籤（只列出明確為 true 的）
   const feats = [];
