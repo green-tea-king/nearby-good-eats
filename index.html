@@ -767,11 +767,17 @@ const CONFIG = {
   WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
   RANK_WALK_MAX_MIN: 15,     // 交通篩選：走路 15 分鐘內
   RANK_DRIVE_MAX_MIN: 30,    // 交通篩選：開車 30 分鐘內
-  RANK_ROUTE_PREFETCH_COUNT: 20,
-  RANK_DETAIL_PREFETCH_LIMIT: 10,
+  RANK_ROUTE_PREFETCH_COUNT: 8,
+  RANK_DETAIL_PREFETCH_LIMIT: 3,
   ROUTE_TIMEOUT_MS: 7000,    // Routes API 逾時後保留直線距離估算，不阻塞畫面
   RESULT_COUNT: 3,           // 取前幾家
   DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 定位失敗時仍用真實 Google 資料搜尋的預設中心
+  CACHE_TTL_MS: {
+    search: 6 * 60 * 60 * 1000,
+    details: 7 * 24 * 60 * 60 * 1000,
+    route: 30 * 60 * 1000,
+    geocode: 30 * 24 * 60 * 60 * 1000,
+  },
 
   // ── 貝氏加權平均（C、m 之後用實際資料調校）
   //    加權分數 = (C*m + n*r) / (C + n)
@@ -874,6 +880,75 @@ const hasApiProxy = !!CONFIG.API_PROXY.ENDPOINT;
 const hasDataApi = hasApiProxy || hasGoogleApiKey;
 const authState = { enabled:false, configured:false, user:null, db:null, appCheck:null, sessionId:globalThis.crypto?.randomUUID?.() || String(Date.now()) };
 let appBooted = false;
+const LOCAL_CACHE_PREFIX = "nearbyGoodEats:v20260626:api:";
+const memoryCache = new Map();
+const inflightRequests = new Map();
+
+function stableStringify(value){
+  if (Array.isArray(value)) return `[${value.map(stableStringify).join(",")}]`;
+  if (value && typeof value === "object"){
+    return `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${stableStringify(value[k])}`).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+function roundedCoordKey(coord, digits=4){
+  if (!coord) return "";
+  return `${Number(coord.lat).toFixed(digits)},${Number(coord.lng).toFixed(digits)}`;
+}
+function apiCacheKey(scope, parts){
+  return LOCAL_CACHE_PREFIX + scope + ":" + stableStringify(parts);
+}
+function readApiCache(key){
+  const now = Date.now();
+  const mem = memoryCache.get(key);
+  if (mem && mem.expiresAt > now) return mem.value;
+  if (mem) memoryCache.delete(key);
+  try{
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    const entry = JSON.parse(raw);
+    if (!entry || entry.expiresAt <= now){
+      localStorage.removeItem(key);
+      return null;
+    }
+    memoryCache.set(key, entry);
+    return entry.value;
+  }catch(_){
+    return null;
+  }
+}
+function writeApiCache(key, value, ttl){
+  const entry = { expiresAt:Date.now() + ttl, value };
+  memoryCache.set(key, entry);
+  try{ localStorage.setItem(key, JSON.stringify(entry)); }catch(_){}
+  return value;
+}
+function withoutPlaceInstance(item){
+  if (!item || typeof item !== "object") return item;
+  const { _place, ...rest } = item;
+  return rest;
+}
+function cacheableCandidates(items){
+  return (items || []).map(withoutPlaceInstance);
+}
+function cachedRequest(key, ttl, producer){
+  const cached = readApiCache(key);
+  if (cached != null) return Promise.resolve(cached);
+  if (inflightRequests.has(key)) return inflightRequests.get(key);
+  const p = Promise.resolve()
+    .then(producer)
+    .then(value => writeApiCache(key, value, ttl))
+    .finally(() => inflightRequests.delete(key));
+  inflightRequests.set(key, p);
+  return p;
+}
+function rankPoolNeeded(f=rankFilter){
+  const terms = rankQueryTerms(f);
+  if (isTravelRankMode(f) || isWalkableRankMode(f)) return false;
+  if (f.city && (f.area || f.village || terms.length)) return false;
+  if (terms.length) return false;
+  return true;
+}
 
 function firebaseAuthConfigured(){
   const cfg = CONFIG.AUTH?.firebase || {};
@@ -1191,7 +1266,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.26.8";
+const APP_VERSION_FALLBACK = "2026.06.26.9";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1389,19 +1464,22 @@ async function openSharedPlaceRoute(placeId){
   }
 }
 async function fetchSharedPlaceCard(placeId){
+  const cacheKey = apiCacheKey("sharedPlaceCard", { placeId });
+  const cached = readApiCache(cacheKey);
+  if (cached) return cached;
   if (hasApiProxy){
     const data = await apiProxy("placeDetails", { placeId });
     const card = rankCandidateFromProxy(data.item || {}, {});
     if (!card.loc) throw new Error("這個餐廳沒有座標資料");
     if (!card.name) throw new Error("找不到這個餐廳");
-    return Object.assign(card, {
+    return writeApiCache(cacheKey, Object.assign(card, {
       lbCity:cityAreaFromAddress(card.address).city,
       composite:card.rating || 0,
       bScore:card.rating || 0,
       rBonus:0,
       aBonus:0,
       lbFormula:"分享卡片使用 Google 真資料",
-    });
+    }), CONFIG.CACHE_TTL_MS.details);
   }
   await loadGoogle();
   const { Place } = await google.maps.importLibrary("places");
@@ -1418,7 +1496,7 @@ async function fetchSharedPlaceCard(placeId){
   if (!p.location) throw new Error("這個餐廳沒有座標資料");
   const name = toTW(extractText(p.displayName) || "");
   if (!name) throw new Error("找不到這個餐廳");
-  return {
+  return writeApiCache(cacheKey, {
     id: placeId,
     name,
     loc: { lat:p.location.lat(), lng:p.location.lng() },
@@ -1447,7 +1525,7 @@ async function fetchSharedPlaceCard(placeId){
     generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
     awards: [],
     dist:null,
-  };
+  }, CONFIG.CACHE_TTL_MS.details);
 }
 
 async function openLeaderboard(force){
@@ -1468,8 +1546,13 @@ async function openLeaderboard(force){
   buildRankFilterBar();
   $("#rankFilters").classList.add("hidden");
   $("#rankFilterBtn").setAttribute("aria-expanded", "false");
-  if (force) rankNearbyPools = {};
-  await ensureRankPool(force);
+  if (force){
+    rankNearbyPools = {};
+    if (rankPoolNeeded(rankFilter)) rankPool = null;
+  }
+  if (rankPoolNeeded(rankFilter)){
+    await ensureRankPool(force);
+  }
   renderLeaderboard();
 }
 
@@ -1515,7 +1598,13 @@ async function geocodeTaiwanScope(city, area="", village=""){
   const label = [city, area, village].filter(Boolean).join("");
   if (!label) return null;
   if (rankGeocodeCache[label]) return rankGeocodeCache[label];
+  const key = apiCacheKey("geocode", { label });
   try{
+    const cached = readApiCache(key);
+    if (cached){
+      rankGeocodeCache[label] = cached;
+      return cached;
+    }
     let geo = null;
     if (hasApiProxy){
       geo = await apiProxy("geocode", { address:label });
@@ -1530,7 +1619,10 @@ async function geocodeTaiwanScope(city, area="", village=""){
         placeId:g.place_id || "",
       };
     }
-    if (geo?.center) rankGeocodeCache[label] = geo;
+    if (geo?.center){
+      rankGeocodeCache[label] = geo;
+      writeApiCache(key, geo, CONFIG.CACHE_TTL_MS.geocode);
+    }
     return geo?.center ? geo : null;
   }catch(e){
     console.warn("[地區座標] 無法 geocode：", label, e.message || e);
@@ -1874,16 +1966,17 @@ async function ensureRankPool(force){
 }
 
 async function cityCandidates(Place, city, area="", quotaKey=""){
-  try{
+  const textQuery = (area ? city + area : city) + " 餐廳";
+  const key = apiCacheKey("textSearch", { textQuery, city, area });
+  return cachedRequest(key, CONFIG.CACHE_TTL_MS.search, async () => {
     if (hasApiProxy){
-      const textQuery = (area ? city + area : city) + " 餐廳";
       const data = await apiProxy("textSearch", { textQuery, maxResultCount:20 }, { quotaKey });
-      return (data.items || [])
+      return cacheableCandidates((data.items || [])
         .filter(p => p.rating && p.count)
-        .map(p => rankCandidateFromProxy(p, { city, area }));
+        .map(p => rankCandidateFromProxy(p, { city, area })));
     }
     const res = await Place.searchByText({
-      textQuery: (area ? city + area : city) + " 餐廳",
+      textQuery,
       fields: [
         "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
         "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
@@ -1891,23 +1984,28 @@ async function cityCandidates(Place, city, area="", quotaKey=""){
       ],
       maxResultCount: 20, language:"zh-TW", region:"tw",
     });
-    return (res.places || [])
+    return cacheableCandidates((res.places || [])
       .filter(p => p.rating && p.userRatingCount)
-      .map(p => normalizeRankPlace(p, { city, area }));
-  }catch(_){ return []; }
+      .map(p => normalizeRankPlace(p, { city, area })));
+  }).catch(() => []);
 }
 
 async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
-  try{
+  const bias = opts.locationBias ? {
+    center:opts.locationBias.center ? roundedCoordKey(opts.locationBias.center) : "",
+    radius:opts.locationBias.radius || 0,
+  } : null;
+  const key = apiCacheKey("textSearch", { textQuery, bias });
+  return cachedRequest(key, CONFIG.CACHE_TTL_MS.search, async () => {
     if (hasApiProxy){
       const data = await apiProxy("textSearch", {
         textQuery,
         maxResultCount:20,
         locationBias:opts.locationBias || null,
       }, { quotaKey:opts.quotaKey || "" });
-      return (data.items || [])
+      return cacheableCandidates((data.items || [])
         .filter(p => p.rating && p.count)
-        .map(p => rankCandidateFromProxy(p, context));
+        .map(p => rankCandidateFromProxy(p, context)));
     }
     const req = {
       textQuery,
@@ -1920,10 +2018,10 @@ async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
     };
     if (opts.locationBias) req.locationBias = opts.locationBias;
     const res = await Place.searchByText(req);
-    return (res.places || [])
+    return cacheableCandidates((res.places || [])
       .filter(p => p.rating && p.userRatingCount)
-      .map(p => normalizeRankPlace(p, context));
-  }catch(_){ return []; }
+      .map(p => normalizeRankPlace(p, context)));
+  }).then(items => items.map(x => ({ ...x, ...context, queryTerms:context.queryTerms || x.queryTerms || [] }))).catch(() => []);
 }
 
 function rankQueryTerms(f){
@@ -2027,43 +2125,47 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
     rankNearbyPools[key] = all;
     return all;
   }
-  if (hasApiProxy){
-    await ensureAwards();
-    const data = await apiProxy("nearbySearch", {
-      center:state.center,
-      radius,
-      includedPrimaryTypes:rankMealTypes(f),
-      maxResultCount:20,
-    }, { quotaKey });
-    let all = (data.items || [])
-      .filter(p => p.rating && p.count && p.loc)
-      .map(p => rankCandidateFromProxy(p, { center:state.center, queryTerms:terms }));
-    all = finalizeRankCandidates(all, { sortDistance:true });
-    rankNearbyPools[key] = all;
-    return all;
-  }
-  await loadGoogle();
-  await ensureAwards();
-  const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary("places");
-  const res = await Place.searchNearby({
-    fields: [
-      "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
-      "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
-      "regularOpeningHours"
-    ],
-    locationRestriction: { center: state.center, radius },
-    includedPrimaryTypes: rankMealTypes(f),
-    maxResultCount: 20,
-    rankPreference: SearchNearbyRankPreference.POPULARITY,
-    language:"zh-TW",
-    region:"tw",
+  const nearbyCacheKey = apiCacheKey("nearbySearch", {
+    center:roundedCoordKey(state.center),
+    radius,
+    types:rankMealTypes(f),
   });
-  let all = (res.places || [])
-    .filter(p => p.rating && p.userRatingCount && p.location)
-    .map(p => normalizeRankPlace(p, { center:state.center, queryTerms:terms }));
-  all = finalizeRankCandidates(all, { sortDistance:true });
-  rankNearbyPools[key] = all;
-  return all;
+  const cachedNearby = await cachedRequest(nearbyCacheKey, CONFIG.CACHE_TTL_MS.search, async () => {
+    if (hasApiProxy){
+      await ensureAwards();
+      const data = await apiProxy("nearbySearch", {
+        center:state.center,
+        radius,
+        includedPrimaryTypes:rankMealTypes(f),
+        maxResultCount:20,
+      }, { quotaKey });
+      return cacheableCandidates((data.items || [])
+        .filter(p => p.rating && p.count && p.loc)
+        .map(p => rankCandidateFromProxy(p, { center:state.center, queryTerms:terms })));
+    }
+    await loadGoogle();
+    await ensureAwards();
+    const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary("places");
+    const res = await Place.searchNearby({
+      fields: [
+        "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
+        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
+        "regularOpeningHours"
+      ],
+      locationRestriction: { center: state.center, radius },
+      includedPrimaryTypes: rankMealTypes(f),
+      maxResultCount: 20,
+      rankPreference: SearchNearbyRankPreference.POPULARITY,
+      language:"zh-TW",
+      region:"tw",
+    });
+    return cacheableCandidates((res.places || [])
+      .filter(p => p.rating && p.userRatingCount && p.location)
+      .map(p => normalizeRankPlace(p, { center:state.center, queryTerms:terms })));
+  }).catch(() => []);
+  let cachedAll = finalizeRankCandidates(cachedNearby.map(x => ({ ...x, queryTerms:terms })), { sortDistance:true });
+  rankNearbyPools[key] = cachedAll;
+  return cachedAll;
 }
 
 function rankTravelRadiusSteps(travel=activeRankTravel()){
@@ -2339,10 +2441,13 @@ function rankFilterPrecisionText(){
 }
 async function renderLeaderboard(){
   if (!hasDataApi){ $("#rankList").innerHTML = `<div class="rank-note">需要後端 API proxy 或 Google 金鑰才能載入排行榜。</div>`; return; }
-  if (!rankPool){ return; }
   const token = ++rankRenderToken;
   const f = rankFilter;
-  let source = rankPool;
+  if (rankPoolNeeded(f) && !rankPool){
+    await ensureRankPool(false);
+    if (token !== rankRenderToken) return;
+  }
+  let source = rankPool || [];
   const searchTerms = rankQueryTerms(f);
   const useTravel = isTravelRankMode(f);
   const useNearby = isWalkableRankMode(f);
@@ -2424,7 +2529,7 @@ async function renderLeaderboard(){
       }
       const prefetchCount = Math.min(
         list.length,
-        Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * (i + 1))
+        Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT)
       );
       const routeCandidates = list.slice(0, prefetchCount).map(x => Object.assign(x, {
         distanceRelaxed,
@@ -2433,7 +2538,7 @@ async function renderLeaderboard(){
       }));
       if (!routeCandidates.length) continue;
       const routeCards = routeCandidates.map(rankCardData);
-      await enrichRankCardRoutes(routeCards);
+      await enrichRankCardRoutes(routeCards, f.travel);
       if (token !== rankRenderToken) return;
       const withinLimit = routeCards.filter(c => isWithinRankTravelLimit(c, f.travel)).slice(0, RANK_TOP);
       bestCards = withinLimit.length >= bestCards.length ? withinLimit : bestCards;
@@ -2478,7 +2583,7 @@ async function renderLeaderboard(){
     await fetchRankRich(cards);
     if (token !== rankRenderToken) return;
     cards = cards.map(c => Object.assign(c, rankRich[c.id] || {}));
-    await enrichRankCardRoutes(cards);
+    await enrichRankCardRoutes(cards, f.travel);
     if (token !== rankRenderToken) return;
     trackUsage("leaderboard_result", {
       mode:"route_expand",
@@ -2577,7 +2682,7 @@ async function renderLeaderboard(){
   await fetchRankRich(top);
   if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
   let cards = top.map(rankCardData);
-  await enrichRankCardRoutes(cards);
+  await enrichRankCardRoutes(cards, f.travel || activeRankTravel());
   if (token !== rankRenderToken) return;
   if (isTravelRankMode(f)){
     const beforeLimit = cards.length;
@@ -2664,9 +2769,13 @@ async function fetchRankRich(cands){
   if (hasApiProxy){
     await Promise.all(targets.map(async c => {
       if (rankRich[c.id]) return;
+      const key = apiCacheKey("placeDetails", { placeId:c.id });
+      const cached = readApiCache(key);
+      if (cached){ rankRich[c.id] = cached; return; }
       try{
         const data = await apiProxy("placeDetails", { placeId:c.id });
         rankRich[c.id] = rankCandidateFromProxy(data.item || {}, {});
+        writeApiCache(key, rankRich[c.id], CONFIG.CACHE_TTL_MS.details);
       }catch(_){
         rankRich[c.id] = {};
       }
@@ -2677,6 +2786,9 @@ async function fetchRankRich(cands){
   const { Place } = await google.maps.importLibrary("places");
   await Promise.all(targets.map(async c => {
     if (rankRich[c.id]) return;
+    const key = apiCacheKey("placeDetails", { placeId:c.id });
+    const cached = readApiCache(key);
+    if (cached){ rankRich[c.id] = cached; return; }
     try{
       const p = new Place({ id: c.id });
       await p.fetchFields({ fields:[
@@ -2711,6 +2823,7 @@ async function fetchRankRich(cands){
         summary: toTW(extractEditorial(p.editorialSummary)),
         generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
       };
+      writeApiCache(key, rankRich[c.id], CONFIG.CACHE_TTL_MS.details);
     }catch(_){ rankRich[c.id] = {}; }
   }));
 }
@@ -2738,26 +2851,39 @@ function rankCardData(c){
   }, rich);
 }
 
-async function enrichRankCardRoutes(cards){
+function routeModeSpec(travel=activeRankTravel()){
+  return travel === RANK_TRAVEL_DRIVE
+    ? { apiMode:"DRIVING", prefix:"drive" }
+    : { apiMode:"WALKING", prefix:"walk" };
+}
+function routeTargetKey(targets){
+  return targets.map(r => r.id || roundedCoordKey(r.loc, 5)).join("|");
+}
+async function routeItemsCached(targets, travel=activeRankTravel()){
+  const spec = routeModeSpec(travel);
+  const key = apiCacheKey("routeMatrix", {
+    origin:roundedCoordKey(state.center, 4),
+    mode:spec.apiMode,
+    targets:routeTargetKey(targets),
+  });
+  return cachedRequest(key, CONFIG.CACHE_TTL_MS.route, async () => {
+    if (hasApiProxy){
+      const data = await apiProxy("routeMatrix", { origin:state.center, targets:targets.map(r => r.loc), travelMode:spec.apiMode });
+      return data.items || [];
+    }
+    await loadGoogle();
+    return routeMatrixItems(targets, spec.apiMode)
+      .catch(() => distanceMatrixItems(targets, google.maps.TravelMode[spec.apiMode]));
+  });
+}
+
+async function enrichRankCardRoutes(cards, travel=activeRankTravel()){
   const targets = cards.filter(r => r.loc && r.dist != null);
   if (!targets.length || !hasDataApi) return;
   try{
-    if (hasApiProxy){
-      const [walk, drive] = await Promise.all([
-        apiProxy("routeMatrix", { origin:state.center, targets:targets.map(r => r.loc), travelMode:"WALKING" }),
-        apiProxy("routeMatrix", { origin:state.center, targets:targets.map(r => r.loc), travelMode:"DRIVING" }),
-      ]);
-      applyRouteItems(walk.items || [], targets, "walk");
-      applyRouteItems(drive.items || [], targets, "drive");
-      return;
-    }
-    await loadGoogle();
-    const [walk, drive] = await Promise.all([
-      routeMatrixItems(targets, "WALKING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.WALKING)),
-      routeMatrixItems(targets, "DRIVING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.DRIVING)),
-    ]);
-    applyRouteItems(walk, targets, "walk");
-    applyRouteItems(drive, targets, "drive");
+    const spec = routeModeSpec(travel);
+    const items = await routeItemsCached(targets, travel);
+    applyRouteItems(items, targets, spec.prefix);
   }catch(e){
     console.warn("[排行榜路線] Google 路線時間取得失敗，保留直線距離估算：", e.message);
   }
@@ -3615,27 +3741,12 @@ async function enrichRoutes(){
   const targets = state.ranked.filter(r => r.loc && r.dist != null);
   if (!targets.length || !hasDataApi) return;
   try{
-    if (hasApiProxy){
-      const [walk, drive] = await Promise.all([
-        apiProxy("routeMatrix", { origin:state.center, targets:targets.map(r => r.loc), travelMode:"WALKING" }),
-        apiProxy("routeMatrix", { origin:state.center, targets:targets.map(r => r.loc), travelMode:"DRIVING" }),
-      ]);
-      if (token !== routeRenderToken) return;
-      applyRouteItems(walk.items || [], targets, "walk");
-      applyRouteItems(drive.items || [], targets, "drive");
-      trackUsage("route_result", { targetCount:targets.length, walkCount:(walk.items || []).length, driveCount:(drive.items || []).length });
-      renderList();
-      return;
-    }
-    await loadGoogle();
-    const [walk, drive] = await Promise.all([
-      routeMatrixItems(targets, "WALKING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.WALKING)),
-      routeMatrixItems(targets, "DRIVING").catch(() => distanceMatrixItems(targets, google.maps.TravelMode.DRIVING)),
-    ]);
+    const travel = activeRankTravel();
+    const spec = routeModeSpec(travel);
+    const items = await routeItemsCached(targets, travel);
     if (token !== routeRenderToken) return;
-    applyRouteItems(walk, targets, "walk");
-    applyRouteItems(drive, targets, "drive");
-    trackUsage("route_result", { targetCount:targets.length, walkCount:walk.length, driveCount:drive.length });
+    applyRouteItems(items, targets, spec.prefix);
+    trackUsage("route_result", { targetCount:targets.length, mode:spec.apiMode, itemCount:items.length });
     renderList();
   }catch(e){
     console.warn("[路線] Google 路線時間取得失敗，保留直線距離估算：", e.message);
