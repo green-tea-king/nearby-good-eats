@@ -1147,7 +1147,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 5 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.26.3";
+const APP_VERSION_FALLBACK = "2026.06.26.4";
 const RANK_TOP = 5;                 // 只列前 5 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1157,9 +1157,9 @@ const RANK_TRAVEL_DRIVE = "開車";
 const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"travel",  label:"交通", tier:"route", opts:[{label:"走路"}, {label:"開車"}] },
   { key:"open",    label:"營業", tier:"hard", opts:[{label:"不限"}, {label:"營業中"}] },
-  { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐"}, {label:"早茶", query:"早茶"}, {label:"午餐", query:"午餐"}, {label:"午茶", query:"下午茶"}, {label:"晚餐", query:"晚餐"}, {label:"消夜", query:"宵夜"}] },
-  { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat"}] },
-  { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食"}] },
+  { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
+  { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
+  { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, city:"", area:"", village:"" };
 let rankPool = null;     // 分類＋排名後的全台候選
@@ -1664,6 +1664,12 @@ function normalizeRankPlace(p, context={}){
     generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
     servesVeg: p.servesVegetarianFood===true,
     servesAlcohol: (p.servesBeer===true || p.servesWine===true || p.servesCocktails===true),
+    servesBreakfast: p.servesBreakfast===true,
+    servesLunch: p.servesLunch===true,
+    servesDinner: p.servesDinner===true,
+    servesBrunch: p.servesBrunch===true,
+    servesDessert: p.servesDessert===true,
+    servesCoffee: p.servesCoffee===true,
     goodGroups: p.isGoodForGroups===true,
     reservable: p.isReservable===true,
     openNow: isOpenNow(p.regularOpeningHours),
@@ -1703,6 +1709,12 @@ function rankCandidateFromProxy(x, context={}){
     priceText:toTW(x.priceText || ""),
     servesVeg:x.servesVeg===true,
     servesAlcohol:x.servesAlcohol===true,
+    servesBreakfast:x.servesBreakfast===true,
+    servesLunch:x.servesLunch===true,
+    servesDinner:x.servesDinner===true,
+    servesBrunch:x.servesBrunch===true,
+    servesDessert:x.servesDessert===true,
+    servesCoffee:x.servesCoffee===true,
     goodGroups:x.goodGroups===true,
     reservable:x.reservable===true,
     openNow:x.openNow,
@@ -1830,7 +1842,7 @@ async function cityCandidates(Place, city, area="", quotaKey=""){
       textQuery: (area ? city + area : city) + " 餐廳",
       fields: [
         "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
-        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","isGoodForGroups","isReservable",
+        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
         "regularOpeningHours","reviewSummary","editorialSummary","generativeSummary"
       ],
       maxResultCount: 20, language:"zh-TW", region:"tw",
@@ -1857,7 +1869,7 @@ async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
       textQuery,
       fields: [
         "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
-        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","isGoodForGroups","isReservable",
+        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
         "regularOpeningHours","reviewSummary","editorialSummary","generativeSummary"
       ],
       maxResultCount:20, language:"zh-TW", region:"tw",
@@ -1992,7 +2004,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   const res = await Place.searchNearby({
     fields: [
       "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
-      "servesVegetarianFood","servesBeer","servesWine","servesCocktails","isGoodForGroups","isReservable",
+      "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
       "regularOpeningHours"
     ],
     locationRestriction: { center: state.center, radius },
@@ -2010,7 +2022,37 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   return all;
 }
 
-// 依 Google 類型 + 店名關鍵字做近似分類（無法 100% 精確，僅供篩選參考）
+const MEAL_FILTER_RULES = {
+  "早餐": { flags:["servesBreakfast"], re:/breakfast|早餐|晨食|永和豆漿|蛋餅|飯糰|燒餅|油條/ },
+  "早茶": { flags:["servesBrunch","servesCoffee"], re:/brunch|早午餐|早茶|飲茶|港式飲茶|港點|茶餐廳/ },
+  "午餐": { flags:["servesLunch"], re:/午餐|定食|便當|簡餐|商業午餐|自助餐|飯館|麵館/ },
+  "午茶": { flags:["servesCoffee","servesDessert"], re:/cafe|coffee|dessert|bakery|tea.?house|下午茶|甜點|咖啡|茶屋|烘焙|蛋糕|甜品|鬆餅/ },
+  "晚餐": { flags:["servesDinner"], re:/晚餐|餐酒|fine.?dining|無菜單|割烹|懷石|鐵板燒|法餐|火鍋|燒肉|牛排|合菜/ },
+  "消夜": { flags:[], re:/宵夜|消夜|夜市|居酒屋|串燒|串|鹹酥雞|燒烤|熱炒|羊肉爐|薑母鴨|深夜/ },
+};
+const VEG_EVIDENCE_RE = /vegetarian|vegan|素食|蔬食|齋|純素|蛋奶素|五辛素|素餐|veggie/;
+const VEG_ONLY_RE = /純素|全素|素食餐廳|蔬食餐廳|vegan|vegetarian restaurant/;
+function mealFlagMatch(o, label){
+  const rule = MEAL_FILTER_RULES[label];
+  return !!rule?.flags?.some(flag => o[flag] === true);
+}
+function mealTextMatch(o, label){
+  const rule = MEAL_FILTER_RULES[label];
+  if (!rule?.re) return false;
+  const text = [
+    o.name, o.ptd, o.typeName, o.pt, o.address,
+    o.reviewSummary, o.summary, o.generativeSummary,
+  ].filter(Boolean).join(" ").toLowerCase();
+  return rule.re.test(text);
+}
+function vegEvidenceText(o){
+  return [
+    o.name, o.ptd, o.typeName, o.pt, o.address,
+    o.reviewSummary, o.summary, o.generativeSummary,
+  ].filter(Boolean).join(" ");
+}
+
+// 依 Google 欄位 + 類型 + 店名關鍵字做分類（無法 100% 精確，僅供篩選參考）
 function classifyCandidate(o){
   const s = (o.name + " " + o.ptd + " " + o.pt).toLowerCase();
   const re = r => r.test(o.name + o.ptd) || r.test(s);
@@ -2018,13 +2060,10 @@ function classifyCandidate(o){
   // 內部分類標籤
   if (re(/chinese|cantonese|sichuan|hunan|dumpling|hot.?pot|noodle|dim.?sum|中式|中菜|中餐|台菜|台式|川菜|粵|港式|江浙|上海|湘菜|客家|熱炒|牛肉麵|餃|鍋|滷味|燒臘|點心|餛飩|麵食|羊肉|快炒/)) t.cuisine.push("中式");
   if (re(/italian|french|american|spanish|greek|steak|pizza|hamburger|mediterranean|mexican|bistro|brunch|義式|義大利|法式|法國|美式|西餐|西式|歐|牛排|排餐|披薩|pasta|地中海|漢堡|墨西哥|burger/)) t.cuisine.push("西式");
-  // 時段（Google 時段資料有限，以類型/店名近似）
-  if (re(/breakfast|早餐|晨食|永和豆漿|蛋餅/)) t.meal.push("早餐");
-  if (re(/brunch|早午餐|早茶|飲茶|港式飲茶|港點/)) t.meal.push("早茶");
-  if (re(/午餐|定食|便當|簡餐|商業午餐|自助餐/)) t.meal.push("午餐");
-  if (re(/cafe|coffee|dessert|bakery|tea.?house|下午茶|甜點|咖啡|茶屋|烘焙|蛋糕|甜品|鬆餅/)) t.meal.push("午茶");
-  if (re(/晚餐|餐酒|fine.?dining|無菜單|割烹|懷石|鐵板燒|法餐/)) t.meal.push("晚餐");
-  if (re(/宵夜|消夜|夜市|居酒屋|串燒|串|鹹酥雞|燒烤|熱炒|羊肉爐|薑母鴨/)) t.meal.push("消夜");
+  // 時段：優先用 Google 供餐欄位，再用店名/類型/摘要近似。
+  Object.keys(MEAL_FILTER_RULES).forEach(label => {
+    if (mealFlagMatch(o, label) || mealTextMatch(o, label)) t.meal.push(label);
+  });
   // 方式：Google 沒有固定「單點/吃到飽」欄位，用店名與類型關鍵字近似；未命中吃到飽者視為單點
   const buffet = re(BUFFET_EVIDENCE_RE);
   t.service.push(buffet ? "吃到飽" : "單點");
@@ -2032,14 +2071,18 @@ function classifyCandidate(o){
   const groupMeal = o.goodGroups || o.reservable || re(/聚餐|合菜|桌菜|包廂|宴會|火鍋|鍋物|燒肉|烤肉|居酒屋|餐酒館|熱炒|buffet|吃到飽|多人|family|group|hot.?pot|barbecue|bbq|bistro/);
   t.occasion.push(groupMeal ? "聚餐" : "獨享");
   // 飲食
-  const veg = o.servesVeg || re(/vegetarian|vegan|素食|蔬食|齋|蔬|純素/);
-  t.diet.push(veg ? "素食" : "葷食");
+  const vegText = vegEvidenceText(o);
+  const veg = o.servesVeg || VEG_EVIDENCE_RE.test(vegText);
+  const vegOnly = VEG_ONLY_RE.test(vegText);
+  if (veg) t.diet.push("素食");
+  if (!vegOnly) t.diet.push("葷食");
   return t;
 }
 
 // 套用篩選 → 取前 5 → 補抓完整欄位 → 以「附近美食」卡片格式渲染
 let rankRenderToken = 0;
 const BUFFET_EVIDENCE_RE = /吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|無限供應|無限暢食|任食|任點任食|吃飽飽|饗食天堂|漢來海港|旭集|饗饗|島語|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋|欣葉日本料理|果然匯|蓮池閣|饗泰多/;
+const BUFFET_NEGATIVE_RE = /非吃到飽|不是吃到飽|不吃到飽|沒有吃到飽|無吃到飽|單點制|單點式|改為單點/;
 function rankEvidenceText(item){
   return [
     item.name,
@@ -2053,15 +2096,24 @@ function rankEvidenceText(item){
   ].filter(Boolean).join(" ");
 }
 function hasBuffetEvidence(item){
-  return BUFFET_EVIDENCE_RE.test(rankEvidenceText(item));
+  const text = rankEvidenceText(item);
+  return BUFFET_EVIDENCE_RE.test(text) && !BUFFET_NEGATIVE_RE.test(text);
 }
 function rankServiceMatch(item, value){
   if (value === "吃到飽") return hasBuffetEvidence(item);
   if (value === "單點") return !hasBuffetEvidence(item);
   return (item.tags?.service||[]).includes(value) || (item.aiTags?.service||[]).includes(value);
 }
+function rankMealMatch(item, value){
+  return (item.tags?.meal||[]).includes(value) || (item.aiTags?.meal||[]).includes(value);
+}
+function rankDietMatch(item, value){
+  return (item.tags?.diet||[]).includes(value) || (item.aiTags?.diet||[]).includes(value);
+}
 function rankTagMatch(item, key, value){
   if (key === "service") return rankServiceMatch(item, value);
+  if (key === "meal") return rankMealMatch(item, value);
+  if (key === "diet") return rankDietMatch(item, value);
   return (item.queryTerms||[]).includes(value)
     || (item.tags?.[key]||[]).includes(value)
     || (item.aiTags?.[key]||[]).includes(value);
@@ -2174,6 +2226,9 @@ async function enrichAiFilterTags(items, f){
         googleFlags:{
           servesVeg:x.servesVeg===true, servesAlcohol:x.servesAlcohol===true,
           goodGroups:x.goodGroups===true, reservable:x.reservable===true,
+          servesBreakfast:x.servesBreakfast===true, servesLunch:x.servesLunch===true,
+          servesDinner:x.servesDinner===true, servesBrunch:x.servesBrunch===true,
+          servesDessert:x.servesDessert===true, servesCoffee:x.servesCoffee===true,
         },
       })),
     };
@@ -2439,7 +2494,7 @@ async function fetchRankRich(cands){
         "hasDineIn","hasTakeout","hasDelivery","isReservable","hasOutdoorSeating","allowsDogs","hasLiveMusic",
         "isGoodForChildren","isGoodForGroups","hasMenuForChildren","hasRestroom",
         "accessibilityOptions","paymentOptions","parkingOptions",
-        "servesVegetarianFood","servesBeer","servesWine","servesCocktails",
+        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee",
         "reviewSummary","editorialSummary","generativeSummary"
       ]});
       rankRich[c.id] = {
@@ -2456,6 +2511,12 @@ async function fetchRankRich(cands){
         accessStr:accessText(p.accessibilityOptions), payStr:payText(p.paymentOptions), parkStr:parkText(p.parkingOptions),
         servesVeg:p.servesVegetarianFood===true,
         servesAlcohol:(p.servesBeer===true||p.servesWine===true||p.servesCocktails===true),
+        servesBreakfast:p.servesBreakfast===true,
+        servesLunch:p.servesLunch===true,
+        servesDinner:p.servesDinner===true,
+        servesBrunch:p.servesBrunch===true,
+        servesDessert:p.servesDessert===true,
+        servesCoffee:p.servesCoffee===true,
         reviewSummary: toTW(extractReviewSummary(p.reviewSummary)),
         summary: toTW(extractEditorial(p.editorialSummary)),
         generativeSummary: toTW(extractGenerativeSummary(p.generativeSummary)),
