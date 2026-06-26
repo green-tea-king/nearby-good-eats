@@ -387,6 +387,8 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge .yr{opacity:.6;font-size:9.5px;font-family:var(--mono);}
 .badge.michelin{background:var(--gold-weak);color:var(--michelin);border-color:rgba(200,162,76,.32);}
 .badge.michelin::before{content:"✦";font-size:9px;}
+.badge.fifty{background:rgba(255,255,255,.10);color:var(--text);border-color:rgba(255,255,255,.24);}
+.badge.fifty::before{content:"50";font-size:8.5px;font-family:var(--mono);color:var(--gold);}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
 .badge.plate{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.26);}
 .badge.cert{background:rgba(95,185,138,.11);color:var(--green);border-color:rgba(95,185,138,.28);}
@@ -587,11 +589,13 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
         <b>② 評鑑加分</b>
         <ul class="ri-list">
           <li>米其林　三星 +0.5・二星 +0.4・一星 +0.3</li>
-          <li>必比登推介　+0.2</li>
-          <li>500 盤　每盤 +0.03（上限 +0.4）</li>
+          <li>50 Best　+0.45（只影響少數真實入榜店）</li>
+          <li>必比登推介　+0.22</li>
+          <li>500 盤　每盤 +0.03（上限 +0.35）</li>
+          <li>外部評鑑總加分上限 +0.75，Google 評分與評論數仍是主體</li>
         </ul>
       </div>
-      <div class="ri-total">綜合評價 ＝ 貝氏分數 ＋ 評鑑加分</div>
+      <div class="ri-total">綜合評價 ＝ Google 貝氏分數 ＋ 評論量信心加分 ＋ 外部評鑑加分 ＋ 營業/時段加分 － 距離扣分</div>
       <p class="ri-note">未篩選時列全台綜合前 3 名（第 1 名在最上）。濾網優先使用 Google 真欄位（評分、評論數、價位、素食、適合團體、可訂位等），其次把「吃到飽、素食」等條件加入 Google 搜尋詞。若未來接上後端 AI，可再用 Google 真資料做二次標籤判斷。</p>
     </div>
   </div>
@@ -793,10 +797,12 @@ const CONFIG = {
 
   // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
   AWARD_BONUS: {
-    michelin: { "三星": 0.5, "二星": 0.4, "一星": 0.3 },
-    bib: 0.2,                 // 必比登推介
-    platePerUnit: 0.03,       // 500 盤每盤加分
-    plateCap: 0.4,            // 500 盤加分上限
+    michelin: { "三星": 0.5, "二星": 0.4, "一星": 0.3 }, // 高權重，但仍只疊加在 Google 分數上
+    fiftyBest: 0.45,          // 50 Best：高權重、少數店適用
+    bib: 0.22,                // 必比登推介：中高權重
+    platePerUnit: 0.03,       // 500 盤：中高權重，依盤數遞增
+    plateCap: 0.35,           // 500 盤加分上限，避免壓過 Google 主體
+    totalCap: 0.75,           // 外部評鑑總加分上限，Google 評分/評論數仍是主體
   },
 
   // ── 距離 / 營業 對排名的影響（綜合排序時）
@@ -1267,7 +1273,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.26.10";
+const APP_VERSION_FALLBACK = "2026.06.27.1";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -3650,11 +3656,14 @@ function reviewCountBonus(count){
 
 function awardBonus(awards){
   let michelin = 0;
+  let fiftyBest = 0;
   let bib = 0;
   let plate = 0;
   for (const a of (awards||[])) {
     if (a.guide === "michelin") {
       michelin = Math.max(michelin, CONFIG.AWARD_BONUS.michelin[a.level] || 0);
+    } else if (a.guide === "50best") {
+      fiftyBest = CONFIG.AWARD_BONUS.fiftyBest;
     } else if (a.guide === "bib") {
       bib = CONFIG.AWARD_BONUS.bib;
     } else if (a.guide === "500plate") {
@@ -3662,7 +3671,7 @@ function awardBonus(awards){
       plate = Math.max(plate, Math.min(plates * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap));
     }
   }
-  return michelin + bib + plate;
+  return Math.min(michelin + fiftyBest + bib + plate, CONFIG.AWARD_BONUS.totalCap);
 }
 
 // 該店明確供應「當前時段」餐點 → 小加分（讓時段篩選更準；資料缺就不加，不硬篩）
@@ -3989,6 +3998,7 @@ function badgeHTML(a){
   const year = escapeHTML(String(a.year || ""));
   if (a.guide==="michelin") return `<span class="badge michelin" title="MICHELIN Guide ${year} ${escapeHTML(a.level||"")}">米其林 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="bib") return `<span class="badge bib" title="MICHELIN Bib Gourmand ${year}">必比登<span class="yr">${year}</span></span>`;
+  if (a.guide==="50best") return `<span class="badge fifty" title="50 Best ${year} ${escapeHTML(a.level||"")}">50 Best ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="500plate") {
     const label = a.level || (a.plates ? `${a.plates}盤` : "");
     return `<span class="badge plate" title="500盤 ${year} ${escapeHTML(label)}">500盤${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
@@ -4209,7 +4219,7 @@ function matchAwards(rest, list){
 
 // 彙總 500 盤（dishPlates 各菜盤數 → 餐廳層級總盤數）並標準化顯示
 function normalizeAwards(awards){
-  const priority = a => a.guide === "michelin" ? 1 : (a.guide === "bib" ? 2 : (a.guide === "500plate" ? 3 : 9));
+  const priority = a => a.guide === "michelin" ? 1 : (a.guide === "50best" ? 2 : (a.guide === "bib" ? 3 : (a.guide === "500plate" ? 4 : 9)));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
       const plates = Array.isArray(a.dishPlates)

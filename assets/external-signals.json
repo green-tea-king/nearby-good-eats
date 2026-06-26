@@ -1,6 +1,6 @@
 {
-  "version": "2026.06.26.10",
-  "updated": "2026-06-26",
+  "version": "2026.06.27.1",
+  "updated": "2026-06-27",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -39,6 +39,15 @@
       "dataFile": "assets/awards-taiwan.json"
     },
     {
+      "id": "50best",
+      "label": "50 Best",
+      "type": "award",
+      "updateCadence": "yearly",
+      "runtimeLookup": false,
+      "rankImpact": "high",
+      "scope": "少數入榜店，批次人工整理後才啟用"
+    },
+    {
       "id": "media-editorial",
       "label": "媒體推薦",
       "type": "editorial",
@@ -66,6 +75,12 @@
       "scoreRange": [0, 1],
       "display": "badge",
       "rankUse": "strong"
+    },
+    "fiftyBest": {
+      "label": "50 Best",
+      "scoreRange": [0, 1],
+      "display": "badge",
+      "rankUse": "strongFewStoresOnly"
     },
     "socialBuzz": {
       "label": "社群聲量",
@@ -101,7 +116,7 @@
     "aliases": ["可選，分店名或常見別名。"],
     "signals": [
       {
-        "type": "socialBuzz | mediaMention | platformCertification | queueSignal",
+        "type": "fiftyBest | socialBuzz | mediaMention | platformCertification | queueSignal",
         "sourceId": "sourceCatalog.id",
         "label": "顯示用標籤，例如 社群熱店、媒體推薦、平台嚴選。",
         "score": "0-100 或定義中的分數範圍。",
