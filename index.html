@@ -809,6 +809,7 @@ const CONFIG = {
 
   // ── 評鑑 / 認證規則：獨立資料檔，避免徽章邏輯散在畫面程式中
   AWARDS_URL: APP_SETTINGS.awardsUrl || "assets/awards-taiwan.json",
+  EXTERNAL_SIGNALS_URL: APP_SETTINGS.externalSignalsUrl || "assets/external-signals.json",
   CERT_BADGES_URL: APP_SETTINGS.certificationBadgesUrl || "assets/certification-badges.json",
   VILLAGES_URL: APP_SETTINGS.villagesUrl || "assets/taiwan-villages.json",
 
@@ -1266,7 +1267,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.26.9";
+const APP_VERSION_FALLBACK = "2026.06.26.10";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -3648,16 +3649,20 @@ function reviewCountBonus(count){
 }
 
 function awardBonus(awards){
-  let b = 0;
+  let michelin = 0;
+  let bib = 0;
+  let plate = 0;
   for (const a of (awards||[])) {
-    if (a.guide === "michelin") b += CONFIG.AWARD_BONUS.michelin[a.level] || 0;
-    else if (a.guide === "bib") b += CONFIG.AWARD_BONUS.bib;
-    else if (a.guide === "500plate") {
-      const plates = a.plates != null ? a.plates : (parseInt(a.level) || 0);
-      b += Math.min(plates * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap);
+    if (a.guide === "michelin") {
+      michelin = Math.max(michelin, CONFIG.AWARD_BONUS.michelin[a.level] || 0);
+    } else if (a.guide === "bib") {
+      bib = CONFIG.AWARD_BONUS.bib;
+    } else if (a.guide === "500plate") {
+      const plates = Number(a.plates ?? String(a.level || "").match(/\d+/)?.[0] ?? 0) || 0;
+      plate = Math.max(plate, Math.min(plates * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap));
     }
   }
-  return b;
+  return michelin + bib + plate;
 }
 
 // 該店明確供應「當前時段」餐點 → 小加分（讓時段篩選更準；資料缺就不加，不硬篩）
@@ -3981,9 +3986,13 @@ function cardHTML(r, rank){
 }
 
 function badgeHTML(a){
-  if (a.guide==="michelin") return `<span class="badge michelin">米其林 ${a.level}<span class="yr">${a.year||""}</span></span>`;
-  if (a.guide==="bib") return `<span class="badge bib">必比登<span class="yr">${a.year||""}</span></span>`;
-  if (a.guide==="500plate") return `<span class="badge plate">500盤 ${a.level}<span class="yr">${a.year||""}</span></span>`;
+  const year = escapeHTML(String(a.year || ""));
+  if (a.guide==="michelin") return `<span class="badge michelin" title="MICHELIN Guide ${year} ${escapeHTML(a.level||"")}">米其林 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="bib") return `<span class="badge bib" title="MICHELIN Bib Gourmand ${year}">必比登<span class="yr">${year}</span></span>`;
+  if (a.guide==="500plate") {
+    const label = a.level || (a.plates ? `${a.plates}盤` : "");
+    return `<span class="badge plate" title="500盤 ${year} ${escapeHTML(label)}">500盤${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
+  }
   return "";
 }
 
@@ -4146,50 +4155,70 @@ function ensureAwards(){
 // 店名正規化：全形→半形、去空白標點、去常見尾綴；用於模糊比對
 function normName(s){
   return (s||"").toString()
-    .replace(/[！-～]/g, c => String.fromCharCode(c.charCodeAt(0)-0xFEE0))
+    .normalize("NFKC")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[’‘`´]/g, "'")
+    .replace(/臺/g, "台")
     .replace(/　/g," ")
     .replace(/\s+/g,"")
     .replace(/[()（）・·.,，、!！?？\-_/&]/g,"")
-    .replace(/(總店|本店|本舖|旗艦店|[^]*?分店)$/,"")
+    .replace(/(總店|本店|本舖|旗艦店|分店)$/,"")
     .toLowerCase();
 }
 
 function awardCityMatches(rest, entry){
-  if (!entry?.city) return true;
-  const awardCity = normalizeTaiwanCity(entry.city);
+  const awardCity = normalizeTaiwanCity(entry?.city || cityAreaFromAddress(entry?.address || "").city || "");
+  if (!awardCity) return true;
   const restCity = normalizeTaiwanCity(rest.city || rest.lbCity || cityAreaFromAddress(rest.address || "").city || "");
-  if (!restCity) return true;
+  if (!restCity) return false;
   return restCity === awardCity;
+}
+function awardNames(entry){
+  return [entry?.name, ...(entry?.aliases || [])].filter(Boolean);
 }
 
 // 比對：完全相等→high；包含關係→medium（地址可升級為 high）
-function matchAward(rest, list){
+function awardAddressHasDetail(address){
+  return /[區鄉鎮市].*[路街道巷弄號]|[路街道巷弄號]/.test(address || "");
+}
+function awardKey(a){
+  return [a.guide, a.year || "", a.level || "", a.plates || "", Array.isArray(a.dishPlates) ? a.dishPlates.join(",") : ""].join("|");
+}
+function matchAwards(rest, list){
   const rn = normName(rest.name);
-  if (!rn) return { entry:null, conf:"none" };
-  let best=null, conf="none";
+  if (!rn) return [];
+  const matches = [];
   for (const e of list){
     if (!awardCityMatches(rest, e)) continue;
-    const en = normName(e.name);
-    if (!en) continue;
-    if (en === rn){ best=e; conf="high"; break; }
-    if (en.length>=3 && (rn.includes(en)||en.includes(rn))){ best=e; conf="medium"; }
+    let entryConf = "none";
+    for (const candidateName of awardNames(e)){
+      const en = normName(candidateName);
+      if (!en) continue;
+      if (en === rn){ entryConf = "high"; break; }
+      if (en.length>=3 && (rn.includes(en)||en.includes(rn))) entryConf = "medium";
+    }
+    if (entryConf==="medium" && awardAddressHasDetail(e.address) && rest.address){
+      const a1=e.address.replace(/\s/g,""), a2=rest.address.replace(/\s/g,"");
+      if (a1 && a2 && (a2.includes(a1.slice(0,6))||a1.includes(a2.slice(0,6)))) entryConf="high";
+    }
+    if (entryConf === "high" || entryConf === "medium") matches.push({ entry:e, conf:entryConf });
   }
-  if (best && conf==="medium" && best.address && rest.address){
-    const a1=best.address.replace(/\s/g,""), a2=rest.address.replace(/\s/g,"");
-    if (a1 && a2 && (a2.includes(a1.slice(0,6))||a1.includes(a2.slice(0,6)))) conf="high";
-  }
-  return { entry:best, conf };
+  return matches;
 }
 
 // 彙總 500 盤（dishPlates 各菜盤數 → 餐廳層級總盤數）並標準化顯示
 function normalizeAwards(awards){
+  const priority = a => a.guide === "michelin" ? 1 : (a.guide === "bib" ? 2 : (a.guide === "500plate" ? 3 : 9));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
-      const plates = a.dishPlates ? a.dishPlates.reduce((s,x)=>s+x,0) : (a.plates||0);
-      return { ...a, plates, level:`${plates}盤` };
+      const plates = Array.isArray(a.dishPlates)
+        ? a.dishPlates.reduce((s,x)=>s + (Number(x) || 0), 0)
+        : (Number(a.plates) || Number(String(a.level || "").match(/\d+/)?.[0]) || 0);
+      return { ...a, plates, level:plates ? `${plates}盤` : "" };
     }
     return a;
-  });
+  }).sort((a,b) => priority(a) - priority(b));
 }
 
 // 套用到搜尋結果：高信心自動標；低信心列入 console 待人工覆核（不默默標錯）
@@ -4198,12 +4227,18 @@ function applyAwards(items){
   items.forEach(r=>{
     r.awards = r.awards || [];
     if (!AWARDS || !AWARDS.length) return;
-    const { entry, conf } = matchAward(r, AWARDS);
+    const matches = matchAwards(r, AWARDS);
     // 高信心（完全同名或地址相符）自動標。中信心（店名包含關係，如「鼎泰豐 101店」含「鼎泰豐」）
     // 也自動標，但記入 console 供人工覆核——真實 Google 店名常帶分店/地區後綴，純高信心會漏標。
-    if (entry && (conf==="high" || conf==="medium")) {
-      r.awards = normalizeAwards(entry.awards);
-      if (conf==="medium") review.push({ store:r.name, matched:entry.name });
+    if (matches.length) {
+      const merged = [...r.awards];
+      matches.forEach(({ entry, conf }) => {
+        normalizeAwards(entry.awards).forEach(a => {
+          if (!merged.some(x => awardKey(x) === awardKey(a))) merged.push(a);
+        });
+        if (conf==="medium") review.push({ store:r.name, matched:entry.name });
+      });
+      r.awards = normalizeAwards(merged);
     }
   });
   if (review.length) console.info("[評鑑比對] 中信心自動標記（建議人工確認是否為同一家）：", review);

@@ -7,6 +7,7 @@ window.APP_SETTINGS = {
   appCheckSiteKey: "",
   appCheckDebugToken: false,
   awardsUrl: "assets/awards-taiwan.json",
+  externalSignalsUrl: "assets/external-signals.json",
   certificationBadgesUrl: "assets/certification-badges.json",
   villagesUrl: "assets/taiwan-villages.json",
 };

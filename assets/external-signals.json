@@ -1,0 +1,134 @@
+{
+  "version": "2026.06.26.10",
+  "updated": "2026-06-26",
+  "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "batchOnly": true,
+    "allowManualReview": true,
+    "unknownMeansNoBadge": true,
+    "notes": [
+      "沒有來源證據的訊號不可顯示為徽章，也不可用於加分。",
+      "社群聲量、平台認證、媒體推薦都先批次整理到本檔，再由前端讀取。",
+      "每筆訊號必須保留 sourceId、updated、confidence；低信心只可作為輔助排序，不可顯示強認證。"
+    ]
+  },
+  "sourceCatalog": [
+    {
+      "id": "michelin-guide",
+      "label": "Michelin Guide",
+      "type": "award",
+      "updateCadence": "yearly",
+      "runtimeLookup": false,
+      "dataFile": "assets/awards-taiwan.json"
+    },
+    {
+      "id": "bib-gourmand",
+      "label": "Bib Gourmand",
+      "type": "award",
+      "updateCadence": "yearly",
+      "runtimeLookup": false,
+      "dataFile": "assets/awards-taiwan.json"
+    },
+    {
+      "id": "500plate",
+      "label": "500盤",
+      "type": "award",
+      "updateCadence": "yearly",
+      "runtimeLookup": false,
+      "dataFile": "assets/awards-taiwan.json"
+    },
+    {
+      "id": "media-editorial",
+      "label": "媒體推薦",
+      "type": "editorial",
+      "updateCadence": "monthly",
+      "runtimeLookup": false
+    },
+    {
+      "id": "social-buzz",
+      "label": "社群聲量",
+      "type": "social",
+      "updateCadence": "weekly",
+      "runtimeLookup": false
+    },
+    {
+      "id": "platform-certification",
+      "label": "平台認證",
+      "type": "platform",
+      "updateCadence": "monthly",
+      "runtimeLookup": false
+    }
+  ],
+  "signalDefinitions": {
+    "award": {
+      "label": "外部評鑑",
+      "scoreRange": [0, 1],
+      "display": "badge",
+      "rankUse": "strong"
+    },
+    "socialBuzz": {
+      "label": "社群聲量",
+      "scoreRange": [0, 100],
+      "display": "badgeWhenHighConfidence",
+      "rankUse": "medium"
+    },
+    "mediaMention": {
+      "label": "媒體推薦",
+      "scoreRange": [0, 100],
+      "display": "badgeWhenHighConfidence",
+      "rankUse": "medium"
+    },
+    "platformCertification": {
+      "label": "平台認證",
+      "scoreRange": [0, 100],
+      "display": "badgeWhenHighConfidence",
+      "rankUse": "medium"
+    },
+    "queueSignal": {
+      "label": "排隊熱度",
+      "scoreRange": [0, 100],
+      "display": "detailOnly",
+      "rankUse": "light"
+    }
+  },
+  "restaurants": [],
+  "_recordSchema": {
+    "placeId": "Google place_id；有值時優先用來合併。",
+    "name": "餐廳名稱；沒有 placeId 時用 city + normalized name 比對。",
+    "city": "縣市，使用台北市、新北市等格式。",
+    "area": "行政區，可空白。",
+    "aliases": ["可選，分店名或常見別名。"],
+    "signals": [
+      {
+        "type": "socialBuzz | mediaMention | platformCertification | queueSignal",
+        "sourceId": "sourceCatalog.id",
+        "label": "顯示用標籤，例如 社群熱店、媒體推薦、平台嚴選。",
+        "score": "0-100 或定義中的分數範圍。",
+        "confidence": "high | medium | low",
+        "evidence": ["可追溯摘要，不放整篇文章。"],
+        "url": "來源網址，可空白。",
+        "updated": "YYYY-MM-DD"
+      }
+    ]
+  },
+  "_example": {
+    "placeId": "",
+    "name": "範例店名",
+    "city": "台北市",
+    "area": "中正區",
+    "aliases": ["範例別名"],
+    "signals": [
+      {
+        "type": "socialBuzz",
+        "sourceId": "social-buzz",
+        "label": "社群熱店",
+        "score": 82,
+        "confidence": "medium",
+        "evidence": ["批次整理：近 30 天社群討論量高於同區同類型店家。"],
+        "url": "",
+        "updated": "2026-06-26"
+      }
+    ]
+  }
+}

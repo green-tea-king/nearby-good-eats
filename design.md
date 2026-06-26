@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.26.9
+版本：2026.06.26.10
 
 ## 專案目標
 
@@ -27,8 +27,9 @@
 - `VERSION`：正式版本號，格式為 `YYYY.MM.DD.N`。
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
+- `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
-- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤等加權；已擴充 2025 500 盤全台名單，並保留官方來源 URL。
+- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤等加權；2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項，並保留來源 URL。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/export-release.ps1`：版本匯出腳本。
 - `RELEASES.md`：版本匯出流程備註。
@@ -203,8 +204,9 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 - `C`：可信度門檻，目前設定為 150。
 - 評論量加分用 `log10(n+1) * 0.06` 計算，上限 `0.32`，讓同星等時評論數多者明顯更前，但避免評論數超大的店過度壓過品質。
 - 米其林、必比登、500 盤會有額外加分。
+- 社群聲量、平台認證、媒體推薦等外部資料不做使用者查詢時的即時抓取；先批次整理進 `assets/external-signals.json`，再由前端讀取，降低 API 成本並避免來源不穩。
 - 卡片認證章分兩類：
-  - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援米其林、必比登、500 盤；全台 500 盤資料帶縣市欄位，避免同名餐廳跨縣市誤標。
+  - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援米其林星級、必比登、500 盤；資料帶縣市與來源欄位，前端會合併同店多獎項並避免跨縣市誤標。
   - Google 真欄位認證：由 Google rating / userRatingCount / Places 服務欄位產生，例如高分認證、千則口碑、可訂位、聚餐友善、素食友善、戶外座位、寵物友善、無障礙資訊。
 
 這個設計是為了處理「同樣 4 顆星，但評論數多者可信度應較高」的問題。
@@ -354,8 +356,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.26.9
-畫面顯示 = v06.26.9
+VERSION = 2026.06.26.10
+畫面顯示 = v06.26.10
 ```
 
 ## 維護注意事項
