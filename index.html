@@ -174,6 +174,21 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-titles{flex:1;min-width:0;display:flex;align-items:center;}
 .rank-logo{display:block;width:min(158px,41vw);max-height:46px;height:auto;object-fit:contain;object-position:left center;}
 .rank-version{flex:none;align-self:flex-start;margin:7px 0 0 6px;font-family:var(--mono);font-size:9px;line-height:1;color:var(--text-faint);letter-spacing:0;white-space:nowrap;}
+.rank-guide{flex:none;width:100%;max-width:480px;padding:10px 18px 0;background:var(--bg);}
+.guide-card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg, rgba(200,16,46,.12), rgba(22,18,19,.88) 44%, rgba(8,8,9,.92));border-radius:14px;padding:10px 12px 11px;box-shadow:0 12px 32px -24px rgba(200,16,46,.55);}
+.guide-card::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);opacity:.6;}
+.guide-head{display:flex;align-items:center;gap:7px;margin-bottom:5px;min-width:0;}
+.guide-dot{flex:none;width:7px;height:7px;border-radius:50%;background:var(--text-faint);box-shadow:0 0 0 4px rgba(255,255,255,.04);}
+.guide-title{flex:none;font-size:11px;font-weight:600;color:var(--text);letter-spacing:.08em;}
+.guide-state{flex:none;font-family:var(--mono);font-size:10px;color:var(--text-faint);letter-spacing:.03em;}
+.guide-message{font-size:12.5px;line-height:1.55;color:var(--text-dim);letter-spacing:.01em;}
+.guide-card[data-state="working"] .guide-dot{background:var(--accent-bright);animation:guidePulse 1s ease-in-out infinite;}
+.guide-card[data-state="ready"] .guide-dot{background:#4bd38d;}
+.guide-card[data-state="empty"] .guide-dot{background:#f0bb4b;}
+.guide-card[data-state="error"]{border-color:rgba(200,16,46,.45);}
+.guide-card[data-state="error"] .guide-dot{background:var(--accent-bright);}
+.guide-card[data-state="error"] .guide-message{color:var(--accent-bright);}
+@keyframes guidePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 4px rgba(200,16,46,.1);}50%{transform:scale(1.35);box-shadow:0 0 0 7px rgba(200,16,46,.03);}}
 .rank-info-modal{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.62);backdrop-filter:blur(5px);display:flex;align-items:flex-end;justify-content:center;padding-top:44px;}
 .rank-info-modal.hidden{display:none;}
 .rank-info-sheet{width:100%;max-width:480px;max-height:82vh;overflow-y:auto;background:var(--bg);border:1px solid var(--line);border-bottom:none;border-radius:20px 20px 0 0;padding:16px 20px calc(22px + env(safe-area-inset-bottom,0));box-shadow:0 -18px 48px rgba(0,0,0,.45);animation:rise var(--t) ease both;}
@@ -573,6 +588,16 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <button class="rank-refresh" id="rankRefresh" aria-label="重新整理" title="重新整理">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
     </button>
+  </div>
+  <div class="rank-guide" aria-live="polite" aria-atomic="true">
+    <div class="guide-card" id="guideCard" data-state="idle">
+      <div class="guide-head">
+        <span class="guide-dot" aria-hidden="true"></span>
+        <span class="guide-title">系統導引</span>
+        <span class="guide-state" id="guideState">待命</span>
+      </div>
+      <div class="guide-message" id="guideMessage">這裡會顯示系統狀態、勘誤提醒與操作引導，協助你理解目前推薦結果。</div>
+    </div>
   </div>
   <div class="rank-filters hidden" id="rankFilters"></div>
   <div class="rank-list" id="rankList"></div>
@@ -1280,7 +1305,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.5";
+const APP_VERSION_FALLBACK = "2026.06.27.6";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1309,6 +1334,33 @@ let villageData = null;
 let villageDataPromise = null;
 let rankOriginLabel = "";
 let locationPrivacyNotified = false;
+
+function guideFilterSummary(f=rankFilter){
+  const parts = [];
+  if (rankOriginLabel && !hasRankLocationFilter(f)) parts.push(`定位：${rankOriginLabel}`);
+  if (f.city || f.area || f.village) parts.push(`地區：${[f.city, f.area, f.village].filter(Boolean).join("")}`);
+  if (f.keyword) parts.push(`關鍵字：${String(f.keyword).trim()}`);
+  if (f.travel) parts.push(`交通：${f.travel}${rankTravelLimitText ? " " + rankTravelLimitText(f.travel) : ""}`);
+  if (f.open) parts.push(`營業：${f.open}`);
+  if (f.meal) parts.push(`時段：${f.meal}`);
+  if (f.service) parts.push(`吃法：${f.service}`);
+  if (f.diet) parts.push(`飲食：${f.diet}`);
+  return parts.join(" · ") || "目前使用全台與時間預設條件";
+}
+function setGuide(state="idle", message="", label=""){
+  const card = $("#guideCard");
+  const msg = $("#guideMessage");
+  const st = $("#guideState");
+  if (!card || !msg || !st) return;
+  const stateLabel = label || ({ idle:"待命", working:"執行中", ready:"完成", empty:"無結果", error:"錯誤" }[state] || "狀態");
+  card.dataset.state = state;
+  st.textContent = stateLabel;
+  msg.textContent = message || "這裡會顯示系統狀態、勘誤提醒與操作引導，協助你理解目前推薦結果。";
+}
+function setGuideWorking(message){ setGuide("working", message, "分析中"); }
+function setGuideReady(message){ setGuide("ready", message, "已整理"); }
+function setGuideEmpty(message){ setGuide("empty", message, "可調整"); }
+function setGuideError(message){ setGuide("error", message, "需處理"); }
 
 function hasRankLocationFilter(f=rankFilter){
   return !!(f.city || f.area || f.village);
@@ -1548,13 +1600,18 @@ async function openLeaderboard(force){
   trackUsage("leaderboard_open", { force:!!force, keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", travel:rankFilter.travel || "", open:rankFilter.open || "" });
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
+  setGuideWorking("正在依照目前時間與位置準備排行榜條件。");
   if (!rankContextReady){
     applyCurrentMealToRankFilter();
     buildRankFilterBar();
     $("#rankFilters").classList.add("hidden");
     $("#rankList").innerHTML = `<div class="rank-note">依現在時間與定位點設定走路可到的排行榜…</div>`;
+    setGuideWorking(`先帶入現在時段「${rankFilter.meal || "不限"}」，並嘗試取得定位作為搜尋中心。`);
     const located = await applyCurrentOriginToRankTravel();
-    if (!located) toast("無法取得目前位置，改用全台排行榜");
+    if (!located) {
+      toast("無法取得目前位置，改用全台排行榜");
+      setGuideEmpty("無法取得定位，先改用全台資料；你也可以開啟定位或手動選地區。");
+    }
     rankContextReady = true;
   }
   buildRankFilterBar();
@@ -1567,7 +1624,7 @@ async function openLeaderboard(force){
   if (rankPoolNeeded(rankFilter)){
     await ensureRankPool(force);
   }
-  renderLeaderboard();
+  safeRenderLeaderboard();
 }
 
 function applyCurrentMealToRankFilter(){
@@ -1727,7 +1784,7 @@ async function locateRankArea(btn){
   if (ok){
     const label = rankFilter.city + (rankFilter.area || "");
     buildRankFilterBar();
-    renderLeaderboard();
+    safeRenderLeaderboard();
     toast(`已定位到 ${label}`);
   }else{
     toast("無法取得目前位置，請確認定位權限");
@@ -1778,7 +1835,7 @@ async function locateRankOrigin(btn){
   if (ok){
     rankNearbyPools = {};
     buildRankFilterBar();
-    renderLeaderboard();
+    safeRenderLeaderboard();
     trackUsage("locate_origin", { label:rankOriginLabel, travel:rankFilter.travel || "" });
     toast(`定位：${rankOriginLabel}`);
   }else{
@@ -1954,6 +2011,7 @@ async function ensureRankPool(force){
     rankNearbyPools = {};
   }
   $("#rankList").innerHTML = `<div class="rank-note">整理全台美食中…</div>`;
+  setGuideWorking("正在整理 Google 真資料候選池，評分與評論數會先做加權排序。");
   $("#rankRefresh").classList.add("spin");
   try{
     await ensureAwards();
@@ -1973,6 +2031,7 @@ async function ensureRankPool(force){
   }catch(e){
     console.error(e);
     $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(e.message)}</div>`;
+    setGuideError(`Google 資料載入失敗：${e.message || "未知錯誤"}。`);
     rankPool = null;
   }finally{
     $("#rankRefresh").classList.remove("spin");
@@ -2454,7 +2513,11 @@ function rankFilterPrecisionText(){
   return parts.join(" / ") || "近似判斷";
 }
 async function renderLeaderboard(){
-  if (!hasDataApi){ $("#rankList").innerHTML = `<div class="rank-note">需要後端 API proxy 或 Google 金鑰才能載入排行榜。</div>`; return; }
+  if (!hasDataApi){
+    $("#rankList").innerHTML = `<div class="rank-note">需要後端 API proxy 或 Google 金鑰才能載入排行榜。</div>`;
+    setGuideError("目前沒有可用的 Google 資料來源，請確認 Maps API key 或後端 proxy。");
+    return;
+  }
   const token = ++rankRenderToken;
   const f = rankFilter;
   if (rankPoolNeeded(f) && !rankPool){
@@ -2477,16 +2540,20 @@ async function renderLeaderboard(){
   });
   if (useTravel){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} ${escapeHTML(rankTravelLimitText(f.travel))}美食中…</div>`;
+    setGuideWorking(`正在以「${rankOriginLabel || "目前位置"}」為中心，尋找${rankTravelLimitText(f.travel)}可到的店。`);
   }else if (useNearby){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} 步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內美食中…</div>`;
+    setGuideWorking(`正在查詢 ${rankOriginLabel || "目前位置"} 附近步行可到的店。`);
     source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_RADIUS_M, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }else if (f.city && (f.area || f.village || searchTerms.length)){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (f.village || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
+    setGuideWorking(`正在查詢「${f.city}${f.area || ""}${f.village || ""}${searchTerms.length ? " " + searchTerms.join(" ") : ""}」的 Google 真資料。`);
     source = await areaCandidates(f.city, f.area, f, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }else if (searchTerms.length){
     $("#rankList").innerHTML = `<div class="rank-note">整理全台 ${escapeHTML(searchTerms.join(" "))} 美食中…</div>`;
+    setGuideWorking(`關鍵字是強條件，正在查詢全台「${searchTerms.join(" ")}」相關店家，不會亂塞不相干建議。`);
     source = await keywordCandidates(f, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }
@@ -2523,6 +2590,7 @@ async function renderLeaderboard(){
       finalRadius = radius;
       distanceRelaxed = radius > firstRadius;
       $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} ${escapeHTML(f.travel || activeRankTravel())}同心圓 ${Number(radius).toLocaleString()}m 內美食中…</div>`;
+      setGuideWorking(`第 ${i + 1} 圈搜尋中：${f.travel || activeRankTravel()}模式已查到 ${Number(radius).toLocaleString()}m，目標湊滿 3 張卡片。`);
       const radiusSource = await nearbyRankCandidates(f, radius, renderQuotaKey);
       if (token !== rankRenderToken) return;
       collectedSources.push(radiusSource);
@@ -2591,6 +2659,7 @@ async function renderLeaderboard(){
         ${f.open === "營業中" ? `<button data-empty-action="open-any">不限營業</button>` : ""}
         <button data-empty-action="clear-all">清除篩選</button>
       </div></div>`;
+      setGuideEmpty(`已放寬到 ${Number(finalRadius).toLocaleString()}m 還是沒有符合店家，建議先放寬營業、吃法或關鍵字。`);
       bindEmptyStateActions();
       return;
     }
@@ -2625,12 +2694,14 @@ async function renderLeaderboard(){
     });
     $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
     bindCardEvents($("#rankList"));
+    setGuideReady(`已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間與外部獎牌加權，條件：${guideFilterSummary(f)}。`);
     return;
   }
   let list = applyRankFilters(source, false);
   let distanceRelaxed = false;
   if (!list.length && useNearby){
     $("#rankList").innerHTML = `<div class="rank-note">步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內選擇較少，放寬到 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m…</div>`;
+    setGuideWorking(`步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內不足，正在放寬到 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m。`);
     source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_FALLBACK_M, renderQuotaKey);
     if (token !== rankRenderToken) return;
     list = applyRankFilters(source, false);
@@ -2688,10 +2759,14 @@ async function renderLeaderboard(){
       ${f.travel === "走路" ? `<button data-empty-action="drive">改開車</button>` : ""}
       <button data-empty-action="clear-all">清除篩選</button>
     </div></div>`;
+    setGuideEmpty(f.keyword
+      ? `找不到包含「${f.keyword}」的真實結果。關鍵字是強因子，建議改短一點或清除關鍵字。`
+      : "目前條件沒有符合店家，建議先放寬營業、地區或交通條件。");
     bindEmptyStateActions();
     return;
   }
   $("#rankList").innerHTML = `<div class="rank-note">載入前 ${top.length} 名…</div>`;
+  setGuideWorking(`已找到候選店家，現在只補抓前 ${top.length} 名的詳細資料以節省 API。`);
   await ensureCertificationRules();
   await fetchRankRich(top);
   if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
@@ -2721,6 +2796,7 @@ async function renderLeaderboard(){
         ${f.travel === RANK_TRAVEL_WALK ? `<button data-empty-action="drive">改開車</button>` : ""}
         <button data-empty-action="clear-all">清除篩選</button>
       </div></div>`;
+      setGuideEmpty(`${rankTravelLimitText(f.travel)}內沒有符合店家；可以改開車或清除部分篩選。`);
       bindEmptyStateActions();
       return;
     }
@@ -2750,6 +2826,15 @@ async function renderLeaderboard(){
   });
   $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
   bindCardEvents($("#rankList"));
+  setGuideReady(`已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間與標籤；照片與完整資訊放在詳情內省流量。`);
+}
+
+function safeRenderLeaderboard(){
+  renderLeaderboard().catch(e => {
+    console.error(e);
+    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(e.message || "未知錯誤")}</div>`;
+    setGuideError(`排行榜載入失敗：${e.message || "未知錯誤"}。`);
+  });
 }
 
 function bindEmptyStateActions(){
@@ -2770,7 +2855,7 @@ function bindEmptyStateActions(){
     }
     trackUsage("empty_suggestion", { action });
     buildRankFilterBar();
-    renderLeaderboard();
+    safeRenderLeaderboard();
   }));
 }
 
@@ -2780,6 +2865,7 @@ async function fetchRankRich(cands){
     .filter(c => c?.id)
     .filter((c, i, arr) => arr.findIndex(x => x.id === c.id) === i)
     .slice(0, CONFIG.RANK_DETAIL_PREFETCH_LIMIT);
+  if (targets.length) setGuideWorking(`正在補抓前 ${targets.length} 家的營業、電話、標籤與摘要；照片仍等你打開詳情才載入。`);
   if (hasApiProxy){
     await Promise.all(targets.map(async c => {
       if (rankRich[c.id]) return;
@@ -2910,7 +2996,12 @@ function bindCardEvents(root){
     const card = btn.closest(".card");
     const d = card.querySelector(".detail");
     d.classList.toggle("open");
-    if (d.classList.contains("open")) loadDetailPhotos(card);
+    if (d.classList.contains("open")) {
+      setGuideReady(`正在查看「${card?.dataset.name || "這家店"}」詳情；照片會在展開時才載入，避免浪費 API 與流量。`);
+      loadDetailPhotos(card);
+    }else{
+      setGuideReady("已收起詳情。第一眼保留評分、評論量、距離時間與主要標籤，完整資料放在詳情內。");
+    }
     btn.querySelector(".chev2").style.transform = d.classList.contains("open") ? "rotate(180deg)" : "";
     trackUsage("detail_toggle", { open:d.classList.contains("open"), placeId:card?.querySelector("[data-share]")?.dataset.placeId || "" });
   }));
@@ -2949,13 +3040,18 @@ function bindPhotoPreview(img){
 async function ensureDetailPhotos(card){
   if (!card || card.dataset.photoFallbackChecked === "1") return;
   card.dataset.photoFallbackChecked = "1";
+  setGuideWorking(`Google 詳細資料沒有提供「${card.dataset.name || "這家店"}」照片，正在用店名與地址補查。`);
   const photos = await fetchPhotoFallbackForCard(card).catch(() => []);
-  if (!photos.length) return;
+  if (!photos.length) {
+    setGuideEmpty(`Google 目前沒有可用照片，先保留「${card.dataset.name || "這家店"}」的文字與路線資訊。`);
+    return;
+  }
   const inner = card.querySelector(".detail-inner");
   if (!inner || inner.querySelector(".photos")) return;
   inner.insertAdjacentHTML("afterbegin", photoStripHTML(photos, card.dataset.name || ""));
   inner.querySelectorAll("[data-photo-preview]").forEach(bindPhotoPreview);
   loadDetailPhotos(card);
+  setGuideReady(`已補到「${card.dataset.name || "這家店"}」照片；點小圖可以放大查看。`);
 }
 async function fetchPhotoFallbackForCard(card){
   if (hasApiProxy || !hasGoogleApiKey) return [];
@@ -3093,7 +3189,7 @@ function buildRankFilterBar(){
       rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
     }
     trackUsage("filter_change", { key:k, value:rankFilter[k] || "", selected:v });
-    buildRankFilterBar(); renderLeaderboard();
+    buildRankFilterBar(); safeRenderLeaderboard();
   }));
   const applyKeyword = () => {
     const value = ($("#rkKeyword")?.value || "").trim();
@@ -3102,7 +3198,7 @@ function buildRankFilterBar(){
     rankKeywordPools = {};
     rankNearbyPools = {};
     trackUsage("filter_change", { key:"keyword", value });
-    buildRankFilterBar(); renderLeaderboard();
+    buildRankFilterBar(); safeRenderLeaderboard();
   };
   $("#rkKeywordApply")?.addEventListener("click", applyKeyword);
   $("#rkKeyword")?.addEventListener("keydown", e => {
@@ -3113,9 +3209,9 @@ function buildRankFilterBar(){
   });
   fillRkArea();
   fillRkVillage();
-  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"city", value:rankFilter.city }); buildRankFilterBar(); renderLeaderboard(); });
-  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"area", city:rankFilter.city, value:rankFilter.area }); fillRkVillage(); renderLeaderboard(); });
-  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"village", city:rankFilter.city, area:rankFilter.area, value:rankFilter.village }); renderLeaderboard(); });
+  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"city", value:rankFilter.city }); buildRankFilterBar(); safeRenderLeaderboard(); });
+  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"area", city:rankFilter.city, value:rankFilter.area }); fillRkVillage(); safeRenderLeaderboard(); });
+  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"village", city:rankFilter.city, area:rankFilter.area, value:rankFilter.village }); safeRenderLeaderboard(); });
   $("#rkTravelLocate")?.addEventListener("click", e => locateRankOrigin(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
     Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
@@ -3125,7 +3221,7 @@ function buildRankFilterBar(){
     rankKeywordPools = {};
     rankNearbyPools = {};
     trackUsage("filter_clear", {});
-    buildRankFilterBar(); renderLeaderboard();
+    buildRankFilterBar(); safeRenderLeaderboard();
   });
 }
 function fillRkArea(){
