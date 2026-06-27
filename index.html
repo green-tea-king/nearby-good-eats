@@ -1305,7 +1305,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.9";
+const APP_VERSION_FALLBACK = "2026.06.27.10";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2169,6 +2169,12 @@ async function keywordCandidates(f=rankFilter, quotaKey=""){
   return all;
 }
 
+function rankNearbySearchLabel(){
+  const label = String(rankOriginLabel || "").trim();
+  if (!label || label === "目前位置") return "";
+  return label.replace(/\s+/g, "");
+}
+
 function rankMealTypes(f=rankFilter){
   const meal = Object.values(MEALS).find(m => m.label === f.meal);
   return meal ? meal.types : ["restaurant","cafe","meal_takeaway","bakery"];
@@ -2177,7 +2183,8 @@ function rankMealTypes(f=rankFilter){
 async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RADIUS_M, quotaKey=""){
   const terms = rankQueryTerms(f);
   const centerKey = `${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}`;
-  const key = [centerKey, radius, ...terms].join("|");
+  const originLabelForKey = rankNearbySearchLabel();
+  const key = ["nearby-v2", centerKey, originLabelForKey, radius, ...terms].join("|");
   if (rankNearbyPools[key]) return rankNearbyPools[key];
   if (terms.length){
     await ensureAwards();
@@ -2186,14 +2193,27 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
       await loadGoogle();
       ({ Place } = await google.maps.importLibrary("places"));
     }
-    const textQuery = `${terms.join(" ")} 餐廳`;
-    let all = await textSearchRankCandidates(Place, textQuery, {
-      center:state.center,
-      queryTerms:terms,
-    }, {
-      locationBias:{ center:state.center, radius },
-      quotaKey,
-    });
+    const originLabel = rankNearbySearchLabel();
+    const baseQuery = `${terms.join(" ")} 餐廳`;
+    const queries = [
+      originLabel ? `${originLabel} ${baseQuery}` : "",
+      baseQuery,
+    ].filter((q, i, arr) => q && arr.indexOf(q) === i);
+    const got = [];
+    for (const textQuery of queries){
+      const result = await textSearchRankCandidates(Place, textQuery, {
+        center:state.center,
+        queryTerms:terms,
+        originLabel,
+      }, {
+        locationBias:{ center:state.center, radius },
+        quotaKey,
+      });
+      got.push(...result);
+      const nearbyCount = got.filter(x => x.loc && (!x.dist || x.dist <= radius)).length;
+      if (nearbyCount >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT)) break;
+    }
+    let all = got;
     all = finalizeRankCandidates(all.filter(x => x.loc && (!x.dist || x.dist <= radius)), { sortDistance:true });
     rankNearbyPools[key] = all;
     return all;
