@@ -1305,7 +1305,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.10";
+const APP_VERSION_FALLBACK = "2026.06.27.11";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1333,6 +1333,7 @@ let sharedPlaceRoute = null;
 let villageData = null;
 let villageDataPromise = null;
 let rankOriginLabel = "";
+let rankOriginScope = { city:"", area:"", village:"" };
 let locationPrivacyNotified = false;
 
 function guideFilterSummary(f=rankFilter){
@@ -1376,6 +1377,7 @@ function clearRankTravelFilter({ notify=false }={}){
   const hadTravel = !!rankFilter.travel || !!rankOriginLabel;
   rankFilter.travel = RANK_DEFAULT_TRAVEL;
   rankOriginLabel = "";
+  rankOriginScope = { city:"", area:"", village:"" };
   if (notify && hadTravel) toast("已切換地區模式，交通與定位條件已清除");
 }
 function activeRankTravel(){
@@ -1808,12 +1810,14 @@ async function applyCurrentOriginToRankTravel(){
     const center = await currentPosition();
     state.center = center;
     rankOriginLabel = "目前位置";
+    rankOriginScope = { city:"", area:"", village:"" };
     if (hasGoogleApiKey){
       await loadGoogle();
       const { Geocoder } = await google.maps.importLibrary("geocoding");
       const res = await new Geocoder().geocode({ location:center, language:"zh-TW", region:"tw" });
       const { city, area } = cityAreaFromGeocode(res.results);
       const village = await matchTaiwanVillage(city, area, res.results);
+      rankOriginScope = { city:city || "", area:area || "", village:village || "" };
       rankOriginLabel = rankOriginFromGeocode(res.results, city, area, village);
     }
     clearRankLocationFilter();
@@ -2174,6 +2178,18 @@ function rankNearbySearchLabel(){
   if (!label || label === "目前位置") return "";
   return label.replace(/\s+/g, "");
 }
+function rankNearbySearchPrefixes(){
+  const s = rankOriginScope || {};
+  const prefixes = [
+    [s.city, s.area, s.village].filter(Boolean).join(""),
+    [s.city, s.area].filter(Boolean).join(""),
+    s.area || "",
+    s.city || "",
+    rankNearbySearchLabel(),
+    "",
+  ];
+  return [...new Set(prefixes.map(x => String(x || "").replace(/\s+/g, "")).filter((x, i) => i === prefixes.length - 1 || x))];
+}
 
 function rankMealTypes(f=rankFilter){
   const meal = Object.values(MEALS).find(m => m.label === f.meal);
@@ -2184,7 +2200,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   const terms = rankQueryTerms(f);
   const centerKey = `${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}`;
   const originLabelForKey = rankNearbySearchLabel();
-  const key = ["nearby-v2", centerKey, originLabelForKey, radius, ...terms].join("|");
+  const key = ["nearby-v3", centerKey, originLabelForKey, radius, ...terms].join("|");
   if (rankNearbyPools[key]) return rankNearbyPools[key];
   if (terms.length){
     await ensureAwards();
@@ -2193,25 +2209,25 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
       await loadGoogle();
       ({ Place } = await google.maps.importLibrary("places"));
     }
-    const originLabel = rankNearbySearchLabel();
     const baseQuery = `${terms.join(" ")} 餐廳`;
-    const queries = [
-      originLabel ? `${originLabel} ${baseQuery}` : "",
-      baseQuery,
-    ].filter((q, i, arr) => q && arr.indexOf(q) === i);
+    const prefixes = rankNearbySearchPrefixes();
+    const queries = prefixes.map(prefix => prefix ? `${prefix} ${baseQuery}` : baseQuery);
     const got = [];
     for (const textQuery of queries){
       const result = await textSearchRankCandidates(Place, textQuery, {
         center:state.center,
         queryTerms:terms,
-        originLabel,
+        city:rankOriginScope.city || "",
+        area:rankOriginScope.area || "",
+        village:rankOriginScope.village || "",
+        originLabel:rankNearbySearchLabel(),
       }, {
         locationBias:{ center:state.center, radius },
         quotaKey,
       });
       got.push(...result);
       const nearbyCount = got.filter(x => x.loc && (!x.dist || x.dist <= radius)).length;
-      if (nearbyCount >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT)) break;
+      if (nearbyCount >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 2)) break;
     }
     let all = got;
     all = finalizeRankCandidates(all.filter(x => x.loc && (!x.dist || x.dist <= radius)), { sortDistance:true });
@@ -2630,10 +2646,10 @@ async function renderLeaderboard(){
       if (f.keyword){
         list.sort((a,b) => (keywordStrength(b, f.keyword) - keywordStrength(a, f.keyword)) || (b.composite - a.composite));
       }
-      const prefetchCount = Math.min(
-        list.length,
-        Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT)
-      );
+      const routePrefetchTarget = f.keyword
+        ? Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3)
+        : Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT);
+      const prefetchCount = Math.min(list.length, routePrefetchTarget);
       const routeCandidates = list.slice(0, prefetchCount).map(x => Object.assign(x, {
         distanceRelaxed,
         distanceRelaxedFrom:firstRadius,
