@@ -1305,7 +1305,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.12";
+const APP_VERSION_FALLBACK = "2026.06.27.13";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2110,6 +2110,23 @@ function rankQueryTerms(f){
   if (String(f.keyword || "").trim()) terms.unshift(String(f.keyword).trim());
   return [...new Set(terms)];
 }
+const SHORT_KEYWORD_SEARCH_EXPANSIONS = {
+  "牛":["牛肉麵","牛排","牛肉湯","牛肉鍋","牛肉料理"],
+  "麵":["麵店","牛肉麵","乾麵","湯麵","拉麵"],
+  "飯":["飯店","滷肉飯","炒飯","便當","丼飯"],
+  "雞":["雞排","雞肉飯","鹹酥雞","雞湯","炸雞"],
+  "魚":["魚湯","生魚片","海鮮","烤魚","魚料理"],
+  "鍋":["火鍋","鍋物","涮涮鍋","麻辣鍋","牛肉鍋"],
+};
+function rankSearchTextQueries(f=rankFilter){
+  const terms = rankQueryTerms(f);
+  const rawKeyword = String(f.keyword || "").trim();
+  const normalizedKeyword = normalizeKeywordValue(rawKeyword);
+  const expansions = SHORT_KEYWORD_SEARCH_EXPANSIONS[normalizedKeyword] || [];
+  if (!expansions.length) return [terms.join(" ")].filter(Boolean);
+  const tail = terms.filter(t => normalizeKeywordValue(t) !== normalizedKeyword);
+  return [...new Set(expansions.map(q => [q, ...tail].filter(Boolean).join(" ")))];
+}
 
 async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
   const terms = rankQueryTerms(f);
@@ -2200,7 +2217,7 @@ async function originKeywordFallbackCandidates(f=rankFilter, quotaKey=""){
   const terms = rankQueryTerms(f);
   if (!terms.length) return [];
   const centerKey = state.center ? `${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}` : "";
-  const key = ["origin-keyword-fallback-v1", centerKey, rankNearbySearchLabel(), ...terms].join("|");
+  const key = ["origin-keyword-fallback-v2", centerKey, rankNearbySearchLabel(), ...terms].join("|");
   if (rankNearbyPools[key]) return rankNearbyPools[key];
   await ensureAwards();
   let Place = null;
@@ -2208,19 +2225,24 @@ async function originKeywordFallbackCandidates(f=rankFilter, quotaKey=""){
     await loadGoogle();
     ({ Place } = await google.maps.importLibrary("places"));
   }
-  const baseQuery = `${terms.join(" ")} 餐廳`;
-  const queries = rankNearbySearchPrefixes().map(prefix => prefix ? `${prefix} ${baseQuery}` : baseQuery);
+  const baseQueries = rankSearchTextQueries(f).map(q => `${q} 餐廳`);
   const got = [];
-  for (const textQuery of queries){
-    const result = await textSearchRankCandidates(Place, textQuery, {
-      center:state.center,
-      queryTerms:terms,
-      city:rankOriginScope.city || "",
-      area:rankOriginScope.area || "",
-      village:rankOriginScope.village || "",
-      originLabel:rankNearbySearchLabel(),
-    }, { quotaKey });
-    got.push(...result);
+  const prefixes = rankNearbySearchPrefixes();
+  for (const baseQuery of baseQueries){
+    const queries = prefixes.map(prefix => prefix ? `${prefix} ${baseQuery}` : baseQuery);
+    for (const textQuery of queries){
+      const result = await textSearchRankCandidates(Place, textQuery, {
+        center:state.center,
+        queryTerms:terms,
+        city:rankOriginScope.city || "",
+        area:rankOriginScope.area || "",
+        village:rankOriginScope.village || "",
+        originLabel:rankNearbySearchLabel(),
+      }, { quotaKey });
+      got.push(...result);
+      const unique = new Set(got.filter(x => x?.id && x.loc).map(x => x.id));
+      if (unique.size >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3)) break;
+    }
     const unique = new Set(got.filter(x => x?.id && x.loc).map(x => x.id));
     if (unique.size >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3)) break;
   }
@@ -2233,7 +2255,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   const terms = rankQueryTerms(f);
   const centerKey = `${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}`;
   const originLabelForKey = rankNearbySearchLabel();
-  const key = ["nearby-v3", centerKey, originLabelForKey, radius, ...terms].join("|");
+  const key = ["nearby-v4", centerKey, originLabelForKey, radius, ...terms].join("|");
   if (rankNearbyPools[key]) return rankNearbyPools[key];
   if (terms.length){
     await ensureAwards();
@@ -2242,23 +2264,27 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
       await loadGoogle();
       ({ Place } = await google.maps.importLibrary("places"));
     }
-    const baseQuery = `${terms.join(" ")} 餐廳`;
+    const baseQueries = rankSearchTextQueries(f).map(q => `${q} 餐廳`);
     const prefixes = rankNearbySearchPrefixes();
-    const queries = prefixes.map(prefix => prefix ? `${prefix} ${baseQuery}` : baseQuery);
     const got = [];
-    for (const textQuery of queries){
-      const result = await textSearchRankCandidates(Place, textQuery, {
-        center:state.center,
-        queryTerms:terms,
-        city:rankOriginScope.city || "",
-        area:rankOriginScope.area || "",
-        village:rankOriginScope.village || "",
-        originLabel:rankNearbySearchLabel(),
-      }, {
-        locationBias:{ center:state.center, radius },
-        quotaKey,
-      });
-      got.push(...result);
+    for (const baseQuery of baseQueries){
+      const queries = prefixes.map(prefix => prefix ? `${prefix} ${baseQuery}` : baseQuery);
+      for (const textQuery of queries){
+        const result = await textSearchRankCandidates(Place, textQuery, {
+          center:state.center,
+          queryTerms:terms,
+          city:rankOriginScope.city || "",
+          area:rankOriginScope.area || "",
+          village:rankOriginScope.village || "",
+          originLabel:rankNearbySearchLabel(),
+        }, {
+          locationBias:{ center:state.center, radius },
+          quotaKey,
+        });
+        got.push(...result);
+        const nearbyCount = got.filter(x => x.loc && (!x.dist || x.dist <= radius)).length;
+        if (nearbyCount >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 2)) break;
+      }
       const nearbyCount = got.filter(x => x.loc && (!x.dist || x.dist <= radius)).length;
       if (nearbyCount >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 2)) break;
     }
