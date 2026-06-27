@@ -1275,7 +1275,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.3";
+const APP_VERSION_FALLBACK = "2026.06.27.4";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2900,10 +2900,7 @@ async function enrichRankCardRoutes(cards, travel=activeRankTravel()){
 
 // 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）。c 為卡片物件，縣市存於 lbCity
 function bindCardEvents(root){
-  root.querySelectorAll("[data-photo-preview]").forEach(img => img.addEventListener("click", () => {
-    if (img.classList.contains("is-broken")) return;
-    openPhotoLightbox(img.dataset.photoPreview || img.currentSrc || img.src, img.dataset.caption || img.alt || "");
-  }));
+  root.querySelectorAll("[data-photo-preview]").forEach(bindPhotoPreview);
   root.querySelectorAll("[data-detail]").forEach(btn => btn.addEventListener("click", () => {
     const card = btn.closest(".card");
     const d = card.querySelector(".detail");
@@ -2927,10 +2924,80 @@ function bindCardEvents(root){
 let cardPhotoObserver = null;
 function loadDetailPhotos(card){
   const imgs = [...card.querySelectorAll(".detail img[data-lazy-src]")];
+  if (!imgs.length){
+    ensureDetailPhotos(card);
+    return;
+  }
   imgs.forEach(img => {
     img.src = img.dataset.lazySrc;
     img.removeAttribute("data-lazy-src");
   });
+}
+function bindPhotoPreview(img){
+  if (!img || img.dataset.photoBound === "1") return;
+  img.dataset.photoBound = "1";
+  img.addEventListener("click", () => {
+    if (img.classList.contains("is-broken")) return;
+    openPhotoLightbox(img.dataset.photoPreview || img.currentSrc || img.src, img.dataset.caption || img.alt || "");
+  });
+}
+async function ensureDetailPhotos(card){
+  if (!card || card.dataset.photoFallbackChecked === "1") return;
+  card.dataset.photoFallbackChecked = "1";
+  const photos = await fetchPhotoFallbackForCard(card).catch(() => []);
+  if (!photos.length) return;
+  const inner = card.querySelector(".detail-inner");
+  if (!inner || inner.querySelector(".photos")) return;
+  inner.insertAdjacentHTML("afterbegin", photoStripHTML(photos, card.dataset.name || ""));
+  inner.querySelectorAll("[data-photo-preview]").forEach(bindPhotoPreview);
+  loadDetailPhotos(card);
+}
+async function fetchPhotoFallbackForCard(card){
+  if (hasApiProxy || !hasGoogleApiKey) return [];
+  const placeId = card.dataset.placeId || "";
+  const name = card.dataset.name || "";
+  const address = card.dataset.address || "";
+  if (!placeId || !name) return [];
+  const key = apiCacheKey("photoFallback", { placeId, name, address });
+  const cached = readApiCache(key);
+  if (Array.isArray(cached)) return cached;
+  await loadGoogle();
+  const { Place } = await google.maps.importLibrary("places");
+  const parsed = cityAreaFromAddress(address);
+  const queries = [
+    [name, address].filter(Boolean).join(" "),
+    [name, parsed.city, parsed.area].filter(Boolean).join(" "),
+  ].filter((q, i, arr) => q && arr.indexOf(q) === i);
+  for (const textQuery of queries){
+    const req = {
+      textQuery,
+      fields:["id","displayName","formattedAddress","location","photos"],
+      maxResultCount:5,
+      language:"zh-TW",
+      region:"tw",
+    };
+    const lat = Number(card.dataset.lat), lng = Number(card.dataset.lng);
+    if (Number.isFinite(lat) && Number.isFinite(lng)) req.locationBias = { center:{ lat, lng }, radius:800 };
+    const res = await Place.searchByText(req);
+    const photos = choosePhotoFallback(placeId, name, address, res.places || []);
+    if (photos.length) return writeApiCache(key, photos, CONFIG.CACHE_TTL_MS.details);
+  }
+  return writeApiCache(key, [], CONFIG.CACHE_TTL_MS.details);
+}
+function choosePhotoFallback(placeId, name, address, places){
+  const restCity = cityAreaFromAddress(address).city;
+  const rn = normName(name);
+  for (const p of places){
+    const pn = normName(extractText(p.displayName) || "");
+    const city = cityAreaFromAddress(p.formattedAddress || "").city;
+    const samePlace = p.id && p.id === placeId;
+    const sameName = rn && pn && (rn.includes(pn) || pn.includes(rn));
+    const sameCity = !restCity || !city || normalizeTaiwanCity(restCity) === normalizeTaiwanCity(city);
+    if ((samePlace || (sameName && sameCity)) && p.photos?.length){
+      return p.photos.slice(0,3).map(ph => ph.getURI({ maxWidth:560, maxHeight:420 }));
+    }
+  }
+  return [];
 }
 function observeLazyPhotos(root){
   const imgs = [...root.querySelectorAll("img[data-lazy-src]")];
@@ -3895,6 +3962,14 @@ function confidenceHTML(r){
   return rows.length ? `<div class="confidence-row">${rows.join("")}</div>` : "";
 }
 
+function photoStripHTML(photoUrls, name){
+  return photoUrls.length
+    ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>
+      `<img class="ph-img" data-lazy-src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(name)}" alt="${escapeHTML(name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="this.classList.add('is-broken');this.removeAttribute('src');this.removeAttribute('data-lazy-src');">`
+    ).join("")}</div>`
+    : "";
+}
+
 function cardHTML(r, rank){
   const placeId = r.id || "";
   const shareUrl = placeId ? placeShareUrl(placeId) : "";
@@ -3938,11 +4013,7 @@ function cardHTML(r, rank){
     : "";
   // 圖片只放在詳情內，避免主卡因 Google 沒回照片或圖片載入失敗留下空白。
   const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
-  const photoStrip = photoUrls.length
-    ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>{
-      return `<img class="ph-img" data-lazy-src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(r.name)}" alt="${escapeHTML(r.name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="this.classList.add('is-broken');this.removeAttribute('src');this.removeAttribute('data-lazy-src');">`;
-    }).join("")}</div>`
-    : "";
+  const photoStrip = photoStripHTML(photoUrls, r.name);
   // 服務/供應標籤（只列出明確為 true 的）
   const feats = [];
   if (r.dineIn) feats.push("內用");
@@ -3958,7 +4029,7 @@ function cardHTML(r, rank){
   const detailFeatRow = feats.length ? `<div class="line"><span class="k">服務</span><span class="v"><span class="feats in-detail">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</span></span></div>` : "";
 
   return `
-  <div class="card" data-place-id="${escapeHTML(placeId)}">
+  <div class="card" data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-address="${escapeHTML(r.address||"")}" data-lat="${r.loc?.lat || ""}" data-lng="${r.loc?.lng || ""}">
     <div class="top">
       <div class="rank-badge">${rank}</div>
       <div class="head">

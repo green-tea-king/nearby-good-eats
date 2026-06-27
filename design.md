@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.27.3
+版本：2026.06.27.4
 
 ## 專案目標
 
@@ -225,6 +225,7 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 詳情展開才顯示證據與補充資訊：
 
 - 店家照片；展開詳情後才設定圖片 `src`，避免列表初始載入照片。
+- 若該 `place_id` 的詳情沒有回傳 photos，展開詳情時才用店名 + 地址做一次精準 Text Search 補查照片。
 - 完整外部評鑑與 Google 真欄位認證。
 - 關鍵字命中、AI/近似判斷來源。
 - Google 摘要、評論摘要、AI 判讀。
@@ -257,6 +258,7 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 
 - 餐廳照片只放在詳情內，使用 `loading="lazy"` 與 `decoding="async"`。
 - 照片 URL 先放在 `data-lazy-src`；使用者展開詳情時才寫入 `src`，避免列表初始載入照片。
+- Google Places 並不是每個店家都會回傳 photos；缺照片時只在詳情展開後補查，仍沒有就不顯示假圖。
 - 錯圖標記 `is-broken` 並隱藏，不佔用卡片版面。
 - 詳情照片列使用穩定 grid：三張圖 118px，單張圖 172px。
 - 詳情照片可點擊放大；放大層可用背景、關閉按鈕或 Esc 關閉。
@@ -377,8 +379,8 @@ vMM.DD.N
 例如：
 
 ```text
-VERSION = 2026.06.27.3
-畫面顯示 = v06.27.3
+VERSION = 2026.06.27.4
+畫面顯示 = v06.27.4
 ```
 
 ## 維護注意事項
