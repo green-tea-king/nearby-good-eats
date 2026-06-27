@@ -361,13 +361,13 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .head{flex:1;min-width:0;padding-top:1px;}
 /* 主卡縮圖 */
 .thumb{flex:none;width:70px;height:70px;border-radius:10px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line);}
-/* 卡片內 1–3 張較大照片 */
-.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:13px;min-height:118px;}
-.photos.one{grid-template-columns:1fr;min-height:172px;}
+/* 詳情內 1–3 張餐廳照片；主卡不預留圖片高度 */
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 2px;}
+.photos.one{grid-template-columns:1fr;}
 .ph-img{width:100%;min-width:0;height:118px;object-fit:cover;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);transition:opacity var(--t),transform var(--t);}
 .ph-img:not(.is-broken){cursor:zoom-in;}
 .ph-img:not(.is-broken):active{transform:scale(.985);}
-.ph-img.is-broken{opacity:0;}
+.ph-img.is-broken{display:none;}
 .photos.one .ph-img{height:172px;}
 .name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.18;letter-spacing:.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 12px;margin-top:8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
@@ -383,6 +383,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 
 /* 評鑑徽章 */
 .badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+.detail-badges{margin-top:0;}
 .badge{font-size:10.5px;letter-spacing:.05em;padding:4px 10px;border-radius:999px;font-weight:500;display:inline-flex;gap:5px;align-items:center;border:1px solid transparent;text-transform:uppercase;}
 .badge .yr{opacity:.6;font-size:9.5px;font-family:var(--mono);}
 .badge.michelin{background:var(--gold-weak);color:var(--michelin);border-color:rgba(200,162,76,.32);}
@@ -407,6 +408,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 
 /* 服務/供應標籤（中性灰，與彩色評鑑徽章區隔） */
 .feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.feats.in-detail{margin-top:0;}
 .feat{font-size:10.5px;letter-spacing:.04em;padding:3px 9px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);color:var(--text-dim);}
 
 /* AI 解讀：斜體襯線引文 */
@@ -1273,7 +1275,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.1";
+const APP_VERSION_FALLBACK = "2026.06.27.3";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2898,16 +2900,17 @@ async function enrichRankCardRoutes(cards, travel=activeRankTravel()){
 
 // 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）。c 為卡片物件，縣市存於 lbCity
 function bindCardEvents(root){
-  observeLazyPhotos(root);
   root.querySelectorAll("[data-photo-preview]").forEach(img => img.addEventListener("click", () => {
     if (img.classList.contains("is-broken")) return;
     openPhotoLightbox(img.dataset.photoPreview || img.currentSrc || img.src, img.dataset.caption || img.alt || "");
   }));
   root.querySelectorAll("[data-detail]").forEach(btn => btn.addEventListener("click", () => {
-    const d = btn.closest(".card").querySelector(".detail");
+    const card = btn.closest(".card");
+    const d = card.querySelector(".detail");
     d.classList.toggle("open");
+    if (d.classList.contains("open")) loadDetailPhotos(card);
     btn.querySelector(".chev2").style.transform = d.classList.contains("open") ? "rotate(180deg)" : "";
-    trackUsage("detail_toggle", { open:d.classList.contains("open"), placeId:btn.closest(".card")?.querySelector("[data-share]")?.dataset.placeId || "" });
+    trackUsage("detail_toggle", { open:d.classList.contains("open"), placeId:card?.querySelector("[data-share]")?.dataset.placeId || "" });
   }));
   root.querySelectorAll("[data-nav]").forEach(btn => btn.addEventListener("click", () => {
     const { lat, lng, name } = btn.dataset;
@@ -2922,6 +2925,13 @@ function bindCardEvents(root){
 }
 
 let cardPhotoObserver = null;
+function loadDetailPhotos(card){
+  const imgs = [...card.querySelectorAll(".detail img[data-lazy-src]")];
+  imgs.forEach(img => {
+    img.src = img.dataset.lazySrc;
+    img.removeAttribute("data-lazy-src");
+  });
+}
 function observeLazyPhotos(root){
   const imgs = [...root.querySelectorAll("img[data-lazy-src]")];
   if (!imgs.length) return;
@@ -3895,10 +3905,24 @@ function cardHTML(r, rank){
     : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
-  // 獎牌 / 認證：外部評鑑 + Google 真欄位認證
-  const awardBadges = (r.awards && r.awards.length) ? r.awards.map(badgeHTML).join("") : "";
-  const certBadges = certificationBadges(r).map(certBadgeHTML).join("");
-  const badges = awardBadges + certBadges;
+  // 第一眼只放少數強徽章；完整認證進詳情，避免主卡變成資料表。
+  const awardBadgeItems = (r.awards && r.awards.length) ? r.awards.map(badgeHTML) : [];
+  const certItems = certificationBadges(r);
+  const certPriority = new Map([
+    ["高分認證", 1],
+    ["萬則口碑", 2],
+    ["千則口碑", 3],
+    ["可訂位", 4],
+    ["聚餐友善", 5],
+    ["素食友善", 6],
+  ]);
+  const primaryCertItems = [...certItems].sort((a,b) => (certPriority.get(a.label) || 99) - (certPriority.get(b.label) || 99));
+  const badges = [
+    ...awardBadgeItems,
+    ...primaryCertItems.slice(0, Math.max(0, 4 - awardBadgeItems.length)).map(certBadgeHTML),
+  ].slice(0, 4).join("");
+  const detailBadges = [...awardBadgeItems, ...certItems.map(certBadgeHTML)].join("");
+  const detailBadgeRow = detailBadges ? `<div class="badges detail-badges">${detailBadges}</div>` : "";
   const confidence = confidenceHTML(r);
   const keywordHits = keywordHitSummaryHTML(r.keywordHit);
   const branchGroup = r.branchGroup?.count > 1
@@ -3912,12 +3936,11 @@ function cardHTML(r, rank){
   const ai = r.aiReason
     ? `<div class="ai-reason"><b>AI 判讀</b>${escapeHTML(r.aiReason)}${aiSourceText ? `<span class="ai-source">來源：${escapeHTML(aiSourceText)}</span>` : ""}</div>`
     : "";
-  // 卡片內 1–3 張較大照片
+  // 圖片只放在詳情內，避免主卡因 Google 沒回照片或圖片載入失敗留下空白。
   const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
   const photoStrip = photoUrls.length
     ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>{
-      const eager = i===0 && rank===1;
-      return `<img class="ph-img" ${eager ? `src="${escapeHTML(u)}" fetchpriority="high"` : `data-lazy-src="${escapeHTML(u)}"`} data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(r.name)}" alt="${escapeHTML(r.name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="this.classList.add('is-broken');this.removeAttribute('src');this.removeAttribute('data-lazy-src');">`;
+      return `<img class="ph-img" data-lazy-src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(r.name)}" alt="${escapeHTML(r.name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="this.classList.add('is-broken');this.removeAttribute('src');this.removeAttribute('data-lazy-src');">`;
     }).join("")}</div>`
     : "";
   // 服務/供應標籤（只列出明確為 true 的）
@@ -3932,7 +3955,7 @@ function cardHTML(r, rank){
   if (r.allowsDogs) feats.push("寵物友善");
   if (r.goodGroups) feats.push("適合團體");
   if (r.liveMusic) feats.push("現場音樂");
-  const featRow = feats.length ? `<div class="feats">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</div>` : "";
+  const detailFeatRow = feats.length ? `<div class="line"><span class="k">服務</span><span class="v"><span class="feats in-detail">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</span></span></div>` : "";
 
   return `
   <div class="card" data-place-id="${escapeHTML(placeId)}">
@@ -3951,14 +3974,9 @@ function cardHTML(r, rank){
         <span class="reviews">${r.count.toLocaleString()} 則</span>
       </div>
     </div>
-    <div class="badges">${badges}</div>
-    ${confidence}
-    ${keywordHits}
+    ${badges ? `<div class="badges">${badges}</div>` : ""}
     ${branchGroup}
     ${distanceRelaxed}
-    ${featRow}
-    ${photoStrip}
-    ${ai}
     <div class="actions">
       <button class="nav" data-nav data-lat="${r.loc.lat}" data-lng="${r.loc.lng}" data-name="${escapeHTML(r.name)}">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
@@ -3974,6 +3992,11 @@ function cardHTML(r, rank){
     </div>
     <div class="detail">
       <div class="detail-inner">
+        ${photoStrip}
+        ${detailBadgeRow}
+        ${keywordHits}
+        ${confidence}
+        ${ai}
         ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
         ${r.lbFormula?`<div class="line"><span class="k">綜合</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
         ${routeDetail(r)?`<div class="line"><span class="k">路線</span><span class="v">${escapeHTML(routeDetail(r))}</span></div>`:""}
@@ -3982,6 +4005,7 @@ function cardHTML(r, rank){
         ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
         ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
         ${r.priceText?`<div class="line"><span class="k">價位</span><span class="v">${escapeHTML(r.priceText)}</span></div>`:""}
+        ${detailFeatRow}
         ${(()=>{const t=[];if(r.goodKids)t.push("適合小孩");if(r.goodGroups)t.push("適合團體");if(r.menuKids)t.push("兒童菜單");if(r.restroom)t.push("有廁所");return t.length?`<div class="line"><span class="k">適合</span><span class="v">${escapeHTML(t.join("・"))}</span></div>`:"";})()}
         ${r.accessStr?`<div class="line"><span class="k">無障礙</span><span class="v">${escapeHTML(r.accessStr)}</span></div>`:""}
         ${r.payStr?`<div class="line"><span class="k">付款</span><span class="v">${escapeHTML(r.payStr)}</span></div>`:""}
