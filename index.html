@@ -1305,7 +1305,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.13";
+const APP_VERSION_FALLBACK = "2026.06.27.15";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2034,8 +2034,9 @@ async function ensureRankPool(force){
     rankPool = finalizeRankCandidates(all);
   }catch(e){
     console.error(e);
-    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(e.message)}</div>`;
-    setGuideError(`Google 資料載入失敗：${e.message || "未知錯誤"}。`);
+    const msg = googleSearchErrorMessage(e);
+    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(msg)}</div>`;
+    setGuideError(msg);
     rankPool = null;
   }finally{
     $("#rankRefresh").classList.remove("spin");
@@ -2064,7 +2065,11 @@ async function cityCandidates(Place, city, area="", quotaKey=""){
     return cacheableCandidates((res.places || [])
       .filter(p => p.rating && p.userRatingCount)
       .map(p => normalizeRankPlace(p, { city, area })));
-  }).catch(() => []);
+  }).catch(e => {
+    if (isGoogleQuotaError(e)) throw e;
+    console.warn("[City Candidates] 查詢失敗：", textQuery, e.message || e);
+    return [];
+  });
 }
 
 async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
@@ -2074,31 +2079,47 @@ async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
   } : null;
   const key = apiCacheKey("textSearch", { textQuery, bias });
   return cachedRequest(key, CONFIG.CACHE_TTL_MS.search, async () => {
-    if (hasApiProxy){
-      const data = await apiProxy("textSearch", {
+    try{
+      if (hasApiProxy){
+        const data = await apiProxy("textSearch", {
+          textQuery,
+          maxResultCount:20,
+          locationBias:opts.locationBias || null,
+        }, { quotaKey:opts.quotaKey || "" });
+        return cacheableCandidates((data.items || [])
+          .filter(p => p.rating && p.count)
+          .map(p => rankCandidateFromProxy(p, context)));
+      }
+      const req = {
         textQuery,
-        maxResultCount:20,
-        locationBias:opts.locationBias || null,
-      }, { quotaKey:opts.quotaKey || "" });
-      return cacheableCandidates((data.items || [])
-        .filter(p => p.rating && p.count)
-        .map(p => rankCandidateFromProxy(p, context)));
+        fields: [
+          "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
+          "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
+          "regularOpeningHours"
+        ],
+        maxResultCount:20, language:"zh-TW", region:"tw",
+      };
+      if (opts.locationBias) req.locationBias = opts.locationBias;
+      const res = await Place.searchByText(req);
+      return cacheableCandidates((res.places || [])
+        .filter(p => p.rating && p.userRatingCount)
+        .map(p => normalizeRankPlace(p, context)));
+    }catch(e){
+      if (isGoogleQuotaError(e)) throw e;
+      console.warn("[Text Search] 查詢失敗：", textQuery, e.message || e);
+      return [];
     }
-    const req = {
-      textQuery,
-      fields: [
-        "id","displayName","rating","userRatingCount","location","formattedAddress","priceLevel","primaryType","primaryTypeDisplayName",
-        "servesVegetarianFood","servesBeer","servesWine","servesCocktails","servesBreakfast","servesLunch","servesDinner","servesBrunch","servesDessert","servesCoffee","isGoodForGroups","isReservable",
-        "regularOpeningHours"
-      ],
-      maxResultCount:20, language:"zh-TW", region:"tw",
-    };
-    if (opts.locationBias) req.locationBias = opts.locationBias;
-    const res = await Place.searchByText(req);
-    return cacheableCandidates((res.places || [])
-      .filter(p => p.rating && p.userRatingCount)
-      .map(p => normalizeRankPlace(p, context)));
-  }).then(items => items.map(x => ({ ...x, ...context, queryTerms:context.queryTerms || x.queryTerms || [] }))).catch(() => []);
+  }).then(items => items.map(x => ({ ...x, ...context, queryTerms:context.queryTerms || x.queryTerms || [] })));
+}
+
+function isGoogleQuotaError(e){
+  const msg = String(e?.message || e || "");
+  return /RESOURCE_EXHAUSTED|quota|Quota exceeded|OVER_QUERY_LIMIT|REQUEST_DENIED/i.test(msg);
+}
+function googleSearchErrorMessage(e){
+  return isGoogleQuotaError(e)
+    ? "Google Places 今日搜尋配額已用完，請稍後再試或到 Google Cloud 調整配額。"
+    : (e?.message || "Google 搜尋失敗");
 }
 
 function rankQueryTerms(f){
@@ -2118,11 +2139,12 @@ const SHORT_KEYWORD_SEARCH_EXPANSIONS = {
   "魚":["魚湯","生魚片","海鮮","烤魚","魚料理"],
   "鍋":["火鍋","鍋物","涮涮鍋","麻辣鍋","牛肉鍋"],
 };
-function rankSearchTextQueries(f=rankFilter){
+function rankSearchTextQueries(f=rankFilter, { limit=0 }={}){
   const terms = rankQueryTerms(f);
   const rawKeyword = String(f.keyword || "").trim();
   const normalizedKeyword = normalizeKeywordValue(rawKeyword);
-  const expansions = SHORT_KEYWORD_SEARCH_EXPANSIONS[normalizedKeyword] || [];
+  let expansions = SHORT_KEYWORD_SEARCH_EXPANSIONS[normalizedKeyword] || [];
+  if (limit > 0) expansions = expansions.slice(0, limit);
   if (!expansions.length) return [terms.join(" ")].filter(Boolean);
   const tail = terms.filter(t => normalizeKeywordValue(t) !== normalizedKeyword);
   return [...new Set(expansions.map(q => [q, ...tail].filter(Boolean).join(" ")))];
@@ -2131,7 +2153,7 @@ function rankSearchTextQueries(f=rankFilter){
 async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
   const terms = rankQueryTerms(f);
   const village = f.village || "";
-  const key = [city, area, village, ...terms].join("|");
+  const key = ["area-v2", city, area, village, ...terms].join("|");
   if (rankAreaPools[key]) return rankAreaPools[key];
   await ensureAwards();
   let Place = null;
@@ -2141,18 +2163,24 @@ async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
   }
   const locationTerms = [area, village].filter(Boolean).join(" ");
   const geo = await geocodeTaiwanScope(city, area, village);
-  const textQuery = `${city}${locationTerms} ${terms.join(" ")} 餐廳`.trim();
-  let all = await textSearchRankCandidates(Place, textQuery, {
-    city,
-    area,
-    village,
-    queryTerms:terms,
-    areaScopeKey:key,
-    areaCenter:geo?.center || null,
-  }, {
-    quotaKey,
-    locationBias:geo?.center ? { center:geo.center, radius:village ? 1500 : 4500 } : null,
-  });
+  let all = [];
+  const queryTexts = rankSearchTextQueries(f).map(q => `${city}${locationTerms} ${q} 餐廳`.trim());
+  for (const textQuery of queryTexts){
+    const got = await textSearchRankCandidates(Place, textQuery, {
+      city,
+      area,
+      village,
+      queryTerms:terms,
+      areaScopeKey:key,
+      areaCenter:geo?.center || null,
+    }, {
+      quotaKey,
+      locationBias:geo?.center ? { center:geo.center, radius:village ? 1500 : 4500 } : null,
+    });
+    all.push(...got);
+    const unique = new Set(all.filter(x => x?.id).map(x => x.id));
+    if (unique.size >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3)) break;
+  }
   all.forEach(x => {
     x.area = area;
     x.village = village;
@@ -2167,7 +2195,7 @@ async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
 
 async function keywordCandidates(f=rankFilter, quotaKey=""){
   const terms = rankQueryTerms(f);
-  const key = terms.join("|");
+  const key = ["keyword-v2", ...terms].join("|");
   if (rankKeywordPools[key]) return rankKeywordPools[key];
   await ensureAwards();
   let Place = null;
@@ -2179,8 +2207,10 @@ async function keywordCandidates(f=rankFilter, quotaKey=""){
   const BATCH = 4;
   for (let i=0; i<TW_CITIES.length; i+=BATCH){
     const got = await Promise.all(TW_CITIES.slice(i,i+BATCH).map(c => {
-      const textQuery = `${c} ${terms.join(" ")} 餐廳`.trim();
-      return textSearchRankCandidates(Place, textQuery, { city:c, queryTerms:terms }, { quotaKey });
+      const queryTexts = rankSearchTextQueries(f, { limit:2 }).map(q => `${c} ${q} 餐廳`.trim());
+      return Promise.all(queryTexts.map(textQuery =>
+        textSearchRankCandidates(Place, textQuery, { city:c, queryTerms:terms }, { quotaKey })
+      )).then(parts => parts.flat());
     }));
     got.forEach(arr => all.push(...arr));
   }
@@ -2207,6 +2237,23 @@ function rankNearbySearchPrefixes(){
   ];
   return [...new Set(prefixes.map(x => String(x || "").replace(/\s+/g, "")).filter((x, i) => i === prefixes.length - 1 || x))];
 }
+function rankNearbySearchRadius(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RADIUS_M){
+  const steps = f.travel ? rankTravelRadiusSteps(f.travel) : [];
+  return Math.max(radius, ...(steps.length ? steps : [radius]));
+}
+function rankNearbyTextQueries(f=rankFilter, { maxQueries=8 }={}){
+  const baseQueries = rankSearchTextQueries(f).map(q => `${q} 餐廳`);
+  const prefixes = rankNearbySearchPrefixes();
+  const queries = [];
+  for (const prefix of prefixes){
+    for (const baseQuery of baseQueries){
+      const q = prefix ? `${prefix} ${baseQuery}` : baseQuery;
+      if (!queries.includes(q)) queries.push(q);
+      if (queries.length >= maxQueries) return queries;
+    }
+  }
+  return queries;
+}
 
 function rankMealTypes(f=rankFilter){
   const meal = Object.values(MEALS).find(m => m.label === f.meal);
@@ -2225,24 +2272,18 @@ async function originKeywordFallbackCandidates(f=rankFilter, quotaKey=""){
     await loadGoogle();
     ({ Place } = await google.maps.importLibrary("places"));
   }
-  const baseQueries = rankSearchTextQueries(f).map(q => `${q} 餐廳`);
   const got = [];
-  const prefixes = rankNearbySearchPrefixes();
-  for (const baseQuery of baseQueries){
-    const queries = prefixes.map(prefix => prefix ? `${prefix} ${baseQuery}` : baseQuery);
-    for (const textQuery of queries){
-      const result = await textSearchRankCandidates(Place, textQuery, {
-        center:state.center,
-        queryTerms:terms,
-        city:rankOriginScope.city || "",
-        area:rankOriginScope.area || "",
-        village:rankOriginScope.village || "",
-        originLabel:rankNearbySearchLabel(),
-      }, { quotaKey });
-      got.push(...result);
-      const unique = new Set(got.filter(x => x?.id && x.loc).map(x => x.id));
-      if (unique.size >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3)) break;
-    }
+  const queries = rankNearbyTextQueries(f, { maxQueries:8 });
+  for (const textQuery of queries){
+    const result = await textSearchRankCandidates(Place, textQuery, {
+      center:state.center,
+      queryTerms:terms,
+      city:rankOriginScope.city || "",
+      area:rankOriginScope.area || "",
+      village:rankOriginScope.village || "",
+      originLabel:rankNearbySearchLabel(),
+    }, { quotaKey });
+    got.push(...result);
     const unique = new Set(got.filter(x => x?.id && x.loc).map(x => x.id));
     if (unique.size >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3)) break;
   }
@@ -2255,7 +2296,9 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   const terms = rankQueryTerms(f);
   const centerKey = `${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}`;
   const originLabelForKey = rankNearbySearchLabel();
-  const key = ["nearby-v4", centerKey, originLabelForKey, radius, ...terms].join("|");
+  const searchRadius = rankNearbySearchRadius(f, radius);
+  const poolKey = ["nearby-keyword-pool-v1", centerKey, originLabelForKey, searchRadius, ...terms].join("|");
+  const key = ["nearby-v5", centerKey, originLabelForKey, radius, searchRadius, ...terms].join("|");
   if (rankNearbyPools[key]) return rankNearbyPools[key];
   if (terms.length){
     await ensureAwards();
@@ -2264,11 +2307,10 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
       await loadGoogle();
       ({ Place } = await google.maps.importLibrary("places"));
     }
-    const baseQueries = rankSearchTextQueries(f).map(q => `${q} 餐廳`);
-    const prefixes = rankNearbySearchPrefixes();
-    const got = [];
-    for (const baseQuery of baseQueries){
-      const queries = prefixes.map(prefix => prefix ? `${prefix} ${baseQuery}` : baseQuery);
+    let pool = rankNearbyPools[poolKey];
+    if (!pool){
+      const got = [];
+      const queries = rankNearbyTextQueries(f, { maxQueries:8 });
       for (const textQuery of queries){
         const result = await textSearchRankCandidates(Place, textQuery, {
           center:state.center,
@@ -2278,18 +2320,17 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
           village:rankOriginScope.village || "",
           originLabel:rankNearbySearchLabel(),
         }, {
-          locationBias:{ center:state.center, radius },
+          locationBias:{ center:state.center, radius:searchRadius },
           quotaKey,
         });
         got.push(...result);
-        const nearbyCount = got.filter(x => x.loc && (!x.dist || x.dist <= radius)).length;
+        const nearbyCount = got.filter(x => x.loc && (!x.dist || x.dist <= searchRadius)).length;
         if (nearbyCount >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 2)) break;
       }
-      const nearbyCount = got.filter(x => x.loc && (!x.dist || x.dist <= radius)).length;
-      if (nearbyCount >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 2)) break;
+      pool = finalizeRankCandidates(got.filter(x => x.loc && (!x.dist || x.dist <= searchRadius)), { sortDistance:true });
+      rankNearbyPools[poolKey] = pool;
     }
-    let all = got;
-    all = finalizeRankCandidates(all.filter(x => x.loc && (!x.dist || x.dist <= radius)), { sortDistance:true });
+    const all = finalizeRankCandidates(pool.filter(x => x.loc && (!x.dist || x.dist <= radius)), { sortDistance:true });
     rankNearbyPools[key] = all;
     return all;
   }
@@ -2330,7 +2371,11 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
     return cacheableCandidates((res.places || [])
       .filter(p => p.rating && p.userRatingCount && p.location)
       .map(p => normalizeRankPlace(p, { center:state.center, queryTerms:terms })));
-  }).catch(() => []);
+  }).catch(e => {
+    if (isGoogleQuotaError(e)) throw e;
+    console.warn("[Nearby Search] 查詢失敗：", e.message || e);
+    return [];
+  });
   let cachedAll = finalizeRankCandidates(cachedNearby.map(x => ({ ...x, queryTerms:terms })), { sortDistance:true });
   rankNearbyPools[key] = cachedAll;
   return cachedAll;
@@ -2965,8 +3010,9 @@ async function renderLeaderboard(){
 function safeRenderLeaderboard(){
   renderLeaderboard().catch(e => {
     console.error(e);
-    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(e.message || "未知錯誤")}</div>`;
-    setGuideError(`排行榜載入失敗：${e.message || "未知錯誤"}。`);
+    const msg = googleSearchErrorMessage(e);
+    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(msg)}</div>`;
+    setGuideError(msg);
   });
 }
 
