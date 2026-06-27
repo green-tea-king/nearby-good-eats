@@ -1305,7 +1305,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.6";
+const APP_VERSION_FALLBACK = "2026.06.27.7";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -3029,6 +3029,16 @@ function loadDetailPhotos(card){
     img.removeAttribute("data-lazy-src");
   });
 }
+function handleDetailPhotoError(img){
+  if (!img) return;
+  img.classList.add("is-broken");
+  img.removeAttribute("src");
+  img.removeAttribute("data-lazy-src");
+  const card = img.closest(".card");
+  const photos = img.closest(".photos");
+  const allBroken = photos && [...photos.querySelectorAll("img")].every(x => x.classList.contains("is-broken"));
+  if (card && allBroken) ensureDetailPhotos(card, { force:true, reason:"broken" });
+}
 function bindPhotoPreview(img){
   if (!img || img.dataset.photoBound === "1") return;
   img.dataset.photoBound = "1";
@@ -3037,31 +3047,42 @@ function bindPhotoPreview(img){
     openPhotoLightbox(img.dataset.photoPreview || img.currentSrc || img.src, img.dataset.caption || img.alt || "");
   });
 }
-async function ensureDetailPhotos(card){
-  if (!card || card.dataset.photoFallbackChecked === "1") return;
+async function ensureDetailPhotos(card, { force=false, reason="missing" }={}){
+  if (!card) return;
+  if (!force && card.dataset.photoFallbackChecked === "1") return;
   card.dataset.photoFallbackChecked = "1";
-  setGuideWorking(`Google 詳細資料沒有提供「${card.dataset.name || "這家店"}」照片，正在用店名與地址補查。`);
-  const photos = await fetchPhotoFallbackForCard(card).catch(() => []);
+  const name = card.dataset.name || "這家店";
+  setGuideWorking(reason === "broken"
+    ? `照片載入失敗，正在用「${name}」店名與地址重新補查可用照片。`
+    : `Google 詳細資料沒有提供「${name}」照片，正在用店名與地址補查。`);
+  const photos = await fetchPhotoFallbackForCard(card, { force }).catch(() => []);
   if (!photos.length) {
-    setGuideEmpty(`Google 目前沒有可用照片，先保留「${card.dataset.name || "這家店"}」的文字與路線資訊。`);
+    setGuideEmpty(`Google 目前沒有可用照片，先保留「${name}」的文字與路線資訊。`);
     return;
   }
   const inner = card.querySelector(".detail-inner");
-  if (!inner || inner.querySelector(".photos")) return;
-  inner.insertAdjacentHTML("afterbegin", photoStripHTML(photos, card.dataset.name || ""));
+  if (!inner) return;
+  const existing = inner.querySelector(".photos");
+  if (existing && !force) return;
+  if (existing) existing.remove();
+  inner.insertAdjacentHTML("afterbegin", photoStripHTML(photos, name));
   inner.querySelectorAll("[data-photo-preview]").forEach(bindPhotoPreview);
   loadDetailPhotos(card);
-  setGuideReady(`已補到「${card.dataset.name || "這家店"}」照片；點小圖可以放大查看。`);
+  setGuideReady(`已補到「${name}」照片；點小圖可以放大查看。`);
 }
-async function fetchPhotoFallbackForCard(card){
-  if (hasApiProxy || !hasGoogleApiKey) return [];
+async function fetchPhotoFallbackForCard(card, { force=false }={}){
+  if (!hasGoogleApiKey) return [];
   const placeId = card.dataset.placeId || "";
   const name = card.dataset.name || "";
   const address = card.dataset.address || "";
   if (!placeId || !name) return [];
   const key = apiCacheKey("photoFallback", { placeId, name, address });
   const cached = readApiCache(key);
-  if (Array.isArray(cached)) return cached;
+  if (Array.isArray(cached) && cached.length && !force) return cached;
+  if (Array.isArray(cached)){
+    memoryCache.delete(key);
+    try{ localStorage.removeItem(key); }catch(_){}
+  }
   await loadGoogle();
   const { Place } = await google.maps.importLibrary("places");
   const parsed = cityAreaFromAddress(address);
@@ -3083,7 +3104,7 @@ async function fetchPhotoFallbackForCard(card){
     const photos = choosePhotoFallback(placeId, name, address, res.places || []);
     if (photos.length) return writeApiCache(key, photos, CONFIG.CACHE_TTL_MS.details);
   }
-  return writeApiCache(key, [], CONFIG.CACHE_TTL_MS.details);
+  return [];
 }
 function choosePhotoFallback(placeId, name, address, places){
   const restCity = cityAreaFromAddress(address).city;
@@ -4066,7 +4087,7 @@ function confidenceHTML(r){
 function photoStripHTML(photoUrls, name){
   return photoUrls.length
     ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>
-      `<img class="ph-img" data-lazy-src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(name)}" alt="${escapeHTML(name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="this.classList.add('is-broken');this.removeAttribute('src');this.removeAttribute('data-lazy-src');">`
+      `<img class="ph-img" data-lazy-src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(name)}" alt="${escapeHTML(name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="handleDetailPhotoError(this)">`
     ).join("")}</div>`
     : "";
 }
