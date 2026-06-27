@@ -1305,7 +1305,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.7";
+const APP_VERSION_FALLBACK = "2026.06.27.8";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -4103,7 +4103,7 @@ function cardHTML(r, rank){
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
   const primaryMeta = [price ? `<span class="price">${price}</span>` : "", openTxt].filter(Boolean).join("");
-  // 第一眼只放少數強徽章；完整認證進詳情，避免主卡變成資料表。
+  // 第一眼只放少數強徽章；詳情只補主卡沒有顯示的項目，避免重複。
   const awardBadgeItems = (r.awards && r.awards.length) ? r.awards.map(badgeHTML) : [];
   const certItems = certificationBadges(r);
   const certPriority = new Map([
@@ -4115,11 +4115,16 @@ function cardHTML(r, rank){
     ["素食友善", 6],
   ]);
   const primaryCertItems = [...certItems].sort((a,b) => (certPriority.get(a.label) || 99) - (certPriority.get(b.label) || 99));
+  const primaryCertCount = Math.max(0, 4 - awardBadgeItems.length);
+  const visibleCertLabels = new Set(primaryCertItems.slice(0, primaryCertCount).map(x => x.label));
   const badges = [
     ...awardBadgeItems,
-    ...primaryCertItems.slice(0, Math.max(0, 4 - awardBadgeItems.length)).map(certBadgeHTML),
+    ...primaryCertItems.slice(0, primaryCertCount).map(certBadgeHTML),
   ].slice(0, 4).join("");
-  const detailBadges = [...awardBadgeItems, ...certItems.map(certBadgeHTML)].join("");
+  const detailBadges = primaryCertItems
+    .filter(x => !visibleCertLabels.has(x.label))
+    .map(certBadgeHTML)
+    .join("");
   const detailBadgeRow = detailBadges ? `<div class="badges detail-badges">${detailBadges}</div>` : "";
   const confidence = confidenceHTML(r);
   const keywordHits = keywordHitSummaryHTML(r.keywordHit);
