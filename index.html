@@ -346,16 +346,17 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 @keyframes spin{to{transform:rotate(360deg);}}
 
 .card{
-  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  padding:18px;margin-bottom:14px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,0)), var(--surface);
+  border:1px solid var(--line);border-radius:16px;
+  padding:18px 16px 16px;margin-bottom:14px;position:relative;overflow:hidden;
   animation:rise var(--t) ease both;transition:border-color var(--t),transform var(--t);
 }
 .card:first-child{border-color:rgba(200,16,46,.3);box-shadow:0 0 0 1px rgba(200,16,46,.12), 0 18px 40px -28px rgba(0,0,0,.8);}
 @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-.card .top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:flex-start;}
+.card .top{display:grid;grid-template-columns:26px minmax(0,1fr) 74px;gap:10px;align-items:flex-start;}
 .rank-badge{
-  flex:none;width:30px;height:30px;display:flex;align-items:flex-start;justify-content:center;
-  font-family:var(--serif);font-weight:600;font-size:24px;line-height:1;color:var(--gold);background:none;border:none;
+  flex:none;width:26px;height:30px;display:flex;align-items:flex-start;justify-content:center;
+  font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.1;color:var(--gold);background:none;border:none;
 }
 .card:nth-child(1) .rank-badge{color:var(--accent-bright);}
 .head{flex:1;min-width:0;padding-top:1px;}
@@ -369,12 +370,15 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .ph-img:not(.is-broken):active{transform:scale(.985);}
 .ph-img.is-broken{display:none;}
 .photos.one .ph-img{height:172px;}
-.name{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.18;letter-spacing:.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 12px;margin-top:8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
+.name{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.2;letter-spacing:.005em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 10px;margin-top:8px;font-size:12.5px;color:var(--text-dim);letter-spacing:.02em;}
+.meta.primary{margin-top:8px;}
+.meta.route{margin-top:5px;color:var(--text-dim);}
+.meta .dist{line-height:1.45;}
 .rating{color:var(--text);font-weight:500;}
 .rating .star{color:var(--gold);}
-.rating-focus{flex:none;min-width:72px;border:1px solid rgba(154,120,28,.34);background:var(--gold-weak);border-radius:12px;padding:7px 8px 6px;display:flex;flex-direction:column;align-items:center;gap:1px;color:var(--gold);font-family:var(--mono);font-variant-numeric:tabular-nums;line-height:1;}
-.rating-focus .score{display:flex;align-items:center;gap:3px;font-size:20px;font-weight:700;color:var(--text);}
+.rating-focus{flex:none;min-width:70px;border:1px solid rgba(154,120,28,.34);background:var(--gold-weak);border-radius:12px;padding:7px 7px 6px;display:flex;flex-direction:column;align-items:center;gap:1px;color:var(--gold);font-family:var(--mono);font-variant-numeric:tabular-nums;line-height:1;}
+.rating-focus .score{display:flex;align-items:center;gap:3px;font-size:19px;font-weight:700;color:var(--text);}
 .rating-focus .score .star{font-size:13px;color:var(--gold);}
 .rating-focus .reviews{font-size:10.5px;color:var(--text-dim);white-space:nowrap;}
 .open-now{color:var(--green);font-weight:500;}
@@ -382,7 +386,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .price{letter-spacing:1.5px;color:var(--text-faint);}
 
 /* 評鑑徽章 */
-.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
 .detail-badges{margin-top:0;}
 .badge{font-size:10.5px;letter-spacing:.05em;padding:4px 10px;border-radius:999px;font-weight:500;display:inline-flex;gap:5px;align-items:center;border:1px solid transparent;text-transform:uppercase;}
 .badge .yr{opacity:.6;font-size:9.5px;font-family:var(--mono);}
@@ -403,8 +407,9 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .keyword-hits{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
 .keyword-hit{font-size:10.5px;color:var(--text-dim);background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.22);border-radius:999px;padding:3px 8px;}
 .keyword-hit b{color:var(--accent-bright);font-weight:600;}
-.branch-group{display:inline-flex;margin-top:8px;font-size:10.5px;color:var(--text-dim);background:rgba(143,179,196,.10);border:1px solid rgba(143,179,196,.22);border-radius:999px;padding:3px 8px;}
-.distance-relaxed{display:inline-flex;margin-top:8px;font-size:10.5px;color:var(--gold);background:var(--gold-weak);border:1px solid rgba(200,162,76,.28);border-radius:999px;padding:3px 8px;}
+.card-note-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
+.branch-group{display:inline-flex;font-size:10.5px;color:var(--text-dim);background:rgba(143,179,196,.10);border:1px solid rgba(143,179,196,.22);border-radius:999px;padding:3px 8px;}
+.distance-relaxed{display:inline-flex;font-size:10.5px;color:var(--gold);background:var(--gold-weak);border:1px solid rgba(200,162,76,.28);border-radius:999px;padding:3px 8px;}
 
 /* 服務/供應標籤（中性灰，與彩色評鑑徽章區隔） */
 .feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
@@ -420,8 +425,8 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .ai-source{display:block;margin-top:5px;font-family:var(--sans);font-style:normal;font-size:10.5px;line-height:1.45;color:var(--text-dim);}
 .ai-reason.placeholder{color:var(--text-dim);border-left-color:var(--line);}
 
-.actions{display:flex;gap:9px;margin-top:16px;}
-.actions button{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;font-size:13.5px;letter-spacing:.04em;padding:11px;border-radius:var(--radius-sm);border:1px solid var(--line);background:transparent;color:var(--text);transition:border-color var(--t),background var(--t);}
+.actions{display:grid;grid-template-columns:1.22fr .88fr 1fr;gap:9px;margin-top:16px;}
+.actions button{min-width:0;display:flex;align-items:center;justify-content:center;gap:7px;font-size:13.5px;letter-spacing:.04em;padding:11px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.012);color:var(--text);transition:border-color var(--t),background var(--t);}
 .actions button:active{filter:brightness(1.08);}
 .actions .nav{background:var(--accent);color:var(--on-accent);font-weight:500;border-color:var(--accent);}
 .actions .nav:active{background:var(--accent);}
@@ -443,9 +448,9 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .detail-inner{padding-top:16px;margin-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--text-dim);display:flex;flex-direction:column;gap:10px;line-height:1.6;}
 .detail-inner .ph{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:18px;text-align:center;color:var(--text-faint);font-size:12px;}
 .detail-inner .photo{width:100%;height:172px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);}
-.detail-inner .line{display:flex;gap:10px;}
-.detail-inner .line .k{color:var(--text-faint);flex:none;width:48px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:1px;}
-.detail-inner .line .v{color:var(--text);}
+.detail-inner .line{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;padding:9px 10px;border:1px solid rgba(255,255,255,.045);background:rgba(255,255,255,.018);border-radius:10px;}
+.detail-inner .line .k{color:var(--text-faint);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding-top:1px;}
+.detail-inner .line .v{color:var(--text);min-width:0;}
 .detail-inner .v.sum3{display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
 .error-state{grid-column:1 / -1;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);padding:22px;display:grid;gap:14px;}
 .error-state b{font-family:var(--serif);font-size:23px;font-weight:600;color:var(--text);}
@@ -1275,7 +1280,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.4";
+const APP_VERSION_FALLBACK = "2026.06.27.5";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -3980,6 +3985,7 @@ function cardHTML(r, rank){
     : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
   const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
+  const primaryMeta = [price ? `<span class="price">${price}</span>` : "", openTxt].filter(Boolean).join("");
   // 第一眼只放少數強徽章；完整認證進詳情，避免主卡變成資料表。
   const awardBadgeItems = (r.awards && r.awards.length) ? r.awards.map(badgeHTML) : [];
   const certItems = certificationBadges(r);
@@ -4004,8 +4010,9 @@ function cardHTML(r, rank){
     ? `<div class="branch-group">同品牌 ${r.branchGroup.count} 間，保留最高分${r.branchGroup.names?.length ? `：${escapeHTML(r.branchGroup.names.join("、"))}` : ""}</div>`
     : "";
   const distanceRelaxed = r.distanceRelaxed
-    ? `<div class="distance-relaxed">已放寬距離：${Number(r.distanceRelaxedFrom || CONFIG.RANK_WALKABLE_RADIUS_M).toLocaleString()}m → ${Number(r.distanceRelaxedTo || CONFIG.RANK_WALKABLE_FALLBACK_M).toLocaleString()}m</div>`
+    ? `<div class="distance-relaxed">已放寬到 ${Number(r.distanceRelaxedTo || CONFIG.RANK_WALKABLE_FALLBACK_M).toLocaleString()}m</div>`
     : "";
+  const noteRow = [branchGroup, distanceRelaxed].filter(Boolean).join("");
   // AI 判讀只顯示後端分類結果；Google 摘要留在詳情，不偽裝成 AI 解讀。
   const aiSourceText = (r.aiSourceLabels || []).slice(0, 4).join("、");
   const ai = r.aiReason
@@ -4034,11 +4041,8 @@ function cardHTML(r, rank){
       <div class="rank-badge">${rank}</div>
       <div class="head">
         <div class="name">${escapeHTML(r.name)}</div>
-        <div class="meta">
-          ${price?`<span class="price">${price}</span>`:""}
-          ${openTxt}
-          ${distChip}
-        </div>
+        ${primaryMeta ? `<div class="meta primary">${primaryMeta}</div>` : ""}
+        ${distChip ? `<div class="meta route">${distChip}</div>` : ""}
       </div>
       <div class="rating-focus" aria-label="Google 評分 ${r.rating.toFixed(1)}，${r.count.toLocaleString()} 則評論">
         <span class="score"><span class="star">★</span>${r.rating.toFixed(1)}</span>
@@ -4046,8 +4050,7 @@ function cardHTML(r, rank){
       </div>
     </div>
     ${badges ? `<div class="badges">${badges}</div>` : ""}
-    ${branchGroup}
-    ${distanceRelaxed}
+    ${noteRow ? `<div class="card-note-row">${noteRow}</div>` : ""}
     <div class="actions">
       <button class="nav" data-nav data-lat="${r.loc.lat}" data-lng="${r.loc.lng}" data-name="${escapeHTML(r.name)}">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
