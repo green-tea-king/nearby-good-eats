@@ -564,7 +564,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
     <button id="googleLoginBtn" type="button">使用 Google 登入</button>
     <div class="auth-error" id="authError"></div>
-    <p class="auth-note" id="authGateNote">登入門檻已啟用。若按鈕無法使用，請先填寫 Firebase 設定。</p>
+    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機會使用跳轉登入；若看到 firebaseapp.com 錯誤頁，請回到正式網址重新登入。</p>
     <p class="privacy-note">定位只用於查詢附近餐廳與估算步行/開車時間；後台記錄操作事件與定位文字標籤，不寫入精確經緯度。</p>
   </div>
 </div>
@@ -1016,12 +1016,21 @@ function authErrorMessage(error){
   const message = error?.message || "";
   if (code.includes("popup-closed")) return "登入視窗已關閉，請重新點選登入。";
   if (code.includes("popup-blocked")) return "瀏覽器阻擋了登入視窗，正在改用跳轉登入。";
+  if (code.includes("operation-not-supported")) return "這個瀏覽器不支援彈出式登入，正在改用跳轉登入。";
+  if (code.includes("redirect-cancelled") || code.includes("redirect-operation-pending")) return "已有登入流程進行中，請稍候再試。";
   if (code.includes("requests-from-referer") || message.includes("requests from referer")){
     return "Firebase 登入 API key 尚未允許這個網站來源。請到 Google Cloud Console 的 API key 限制加入 https://green-tea-king.github.io/* 與 https://green-tea-king.github.io/nearby-good-eats/*。";
   }
   if (code.includes("unauthorized-domain")) return "Firebase 尚未允許這個網域登入，請到 Authentication 加入 Authorized domains。";
   if (code.includes("operation-not-allowed")) return "Firebase 尚未啟用 Google 登入 provider。";
   return message || "Google 登入失敗，請稍後再試。";
+}
+function shouldUseRedirectLogin(){
+  const ua = navigator.userAgent || "";
+  const mobile = /iPhone|iPad|iPod|Android|Mobile/i.test(ua);
+  const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const webview = /(FBAN|FBAV|Instagram|Line|MicroMessenger|CriOS|FxiOS|EdgiOS)/i.test(ua);
+  return mobile || ios || webview;
 }
 function updateAuthUi(){
   const gate = $("#authGate");
@@ -1068,6 +1077,8 @@ async function initAuth(){
   auth.languageCode = "zh-TW";
   authState.db = firebase.firestore();
   const provider = new firebase.auth.GoogleAuthProvider();
+  provider.addScope("email");
+  provider.addScope("profile");
   provider.setCustomParameters({ prompt:"select_account" });
   try{
     await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
@@ -1079,11 +1090,16 @@ async function initAuth(){
     showAuthError("");
     setAuthBusy(true);
     try{
+      if (shouldUseRedirectLogin()){
+        await auth.signInWithRedirect(provider);
+        return;
+      }
       await auth.signInWithPopup(provider);
     }catch(e){
       const msg = authErrorMessage(e);
       showAuthError(msg);
-      if ((e?.code || "").includes("popup-blocked")){
+      const code = e?.code || "";
+      if (code.includes("popup-blocked") || code.includes("operation-not-supported")){
         await auth.signInWithRedirect(provider);
         return;
       }
@@ -1305,7 +1321,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.15";
+const APP_VERSION_FALLBACK = "2026.06.27.16";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
