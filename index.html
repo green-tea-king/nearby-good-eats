@@ -564,7 +564,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
     <button id="googleLoginBtn" type="button">使用 Google 登入</button>
     <div class="auth-error" id="authError"></div>
-    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機會先使用彈出式登入，若瀏覽器阻擋才改用跳轉登入。</p>
+    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機會使用跳轉登入；若登入後仍回到這裡，請關閉私密瀏覽並重新整理。</p>
     <p class="privacy-note">定位只用於查詢附近餐廳與估算步行/開車時間；後台記錄操作事件與定位文字標籤，不寫入精確經緯度。</p>
   </div>
 </div>
@@ -1025,9 +1025,37 @@ function authErrorMessage(error){
   if (code.includes("operation-not-allowed")) return "Firebase 尚未啟用 Google 登入 provider。";
   return message || "Google 登入失敗，請稍後再試。";
 }
+function isMobileAuthBrowser(){
+  const ua = navigator.userAgent || "";
+  return /iPhone|iPad|iPod|Android|Mobile/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
 function shouldUseRedirectLogin(){
   const ua = navigator.userAgent || "";
-  return /(FBAN|FBAV|Instagram|Line|MicroMessenger)/i.test(ua);
+  return isMobileAuthBrowser() || /(FBAN|FBAV|Instagram|Line|MicroMessenger)/i.test(ua);
+}
+function authRedirectFlag(){
+  return "nearbyGoodEats:authRedirectStartedAt";
+}
+function markAuthRedirectStarted(){
+  try{ sessionStorage.setItem(authRedirectFlag(), String(Date.now())); }catch(_){}
+}
+function consumeAuthRedirectStarted(){
+  try{
+    const raw = sessionStorage.getItem(authRedirectFlag());
+    sessionStorage.removeItem(authRedirectFlag());
+    const at = Number(raw || 0);
+    return Number.isFinite(at) && at > 0 ? at : 0;
+  }catch(_){
+    return 0;
+  }
+}
+function isRecentAuthRedirect(){
+  try{
+    const at = Number(sessionStorage.getItem(authRedirectFlag()) || 0);
+    return Number.isFinite(at) && Date.now() - at < 15000;
+  }catch(_){
+    return false;
+  }
 }
 function updateAuthUi(){
   const gate = $("#authGate");
@@ -1076,11 +1104,15 @@ async function initAuth(){
   const provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope("email");
   provider.addScope("profile");
-  provider.setCustomParameters({ prompt:"select_account" });
+  if (!shouldUseRedirectLogin()) provider.setCustomParameters({ prompt:"select_account" });
+  let hadRedirectAttempt = false;
   try{
     await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    await auth.getRedirectResult();
+    hadRedirectAttempt = !!consumeAuthRedirectStarted();
+    const redirectResult = await auth.getRedirectResult();
+    if (redirectResult?.user) hadRedirectAttempt = false;
   }catch(e){
+    consumeAuthRedirectStarted();
     showAuthError(authErrorMessage(e));
   }
   $("#googleLoginBtn")?.addEventListener("click", async () => {
@@ -1088,6 +1120,11 @@ async function initAuth(){
     setAuthBusy(true);
     try{
       if (shouldUseRedirectLogin()){
+        if (isRecentAuthRedirect()){
+          showAuthError("登入流程仍在處理中，請稍候幾秒後再重新整理。");
+          return;
+        }
+        markAuthRedirectStarted();
         await auth.signInWithRedirect(provider);
         return;
       }
@@ -1097,6 +1134,7 @@ async function initAuth(){
       showAuthError(msg);
       const code = e?.code || "";
       if (code.includes("popup-blocked") || code.includes("operation-not-supported")){
+        markAuthRedirectStarted();
         await auth.signInWithRedirect(provider);
         return;
       }
@@ -1112,6 +1150,9 @@ async function initAuth(){
     authState.user = user || null;
     setAuthBusy(false);
     if (user) showAuthError("");
+    if (!user && hadRedirectAttempt){
+      showAuthError("登入沒有完成。手機請用 Safari 或 Chrome 一般分頁，不要用私密瀏覽或 LINE/FB 內建瀏覽器。");
+    }
     updateAuthUi();
     if (user){
       upsertUserProfile(user);
@@ -1318,7 +1359,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.18";
+const APP_VERSION_FALLBACK = "2026.06.27.19";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
