@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>?????</title>
+<title>在地美食榜</title>
 <meta name="theme-color" content="#0E0C0D" />
-<meta name="description" content="??????? Google ??????????????????????????" />
+<meta name="description" content="在地美食榜：用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="?????" />
-<meta property="og:title" content="?????" />
-<meta property="og:description" content="? Google ??????????????????????????" />
+<meta property="og:site_name" content="在地美食榜" />
+<meta property="og:title" content="在地美食榜" />
+<meta property="og:description" content="用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。" />
 <meta property="og:image" content="assets/local-food-rank-logo.png" />
 <meta property="og:url" content="https://green-tea-king.github.io/nearby-good-eats/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="?????" />
-<meta name="twitter:description" content="? Google ??????????????????????????" />
+<meta name="twitter:title" content="在地美食榜" />
+<meta name="twitter:description" content="用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。" />
 <meta name="twitter:image" content="assets/local-food-rank-logo.png" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="?????" />
+<meta name="apple-mobile-web-app-title" content="在地美食榜" />
 <meta name="format-detection" content="telephone=no" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iI0M4MTAyRSIvPjxlbGxpcHNlIGN4PSIxMS4zIiBjeT0iOS44IiByeD0iMy4yIiByeT0iNC4yIiBmaWxsPSIjRkNGNEU2Ii8+PHJlY3QgeD0iMTAuMSIgeT0iMTIuNiIgd2lkdGg9IjIuNCIgaGVpZ2h0PSIxMS42IiByeD0iMS4yIiBmaWxsPSIjRkNGNEU2Ii8+PHJlY3QgeD0iMTcuNyIgeT0iNy41IiB3aWR0aD0iMiIgaGVpZ2h0PSIxNi43IiByeD0iMSIgZmlsbD0iI0ZDRjRFNiIgdHJhbnNmb3JtPSJyb3RhdGUoLTUgMTguNyAxNS44KSIvPjxyZWN0IHg9IjIxLjQiIHk9IjcuNSIgd2lkdGg9IjIiIGhlaWdodD0iMTYuNyIgcng9IjEiIGZpbGw9IiNGQ0Y0RTYiIHRyYW5zZm9ybT0icm90YXRlKDUgMjIuNCAxNS44KSIvPjwvc3ZnPgo=" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-<!-- ???????????????? Google ???????? ?????????? -->
+<!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
 <script src="assets/app-settings.js"></script>
 <script src="assets/filter-rules.js"></script>
@@ -35,32 +35,32 @@
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-check-compat.js"></script>
 <style>
 /* ============================================================
-   ?? tokens??????? CSS variables????????????????
+   設計 tokens（暗色，集中於 CSS variables；將來加淺色模式只需多定義一組）
    ============================================================ */
 :root{
-  --bg:#0E0C0D;            /* ??? */
-  --bg-2:#15100F;          /* ???? */
-  --surface:#161213;       /* ?? */
-  --surface-2:#1F1819;     /* ????? */
-  --line:#2B2225;          /* ?? */
-  --line-soft:#221B1D;     /* ???? */
-  --text:#F2ECE6;          /* ?? */
-  --text-dim:#A89D98;      /* ?? */
-  --text-faint:#776B67;    /* ?????? */
-  --accent:#C8102E;        /* ???? */
-  --accent-bright:#EC5A6A; /* ?????????? */
+  --bg:#0E0C0D;            /* 深暖黑 */
+  --bg-2:#15100F;          /* 開場漸層 */
+  --surface:#161213;       /* 卡片 */
+  --surface-2:#1F1819;     /* 展開／次層 */
+  --line:#2B2225;          /* 細線 */
+  --line-soft:#221B1D;     /* 更淡的線 */
+  --text:#F2ECE6;          /* 暖白 */
+  --text-dim:#A89D98;      /* 次要 */
+  --text-faint:#776B67;    /* 更弱（標籤） */
+  --accent:#C8102E;        /* 米其林紅 */
+  --accent-bright:#EC5A6A; /* 紅字（暗底上對比夠） */
   --accent-weak:rgba(200,16,46,.13);
-  --on-accent:#FFF6F3;     /* ?????? */
-  --gold:#C8A24C;          /* ?? */
+  --on-accent:#FFF6F3;     /* 紅底上的文字 */
+  --gold:#C8A24C;          /* 星金 */
   --gold-weak:rgba(200,162,76,.15);
-  --green:#5FB98A;         /* ??? */
+  --green:#5FB98A;         /* 營業中 */
   --scroll-track:#0E0C0D;
   --scroll-thumb:rgba(168,157,152,.24);
   --scroll-thumb-hover:rgba(168,157,152,.36);
-  /* ???? */
-  --michelin:#D8B25E;      /* ????? */
-  --bib:#EC5A6A;           /* ????? */
-  --plate:#8FB3C4;         /* 500???? */
+  /* 評鑑徽章 */
+  --michelin:#D8B25E;      /* 米其林＝金 */
+  --bib:#EC5A6A;           /* 必比登＝紅 */
+  --plate:#8FB3C4;         /* 500盤＝霧藍 */
   --radius:15px;
   --radius-sm:9px;
   --t:220ms;
@@ -68,7 +68,7 @@
   --sans:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"Space Grotesk","Noto Sans TC",sans-serif;
 }
-/* ???????????????tokens ????????? */
+/* 淺色模式：米其林官網式編輯白（tokens 集中，切換即生效） */
 :root[data-theme="light"]{
   --bg:#F7F3EE;
   --bg-2:#FCF9F5;
@@ -126,7 +126,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .hidden{display:none !important;}
 
 /* ============================================================
-   ??
+   開場
    ============================================================ */
 #splash{
   position:fixed;inset:0;display:flex;align-items:flex-start;justify-content:center;
@@ -145,7 +145,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .splash-copy{min-width:0;}
 .splash-copy .sub{margin:0 auto;}
 .splash-panel{width:100%;min-width:0;}
-/* ??????????? */
+/* 開場：位置選擇入口清單 */
 .entry-list{display:flex;flex-direction:column;gap:10px;width:100%;max-width:362px;margin:0 auto;}
 .entry{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 17px;border-radius:14px;background:rgba(22,18,19,.86);border:1px solid var(--line);transition:border-color var(--t),transform var(--t),background var(--t);}
 .entry:hover{border-color:color-mix(in srgb, var(--accent) 55%, var(--line));background:var(--surface);}
@@ -163,7 +163,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .entry-primary:active{filter:brightness(1.05);}
 
 /* ============================================================
-   ?????
+   美食排行榜
    ============================================================ */
 #rankView{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;align-items:center;}
 .rank-head{flex:none;display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--bg);width:100%;max-width:480px;}
@@ -203,7 +203,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .ri-list li{font-size:12.5px;color:var(--text-dim);padding-left:14px;position:relative;}
 .ri-list li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);}
 .ri-total{font-size:13px;font-weight:600;color:var(--text);text-align:center;padding:10px;border-radius:8px;background:var(--surface);border:1px solid var(--accent);}
-/* ??? */
+/* 篩選列 */
 .rank-filters{flex:none;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;background:var(--bg);}
 .rank-filters .fg{display:flex;align-items:center;gap:9px;}
 .rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
@@ -280,7 +280,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .btn-text:active,.btn-text:hover{color:var(--text);border-color:var(--accent);}
 
 /* ============================================================
-   ?????
+   頂部控制列
    ============================================================ */
 #app{display:none;flex-direction:column;min-height:100%;}
 header{
@@ -290,7 +290,7 @@ header{
   padding:12px 16px;
 }
 .bar-row{display:flex;align-items:center;gap:9px;}
-/* ???????????????????????? */
+/* 控制列內容與結果區共用同一個置中欄寬，使上下對齊 */
 #app > header{padding-left:0;padding-right:0;}
 .head-inner{width:100%;max-width:480px;margin:0 auto;padding:0 16px;}
 .scope-btn{
@@ -306,7 +306,7 @@ header{
 .icon-btn:active{border-color:var(--accent);color:var(--accent);}
 .control-drawer{margin-top:10px;border-top:1px solid var(--line-soft);padding-top:12px;}
 
-/* ???? callout */
+/* 情境比較 callout */
 #overview{background:linear-gradient(var(--accent-weak),var(--accent-weak)),var(--surface);
   border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;
   padding:13px 15px;margin-bottom:16px;font-size:13.5px;color:var(--text);line-height:1.6;}
@@ -320,7 +320,7 @@ header{
 }
 .sort-chip[aria-pressed="true"]{color:var(--text);border-color:var(--accent);font-weight:500;}
 
-/* ???? / ????????? */
+/* 用餐時段 / 類型（可橫向捲動） */
 .meal-row{display:flex;gap:7px;margin-top:14px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
 .meal-row::-webkit-scrollbar{display:none;}
 .mchip{flex:none;font-size:13px;letter-spacing:.04em;padding:7px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:background var(--t),border-color var(--t),color var(--t);}
@@ -330,7 +330,7 @@ header{
 
 .toggle-row{display:flex;align-items:center;gap:9px;margin-top:13px;font-size:12.5px;letter-spacing:.03em;color:var(--text-dim);}
 
-/* ???? */
+/* 價位篩選 */
 .filter-row{display:flex;align-items:center;gap:13px;margin-top:13px;}
 .filter-lab{font-size:12.5px;letter-spacing:.03em;color:var(--text-dim);flex:none;}
 .price-chips{display:flex;gap:7px;}
@@ -343,7 +343,7 @@ header{
 .switch input:checked + .slider{background:rgba(95,185,138,.28);border-color:var(--green);}
 .switch input:checked + .slider::before{transform:translateX(17px);background:var(--green);}
 
-/* ?????????? */
+/* 範圍面板（半徑滑桿） */
 #scopePanel{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;}
 #scopePanel .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--text-dim);margin-bottom:10px;}
 #scopePanel .row b{color:var(--text);font-size:15px;}
@@ -353,7 +353,7 @@ input[type=range]{width:100%;accent-color:var(--accent);height:26px;}
 .panel-actions .apply{background:var(--accent);color:var(--on-accent);font-weight:500;border-color:var(--accent);}
 
 /* ============================================================
-   ?? / ??
+   清單 / 卡片
    ============================================================ */
 main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 #status{color:var(--text-dim);font-size:12px;letter-spacing:.03em;padding:4px 2px 16px;display:flex;align-items:center;gap:8px;}
@@ -375,9 +375,9 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 }
 .card:nth-child(1) .rank-badge{color:var(--accent-bright);}
 .head{flex:1;min-width:0;padding-top:1px;}
-/* ???? */
+/* 主卡縮圖 */
 .thumb{flex:none;width:70px;height:70px;border-radius:10px;object-fit:cover;background:var(--surface-2);border:1px solid var(--line);}
-/* ??? 1?3 ??????????????? */
+/* 詳情內 1–3 張餐廳照片；主卡不預留圖片高度 */
 .photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 2px;}
 .photos.one{grid-template-columns:1fr;}
 .ph-img{width:100%;min-width:0;height:118px;object-fit:cover;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);transition:opacity var(--t),transform var(--t);}
@@ -400,13 +400,13 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .closed{color:var(--accent-bright);}
 .price{letter-spacing:1.5px;color:var(--text-faint);}
 
-/* ???? */
+/* 評鑑徽章 */
 .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
 .detail-badges{margin-top:0;}
 .badge{font-size:10.5px;letter-spacing:.05em;padding:4px 10px;border-radius:999px;font-weight:500;display:inline-flex;gap:5px;align-items:center;border:1px solid transparent;text-transform:uppercase;}
 .badge .yr{opacity:.6;font-size:9.5px;font-family:var(--mono);}
 .badge.michelin{background:var(--gold-weak);color:var(--michelin);border-color:rgba(200,162,76,.32);}
-.badge.michelin::before{content:"?";font-size:9px;}
+.badge.michelin::before{content:"✦";font-size:9px;}
 .badge.fifty{background:rgba(255,255,255,.10);color:var(--text);border-color:rgba(255,255,255,.24);}
 .badge.fifty::before{content:"50";font-size:8.5px;font-family:var(--mono);color:var(--gold);}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
@@ -414,7 +414,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge.cert{background:rgba(95,185,138,.11);color:var(--green);border-color:rgba(95,185,138,.28);}
 .badge.cert-strong{background:var(--gold-weak);color:var(--gold);border-color:rgba(200,162,76,.3);}
 .badge.cert-service{background:rgba(143,179,196,.10);color:var(--plate);border-color:rgba(143,179,196,.24);}
-.badge.cert::before,.badge.cert-strong::before,.badge.cert-service::before{content:"?";font-size:10px;}
+.badge.cert::before,.badge.cert-strong::before,.badge.cert-service::before{content:"✓";font-size:10px;}
 .badge.placeholder{display:none;}
 .confidence-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
 .confidence-pill{font-size:10.5px;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:3px 7px;}
@@ -426,12 +426,12 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .branch-group{display:inline-flex;font-size:10.5px;color:var(--text-dim);background:rgba(143,179,196,.10);border:1px solid rgba(143,179,196,.22);border-radius:999px;padding:3px 8px;}
 .distance-relaxed{display:inline-flex;font-size:10.5px;color:var(--gold);background:var(--gold-weak);border:1px solid rgba(200,162,76,.28);border-radius:999px;padding:3px 8px;}
 
-/* ??/??????????????????? */
+/* 服務/供應標籤（中性灰，與彩色評鑑徽章區隔） */
 .feats{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
 .feats.in-detail{margin-top:0;}
 .feat{font-size:10.5px;letter-spacing:.04em;padding:3px 9px;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);color:var(--text-dim);}
 
-/* AI ????????? */
+/* AI 解讀：斜體襯線引文 */
 .ai-reason{
   margin-top:14px;font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;
   color:var(--text);border-left:2px solid var(--accent);padding:2px 0 2px 14px;letter-spacing:.01em;
@@ -453,7 +453,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .share-hero b{display:block;color:var(--text);font-size:20px;line-height:1.35;}
 .share-hero span{display:block;color:var(--text-dim);font-size:12px;margin-top:5px;}
 
-/* ???? */
+/* 展開詳情 */
 .detail{margin-top:0;max-height:0;overflow:hidden;transition:max-height var(--t) ease;}
 .detail.open{max-height:1500px;}
 .detail-inner .hours{line-height:1.75;}
@@ -476,7 +476,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .error-actions .primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:500;}
 
 /* ============================================================
-   ????????
+   地圖（整頁切換）
    ============================================================ */
 #fab{
   position:fixed;left:50%;transform:translateX(-50%);bottom:calc(22px + env(safe-area-inset-bottom,0));z-index:25;
@@ -493,7 +493,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 
 .toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--surface-2);border:1px solid var(--line);color:var(--text);padding:11px 17px;border-radius:999px;font-size:13px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.55);max-width:90vw;}
 
-/* ??????Step 4? */
+/* 選地點面板（Step 4） */
 #areaModal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-end;justify-content:center;}
 #areaModal .sheet{background:var(--surface);border-top:1px solid var(--line);border-radius:22px 22px 0 0;width:100%;max-width:480px;padding:22px 18px calc(22px + env(safe-area-inset-bottom,0));display:flex;flex-direction:column;gap:15px;animation:rise var(--t) ease both;}
 .sheet-head{display:flex;align-items:center;justify-content:space-between;font-family:var(--serif);font-size:20px;font-weight:600;}
@@ -518,7 +518,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .sheet-actions button{flex:1;padding:12px;border-radius:var(--radius-sm);font-size:14px;letter-spacing:.03em;background:transparent;border:1px solid var(--line);color:var(--text);}
 .sheet-actions .apply{background:var(--accent);color:var(--on-accent);font-weight:500;border-color:var(--accent);}
 
-/* ?????? */
+/* 用地圖選位置 */
 .map-pick-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border-radius:var(--radius-sm);background:transparent;border:1px solid var(--line);color:var(--text);font-size:14px;letter-spacing:.03em;transition:border-color var(--t),color var(--t);}
 .map-pick-btn:active{border-color:var(--accent);color:var(--accent-bright);}
 .map-pick-btn svg{color:var(--accent);}
@@ -560,32 +560,32 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <body>
 <div class="auth-gate hidden" id="authGate">
   <div class="auth-card">
-    <h2>???????</h2>
-    <p id="authGateText">?? Google ??????????????? Google ????????????????</p>
-    <button id="googleLoginBtn" type="button">?? Google ??</button>
+    <h2>登入在地美食榜</h2>
+    <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
+    <button id="googleLoginBtn" type="button">使用 Google 登入</button>
     <div class="auth-error" id="authError"></div>
-    <p class="auth-note" id="authGateNote">??????????????????????????????????</p>
-    <p class="privacy-note">????????????????/??????????????????????????????</p>
+    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機會先使用彈出式登入，若瀏覽器阻擋才改用跳轉登入。</p>
+    <p class="privacy-note">定位只用於查詢附近餐廳與估算步行/開車時間；後台記錄操作事件與定位文字標籤，不寫入精確經緯度。</p>
   </div>
 </div>
-<div class="auth-user hidden" id="authUser"><span id="authUserText"></span><a class="hidden" id="adminLink" href="admin.html">???</a><button id="logoutBtn" type="button">??</button></div>
-<div class="photo-lightbox hidden" id="photoLightbox" role="dialog" aria-modal="true" aria-label="??????">
-  <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="????">?</button>
+<div class="auth-user hidden" id="authUser"><span id="authUserText"></span><a class="hidden" id="adminLink" href="admin.html">管理員</a><button id="logoutBtn" type="button">登出</button></div>
+<div class="photo-lightbox hidden" id="photoLightbox" role="dialog" aria-modal="true" aria-label="餐廳照片預覽">
+  <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="關閉照片">×</button>
   <img id="photoLightboxImg" alt="">
   <div class="photo-lightbox-caption" id="photoLightboxCaption"></div>
 </div>
 
-<!-- ============ ?????????????? ============ -->
+<!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
   <div class="rank-head">
-    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="?????"><span class="rank-version" id="appVersion">v06.24.2</span></div>
-    <button class="rank-info-btn" id="rankInfoBtn" aria-label="??????" title="??????">
+    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v06.24.2</span></div>
+    <button class="rank-info-btn" id="rankInfoBtn" aria-label="綜合評價說明" title="綜合評價說明">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 1 1 4.9 2.3c-1.1.8-1.7 1.3-1.7 2.7"/><path d="M12 17h.01"/></svg>
     </button>
-    <button class="rank-filter-btn" id="rankFilterBtn" aria-label="????" title="??">
+    <button class="rank-filter-btn" id="rankFilterBtn" aria-label="開啟濾網" title="濾網">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
-    <button class="rank-refresh" id="rankRefresh" aria-label="????" title="????">
+    <button class="rank-refresh" id="rankRefresh" aria-label="重新整理" title="重新整理">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
     </button>
   </div>
@@ -593,10 +593,10 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <div class="guide-card" id="guideCard" data-state="idle">
       <div class="guide-head">
         <span class="guide-dot" aria-hidden="true"></span>
-        <span class="guide-title">????</span>
-        <span class="guide-state" id="guideState">??</span>
+        <span class="guide-title">系統導引</span>
+        <span class="guide-state" id="guideState">待命</span>
       </div>
-      <div class="guide-message" id="guideMessage">????????????????????????????????</div>
+      <div class="guide-message" id="guideMessage">這裡會顯示系統狀態、勘誤提醒與操作引導，協助你理解目前推薦結果。</div>
     </div>
   </div>
   <div class="rank-filters hidden" id="rankFilters"></div>
@@ -606,34 +606,34 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <div id="rankInfoModal" class="rank-info-modal hidden" role="dialog" aria-modal="true" aria-labelledby="rankInfoTitle">
   <div class="rank-info-sheet">
     <div class="ri-head">
-      <b id="rankInfoTitle">????????</b>
-      <button class="ri-close" id="rankInfoClose" aria-label="????">
+      <b id="rankInfoTitle">綜合評價怎麼算？</b>
+      <button class="ri-close" id="rankInfoClose" aria-label="關閉說明">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
     </div>
     <div class="ri-body">
       <div class="ri-block">
-        <b>? ??????</b>
-        <div class="ri-formula">?? ? ( C ? m ? n ? r ) ? ( C ? n )</div>
-        <p>r?Google ???n?????m???????C?150????????????????????????????????????????5.0 ???? 3 ?????</p>
+        <b>① 貝氏加權分數</b>
+        <div class="ri-formula">分數 ＝ ( C × m ＋ n × r ) ÷ ( C ＋ n )</div>
+        <p>r＝Google 評分，n＝評論數，m＝當批平均分，C＝150（可信度門檻）。評論數少的高分店會被拉回平均，「評論多又高分」才會浮上來，避免「5.0 分但只有 3 則」灌水。</p>
       </div>
       <div class="ri-block">
-        <b>? ????</b>
+        <b>② 評鑑加分</b>
         <ul class="ri-list">
-          <li>?????? +0.5??? +0.4??? +0.3</li>
-          <li>50 Best?+0.45????????????</li>
-          <li>??????+0.22</li>
-          <li>500 ???? +0.03??? +0.35?</li>
-          <li>????????? +0.75?Google ??????????</li>
+          <li>米其林　三星 +0.5・二星 +0.4・一星 +0.3</li>
+          <li>50 Best　+0.45（只影響少數真實入榜店）</li>
+          <li>必比登推介　+0.22</li>
+          <li>500 盤　每盤 +0.03（上限 +0.35）</li>
+          <li>外部評鑑總加分上限 +0.75，Google 評分與評論數仍是主體</li>
         </ul>
       </div>
-      <div class="ri-total">???? ? Google ???? ? ??????? ? ?????? ? ??/???? ? ????</div>
-      <p class="ri-note">?????????? 3 ??? 1 ???????????? Google ???????????????????????????????????????????? Google ??????????? AI???? Google ???????????</p>
+      <div class="ri-total">綜合評價 ＝ Google 貝氏分數 ＋ 評論量信心加分 ＋ 外部評鑑加分 ＋ 營業/時段加分 － 距離扣分</div>
+      <p class="ri-note">未篩選時列全台綜合前 3 名（第 1 名在最上）。濾網優先使用 Google 真欄位（評分、評論數、價位、素食、適合團體、可訂位等），其次把「吃到飽、素食」等條件加入 Google 搜尋詞。若未來接上後端 AI，可再用 Google 真資料做二次標籤判斷。</p>
     </div>
   </div>
 </div>
 
-<!-- ============ ??? ============ -->
+<!-- ============ 主畫面 ============ -->
 <div id="app">
   <header>
     <div class="head-inner">
@@ -642,56 +642,56 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
         <span class="icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
         </span>
-        <span class="label" id="scopeLabel">????</span>
+        <span class="label" id="scopeLabel">目前位置</span>
         <span class="chev">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </span>
       </button>
-      <button class="icon-btn" id="filterMenuBtn" aria-label="???????" title="?????">
+      <button class="icon-btn" id="filterMenuBtn" aria-label="開啟功能與濾網" title="功能與濾網">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
-      <button class="icon-btn" id="themeBtn" aria-label="??????" title="??????">
+      <button class="icon-btn" id="themeBtn" aria-label="切換明暗主題" title="切換明暗主題">
         <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
       </button>
     </div>
 
-    <!-- ???????????????? -->
+    <!-- 範圍面板（含半徑滑桿，預設收起） -->
     <div id="scopePanel" class="hidden">
-      <div class="row"><span>??????</span><b><span id="radiusVal">800</span> ??</b></div>
+      <div class="row"><span>步行搜尋半徑</span><b><span id="radiusVal">800</span> 公尺</b></div>
       <input type="range" id="radius" min="200" max="2000" step="100" value="800" />
-      <div class="row" style="margin:8px 0 0;"><span>??? <span id="walkMin">10</span> ??</span><span id="scopeMode">????????</span></div>
+      <div class="row" style="margin:8px 0 0;"><span>約步行 <span id="walkMin">10</span> 分鐘</span><span id="scopeMode">以目前位置為圓心</span></div>
       <div class="panel-actions">
-        <button id="useArea">????</button>
-        <button class="apply" id="applyScope">??</button>
+        <button id="useArea">改選地區</button>
+        <button class="apply" id="applyScope">套用</button>
       </div>
     </div>
 
     <div id="controlDrawer" class="control-drawer hidden">
-    <div class="sorts" role="group" aria-label="??">
-      <button class="sort-chip" data-sort="composite" aria-pressed="true">??</button>
-      <button class="sort-chip" data-sort="distance" aria-pressed="false">??</button>
-      <button class="sort-chip" data-sort="rating" aria-pressed="false">??</button>
+    <div class="sorts" role="group" aria-label="排序">
+      <button class="sort-chip" data-sort="composite" aria-pressed="true">綜合</button>
+      <button class="sort-chip" data-sort="distance" aria-pressed="false">距離</button>
+      <button class="sort-chip" data-sort="rating" aria-pressed="false">評分</button>
     </div>
 
-    <div class="meal-row" id="mealChips" role="group" aria-label="????">
-      <button class="mchip" data-cat="breakfast">??</button>
-      <button class="mchip" data-cat="morningtea">??</button>
-      <button class="mchip" data-cat="lunch">??</button>
-      <button class="mchip" data-cat="afttea">??</button>
-      <button class="mchip" data-cat="dinner">??</button>
-      <button class="mchip" data-cat="latenight">??</button>
-      <button class="mchip mchip-sep" data-cat="snack">??</button>
-      <button class="mchip" data-cat="dessert">??</button>
-      <button class="mchip" data-cat="all">??</button>
+    <div class="meal-row" id="mealChips" role="group" aria-label="用餐時段">
+      <button class="mchip" data-cat="breakfast">早餐</button>
+      <button class="mchip" data-cat="morningtea">早茶</button>
+      <button class="mchip" data-cat="lunch">午餐</button>
+      <button class="mchip" data-cat="afttea">午茶</button>
+      <button class="mchip" data-cat="dinner">晚餐</button>
+      <button class="mchip" data-cat="latenight">消夜</button>
+      <button class="mchip mchip-sep" data-cat="snack">小吃</button>
+      <button class="mchip" data-cat="dessert">甜點</button>
+      <button class="mchip" data-cat="all">不限</button>
     </div>
 
     <label class="toggle-row">
       <span class="switch"><input type="checkbox" id="openOnly" /><span class="slider"></span></span>
-      ?????
+      只看營業中
     </label>
 
     <div class="filter-row">
-      <span class="filter-lab">??</span>
+      <span class="filter-lab">價位</span>
       <div class="price-chips" id="priceChips">
         <button class="pchip" data-price="1" aria-pressed="false">$</button>
         <button class="pchip" data-price="2" aria-pressed="false">$$</button>
@@ -711,77 +711,77 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 
   <button id="fab">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
-    ??
+    地圖
   </button>
 </div>
 
-<!-- ============ ?????? ============ -->
+<!-- ============ 地圖（整頁） ============ -->
 <div id="mapView" class="hidden">
   <header>
     <div class="bar-row">
       <button class="scope-btn" id="backToList" style="flex:none;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        ??
+        清單
       </button>
-      <span style="color:var(--text-dim);font-size:13px;">?????</span>
+      <span style="color:var(--text-dim);font-size:13px;">前三家位置</span>
     </div>
   </header>
   <div id="map"></div>
   <div id="mapFallback" class="hidden"></div>
 </div>
 
-<!-- ============ ??? / ?? ============ -->
+<!-- ============ 選地點 / 地區 ============ -->
 <div id="areaModal" class="hidden">
   <div class="sheet">
     <div class="sheet-head">
-      <span>??? / ??</span>
-      <button id="areaClose" class="icon-btn" aria-label="??" style="width:34px;height:34px;">?</button>
+      <span>選地點 / 地區</span>
+      <button id="areaClose" class="icon-btn" aria-label="關閉" style="width:34px;height:34px;">✕</button>
     </div>
     <input id="areaInput" type="text" inputmode="search" autocomplete="off"
-           placeholder="?????????????????????" />
+           placeholder="輸入地名、地址或地標，例：台北車站、信義區" />
     <div id="areaSuggest" class="autocomplete-list hidden"></div>
-    <div class="ca-label">?? ?? ? ??</div>
+    <div class="ca-label">或選 縣市 → 區域</div>
     <div class="city-area">
-      <select id="citySel" class="sel" aria-label="??"></select>
-      <select id="areaSel" class="sel" aria-label="??"><option value="">??</option></select>
+      <select id="citySel" class="sel" aria-label="縣市"></select>
+      <select id="areaSel" class="sel" aria-label="區域"><option value="">區域</option></select>
     </div>
     <button id="btnMapPick" class="map-pick-btn">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
-      ??????
+      用地圖選位置
     </button>
     <div class="sheet-actions">
-      <button id="areaCurrent">?????</button>
-      <button id="areaGo" class="apply">????</button>
+      <button id="areaCurrent">用目前位置</button>
+      <button id="areaGo" class="apply">搜尋這裡</button>
     </div>
   </div>
 </div>
 
-<!-- ============ ?????? ============ -->
+<!-- ============ 用地圖選位置 ============ -->
 <div id="pickView" class="hidden">
   <header>
     <div class="bar-row">
       <button class="scope-btn" id="pickBack" style="flex:none;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        ??
+        取消
       </button>
-      <span style="color:var(--text-dim);font-size:13px;">???????????????</span>
+      <span style="color:var(--text-dim);font-size:13px;">移動地圖，把中心對準想找的位置</span>
     </div>
   </header>
   <div id="pickMap"></div>
   <div class="pick-pin">
     <svg width="34" height="34" viewBox="0 0 24 24" fill="#C8102E" stroke="#FFF6F3" stroke-width="1.4" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 1 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.4" fill="#FFF6F3" stroke="none"/></svg>
   </div>
-  <button id="pickConfirm" class="pick-confirm">?????</button>
+  <button id="pickConfirm" class="pick-confirm">選這裡搜尋</button>
 </div>
 
 <script>
 /* ============================================================
-   CONFIG ? ???????????????????
+   CONFIG — 所有可調權重集中此處，改一個數字即生效
    ============================================================ */
 const APP_SETTINGS = window.APP_SETTINGS || {};
 const CONFIG = {
-  // ?? Google ???????????? Google Places / Geocoding?
-  //    ???????? referrer + API ????
+  // ── Google 金鑰：必填。資料只走真實 Google Places / Geocoding。
+  //    上線前填入並設定 referrer + API 範圍限制
   GOOGLE_API_KEY: APP_SETTINGS.googleMapsApiKey || "",
   API_PROXY: {
     ENDPOINT: APP_SETTINGS.apiBaseUrl || "",
@@ -790,24 +790,24 @@ const CONFIG = {
     SITE_KEY: APP_SETTINGS.appCheckSiteKey || "",
     DEBUG_TOKEN: APP_SETTINGS.appCheckDebugToken || false,
   },
-  // ???? ID?Google Cloud ????????????????????????
+  // 向量地圖 ID（Google Cloud 地圖管理建立）：進階標記必需，並可套雲端深色樣式
   MAP_ID: "e5fbf85715cf5a5051abcc7b",
 
-  // ?? ??
-  DEFAULT_RADIUS_M: 800,     // ??????????
-  RANK_WALKABLE_RADIUS_M: 800,      // ???????????????
-  RANK_WALKABLE_FALLBACK_M: 2000,   // ????????????
+  // ── 搜尋
+  DEFAULT_RADIUS_M: 800,     // 步行半徑預設（公尺）
+  RANK_WALKABLE_RADIUS_M: 800,      // 排行榜預設：定位點步行可到範圍
+  RANK_WALKABLE_FALLBACK_M: 2000,   // 附近結果過少時的保底範圍
   RANK_WALK_RADIUS_STEPS_M: [800, 1200, 1600, 2000, 3000, 5000],
   RANK_DRIVE_RADIUS_STEPS_M: [3000, 5000, 8000, 12000, 20000, 30000],
-  DISTRICT_RADIUS_M: 3000,   // ????????????????????
-  WALK_SPEED_M_PER_MIN: 80,  // ???????????? X ??
-  RANK_WALK_MAX_MIN: 15,     // ??????? 15 ???
-  RANK_DRIVE_MAX_MIN: 30,    // ??????? 30 ???
+  DISTRICT_RADIUS_M: 3000,   // 選「區」時的範圍：涵蓋全區、忽略步行距離
+  WALK_SPEED_M_PER_MIN: 80,  // 步行速度，用來換算「步行 X 分」
+  RANK_WALK_MAX_MIN: 15,     // 交通篩選：走路 15 分鐘內
+  RANK_DRIVE_MAX_MIN: 30,    // 交通篩選：開車 30 分鐘內
   RANK_ROUTE_PREFETCH_COUNT: 8,
   RANK_DETAIL_PREFETCH_LIMIT: 3,
-  ROUTE_TIMEOUT_MS: 7000,    // Routes API ?????????????????
-  RESULT_COUNT: 3,           // ????
-  DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // ????????? Google ?????????
+  ROUTE_TIMEOUT_MS: 7000,    // Routes API 逾時後保留直線距離估算，不阻塞畫面
+  RESULT_COUNT: 3,           // 取前幾家
+  DEFAULT_CENTER: { lat: 25.0421, lng: 121.5654 }, // 定位失敗時仍用真實 Google 資料搜尋的預設中心
   CACHE_TTL_MS: {
     search: 6 * 60 * 60 * 1000,
     details: 7 * 24 * 60 * 60 * 1000,
@@ -815,49 +815,49 @@ const CONFIG = {
     geocode: 30 * 24 * 60 * 60 * 1000,
   },
 
-  // ?? ???????C?m ??????????
-  //    ???? = (C*m + n*r) / (C + n)
+  // ── 貝氏加權平均（C、m 之後用實際資料調校）
+  //    加權分數 = (C*m + n*r) / (C + n)
   BAYES: {
-    C: 150,  // ??????????????????
-    m: 4.0,  // ??????????????????????? computeM?
-    DYNAMIC_M: true, // true????????????? m
+    C: 150,  // 可信度門檻：評論數要多少才算「夠數」
+    m: 4.0,  // 全體平均分基準值（理想上由當批結果動態計算，見 computeM）
+    DYNAMIC_M: true, // true＝用當批結果平均覆蓋上面的 m
   },
   REVIEW_COUNT_BONUS: {
-    SCALE: 0.06, // ???????????????????
-    CAP: 0.32,   // ??????????????
+    SCALE: 0.06, // 評論量信心加分：同星等時評論數多者更前
+    CAP: 0.32,   // 避免超大店只靠評論數壓過品質
   },
 
-  // ?? ?????Step 2 ?????????????
+  // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
   AWARD_BONUS: {
-    michelin: { "??": 0.5, "??": 0.4, "??": 0.3 }, // ?????????? Google ???
-    fiftyBest: 0.45,          // 50 Best??????????
-    bib: 0.22,                // ??????????
-    platePerUnit: 0.03,       // 500 ????????????
-    plateCap: 0.35,           // 500 ?????????? Google ??
-    totalCap: 0.75,           // ??????????Google ??/???????
+    michelin: { "三星": 0.5, "二星": 0.4, "一星": 0.3 }, // 高權重，但仍只疊加在 Google 分數上
+    fiftyBest: 0.45,          // 50 Best：高權重、少數店適用
+    bib: 0.22,                // 必比登推介：中高權重
+    platePerUnit: 0.03,       // 500 盤：中高權重，依盤數遞增
+    plateCap: 0.35,           // 500 盤加分上限，避免壓過 Google 主體
+    totalCap: 0.75,           // 外部評鑑總加分上限，Google 評分/評論數仍是主體
   },
 
-  // ?? ?? / ?? ?????????????
-  DISTANCE_PENALTY_PER_100M: 0.04, // ? 100m ??
-  OPEN_BONUS: 0.05,                // ???????
-  MEAL_MATCH_BONUS: 0.06,          // ??????????????????????????
+  // ── 距離 / 營業 對排名的影響（綜合排序時）
+  DISTANCE_PENALTY_PER_100M: 0.04, // 每 100m 扣分
+  OPEN_BONUS: 0.05,                // 目前營業中加分
+  MEAL_MATCH_BONUS: 0.06,          // 該店明確供應「當前時段」餐點時加分（讓時段篩選更準）
 
   SORT_DEFAULT: "composite",       // composite | distance | rating
-  OPEN_ONLY_DEFAULT: false,        // ?????????
+  OPEN_ONLY_DEFAULT: false,        // 「只看營業中」預設
 
-  // ?? ?? / ????????????????????????
+  // ── 評鑑 / 認證規則：獨立資料檔，避免徽章邏輯散在畫面程式中
   AWARDS_URL: APP_SETTINGS.awardsUrl || "assets/awards-taiwan.json",
   EXTERNAL_SIGNALS_URL: APP_SETTINGS.externalSignalsUrl || "assets/external-signals.json",
   CERT_BADGES_URL: APP_SETTINGS.certificationBadgesUrl || "assets/certification-badges.json",
   VILLAGES_URL: APP_SETTINGS.villagesUrl || "assets/taiwan-villages.json",
 
-  // ?? AI ??????? AI key???????? proxy ??
+  // ── AI 解讀：前端不放 AI key，分類只接受後端 proxy 回傳
   AI: {
     MODE: "off",
   },
   AI_FILTER: {
-    MODE: "proxy",           // off??? AI ???proxy?????????
-    ENDPOINT: "",            // ??? {items:[{id,tags,confidence,reason,sources}]}
+    MODE: "proxy",           // off＝不用 AI 過濾｜proxy＝呼叫後端分類服務
+    ENDPOINT: "",            // 後端回 {items:[{id,tags,confidence,reason,sources}]}
     MAX_ITEMS: 80,
   },
   AUTH: window.APP_FIREBASE_CONFIG || {
@@ -869,19 +869,19 @@ const CONFIG = {
 };
 
 /* ============================================================
-   ???? / ?? ? ????????????????
-   ?????????????????? Google Places ???????
+   用餐時段 / 類型 — 依現在時間自動推薦，亦可手動切換
+   （早茶、小吃等台灣概念對應為最接近的 Google Places 類型，屬近似）
    ============================================================ */
 const MEALS = {
-  breakfast: { label:"??", types:["breakfast_restaurant","cafe","bakery"] },
-  morningtea:{ label:"??", types:["brunch_restaurant","cafe"] },
-  lunch:     { label:"??", types:["restaurant"] },
-  afttea:    { label:"??", types:["cafe","dessert_shop"] },
-  dinner:    { label:"??", types:["restaurant"] },
-  latenight: { label:"??", types:["bar","meal_takeaway","ramen_restaurant"] },
-  snack:     { label:"??", types:["meal_takeaway","fast_food_restaurant"] },
-  dessert:   { label:"??", types:["dessert_shop","ice_cream_shop","bakery"] },
-  all:       { label:"??", types:["restaurant"] },
+  breakfast: { label:"早餐", types:["breakfast_restaurant","cafe","bakery"] },
+  morningtea:{ label:"早茶", types:["brunch_restaurant","cafe"] },
+  lunch:     { label:"午餐", types:["restaurant"] },
+  afttea:    { label:"午茶", types:["cafe","dessert_shop"] },
+  dinner:    { label:"晚餐", types:["restaurant"] },
+  latenight: { label:"消夜", types:["bar","meal_takeaway","ramen_restaurant"] },
+  snack:     { label:"小吃", types:["meal_takeaway","fast_food_restaurant"] },
+  dessert:   { label:"甜點", types:["dessert_shop","ice_cream_shop","bakery"] },
+  all:       { label:"不限", types:["restaurant"] },
 };
 function currentMealKey(){
   const h = new Date().getHours() + new Date().getMinutes()/60;
@@ -890,25 +890,25 @@ function currentMealKey(){
   if (h>=11.5 && h<14) return "lunch";
   if (h>=14 && h<17)   return "afttea";
   if (h>=17 && h<21)   return "dinner";
-  return "latenight"; // 21:00?05:00
+  return "latenight"; // 21:00–05:00
 }
 function mealTypes(){ const m = MEALS[state.category]; return m ? m.types : ["restaurant"]; }
 
 /* ============================================================
-   ??
+   狀態
    ============================================================ */
 const state = {
   center: { ...CONFIG.DEFAULT_CENTER },
   radius: CONFIG.DEFAULT_RADIUS_M,
-  usingArea: false,        // false=???? / true=???
-  areaName: "????",
-  wholeArea: false,        // ?????true????????????
+  usingArea: false,        // false=目前位置 / true=選地區
+  areaName: "目前位置",
+  wholeArea: false,        // 選「區」＝true：全區候選、忽略步行距離
   sort: CONFIG.SORT_DEFAULT,
   openOnly: CONFIG.OPEN_ONLY_DEFAULT,
-  priceLevels: [],         // ??????????? 1~4?
-  category: "lunch",       // ????/????????????????
-  raw: [],                 // ??????
-  ranked: [],              // ?????
+  priceLevels: [],         // 價位篩選（空＝全部；含 1~4）
+  category: "lunch",       // 用餐時段/類型（進場時依現在時間自動設定）
+  raw: [],                 // 原始搜尋結果
+  ranked: [],              // 排名後前三
   map: null,
   markers: [],
 };
@@ -1003,7 +1003,7 @@ function setAuthBusy(on){
   const btn = $("#googleLoginBtn");
   if (!btn) return;
   btn.disabled = !!on;
-  btn.textContent = on ? "???..." : "?? Google ??";
+  btn.textContent = on ? "登入中..." : "使用 Google 登入";
 }
 function showAuthError(message=""){
   const el = $("#authError");
@@ -1014,16 +1014,16 @@ function showAuthError(message=""){
 function authErrorMessage(error){
   const code = error?.code || "";
   const message = error?.message || "";
-  if (code.includes("popup-closed")) return "????????????????";
-  if (code.includes("popup-blocked")) return "????????????????????";
-  if (code.includes("operation-not-supported")) return "???????????????????????";
-  if (code.includes("redirect-cancelled") || code.includes("redirect-operation-pending")) return "????????????????";
+  if (code.includes("popup-closed")) return "登入視窗已關閉，請重新點選登入。";
+  if (code.includes("popup-blocked")) return "瀏覽器阻擋了登入視窗，正在改用跳轉登入。";
+  if (code.includes("operation-not-supported")) return "這個瀏覽器不支援彈出式登入，正在改用跳轉登入。";
+  if (code.includes("redirect-cancelled") || code.includes("redirect-operation-pending")) return "已有登入流程進行中，請稍候再試。";
   if (code.includes("requests-from-referer") || message.includes("requests from referer")){
-    return "Firebase ?? API key ????????????? Google Cloud Console ? API key ???? https://green-tea-king.github.io/* ? https://green-tea-king.github.io/nearby-good-eats/*?";
+    return "Firebase 登入 API key 尚未允許這個網站來源。請到 Google Cloud Console 的 API key 限制加入 https://green-tea-king.github.io/* 與 https://green-tea-king.github.io/nearby-good-eats/*。";
   }
-  if (code.includes("unauthorized-domain")) return "Firebase ????????????? Authentication ?? Authorized domains?";
-  if (code.includes("operation-not-allowed")) return "Firebase ???? Google ?? provider?";
-  return message || "Google ???????????";
+  if (code.includes("unauthorized-domain")) return "Firebase 尚未允許這個網域登入，請到 Authentication 加入 Authorized domains。";
+  if (code.includes("operation-not-allowed")) return "Firebase 尚未啟用 Google 登入 provider。";
+  return message || "Google 登入失敗，請稍後再試。";
 }
 function shouldUseRedirectLogin(){
   const ua = navigator.userAgent || "";
@@ -1041,7 +1041,7 @@ function updateAuthUi(){
   }
   if (authState.user){
     const isAdmin = isAdminUser();
-    userText.textContent = authState.user.email + (isAdmin ? " ?" : "");
+    userText.textContent = authState.user.email + (isAdmin ? " ·" : "");
     adminLink?.classList.toggle("hidden", !isAdmin);
     userBox?.classList.remove("hidden");
   }else{
@@ -1055,13 +1055,13 @@ async function initAuth(){
   authState.enabled = !!CONFIG.AUTH?.requireSignIn;
   if (!authState.configured){
     if (authState.enabled){
-      $("#authGateText").textContent = "Google ????????? Firebase ??????????????";
-      $("#authGateNote").textContent = "??? firebase-config.js ? Firebase web app config ?????";
+      $("#authGateText").textContent = "Google 登入門檻已啟用，但 Firebase 尚未設定，暫時無法使用網站。";
+      $("#authGateNote").textContent = "請填寫 firebase-config.js 的 Firebase web app config 後再登入。";
       $("#googleLoginBtn").disabled = true;
       updateAuthUi();
       return;
     }
-    console.info("[Auth] Firebase ????????????????");
+    console.info("[Auth] Firebase 尚未設定，登入與使用紀錄未啟用。");
     return;
   }
   firebase.initializeApp(CONFIG.AUTH.firebase);
@@ -1106,7 +1106,7 @@ async function initAuth(){
   });
   $("#logoutBtn")?.addEventListener("click", async () => {
     await auth.signOut();
-    toast("???");
+    toast("已登出");
   });
   auth.onAuthStateChanged(user => {
     authState.user = user || null;
@@ -1133,7 +1133,7 @@ async function upsertUserProfile(user){
       lastSeenAt:firebase.firestore.FieldValue.serverTimestamp(),
     }, { merge:true });
   }catch(e){
-    console.warn("[Auth] ??????????", e.message);
+    console.warn("[Auth] 使用者資料寫入失敗：", e.message);
   }
 }
 async function trackUsage(type, payload={}){
@@ -1150,7 +1150,7 @@ async function trackUsage(type, payload={}){
       createdAt:firebase.firestore.FieldValue.serverTimestamp(),
     });
   }catch(e){
-    console.warn("[Usage] ?????", e.message);
+    console.warn("[Usage] 紀錄失敗：", e.message);
   }
 }
 function searchQuotaKey(scope, parts={}){
@@ -1167,8 +1167,8 @@ async function appCheckHeaders(){
   }
 }
 async function apiProxy(action, payload={}, opts={}){
-  if (!hasApiProxy) throw new Error("API proxy ???");
-  if (!authState.user?.getIdToken) throw new Error("???? Google");
+  if (!hasApiProxy) throw new Error("API proxy 未設定");
+  if (!authState.user?.getIdToken) throw new Error("請先登入 Google");
   const token = await authState.user.getIdToken();
   const outboundPayload = opts.quotaKey ? { ...payload, __quota:{ key:opts.quotaKey } } : payload;
   const res = await fetch(CONFIG.API_PROXY.ENDPOINT, {
@@ -1196,7 +1196,7 @@ function bootApp(){
 }
 
 /* ============================================================
-   ????
+   開場流程
    ============================================================ */
 function closeRankFilters(){
   $("#rankFilters")?.classList.add("hidden");
@@ -1208,7 +1208,7 @@ function openPhotoLightbox(src, caption=""){
   const img = $("#photoLightboxImg");
   if (!box || !img) return;
   img.src = src;
-  img.alt = caption || "????";
+  img.alt = caption || "餐廳照片";
   $("#photoLightboxCaption").textContent = caption || "";
   box.classList.remove("hidden");
   pushTransientUiHistory();
@@ -1314,31 +1314,31 @@ document.addEventListener("keydown", e => {
 });
 
 /* ============================================================
-   ??????????????? 3???????????????????
-   - ?????????????????? Google ??????????
-   - ?????? 3 ??????/??/???????
+   美食排行榜：全台「綜合評價」前 3，可用篩網過濾，卡片格式同「附近美食」
+   - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
+   - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.17";
-const RANK_TOP = 3;                 // ??? 3 ?
-const RANK_DEFAULT_OPEN = "???";
+const APP_VERSION_FALLBACK = "2026.06.27.18";
+const RANK_TOP = 3;                 // 只列前 3 名
+const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
-const RANK_TRAVEL_WALK = "??";
-const RANK_TRAVEL_DRIVE = "??";
+const RANK_TRAVEL_WALK = "走路";
+const RANK_TRAVEL_DRIVE = "開車";
 
 const RANK_FILTERS = window.RANK_FILTER_DEFS || [
-  { key:"travel",  label:"??", tier:"route", opts:[{label:"??"}, {label:"??"}] },
-  { key:"open",    label:"??", tier:"hard", opts:[{label:"??"}, {label:"???"}] },
-  { key:"meal",    label:"??", tier:"search", opts:[{label:"??", query:"?? ??? ?? ??"}, {label:"??", query:"?? ??? ???? ??"}, {label:"??", query:"?? ?? ?? ?? ????"}, {label:"??", query:"??? ?? ?? ??"}, {label:"??", query:"?? ??? ?? ?? ??"}, {label:"??", query:"?? ?? ?? ??? ??"}] },
-  { key:"service", label:"??", tier:"search", opts:[{label:"??"}, {label:"???", query:"??? ??? buffet ?? all you can eat ???? ??"}] },
-  { key:"diet",    label:"??", tier:"hard", opts:[{label:"??"}, {label:"??", query:"?? ?? vegan vegetarian ?? ??"}] },
+  { key:"travel",  label:"交通", tier:"route", opts:[{label:"走路"}, {label:"開車"}] },
+  { key:"open",    label:"營業", tier:"hard", opts:[{label:"不限"}, {label:"營業中"}] },
+  { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
+  { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
+  { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, city:"", area:"", village:"" };
-let rankPool = null;     // ???????????
-let rankPoolM = 4.0;     // ??????
-const rankRich = {};     // id -> ????????????????
-let rankAreaPools = {};  // city|area -> ???????
-let rankKeywordPools = {}; // keyword/searchTerms -> ????????
-let rankNearbyPools = {}; // origin|radius|filters -> ????????
+let rankPool = null;     // 分類＋排名後的全台候選
+let rankPoolM = 4.0;     // 當批貝氏平均
+const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
+let rankAreaPools = {};  // city|area -> 區域專用候選池
+let rankKeywordPools = {}; // keyword/searchTerms -> 全台關鍵字候選池
+let rankNearbyPools = {}; // origin|radius|filters -> 定位點附近候選池
 let rankGeocodeCache = {};
 let rankContextReady = false;
 let rankAutoMeal = false;
@@ -1351,30 +1351,30 @@ let locationPrivacyNotified = false;
 
 function guideFilterSummary(f=rankFilter){
   const parts = [];
-  if (rankOriginLabel && !hasRankLocationFilter(f)) parts.push(`???${rankOriginLabel}`);
-  if (f.city || f.area || f.village) parts.push(`???${[f.city, f.area, f.village].filter(Boolean).join("")}`);
-  if (f.keyword) parts.push(`????${String(f.keyword).trim()}`);
-  if (f.travel) parts.push(`???${f.travel}${rankTravelLimitText ? " " + rankTravelLimitText(f.travel) : ""}`);
-  if (f.open) parts.push(`???${f.open}`);
-  if (f.meal) parts.push(`???${f.meal}`);
-  if (f.service) parts.push(`???${f.service}`);
-  if (f.diet) parts.push(`???${f.diet}`);
-  return parts.join(" ? ") || "?????????????";
+  if (rankOriginLabel && !hasRankLocationFilter(f)) parts.push(`定位：${rankOriginLabel}`);
+  if (f.city || f.area || f.village) parts.push(`地區：${[f.city, f.area, f.village].filter(Boolean).join("")}`);
+  if (f.keyword) parts.push(`關鍵字：${String(f.keyword).trim()}`);
+  if (f.travel) parts.push(`交通：${f.travel}${rankTravelLimitText ? " " + rankTravelLimitText(f.travel) : ""}`);
+  if (f.open) parts.push(`營業：${f.open}`);
+  if (f.meal) parts.push(`時段：${f.meal}`);
+  if (f.service) parts.push(`吃法：${f.service}`);
+  if (f.diet) parts.push(`飲食：${f.diet}`);
+  return parts.join(" · ") || "目前使用全台與時間預設條件";
 }
 function setGuide(state="idle", message="", label=""){
   const card = $("#guideCard");
   const msg = $("#guideMessage");
   const st = $("#guideState");
   if (!card || !msg || !st) return;
-  const stateLabel = label || ({ idle:"??", working:"???", ready:"??", empty:"???", error:"??" }[state] || "??");
+  const stateLabel = label || ({ idle:"待命", working:"執行中", ready:"完成", empty:"無結果", error:"錯誤" }[state] || "狀態");
   card.dataset.state = state;
   st.textContent = stateLabel;
-  msg.textContent = message || "????????????????????????????????";
+  msg.textContent = message || "這裡會顯示系統狀態、勘誤提醒與操作引導，協助你理解目前推薦結果。";
 }
-function setGuideWorking(message){ setGuide("working", message, "???"); }
-function setGuideReady(message){ setGuide("ready", message, "???"); }
-function setGuideEmpty(message){ setGuide("empty", message, "???"); }
-function setGuideError(message){ setGuide("error", message, "???"); }
+function setGuideWorking(message){ setGuide("working", message, "分析中"); }
+function setGuideReady(message){ setGuide("ready", message, "已整理"); }
+function setGuideEmpty(message){ setGuide("empty", message, "可調整"); }
+function setGuideError(message){ setGuide("error", message, "需處理"); }
 
 function hasRankLocationFilter(f=rankFilter){
   return !!(f.city || f.area || f.village);
@@ -1384,20 +1384,20 @@ function clearRankLocationFilter({ notify=false }={}){
   rankFilter.city = "";
   rankFilter.area = "";
   rankFilter.village = "";
-  if (notify && hadLocation) toast("???????????????");
+  if (notify && hadLocation) toast("已切換交通模式，地區條件已清除");
 }
 function clearRankTravelFilter({ notify=false }={}){
   const hadTravel = !!rankFilter.travel || !!rankOriginLabel;
   rankFilter.travel = RANK_DEFAULT_TRAVEL;
   rankOriginLabel = "";
   rankOriginScope = { city:"", area:"", village:"" };
-  if (notify && hadTravel) toast("??????????????????");
+  if (notify && hadTravel) toast("已切換地區模式，交通與定位條件已清除");
 }
 function activeRankTravel(){
-  return rankFilter.travel || "??";
+  return rankFilter.travel || "走路";
 }
 function isWalkableRankMode(f=rankFilter){
-  return f.travel === "??" && !hasRankLocationFilter(f) && !!state.center;
+  return f.travel === "走路" && !hasRankLocationFilter(f) && !!state.center;
 }
 function isTravelRankMode(f=rankFilter){
   return !!f.travel && !hasRankLocationFilter(f) && !!state.center;
@@ -1422,21 +1422,21 @@ function isWithinRankTravelLimit(r, travel=activeRankTravel()){
 }
 function rankTravelLimitText(travel=activeRankTravel()){
   const limit = rankTravelLimitMin(travel);
-  return limit ? `${travel} ${limit} ???` : "";
+  return limit ? `${travel} ${limit} 分鐘內` : "";
 }
 function rankModeHintText(){
   if (hasRankLocationFilter()){
-    return `??????? ${[rankFilter.city, rankFilter.area, rankFilter.village].filter(Boolean).join(" ")}??????????`;
+    return `地區模式：使用 ${[rankFilter.city, rankFilter.area, rankFilter.village].filter(Boolean).join(" ")}，交通距離條件停用。`;
   }
   if (rankFilter.travel){
-    return `??????${rankOriginLabel || "?????"}??${rankFilter.travel}??????????`;
+    return `交通模式：以${rankOriginLabel || "目前定位點"}計算${rankFilter.travel}距離，地區條件停用。`;
   }
-  return "????????????????";
+  return "全台模式：未套用地區或交通距離。";
 }
 function notifyLocationPrivacyOnce(){
   if (locationPrivacyNotified) return;
   locationPrivacyNotified = true;
-  toast("????????????????????????");
+  toast("定位只用於附近餐廳與路線估算，不會寫入精確經緯度");
 }
 
 async function loadAppVersion(){
@@ -1453,7 +1453,7 @@ async function loadAppVersion(){
     const version = (await res.text()).trim();
     if (version) el.textContent = shortVersion(version);
   }catch(e){
-    console.info("[???] ????????", APP_VERSION_FALLBACK);
+    console.info("[版本號] 使用內建版本號：", APP_VERSION_FALLBACK);
   }
 }
 
@@ -1484,7 +1484,7 @@ function setMeta(selector, attr, value){
   }
   el.setAttribute(attr, value);
 }
-function setShareMetadata({ title="?????", description="? Google ??????????????????????????", url=location.href, image="" }={}){
+function setShareMetadata({ title="在地美食榜", description="用 Google 真資料、評分、評論數、路線時間與分類判讀找附近餐廳。", url=location.href, image="" }={}){
   const img = image || absoluteAssetUrl("assets/local-food-rank-logo.png");
   document.title = title;
   setMeta('meta[name="description"]', "content", description);
@@ -1497,7 +1497,7 @@ function setShareMetadata({ title="?????", description="? Google ???????????????
   setMeta('meta[name="twitter:image"]', "content", img);
 }
 function resetShareMetadata(){
-  setShareMetadata({ title:"?????", url:new URL(location.pathname, location.href).toString() });
+  setShareMetadata({ title:"在地美食榜", url:new URL(location.pathname, location.href).toString() });
 }
 function clearSharedPlaceRoute(){
   sharedPlaceRoute = null;
@@ -1514,33 +1514,33 @@ async function openSharedPlaceRoute(placeId){
   $("#rankView").classList.remove("hidden");
   closeRankFilters();
   $("#rankFilters").classList.add("hidden");
-  $("#rankList").innerHTML = `<div class="rank-note">???????</div>`;
+  $("#rankList").innerHTML = `<div class="rank-note">載入分享卡片…</div>`;
   try{
     const card = await fetchSharedPlaceCard(placeId);
     if (sharedPlaceRoute !== placeId) return;
     const shareUrl = placeShareUrl(placeId);
     setShareMetadata({
-      title:`${card.name}??????`,
-      description:`Google ?? ${card.rating || "?"}${card.count ? `?${Number(card.count).toLocaleString()} ???` : ""}${card.address ? `?${card.address}` : ""}`,
+      title:`${card.name}｜在地美食榜`,
+      description:`Google 評分 ${card.rating || "—"}${card.count ? `，${Number(card.count).toLocaleString()} 則評論` : ""}${card.address ? `｜${card.address}` : ""}`,
       url:shareUrl,
       image:card.photoBig || card.photo || card.photos?.[0] || "",
     });
     $("#rankList").innerHTML = `
       <div class="share-hero">
         <b>${escapeHTML(card.name)}</b>
-        <span>?????? ? Google ?? ${escapeHTML(card.rating || "")}${card.count ? ` ? ${Number(card.count).toLocaleString()} ?` : ""}</span>
+        <span>獨立分享卡片 · Google 評分 ${escapeHTML(card.rating || "")}${card.count ? ` · ${Number(card.count).toLocaleString()} 則` : ""}</span>
       </div>
       <div class="rank-route-tools">
         <span>${escapeHTML(card.address || "")}</span>
-        <button type="button" id="rankRouteHome">??????</button>
+        <button type="button" id="rankRouteHome">看完整排行榜</button>
       </div>
       ${cardHTML(card, 1)}`;
     $("#rankRouteHome")?.addEventListener("click", clearSharedPlaceRoute);
     bindCardEvents($("#rankList"));
   }catch(e){
     $("#rankList").innerHTML = `
-      <div class="rank-note">?????????${escapeHTML(e.message || "?????")}</div>
-      <div class="rank-route-tools"><span></span><button type="button" id="rankRouteHome">??????</button></div>`;
+      <div class="rank-note">分享卡片載入失敗：${escapeHTML(e.message || "找不到餐廳")}</div>
+      <div class="rank-route-tools"><span></span><button type="button" id="rankRouteHome">看完整排行榜</button></div>`;
     $("#rankRouteHome")?.addEventListener("click", clearSharedPlaceRoute);
   }
 }
@@ -1551,15 +1551,15 @@ async function fetchSharedPlaceCard(placeId){
   if (hasApiProxy){
     const data = await apiProxy("placeDetails", { placeId });
     const card = rankCandidateFromProxy(data.item || {}, {});
-    if (!card.loc) throw new Error("??????????");
-    if (!card.name) throw new Error("???????");
+    if (!card.loc) throw new Error("這個餐廳沒有座標資料");
+    if (!card.name) throw new Error("找不到這個餐廳");
     return writeApiCache(cacheKey, Object.assign(card, {
       lbCity:cityAreaFromAddress(card.address).city,
       composite:card.rating || 0,
       bScore:card.rating || 0,
       rBonus:0,
       aBonus:0,
-      lbFormula:"?????? Google ???",
+      lbFormula:"分享卡片使用 Google 真資料",
     }), CONFIG.CACHE_TTL_MS.details);
   }
   await loadGoogle();
@@ -1574,9 +1574,9 @@ async function fetchSharedPlaceCard(placeId){
     "servesVegetarianFood","servesBeer","servesWine","servesCocktails",
     "reviewSummary","editorialSummary","generativeSummary"
   ]});
-  if (!p.location) throw new Error("??????????");
+  if (!p.location) throw new Error("這個餐廳沒有座標資料");
   const name = toTW(extractText(p.displayName) || "");
-  if (!name) throw new Error("???????");
+  if (!name) throw new Error("找不到這個餐廳");
   return writeApiCache(cacheKey, {
     id: placeId,
     name,
@@ -1615,17 +1615,17 @@ async function openLeaderboard(force){
   trackUsage("leaderboard_open", { force:!!force, keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", travel:rankFilter.travel || "", open:rankFilter.open || "" });
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
-  setGuideWorking("???????????????????");
+  setGuideWorking("正在依照目前時間與位置準備排行榜條件。");
   if (!rankContextReady){
     applyCurrentMealToRankFilter();
     buildRankFilterBar();
     $("#rankFilters").classList.add("hidden");
-    $("#rankList").innerHTML = `<div class="rank-note">????????????????????</div>`;
-    setGuideWorking(`????????${rankFilter.meal || "??"}????????????????`);
+    $("#rankList").innerHTML = `<div class="rank-note">依現在時間與定位點設定走路可到的排行榜…</div>`;
+    setGuideWorking(`先帶入現在時段「${rankFilter.meal || "不限"}」，並嘗試取得定位作為搜尋中心。`);
     const located = await applyCurrentOriginToRankTravel();
     if (!located) {
-      toast("????????????????");
-      setGuideEmpty("??????????????????????????????");
+      toast("無法取得目前位置，改用全台排行榜");
+      setGuideEmpty("無法取得定位，先改用全台資料；你也可以開啟定位或手動選地區。");
     }
     rankContextReady = true;
   }
@@ -1662,7 +1662,7 @@ function currentPosition(){
 }
 
 function normalizeTaiwanCity(name){
-  return (name || "").replace(/?/g, "?");
+  return (name || "").replace(/台/g, "臺");
 }
 
 function matchTaiwanArea(city, area){
@@ -1711,7 +1711,7 @@ async function geocodeTaiwanScope(city, area="", village=""){
     }
     return geo?.center ? geo : null;
   }catch(e){
-    console.warn("[????] ?? geocode?", label, e.message || e);
+    console.warn("[地區座標] 無法 geocode：", label, e.message || e);
     rankGeocodeCache[label] = null;
     return null;
   }
@@ -1730,7 +1730,7 @@ async function loadVillageData(){
         return villageData;
       })
       .catch(e => {
-        console.warn("[??] ?????????", e.message);
+        console.warn("[村里] 載入村里資料失敗：", e.message);
         villageData = {};
         return villageData;
       });
@@ -1784,7 +1784,7 @@ async function applyCurrentAreaToRankFilter(){
       return true;
     }
   }catch(e){
-    console.warn("[Leaderboard] ?????????", e.message || e);
+    console.warn("[Leaderboard] 無法自動帶入地區：", e.message || e);
   }
   return false;
 }
@@ -1800,9 +1800,9 @@ async function locateRankArea(btn){
     const label = rankFilter.city + (rankFilter.area || "");
     buildRankFilterBar();
     safeRenderLeaderboard();
-    toast(`???? ${label}`);
+    toast(`已定位到 ${label}`);
   }else{
-    toast("????????????????");
+    toast("無法取得目前位置，請確認定位權限");
     if (btn){
       btn.disabled = false;
       btn.classList.remove("locating");
@@ -1814,7 +1814,7 @@ async function locateRankArea(btn){
 function rankOriginFromGeocode(results, city, area, village){
   const locationParts = [city, area, village].filter(Boolean).join("");
   if (locationParts) return locationParts;
-  return shortAreaLabel(results || []) || results?.[0]?.formatted_address || "????";
+  return shortAreaLabel(results || []) || results?.[0]?.formatted_address || "目前位置";
 }
 
 async function applyCurrentOriginToRankTravel(){
@@ -1822,7 +1822,7 @@ async function applyCurrentOriginToRankTravel(){
     notifyLocationPrivacyOnce();
     const center = await currentPosition();
     state.center = center;
-    rankOriginLabel = "????";
+    rankOriginLabel = "目前位置";
     rankOriginScope = { city:"", area:"", village:"" };
     if (hasGoogleApiKey){
       await loadGoogle();
@@ -1834,10 +1834,10 @@ async function applyCurrentOriginToRankTravel(){
       rankOriginLabel = rankOriginFromGeocode(res.results, city, area, village);
     }
     clearRankLocationFilter();
-    rankFilter.travel = "??";
+    rankFilter.travel = "走路";
     return true;
   }catch(e){
-    console.warn("[Leaderboard] ?????????", e.message || e);
+    console.warn("[Leaderboard] 無法設定交通定位：", e.message || e);
     return false;
   }
 }
@@ -1854,9 +1854,9 @@ async function locateRankOrigin(btn){
     buildRankFilterBar();
     safeRenderLeaderboard();
     trackUsage("locate_origin", { label:rankOriginLabel, travel:rankFilter.travel || "" });
-    toast(`???${rankOriginLabel}`);
+    toast(`定位：${rankOriginLabel}`);
   }else{
-    toast("????????????????");
+    toast("無法取得目前位置，請確認定位權限");
     if (btn){
       btn.disabled = false;
       btn.classList.remove("locating");
@@ -1966,10 +1966,10 @@ function branchGroupKey(item){
   const normalizedRaw = normalizeKeywordValue(raw);
   if (!raw || normalizedRaw.length < 4) return `place:${item.id}`;
   let base = raw
-    .replace(/[?(][^?)]*(?|??|??|??|??|??|??|?|?|?)[^?)]*[?)]/g, " ")
-    .replace(/[?|?/].*$/g, " ")
-    .replace(/[-???].*$/g, " ")
-    .replace(/\s+(??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??|??)?[\u4e00-\u9fffA-Za-z0-9]*(?|??|??|???|???|?|??|??|??)$/u, " ")
+    .replace(/[（(][^）)]*(店|門市|分店|旗艦|百貨|商場|中心|館|區|市)[^）)]*[）)]/g, " ")
+    .replace(/[｜|／/].*$/g, " ")
+    .replace(/[-－–—].*$/g, " ")
+    .replace(/\s+(台北|臺北|新北|桃園|新竹|臺中|台中|臺南|台南|高雄|基隆|宜蘭|苗栗|彰化|南投|雲林|嘉義|屏東|花蓮|臺東|台東|澎湖|金門|連江)?[\u4e00-\u9fffA-Za-z0-9]*(店|門市|分店|旗艦店|概念店|館|中心|百貨|商場)$/u, " ")
     .trim();
   const normalizedBase = normalizeKeywordValue(base);
   const changed = normalizedBase && normalizedBase !== normalizedRaw;
@@ -2019,7 +2019,7 @@ function finalizeRankCandidates(items, { sortDistance=false }={}){
   return groupRankBranches(all);
 }
 
-// ????????????????????? Google
+// 撈全台候選池（含分類標籤），每次開啟重新查 Google
 async function ensureRankPool(force){
   if (rankPool && !force) return;
   if (force){
@@ -2027,8 +2027,8 @@ async function ensureRankPool(force){
     rankKeywordPools = {};
     rankNearbyPools = {};
   }
-  $("#rankList").innerHTML = `<div class="rank-note">????????</div>`;
-  setGuideWorking("???? Google ?????????????????????");
+  $("#rankList").innerHTML = `<div class="rank-note">整理全台美食中…</div>`;
+  setGuideWorking("正在整理 Google 真資料候選池，評分與評論數會先做加權排序。");
   $("#rankRefresh").classList.add("spin");
   try{
     await ensureAwards();
@@ -2048,7 +2048,7 @@ async function ensureRankPool(force){
   }catch(e){
     console.error(e);
     const msg = googleSearchErrorMessage(e);
-    $("#rankList").innerHTML = `<div class="rank-note">????????${escapeHTML(msg)}</div>`;
+    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(msg)}</div>`;
     setGuideError(msg);
     rankPool = null;
   }finally{
@@ -2057,7 +2057,7 @@ async function ensureRankPool(force){
 }
 
 async function cityCandidates(Place, city, area="", quotaKey=""){
-  const textQuery = (area ? city + area : city) + " ??";
+  const textQuery = (area ? city + area : city) + " 餐廳";
   const key = apiCacheKey("textSearch", { textQuery, city, area });
   return cachedRequest(key, CONFIG.CACHE_TTL_MS.search, async () => {
     if (hasApiProxy){
@@ -2080,7 +2080,7 @@ async function cityCandidates(Place, city, area="", quotaKey=""){
       .map(p => normalizeRankPlace(p, { city, area })));
   }).catch(e => {
     if (isGoogleQuotaError(e)) throw e;
-    console.warn("[City Candidates] ?????", textQuery, e.message || e);
+    console.warn("[City Candidates] 查詢失敗：", textQuery, e.message || e);
     return [];
   });
 }
@@ -2119,7 +2119,7 @@ async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
         .map(p => normalizeRankPlace(p, context)));
     }catch(e){
       if (isGoogleQuotaError(e)) throw e;
-      console.warn("[Text Search] ?????", textQuery, e.message || e);
+      console.warn("[Text Search] 查詢失敗：", textQuery, e.message || e);
       return [];
     }
   }).then(items => items.map(x => ({ ...x, ...context, queryTerms:context.queryTerms || x.queryTerms || [] })));
@@ -2131,8 +2131,8 @@ function isGoogleQuotaError(e){
 }
 function googleSearchErrorMessage(e){
   return isGoogleQuotaError(e)
-    ? "Google Places ????????????????? Google Cloud ?????"
-    : (e?.message || "Google ????");
+    ? "Google Places 今日搜尋配額已用完，請稍後再試或到 Google Cloud 調整配額。"
+    : (e?.message || "Google 搜尋失敗");
 }
 
 function rankQueryTerms(f){
@@ -2145,12 +2145,12 @@ function rankQueryTerms(f){
   return [...new Set(terms)];
 }
 const SHORT_KEYWORD_SEARCH_EXPANSIONS = {
-  "?":["???","??","???","???","????"],
-  "?":["??","???","??","??","??"],
-  "?":["??","???","??","??","??"],
-  "?":["??","???","???","??","??"],
-  "?":["??","???","??","??","???"],
-  "?":["??","??","???","???","???"],
+  "牛":["牛肉麵","牛排","牛肉湯","牛肉鍋","牛肉料理"],
+  "麵":["麵店","牛肉麵","乾麵","湯麵","拉麵"],
+  "飯":["飯店","滷肉飯","炒飯","便當","丼飯"],
+  "雞":["雞排","雞肉飯","鹹酥雞","雞湯","炸雞"],
+  "魚":["魚湯","生魚片","海鮮","烤魚","魚料理"],
+  "鍋":["火鍋","鍋物","涮涮鍋","麻辣鍋","牛肉鍋"],
 };
 function rankSearchTextQueries(f=rankFilter, { limit=0 }={}){
   const terms = rankQueryTerms(f);
@@ -2177,7 +2177,7 @@ async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
   const locationTerms = [area, village].filter(Boolean).join(" ");
   const geo = await geocodeTaiwanScope(city, area, village);
   let all = [];
-  const queryTexts = rankSearchTextQueries(f).map(q => `${city}${locationTerms} ${q} ??`.trim());
+  const queryTexts = rankSearchTextQueries(f).map(q => `${city}${locationTerms} ${q} 餐廳`.trim());
   for (const textQuery of queryTexts){
     const got = await textSearchRankCandidates(Place, textQuery, {
       city,
@@ -2220,7 +2220,7 @@ async function keywordCandidates(f=rankFilter, quotaKey=""){
   const BATCH = 4;
   for (let i=0; i<TW_CITIES.length; i+=BATCH){
     const got = await Promise.all(TW_CITIES.slice(i,i+BATCH).map(c => {
-      const queryTexts = rankSearchTextQueries(f, { limit:2 }).map(q => `${c} ${q} ??`.trim());
+      const queryTexts = rankSearchTextQueries(f, { limit:2 }).map(q => `${c} ${q} 餐廳`.trim());
       return Promise.all(queryTexts.map(textQuery =>
         textSearchRankCandidates(Place, textQuery, { city:c, queryTerms:terms }, { quotaKey })
       )).then(parts => parts.flat());
@@ -2235,7 +2235,7 @@ async function keywordCandidates(f=rankFilter, quotaKey=""){
 
 function rankNearbySearchLabel(){
   const label = String(rankOriginLabel || "").trim();
-  if (!label || label === "????") return "";
+  if (!label || label === "目前位置") return "";
   return label.replace(/\s+/g, "");
 }
 function rankNearbySearchPrefixes(){
@@ -2255,7 +2255,7 @@ function rankNearbySearchRadius(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RADIUS
   return Math.max(radius, ...(steps.length ? steps : [radius]));
 }
 function rankNearbyTextQueries(f=rankFilter, { maxQueries=8 }={}){
-  const baseQueries = rankSearchTextQueries(f).map(q => `${q} ??`);
+  const baseQueries = rankSearchTextQueries(f).map(q => `${q} 餐廳`);
   const prefixes = rankNearbySearchPrefixes();
   const queries = [];
   for (const prefix of prefixes){
@@ -2386,7 +2386,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
       .map(p => normalizeRankPlace(p, { center:state.center, queryTerms:terms })));
   }).catch(e => {
     if (isGoogleQuotaError(e)) throw e;
-    console.warn("[Nearby Search] ?????", e.message || e);
+    console.warn("[Nearby Search] 查詢失敗：", e.message || e);
     return [];
   });
   let cachedAll = finalizeRankCandidates(cachedNearby.map(x => ({ ...x, queryTerms:terms })), { sortDistance:true });
@@ -2414,15 +2414,15 @@ function mergeRankCandidates(lists, { sortDistance=false }={}){
 }
 
 const MEAL_FILTER_RULES = {
-  "??": { flags:["servesBreakfast"], re:/breakfast|??|??|????|??|??|??|??/ },
-  "??": { flags:["servesBrunch","servesCoffee"], re:/brunch|???|??|??|????|??|???/ },
-  "??": { flags:["servesLunch"], re:/??|??|??|??|????|???|??|??/ },
-  "??": { flags:["servesCoffee","servesDessert"], re:/cafe|coffee|dessert|bakery|tea.?house|???|??|??|??|??|??|??|??/ },
-  "??": { flags:["servesDinner"], re:/??|??|fine.?dining|???|??|??|???|??|??|??|??|??/ },
-  "??": { flags:[], re:/??|??|??|???|??|?|???|??|??|???|???|??/ },
+  "早餐": { flags:["servesBreakfast"], re:/breakfast|早餐|晨食|永和豆漿|蛋餅|飯糰|燒餅|油條/ },
+  "早茶": { flags:["servesBrunch","servesCoffee"], re:/brunch|早午餐|早茶|飲茶|港式飲茶|港點|茶餐廳/ },
+  "午餐": { flags:["servesLunch"], re:/午餐|定食|便當|簡餐|商業午餐|自助餐|飯館|麵館/ },
+  "午茶": { flags:["servesCoffee","servesDessert"], re:/cafe|coffee|dessert|bakery|tea.?house|下午茶|甜點|咖啡|茶屋|烘焙|蛋糕|甜品|鬆餅/ },
+  "晚餐": { flags:["servesDinner"], re:/晚餐|餐酒|fine.?dining|無菜單|割烹|懷石|鐵板燒|法餐|火鍋|燒肉|牛排|合菜/ },
+  "消夜": { flags:[], re:/宵夜|消夜|夜市|居酒屋|串燒|串|鹹酥雞|燒烤|熱炒|羊肉爐|薑母鴨|深夜/ },
 };
-const VEG_EVIDENCE_RE = /vegetarian|vegan|??|??|?|??|???|???|??|veggie/;
-const VEG_ONLY_RE = /??|??|????|????|vegan|vegetarian restaurant/;
+const VEG_EVIDENCE_RE = /vegetarian|vegan|素食|蔬食|齋|純素|蛋奶素|五辛素|素餐|veggie/;
+const VEG_ONLY_RE = /純素|全素|素食餐廳|蔬食餐廳|vegan|vegetarian restaurant/;
 function mealFlagMatch(o, label){
   const rule = MEAL_FILTER_RULES[label];
   return !!rule?.flags?.some(flag => o[flag] === true);
@@ -2443,37 +2443,37 @@ function vegEvidenceText(o){
   ].filter(Boolean).join(" ");
 }
 
-// ? Google ?? + ?? + ??????????? 100% ??????????
+// 依 Google 欄位 + 類型 + 店名關鍵字做分類（無法 100% 精確，僅供篩選參考）
 function classifyCandidate(o){
   const s = (o.name + " " + o.ptd + " " + o.pt).toLowerCase();
   const re = r => r.test(o.name + o.ptd) || r.test(s);
   const t = { cuisine:[], meal:[], service:[], occasion:[], diet:[] };
-  // ??????
-  if (re(/chinese|cantonese|sichuan|hunan|dumpling|hot.?pot|noodle|dim.?sum|??|??|??|??|??|??|?|??|??|??|??|??|??|???|?|?|??|??|??|??|??|??|??/)) t.cuisine.push("??");
-  if (re(/italian|french|american|spanish|greek|steak|pizza|hamburger|mediterranean|mexican|bistro|brunch|??|???|??|??|??|??|??|?|??|??|??|pasta|???|??|???|burger/)) t.cuisine.push("??");
-  // ?????? Google ?????????/??/?????
+  // 內部分類標籤
+  if (re(/chinese|cantonese|sichuan|hunan|dumpling|hot.?pot|noodle|dim.?sum|中式|中菜|中餐|台菜|台式|川菜|粵|港式|江浙|上海|湘菜|客家|熱炒|牛肉麵|餃|鍋|滷味|燒臘|點心|餛飩|麵食|羊肉|快炒/)) t.cuisine.push("中式");
+  if (re(/italian|french|american|spanish|greek|steak|pizza|hamburger|mediterranean|mexican|bistro|brunch|義式|義大利|法式|法國|美式|西餐|西式|歐|牛排|排餐|披薩|pasta|地中海|漢堡|墨西哥|burger/)) t.cuisine.push("西式");
+  // 時段：優先用 Google 供餐欄位，再用店名/類型/摘要近似。
   Object.keys(MEAL_FILTER_RULES).forEach(label => {
     if (mealFlagMatch(o, label) || mealTextMatch(o, label)) t.meal.push(label);
   });
-  // ???Google ???????/??????????????????????????????
+  // 方式：Google 沒有固定「單點/吃到飽」欄位，用店名與類型關鍵字近似；未命中吃到飽者視為單點
   const buffet = re(BUFFET_EVIDENCE_RE);
-  t.service.push(buffet ? "???" : "??");
-  // ???????????????????????/??????????????
-  const groupMeal = o.goodGroups || o.reservable || re(/??|??|??|??|??|??|??|??|??|???|???|??|buffet|???|??|family|group|hot.?pot|barbecue|bbq|bistro/);
-  t.occasion.push(groupMeal ? "??" : "??");
-  // ??
+  t.service.push(buffet ? "吃到飽" : "單點");
+  // 情境：聚餐偏向火鍋、燒肉、合菜、餐酒館、可訂位/適合團體；未命中者預設為獨享
+  const groupMeal = o.goodGroups || o.reservable || re(/聚餐|合菜|桌菜|包廂|宴會|火鍋|鍋物|燒肉|烤肉|居酒屋|餐酒館|熱炒|buffet|吃到飽|多人|family|group|hot.?pot|barbecue|bbq|bistro/);
+  t.occasion.push(groupMeal ? "聚餐" : "獨享");
+  // 飲食
   const vegText = vegEvidenceText(o);
   const veg = o.servesVeg || VEG_EVIDENCE_RE.test(vegText);
   const vegOnly = VEG_ONLY_RE.test(vegText);
-  if (veg) t.diet.push("??");
-  if (!vegOnly) t.diet.push("??");
+  if (veg) t.diet.push("素食");
+  if (!vegOnly) t.diet.push("葷食");
   return t;
 }
 
-// ???? ? ?? 3 ? ?????? ? ?????????????
+// 套用篩選 → 取前 3 → 補抓完整欄位 → 以「附近美食」卡片格式渲染
 let rankRenderToken = 0;
-const BUFFET_EVIDENCE_RE = /???|???|???|buffet|all.?you.?can.?eat|??|????|????|??|????|???|????|????|??|??|??|???|??|??|???|???|????|??????|???|???|???/;
-const BUFFET_NEGATIVE_RE = /????|?????|????|?????|????|???|???|????/;
+const BUFFET_EVIDENCE_RE = /吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|無限供應|無限暢食|任食|任點任食|吃飽飽|饗食天堂|漢來海港|旭集|饗饗|島語|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋|欣葉日本料理|果然匯|蓮池閣|饗泰多/;
+const BUFFET_NEGATIVE_RE = /非吃到飽|不是吃到飽|不吃到飽|沒有吃到飽|無吃到飽|單點制|單點式|改為單點/;
 function rankEvidenceText(item){
   return [
     item.name,
@@ -2491,8 +2491,8 @@ function hasBuffetEvidence(item){
   return BUFFET_EVIDENCE_RE.test(text) && !BUFFET_NEGATIVE_RE.test(text);
 }
 function rankServiceMatch(item, value){
-  if (value === "???") return hasBuffetEvidence(item);
-  if (value === "??") return !hasBuffetEvidence(item);
+  if (value === "吃到飽") return hasBuffetEvidence(item);
+  if (value === "單點") return !hasBuffetEvidence(item);
   return (item.tags?.service||[]).includes(value) || (item.aiTags?.service||[]).includes(value);
 }
 function rankMealMatch(item, value){
@@ -2513,35 +2513,35 @@ function normalizeKeywordValue(value){
   return String(value || "")
     .toLowerCase()
     .replace(/\s+/g, "")
-    .replace(/?/g, "?")
-    .replace(/??/g, "??");
+    .replace(/臺/g, "台")
+    .replace(/魯肉/g, "滷肉");
 }
 function keywordTermVariants(term){
   const base = normalizeKeywordValue(term);
   if (!base) return [];
   const variants = new Set([base]);
-  variants.add(base.replace(/??/g, "??"));
-  variants.add(base.replace(/??/g, "??"));
-  variants.add(base.replace(/?/g, "?"));
-  variants.add(base.replace(/?/g, "?"));
-  variants.add(base.replace(/??/g, "??"));
-  variants.add(base.replace(/??/g, "??"));
+  variants.add(base.replace(/滷肉/g, "魯肉"));
+  variants.add(base.replace(/魯肉/g, "滷肉"));
+  variants.add(base.replace(/台/g, "臺"));
+  variants.add(base.replace(/臺/g, "台"));
+  variants.add(base.replace(/麵線/g, "面線"));
+  variants.add(base.replace(/面線/g, "麵線"));
   return [...variants].filter(Boolean);
 }
 function keywordTokens(keyword){
-  return String(keyword || "").split(/[\s,??]+/).map(normalizeKeywordValue).filter(Boolean);
+  return String(keyword || "").split(/[\s,，、]+/).map(normalizeKeywordValue).filter(Boolean);
 }
 function rawKeywordTokens(keyword){
-  return String(keyword || "").split(/[\s,??]+/).map(x => x.trim()).filter(Boolean);
+  return String(keyword || "").split(/[\s,，、]+/).map(x => x.trim()).filter(Boolean);
 }
 function keywordSourceFields(item){
   return [
-    { key:"query", label:"???", weight:6, text:(item.queryTerms || []).join(" ") },
-    { key:"name", label:"??", weight:8, text:item.name },
-    { key:"type", label:"??", weight:5, text:[item.ptd, item.typeName, item.pt].join(" ") },
-    { key:"review", label:"????", weight:4, text:item.reviewSummary },
-    { key:"summary", label:"Google ??", weight:3.5, text:[item.summary, item.generativeSummary].join(" ") },
-    { key:"address", label:"??", weight:1.5, text:item.address },
+    { key:"query", label:"搜尋詞", weight:6, text:(item.queryTerms || []).join(" ") },
+    { key:"name", label:"店名", weight:8, text:item.name },
+    { key:"type", label:"類型", weight:5, text:[item.ptd, item.typeName, item.pt].join(" ") },
+    { key:"review", label:"評論摘要", weight:4, text:item.reviewSummary },
+    { key:"summary", label:"Google 摘要", weight:3.5, text:[item.summary, item.generativeSummary].join(" ") },
+    { key:"address", label:"地址", weight:1.5, text:item.address },
   ].map(x => ({ ...x, normalized:normalizeKeywordValue(x.text) }));
 }
 function keywordMatchDetails(item, keyword){
@@ -2585,7 +2585,7 @@ function keywordHitSummaryHTML(hit){
     grouped.get(h.source).push(h.term);
   });
   return `<div class="keyword-hits">` + [...grouped.entries()].map(([source, terms]) =>
-    `<span class="keyword-hit"><b>${escapeHTML(source)}</b>?${escapeHTML([...new Set(terms)].join("?"))}</span>`
+    `<span class="keyword-hit"><b>${escapeHTML(source)}</b>：${escapeHTML([...new Set(terms)].join("、"))}</span>`
   ).join("") + `</div>`;
 }
 function relaxedKeywordValue(keyword){
@@ -2595,7 +2595,7 @@ function relaxedKeywordValue(keyword){
 }
 function keywordRelaxLabel(keyword){
   const relaxed = relaxedKeywordValue(keyword);
-  return relaxed ? `???????${relaxed}?` : "?????";
+  return relaxed ? `放寬關鍵字為「${relaxed}」` : "清除關鍵字";
 }
 function activeRankFilters(f){
   const active = RANK_FILTERS.filter(g => !["open","travel"].includes(g.key) && f[g.key]).map(g => ({ key:g.key, value:f[g.key], tier:g.tier }));
@@ -2651,25 +2651,25 @@ async function enrichAiFilterTags(items, f){
       x.aiSourceLabels = [...new Set(Object.values(x.aiSources).flat().map(s => s.label).filter(Boolean))];
     });
   }catch(e){
-    console.warn("[AI Filter] ????????? Google ????????", e.message);
+    console.warn("[AI Filter] 後端分類失敗，改用 Google 硬欄位與搜尋詞：", e.message);
   }
 }
 function rankFilterPrecisionText(){
   const active = activeRankFilters(rankFilter);
   const hasAi = CONFIG.AI_FILTER.MODE === "proxy" && (!!CONFIG.AI_FILTER.ENDPOINT || hasApiProxy);
   if (!active.length){
-    return "?????????????? Google ??????????????????";
+    return "營業、素食、適合團體等優先採 Google 真欄位；吃法會搭配搜尋詞與近似判斷。";
   }
   const tiers = new Set(active.map(x => x.tier));
   const parts = [];
-  if (tiers.has("hard")) parts.push("?????");
-  if (tiers.has("search")) parts.push(hasAi ? "??? + AI??" : "??? + ????");
-  return parts.join(" / ") || "????";
+  if (tiers.has("hard")) parts.push("真資料硬篩");
+  if (tiers.has("search")) parts.push(hasAi ? "搜尋詞 + AI判讀" : "搜尋詞 + 近似判斷");
+  return parts.join(" / ") || "近似判斷";
 }
 async function renderLeaderboard(){
   if (!hasDataApi){
-    $("#rankList").innerHTML = `<div class="rank-note">???? API proxy ? Google ??????????</div>`;
-    setGuideError("??????? Google ???????? Maps API key ??? proxy?");
+    $("#rankList").innerHTML = `<div class="rank-note">需要後端 API proxy 或 Google 金鑰才能載入排行榜。</div>`;
+    setGuideError("目前沒有可用的 Google 資料來源，請確認 Maps API key 或後端 proxy。");
     return;
   }
   const token = ++rankRenderToken;
@@ -2693,21 +2693,21 @@ async function renderLeaderboard(){
     nearby:useTravel,
   });
   if (useTravel){
-    $("#rankList").innerHTML = `<div class="rank-note">?? ${escapeHTML(rankOriginLabel || "????")} ${escapeHTML(rankTravelLimitText(f.travel))}????</div>`;
-    setGuideWorking(`????${rankOriginLabel || "????"}???????${rankTravelLimitText(f.travel)}?????`);
+    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} ${escapeHTML(rankTravelLimitText(f.travel))}美食中…</div>`;
+    setGuideWorking(`正在以「${rankOriginLabel || "目前位置"}」為中心，尋找${rankTravelLimitText(f.travel)}可到的店。`);
   }else if (useNearby){
-    $("#rankList").innerHTML = `<div class="rank-note">?? ${escapeHTML(rankOriginLabel || "????")} ?? ${CONFIG.RANK_WALKABLE_RADIUS_M}m ?????</div>`;
-    setGuideWorking(`???? ${rankOriginLabel || "????"} ?????????`);
+    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} 步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內美食中…</div>`;
+    setGuideWorking(`正在查詢 ${rankOriginLabel || "目前位置"} 附近步行可到的店。`);
     source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_RADIUS_M, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }else if (f.city && (f.area || f.village || searchTerms.length)){
-    $("#rankList").innerHTML = `<div class="rank-note">?? ${escapeHTML(f.city + (f.area || "") + (f.village || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} ????</div>`;
-    setGuideWorking(`?????${f.city}${f.area || ""}${f.village || ""}${searchTerms.length ? " " + searchTerms.join(" ") : ""}?? Google ????`);
+    $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (f.village || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
+    setGuideWorking(`正在查詢「${f.city}${f.area || ""}${f.village || ""}${searchTerms.length ? " " + searchTerms.join(" ") : ""}」的 Google 真資料。`);
     source = await areaCandidates(f.city, f.area, f, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }else if (searchTerms.length){
-    $("#rankList").innerHTML = `<div class="rank-note">???? ${escapeHTML(searchTerms.join(" "))} ????</div>`;
-    setGuideWorking(`???????????????${searchTerms.join(" ")}????????????????`);
+    $("#rankList").innerHTML = `<div class="rank-note">整理全台 ${escapeHTML(searchTerms.join(" "))} 美食中…</div>`;
+    setGuideWorking(`關鍵字是強條件，正在查詢全台「${searchTerms.join(" ")}」相關店家，不會亂塞不相干建議。`);
     source = await keywordCandidates(f, renderQuotaKey);
     if (token !== rankRenderToken) return;
   }
@@ -2723,7 +2723,7 @@ async function renderLeaderboard(){
       x.keywordHit = hit;
     }
     if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
-    if (f.open === "???" && x.openNow !== true) return false;
+    if (f.open === "營業中" && x.openNow !== true) return false;
     if (f.service && !rankTagMatch(x, "service", f.service)) return false;
     if (f.diet && !rankTagMatch(x, "diet", f.diet)) return false;
     return true;
@@ -2743,8 +2743,8 @@ async function renderLeaderboard(){
       const radius = radii[i];
       finalRadius = radius;
       distanceRelaxed = radius > firstRadius;
-      $("#rankList").innerHTML = `<div class="rank-note">?? ${escapeHTML(rankOriginLabel || "????")} ${escapeHTML(f.travel || activeRankTravel())}??? ${Number(radius).toLocaleString()}m ?????</div>`;
-      setGuideWorking(`? ${i + 1} ?????${f.travel || activeRankTravel()}????? ${Number(radius).toLocaleString()}m????? 3 ????`);
+      $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} ${escapeHTML(f.travel || activeRankTravel())}同心圓 ${Number(radius).toLocaleString()}m 內美食中…</div>`;
+      setGuideWorking(`第 ${i + 1} 圈搜尋中：${f.travel || activeRankTravel()}模式已查到 ${Number(radius).toLocaleString()}m，目標湊滿 3 張卡片。`);
       const radiusSource = await nearbyRankCandidates(f, radius, renderQuotaKey);
       if (token !== rankRenderToken) return;
       collectedSources.push(radiusSource);
@@ -2792,7 +2792,7 @@ async function renderLeaderboard(){
     }
     if (!cards.length) cards = bestCards.slice(0, RANK_TOP);
     if (!cards.length && f.keyword){
-      setGuideWorking(`??????????????${rankOriginLabel || "????"}????????? ${f.keyword}??????????`);
+      setGuideWorking(`同心圓內沒有足夠結果，改用「${rankOriginLabel || "目前位置"}」所在行政範圍補查 ${f.keyword}，再以路線時間排序。`);
       const fallbackSource = await originKeywordFallbackCandidates(f, renderQuotaKey);
       if (token !== rankRenderToken) return;
       let fallbackList = applyRankFilters(fallbackSource, false);
@@ -2844,13 +2844,13 @@ async function renderLeaderboard(){
         routeLimitMin:rankTravelLimitMin(f.travel),
         routeMaxRadiusM:finalRadius,
       });
-      $("#rankList").innerHTML = `<div class="rank-note">${escapeHTML(f.travel || activeRankTravel())}??????? ${Number(finalRadius).toLocaleString()}m??????????<div class="empty-actions">
-        ${f.keyword ? `<button data-empty-action="clear-keyword">?????</button>` : ""}
-        ${f.service ? `<button data-empty-action="clear-service">????</button>` : ""}
-        ${f.open === "???" ? `<button data-empty-action="open-any">????</button>` : ""}
-        <button data-empty-action="clear-all">????</button>
+      $("#rankList").innerHTML = `<div class="rank-note">${escapeHTML(f.travel || activeRankTravel())}同心圓已放寬到 ${Number(finalRadius).toLocaleString()}m，仍沒有符合的餐廳。<div class="empty-actions">
+        ${f.keyword ? `<button data-empty-action="clear-keyword">取消關鍵字</button>` : ""}
+        ${f.service ? `<button data-empty-action="clear-service">取消吃法</button>` : ""}
+        ${f.open === "營業中" ? `<button data-empty-action="open-any">不限營業</button>` : ""}
+        <button data-empty-action="clear-all">清除篩選</button>
       </div></div>`;
-      setGuideEmpty(`???? ${Number(finalRadius).toLocaleString()}m ????????????????????????`);
+      setGuideEmpty(`已放寬到 ${Number(finalRadius).toLocaleString()}m 還是沒有符合店家，建議先放寬營業、吃法或關鍵字。`);
       bindEmptyStateActions();
       return;
     }
@@ -2885,14 +2885,14 @@ async function renderLeaderboard(){
     });
     $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
     bindCardEvents($("#rankList"));
-    setGuideReady(`???? ${cards.length} ????? Google ??????????????????????${guideFilterSummary(f)}?`);
+    setGuideReady(`已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間與外部獎牌加權，條件：${guideFilterSummary(f)}。`);
     return;
   }
   let list = applyRankFilters(source, false);
   let distanceRelaxed = false;
   if (!list.length && useNearby){
-    $("#rankList").innerHTML = `<div class="rank-note">?? ${CONFIG.RANK_WALKABLE_RADIUS_M}m ????????? ${CONFIG.RANK_WALKABLE_FALLBACK_M}m?</div>`;
-    setGuideWorking(`?? ${CONFIG.RANK_WALKABLE_RADIUS_M}m ????????? ${CONFIG.RANK_WALKABLE_FALLBACK_M}m?`);
+    $("#rankList").innerHTML = `<div class="rank-note">步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內選擇較少，放寬到 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m…</div>`;
+    setGuideWorking(`步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內不足，正在放寬到 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m。`);
     source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_FALLBACK_M, renderQuotaKey);
     if (token !== rankRenderToken) return;
     list = applyRankFilters(source, false);
@@ -2936,31 +2936,31 @@ async function renderLeaderboard(){
       distanceRelaxed,
     });
     const emptyText = f.keyword
-      ? `??????????${escapeHTML(f.keyword)}??????????????????????`
+      ? `找不到實際資料包含「${escapeHTML(f.keyword)}」的餐廳。關鍵字是強條件，不顯示不相干店家。`
       : (distanceRelaxed
-        ? `?????? ${CONFIG.RANK_WALKABLE_FALLBACK_M}m??????????`
-        : "?????????????");
+        ? `已放寬到步行 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m，仍沒有符合的餐廳。`
+        : "這個條件下沒有符合的餐廳。");
     $("#rankList").innerHTML = `<div class="rank-note">${emptyText}<div class="empty-actions">
-      ${f.keyword ? `<button data-empty-action="clear-keyword">?????</button>` : ""}
+      ${f.keyword ? `<button data-empty-action="clear-keyword">取消關鍵字</button>` : ""}
       ${f.keyword && relaxedKeywordValue(f.keyword) ? `<button data-empty-action="relax-keyword">${escapeHTML(keywordRelaxLabel(f.keyword))}</button>` : ""}
-      ${f.village ? `<button data-empty-action="clear-village">???</button>` : ""}
-      ${f.area ? `<button data-empty-action="clear-area">????</button>` : ""}
-      ${f.service ? `<button data-empty-action="clear-service">????</button>` : ""}
-      ${f.open === "???" ? `<button data-empty-action="open-any">????</button>` : ""}
-      ${f.travel === "??" ? `<button data-empty-action="drive">???</button>` : ""}
-      <button data-empty-action="clear-all">????</button>
+      ${f.village ? `<button data-empty-action="clear-village">取消里</button>` : ""}
+      ${f.area ? `<button data-empty-action="clear-area">改看全區</button>` : ""}
+      ${f.service ? `<button data-empty-action="clear-service">取消吃法</button>` : ""}
+      ${f.open === "營業中" ? `<button data-empty-action="open-any">不限營業</button>` : ""}
+      ${f.travel === "走路" ? `<button data-empty-action="drive">改開車</button>` : ""}
+      <button data-empty-action="clear-all">清除篩選</button>
     </div></div>`;
     setGuideEmpty(f.keyword
-      ? `??????${f.keyword}????????????????????????????`
-      : "???????????????????????????");
+      ? `找不到包含「${f.keyword}」的真實結果。關鍵字是強因子，建議改短一點或清除關鍵字。`
+      : "目前條件沒有符合店家，建議先放寬營業、地區或交通條件。");
     bindEmptyStateActions();
     return;
   }
-  $("#rankList").innerHTML = `<div class="rank-note">??? ${top.length} ??</div>`;
-  setGuideWorking(`?????????????? ${top.length} ????????? API?`);
+  $("#rankList").innerHTML = `<div class="rank-note">載入前 ${top.length} 名…</div>`;
+  setGuideWorking(`已找到候選店家，現在只補抓前 ${top.length} 名的詳細資料以節省 API。`);
   await ensureCertificationRules();
   await fetchRankRich(top);
-  if (token !== rankRenderToken) return;   // ???????????????
+  if (token !== rankRenderToken) return;   // 期間若又改了篩選，放棄這次渲染
   let cards = top.map(rankCardData);
   await enrichRankCardRoutes(cards, f.travel || activeRankTravel());
   if (token !== rankRenderToken) return;
@@ -2983,11 +2983,11 @@ async function renderLeaderboard(){
         routeLimitMin:rankTravelLimitMin(f.travel),
         routePrefetchCount:beforeLimit,
       });
-      $("#rankList").innerHTML = `<div class="rank-note">${escapeHTML(rankTravelLimitText(f.travel))}????????<div class="empty-actions">
-        ${f.travel === RANK_TRAVEL_WALK ? `<button data-empty-action="drive">???</button>` : ""}
-        <button data-empty-action="clear-all">????</button>
+      $("#rankList").innerHTML = `<div class="rank-note">${escapeHTML(rankTravelLimitText(f.travel))}沒有符合的餐廳。<div class="empty-actions">
+        ${f.travel === RANK_TRAVEL_WALK ? `<button data-empty-action="drive">改開車</button>` : ""}
+        <button data-empty-action="clear-all">清除篩選</button>
       </div></div>`;
-      setGuideEmpty(`${rankTravelLimitText(f.travel)}?????????????????????`);
+      setGuideEmpty(`${rankTravelLimitText(f.travel)}內沒有符合店家；可以改開車或清除部分篩選。`);
       bindEmptyStateActions();
       return;
     }
@@ -3017,14 +3017,14 @@ async function renderLeaderboard(){
   });
   $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
   bindCardEvents($("#rankList"));
-  setGuideReady(`???? ${cards.length} ??????????????????????????????????????`);
+  setGuideReady(`已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間與標籤；照片與完整資訊放在詳情內省流量。`);
 }
 
 function safeRenderLeaderboard(){
   renderLeaderboard().catch(e => {
     console.error(e);
     const msg = googleSearchErrorMessage(e);
-    $("#rankList").innerHTML = `<div class="rank-note">????????${escapeHTML(msg)}</div>`;
+    $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(msg)}</div>`;
     setGuideError(msg);
   });
 }
@@ -3037,8 +3037,8 @@ function bindEmptyStateActions(){
     if (action === "clear-village") rankFilter.village = "";
     if (action === "clear-area") { rankFilter.area = ""; rankFilter.village = ""; }
     if (action === "clear-service") rankFilter.service = null;
-    if (action === "open-any") rankFilter.open = "??";
-    if (action === "drive") { rankFilter.travel = "??"; clearRankLocationFilter({ notify:true }); }
+    if (action === "open-any") rankFilter.open = "不限";
+    if (action === "drive") { rankFilter.travel = "開車"; clearRankLocationFilter({ notify:true }); }
     if (action === "clear-all") {
       Object.assign(rankFilter, { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, city:"", area:"", village:"" });
       rankKeywordPools = {};
@@ -3051,13 +3051,13 @@ function bindEmptyStateActions(){
   }));
 }
 
-// ??????????????????/??/??/?????? place_id ????????
+// 只對要顯示的前幾名補抓完整欄位（照片/營業/服務/摘要…），用 place_id 快取避免重複查。
 async function fetchRankRich(cands){
   const targets = cands
     .filter(c => c?.id)
     .filter((c, i, arr) => arr.findIndex(x => x.id === c.id) === i)
     .slice(0, CONFIG.RANK_DETAIL_PREFETCH_LIMIT);
-  if (targets.length) setGuideWorking(`????? ${targets.length} ???????????????????????????`);
+  if (targets.length) setGuideWorking(`正在補抓前 ${targets.length} 家的營業、電話、標籤與摘要；照片仍等你打開詳情才載入。`);
   if (hasApiProxy){
     await Promise.all(targets.map(async c => {
       if (rankRich[c.id]) return;
@@ -3123,9 +3123,9 @@ async function fetchRankRich(cands){
 function rankCardData(c){
   const rich = rankRich[c.id] || {};
   const C = CONFIG.BAYES.C, m = Math.round(rankPoolM*100)/100, n = c.count.toLocaleString();
-  const formula = `?? (${C}?${m}?${n}?${c.rating.toFixed(1)})?(${C}?${n}) ? ${c.bScore.toFixed(2)}`
-    + (c.rBonus>0 ? `????? ${c.rBonus.toFixed(2)}` : ``)
-    + (c.aBonus>0 ? `???? ${c.aBonus.toFixed(2)}` : ``) + `??? ${c.composite.toFixed(2)}`;
+  const formula = `貝氏 (${C}×${m}＋${n}×${c.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${c.bScore.toFixed(2)}`
+    + (c.rBonus>0 ? `，＋評論量 ${c.rBonus.toFixed(2)}` : ``)
+    + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``) + `，綜合 ${c.composite.toFixed(2)}`;
   return Object.assign({
     id:c.id, name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
@@ -3177,11 +3177,11 @@ async function enrichRankCardRoutes(cards, travel=activeRankTravel()){
     const items = await routeItemsCached(targets, travel);
     applyRouteItems(items, targets, spec.prefix);
   }catch(e){
-    console.warn("[?????] Google ??????????????????", e.message);
+    console.warn("[排行榜路線] Google 路線時間取得失敗，保留直線距離估算：", e.message);
   }
 }
 
-// ???????????????????????????c ?????????? lbCity
+// 排行榜的「上榜理由」一句（不依步行距離，用綜合分數）。c 為卡片物件，縣市存於 lbCity
 function bindCardEvents(root){
   root.querySelectorAll("[data-photo-preview]").forEach(bindPhotoPreview);
   root.querySelectorAll("[data-detail]").forEach(btn => btn.addEventListener("click", () => {
@@ -3189,17 +3189,17 @@ function bindCardEvents(root){
     const d = card.querySelector(".detail");
     d.classList.toggle("open");
     if (d.classList.contains("open")) {
-      setGuideReady(`?????${card?.dataset.name || "???"}??????????????????? API ????`);
+      setGuideReady(`正在查看「${card?.dataset.name || "這家店"}」詳情；照片會在展開時才載入，避免浪費 API 與流量。`);
       loadDetailPhotos(card);
     }else{
-      setGuideReady("??????????????????????????????????????");
+      setGuideReady("已收起詳情。第一眼保留評分、評論量、距離時間與主要標籤，完整資料放在詳情內。");
     }
     btn.querySelector(".chev2").style.transform = d.classList.contains("open") ? "rotate(180deg)" : "";
     trackUsage("detail_toggle", { open:d.classList.contains("open"), placeId:card?.querySelector("[data-share]")?.dataset.placeId || "" });
   }));
   root.querySelectorAll("[data-nav]").forEach(btn => btn.addEventListener("click", () => {
     const { lat, lng, name } = btn.dataset;
-    const travelMode = activeRankTravel() === "??" ? "driving" : "walking";
+    const travelMode = activeRankTravel() === "開車" ? "driving" : "walking";
     const url = (lat && lng && lat!=="0")
       ? `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=${travelMode}&q=${encodeURIComponent(name)}`
       : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
@@ -3243,13 +3243,13 @@ async function ensureDetailPhotos(card, { force=false, reason="missing" }={}){
   if (!card) return;
   if (!force && card.dataset.photoFallbackChecked === "1") return;
   card.dataset.photoFallbackChecked = "1";
-  const name = card.dataset.name || "???";
+  const name = card.dataset.name || "這家店";
   setGuideWorking(reason === "broken"
-    ? `???????????${name}???????????????`
-    : `Google ?????????${name}???????????????`);
+    ? `照片載入失敗，正在用「${name}」店名與地址重新補查可用照片。`
+    : `Google 詳細資料沒有提供「${name}」照片，正在用店名與地址補查。`);
   const photos = await fetchPhotoFallbackForCard(card, { force }).catch(() => []);
   if (!photos.length) {
-    setGuideEmpty(`Google ?????????????${name}??????????`);
+    setGuideEmpty(`Google 目前沒有可用照片，先保留「${name}」的文字與路線資訊。`);
     return;
   }
   const inner = card.querySelector(".detail-inner");
@@ -3260,7 +3260,7 @@ async function ensureDetailPhotos(card, { force=false, reason="missing" }={}){
   inner.insertAdjacentHTML("afterbegin", photoStripHTML(photos, name));
   inner.querySelectorAll("[data-photo-preview]").forEach(bindPhotoPreview);
   loadDetailPhotos(card);
-  setGuideReady(`????${name}??????????????`);
+  setGuideReady(`已補到「${name}」照片；點小圖可以放大查看。`);
 }
 async function fetchPhotoFallbackForCard(card, { force=false }={}){
   if (!hasGoogleApiKey) return [];
@@ -3340,7 +3340,7 @@ function observeLazyPhotos(root){
 async function copyShareUrl(url){
   try{
     await navigator.clipboard.writeText(url);
-    toast("?????????????");
+    toast("已複製分享連結，可貼給朋友");
   }catch(_){
     const ta = document.createElement("textarea");
     ta.value = url;
@@ -3353,42 +3353,42 @@ async function copyShareUrl(url){
     ta.setSelectionRange(0, ta.value.length);
     const ok = document.execCommand?.("copy");
     ta.remove();
-    toast(ok ? "?????????????" : "??????????????");
+    toast(ok ? "已複製分享連結，可貼給朋友" : "無法自動複製，請長按連結複製");
   }
 }
 
 async function shareCard(btn){
   const { placeId, name, rating, count, address } = btn.dataset;
-  if (!placeId){ toast("?????????????"); return; }
+  if (!placeId){ toast("這張卡片目前沒有可分享連結"); return; }
   const url = placeShareUrl(placeId);
   trackUsage("share_copy", { placeId, name, rating, count:Number(count || 0) });
   await copyShareUrl(url);
 }
 
-/* ??? */
+/* 篩選列 */
 function buildRankFilterBar(){
   const bar = $("#rankFilters");
-  let html = `<div class="fg fg-location"><span class="fg-lab">??</span><div class="fg-chips">`
-    + `<select id="rkCity" class="fsel"><option value="">??</option>`
+  let html = `<div class="fg fg-location"><span class="fg-lab">地區</span><div class="fg-chips">`
+    + `<select id="rkCity" class="fsel"><option value="">全台</option>`
     + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
     + `</select><select id="rkArea" class="fsel"></select><select id="rkVillage" class="fsel"></select>`
     + `</div></div>`;
-  html += `<div class="fg fg-keyword"><span class="fg-lab">???</span><div class="fg-chips">`
-    + `<input id="rkKeyword" class="keyword-input" type="search" inputmode="search" enterkeyhint="search" maxlength="24" placeholder="?????????" value="${escapeHTML(rankFilter.keyword || "")}">`
-    + `<button id="rkKeywordApply" class="keyword-apply" type="button">??</button>`
+  html += `<div class="fg fg-keyword"><span class="fg-lab">關鍵字</span><div class="fg-chips">`
+    + `<input id="rkKeyword" class="keyword-input" type="search" inputmode="search" enterkeyhint="search" maxlength="24" placeholder="例如：麵線、滷肉飯" value="${escapeHTML(rankFilter.keyword || "")}">`
+    + `<button id="rkKeywordApply" class="keyword-apply" type="button">套用</button>`
     + `</div></div>`;
   html += RANK_FILTERS.map(g =>
     `<div class="fg${g.key==="travel" ? " fg-travel" : ""}"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
     + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
     + (g.key==="travel"
-      ? `<button class="flocate" id="rkTravelLocate" type="button" aria-label="??????" title="??????"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></button>${rankOriginLabel ? `<span class="origin-hint">???${escapeHTML(rankOriginLabel)}</span>` : ""}`
+      ? `<button class="flocate" id="rkTravelLocate" type="button" aria-label="定位交通起點" title="定位交通起點"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></button>${rankOriginLabel ? `<span class="origin-hint">定位：${escapeHTML(rankOriginLabel)}</span>` : ""}`
       : "")
     + `</div></div>`
   ).join("");
   const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
-  html += `<div class="mode-hint"><b>????</b>?${escapeHTML(rankModeHintText())}</div>`;
-  html += `<div class="filter-precision"><b>????</b>?${escapeHTML(rankFilterPrecisionText())}</div>`;
-  html += `<button class="fclear${active?"":" hidden"}" id="rkClear">??</button>`;
+  html += `<div class="mode-hint"><b>目前模式</b>：${escapeHTML(rankModeHintText())}</div>`;
+  html += `<div class="filter-precision"><b>判斷來源</b>：${escapeHTML(rankFilterPrecisionText())}</div>`;
+  html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
   bar.innerHTML = html;
 
   bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
@@ -3440,18 +3440,18 @@ function buildRankFilterBar(){
 function fillRkArea(){
   const as = $("#rkArea"); if (!as) return;
   const list = TW_AREAS[rankFilter.city] || [];
-  as.innerHTML = `<option value="">??</option>` + list.map(a => `<option value="${a}"${rankFilter.area===a?" selected":""}>${a}</option>`).join("");
+  as.innerHTML = `<option value="">區域</option>` + list.map(a => `<option value="${a}"${rankFilter.area===a?" selected":""}>${a}</option>`).join("");
   as.disabled = !rankFilter.city;
 }
 function fillRkVillage(){
   const vs = $("#rkVillage"); if (!vs) return;
   if (!rankFilter.city || !rankFilter.area){
-    vs.innerHTML = `<option value="">?</option>`;
+    vs.innerHTML = `<option value="">里</option>`;
     vs.disabled = true;
     return;
   }
   if (!villageData){
-    vs.innerHTML = `<option value="">???</option>`;
+    vs.innerHTML = `<option value="">載入里</option>`;
     vs.disabled = true;
     loadVillageData().then(() => {
       const fresh = $("#rkVillage");
@@ -3461,36 +3461,36 @@ function fillRkVillage(){
   }
   const list = villagesFor(rankFilter.city, rankFilter.area);
   if (rankFilter.village && !list.includes(rankFilter.village)) rankFilter.village = "";
-  vs.innerHTML = `<option value="">?</option>` + list.map(v => `<option value="${v}"${rankFilter.village===v?" selected":""}>${v}</option>`).join("");
+  vs.innerHTML = `<option value="">里</option>` + list.map(v => `<option value="${v}"${rankFilter.village===v?" selected":""}>${v}</option>`).join("");
   vs.disabled = !list.length;
 }
 
 function enterApp() {
   $("#splash")?.classList.add("hidden");
   $("#app").style.display = "flex";
-  state.category = currentMealKey();   // ???????????
+  state.category = currentMealKey();   // 依現在時間自動推薦時段
   syncControls();
 }
 
 function locateThenSearch() {
-  state.wholeArea = false;   // ??????????
-  setStatus(true, "????");
+  state.wholeArea = false;   // 目前位置一律步行模式
+  setStatus(true, "定位中…");
   notifyLocationPrivacyOnce();
   if (!navigator.geolocation) {
-    toast("???????????????????");
+    toast("無法使用定位，改用預設中心搜尋真實資料");
     state.center = { ...CONFIG.DEFAULT_CENTER };
     search();
     return;
   }
   navigator.geolocation.getCurrentPosition(
     pos => { state.center = { lat: pos.coords.latitude, lng: pos.coords.longitude }; search(); },
-    err => { toast("?????????????????"); state.center = { ...CONFIG.DEFAULT_CENTER }; search(); },
+    err => { toast("無法定位，改用預設中心搜尋真實資料"); state.center = { ...CONFIG.DEFAULT_CENTER }; search(); },
     { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
   );
 }
 
 /* ============================================================
-   ???????? / ?? / ?? / ?????
+   控制列：範圍面板 / 半徑 / 排序 / 只看營業中
    ============================================================ */
 function syncControls() {
   $("#radius").value = state.radius;
@@ -3522,8 +3522,8 @@ $("#radius").addEventListener("input", e => {
 });
 $("#applyScope").addEventListener("click", () => {
   state.radius = +$("#radius").value;
-  state.wholeArea = false;   // ???????????????
-  $("#scopeMode").textContent = state.usingArea ? "????????" : "????????";
+  state.wholeArea = false;   // 手動設定步行半徑＝切回步行模式
+  $("#scopeMode").textContent = state.usingArea ? "以選定地區為圓心" : "以目前位置為圓心";
   $("#scopePanel").classList.add("hidden");
   search();
 });
@@ -3539,7 +3539,7 @@ document.querySelectorAll(".sort-chip").forEach(chip =>
     rankAndRender();
   }));
 
-// ???? / ??????????? Places ??
+// 用餐時段 / 類型：改變類型需重新向 Places 搜尋
 document.querySelectorAll(".mchip").forEach(chip =>
   chip.addEventListener("click", () => {
     state.category = chip.dataset.cat;
@@ -3552,7 +3552,7 @@ $("#openOnly").addEventListener("change", e => {
   rankAndRender();
 });
 
-// ?????????????
+// 價位篩選（多選；空＝全部）
 document.querySelectorAll(".pchip").forEach(chip =>
   chip.addEventListener("click", () => {
     const lvl = +chip.dataset.price;
@@ -3563,7 +3563,7 @@ document.querySelectorAll(".pchip").forEach(chip =>
     rankAndRender();
   }));
 
-// ???????????? ???????? storage
+// 主題切換（淺色／暗色）— 記憶體狀態，不用 storage
 const ICON_MOON = '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>';
 const ICON_SUN  = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
 $("#themeBtn").addEventListener("click", () => {
@@ -3575,40 +3575,40 @@ $("#themeBtn").addEventListener("click", () => {
 });
 
 /* ============================================================
-   Step 4 ? ????????????/?? ? geocoding ? ?????
+   Step 4 — 自然語言選地點：輸入地名/地標 → geocoding → 以該點搜尋
    ============================================================ */
-/* ???? ? ?/?/?/????????????????????????? */
-const TW_CITIES=["???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"];
-const TW_AREAS={"???":["???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["??","??","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["??","??","??","??","??","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["??","??"],"???":["???","???","???","????","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","??","??","??","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","????","???","???"],"???":["???","????","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","????","???","???","???"],"???":["???","???","???","???","???","???","???","???","???","???","???","???","???"],"???":["???","???","???","???","???","???"],"???":["???","???","???","???","???","???"],"???":["???","???","???","???"]};
+/* 全台縣市 → 區/鄉/鎮/市（先選縣市再選區域；資料來源：官方郵遞區號對照） */
+const TW_CITIES=["臺北市","基隆市","新北市","宜蘭縣","桃園市","新竹市","新竹縣","苗栗縣","臺中市","彰化縣","南投縣","嘉義市","嘉義縣","雲林縣","臺南市","高雄市","屏東縣","臺東縣","花蓮縣","澎湖縣","金門縣","連江縣"];
+const TW_AREAS={"臺北市":["中正區","大同區","中山區","松山區","大安區","萬華區","信義區","士林區","北投區","內湖區","南港區","文山區"],"基隆市":["仁愛區","信義區","中正區","中山區","安樂區","暖暖區","七堵區"],"新北市":["萬里區","金山區","板橋區","汐止區","深坑區","石碇區","瑞芳區","平溪區","雙溪區","貢寮區","新店區","坪林區","烏來區","永和區","中和區","土城區","三峽區","樹林區","鶯歌區","三重區","新莊區","泰山區","林口區","蘆洲區","五股區","八里區","淡水區","三芝區","石門區"],"宜蘭縣":["宜蘭市","壯圍鄉","頭城鎮","礁溪鄉","員山鄉","羅東鎮","三星鄉","大同鄉","五結鄉","冬山鄉","蘇澳鎮","南澳鄉"],"桃園市":["中壢區","平鎮區","龍潭區","楊梅區","新屋區","觀音區","桃園區","龜山區","八德區","大溪區","復興區","大園區","蘆竹區"],"新竹市":["東區","北區","香山區"],"新竹縣":["竹北市","湖口鄉","新豐鄉","新埔鎮","關西鎮","芎林鄉","寶山鄉","竹東鎮","五峰鄉","橫山鄉","尖石鄉","北埔鄉","峨眉鄉"],"苗栗縣":["竹南鎮","頭份市","三灣鄉","南庄鄉","獅潭鄉","後龍鎮","通霄鎮","苑裡鎮","苗栗市","造橋鄉","頭屋鄉","公館鄉","大湖鄉","泰安鄉","銅鑼鄉","三義鄉","西湖鄉","卓蘭鎮"],"臺中市":["中區","東區","南區","西區","北區","北屯區","西屯區","南屯區","太平區","大里區","霧峰區","烏日區","豐原區","后里區","石岡區","東勢區","和平區","新社區","潭子區","大雅區","神岡區","大肚區","沙鹿區","龍井區","梧棲區","清水區","大甲區","外埔區","大安區"],"彰化縣":["彰化市","芬園鄉","花壇鄉","秀水鄉","鹿港鎮","福興鄉","線西鄉","和美鎮","伸港鄉","員林市","社頭鄉","永靖鄉","埔心鄉","溪湖鎮","大村鄉","埔鹽鄉","田中鎮","北斗鎮","田尾鄉","埤頭鄉","溪州鄉","竹塘鄉","二林鎮","大城鄉","芳苑鄉","二水鄉"],"南投縣":["南投市","中寮鄉","草屯鎮","國姓鄉","埔里鎮","仁愛鄉","名間鄉","集集鎮","水里鄉","魚池鄉","信義鄉","竹山鎮","鹿谷鄉"],"嘉義市":["西區","東區"],"嘉義縣":["番路鄉","梅山鄉","竹崎鄉","阿里山鄉","中埔鄉","大埔鄉","水上鄉","鹿草鄉","太保市","朴子市","東石鄉","六腳鄉","新港鄉","民雄鄉","大林鎮","溪口鄉","義竹鄉","布袋鎮"],"雲林縣":["斗南鎮","大埤鄉","虎尾鎮","土庫鎮","褒忠鄉","東勢鄉","臺西鄉","崙背鄉","麥寮鄉","斗六市","林內鄉","古坑鄉","莿桐鄉","西螺鎮","二崙鄉","北港鎮","水林鄉","口湖鄉","四湖鄉","元長鄉"],"臺南市":["中西區","東區","南區","北區","安平區","安南區","永康區","歸仁區","新化區","左鎮區","玉井區","楠西區","南化區","仁德區","關廟區","龍崎區","官田區","麻豆區","佳里區","西港區","七股區","將軍區","學甲區","北門區","新營區","後壁區","白河區","東山區","六甲區","下營區","柳營區","鹽水區","善化區","新市區","大內區","山上區","安定區"],"高雄市":["新興區","前金區","苓雅區","鹽埕區","鼓山區","旗津區","前鎮區","三民區","楠梓區","小港區","左營區","仁武區","大社區","岡山區","路竹區","阿蓮區","田寮區","燕巢區","橋頭區","梓官區","彌陀區","永安區","湖內區","鳳山區","大寮區","林園區","鳥松區","大樹區","旗山區","美濃區","六龜區","內門區","杉林區","甲仙區","桃源區","那瑪夏區","茂林區","茄萣區"],"屏東縣":["屏東市","三地門鄉","霧臺鄉","瑪家鄉","九如鄉","里港鄉","高樹鄉","鹽埔鄉","長治鄉","麟洛鄉","竹田鄉","內埔鄉","萬丹鄉","潮州鎮","泰武鄉","來義鄉","萬巒鄉","崁頂鄉","新埤鄉","南州鄉","林邊鄉","東港鎮","琉球鄉","佳冬鄉","新園鄉","枋寮鄉","枋山鄉","春日鄉","獅子鄉","車城鄉","牡丹鄉","恆春鎮","滿州鄉"],"臺東縣":["臺東市","綠島鄉","蘭嶼鄉","延平鄉","卑南鄉","鹿野鄉","關山鎮","海端鄉","池上鄉","東河鄉","成功鎮","長濱鄉","太麻里鄉","金峰鄉","大武鄉","達仁鄉"],"花蓮縣":["花蓮市","新城鄉","秀林鄉","吉安鄉","壽豐鄉","鳳林鎮","光復鄉","豐濱鄉","瑞穗鄉","萬榮鄉","玉里鎮","卓溪鄉","富里鄉"],"澎湖縣":["馬公市","西嶼鄉","望安鄉","七美鄉","白沙鄉","湖西鄉"],"金門縣":["金沙鎮","金湖鎮","金寧鄉","金城鎮","烈嶼鄉","烏坵鄉"],"連江縣":["南竿鄉","北竿鄉","莒光鄉","東引鄉"]};
 
-// ???? + ??????????? Google ????????????????????/????????
+// 由「縣市 + 區域」下拉直接搜尋：走 Google 地理編碼（跳過簡寫字典，避免同名區如台北/台中大安區誤判）
 async function pickCityArea(){
   const city = $("#citySel").value, area = $("#areaSel").value;
   if (!city || !area) return;
   const label = city + area;
   closeAreaModal();
-  setStatus(true, "?????");
+  setStatus(true, "尋找地點…");
   try{
     let center;
     await loadGoogle();
     const { Geocoder } = await google.maps.importLibrary("geocoding");
     const res = await new Geocoder().geocode({ address: label, region:"tw", language:"zh-TW" });
-    if (!res.results || !res.results.length) throw new Error("???????");
+    if (!res.results || !res.results.length) throw new Error("找不到這個地區");
     const g = res.results[0]; center = { lat:g.geometry.location.lat(), lng:g.geometry.location.lng() };
     state.center = center; state.usingArea = true; state.areaName = label; state.wholeArea = true;
     $("#scopeLabel").textContent = label;
-    $("#scopeMode").textContent = "????????????";
+    $("#scopeMode").textContent = "整區範圍（不限步行距離）";
     if (state.map) state.map.setCenter(center);
     search();
-  }catch(e){ setStatus(false); toast(e.message || "?????"); }
+  }catch(e){ setStatus(false); toast(e.message || "找不到地點"); }
 }
-// ?????/??????
+// 初始化縣市/區域連動下拉
 (function initCityArea(){
   const cs = $("#citySel"); if (!cs) return;
-  cs.innerHTML = '<option value="">??</option>' + TW_CITIES.map(c=>`<option value="${c}">${c}</option>`).join("");
+  cs.innerHTML = '<option value="">縣市</option>' + TW_CITIES.map(c=>`<option value="${c}">${c}</option>`).join("");
   cs.addEventListener("change", () => {
     const as = $("#areaSel"), list = TW_AREAS[cs.value] || [];
-    as.innerHTML = '<option value="">??</option>' + list.map(a=>`<option value="${a}">${a}</option>`).join("");
+    as.innerHTML = '<option value="">區域</option>' + list.map(a=>`<option value="${a}">${a}</option>`).join("");
   });
   $("#areaSel").addEventListener("change", pickCityArea);
 })();
@@ -3664,7 +3664,7 @@ async function showAreaSuggestions(q){
       btn.addEventListener("click", () => selectAreaSuggestion(items[Number(btn.dataset.suggest)]));
     });
   }catch(e){
-    console.warn("[Autocomplete] ???????", e.message);
+    console.warn("[Autocomplete] 取得建議失敗：", e.message);
     clearAreaSuggestions();
   }
 }
@@ -3672,25 +3672,25 @@ async function selectAreaSuggestion(suggestion){
   const pred = suggestion?.placePrediction;
   if (!pred) return;
   closeAreaModal();
-  setStatus(true, "?????");
+  setStatus(true, "尋找地點…");
   try{
     const place = pred.toPlace();
     await place.fetchFields({ fields:["displayName","formattedAddress","location"] });
-    if (!place.location) throw new Error("????????");
-    const label = toTW(place.formattedAddress || extractText(place.displayName) || pred.text?.toString?.() || "????");
+    if (!place.location) throw new Error("這個地點沒有座標");
+    const label = toTW(place.formattedAddress || extractText(place.displayName) || pred.text?.toString?.() || "選定地點");
     state.center = { lat: place.location.lat(), lng: place.location.lng() };
     state.usingArea = true;
     state.areaName = label;
-    state.wholeArea = /?$/.test(label.trim());
+    state.wholeArea = /區$/.test(label.trim());
     $("#scopeLabel").textContent = label;
-    $("#scopeMode").textContent = state.wholeArea ? "????????????" : "????????";
+    $("#scopeMode").textContent = state.wholeArea ? "整區範圍（不限步行距離）" : "以選定地區為圓心";
     autocompleteSessionToken = null;
     if (state.map) state.map.setCenter(state.center);
     search();
   }catch(e){
     autocompleteSessionToken = null;
     setStatus(false);
-    toast(e.message || "?????");
+    toast(e.message || "找不到地點");
   }
 }
 
@@ -3706,20 +3706,20 @@ $("#areaInput").addEventListener("input", e=>{
 });
 $("#areaCurrent").addEventListener("click", ()=>{
   closeAreaModal();
-  state.usingArea = false; state.areaName = "????"; state.wholeArea = false;
-  $("#scopeLabel").textContent = "????";
-  $("#scopeMode").textContent = "????????";
+  state.usingArea = false; state.areaName = "目前位置"; state.wholeArea = false;
+  $("#scopeLabel").textContent = "目前位置";
+  $("#scopeMode").textContent = "以目前位置為圓心";
   locateThenSearch();
 });
 
-/* ============ ??????????????? ? ???? ? ????? ============ */
+/* ============ 用地圖選位置：拖曳地圖對準中心 → 反查地名 → 以該點搜尋 ============ */
 let pickMap = null;
 $("#btnMapPick").addEventListener("click", openPickMap);
 $("#pickBack").addEventListener("click", () => $("#pickView").classList.add("hidden"));
 $("#pickConfirm").addEventListener("click", confirmPick);
 
 async function openPickMap(){
-  if (!hasGoogleApiKey){ toast("??????? Google ??"); return; }
+  if (!hasGoogleApiKey){ toast("地圖選位置需要 Google 金鑰"); return; }
   closeAreaModal();
   const view = $("#pickView");
   const opening = view.classList.contains("hidden");
@@ -3734,7 +3734,7 @@ async function openPickMap(){
         gestureHandling: "greedy", colorScheme: "DARK", mapId: CONFIG.MAP_ID,
       });
     } else { pickMap.setCenter(state.center); }
-  }catch(e){ $("#pickView").classList.add("hidden"); toast("???????" + e.message); }
+  }catch(e){ $("#pickView").classList.add("hidden"); toast("地圖載入失敗：" + e.message); }
 }
 
 async function confirmPick(){
@@ -3742,20 +3742,20 @@ async function confirmPick(){
   const c = pickMap.getCenter();
   const center = { lat: c.lat(), lng: c.lng() };
   $("#pickView").classList.add("hidden");
-  setStatus(true, "?????");
-  let label = "????";
+  setStatus(true, "尋找地點…");
+  let label = "選定位置";
   try{
     const { Geocoder } = await google.maps.importLibrary("geocoding");
     const res = await new Geocoder().geocode({ location: center, language: "zh-TW" });
     if (res.results && res.results.length) label = shortAreaLabel(res.results) || label;
   }catch(_){}
-  state.center = center; state.usingArea = true; state.areaName = label; state.wholeArea = false; // ????????????
+  state.center = center; state.usingArea = true; state.areaName = label; state.wholeArea = false; // 地圖選點＝以該點步行搜尋
   $("#scopeLabel").textContent = label;
-  $("#scopeMode").textContent = "????????";
+  $("#scopeMode").textContent = "以選定位置為圓心";
   search();
 }
 
-// ???????+?????
+// 反查取出「縣市+區」短地名
 function shortAreaLabel(results){
   for (const r of results){
     const comp = r.address_components || [];
@@ -3767,7 +3767,7 @@ function shortAreaLabel(results){
   return "";
 }
 
-// ?? ? ??
+// 地名 → 座標
 async function geocode(q){
   await loadGoogle();
   const { Geocoder } = await google.maps.importLibrary("geocoding");
@@ -3776,7 +3776,7 @@ async function geocode(q){
     const g = res.results[0];
     return { center:{ lat:g.geometry.location.lat(), lng:g.geometry.location.lng() }, label:g.formatted_address };
   }
-  throw new Error("???????");
+  throw new Error("找不到這個地點");
 }
 
 async function submitArea(){
@@ -3784,28 +3784,28 @@ async function submitArea(){
   if (!q) return;
   autocompleteSessionToken = null;
   closeAreaModal();
-  setStatus(true, "?????");
+  setStatus(true, "尋找地點…");
   try{
     const { center, label } = await geocode(q);
     state.center = center;
     state.usingArea = true;
     state.areaName = label;
-    state.wholeArea = /?$/.test(label.trim());   // ??????????????????
+    state.wholeArea = /區$/.test(label.trim());   // 結尾是「區」＝整區候選、忽略步行距離
     $("#scopeLabel").textContent = label;
-    $("#scopeMode").textContent = state.wholeArea ? "????????????" : "????????";
+    $("#scopeMode").textContent = state.wholeArea ? "整區範圍（不限步行距離）" : "以選定地區為圓心";
     if (state.map) state.map.setCenter(center);
     search();
   }catch(e){
     setStatus(false);
-    toast(e.message || "?????");
+    toast(e.message || "找不到地點");
   }
 }
 
 /* ============================================================
-   ???Places API New?????????
+   搜尋（Places API New，只使用真實資料）
    ============================================================ */
 async function search() {
-  setStatus(true, "???????");
+  setStatus(true, "搜尋附近餐廳…");
   try {
     await ensureCertificationRules();
     state.raw = await placesSearch();
@@ -3816,8 +3816,8 @@ async function search() {
       openOnly:state.openOnly,
       sort:state.sort,
     });
-    await ensureAwards();      // Step 2?????????????
-    applyAwards(state.raw);    // Step 2????? ? ?? awards
+    await ensureAwards();      // Step 2：載入評鑑名單（只載一次）
+    applyAwards(state.raw);    // Step 2：模糊比對 → 填入 awards
     rankAndRender();
   } catch (e) {
     console.error(e);
@@ -3827,27 +3827,27 @@ async function search() {
 
 function showSearchError(error){
   setStatus(false);
-  const msg = error?.message || "????";
+  const msg = error?.message || "未知錯誤";
   const isApiBlocked = /PERMISSION_DENIED|referer|API key|REQUEST_DENIED/i.test(msg);
   $("#list").innerHTML = `
     <section class="error-state">
-      <b>${isApiBlocked ? "Google API ????????" : "??????"}</b>
+      <b>${isApiBlocked ? "Google API 目前擋下這個來源" : "搜尋暫時失敗"}</b>
       <p>${isApiBlocked
-        ? "???? API key ???? localhost referrer ???????????????????"
-        : "?????????????????????"}
+        ? "這通常是 API key 的網域或 localhost referrer 限制。正式環境設定允許來源後即可恢復。"
+        : "請稍後再試，或改用地名、縣市區域重新搜尋。"}
       </p>
       <code>${escapeHTML(msg)}</code>
       <div class="error-actions">
-        <button id="retrySearchBtn">????</button>
+        <button id="retrySearchBtn">重新搜尋</button>
       </div>
     </section>`;
   $("#retrySearchBtn").addEventListener("click", search);
 }
 
-/* ---- ?? Places ???New? ---- */
+/* ---- 真實 Places 搜尋（New） ---- */
 let gmapsReady = null;
 function loadGoogle() {
-  if (!hasGoogleApiKey) return Promise.reject(new Error("?? Google API key"));
+  if (!hasGoogleApiKey) return Promise.reject(new Error("缺少 Google API key"));
   if (gmapsReady) return gmapsReady;
   gmapsReady = new Promise((res, rej) => {
     const cb = "__nearbyGoodEatsMapsReady";
@@ -3860,7 +3860,7 @@ function loadGoogle() {
     s.async = true;
     s.onerror = () => {
       delete window[cb];
-      rej(new Error("Google Maps ????"));
+      rej(new Error("Google Maps 載入失敗"));
     };
     document.head.appendChild(s);
   });
@@ -3891,7 +3891,7 @@ async function placesSearch() {
   await loadGoogle();
   const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary("places");
   const req = {
-    // ???????????? Atmosphere ? reviewSummary/editorialSummary???????? 3 ???
+    // 初次只抓較便宜欄位（不含 Atmosphere 的 reviewSummary/editorialSummary），排名後只對前 3 家補抓
     fields: ["id","displayName","location","rating","userRatingCount",
              "priceLevel","priceRange","regularOpeningHours","businessStatus","formattedAddress",
              "nationalPhoneNumber","websiteURI","googleMapsURI","primaryTypeDisplayName","photos",
@@ -3917,12 +3917,12 @@ async function placesSearch() {
     openNow: isOpenNow(p.regularOpeningHours),
     address: toTW(p.formattedAddress || ""),
     phone: p.nationalPhoneNumber || "",
-    hours: (p.regularOpeningHours?.weekdayDescriptions || []).map(toTW),   // ??????
-    priceText: toTW(priceRangeText(p.priceRange)),             // ??????
-    typeName: toTW(extractText(p.primaryTypeDisplayName)),     // ?????/?????
+    hours: (p.regularOpeningHours?.weekdayDescriptions || []).map(toTW),   // 每週營業時間
+    priceText: toTW(priceRangeText(p.priceRange)),             // 實際價位範圍
+    typeName: toTW(extractText(p.primaryTypeDisplayName)),     // 類型（餐廳/咖啡廳…）
     website: p.websiteURI || "",
     mapsUri: p.googleMapsURI || "",
-    // ??/??/?????????? true ????JS ???? has/is ???
+    // 服務/供應/設施（布林；只在明確 true 才採用；JS 欄位名有 has/is 前綴）
     dineIn: p.hasDineIn===true, takeout: p.hasTakeout===true, delivery: p.hasDelivery===true,
     curbside: p.hasCurbsidePickup===true, reservable: p.isReservable===true, outdoor: p.hasOutdoorSeating===true,
     allowsDogs: p.allowsDogs===true, liveMusic: p.hasLiveMusic===true,
@@ -3935,38 +3935,38 @@ async function placesSearch() {
     servesBreakfast: p.servesBreakfast===true, servesLunch: p.servesLunch===true,
     servesDinner: p.servesDinner===true, servesBrunch: p.servesBrunch===true,
     servesDessert: p.servesDessert===true, servesCoffee: p.servesCoffee===true,
-    summary: "",          // editorialSummary ???? 3 ????? Atmosphere ???
-    reviewSummary: "",    // ???? enrichTop ?
-    generativeSummary: "", // Google AI-powered place summary?? enrichTop ?
-    _place: p,            // ?? Place ??? fetchFields ??
-    // ???????Places photos???????????????
+    summary: "",          // editorialSummary 延後對前 3 家補抓（省 Atmosphere 費用）
+    reviewSummary: "",    // 同上，由 enrichTop 補
+    generativeSummary: "", // Google AI-powered place summary，由 enrichTop 補
+    _place: p,            // 保留 Place 實例供 fetchFields 補抓
+    // 真實店家照片（Places photos）：縮圖小張、詳情大張，省流量
     photos:   (p.photos || []).slice(0, 3).map(ph => ph.getURI({ maxWidth: 560, maxHeight: 420 })),
     photo:    p.photos?.[0]?.getURI({ maxWidth: 200, maxHeight: 200 }) || "",
     photoBig: p.photos?.[0]?.getURI({ maxWidth: 800, maxHeight: 480 }) || "",
-    awards: [],          // Step 2 ?????????
-    aiReason: null,      // ?? AI ?? reason????????
+    awards: [],          // Step 2 由評鑑名單比對填入
+    aiReason: null,      // 後端 AI 分類 reason；前端不自行產生
   }));
 }
 function priceToNum(pl){const map={
   FREE:0,INEXPENSIVE:1,MODERATE:2,EXPENSIVE:3,VERY_EXPENSIVE:4,
   PRICE_LEVEL_FREE:0,PRICE_LEVEL_INEXPENSIVE:1,PRICE_LEVEL_MODERATE:2,PRICE_LEVEL_EXPENSIVE:3,PRICE_LEVEL_VERY_EXPENSIVE:4
 };return map[pl]||0;}
-// ????????? Places ? regularOpeningHours.openNow ??????? periods ???????
+// 是否現在營業：新版 Places 的 regularOpeningHours.openNow 已不回傳，改用 periods 對現在時間判斷
 function isOpenNow(oh){
-  if (!oh || !oh.periods || !oh.periods.length) return null;   // ??????
+  if (!oh || !oh.periods || !oh.periods.length) return null;   // 無資料＝未知
   const now = new Date();
-  const mow = now.getDay()*1440 + now.getHours()*60 + now.getMinutes(); // ????????
+  const mow = now.getDay()*1440 + now.getHours()*60 + now.getMinutes(); // 一週中的第幾分鐘
   for (const p of oh.periods){
     if (!p.open) continue;
     const s = p.open.day*1440 + (p.open.hour||0)*60 + (p.open.minute||0);
-    if (!p.close) return true;                                  // 24 ????
+    if (!p.close) return true;                                  // 24 小時營業
     let e = p.close.day*1440 + (p.close.hour||0)*60 + (p.close.minute||0);
-    if (e <= s) e += 10080;                                     // ??
+    if (e <= s) e += 10080;                                     // 跨夜
     if ((mow>=s && mow<e) || (mow+10080>=s && mow+10080<e)) return true;
   }
   return false;
 }
-// Google reviewSummary ??????? / {text} / {text:{text}}??????????
+// Google reviewSummary 結構不一（字串 / {text} / {text:{text}}），防禦式取出純文字
 function extractReviewSummary(rs){
   if(!rs) return "";
   if(typeof rs==="string") return rs;
@@ -3992,41 +3992,41 @@ function extractGenerativeSummary(gs){
   return candidates.find(v => typeof v === "string" && v.trim()) || "";
 }
 function extractText(v){ if(!v) return ""; if(typeof v==="string") return v; if(typeof v.text==="string") return v.text; if(v.text&&typeof v.text.text==="string") return v.text.text; return ""; }
-// ????????????OpenCC ??????????????????
-// Google ? zh-TW ??????????????????? ???????? OpenCC ????
-// ??????????????????????????????????????????????
-// ????????????????????? Google ??????????????
+// 簡體→繁體（台灣用字）。OpenCC 載入後建立轉換器；未就緒時原樣回傳。
+// Google 的 zh-TW 資料多半已是繁體，只偶有簡體字外洩（如 信义区）。整串丟 OpenCC 反而會把
+// 「同時也是合法繁體字」的字誤改（台→臺、里→裏、郁→鬱、松→鬆…）。因此逐字轉換，並保護這些
+// 一簡對多繁、且自身即為合法繁體的歧義字，讓 Google 既有的正確繁體用字原樣保留。
 let __twConv = null;
 function __initConv(){ if(!__twConv){ try{ if(window.OpenCC) __twConv = OpenCC.Converter({from:"cn",to:"t"}); }catch(_){ } } return __twConv; }
 __initConv();
-const __TW_PROTECT = new Set("????????????????????????????????????");
+const __TW_PROTECT = new Set("台后里面松郁余谷系范干表制准板几卜斗才困占卷升游折念划凶沈丑向咸夸著只云");
 function toTW(s){
   if(!s) return s;
   const conv = __initConv();
   if(!conv) return s;
   let out="";
   for(const ch of s){
-    if(ch.charCodeAt(0) < 0x4e00 || __TW_PROTECT.has(ch)){ out += ch; continue; }   // ??????????
+    if(ch.charCodeAt(0) < 0x4e00 || __TW_PROTECT.has(ch)){ out += ch; continue; }   // 非漢字或歧義字：原樣
     try{ out += conv(ch); }catch(_){ out += ch; }
   }
   return out;
 }
-// ?????Places priceRange?Money: units ?? + currencyCode?? ?NT$ 200 ? 400?
+// 價位範圍：Places priceRange（Money: units 字串 + currencyCode）→ 「NT$ 200 – 400」
 function priceRangeText(pr){
   if(!pr) return "";
   const u = m => (m && m.units!=null) ? Number(m.units).toLocaleString() : "";
   const s=u(pr.startPrice), e=u(pr.endPrice);
-  if(s && e) return `NT$ ${s} ? ${e}`;
-  if(s) return `NT$ ${s} ?`;
-  if(e) return `NT$ ${e} ??`;
+  if(s && e) return `NT$ ${s} – ${e}`;
+  if(s) return `NT$ ${s} 起`;
+  if(e) return `NT$ ${e} 以下`;
   return "";
 }
-function accessText(a){ if(!a) return ""; const t=[]; if(a.hasWheelchairAccessibleEntrance)t.push("????"); if(a.hasWheelchairAccessibleSeating)t.push("??"); if(a.hasWheelchairAccessibleRestroom)t.push("??"); if(a.hasWheelchairAccessibleParking)t.push("??"); return t.length?t.join("?"):""; }
-function payText(p){ if(!p) return ""; if(p.acceptsCashOnly) return "????"; const t=[]; if(p.acceptsCreditCards)t.push("???"); if(p.acceptsDebitCards)t.push("???"); if(p.acceptsNfc)t.push("????"); return t.length?t.join("?"):""; }
-function parkText(p){ if(!p) return ""; const t=[]; if(p.hasFreeParkingLot)t.push("?????"); if(p.hasPaidParkingLot)t.push("?????"); if(p.hasFreeStreetParking)t.push("????"); if(p.hasPaidStreetParking)t.push("????"); if(p.hasValetParking)t.push("????"); if(p.hasFreeGarageParking||p.hasPaidGarageParking)t.push("????"); return t.length?t.join("?"):""; }
+function accessText(a){ if(!a) return ""; const t=[]; if(a.hasWheelchairAccessibleEntrance)t.push("輪椅入口"); if(a.hasWheelchairAccessibleSeating)t.push("座位"); if(a.hasWheelchairAccessibleRestroom)t.push("廁所"); if(a.hasWheelchairAccessibleParking)t.push("停車"); return t.length?t.join("・"):""; }
+function payText(p){ if(!p) return ""; if(p.acceptsCashOnly) return "僅收現金"; const t=[]; if(p.acceptsCreditCards)t.push("信用卡"); if(p.acceptsDebitCards)t.push("金融卡"); if(p.acceptsNfc)t.push("行動支付"); return t.length?t.join("・"):""; }
+function parkText(p){ if(!p) return ""; const t=[]; if(p.hasFreeParkingLot)t.push("免費停車場"); if(p.hasPaidParkingLot)t.push("付費停車場"); if(p.hasFreeStreetParking)t.push("免費路邊"); if(p.hasPaidStreetParking)t.push("付費路邊"); if(p.hasValetParking)t.push("代客泊車"); if(p.hasFreeGarageParking||p.hasPaidGarageParking)t.push("室內停車"); return t.length?t.join("・"):""; }
 
 /* ============================================================
-   ??????? + ?? ? ?? ? ???
+   排名：貝氏加權 + 加分 → 排序 → 取前三
    ============================================================ */
 function computeM(items){
   if (!CONFIG.BAYES.DYNAMIC_M || !items.length) return CONFIG.BAYES.m;
@@ -4065,7 +4065,7 @@ function awardBonus(awards){
   return Math.min(michelin + fiftyBest + bib + plate, CONFIG.AWARD_BONUS.totalCap);
 }
 
-// ?????????????? ? ???????????????????????
+// 該店明確供應「當前時段」餐點 → 小加分（讓時段篩選更準；資料缺就不加，不硬篩）
 function mealMatchBonus(r){
   const c = state.category;
   if (!c || !MEALS[c]) return 0;
@@ -4118,7 +4118,7 @@ async function routeMatrixItems(targets, travelMode){
   };
   const response = await Promise.race([
     RouteMatrix.computeRouteMatrix(request),
-    timeoutAfter(CONFIG.ROUTE_TIMEOUT_MS, "Routes API ??"),
+    timeoutAfter(CONFIG.ROUTE_TIMEOUT_MS, "Routes API 逾時"),
   ]);
   return readMatrixItems(response);
 }
@@ -4154,7 +4154,7 @@ async function enrichRoutes(){
     trackUsage("route_result", { targetCount:targets.length, mode:spec.apiMode, itemCount:items.length });
     renderList();
   }catch(e){
-    console.warn("[??] Google ??????????????????", e.message);
+    console.warn("[路線] Google 路線時間取得失敗，保留直線距離估算：", e.message);
   }
 }
 
@@ -4187,17 +4187,17 @@ function rankAndRender(){
   applyAI();
   renderList();
   if (state.map) renderMarkers();
-  enrichTop();        // ??? 3 ??? Google ??/?????? Atmosphere ???????? render
-  enrichRoutes();     // ? Google ??????????/????????? render
+  enrichTop();        // 只對前 3 家補抓 Google 簡介/評論摘要（省 Atmosphere 費用），完成後再 render
+  enrichRoutes();     // 以 Google 路線服務補上實際步行/開車時間，完成後再 render
 }
 
-// ?????? 3 ??? Atmosphere ???reviewSummary/editorialSummary?
+// 排名後只對前 3 家補抓 Atmosphere 欄位（reviewSummary/editorialSummary）
 async function enrichTop(){
   const list = state.ranked.filter(r => r._place);
   if (!list.length) return;
   try{
     await Promise.all(list.map(async r=>{
-      // ???????????? reviews?? Atmosphere ??????????????
+      // 只抓摘要欄位（已不抓個別 reviews，省 Atmosphere 費用、且詳情只顯示融合摘要）
       await r._place.fetchFields({ fields:["reviewSummary","editorialSummary","generativeSummary"] });
       const rs = toTW(extractReviewSummary(r._place.reviewSummary));
       const ed = toTW(extractEditorial(r._place.editorialSummary));
@@ -4207,12 +4207,12 @@ async function enrichTop(){
       if (gs) r.generativeSummary = gs;
     }));
   }catch(_){}
-  applyAI();          // ?????????????
+  applyAI();          // 用補抓到的簡介重算上榜理由
   renderList();
 }
 
 /* ============================================================
-   ???? / ??
+   渲染清單 / 卡片
    ============================================================ */
 function renderList(){
   const list = $("#list");
@@ -4220,9 +4220,9 @@ function renderList(){
   if (!state.ranked.length){
     const narrow = state.category && !["lunch","dinner","all"].includes(state.category);
     const hint = narrow
-      ? `?${(MEALS[state.category]||{}).label||""}??????????????????????????????????????????`
-      : `????????????????????`;
-    list.innerHTML = `<div class="detail-inner"><div class="ph">???????????????<br>${hint}</div></div>`;
+      ? `「${(MEALS[state.category]||{}).label||""}」這個時段附近選擇較少，試試換個時段或選「不限」，也可拉大半徑、關閉「只看營業中」。`
+      : `試試拉大搜尋半徑，或關閉「只看營業中」。`;
+    list.innerHTML = `<div class="detail-inner"><div class="ph">這個範圍內沒有符合條件的餐廳。<br>${hint}</div></div>`;
     setSummary();
     return;
   }
@@ -4235,42 +4235,42 @@ function renderOverview(text){
   const el = $("#overview");
   if (!text){ el.classList.add("hidden"); el.innerHTML=""; return; }
   el.classList.remove("hidden");
-  el.innerHTML = `<span class="lab">????</span>${escapeHTML(text)}`;
+  el.innerHTML = `<span class="lab">情境比較</span>${escapeHTML(text)}`;
 }
 
 function setSummary(){
-  const where = state.usingArea ? state.areaName : "???";
-  const scope = state.wholeArea ? "??" : `?? ${state.radius}m ?`;
-  $("#status").innerHTML = `${where} ? ${scope} ? ? ${state.ranked.length} ?`;
+  const where = state.usingArea ? state.areaName : "你附近";
+  const scope = state.wholeArea ? "全區" : `步行 ${state.radius}m 內`;
+  $("#status").innerHTML = `${where} · ${scope} · 前 ${state.ranked.length} 家`;
 }
 
 function routeSummary(r){
   if (r.dist == null) return "";
-  if (activeRankTravel() === "??"){
-    return r.driveMin ? `?? ${r.driveMin} ?` : `?????`;
+  if (activeRankTravel() === "開車"){
+    return r.driveMin ? `開車 ${r.driveMin} 分` : `開車估算中`;
   }
-  const walk = r.walkMin ? `?? ${r.walkMin} ?` : `??? ${Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN))} ?`;
+  const walk = r.walkMin ? `步行 ${r.walkMin} 分` : `步行約 ${Math.max(1, Math.round(r.dist / CONFIG.WALK_SPEED_M_PER_MIN))} 分`;
   return walk;
 }
 function routeDetail(r){
   if (r.dist == null) return "";
   const parts = [];
-  if (r.walkMin) parts.push(`?? ${r.walkMin} ?${r.walkMeters?`?${r.walkMeters.toLocaleString()} m`:""}`);
-  if (r.driveMin) parts.push(`?? ${r.driveMin} ?${r.driveMeters?`?${r.driveMeters.toLocaleString()} m`:""}`);
-  return parts.join("?");
+  if (r.walkMin) parts.push(`步行 ${r.walkMin} 分${r.walkMeters?`・${r.walkMeters.toLocaleString()} m`:""}`);
+  if (r.driveMin) parts.push(`開車 ${r.driveMin} 分${r.driveMeters?`・${r.driveMeters.toLocaleString()} m`:""}`);
+  return parts.join("｜");
 }
 function routeDistanceLabel(r){
-  const meters = activeRankTravel() === "??" ? (r.driveMeters || r.dist) : (r.walkMeters || r.dist);
+  const meters = activeRankTravel() === "開車" ? (r.driveMeters || r.dist) : (r.walkMeters || r.dist);
   return meters ? `${meters.toLocaleString()} m` : "";
 }
 function confidenceHTML(r){
   const rows = activeRankFilters(rankFilter)
     .map(f => {
       const score = r.aiConfidence?.[f.key];
-      const source = r.aiTags?.[f.key]?.includes(f.value) ? "AI" : (r.tags?.[f.key]?.includes(f.value) ? "??" : "??");
-      if (score == null && source === "??") return null;
+      const source = r.aiTags?.[f.key]?.includes(f.value) ? "AI" : (r.tags?.[f.key]?.includes(f.value) ? "近似" : "搜尋");
+      if (score == null && source === "搜尋") return null;
       const pct = score != null ? `${Math.round(score * 100)}%` : "";
-      return `<span class="confidence-pill">${escapeHTML(f.value)}?<b>${source}${pct?` ${pct}`:""}</b></span>`;
+      return `<span class="confidence-pill">${escapeHTML(f.value)}：<b>${source}${pct?` ${pct}`:""}</b></span>`;
     })
     .filter(Boolean);
   return rows.length ? `<div class="confidence-row">${rows.join("")}</div>` : "";
@@ -4279,7 +4279,7 @@ function confidenceHTML(r){
 function photoStripHTML(photoUrls, name){
   return photoUrls.length
     ? `<div class="photos${photoUrls.length===1?" one":""}">${photoUrls.slice(0,3).map((u,i)=>
-      `<img class="ph-img" data-lazy-src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(name)}" alt="${escapeHTML(name)} ?? ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="handleDetailPhotoError(this)">`
+      `<img class="ph-img" data-lazy-src="${escapeHTML(u)}" data-photo-preview="${escapeHTML(u)}" data-caption="${escapeHTML(name)}" alt="${escapeHTML(name)} 照片 ${i+1}" loading="lazy" decoding="async" width="180" height="${photoUrls.length===1?172:118}" onerror="handleDetailPhotoError(this)">`
     ).join("")}</div>`
     : "";
 }
@@ -4288,23 +4288,23 @@ function cardHTML(r, rank){
   const placeId = r.id || "";
   const shareUrl = placeId ? placeShareUrl(placeId) : "";
   const price = r.priceLevel ? "$".repeat(r.priceLevel) : "";
-  // ???????????????dist ? null?????? + ????
+  // 一般搜尋顯示步行距離；排行榜（dist 為 null）改顯示縣市 + 綜合分數
   const distChip = (r.dist != null)
-    ? `<span class="dist">${r.lbCity?`${escapeHTML(r.lbCity)} ? `:""}${escapeHTML(routeSummary(r))} ? ${escapeHTML(routeDistanceLabel(r))}${r.composite!=null?` ? ?? <b>${r.composite.toFixed(2)}</b>`:""}</span>`
-    : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` ? ?? <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
-  const openTxt = r.openNow === true ? `<span class="open-now">???</span>`
-                : r.openNow === false ? `<span class="closed">???</span>` : "";
+    ? `<span class="dist">${r.lbCity?`${escapeHTML(r.lbCity)} · `:""}${escapeHTML(routeSummary(r))} · ${escapeHTML(routeDistanceLabel(r))}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>`
+    : (r.lbCity ? `<span class="dist">${escapeHTML(r.lbCity)}${r.composite!=null?` · 綜合 <b>${r.composite.toFixed(2)}</b>`:""}</span>` : "");
+  const openTxt = r.openNow === true ? `<span class="open-now">營業中</span>`
+                : r.openNow === false ? `<span class="closed">休息中</span>` : "";
   const primaryMeta = [price ? `<span class="price">${price}</span>` : "", openTxt].filter(Boolean).join("");
-  // ??????????????????????????????
+  // 第一眼只放少數強徽章；詳情只補主卡沒有顯示的項目，避免重複。
   const awardBadgeItems = (r.awards && r.awards.length) ? r.awards.map(badgeHTML) : [];
   const certItems = certificationBadges(r);
   const certPriority = new Map([
-    ["????", 1],
-    ["????", 2],
-    ["????", 3],
-    ["???", 4],
-    ["????", 5],
-    ["????", 6],
+    ["高分認證", 1],
+    ["萬則口碑", 2],
+    ["千則口碑", 3],
+    ["可訂位", 4],
+    ["聚餐友善", 5],
+    ["素食友善", 6],
   ]);
   const primaryCertItems = [...certItems].sort((a,b) => (certPriority.get(a.label) || 99) - (certPriority.get(b.label) || 99));
   const primaryCertCount = Math.max(0, 4 - awardBadgeItems.length);
@@ -4321,33 +4321,33 @@ function cardHTML(r, rank){
   const confidence = confidenceHTML(r);
   const keywordHits = keywordHitSummaryHTML(r.keywordHit);
   const branchGroup = r.branchGroup?.count > 1
-    ? `<div class="branch-group">??? ${r.branchGroup.count} ???????${r.branchGroup.names?.length ? `?${escapeHTML(r.branchGroup.names.join("?"))}` : ""}</div>`
+    ? `<div class="branch-group">同品牌 ${r.branchGroup.count} 間，保留最高分${r.branchGroup.names?.length ? `：${escapeHTML(r.branchGroup.names.join("、"))}` : ""}</div>`
     : "";
   const distanceRelaxed = r.distanceRelaxed
-    ? `<div class="distance-relaxed">???? ${Number(r.distanceRelaxedTo || CONFIG.RANK_WALKABLE_FALLBACK_M).toLocaleString()}m</div>`
+    ? `<div class="distance-relaxed">已放寬到 ${Number(r.distanceRelaxedTo || CONFIG.RANK_WALKABLE_FALLBACK_M).toLocaleString()}m</div>`
     : "";
   const noteRow = [branchGroup, distanceRelaxed].filter(Boolean).join("");
-  // AI ????????????Google ??????????? AI ???
-  const aiSourceText = (r.aiSourceLabels || []).slice(0, 4).join("?");
+  // AI 判讀只顯示後端分類結果；Google 摘要留在詳情，不偽裝成 AI 解讀。
+  const aiSourceText = (r.aiSourceLabels || []).slice(0, 4).join("、");
   const ai = r.aiReason
-    ? `<div class="ai-reason"><b>AI ??</b>${escapeHTML(r.aiReason)}${aiSourceText ? `<span class="ai-source">???${escapeHTML(aiSourceText)}</span>` : ""}</div>`
+    ? `<div class="ai-reason"><b>AI 判讀</b>${escapeHTML(r.aiReason)}${aiSourceText ? `<span class="ai-source">來源：${escapeHTML(aiSourceText)}</span>` : ""}</div>`
     : "";
-  // ?????????????? Google ????????????????
+  // 圖片只放在詳情內，避免主卡因 Google 沒回照片或圖片載入失敗留下空白。
   const photoUrls = (r.photos && r.photos.length) ? r.photos : (r.photo ? [r.photo] : []);
   const photoStrip = photoStripHTML(photoUrls, r.name);
-  // ??/??????????? true ??
+  // 服務/供應標籤（只列出明確為 true 的）
   const feats = [];
-  if (r.dineIn) feats.push("??");
-  if (r.takeout) feats.push("??");
-  if (r.delivery) feats.push("??");
-  if (r.reservable) feats.push("???");
-  if (r.servesVeg) feats.push("??");
-  if (r.servesAlcohol) feats.push("???");
-  if (r.outdoor) feats.push("????");
-  if (r.allowsDogs) feats.push("????");
-  if (r.goodGroups) feats.push("????");
-  if (r.liveMusic) feats.push("????");
-  const detailFeatRow = feats.length ? `<div class="line"><span class="k">??</span><span class="v"><span class="feats in-detail">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</span></span></div>` : "";
+  if (r.dineIn) feats.push("內用");
+  if (r.takeout) feats.push("外帶");
+  if (r.delivery) feats.push("外送");
+  if (r.reservable) feats.push("可訂位");
+  if (r.servesVeg) feats.push("素食");
+  if (r.servesAlcohol) feats.push("供應酒");
+  if (r.outdoor) feats.push("戶外座位");
+  if (r.allowsDogs) feats.push("寵物友善");
+  if (r.goodGroups) feats.push("適合團體");
+  if (r.liveMusic) feats.push("現場音樂");
+  const detailFeatRow = feats.length ? `<div class="line"><span class="k">服務</span><span class="v"><span class="feats in-detail">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</span></span></div>` : "";
 
   return `
   <div class="card" data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-address="${escapeHTML(r.address||"")}" data-lat="${r.loc?.lat || ""}" data-lng="${r.loc?.lng || ""}">
@@ -4358,9 +4358,9 @@ function cardHTML(r, rank){
         ${primaryMeta ? `<div class="meta primary">${primaryMeta}</div>` : ""}
         ${distChip ? `<div class="meta route">${distChip}</div>` : ""}
       </div>
-      <div class="rating-focus" aria-label="Google ?? ${r.rating.toFixed(1)}?${r.count.toLocaleString()} ???">
-        <span class="score"><span class="star">?</span>${r.rating.toFixed(1)}</span>
-        <span class="reviews">${r.count.toLocaleString()} ?</span>
+      <div class="rating-focus" aria-label="Google 評分 ${r.rating.toFixed(1)}，${r.count.toLocaleString()} 則評論">
+        <span class="score"><span class="star">★</span>${r.rating.toFixed(1)}</span>
+        <span class="reviews">${r.count.toLocaleString()} 則</span>
       </div>
     </div>
     ${badges ? `<div class="badges">${badges}</div>` : ""}
@@ -4368,13 +4368,13 @@ function cardHTML(r, rank){
     <div class="actions">
       <button class="nav" data-nav data-lat="${r.loc.lat}" data-lng="${r.loc.lng}" data-name="${escapeHTML(r.name)}">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
-        ??
+        導航
       </button>
       <button class="share" data-share data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-rating="${r.rating.toFixed(1)}" data-count="${r.count}" data-address="${escapeHTML(r.address||"")}">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
-        ??
+        分享
       </button>
-      <button data-detail>?? <span class="chev2" style="display:inline-block;transition:transform var(--t)">
+      <button data-detail>詳情 <span class="chev2" style="display:inline-block;transition:transform var(--t)">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
       </button>
     </div>
@@ -4385,22 +4385,22 @@ function cardHTML(r, rank){
         ${keywordHits}
         ${confidence}
         ${ai}
-        ${r.typeName?`<div class="line"><span class="k">??</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
-        ${r.lbFormula?`<div class="line"><span class="k">??</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
-        ${routeDetail(r)?`<div class="line"><span class="k">??</span><span class="v">${escapeHTML(routeDetail(r))}</span></div>`:""}
+        ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
+        ${r.lbFormula?`<div class="line"><span class="k">綜合</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
+        ${routeDetail(r)?`<div class="line"><span class="k">路線</span><span class="v">${escapeHTML(routeDetail(r))}</span></div>`:""}
         ${r.generativeSummary?`<div class="line"><span class="k">Google</span><span class="v sum3">${escapeHTML(r.generativeSummary)}</span></div>`:""}
-        ${r.reviewSummary?`<div class="line"><span class="k">??</span><span class="v sum3">${escapeHTML(r.reviewSummary)}</span></div>`:""}
-        ${r.summary?`<div class="line"><span class="k">??</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
-        ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">??</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
-        ${r.priceText?`<div class="line"><span class="k">??</span><span class="v">${escapeHTML(r.priceText)}</span></div>`:""}
+        ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v sum3">${escapeHTML(r.reviewSummary)}</span></div>`:""}
+        ${r.summary?`<div class="line"><span class="k">簡介</span><span class="v">${escapeHTML(r.summary)}</span></div>`:""}
+        ${(r.hours&&r.hours.length)?`<div class="line"><span class="k">營業</span><span class="v hours">${r.hours.map(escapeHTML).join("<br>")}</span></div>`:""}
+        ${r.priceText?`<div class="line"><span class="k">價位</span><span class="v">${escapeHTML(r.priceText)}</span></div>`:""}
         ${detailFeatRow}
-        ${(()=>{const t=[];if(r.goodKids)t.push("????");if(r.goodGroups)t.push("????");if(r.menuKids)t.push("????");if(r.restroom)t.push("???");return t.length?`<div class="line"><span class="k">??</span><span class="v">${escapeHTML(t.join("?"))}</span></div>`:"";})()}
-        ${r.accessStr?`<div class="line"><span class="k">???</span><span class="v">${escapeHTML(r.accessStr)}</span></div>`:""}
-        ${r.payStr?`<div class="line"><span class="k">??</span><span class="v">${escapeHTML(r.payStr)}</span></div>`:""}
-        ${r.parkStr?`<div class="line"><span class="k">??</span><span class="v">${escapeHTML(r.parkStr)}</span></div>`:""}
-        <div class="line"><span class="k">??</span><span class="v">${escapeHTML(r.address||"?")}</span></div>
-        <div class="line"><span class="k">??</span><span class="v">${escapeHTML(r.phone||"?")}</span></div>
-        ${(r.website||r.mapsUri||shareUrl)?`<div class="line"><span class="k">??</span><span class="v links">${[shareUrl?`<a href="${escapeHTML(shareUrl)}" target="_blank" rel="noopener">????</a>`:"", r.website?`<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">????</a>`:"", r.mapsUri?`<a href="${escapeHTML(r.mapsUri)}" target="_blank" rel="noopener">Google ??</a>`:""].filter(Boolean).join(" ? ")}</span></div>`:""}
+        ${(()=>{const t=[];if(r.goodKids)t.push("適合小孩");if(r.goodGroups)t.push("適合團體");if(r.menuKids)t.push("兒童菜單");if(r.restroom)t.push("有廁所");return t.length?`<div class="line"><span class="k">適合</span><span class="v">${escapeHTML(t.join("・"))}</span></div>`:"";})()}
+        ${r.accessStr?`<div class="line"><span class="k">無障礙</span><span class="v">${escapeHTML(r.accessStr)}</span></div>`:""}
+        ${r.payStr?`<div class="line"><span class="k">付款</span><span class="v">${escapeHTML(r.payStr)}</span></div>`:""}
+        ${r.parkStr?`<div class="line"><span class="k">停車</span><span class="v">${escapeHTML(r.parkStr)}</span></div>`:""}
+        <div class="line"><span class="k">地址</span><span class="v">${escapeHTML(r.address||"—")}</span></div>
+        <div class="line"><span class="k">電話</span><span class="v">${escapeHTML(r.phone||"—")}</span></div>
+        ${(r.website||r.mapsUri||shareUrl)?`<div class="line"><span class="k">連結</span><span class="v links">${[shareUrl?`<a href="${escapeHTML(shareUrl)}" target="_blank" rel="noopener">分享卡片</a>`:"", r.website?`<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">官方網站</a>`:"", r.mapsUri?`<a href="${escapeHTML(r.mapsUri)}" target="_blank" rel="noopener">Google 地圖</a>`:""].filter(Boolean).join(" · ")}</span></div>`:""}
       </div>
     </div>
   </div>`;
@@ -4408,28 +4408,28 @@ function cardHTML(r, rank){
 
 function badgeHTML(a){
   const year = escapeHTML(String(a.year || ""));
-  if (a.guide==="michelin") return `<span class="badge michelin" title="MICHELIN Guide ${year} ${escapeHTML(a.level||"")}">??? ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="bib") return `<span class="badge bib" title="MICHELIN Bib Gourmand ${year}">???<span class="yr">${year}</span></span>`;
+  if (a.guide==="michelin") return `<span class="badge michelin" title="MICHELIN Guide ${year} ${escapeHTML(a.level||"")}">米其林 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="bib") return `<span class="badge bib" title="MICHELIN Bib Gourmand ${year}">必比登<span class="yr">${year}</span></span>`;
   if (a.guide==="50best") return `<span class="badge fifty" title="50 Best ${year} ${escapeHTML(a.level||"")}">50 Best ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="500plate") {
-    const label = a.level || (a.plates ? `${a.plates}?` : "");
-    return `<span class="badge plate" title="500? ${year} ${escapeHTML(label)}">500?${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
+    const label = a.level || (a.plates ? `${a.plates}盤` : "");
+    return `<span class="badge plate" title="500盤 ${year} ${escapeHTML(label)}">500盤${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
   }
   return "";
 }
 
 const CERT_BADGE_RULES_FALLBACK = [
-  { label:"????", cls:"cert-strong", note:{ field:"rating", format:"fixed1" }, all:[{ field:"rating", op:">=", value:4.8 }, { field:"count", op:">=", value:100 }] },
-  { label:"????", cls:"cert-strong", note:{ text:"Google" }, all:[{ field:"count", op:">=", value:10000 }] },
-  { label:"????", cls:"cert", note:{ text:"Google" }, all:[{ field:"count", op:">=", value:1000 }, { field:"count", op:"<", value:10000 }] },
-  { label:"???", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"reservable", op:"truthy" }] },
-  { label:"????", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"goodGroups", op:"truthy" }] },
-  { label:"????", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"servesVeg", op:"truthy" }] },
-  { label:"????", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"outdoor", op:"truthy" }] },
-  { label:"????", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"allowsDogs", op:"truthy" }] },
-  { label:"????", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"liveMusic", op:"truthy" }] },
-  { label:"?????", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"accessStr", op:"nonempty" }] },
-  { label:"????", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"parkStr", op:"nonempty" }] },
+  { label:"高分認證", cls:"cert-strong", note:{ field:"rating", format:"fixed1" }, all:[{ field:"rating", op:">=", value:4.8 }, { field:"count", op:">=", value:100 }] },
+  { label:"萬則口碑", cls:"cert-strong", note:{ text:"Google" }, all:[{ field:"count", op:">=", value:10000 }] },
+  { label:"千則口碑", cls:"cert", note:{ text:"Google" }, all:[{ field:"count", op:">=", value:1000 }, { field:"count", op:"<", value:10000 }] },
+  { label:"可訂位", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"reservable", op:"truthy" }] },
+  { label:"聚餐友善", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"goodGroups", op:"truthy" }] },
+  { label:"素食友善", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"servesVeg", op:"truthy" }] },
+  { label:"戶外座位", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"outdoor", op:"truthy" }] },
+  { label:"寵物友善", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"allowsDogs", op:"truthy" }] },
+  { label:"現場音樂", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"liveMusic", op:"truthy" }] },
+  { label:"無障礙資訊", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"accessStr", op:"nonempty" }] },
+  { label:"停車資訊", cls:"cert-service", note:{ text:"Google" }, all:[{ field:"parkStr", op:"nonempty" }] },
 ];
 let certBadgeRules = CERT_BADGE_RULES_FALLBACK;
 let certBadgeRulesPromise = null;
@@ -4474,7 +4474,7 @@ async function ensureCertificationRules(){
       return certBadgeRules;
     })
     .catch(e => {
-      console.warn("[??] ????????????????", e.message);
+      console.warn("[認證] 認證規則載入失敗，使用內建規則：", e.message);
       certBadgeRules = CERT_BADGE_RULES_FALLBACK;
       return certBadgeRules;
     });
@@ -4492,7 +4492,7 @@ function certBadgeHTML(c){
 }
 
 /* ============================================================
-   ????
+   地圖切換
    ============================================================ */
 $("#fab").addEventListener("click", openMap);
 $("#backToList").addEventListener("click", ()=>$("#mapView").classList.add("hidden"));
@@ -4505,7 +4505,7 @@ async function openMap(){
   if (!hasGoogleApiKey){
     $("#map").classList.add("hidden");
     const fb = $("#mapFallback"); fb.classList.remove("hidden");
-    fb.innerHTML = "???? Google ???<br>?? CONFIG.GOOGLE_API_KEY ??????????????";
+    fb.innerHTML = "地圖需要 Google 金鑰。<br>填入 CONFIG.GOOGLE_API_KEY 後，這裡會顯示前三家的標記。";
     return;
   }
   try{
@@ -4515,7 +4515,7 @@ async function openMap(){
       state.map = new Map($("#map"), {
         center: state.center, zoom: 15, disableDefaultUI: true,
         gestureHandling: "greedy", colorScheme: "DARK",
-        mapId: CONFIG.MAP_ID,   // ???? ID???????????????
+        mapId: CONFIG.MAP_ID,   // 向量地圖 ID：進階標記需要，且支援深色樣式
       });
     } else {
       state.map.setCenter(state.center);
@@ -4524,7 +4524,7 @@ async function openMap(){
   }catch(e){
     $("#map").classList.add("hidden");
     $("#mapFallback").classList.remove("hidden");
-    $("#mapFallback").textContent = "???????" + e.message;
+    $("#mapFallback").textContent = "地圖載入失敗：" + e.message;
   }
 }
 
@@ -4532,7 +4532,7 @@ async function renderMarkers(){
   if (!state.map) return;
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
   state.markers.forEach(m=>m.map=null); state.markers=[];
-  // ???
+  // 中心點
   state.ranked.forEach((r,i)=>{
     const pin = new PinElement({
       glyph: String(i+1), background: i===0? "#C8102E":"#1F1819",
@@ -4544,11 +4544,11 @@ async function renderMarkers(){
 }
 
 /* ============================================================
-   ??
+   工具
    ============================================================ */
 function setStatus(loading, msg){
   const el = $("#status");
-  if (loading){ el.innerHTML = `<span class="spin"></span> ${msg||"????"}`; }
+  if (loading){ el.innerHTML = `<span class="spin"></span> ${msg||"載入中…"}`; }
   else { el.textContent = msg || ""; }
 }
 function toast(msg){
@@ -4559,7 +4559,7 @@ function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":
 function jitter(c){return {lat:c.lat+(Math.random()-.5)*.004, lng:c.lng+(Math.random()-.5)*.004};}
 
 /* ============================================================
-   Step 2 ? ????????? + ???? + 500 ???
+   Step 2 — 評鑑模組：載入名單 + 模糊比對 + 500 盤彙總
    ============================================================ */
 let AWARDS = null, awardsPromise = null;
 
@@ -4569,23 +4569,23 @@ function ensureAwards(){
   awardsPromise = fetch(CONFIG.AWARDS_URL)
     .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
     .then(j => { AWARDS = j.restaurants || []; })
-    .catch(e => { AWARDS = []; console.warn("[??] ??????????????????", e.message); })
+    .catch(e => { AWARDS = []; console.warn("[評鑑] 評鑑名單載入失敗，不使用備援死資料：", e.message); })
     .then(() => AWARDS);
   return awardsPromise;
 }
 
-// ??????????????????????????????
+// 店名正規化：全形→半形、去空白標點、去常見尾綴；用於模糊比對
 function normName(s){
   return (s||"").toString()
     .normalize("NFKC")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[??`?]/g, "'")
-    .replace(/?/g, "?")
-    .replace(/?/g," ")
+    .replace(/[’‘`´]/g, "'")
+    .replace(/臺/g, "台")
+    .replace(/　/g," ")
     .replace(/\s+/g,"")
-    .replace(/[()????.,??!???\-_/&]/g,"")
-    .replace(/(??|??|??|???|??)$/,"")
+    .replace(/[()（）・·.,，、!！?？\-_/&]/g,"")
+    .replace(/(總店|本店|本舖|旗艦店|分店)$/,"")
     .toLowerCase();
 }
 
@@ -4600,9 +4600,9 @@ function awardNames(entry){
   return [entry?.name, ...(entry?.aliases || [])].filter(Boolean);
 }
 
-// ????????high??????medium??????? high?
+// 比對：完全相等→high；包含關係→medium（地址可升級為 high）
 function awardAddressHasDetail(address){
-  return /[????].*[??????]|[??????]/.test(address || "");
+  return /[區鄉鎮市].*[路街道巷弄號]|[路街道巷弄號]/.test(address || "");
 }
 function awardKey(a){
   return [a.guide, a.year || "", a.level || "", a.plates || "", Array.isArray(a.dishPlates) ? a.dishPlates.join(",") : ""].join("|");
@@ -4629,7 +4629,7 @@ function matchAwards(rest, list){
   return matches;
 }
 
-// ?? 500 ??dishPlates ???? ? ??????????????
+// 彙總 500 盤（dishPlates 各菜盤數 → 餐廳層級總盤數）並標準化顯示
 function normalizeAwards(awards){
   const priority = a => a.guide === "michelin" ? 1 : (a.guide === "50best" ? 2 : (a.guide === "bib" ? 3 : (a.guide === "500plate" ? 4 : 9)));
   return (awards||[]).map(a=>{
@@ -4637,21 +4637,21 @@ function normalizeAwards(awards){
       const plates = Array.isArray(a.dishPlates)
         ? a.dishPlates.reduce((s,x)=>s + (Number(x) || 0), 0)
         : (Number(a.plates) || Number(String(a.level || "").match(/\d+/)?.[0]) || 0);
-      return { ...a, plates, level:plates ? `${plates}?` : "" };
+      return { ...a, plates, level:plates ? `${plates}盤` : "" };
     }
     return a;
   }).sort((a,b) => priority(a) - priority(b));
 }
 
-// ???????????????????? console ????????????
+// 套用到搜尋結果：高信心自動標；低信心列入 console 待人工覆核（不默默標錯）
 function applyAwards(items){
   const review = [];
   items.forEach(r=>{
     r.awards = r.awards || [];
     if (!AWARDS || !AWARDS.length) return;
     const matches = matchAwards(r, AWARDS);
-    // ?????????????????????????????????? 101?????????
-    // ???????? console ????????? Google ??????/?????????????
+    // 高信心（完全同名或地址相符）自動標。中信心（店名包含關係，如「鼎泰豐 101店」含「鼎泰豐」）
+    // 也自動標，但記入 console 供人工覆核——真實 Google 店名常帶分店/地區後綴，純高信心會漏標。
     if (matches.length) {
       const merged = [...r.awards];
       matches.forEach(({ entry, conf }) => {
@@ -4663,12 +4663,12 @@ function applyAwards(items){
       r.awards = normalizeAwards(merged);
     }
   });
-  if (review.length) console.info("[????] ??????????????????????", review);
+  if (review.length) console.info("[評鑑比對] 中信心自動標記（建議人工確認是否為同一家）：", review);
 }
 
 /* ============================================================
-   Legacy hook: ???????? AI?????????????????
-   ??? AI ????? apiProxy("aiClassify")?
+   Legacy hook: 前端不再直接呼叫 AI，也不在沒有後端分類時顯示假解讀。
+   排行榜 AI 分類統一走 apiProxy("aiClassify")。
    ============================================================ */
 function applyAI(){
   state.ranked.forEach(r=>{ r.aiReason = ""; });
