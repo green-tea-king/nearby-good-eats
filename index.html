@@ -564,7 +564,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
     <button id="googleLoginBtn" type="button">使用 Google 登入</button>
     <div class="auth-error" id="authError"></div>
-    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機會使用跳轉登入；若登入後仍回到這裡，請關閉私密瀏覽並重新整理。</p>
+    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機 Safari / Chrome 會先使用彈出式登入；內建瀏覽器才改用跳轉登入。</p>
     <p class="privacy-note">定位只用於查詢附近餐廳與估算步行/開車時間；後台記錄操作事件與定位文字標籤，不寫入精確經緯度。</p>
   </div>
 </div>
@@ -1029,9 +1029,12 @@ function isMobileAuthBrowser(){
   const ua = navigator.userAgent || "";
   return /iPhone|iPad|iPod|Android|Mobile/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 }
-function shouldUseRedirectLogin(){
+function isEmbeddedAuthBrowser(){
   const ua = navigator.userAgent || "";
-  return isMobileAuthBrowser() || /(FBAN|FBAV|Instagram|Line|MicroMessenger)/i.test(ua);
+  return /(FBAN|FBAV|Instagram|Line|MicroMessenger)/i.test(ua);
+}
+function shouldUseRedirectLogin(){
+  return isEmbeddedAuthBrowser();
 }
 function authRedirectFlag(){
   return "nearbyGoodEats:authRedirectStartedAt";
@@ -1104,7 +1107,7 @@ async function initAuth(){
   const provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope("email");
   provider.addScope("profile");
-  if (!shouldUseRedirectLogin()) provider.setCustomParameters({ prompt:"select_account" });
+  provider.setCustomParameters({ prompt:"select_account" });
   let hadRedirectAttempt = false;
   try{
     await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
@@ -1359,7 +1362,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.19";
+const APP_VERSION_FALLBACK = "2026.06.27.20";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
