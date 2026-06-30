@@ -211,10 +211,11 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-filters .fg-chips::-webkit-scrollbar{display:none;}
 .rank-filters .fg-location .fg-chips{display:grid;grid-template-columns:minmax(76px,1fr) minmax(76px,1fr) minmax(76px,1fr);overflow:visible;}
 .rank-filters .fg-location .fsel{width:100%;max-width:none;}
-.rank-filters .fg-keyword .fg-chips{display:grid;grid-template-columns:minmax(0,1fr) auto;overflow:visible;}
+.rank-filters .fg-keyword .fg-chips{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible;}
 .keyword-input{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:16px;padding:8px 11px;outline:none;}
 .keyword-input::placeholder{color:var(--text-faint);}
-.keyword-apply{background:var(--accent);border:1px solid var(--accent);color:var(--on-accent);border-radius:10px;padding:0 13px;font-size:12px;font-weight:500;}
+.filter-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:2px 2px 0 43px;}
+.keyword-apply{background:var(--accent);border:1px solid var(--accent);color:var(--on-accent);border-radius:10px;padding:8px 18px;font-size:12px;font-weight:600;min-width:72px;}
 .rank-filters .fg-travel .fg-chips{align-items:center;flex-wrap:wrap;overflow:visible;}
 .fchip{flex:none;font-size:12.5px;padding:5px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:all var(--t);}
 .fchip:active{transform:scale(.96);}
@@ -229,7 +230,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .filter-precision b{color:var(--text-dim);font-weight:500;}
 .mode-hint{font-size:10.5px;line-height:1.45;color:var(--text-dim);padding:2px 2px 0 43px;}
 .mode-hint b{color:var(--accent-bright);font-weight:600;}
-.fclear{align-self:flex-end;margin-top:1px;font-size:11.5px;color:var(--accent-bright);padding:2px 4px;}
+.fclear{font-size:11.5px;color:var(--accent-bright);padding:8px 4px;}
 .rank-note{padding:34px 22px;text-align:center;color:var(--text-dim);font-size:13px;line-height:1.6;}
 .empty-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:12px;}
 .empty-actions button{font-size:12px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:999px;padding:7px 11px;}
@@ -1299,6 +1300,13 @@ function rankFiltersOpen(){
   const panel = $("#rankFilters");
   return !!panel && !panel.classList.contains("hidden");
 }
+let rankFilterInteractionUntil = 0;
+function markRankFilterInteraction(ms=1200){
+  rankFilterInteractionUntil = Date.now() + ms;
+}
+function rankFilterRecentlyActive(){
+  return Date.now() < rankFilterInteractionUntil;
+}
 function rankFilterEventInside(e){
   const panel = $("#rankFilters");
   const btn = $("#rankFilterBtn");
@@ -1310,15 +1318,26 @@ function rankFilterHasFocus(){
   const panel = $("#rankFilters");
   return !!panel && panel.contains(document.activeElement);
 }
+function rankFilterIsEditing(){
+  const panel = $("#rankFilters");
+  const el = document.activeElement;
+  if (!panel || !el || !panel.contains(el)) return false;
+  return !!el.closest("input,textarea,select,[contenteditable='true']");
+}
+function rankFilterShouldIgnoreViewportEvent(e){
+  const type = e?.type || "";
+  if (!["scroll","resize","touchmove","wheel","gesturestart"].includes(type)) return false;
+  return rankFilterHasFocus() || rankFilterIsEditing() || rankFilterRecentlyActive();
+}
 function closeRankFiltersFromOutside(e){
   if (!rankFiltersOpen()) return;
-  if (rankFilterEventInside(e)) return;
-  if ((e.type === "scroll" || e.type === "resize") && rankFilterHasFocus()) return;
+  if (rankFilterEventInside(e)) { markRankFilterInteraction(); return; }
+  if (rankFilterShouldIgnoreViewportEvent(e)) return;
   closeRankFilters();
 }
 function closeRankFiltersFromViewportChange(e){
   if (!rankFiltersOpen()) return;
-  if (rankFilterHasFocus()) return;
+  if (rankFilterShouldIgnoreViewportEvent(e)) return;
   closeRankFilters();
 }
 
@@ -1362,7 +1381,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.20";
+const APP_VERSION_FALLBACK = "2026.06.27.21";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -3419,7 +3438,6 @@ function buildRankFilterBar(){
     + `</div></div>`;
   html += `<div class="fg fg-keyword"><span class="fg-lab">關鍵字</span><div class="fg-chips">`
     + `<input id="rkKeyword" class="keyword-input" type="search" inputmode="search" enterkeyhint="search" maxlength="24" placeholder="例如：麵線、滷肉飯" value="${escapeHTML(rankFilter.keyword || "")}">`
-    + `<button id="rkKeywordApply" class="keyword-apply" type="button">套用</button>`
     + `</div></div>`;
   html += RANK_FILTERS.map(g =>
     `<div class="fg${g.key==="travel" ? " fg-travel" : ""}"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
@@ -3432,7 +3450,7 @@ function buildRankFilterBar(){
   const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
   html += `<div class="mode-hint"><b>目前模式</b>：${escapeHTML(rankModeHintText())}</div>`;
   html += `<div class="filter-precision"><b>判斷來源</b>：${escapeHTML(rankFilterPrecisionText())}</div>`;
-  html += `<button class="fclear${active?"":" hidden"}" id="rkClear">清除</button>`;
+  html += `<div class="filter-actions"><button class="fclear${active?"":" hidden"}" id="rkClear" type="button">清除</button><button id="rkKeywordApply" class="keyword-apply" type="button">套用</button></div>`;
   bar.innerHTML = html;
 
   bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
@@ -3458,7 +3476,13 @@ function buildRankFilterBar(){
     buildRankFilterBar(); safeRenderLeaderboard();
   };
   $("#rkKeywordApply")?.addEventListener("click", applyKeyword);
-  $("#rkKeyword")?.addEventListener("keydown", e => {
+  const keywordInput = $("#rkKeyword");
+  ["focus","input","compositionstart","compositionupdate","touchstart","pointerdown"].forEach(type => {
+    keywordInput?.addEventListener(type, () => markRankFilterInteraction(2400), { passive:true });
+  });
+  keywordInput?.addEventListener("blur", () => markRankFilterInteraction(500));
+  keywordInput?.addEventListener("keydown", e => {
+    markRankFilterInteraction(2400);
     if (e.key === "Enter"){
       e.preventDefault();
       applyKeyword();
