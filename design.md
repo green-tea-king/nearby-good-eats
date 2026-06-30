@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.06.27.22
+版本：2026.06.30.2
 
 ## 專案目標
 
@@ -28,9 +28,11 @@
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
 - `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
+- `assets/social-signal-config.json`：社群熱度批次更新設定，目前以 YouTube Data API 為第一階段來源，控制每次查詢餐廳數、影片數、時間範圍與分數權重。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
 - `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤、50 Best 等加權；2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項，並保留來源 URL。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
+- `scripts/update-external-signals.js`：外部社群訊號批次更新腳本。讀取 `assets/awards-taiwan.json` 作為候選餐廳，使用 YouTube Data API 查詢近期影片，只在影片標題或描述命中店名 / 別名時寫入 `assets/external-signals.json`。
 - `scripts/export-release.ps1`：版本匯出腳本。
 - `RELEASES.md`：版本匯出流程備註。
 
@@ -205,9 +207,38 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 - Google 評分 / 評論數仍是主體；米其林、必比登、500 盤、50 Best 等外部資料只做額外加分。
 - 外部評鑑權重原則：米其林星級高權重；必比登與 500 盤中高權重；50 Best 高權重但只影響少數真實入榜店。外部評鑑總加分有上限，避免壓過 Google 真實評分與評論量。
 - 社群聲量、平台認證、媒體推薦等外部資料不做使用者查詢時的即時抓取；先批次整理進 `assets/external-signals.json`，再由前端讀取，降低 API 成本並避免來源不穩。
+- 社群聲量採 API 優先、批次更新。第一階段來源為 YouTube Data API：每次預設只查 10 家候選餐廳、每家最多 8 支影片，影片必須命中店名或別名才可寫入。分數依影片數、90 天內影片數與觀看數對數加權產生，僅作輔助訊號。
 - 卡片認證章分兩類：
   - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援米其林星級、必比登、500 盤、50 Best；資料帶縣市與來源欄位，前端會合併同店多獎項並避免跨縣市誤標。
   - Google 真欄位認證：由 Google rating / userRatingCount / Places 服務欄位產生，例如高分認證、千則口碑、可訂位、聚餐友善、素食友善、戶外座位、寵物友善、無障礙資訊。
+
+### 社群熱度批次更新
+
+社群熱度不在使用者搜尋時即時查 API，而是由批次工作更新靜態資料檔：
+
+```text
+assets/awards-taiwan.json 候選餐廳
+  -> scripts/update-external-signals.js
+  -> YouTube Data API
+  -> assets/external-signals.json
+  -> 前端讀取訊號與徽章
+```
+
+執行方式：
+
+```powershell
+$env:YOUTUBE_API_KEY="你的 YouTube Data API key"
+node scripts/update-external-signals.js
+```
+
+GitHub Actions 工作流 `.github/workflows/update-external-signals.yml` 可手動或每週執行。需要在 GitHub repository secrets 設定 `YOUTUBE_API_KEY`。沒有 key 時腳本只更新執行狀態，不會寫入假資料。
+
+成本控管：
+
+- 預設每次只查 10 家餐廳，避免 YouTube `search.list` 配額快速消耗。
+- 批次工作會記錄 `automation.nextAwardOffset`，下次從下一批餐廳繼續跑。
+- 只接受影片標題或描述命中店名 / 別名的結果；沒有命中就不產生社群訊號。
+- `youtubeBuzz` 只做輔助加分與提示，不可超過 Google 評分、評論數與外部評鑑主體。
 
 這個設計是為了處理「同樣 4 顆星，但評論數多者可信度應較高」的問題。
 
