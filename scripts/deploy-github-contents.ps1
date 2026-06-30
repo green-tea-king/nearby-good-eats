@@ -25,6 +25,7 @@ $Files = @(
   "assets/awards-taiwan.michelin-selected-2025-draft.json",
   "assets/michelin-selected-2025-merge-report.json",
   "assets/external-signals.json",
+  "assets/filter-rules.js",
   "assets/social-signal-config.json",
   "assets/michelin-taiwan-2025-official-candidates.json",
   "assets/michelin-taiwan-2025-official-report.json",

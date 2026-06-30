@@ -35,6 +35,13 @@ if ($Html -notlike "*500bowl*" -or $Html -notlike "*500sweet*") {
   throw "Homepage is missing 500bowl/500sweet rendering support"
 }
 
+$FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
+foreach ($RequiredFilterText in @("key:""award""", "tier:""static""")) {
+  if ($FilterRulesText -notlike "*$RequiredFilterText*") {
+    throw "Filter rules are missing award level option: $RequiredFilterText"
+  }
+}
+
 $AwardsText = Read-TextUrl "$BaseUrl/assets/awards-taiwan.json?cacheBust=$CacheBust"
 $Awards = $AwardsText | ConvertFrom-Json
 $Guides = @{}
