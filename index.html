@@ -397,17 +397,25 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge.fifty::before{content:"50";font-size:8.5px;font-family:var(--mono);color:var(--gold);}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
 .badge.plate{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.26);}
+.badge.bowl{background:rgba(200,162,76,.13);color:var(--gold);border-color:rgba(200,162,76,.28);}
+.badge.sweet{background:rgba(236,90,106,.11);color:var(--accent-soft);border-color:rgba(236,90,106,.26);}
 .badge.greenstar{background:rgba(95,185,138,.12);color:var(--green);border-color:rgba(95,185,138,.3);}
 .badge.greenstar::before{content:"★";font-size:9px;}
 .badge.cert{background:rgba(95,185,138,.11);color:var(--green);border-color:rgba(95,185,138,.28);}
 .badge.cert-strong{background:var(--gold-weak);color:var(--gold);border-color:rgba(200,162,76,.3);}
 .badge.cert-service{background:rgba(143,179,196,.10);color:var(--plate);border-color:rgba(143,179,196,.24);}
 .badge.cert::before,.badge.cert-strong::before,.badge.cert-service::before{content:"✓";font-size:10px;}
+.badge.social{background:rgba(236,90,106,.12);color:var(--accent-soft);border-color:rgba(236,90,106,.28);}
+.badge.social::before{content:"▶";font-size:9px;}
 .badge.placeholder{display:none;}
 .confidence-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
 .confidence-pill{font-size:10.5px;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:3px 7px;}
 .confidence-pill b{color:var(--text);font-weight:500;}
 .keyword-hits{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.social-signal{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;}
+.social-signal .k{font-size:12px;color:var(--text-faint);}
+.social-signal .v{font-size:13px;color:var(--text);line-height:1.55;}
+.social-signal a{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px;}
 .keyword-hit{font-size:10.5px;color:var(--text-dim);background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.22);border-radius:999px;padding:3px 8px;}
 .keyword-hit b{color:var(--accent-bright);font-weight:600;}
 .card-note-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
@@ -566,7 +574,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
   <div class="rank-head">
-    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v06.30.10</span></div>
+    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.01.1</span></div>
     <button class="rank-filter-btn" id="rankFilterBtn" aria-label="開啟濾網" title="濾網">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -784,9 +792,15 @@ const CONFIG = {
     michelin: { "三星": 0.5, "二星": 0.4, "一星": 0.3 }, // 高權重，但仍只疊加在 Google 分數上
     fiftyBest: 0.45,          // 50 Best：高權重、少數店適用
     bib: 0.22,                // 必比登推介：中高權重
-    platePerUnit: 0.03,       // 500 盤：中高權重，依盤數遞增
-    plateCap: 0.35,           // 500 盤加分上限，避免壓過 Google 主體
+    platePerUnit: 0.03,       // 500 盤 / 500 碗 / 500 甜：中高權重，依單位數遞增
+    plateCap: 0.35,           // 500 系列加分上限，避免壓過 Google 主體
     totalCap: 0.75,           // 外部評鑑總加分上限，Google 評分/評論數仍是主體
+  },
+  SOCIAL_SIGNAL_BONUS: {
+    youtubeCap: 0.12,          // 社群聲量只做小加分，避免壓過 Google 評分/評論數
+    socialCap: 0.10,
+    totalCap: 0.14,
+    confidence: { high:1, medium:0.75, low:0.45 },
   },
 
   // ── 距離 / 營業 對排名的影響（綜合排序時）
@@ -1325,7 +1339,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.30.10";
+const APP_VERSION_FALLBACK = "2026.07.01.1";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2045,13 +2059,15 @@ function finalizeRankCandidates(items, { sortDistance=false }={}){
   const seen = new Set();
   const all = items.filter(x => x.id && !seen.has(x.id) && seen.add(x.id));
   applyAwards(all);
+  applyExternalSignals(all);
   const m = all.length ? computeM(all) : rankPoolM;
   if (all.length) rankPoolM = m;
   all.forEach(x => {
     x.bScore = bayes(x, m);
     x.aBonus = awardBonus(x.awards);
     x.rBonus = reviewCountBonus(x.count);
-    x.composite = x.bScore + x.aBonus + x.rBonus;
+    x.sBonus = socialSignalBonus(x.externalSignals);
+    x.composite = x.bScore + x.aBonus + x.rBonus + x.sBonus;
   });
   all.sort((a,b) => (b.composite - a.composite) || (sortDistance ? ((a.dist || 0) - (b.dist || 0)) : 0));
   return groupRankBranches(all);
@@ -2068,7 +2084,7 @@ async function ensureRankPool(force){
   $("#rankList").innerHTML = `<div class="rank-note">整理全台美食中…</div>`;
   setGuideWorking("正在整理 Google 真資料候選池，評分與評論數會先做加權排序。");
   try{
-    await ensureAwards();
+    await Promise.all([ensureAwards(), ensureExternalSignals()]);
     let Place = null;
     if (!hasApiProxy){
       await loadGoogle();
@@ -2203,7 +2219,7 @@ async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
   const village = f.village || "";
   const key = ["area-v2", city, area, village, ...terms].join("|");
   if (rankAreaPools[key]) return rankAreaPools[key];
-  await ensureAwards();
+  await Promise.all([ensureAwards(), ensureExternalSignals()]);
   let Place = null;
   if (!hasApiProxy){
     await loadGoogle();
@@ -2245,7 +2261,7 @@ async function keywordCandidates(f=rankFilter, quotaKey=""){
   const terms = rankQueryTerms(f);
   const key = ["keyword-v2", ...terms].join("|");
   if (rankKeywordPools[key]) return rankKeywordPools[key];
-  await ensureAwards();
+  await Promise.all([ensureAwards(), ensureExternalSignals()]);
   let Place = null;
   if (!hasApiProxy){
     await loadGoogle();
@@ -2314,7 +2330,7 @@ async function originKeywordFallbackCandidates(f=rankFilter, quotaKey=""){
   const centerKey = state.center ? `${state.center.lat.toFixed(4)},${state.center.lng.toFixed(4)}` : "";
   const key = ["origin-keyword-fallback-v2", centerKey, rankNearbySearchLabel(), ...terms].join("|");
   if (rankNearbyPools[key]) return rankNearbyPools[key];
-  await ensureAwards();
+  await Promise.all([ensureAwards(), ensureExternalSignals()]);
   let Place = null;
   if (!hasApiProxy){
     await loadGoogle();
@@ -2349,7 +2365,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   const key = ["nearby-v5", centerKey, originLabelForKey, radius, searchRadius, ...terms].join("|");
   if (rankNearbyPools[key]) return rankNearbyPools[key];
   if (terms.length){
-    await ensureAwards();
+    await Promise.all([ensureAwards(), ensureExternalSignals()]);
     let Place = null;
     if (!hasApiProxy){
       await loadGoogle();
@@ -2389,7 +2405,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
   });
   const cachedNearby = await cachedRequest(nearbyCacheKey, CONFIG.CACHE_TTL_MS.search, async () => {
     if (hasApiProxy){
-      await ensureAwards();
+      await Promise.all([ensureAwards(), ensureExternalSignals()]);
       const data = await apiProxy("nearbySearch", {
         center:state.center,
         radius,
@@ -2401,7 +2417,7 @@ async function nearbyRankCandidates(f=rankFilter, radius=CONFIG.RANK_WALKABLE_RA
         .map(p => rankCandidateFromProxy(p, { center:state.center, queryTerms:terms })));
     }
     await loadGoogle();
-    await ensureAwards();
+    await Promise.all([ensureAwards(), ensureExternalSignals()]);
     const { Place, SearchNearbyRankPreference } = await google.maps.importLibrary("places");
     const res = await Place.searchNearby({
       fields: [
@@ -2920,7 +2936,7 @@ async function renderLeaderboard(){
     });
     $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
     bindCardEvents($("#rankList"));
-    setGuideReady(`已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間與外部獎牌加權，條件：${guideFilterSummary(f)}。`);
+    setGuideReady(`已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間、外部獎牌與社群熱度小幅加權，條件：${guideFilterSummary(f)}。`);
     return;
   }
   let list = applyRankFilters(source, false);
@@ -3052,7 +3068,7 @@ async function renderLeaderboard(){
   });
   $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("");
   bindCardEvents($("#rankList"));
-  setGuideReady(`已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間與標籤；照片與完整資訊放在詳情內省流量。`);
+  setGuideReady(`已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間、獎牌與熱度標籤；照片與完整資訊放在詳情內省流量。`);
 }
 
 function safeRenderLeaderboard(){
@@ -3160,11 +3176,16 @@ function rankCardData(c){
   const C = CONFIG.BAYES.C, m = Math.round(rankPoolM*100)/100, n = c.count.toLocaleString();
   const formula = `貝氏 (${C}×${m}＋${n}×${c.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${c.bScore.toFixed(2)}`
     + (c.rBonus>0 ? `，＋評論量 ${c.rBonus.toFixed(2)}` : ``)
-    + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``) + `，綜合 ${c.composite.toFixed(2)}`;
+    + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``)
+    + (c.sBonus>0 ? `，＋熱度 ${c.sBonus.toFixed(2)}` : ``)
+    + `，綜合 ${c.composite.toFixed(2)}`;
   return Object.assign({
     id:c.id, name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
     dist:c.loc ? Math.round(distanceM(state.center, c.loc)) : null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:c.aiReason || "",
+    socialBonus:c.sBonus || 0,
+    externalSignals:c.externalSignals || [],
+    socialSignal:c.socialSignal || null,
     reviewSummary:c.reviewSummary || "", summary:c.summary || "", generativeSummary:c.generativeSummary || "",
     keywordHit:c.keywordHit || null,
     branchGroup:c.branchGroup || null,
@@ -3865,8 +3886,9 @@ async function search() {
       openOnly:state.openOnly,
       sort:state.sort,
     });
-    await ensureAwards();      // Step 2：載入評鑑名單（只載一次）
+    await Promise.all([ensureAwards(), ensureExternalSignals()]); // Step 2：載入評鑑與熱度資料（只讀靜態檔）
     applyAwards(state.raw);    // Step 2：模糊比對 → 填入 awards
+    applyExternalSignals(state.raw);
     rankAndRender();
   } catch (e) {
     console.error(e);
@@ -4106,12 +4128,32 @@ function awardBonus(awards){
       fiftyBest = CONFIG.AWARD_BONUS.fiftyBest;
     } else if (a.guide === "bib") {
       bib = CONFIG.AWARD_BONUS.bib;
-    } else if (a.guide === "500plate") {
-      const plates = Number(a.plates ?? String(a.level || "").match(/\d+/)?.[0] ?? 0) || 0;
-      plate = Math.max(plate, Math.min(plates * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap));
+    } else if (a.guide === "500plate" || a.guide === "500bowl" || a.guide === "500sweet") {
+      const units = Number(a.plates ?? a.bowls ?? a.sweets ?? String(a.level || "").match(/\d+/)?.[0] ?? 1) || 1;
+      plate = Math.max(plate, Math.min(units * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap));
     }
   }
   return Math.min(michelin + fiftyBest + bib + plate, CONFIG.AWARD_BONUS.totalCap);
+}
+
+function socialSignalBonus(signals){
+  const cfg = CONFIG.SOCIAL_SIGNAL_BONUS;
+  let youtube = 0;
+  let social = 0;
+  for (const s of (signals || [])){
+    const score = Math.max(0, Math.min(100, Number(s.score) || 0)) / 100;
+    const conf = cfg.confidence[String(s.confidence || "medium").toLowerCase()] ?? cfg.confidence.medium;
+    const weighted = score * conf;
+    if (s.type === "youtubeBuzz") youtube = Math.max(youtube, weighted * cfg.youtubeCap);
+    else if (s.type === "socialBuzz") social = Math.max(social, weighted * cfg.socialCap);
+  }
+  return Math.min(youtube + social, cfg.totalCap);
+}
+
+function primarySocialSignal(signals){
+  return (signals || [])
+    .filter(s => s && (s.type === "youtubeBuzz" || s.type === "socialBuzz"))
+    .sort((a,b) => (Number(b.score)||0) - (Number(a.score)||0))[0] || null;
 }
 
 // 該店明確供應「當前時段」餐點 → 小加分（讓時段篩選更準；資料缺就不加，不硬篩）
@@ -4216,9 +4258,11 @@ function rankAndRender(){
   items.forEach(i => {
     i.bayesScore = bayes(i, m);
     i.reviewCountBonus = reviewCountBonus(i.count);
+    i.socialBonus = socialSignalBonus(i.externalSignals);
     i.composite = i.bayesScore
       + i.reviewCountBonus
       + awardBonus(i.awards)
+      + i.socialBonus
       - (state.wholeArea ? 0 : (i.dist/100) * CONFIG.DISTANCE_PENALTY_PER_100M)
       + (i.openNow === true ? CONFIG.OPEN_BONUS : 0)
       + mealMatchBonus(i);
@@ -4333,6 +4377,35 @@ function photoStripHTML(photoUrls, name){
     : "";
 }
 
+function socialBadgeHTML(signal){
+  if (!signal) return "";
+  const label = signal.label || (signal.type === "youtubeBuzz" ? "影音熱度" : "社群熱度");
+  return `<span class="badge social" title="${escapeHTML(label)} ${Number(signal.score || 0)}">${escapeHTML(label)}</span>`;
+}
+function compactNumber(n){
+  const value = Number(n) || 0;
+  if (value >= 10000) return `${(value / 10000).toFixed(value >= 100000 ? 0 : 1)}萬`;
+  return value.toLocaleString();
+}
+function socialSignalDetailHTML(r){
+  const signal = r.socialSignal || primarySocialSignal(r.externalSignals || []);
+  if (!signal) return "";
+  const metrics = signal.metrics || {};
+  const videos = Array.isArray(metrics.topVideos) ? metrics.topVideos : [];
+  const top = videos[0] || {};
+  const videoCount = Number(metrics.videoCount || videos.length || 0);
+  const views = Number(metrics.totalViews || 0);
+  const parts = [
+    signal.label || "社群熱度",
+    videoCount ? `${videoCount} 支影片` : "",
+    views ? `約 ${compactNumber(views)} 次觀看` : "",
+    signal.score != null ? `熱度 ${Math.round(Number(signal.score) || 0)}` : "",
+  ].filter(Boolean);
+  const link = top.url || signal.url || "";
+  const source = top.channelTitle ? `來源：${top.channelTitle}` : "來源：YouTube Data API";
+  return `<div class="social-signal"><span class="k">社群熱度</span><span class="v">${escapeHTML(parts.join(" · "))}${link ? ` · <a href="${escapeHTML(link)}" target="_blank" rel="noopener">查看來源</a>` : ""}<br><small>${escapeHTML(source)}</small></span></div>`;
+}
+
 function cardHTML(r, rank){
   const placeId = r.id || "";
   const shareUrl = placeId ? placeShareUrl(placeId) : "";
@@ -4356,12 +4429,14 @@ function cardHTML(r, rank){
     ["素食友善", 6],
   ]);
   const primaryCertItems = [...certItems].sort((a,b) => (certPriority.get(a.label) || 99) - (certPriority.get(b.label) || 99));
-  const primaryCertCount = Math.max(0, 4 - awardBadgeItems.length);
+  const socialBadgeItem = socialBadgeHTML(r.socialSignal);
+  const primaryCertCount = Math.max(0, 4 - awardBadgeItems.length - (socialBadgeItem ? 1 : 0));
   const visibleCertLabels = new Set(primaryCertItems.slice(0, primaryCertCount).map(x => x.label));
   const badges = [
     ...awardBadgeItems,
+    socialBadgeItem,
     ...primaryCertItems.slice(0, primaryCertCount).map(certBadgeHTML),
-  ].slice(0, 4).join("");
+  ].filter(Boolean).slice(0, 4).join("");
   const detailBadges = primaryCertItems
     .filter(x => !visibleCertLabels.has(x.label))
     .map(certBadgeHTML)
@@ -4369,6 +4444,7 @@ function cardHTML(r, rank){
   const detailBadgeRow = detailBadges ? `<div class="badges detail-badges">${detailBadges}</div>` : "";
   const confidence = confidenceHTML(r);
   const keywordHits = keywordHitSummaryHTML(r.keywordHit);
+  const socialDetail = socialSignalDetailHTML(r);
   const branchGroup = r.branchGroup?.count > 1
     ? `<div class="branch-group">同品牌 ${r.branchGroup.count} 間，保留最高分${r.branchGroup.names?.length ? `：${escapeHTML(r.branchGroup.names.join("、"))}` : ""}</div>`
     : "";
@@ -4431,6 +4507,7 @@ function cardHTML(r, rank){
       <div class="detail-inner">
         ${photoStrip}
         ${detailBadgeRow}
+        ${socialDetail}
         ${keywordHits}
         ${confidence}
         ${ai}
@@ -4464,6 +4541,14 @@ function badgeHTML(a){
   if (a.guide==="500plate") {
     const label = a.level || (a.plates ? `${a.plates}盤` : "");
     return `<span class="badge plate" title="500盤 ${year} ${escapeHTML(label)}">500盤${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
+  }
+  if (a.guide==="500bowl") {
+    const label = a.level || (a.bowls ? `${a.bowls}碗` : "");
+    return `<span class="badge bowl" title="500碗 ${year} ${escapeHTML(label)}">500碗${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
+  }
+  if (a.guide==="500sweet") {
+    const label = a.level || (a.sweets ? `${a.sweets}甜` : "");
+    return `<span class="badge sweet" title="500甜 ${year} ${escapeHTML(label)}">500甜${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
   }
   return "";
 }
@@ -4612,6 +4697,7 @@ function jitter(c){return {lat:c.lat+(Math.random()-.5)*.004, lng:c.lng+(Math.ra
    Step 2 — 評鑑模組：載入名單 + 模糊比對 + 500 盤彙總
    ============================================================ */
 let AWARDS = null, awardsPromise = null;
+let EXTERNAL_SIGNALS = null, externalSignalsPromise = null;
 
 function ensureAwards(){
   if (AWARDS) return Promise.resolve(AWARDS);
@@ -4622,6 +4708,17 @@ function ensureAwards(){
     .catch(e => { AWARDS = []; console.warn("[評鑑] 評鑑名單載入失敗，不使用備援死資料：", e.message); })
     .then(() => AWARDS);
   return awardsPromise;
+}
+
+function ensureExternalSignals(){
+  if (EXTERNAL_SIGNALS) return Promise.resolve(EXTERNAL_SIGNALS);
+  if (externalSignalsPromise) return externalSignalsPromise;
+  externalSignalsPromise = fetch(CONFIG.EXTERNAL_SIGNALS_URL, { cache:"force-cache" })
+    .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(j => { EXTERNAL_SIGNALS = j.restaurants || []; })
+    .catch(e => { EXTERNAL_SIGNALS = []; console.warn("[外部熱度] 熱度資料載入失敗，不使用社群加權：", e.message); })
+    .then(() => EXTERNAL_SIGNALS);
+  return externalSignalsPromise;
 }
 
 // 店名正規化：全形→半形、去空白標點、去常見尾綴；用於模糊比對
@@ -4648,6 +4745,43 @@ function awardCityMatches(rest, entry){
 }
 function awardNames(entry){
   return [entry?.name, ...(entry?.aliases || [])].filter(Boolean);
+}
+
+function externalSignalNames(entry){
+  return [entry?.name, ...(entry?.aliases || [])].filter(Boolean);
+}
+function externalSignalCityMatches(rest, entry){
+  const entryCity = normalizeTaiwanCity(entry?.city || cityAreaFromAddress(entry?.address || "").city || "");
+  if (!entryCity) return true;
+  const restCity = normalizeTaiwanCity(rest.city || rest.lbCity || cityAreaFromAddress(rest.address || "").city || "");
+  return !!restCity && restCity === entryCity;
+}
+function matchExternalSignals(rest, list){
+  if (!list || !list.length) return [];
+  if (rest.id){
+    const byId = list.find(e => e.placeId && e.placeId === rest.id);
+    if (byId?.signals?.length) return byId.signals;
+  }
+  const rn = normName(rest.name);
+  if (!rn) return [];
+  for (const entry of list){
+    if (!externalSignalCityMatches(rest, entry)) continue;
+    for (const candidateName of externalSignalNames(entry)){
+      const en = normName(candidateName);
+      if (!en) continue;
+      if (en === rn || (en.length >= 4 && (rn.includes(en) || en.includes(rn)))) {
+        return entry.signals || [];
+      }
+    }
+  }
+  return [];
+}
+function applyExternalSignals(items){
+  items.forEach(r => {
+    const signals = matchExternalSignals(r, EXTERNAL_SIGNALS || []);
+    r.externalSignals = signals;
+    r.socialSignal = primarySocialSignal(signals);
+  });
 }
 
 // 比對：完全相等→high；包含關係→medium（地址可升級為 high）
@@ -4679,15 +4813,33 @@ function matchAwards(rest, list){
   return matches;
 }
 
-// 彙總 500 盤（dishPlates 各菜盤數 → 餐廳層級總盤數）並標準化顯示
+// 彙總 500 系列（菜/碗/甜品單位數 → 餐廳層級總單位數）並標準化顯示
 function normalizeAwards(awards){
-  const priority = a => a.guide === "michelin" ? 1 : (a.guide === "50best" ? 2 : (a.guide === "bib" ? 3 : (a.guide === "500plate" ? 4 : 9)));
+  const priority = a => a.guide === "michelin" ? 1
+    : (a.guide === "50best" ? 2
+    : (a.guide === "bib" ? 3
+    : (a.guide === "greenstar" ? 4
+    : (a.guide === "500plate" ? 5
+    : (a.guide === "500bowl" ? 6
+    : (a.guide === "500sweet" ? 7 : 9))))));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
       const plates = Array.isArray(a.dishPlates)
         ? a.dishPlates.reduce((s,x)=>s + (Number(x) || 0), 0)
         : (Number(a.plates) || Number(String(a.level || "").match(/\d+/)?.[0]) || 0);
       return { ...a, plates, level:plates ? `${plates}盤` : "" };
+    }
+    if (a.guide==="500bowl"){
+      const bowls = Array.isArray(a.dishBowls)
+        ? a.dishBowls.reduce((s,x)=>s + (Number(x) || 0), 0)
+        : (Number(a.bowls) || Number(String(a.level || "").match(/\d+/)?.[0]) || 0);
+      return { ...a, bowls, level:bowls ? `${bowls}碗` : (a.level || "") };
+    }
+    if (a.guide==="500sweet"){
+      const sweets = Array.isArray(a.dishSweets)
+        ? a.dishSweets.reduce((s,x)=>s + (Number(x) || 0), 0)
+        : (Number(a.sweets) || Number(String(a.level || "").match(/\d+/)?.[0]) || 0);
+      return { ...a, sweets, level:sweets ? `${sweets}甜` : (a.level || "") };
     }
     return a;
   }).sort((a,b) => priority(a) - priority(b));
