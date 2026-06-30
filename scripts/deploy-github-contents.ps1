@@ -12,6 +12,7 @@ Set-Location $RepoRoot
 
 $Files = @(
   "index.html",
+  ".nojekyll",
   "VERSION",
   "design.md",
   "assets/awards-taiwan.json",
