@@ -1,5 +1,5 @@
 {
-  "version": "2026.06.30.1",
+  "version": "2026.07.01.1",
   "policy": {
     "runtimeLookup": false,
     "batchOnly": true,
@@ -8,7 +8,8 @@
     "notes": [
       "社群熱度只做輔助訊號，不取代 Google 評分與評論數。",
       "批次工作預設只查少量餐廳，避免 YouTube search.list 配額快速消耗。",
-      "沒有命中店名或別名的影片不可寫入餐廳訊號。"
+      "沒有命中店名或別名的影片不可寫入餐廳訊號。",
+      "愛食記、OpenRice、Tripadvisor 等平台資料只允許走授權 API、手動整理或可追溯批次資料；不得在使用者搜尋時即時抓外站。"
     ]
   },
   "youtube": {
@@ -30,6 +31,6 @@
     "file": "assets/awards-taiwan.json",
     "maxNameLength": 40,
     "skipGuides": [],
-    "priorityGuides": ["michelin", "bib", "500plate", "50best"]
+    "priorityGuides": ["michelin", "bib", "500plate", "500bowl", "500sweet", "50best"]
   }
 }

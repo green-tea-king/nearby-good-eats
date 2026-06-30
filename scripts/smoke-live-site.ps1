@@ -31,6 +31,9 @@ if ($Html -notlike "*$Version*" -and $Html -notlike "*$ShortVersion*") {
 if ($Html -notlike "*greenstar*") {
   throw "Homepage is missing greenstar rendering support"
 }
+if ($Html -notlike "*500bowl*" -or $Html -notlike "*500sweet*") {
+  throw "Homepage is missing 500bowl/500sweet rendering support"
+}
 
 $AwardsText = Read-TextUrl "$BaseUrl/assets/awards-taiwan.json?cacheBust=$CacheBust"
 $Awards = $AwardsText | ConvertFrom-Json

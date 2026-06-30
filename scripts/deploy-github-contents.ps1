@@ -17,6 +17,7 @@ $Files = @(
   "VERSION",
   "design.md",
   "assets/awards-taiwan.json",
+  "assets/social-signal-config.json",
   "assets/michelin-taiwan-2025-official-candidates.json",
   "assets/michelin-taiwan-2025-official-report.json",
   "assets/michelin-taiwan-2025-official-import-report.json",

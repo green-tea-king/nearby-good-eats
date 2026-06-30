@@ -5,7 +5,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const draftPath = path.join(repoRoot, "assets", "awards-taiwan.michelin-taiwan-2025-official-draft.json");
 
-const ALLOWED_GUIDES = new Set(["michelin", "bib", "greenstar", "500plate", "50best"]);
+const ALLOWED_GUIDES = new Set(["michelin", "bib", "greenstar", "500plate", "500bowl", "500sweet", "50best"]);
 const EXPECTED = {
   restaurants: 427,
   guides: {
@@ -32,7 +32,7 @@ function normalizeName(value) {
 }
 
 function awardKey(award) {
-  return [award.guide, award.level || "", award.year || "", award.plates || ""].join("|");
+  return [award.guide, award.level || "", award.year || "", award.plates || "", award.bowls || "", award.sweets || ""].join("|");
 }
 
 function comparableRows(data) {
@@ -48,6 +48,8 @@ function comparableRows(data) {
           level: award.level || "",
           year: award.year || "",
           plates: award.plates || "",
+          bowls: award.bowls || "",
+          sweets: award.sweets || "",
           url: award.url || "",
         }))
         .sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b))),
