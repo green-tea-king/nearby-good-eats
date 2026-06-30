@@ -30,24 +30,67 @@ function stripTags(html) {
     .trim();
 }
 
-async function main() {
-  const { statusCode, body } = await requestText(sourceUrl);
-  const text = stripTags(body);
-  const likelyListSignals = [
+function absoluteUrl(base, maybeRelative) {
+  return new URL(maybeRelative, base).toString();
+}
+
+function scriptUrls(html) {
+  const urls = [];
+  const re = /<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi;
+  let match;
+  while ((match = re.exec(String(html || "")))) {
+    urls.push(absoluteUrl(sourceUrl, match[1]));
+  }
+  return urls;
+}
+
+function staticListEvidence(text) {
+  const value = String(text || "");
+  const listSignals = [
     "500甜",
     "得獎",
     "甜點",
     "名單",
     "award",
-  ].filter((token) => text.includes(token) || body.toLowerCase().includes(token.toLowerCase()));
+  ].filter((token) => value.includes(token) || value.toLowerCase().includes(token.toLowerCase()));
+  return {
+    bytes: Buffer.byteLength(value, "utf8"),
+    listSignals,
+    hasLikelyRestaurantRows: /[縣市].{0,20}(甜點|蛋糕|咖啡|烘焙|店|菓子|冰|茶)/.test(value),
+  };
+}
+
+async function main() {
+  const { statusCode, body } = await requestText(sourceUrl);
+  const text = stripTags(body);
+  const htmlEvidence = staticListEvidence(`${text}\n${body}`);
+  const moduleScripts = scriptUrls(body).filter((url) => /\/js\/index\.js/i.test(url));
+  const scriptReports = [];
+  for (const url of moduleScripts) {
+    try {
+      const response = await requestText(url);
+      const evidence = staticListEvidence(response.body);
+      scriptReports.push({
+        url,
+        statusCode: response.statusCode,
+        bytes: evidence.bytes,
+        likelyListSignals: evidence.listSignals,
+        hasLikelyRestaurantRows: evidence.hasLikelyRestaurantRows,
+      });
+    } catch (error) {
+      scriptReports.push({ url, error: error.message });
+    }
+  }
+  const scriptReady = scriptReports.some((item) => item.statusCode >= 200 && item.statusCode < 300 && item.bytes > 5000 && item.hasLikelyRestaurantRows);
   const report = {
     generatedAt: new Date().toISOString(),
     sourceUrl,
     statusCode,
     htmlBytes: Buffer.byteLength(body || "", "utf8"),
     textBytes: Buffer.byteLength(text || "", "utf8"),
-    likelyListSignals,
-    parseReady: statusCode >= 200 && statusCode < 300 && textBytesEnough(text),
+    likelyListSignals: htmlEvidence.listSignals,
+    moduleScripts: scriptReports,
+    parseReady: (statusCode >= 200 && statusCode < 300 && textBytesEnough(text)) || scriptReady,
     decision: "pending",
     note: "",
   };

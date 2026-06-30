@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T23:20:15.566Z",
+  "generatedAt": "2026-06-30T23:52:09.226Z",
   "sourceUrl": "https://udn.com/500sweetaward/",
   "statusCode": 200,
   "htmlBytes": 5180,
@@ -9,6 +9,15 @@
     "甜點",
     "名單",
     "award"
+  ],
+  "moduleScripts": [
+    {
+      "url": "https://udn.com/500sweetaward/js/index.js?DA51fVkVF1",
+      "statusCode": 200,
+      "bytes": 278964,
+      "likelyListSignals": [],
+      "hasLikelyRestaurantRows": false
+    }
   ],
   "parseReady": false,
   "decision": "do_not_import",

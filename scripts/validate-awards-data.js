@@ -4,6 +4,7 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const draftPath = path.join(repoRoot, "assets", "awards-taiwan.michelin-selected-2025-draft.json");
+const sweetManualPath = path.join(repoRoot, "assets", "500sweet-2025-manual.json");
 
 const ALLOWED_GUIDES = new Set(["michelin", "michelin_selected", "bib", "greenstar", "500plate", "500bowl", "500sweet", "50best"]);
 const EXPECTED = {
@@ -150,17 +151,37 @@ function compareFormalAndDraft(formal, draft) {
   return errors;
 }
 
+function validateSweetManual(data) {
+  const errors = [];
+  if (!data.policy || data.policy.runtimeExternalLookup !== false || data.policy.batchOnly !== true) {
+    errors.push("500sweet manual policy must enforce runtimeExternalLookup=false and batchOnly=true");
+  }
+  for (const [index, row] of (data.restaurants || []).entries()) {
+    const prefix = `500sweet manual restaurants[${index}]`;
+    if (!row.name) errors.push(`${prefix} missing name`);
+    if (!row.city) errors.push(`${prefix} missing city`);
+    if (!row.sourceUrl) errors.push(`${prefix} missing sourceUrl`);
+    if (!row.reviewedBy) errors.push(`${prefix} missing reviewedBy`);
+  }
+  return {
+    rows: (data.restaurants || []).length,
+    errors,
+  };
+}
+
 function main() {
   const formal = readJson(awardsPath);
   const draft = readJson(draftPath);
   const result = validateAwards(formal);
   const draftErrors = compareFormalAndDraft(formal, draft);
-  const errors = [...result.errors, ...draftErrors];
+  const sweetManual = fs.existsSync(sweetManualPath) ? validateSweetManual(readJson(sweetManualPath)) : { rows: 0, errors: [] };
+  const errors = [...result.errors, ...draftErrors, ...sweetManual.errors];
 
   const summary = {
     ok: errors.length === 0,
     restaurants: (formal.restaurants || []).length,
     guides: result.guides,
+    sweetManualRows: sweetManual.rows,
     errors,
   };
 
