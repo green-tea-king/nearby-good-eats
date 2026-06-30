@@ -31,7 +31,7 @@
     "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
     "https://udn.com/news/story/7266/8933484"
   ],
-  "updated": "2026-06-26",
+  "updated": "2026-06-30",
   "restaurants": [
     {
       "name": "一甲子餐飲",
@@ -42,7 +42,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "一甲子餐飲"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "人和園",
@@ -53,7 +57,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "人和園"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "大橋頭老牌筒仔米糕",
@@ -64,7 +72,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "大橋頭老牌筒仔米糕"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "小小樹食",
@@ -73,9 +85,20 @@
         {
           "guide": "bib",
           "year": 2025
+        },
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "小小樹食 （大安路）",
+        "小小樹食",
+        "Little Tree Food (Da'an Road)"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "小王煮瓜",
@@ -86,7 +109,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "小王煮瓜"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "小品雅廚",
@@ -97,7 +124,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "小品雅廚"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "小酌之家",
@@ -108,7 +139,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "小酌之家"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "天下三絕",
@@ -119,7 +154,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "天下三絕"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "天香樓",
@@ -131,7 +170,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "天香樓"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "巴黎廳1930 x 高山英紀",
@@ -143,7 +186,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "巴黎廳1930x高山英紀"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "心宴 aMaze",
@@ -155,7 +202,13 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "心宴",
+        "aMaze",
+        "心宴 aMaze"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "心潮飯店",
@@ -166,7 +219,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "心潮飯店"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "好朋友涼麵",
@@ -177,7 +234,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "好朋友涼麵"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "米香",
@@ -189,7 +250,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "米香"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "老山東牛肉家常麵店",
@@ -200,7 +265,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "老山東牛肉家常麵店"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "吾旺再季",
@@ -211,7 +280,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "吾旺再季"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "杭州小籠湯包",
@@ -222,7 +295,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "杭州小籠湯包"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "松竹園",
@@ -233,7 +310,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "松竹園"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "欣葉小聚",
@@ -244,7 +325,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "欣葉小聚"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "欣葉鐘菜",
@@ -256,7 +341,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "欣葉 鐘菜"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "金賞軒",
@@ -267,7 +356,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "金賞軒"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "侯布雄 L'ATELIER de Joël Robuchon",
@@ -279,7 +372,13 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "侯布雄",
+        "L'Atelier de Joël Robuchon",
+        "侯布雄 L'ATELIER de Joël Robuchon"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "巷子龍家常菜",
@@ -290,7 +389,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "巷子龍家常菜"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "盈科 EIKA",
@@ -302,7 +405,15 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "盈科",
+        "EIKA",
+        "Eika",
+        "盈科 EIKA",
+        "EIKA 盈科"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "茂園",
@@ -313,7 +424,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "茂園"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "祥和蔬食",
@@ -324,7 +439,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "祥和蔬食"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "軟實力",
@@ -335,7 +454,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "軟實力"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "斑泊",
@@ -347,7 +470,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "斑泊"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "渥達尼斯磨坊 Molino de Urdániz",
@@ -359,7 +486,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "渥達尼斯磨坊",
+        "Molino de Urdániz",
+        "Molino de Urdaniz",
+        "渥達尼斯磨坊 Molino de Urdániz"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "無名推車燒餅",
@@ -370,7 +504,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "無名推車燒餅"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "番紅花印度美饌",
@@ -381,7 +519,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "番紅花印度美饌"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "雄記蔥抓餅",
@@ -392,7 +534,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "雄記蔥抓餅"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "雅閣",
@@ -404,7 +550,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "雅閣"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "雲川水月 Clavius",
@@ -415,7 +565,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "雲川水月 Clavius"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "黃記魯肉飯",
@@ -426,7 +580,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "黃記魯肉飯"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "源芳刈包",
@@ -437,7 +595,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "源芳刈包"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "壽司芳 Sushiyoshi",
@@ -449,7 +611,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "壽司芳",
+        "Sushiyoshi",
+        "Sushi Yoshi",
+        "壽司芳 Sushiyoshi"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "態芮 Taïrroir",
@@ -461,7 +630,15 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "態芮",
+        "Taïrroir",
+        "Tairroir",
+        "態芮 Taïrroir",
+        "Taïrroir 態芮"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "賣麵炎仔",
@@ -472,7 +649,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "賣麵炎仔"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "醉楓園小館",
@@ -483,7 +664,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "醉楓園小館"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "謙安和",
@@ -495,7 +680,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "謙安和"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "鍾家原上海生煎包",
@@ -506,7 +695,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "鍾家原上海生煎包"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "隱食家",
@@ -517,7 +710,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "隱食家"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "鮨隆",
@@ -529,7 +726,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "鮨隆"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "鮨嘉仁",
@@ -541,7 +742,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "鮨 嘉仁"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "雙月食品",
@@ -552,7 +757,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "雙月食品"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "雞家莊",
@@ -563,7 +772,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "雞家莊"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "蘇來傳",
@@ -574,7 +787,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "蘇來傳"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "A Cut",
@@ -586,7 +803,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "A Cut"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "HUGH dessert dining",
@@ -597,7 +818,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "HUGH dessert dining"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "T+T",
@@ -609,7 +834,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "T+T"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Tableau by Craig Yang",
@@ -620,7 +849,11 @@
           "year": 2025
         }
       ],
-      "city": "台北市"
+      "city": "台北市",
+      "aliases": [
+        "Tableau by Craig Yang"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "上海未名麵點",
@@ -635,6 +868,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "上海未名麵點"
       ]
     },
     {
@@ -657,6 +893,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "小樂沐"
       ]
     },
     {
@@ -679,6 +918,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "山与"
       ]
     },
     {
@@ -738,6 +980,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "木公麥面"
       ]
     },
     {
@@ -775,6 +1020,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "牛稼莊"
       ]
     },
     {
@@ -802,6 +1050,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "功夫上海手工魚丸"
       ]
     },
     {
@@ -817,6 +1068,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "可口牛肉麵"
       ]
     },
     {
@@ -832,6 +1086,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "台中肉員"
       ]
     },
     {
@@ -891,6 +1148,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "好菜 (西區)"
       ]
     },
     {
@@ -906,6 +1166,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "老士官擀麵"
       ]
     },
     {
@@ -972,6 +1235,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "沙卡"
       ]
     },
     {
@@ -987,6 +1253,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "夜間部爌肉飯"
       ]
     },
     {
@@ -1009,6 +1278,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "明娟樓"
       ]
     },
     {
@@ -1046,6 +1318,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "阿坤麵"
       ]
     },
     {
@@ -1083,6 +1358,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "范記金之園 (中區)"
       ]
     },
     {
@@ -1105,6 +1383,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "飛花落院"
       ]
     },
     {
@@ -1230,6 +1511,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "富狀元豬腳"
       ]
     },
     {
@@ -1245,6 +1529,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "富貴亭"
       ]
     },
     {
@@ -1260,6 +1547,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "富鼎旺 (中區)"
       ]
     },
     {
@@ -1275,6 +1565,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "彭城堂"
       ]
     },
     {
@@ -1312,6 +1605,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "裡小樓"
       ]
     },
     {
@@ -1349,6 +1645,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "滬舍餘味 (南屯)"
       ]
     },
     {
@@ -1364,6 +1663,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "鳳記鵝肉老店"
       ]
     },
     {
@@ -1379,6 +1681,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "醉月樓"
       ]
     },
     {
@@ -1438,6 +1743,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "曙光居"
       ]
     },
     {
@@ -1475,6 +1783,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "繡球"
       ]
     },
     {
@@ -1490,6 +1801,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "羅家古早味 (南屯)"
       ]
     },
     {
@@ -1505,6 +1819,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "馨苑 (西區)"
       ]
     },
     {
@@ -1565,6 +1882,10 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "鹽之華",
+        "Fleur de Sel"
       ]
     },
     {
@@ -1615,6 +1936,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "JL Studio"
       ]
     },
     {
@@ -1631,6 +1955,9 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "L'Atelier par Yao"
       ]
     },
     {
@@ -1647,6 +1974,10 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "俺達的肉屋",
+        "Oretachi No Nikuya"
       ]
     },
     {
@@ -1663,6 +1994,10 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "澀",
+        "Sur-"
       ]
     },
     {
@@ -1679,6 +2014,10 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "元紀",
+        "YUENJI"
       ]
     },
     {
@@ -1875,6 +2214,11 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
+        },
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -1885,7 +2229,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "山海樓"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "川揚郁坊小館",
@@ -1951,7 +2299,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "川雅"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "中山對酌",
@@ -2017,7 +2369,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "元一"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "六品小館",
@@ -2464,7 +2820,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "吉兆割烹壽司"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "吉品海鮮（敦南店）",
@@ -2520,6 +2880,11 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
+        },
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -2530,7 +2895,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "好嶼"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "如嬌花膠雞．鍋物（民權一店）",
@@ -2736,7 +3105,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "牡丹"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "秀蘭小館",
@@ -2964,7 +3337,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "明壽司"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "明福台菜海產",
@@ -2990,7 +3367,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "明福台菜海產"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "東方樓",
@@ -3050,7 +3431,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "欣葉台菜 (創始店)"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "知名李",
@@ -3097,7 +3482,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "金蓬萊遵古台菜"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "南村",
@@ -3117,7 +3506,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "南村"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "紅棉 Red Cotton",
@@ -3185,7 +3578,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "彧割烹"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "捌伍添第",
@@ -3206,7 +3603,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "捌伍添第"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "秦味館",
@@ -3274,7 +3675,13 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "富錦樹台菜香檳 (松山)",
+        "富錦樹台菜香檳",
+        "Fujin Tree Taiwanese Cuisine & Champagne (Songshan)"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "晶華軒 Silks House",
@@ -3362,7 +3769,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "鼎泰豐"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "請客樓",
@@ -3388,7 +3799,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "請客樓"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "頤宮",
@@ -3414,7 +3829,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "頤宮"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "朧粵",
@@ -3482,7 +3901,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Ad Astra"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Adachi 足立壽司",
@@ -3623,7 +4046,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Bencotto"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Bogart's Smokehouse Taipei",
@@ -3729,7 +4156,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Circum-"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "CLOVER BELLAVITA",
@@ -3815,7 +4246,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "de nuit"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "DOMANI 義式餐廳",
@@ -3875,7 +4310,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "ÉCRU"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "EIKA 盈科",
@@ -4021,7 +4460,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "FRASSI"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "fumée",
@@ -4041,7 +4484,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "fumée"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Golden/Afterglo",
@@ -4108,7 +4555,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Impromptu by Paul Lee"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "inari Izakaya 現代居酒屋",
@@ -4174,7 +4625,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "INITA"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Jarana",
@@ -4194,7 +4649,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Jarana"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Kitkit 創意川食",
@@ -4300,7 +4759,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "La Vie by Thomas Bühner"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "logy",
@@ -4326,7 +4789,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "logy"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "LOPFAIT 樂斐",
@@ -4467,7 +4934,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Mume"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "NOBUO",
@@ -4493,7 +4964,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "NOBUO"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "onefifteen 初衣食午",
@@ -4538,7 +5013,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Pàng"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "Pastaio Noodle cafe",
@@ -4724,7 +5203,13 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "A",
+        "Restaurant A",
+        "A Restaurant"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Salt & Stone",
@@ -4810,7 +5295,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Sens"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Solo Pasta",
@@ -4992,7 +5481,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Tutto Bello"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Wagyu Mania",
@@ -5038,7 +5531,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "Wok by O'BOND"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Zaaptaipei",
@@ -5084,7 +5581,11 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "aliases": [
+        "ZEA"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "大巴六九景觀餐廳",
@@ -5209,6 +5710,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "一味品"
       ]
     },
     {
@@ -5224,6 +5728,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "八寶彬圓仔惠 (國華街)"
       ]
     },
     {
@@ -5239,6 +5746,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "三好一公道當歸鴨"
       ]
     },
     {
@@ -5254,6 +5764,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "大勇街無名鹹粥"
       ]
     },
     {
@@ -5269,6 +5782,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "小公園擔仔麵"
       ]
     },
     {
@@ -5306,6 +5822,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "田媽媽 長盈海味屋"
       ]
     },
     {
@@ -5321,6 +5840,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "吃麵吧"
       ]
     },
     {
@@ -5336,6 +5858,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "好農家米糕"
       ]
     },
     {
@@ -5351,6 +5876,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "西羅殿牛肉湯"
       ]
     },
     {
@@ -5366,6 +5894,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "尚好吃牛肉湯"
       ]
     },
     {
@@ -5381,6 +5912,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "東香台菜海味料理"
       ]
     },
     {
@@ -5418,6 +5952,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "阿文米粿"
       ]
     },
     {
@@ -5433,6 +5970,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "阿星鹹粥"
       ]
     },
     {
@@ -5448,6 +5988,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "阿美飯店"
       ]
     },
     {
@@ -5485,6 +6028,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "阿興虱目魚"
       ]
     },
     {
@@ -5544,6 +6090,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "添厚"
       ]
     },
     {
@@ -5559,6 +6108,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "麥謎食驗室"
       ]
     },
     {
@@ -5574,6 +6126,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "博仁堂"
       ]
     },
     {
@@ -5596,6 +6151,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "寓點"
       ]
     },
     {
@@ -5611,6 +6169,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "無名羊肉湯"
       ]
     },
     {
@@ -5626,6 +6187,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "筑馨居"
       ]
     },
     {
@@ -5641,6 +6205,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "開元紅燒土魠魚羮"
       ]
     },
     {
@@ -5656,6 +6223,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "黃家蝦捲"
       ]
     },
     {
@@ -5671,6 +6241,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "落成米糕"
       ]
     },
     {
@@ -5686,6 +6259,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "葉家小卷米粉"
       ]
     },
     {
@@ -5701,6 +6277,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "葉桑生炒鴨肉焿"
       ]
     },
     {
@@ -5716,6 +6295,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "誠實鍋燒意麵"
       ]
     },
     {
@@ -5731,6 +6313,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "福泰飯桌第三代"
       ]
     },
     {
@@ -5746,6 +6331,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "蓮霧腳羊肉湯"
       ]
     },
     {
@@ -5783,6 +6371,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "謝掌櫃"
       ]
     },
     {
@@ -5820,6 +6411,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "鮮蒸蝦仁肉圓"
       ]
     },
     {
@@ -6253,6 +6847,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "小燉食室"
       ]
     },
     {
@@ -6268,6 +6865,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "牛老大涮牛肉 (自強二路)"
       ]
     },
     {
@@ -6305,6 +6905,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "北港蔡三代筒仔米糕 (鹽埕)"
       ]
     },
     {
@@ -6320,6 +6923,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "弘記肉燥飯舖"
       ]
     },
     {
@@ -6357,6 +6963,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "正宗鴨肉飯"
       ]
     },
     {
@@ -6394,6 +7003,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "永筵小館"
       ]
     },
     {
@@ -6431,6 +7043,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "白玉樓"
       ]
     },
     {
@@ -6446,6 +7061,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "米院子油飯"
       ]
     },
     {
@@ -6461,6 +7079,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "秀明豬心冬粉"
       ]
     },
     {
@@ -6476,6 +7097,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "良佳豬腳"
       ]
     },
     {
@@ -6535,6 +7159,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "阿香的廚房"
       ]
     },
     {
@@ -6550,6 +7177,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "侯記鴨肉飯"
       ]
     },
     {
@@ -6565,6 +7195,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "前金肉燥飯"
       ]
     },
     {
@@ -6580,6 +7213,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "春蘭割包"
       ]
     },
     {
@@ -6595,6 +7231,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "昭明海產家庭料理"
       ]
     },
     {
@@ -6632,6 +7271,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "泰元"
       ]
     },
     {
@@ -6703,6 +7345,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "湖東牛肉館"
       ]
     },
     {
@@ -6762,6 +7407,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "菜粽李"
       ]
     },
     {
@@ -6777,6 +7425,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "貳哥食堂"
       ]
     },
     {
@@ -6792,6 +7443,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "楊寶寶蒸餃 (朝明路)"
       ]
     },
     {
@@ -6829,6 +7483,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "廖記米糕"
       ]
     },
     {
@@ -6866,6 +7523,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "賣塩順"
       ]
     },
     {
@@ -6881,6 +7541,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "橋仔頭黃家肉燥飯 (橋頭)"
       ]
     },
     {
@@ -6940,6 +7603,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "舊市羊肉 (岡山)"
       ]
     },
     {
@@ -6962,6 +7628,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "蟳之屋"
       ]
     },
     {
@@ -7022,6 +7691,11 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "雋",
+        "GEN",
+        "雋 中餐廳 GEN by Matt Chen"
       ]
     },
     {
@@ -7038,6 +7712,9 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "Haili"
       ]
     },
     {
@@ -7082,6 +7759,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "Marc L³"
       ]
     },
     {
@@ -7120,6 +7800,10 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "承",
+        "Sho"
       ]
     },
     {
@@ -7136,6 +7820,10 @@
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "方蒔",
+        "the FRONT HOUSE"
       ]
     },
     {
@@ -7217,6 +7905,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "三姐妹農家樂"
       ]
     },
     {
@@ -7232,6 +7923,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "上好雞肉"
       ]
     },
     {
@@ -7247,6 +7941,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "大碗公當歸羊肉"
       ]
     },
     {
@@ -7262,6 +7959,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "山東小館"
       ]
     },
     {
@@ -7277,6 +7977,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "永和佳香豆漿"
       ]
     },
     {
@@ -7314,6 +8017,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "光興腿庫"
       ]
     },
     {
@@ -7329,6 +8035,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "宋朝"
       ]
     },
     {
@@ -7366,6 +8075,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "店小二 (大同北路)"
       ]
     },
     {
@@ -7403,6 +8115,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "阿爸の芋圓"
       ]
     },
     {
@@ -7418,6 +8133,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "客家小館"
       ]
     },
     {
@@ -7433,6 +8151,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "珍品餐飲坊"
       ]
     },
     {
@@ -7477,6 +8198,9 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
+      ],
+      "aliases": [
+        "迴回"
       ]
     },
     {
@@ -7492,6 +8216,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "超人鱸魚"
       ]
     },
     {
@@ -7507,6 +8234,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "葉家藥燉排骨"
       ]
     },
     {
@@ -7522,6 +8252,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "蔡家牛肉麵"
       ]
     },
     {
@@ -7559,6 +8292,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "賴岡山羊肉"
       ]
     },
     {
@@ -7574,6 +8310,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "九添福牛肉麵館"
       ]
     },
     {
@@ -7589,6 +8328,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "禾日香 (民族路)"
       ]
     },
     {
@@ -7604,6 +8346,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "弄味小廚"
       ]
     },
     {
@@ -7641,6 +8386,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "東門米粉攤"
       ]
     },
     {
@@ -7656,6 +8404,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "原味鴨肉麵"
       ]
     },
     {
@@ -7693,6 +8444,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "菜園"
       ]
     },
     {
@@ -7730,6 +8484,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "貓的堅持"
       ]
     },
     {
@@ -7767,6 +8524,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "春嬌粄條"
       ]
     },
     {
@@ -7782,6 +8542,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "首烏廚EAT"
       ]
     },
     {
@@ -7797,6 +8560,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "唐草園"
       ]
     },
     {
@@ -7812,6 +8578,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "晌午粄食"
       ]
     },
     {
@@ -7827,6 +8596,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "善菓堂"
       ]
     },
     {
@@ -7842,6 +8614,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "鄒記菜包 (中正路)"
       ]
     },
     {
@@ -7857,6 +8632,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "鴻金食堂"
       ]
     },
     {
@@ -7872,6 +8650,9 @@
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
+      ],
+      "aliases": [
+        "ㄤ咕麵"
       ]
     },
     {
@@ -7939,6 +8720,65 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ]
+    },
+    {
+      "name": "EMBERS",
+      "aliases": [],
+      "city": "台北市",
+      "address": "",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "陽明春天（士林）",
+      "aliases": [
+        "陽明春天",
+        "Yangming Spring (Shilin)"
+      ],
+      "city": "台北市",
+      "address": "",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "地坊",
+      "aliases": [],
+      "city": "台中市",
+      "address": "",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "Thomas Chien",
+      "aliases": [],
+      "city": "高雄市",
+      "address": "",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
     }
   ],
   "_sourceNotes": [
@@ -7969,6 +8809,7 @@
       "year": 2025,
       "url": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
       "note": "官方 2025 台灣完整名單；星級餐廳已補齊 3 三星、7 二星、43 一星，共 53 家。"
-    }
+    },
+    "Draft only: official Michelin Taiwan 2025 candidate import. Review before replacing live awards-taiwan.json."
   ]
 }
