@@ -9,7 +9,7 @@
 1. 禁止直接修改 `main` 分支。
 2. 開始任何工作前，必須先確認目前所在的 Git branch。
 3. 如果目前位於 `main`，必須立即建立新的工作 branch，再開始修改。
-4. 若本機專案沒有 `.git`，不得擅自初始化 Git；必須改用 GitHub CLI 或 GitHub API 查詢與建立遠端 branch。
+4. 本專案應使用 Git 管控版本與進度；若本機專案沒有 `.git`，必須先安全初始化或重新 clone，連接 GitHub 遠端，並確認不會覆蓋既有檔案。
 5. 每一個獨立功能、修正或重構，都必須使用獨立 branch。
 6. 不得將多個不相關的任務放在同一個 branch。
 
@@ -32,7 +32,7 @@
 3. 如果目前為 `main`，必須立即建立新的工作 branch。
 4. 開始修改前，必須告知使用者目前工作的 branch 名稱。
 5. 完成以上步驟後，才能開始修改任何檔案。
-6. 如果本機不是 Git repository，不得自行初始化 `.git`；必須改用 GitHub CLI 或 GitHub API 查詢與建立遠端 branch，並回報遠端 branch 名稱。
+6. 如果本機不是 Git repository，必須先安全初始化或重新 clone，連接 GitHub 遠端，fetch 遠端分支，並確認不會覆蓋既有檔案。
 7. 如果 Codex 支援自動建立 branch，則每次收到新的開發任務時，應自動判斷是否需要建立新的 branch，而不是等待使用者提醒。
 
 ---
@@ -102,7 +102,7 @@
 7. 回報修改內容。
 8. 等待使用者的 merge 指示。
 
-若本機不是 Git repository，流程中的 branch 與 commit 必須改以 GitHub CLI 或 GitHub API 的遠端 branch 與遠端 commit 執行，不得自行建立本機 `.git`。
+若本機不是 Git repository，必須先安全初始化或重新 clone，連接 GitHub 遠端，fetch 遠端分支，再依照本流程建立 branch 與 commit；不得覆蓋既有檔案。
 
 ---
 
