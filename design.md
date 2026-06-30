@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.2
+版本：2026.07.01.3
 
 ## 專案目標
 
@@ -30,7 +30,7 @@
 - `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
 - `assets/social-signal-config.json`：社群熱度批次更新設定，目前以 YouTube Data API 為第一階段來源，控制每次查詢餐廳數、影片數、時間範圍與分數權重。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
-- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項，並保留來源 URL。500 碗與 500 甜目前先支援格式與徽章，待批次來源驗證後再匯入正式資料。
+- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項、500 碗官方文字名單高信心 415 筆，並保留來源 URL。500 甜目前先支援格式與徽章，待批次來源驗證後再匯入正式資料。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/update-external-signals.js`：外部社群訊號批次更新腳本。讀取 `assets/awards-taiwan.json` 作為候選餐廳，使用 YouTube Data API 查詢近期影片，只在影片標題或描述命中店名 / 別名時寫入 `assets/external-signals.json`。
 - `scripts/export-release.ps1`：版本匯出腳本。
@@ -407,7 +407,8 @@ assets/awards-taiwan.json
 - Michelin 2025 必比登：144 筆。
 - Michelin 2025 綠星：7 筆，只顯示徽章，不參與美味加權。
 - 500盤：260 筆。
-- 500碗、500甜：目前先完成 guide 格式、前端徽章、加權與驗證白名單；正式資料需批次整理來源、人工覆核後才匯入。
+- 500碗：415 筆，來自 2025 第三屆 500碗官方頁文字名單的單一縣市高信心解析；47 筆跨縣市列保留在 merge report 待人工覆核。
+- 500甜：目前先完成 guide 格式、前端徽章、加權與驗證白名單；`scripts/probe-500sweet-2025-source.js` 會檢查官網是否可用靜態 HTML 穩定取得完整文字名單。2026-07-01 探測結果為不可安全解析，因此不匯入資料，待取得可追溯文字名單、官方 API 或人工整理檔後再匯入。
 
 可加入但必須分層處理的外部來源：
 
@@ -455,6 +456,24 @@ node scripts/validate-awards-data.js
 ```
 
 第一支腳本抓取 Michelin Guide Taiwan 2025 官方完整名單並保存快照，解析星級、綠星、入選餐廳；必比登沿用已整理的 144 筆正式資料，並以官方必比登文章確認總數。第二支腳本產生合併報告與草稿，只自動合併高信心命中；純 `michelin_selected` 入選餐廳保留在報告中，不進正式加分來源，避免卡片徽章過多。第三支腳本固定檢查正式資料筆數、獎項統計、guide 白名單、重複同店 key，以及正式檔與 draft 是否一致。
+
+500碗 2025 建構流程：
+
+```text
+node scripts/build-500bowl-2025-candidates.js
+node scripts/merge-500bowl-2025-awards.js
+node scripts/validate-awards-data.js
+```
+
+第一支腳本讀取 500碗官方文字名單並輸出 `assets/500bowl-2025-candidates.json` 與 `assets/500bowl-2025-import-report.json`。第二支腳本只合併單一縣市高信心資料到 `assets/awards-taiwan.500bowl-2025-draft.json`，跨縣市列保留在 `assets/500bowl-2025-merge-report.json` 待人工覆核。第三支腳本固定驗證正式資料與最新 draft 一致。
+
+500甜探測流程：
+
+```text
+node scripts/probe-500sweet-2025-source.js
+```
+
+若 `assets/500sweet-2025-source-report.json` 顯示 `parseReady:false`，不得匯入 500甜資料；只能保留前端與資料格式支援。
 
 重要限制：
 

@@ -3,16 +3,17 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
-const draftPath = path.join(repoRoot, "assets", "awards-taiwan.michelin-taiwan-2025-official-draft.json");
+const draftPath = path.join(repoRoot, "assets", "awards-taiwan.500bowl-2025-draft.json");
 
 const ALLOWED_GUIDES = new Set(["michelin", "bib", "greenstar", "500plate", "500bowl", "500sweet", "50best"]);
 const EXPECTED = {
-  restaurants: 427,
+  restaurants: 833,
   guides: {
     michelin: 53,
     bib: 144,
     greenstar: 7,
     "500plate": 260,
+    "500bowl": 415,
   },
 };
 

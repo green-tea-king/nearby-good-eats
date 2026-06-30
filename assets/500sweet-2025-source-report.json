@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-06-30T23:20:15.566Z",
+  "sourceUrl": "https://udn.com/500sweetaward/",
+  "statusCode": 200,
+  "htmlBytes": 5180,
+  "textBytes": 52,
+  "likelyListSignals": [
+    "500甜",
+    "甜點",
+    "名單",
+    "award"
+  ],
+  "parseReady": false,
+  "decision": "do_not_import",
+  "note": "500甜官網目前無法由靜態 HTML 穩定取得完整文字名單；保留 guide/schema/frontend 支援，待取得可追溯文字名單、官方 API、或人工整理檔後再匯入。"
+}
