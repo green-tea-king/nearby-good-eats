@@ -23,11 +23,11 @@ function normalizeName(value) {
     .normalize("NFKC")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[’‘`´]/g, "'")
-    .replace(/臺/g, "台")
+    .replace(/[??`?]/g, "'")
+    .replace(/?/g, "?")
     .replace(/\s+/g, "")
-    .replace(/[()（）・·.,，、!！?？\-_/&+＋x×]/g, "")
-    .replace(/(總店|本店|本舖|旗艦店|分店)$/g, "")
+    .replace(/[()????.,??!???\-_/&+?x?]/g, "")
+    .replace(/(??|??|??|???|??)$/g, "")
     .toLowerCase();
 }
 
@@ -99,17 +99,17 @@ function buildRestaurantCandidates(config, awards) {
 }
 
 function cityFromAddress(address) {
-  const match = String(address || "").match(/([台臺][北中南東]市|新北市|桃園市|高雄市|基隆市|新竹市|嘉義市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|臺東縣|澎湖縣|金門縣|連江縣)/);
-  return match ? match[1].replace(/臺/g, "台") : "";
+  const match = String(address || "").match(/([??][????]?|???|???|???|???|???|???|???|???|???|???|???|???|???|???|???|???|???|???|???|???)/);
+  return match ? match[1].replace(/?/g, "?") : "";
 }
 
 function areaFromAddress(address) {
-  const match = String(address || "").match(/([^縣市,，\s]+[區鄉鎮市])/);
+  const match = String(address || "").match(/([^??,?\s]+[????])/);
   return match ? match[1] : "";
 }
 
 function fillQuery(template, row) {
-  return String(template || "{city} {name} 美食")
+  return String(template || "{city} {name} ??")
     .replace(/\{name\}/g, row.name)
     .replace(/\{city\}/g, row.city || "")
     .replace(/\{area\}/g, row.area || "")
@@ -197,11 +197,11 @@ async function fetchYoutubeSignal(apiKey, row, config) {
   return {
     type: "youtubeBuzz",
     sourceId: "youtube-api",
-    label: score >= 75 ? "影音熱度高" : "影音提及",
+    label: score >= 75 ? "?????" : "????",
     score,
     confidence: matched.length >= 3 ? "high" : "medium",
     metrics,
-    evidence: matched.slice(0, 3).map((video) => `${video.channelTitle}：${video.title}`),
+    evidence: matched.slice(0, 3).map((video) => `${video.channelTitle}?${video.title}`),
     url: matched[0]?.url || "",
     updated: today,
     generatedBy: "scripts/update-external-signals.js",
@@ -222,7 +222,7 @@ function ensureCatalog(signals) {
   }
   signals.signalDefinitions = signals.signalDefinitions || {};
   signals.signalDefinitions.youtubeBuzz = signals.signalDefinitions.youtubeBuzz || {
-    label: "影音聲量",
+    label: "????",
     scoreRange: [0, 100],
     display: "badgeWhenHighConfidence",
     rankUse: "light",
