@@ -33,6 +33,7 @@
 4. 開始修改前，必須告知使用者目前工作的 branch 名稱。
 5. 完成以上步驟後，才能開始修改任何檔案。
 6. 如果本機不是 Git repository，不得自行初始化 `.git`；必須改用 GitHub CLI 或 GitHub API 查詢與建立遠端 branch，並回報遠端 branch 名稱。
+7. 如果 Codex 支援自動建立 branch，則每次收到新的開發任務時，應自動判斷是否需要建立新的 branch，而不是等待使用者提醒。
 
 ---
 
