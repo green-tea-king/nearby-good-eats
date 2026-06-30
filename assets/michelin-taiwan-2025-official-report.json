@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-06-30T13:56:38.465Z",
+  "summary": {
+    "total": 420,
+    "officialParsed": 276,
+    "existingBibImported": 144,
+    "byGuide": {
+      "michelin": 53,
+      "greenstar": 7,
+      "michelin_selected": 222,
+      "bib": 144
+    },
+    "byCity": {
+      "台北市": 158,
+      "台中市": 63,
+      "高雄市": 59,
+      "台南市": 61,
+      "新北市": 36,
+      "新竹縣": 21,
+      "新竹市": 22
+    },
+    "expected": {
+      "michelinStars": 53,
+      "bib": 144,
+      "selected": 222,
+      "greenstar": 7
+    }
+  }
+}
