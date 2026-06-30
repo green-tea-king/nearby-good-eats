@@ -1246,6 +1246,7 @@ function bootApp(){
 function closeRankFilters(){
   $("#rankFilters")?.classList.add("hidden");
   $("#rankFilterBtn")?.setAttribute("aria-expanded", "false");
+  discardRankFilterDraft();
 }
 function openPhotoLightbox(src, caption=""){
   if (!src) return;
@@ -1348,6 +1349,12 @@ $("#rankRefresh").addEventListener("click", () => {
 $("#rankFilterBtn").addEventListener("click", () => {
   const panel = $("#rankFilters");
   const opening = panel.classList.contains("hidden");
+  if (opening) {
+    beginRankFilterDraft();
+    buildRankFilterBar();
+  } else {
+    discardRankFilterDraft();
+  }
   panel.classList.toggle("hidden");
   $("#rankFilterBtn").setAttribute("aria-expanded", String(opening));
   if (opening) pushTransientUiHistory();
@@ -1381,7 +1388,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.21";
+const APP_VERSION_FALLBACK = "2026.06.27.22";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1396,6 +1403,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, city:"", area:"", village:"" };
+let rankFilterDraft = null;
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
 const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓）
@@ -1411,6 +1419,38 @@ let villageDataPromise = null;
 let rankOriginLabel = "";
 let rankOriginScope = { city:"", area:"", village:"" };
 let locationPrivacyNotified = false;
+
+function cloneRankFilter(src=rankFilter){
+  return {
+    keyword:src.keyword || "",
+    meal:src.meal || null,
+    travel:src.travel || RANK_DEFAULT_TRAVEL,
+    open:src.open || RANK_DEFAULT_OPEN,
+    service:src.service || null,
+    diet:src.diet || null,
+    city:src.city || "",
+    area:src.area || "",
+    village:src.village || "",
+  };
+}
+function editableRankFilter(){
+  return rankFilterDraft || rankFilter;
+}
+function beginRankFilterDraft(){
+  rankFilterDraft = cloneRankFilter(rankFilter);
+  return rankFilterDraft;
+}
+function discardRankFilterDraft(){
+  rankFilterDraft = null;
+}
+function commitRankFilterDraft(){
+  if (!rankFilterDraft) return false;
+  const before = stableStringify(rankFilter);
+  const next = cloneRankFilter(rankFilterDraft);
+  Object.assign(rankFilter, next);
+  rankFilterDraft = null;
+  return before !== stableStringify(rankFilter);
+}
 
 function guideFilterSummary(f=rankFilter){
   const parts = [];
@@ -1442,16 +1482,16 @@ function setGuideError(message){ setGuide("error", message, "需處理"); }
 function hasRankLocationFilter(f=rankFilter){
   return !!(f.city || f.area || f.village);
 }
-function clearRankLocationFilter({ notify=false }={}){
-  const hadLocation = hasRankLocationFilter();
-  rankFilter.city = "";
-  rankFilter.area = "";
-  rankFilter.village = "";
+function clearRankLocationFilter({ notify=false, target=rankFilter }={}){
+  const hadLocation = hasRankLocationFilter(target);
+  target.city = "";
+  target.area = "";
+  target.village = "";
   if (notify && hadLocation) toast("已切換交通模式，地區條件已清除");
 }
-function clearRankTravelFilter({ notify=false }={}){
-  const hadTravel = !!rankFilter.travel || !!rankOriginLabel;
-  rankFilter.travel = RANK_DEFAULT_TRAVEL;
+function clearRankTravelFilter({ notify=false, target=rankFilter }={}){
+  const hadTravel = !!target.travel || !!rankOriginLabel;
+  target.travel = RANK_DEFAULT_TRAVEL;
   rankOriginLabel = "";
   rankOriginScope = { city:"", area:"", village:"" };
   if (notify && hadTravel) toast("已切換地區模式，交通與定位條件已清除");
@@ -1487,12 +1527,12 @@ function rankTravelLimitText(travel=activeRankTravel()){
   const limit = rankTravelLimitMin(travel);
   return limit ? `${travel} ${limit} 分鐘內` : "";
 }
-function rankModeHintText(){
-  if (hasRankLocationFilter()){
-    return `地區模式：使用 ${[rankFilter.city, rankFilter.area, rankFilter.village].filter(Boolean).join(" ")}，交通距離條件停用。`;
+function rankModeHintText(f=rankFilter){
+  if (hasRankLocationFilter(f)){
+    return `地區模式：使用 ${[f.city, f.area, f.village].filter(Boolean).join(" ")}，交通距離條件停用。`;
   }
-  if (rankFilter.travel){
-    return `交通模式：以${rankOriginLabel || "目前定位點"}計算${rankFilter.travel}距離，地區條件停用。`;
+  if (f.travel){
+    return `交通模式：以${rankOriginLabel || "目前定位點"}計算${f.travel}距離，地區條件停用。`;
   }
   return "全台模式：未套用地區或交通距離。";
 }
@@ -1880,7 +1920,7 @@ function rankOriginFromGeocode(results, city, area, village){
   return shortAreaLabel(results || []) || results?.[0]?.formatted_address || "目前位置";
 }
 
-async function applyCurrentOriginToRankTravel(){
+async function applyCurrentOriginToRankTravel(target=rankFilter){
   try{
     notifyLocationPrivacyOnce();
     const center = await currentPosition();
@@ -1896,8 +1936,8 @@ async function applyCurrentOriginToRankTravel(){
       rankOriginScope = { city:city || "", area:area || "", village:village || "" };
       rankOriginLabel = rankOriginFromGeocode(res.results, city, area, village);
     }
-    clearRankLocationFilter();
-    rankFilter.travel = "走路";
+    clearRankLocationFilter({ target });
+    target.travel = "走路";
     return true;
   }catch(e){
     console.warn("[Leaderboard] 無法設定交通定位：", e.message || e);
@@ -1911,12 +1951,10 @@ async function locateRankOrigin(btn){
     btn.classList.add("locating");
     btn.setAttribute("aria-busy", "true");
   }
-  const ok = await applyCurrentOriginToRankTravel();
+  const ok = await applyCurrentOriginToRankTravel(editableRankFilter());
   if (ok){
-    rankNearbyPools = {};
     buildRankFilterBar();
-    safeRenderLeaderboard();
-    trackUsage("locate_origin", { label:rankOriginLabel, travel:rankFilter.travel || "" });
+    trackUsage("locate_origin_draft", { label:rankOriginLabel, travel:editableRankFilter().travel || "" });
     toast(`定位：${rankOriginLabel}`);
   }else{
     toast("無法取得目前位置，請確認定位權限");
@@ -2717,8 +2755,8 @@ async function enrichAiFilterTags(items, f){
     console.warn("[AI Filter] 後端分類失敗，改用 Google 硬欄位與搜尋詞：", e.message);
   }
 }
-function rankFilterPrecisionText(){
-  const active = activeRankFilters(rankFilter);
+function rankFilterPrecisionText(f=rankFilter){
+  const active = activeRankFilters(f);
   const hasAi = CONFIG.AI_FILTER.MODE === "proxy" && (!!CONFIG.AI_FILTER.ENDPOINT || hasApiProxy);
   if (!active.length){
     return "營業、素食、適合團體等優先採 Google 真欄位；吃法會搭配搜尋詞與近似判斷。";
@@ -3431,89 +3469,97 @@ async function shareCard(btn){
 /* 篩選列 */
 function buildRankFilterBar(){
   const bar = $("#rankFilters");
+  const f = editableRankFilter();
   let html = `<div class="fg fg-location"><span class="fg-lab">地區</span><div class="fg-chips">`
     + `<select id="rkCity" class="fsel"><option value="">全台</option>`
-    + TW_CITIES.map(c => `<option value="${c}"${rankFilter.city===c?" selected":""}>${c}</option>`).join("")
+    + TW_CITIES.map(c => `<option value="${c}"${f.city===c?" selected":""}>${c}</option>`).join("")
     + `</select><select id="rkArea" class="fsel"></select><select id="rkVillage" class="fsel"></select>`
     + `</div></div>`;
   html += `<div class="fg fg-keyword"><span class="fg-lab">關鍵字</span><div class="fg-chips">`
-    + `<input id="rkKeyword" class="keyword-input" type="search" inputmode="search" enterkeyhint="search" maxlength="24" placeholder="例如：麵線、滷肉飯" value="${escapeHTML(rankFilter.keyword || "")}">`
+    + `<input id="rkKeyword" class="keyword-input" type="search" inputmode="search" enterkeyhint="search" maxlength="24" placeholder="例如：麵線、滷肉飯" value="${escapeHTML(f.keyword || "")}">`
     + `</div></div>`;
   html += RANK_FILTERS.map(g =>
     `<div class="fg${g.key==="travel" ? " fg-travel" : ""}"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
-    + g.opts.map(o => `<button class="fchip${rankFilter[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
+    + g.opts.map(o => `<button class="fchip${f[g.key]===o.label?" on":""}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
     + (g.key==="travel"
       ? `<button class="flocate" id="rkTravelLocate" type="button" aria-label="定位交通起點" title="定位交通起點"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></button>${rankOriginLabel ? `<span class="origin-hint">定位：${escapeHTML(rankOriginLabel)}</span>` : ""}`
       : "")
     + `</div></div>`
   ).join("");
-  const active = Object.entries(rankFilter).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
-  html += `<div class="mode-hint"><b>目前模式</b>：${escapeHTML(rankModeHintText())}</div>`;
-  html += `<div class="filter-precision"><b>判斷來源</b>：${escapeHTML(rankFilterPrecisionText())}</div>`;
+  const active = Object.entries(f).some(([k,v]) => v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL));
+  html += `<div class="mode-hint"><b>目前模式</b>：${escapeHTML(rankModeHintText(f))}</div>`;
+  html += `<div class="filter-precision"><b>判斷來源</b>：${escapeHTML(rankFilterPrecisionText(f))}</div>`;
   html += `<div class="filter-actions"><button class="fclear${active?"":" hidden"}" id="rkClear" type="button">清除</button><button id="rkKeywordApply" class="keyword-apply" type="button">套用</button></div>`;
   bar.innerHTML = html;
 
   bar.querySelectorAll(".fchip").forEach(b => b.addEventListener("click", () => {
+    const f = editableRankFilter();
     const k=b.dataset.fkey, v=b.dataset.fval;
     if (k === "meal") rankAutoMeal = false;
     if (k === "travel"){
-      rankFilter.travel = rankFilter.travel === v ? RANK_DEFAULT_TRAVEL : v;
-      if (rankFilter.travel) clearRankLocationFilter({ notify:true });
+      f.travel = f.travel === v ? RANK_DEFAULT_TRAVEL : v;
+      if (f.travel) clearRankLocationFilter({ notify:true, target:f });
       else rankOriginLabel = "";
     } else {
-      rankFilter[k] = k === "open" ? v : (rankFilter[k]===v ? null : v);
+      f[k] = k === "open" ? v : (f[k]===v ? null : v);
     }
-    trackUsage("filter_change", { key:k, value:rankFilter[k] || "", selected:v });
-    buildRankFilterBar(); safeRenderLeaderboard();
+    markRankFilterInteraction(1200);
+    buildRankFilterBar();
   }));
-  const applyKeyword = () => {
-    const value = ($("#rkKeyword")?.value || "").trim();
-    if (value === (rankFilter.keyword || "")) return;
-    rankFilter.keyword = value;
+  const syncKeywordDraft = () => {
+    editableRankFilter().keyword = ($("#rkKeyword")?.value || "").trim();
+  };
+  const applyFilters = () => {
+    syncKeywordDraft();
+    const changed = commitRankFilterDraft();
     rankKeywordPools = {};
     rankNearbyPools = {};
-    trackUsage("filter_change", { key:"keyword", value });
-    buildRankFilterBar(); safeRenderLeaderboard();
+    trackUsage("filter_apply", { keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", travel:rankFilter.travel || "", open:rankFilter.open || "", city:rankFilter.city || "", area:rankFilter.area || "", village:rankFilter.village || "" });
+    closeRankFilters();
+    safeRenderLeaderboard();
+    if (changed) toast("已套用濾網");
   };
-  $("#rkKeywordApply")?.addEventListener("click", applyKeyword);
+  $("#rkKeywordApply")?.addEventListener("click", applyFilters);
   const keywordInput = $("#rkKeyword");
   ["focus","input","compositionstart","compositionupdate","touchstart","pointerdown"].forEach(type => {
     keywordInput?.addEventListener(type, () => markRankFilterInteraction(2400), { passive:true });
   });
+  keywordInput?.addEventListener("input", syncKeywordDraft);
   keywordInput?.addEventListener("blur", () => markRankFilterInteraction(500));
   keywordInput?.addEventListener("keydown", e => {
     markRankFilterInteraction(2400);
     if (e.key === "Enter"){
       e.preventDefault();
-      applyKeyword();
+      applyFilters();
     }
   });
   fillRkArea();
   fillRkVillage();
-  $("#rkCity").addEventListener("change", e => { rankFilter.city=e.target.value; rankFilter.area=""; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"city", value:rankFilter.city }); buildRankFilterBar(); safeRenderLeaderboard(); });
-  $("#rkArea").addEventListener("change", e => { rankFilter.area=e.target.value; rankFilter.village=""; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"area", city:rankFilter.city, value:rankFilter.area }); fillRkVillage(); safeRenderLeaderboard(); });
-  $("#rkVillage").addEventListener("change", e => { rankFilter.village=e.target.value; if (hasRankLocationFilter()) clearRankTravelFilter({ notify:true }); trackUsage("filter_change", { key:"village", city:rankFilter.city, area:rankFilter.area, value:rankFilter.village }); safeRenderLeaderboard(); });
+  $("#rkCity").addEventListener("change", e => { const f = editableRankFilter(); f.city=e.target.value; f.area=""; f.village=""; if (hasRankLocationFilter(f)) clearRankTravelFilter({ notify:true, target:f }); markRankFilterInteraction(); buildRankFilterBar(); });
+  $("#rkArea").addEventListener("change", e => { const f = editableRankFilter(); f.area=e.target.value; f.village=""; if (hasRankLocationFilter(f)) clearRankTravelFilter({ notify:true, target:f }); markRankFilterInteraction(); fillRkVillage(); buildRankFilterBar(); });
+  $("#rkVillage").addEventListener("change", e => { const f = editableRankFilter(); f.village=e.target.value; if (hasRankLocationFilter(f)) clearRankTravelFilter({ notify:true, target:f }); markRankFilterInteraction(); buildRankFilterBar(); });
   $("#rkTravelLocate")?.addEventListener("click", e => locateRankOrigin(e.currentTarget));
   const clr = $("#rkClear"); if (clr) clr.addEventListener("click", () => {
-    Object.keys(rankFilter).forEach(k => rankFilter[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
-    rankFilter.keyword = "";
+    const f = editableRankFilter();
+    Object.keys(f).forEach(k => f[k] = k==="open" ? RANK_DEFAULT_OPEN : (k==="travel" ? RANK_DEFAULT_TRAVEL : ((k==="city"||k==="area"||k==="village") ? "" : null)));
+    f.keyword = "";
     rankAutoMeal = false;
     rankOriginLabel = "";
-    rankKeywordPools = {};
-    rankNearbyPools = {};
-    trackUsage("filter_clear", {});
-    buildRankFilterBar(); safeRenderLeaderboard();
+    markRankFilterInteraction();
+    buildRankFilterBar();
   });
 }
 function fillRkArea(){
   const as = $("#rkArea"); if (!as) return;
-  const list = TW_AREAS[rankFilter.city] || [];
-  as.innerHTML = `<option value="">區域</option>` + list.map(a => `<option value="${a}"${rankFilter.area===a?" selected":""}>${a}</option>`).join("");
-  as.disabled = !rankFilter.city;
+  const f = editableRankFilter();
+  const list = TW_AREAS[f.city] || [];
+  as.innerHTML = `<option value="">區域</option>` + list.map(a => `<option value="${a}"${f.area===a?" selected":""}>${a}</option>`).join("");
+  as.disabled = !f.city;
 }
 function fillRkVillage(){
   const vs = $("#rkVillage"); if (!vs) return;
-  if (!rankFilter.city || !rankFilter.area){
+  const f = editableRankFilter();
+  if (!f.city || !f.area){
     vs.innerHTML = `<option value="">里</option>`;
     vs.disabled = true;
     return;
@@ -3523,13 +3569,14 @@ function fillRkVillage(){
     vs.disabled = true;
     loadVillageData().then(() => {
       const fresh = $("#rkVillage");
-      if (fresh && rankFilter.city && rankFilter.area) fillRkVillage();
+      const f = editableRankFilter();
+      if (fresh && f.city && f.area) fillRkVillage();
     });
     return;
   }
-  const list = villagesFor(rankFilter.city, rankFilter.area);
-  if (rankFilter.village && !list.includes(rankFilter.village)) rankFilter.village = "";
-  vs.innerHTML = `<option value="">里</option>` + list.map(v => `<option value="${v}"${rankFilter.village===v?" selected":""}>${v}</option>`).join("");
+  const list = villagesFor(f.city, f.area);
+  if (f.village && !list.includes(f.village)) f.village = "";
+  vs.innerHTML = `<option value="">里</option>` + list.map(v => `<option value="${v}"${f.village===v?" selected":""}>${v}</option>`).join("");
   vs.disabled = !list.length;
 }
 
