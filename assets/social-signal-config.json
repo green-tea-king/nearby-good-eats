@@ -1,0 +1,35 @@
+{
+  "version": "2026.06.30.1",
+  "policy": {
+    "runtimeLookup": false,
+    "batchOnly": true,
+    "defaultProvider": "youtube",
+    "costFirst": true,
+    "notes": [
+      "社群熱度只做輔助訊號，不取代 Google 評分與評論數。",
+      "批次工作預設只查少量餐廳，避免 YouTube search.list 配額快速消耗。",
+      "沒有命中店名或別名的影片不可寫入餐廳訊號。"
+    ]
+  },
+  "youtube": {
+    "enabled": true,
+    "defaultMaxRestaurants": 10,
+    "defaultMaxResultsPerRestaurant": 8,
+    "publishedWithinDays": 180,
+    "regionCode": "TW",
+    "relevanceLanguage": "zh-Hant",
+    "queryTemplate": "{city} {name} 美食",
+    "score": {
+      "viewLogWeight": 18,
+      "videoWeight": 6,
+      "recentVideoWeight": 4,
+      "cap": 100
+    }
+  },
+  "restaurantSource": {
+    "file": "assets/awards-taiwan.json",
+    "maxNameLength": 40,
+    "skipGuides": [],
+    "priorityGuides": ["michelin", "bib", "500plate", "50best"]
+  }
+}
