@@ -1,16 +1,16 @@
 {
   "version": "api-batch-2026-06-30",
   "updated": "2026-06-30",
-  "description": "???????????????????????????????? Google API ????? API ?????????????",
+  "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
     "batchOnly": true,
     "allowManualReview": true,
     "unknownMeansNoBadge": true,
     "notes": [
-      "?????????????????????????",
-      "???????????????????????????????",
-      "???????? sourceId?updated?confidence?????????????????????"
+      "沒有來源證據的訊號不可顯示為徽章，也不可用於加分。",
+      "社群聲量、平台認證、媒體推薦都先批次整理到本檔，再由前端讀取。",
+      "每筆訊號必須保留 sourceId、updated、confidence；低信心只可作為輔助排序，不可顯示強認證。"
     ]
   },
   "sourceCatalog": [
@@ -32,7 +32,7 @@
     },
     {
       "id": "500plate",
-      "label": "500?",
+      "label": "500盤",
       "type": "award",
       "updateCadence": "yearly",
       "runtimeLookup": false,
@@ -45,25 +45,25 @@
       "updateCadence": "yearly",
       "runtimeLookup": false,
       "rankImpact": "high",
-      "scope": "????????????????"
+      "scope": "少數入榜店，批次人工整理後才啟用"
     },
     {
       "id": "media-editorial",
-      "label": "????",
+      "label": "媒體推薦",
       "type": "editorial",
       "updateCadence": "monthly",
       "runtimeLookup": false
     },
     {
       "id": "social-buzz",
-      "label": "????",
+      "label": "社群聲量",
       "type": "social",
       "updateCadence": "weekly",
       "runtimeLookup": false
     },
     {
       "id": "platform-certification",
-      "label": "????",
+      "label": "平台認證",
       "type": "platform",
       "updateCadence": "monthly",
       "runtimeLookup": false
@@ -79,7 +79,7 @@
   ],
   "signalDefinitions": {
     "award": {
-      "label": "????",
+      "label": "外部評鑑",
       "scoreRange": [
         0,
         1
@@ -97,7 +97,7 @@
       "rankUse": "strongFewStoresOnly"
     },
     "socialBuzz": {
-      "label": "????",
+      "label": "社群聲量",
       "scoreRange": [
         0,
         100
@@ -106,7 +106,7 @@
       "rankUse": "medium"
     },
     "mediaMention": {
-      "label": "????",
+      "label": "媒體推薦",
       "scoreRange": [
         0,
         100
@@ -115,7 +115,7 @@
       "rankUse": "medium"
     },
     "platformCertification": {
-      "label": "????",
+      "label": "平台認證",
       "scoreRange": [
         0,
         100
@@ -124,7 +124,7 @@
       "rankUse": "medium"
     },
     "queueSignal": {
-      "label": "????",
+      "label": "排隊熱度",
       "scoreRange": [
         0,
         100
@@ -133,7 +133,7 @@
       "rankUse": "light"
     },
     "youtubeBuzz": {
-      "label": "????",
+      "label": "影音聲量",
       "scoreRange": [
         0,
         100
@@ -145,17 +145,17 @@
   "restaurants": [
     {
       "placeId": "",
-      "name": "???",
-      "city": "???",
-      "area": "???",
+      "name": "山海樓",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "???"
+        "山海樓"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 87,
           "confidence": "medium",
           "metrics": {
@@ -165,26 +165,26 @@
             "topVideos": [
               {
                 "id": "TpaCk-dJifI",
-                "title": "?????????????????????? 6 ???????? ????#liz???????? ????",
-                "channelTitle": "Liz ???????? Self-taught Gourmet",
+                "title": "外國人來台除了鼎泰豐和小籠包還能吃什麼？台北 6 間私藏餐廳名單！ 完整版在#liz的美食家自學之路 頻道觀看",
+                "channelTitle": "Liz 的美食家自學之路 Self-taught Gourmet",
                 "publishedAt": "2026-06-03T12:00:34Z",
                 "views": 3932,
                 "url": "https://www.youtube.com/watch?v=TpaCk-dJifI"
               },
               {
                 "id": "uzmOgdGkckg",
-                "title": "????01???????????? ????????????????????A Taste of Classic Taiwanese Banquet Cuisine ????????????????",
-                "channelTitle": "Hank Walker ??????",
+                "title": "精緻美食01｜台北米其林台菜｜山海樓 經典重現大戶人家精緻宴席菜｜老派的浪漫｜A Taste of Classic Taiwanese Banquet Cuisine 台北・山海樓で味わう伝統台湾料理",
+                "channelTitle": "Hank Walker 。旅影漢克。",
                 "publishedAt": "2026-05-24T00:30:17Z",
                 "views": 1152,
                 "url": "https://www.youtube.com/watch?v=uzmOgdGkckg"
               }
             ],
-            "query": "??? ??? ??"
+            "query": "台北市 山海樓 美食"
           },
           "evidence": [
-            "Liz ???????? Self-taught Gourmet??????????????????????? 6 ???????? ????#liz???????? ????",
-            "Hank Walker ???????????01???????????? ????????????????????A Taste of Classic Taiwanese Banquet Cuisine ????????????????"
+            "Liz 的美食家自學之路 Self-taught Gourmet：外國人來台除了鼎泰豐和小籠包還能吃什麼？台北 6 間私藏餐廳名單！ 完整版在#liz的美食家自學之路 頻道觀看",
+            "Hank Walker 。旅影漢克。：精緻美食01｜台北米其林台菜｜山海樓 經典重現大戶人家精緻宴席菜｜老派的浪漫｜A Taste of Classic Taiwanese Banquet Cuisine 台北・山海樓で味わう伝統台湾料理"
           ],
           "url": "https://www.youtube.com/watch?v=TpaCk-dJifI",
           "updated": "2026-06-30",
@@ -194,17 +194,17 @@
     },
     {
       "placeId": "",
-      "name": "???",
-      "city": "???",
-      "area": "???",
+      "name": "天香樓",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "???"
+        "天香樓"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 93,
           "confidence": "medium",
           "metrics": {
@@ -214,26 +214,26 @@
             "topVideos": [
               {
                 "id": "_8WUrmvp454",
-                "title": "?????????$50??????????10???????????+??Top50????????????????? [[??]]?#??",
-                "channelTitle": "??Ngahin",
+                "title": "【台北平民米芝蓮】$50蚊食到神級魯肉飯？！10間必食一日遊｜阜杭豆漿+全球Top50咖啡｜香港人台北必食攻略▲雅軒漫遊 [[中字]] #雅軒",
+                "channelTitle": "雅軒Ngahin",
                 "publishedAt": "2026-04-19T12:00:57Z",
                 "views": 18912,
                 "url": "https://www.youtube.com/watch?v=_8WUrmvp454"
               },
               {
                 "id": "vG50o08oyJo",
-                "title": "???????? ???????????? 5 Michelin-Selected Chinese Restaurants in Taiwan",
-                "channelTitle": "???? jingxin_kevin",
+                "title": "台灣台北🇹🇼 雙北五間米其林推薦中餐廳 5 Michelin-Selected Chinese Restaurants in Taiwan",
+                "channelTitle": "凱文食記 jingxin_kevin",
                 "publishedAt": "2026-03-17T04:30:40Z",
                 "views": 805,
                 "url": "https://www.youtube.com/watch?v=vG50o08oyJo"
               }
             ],
-            "query": "??? ??? ??"
+            "query": "台北市 天香樓 美食"
           },
           "evidence": [
-            "??Ngahin??????????$50??????????10???????????+??Top50????????????????? [[??]]?#??",
-            "???? jingxin_kevin????????? ???????????? 5 Michelin-Selected Chinese Restaurants in Taiwan"
+            "雅軒Ngahin：【台北平民米芝蓮】$50蚊食到神級魯肉飯？！10間必食一日遊｜阜杭豆漿+全球Top50咖啡｜香港人台北必食攻略▲雅軒漫遊 [[中字]] #雅軒",
+            "凱文食記 jingxin_kevin：台灣台北🇹🇼 雙北五間米其林推薦中餐廳 5 Michelin-Selected Chinese Restaurants in Taiwan"
           ],
           "url": "https://www.youtube.com/watch?v=_8WUrmvp454",
           "updated": "2026-06-30",
@@ -243,19 +243,19 @@
     },
     {
       "placeId": "",
-      "name": "?? aMaze",
-      "city": "???",
-      "area": "???",
+      "name": "心宴 aMaze",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??",
+        "心宴",
         "aMaze",
-        "?? aMaze"
+        "心宴 aMaze"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "????",
+          "label": "影音提及",
           "score": 52,
           "confidence": "medium",
           "metrics": {
@@ -265,17 +265,17 @@
             "topVideos": [
               {
                 "id": "e02sNNHuSx4",
-                "title": "???????????????????????????? ? aMAZE ??",
-                "channelTitle": "?????",
+                "title": "海外遊子的台北歸鄉地圖：只有熟客才懂的米其林星級風土敘事 ｜ aMAZE 心宴",
+                "channelTitle": "愛玩小圍裙",
                 "publishedAt": "2026-05-20T22:27:37Z",
                 "views": 220,
                 "url": "https://www.youtube.com/watch?v=e02sNNHuSx4"
               }
             ],
-            "query": "??? ?? aMaze ??"
+            "query": "台北市 心宴 aMaze 美食"
           },
           "evidence": [
-            "?????????????????????????????????? ? aMAZE ??"
+            "愛玩小圍裙：海外遊子的台北歸鄉地圖：只有熟客才懂的米其林星級風土敘事 ｜ aMAZE 心宴"
           ],
           "url": "https://www.youtube.com/watch?v=e02sNNHuSx4",
           "updated": "2026-06-30",
@@ -285,17 +285,17 @@
     },
     {
       "placeId": "",
-      "name": "??",
-      "city": "???",
-      "area": "???",
+      "name": "好嶼",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??"
+        "好嶼"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 100,
           "confidence": "medium",
           "metrics": {
@@ -305,26 +305,26 @@
             "topVideos": [
               {
                 "id": "cFskpvUGBCw",
-                "title": "???????????????????????????!",
-                "channelTitle": "????",
+                "title": "韓國米其林主廚傻眼：台灣美食到底怎麼回事？根本沒有極限!",
+                "channelTitle": "韓國約瑟",
                 "publishedAt": "2026-04-05T10:00:50Z",
                 "views": 180851,
                 "url": "https://www.youtube.com/watch?v=cFskpvUGBCw"
               },
               {
                 "id": "qm85TrIwCf8",
-                "title": "Taipei eats | sustainable Taiwanese fine dining Hosu ?? ???????????????+??",
-                "channelTitle": "Vicki ??? ? nyc ??",
+                "title": "Taipei eats | sustainable Taiwanese fine dining Hosu 好嶼 臺灣味永續餐桌超強拿米其林一星+綠星",
+                "channelTitle": "Vicki ビッキ ♡ nyc 🌱",
                 "publishedAt": "2026-02-07T02:47:53Z",
                 "views": 261,
                 "url": "https://www.youtube.com/watch?v=qm85TrIwCf8"
               }
             ],
-            "query": "??? ?? ??"
+            "query": "台北市 好嶼 美食"
           },
           "evidence": [
-            "????????????????????????????????!",
-            "Vicki ??? ? nyc ???Taipei eats | sustainable Taiwanese fine dining Hosu ?? ???????????????+??"
+            "韓國約瑟：韓國米其林主廚傻眼：台灣美食到底怎麼回事？根本沒有極限!",
+            "Vicki ビッキ ♡ nyc 🌱：Taipei eats | sustainable Taiwanese fine dining Hosu 好嶼 臺灣味永續餐桌超強拿米其林一星+綠星"
           ],
           "url": "https://www.youtube.com/watch?v=cFskpvUGBCw",
           "updated": "2026-06-30",
@@ -334,17 +334,17 @@
     },
     {
       "placeId": "",
-      "name": "??",
-      "city": "???",
-      "area": "???",
+      "name": "米香",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??"
+        "米香"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 100,
           "confidence": "high",
           "metrics": {
@@ -354,35 +354,35 @@
             "topVideos": [
               {
                 "id": "x2a32Fifvwo",
-                "title": "?2025???????????????????6???????????????????????????????? (??????????????????)????????606?",
-                "channelTitle": "?????",
+                "title": "【2025最新】台中必吃家鄉味「甘蔗滷封肉」連續6年獲必比登推薦！創新料理「肉粽蛋餅」銅板價包進整顆肉粽？！陳怡廷 (台北、台中、苗栗、雲林、高雄必吃美食)《進擊的台灣》第606集",
+                "channelTitle": "進擊的台灣",
                 "publishedAt": "2026-01-04T13:01:43Z",
                 "views": 19861,
                 "url": "https://www.youtube.com/watch?v=x2a32Fifvwo"
               },
               {
                 "id": "nFOltMLFNsg",
-                "title": "?????????????????????????????????????",
-                "channelTitle": "????",
+                "title": "黃仁勳愛店就這家！冠軍港姐陳曉華也上癮「台北必吃豬腳飯」🔥【台灣好吃驚】",
+                "channelTitle": "國興衛視",
                 "publishedAt": "2026-01-17T10:01:12Z",
                 "views": 5106,
                 "url": "https://www.youtube.com/watch?v=nFOltMLFNsg"
               },
               {
                 "id": "Hdxm8_Rczus",
-                "title": "????????????\"????\"?????????????\"?????\"?????????\"???\"????????????????2026.06.28",
-                "channelTitle": "?????",
+                "title": "【完整版】平鎮道地客家菜\"炒芋頭苗\"軟爛入味！老闆怕人餓，超狂\"大鋼盆滷味\"免費加菜！巷仔內的\"炒鱔魚\"猛火快炒鑊氣噴香！【非凡大探索】2026.06.28",
+                "channelTitle": "非凡大探索",
                 "publishedAt": "2026-06-28T12:45:11Z",
                 "views": 2994,
                 "url": "https://www.youtube.com/watch?v=Hdxm8_Rczus"
               }
             ],
-            "query": "??? ?? ??"
+            "query": "台北市 米香 美食"
           },
           "evidence": [
-            "???????2025???????????????????6???????????????????????????????? (??????????????????)????????606?",
-            "??????????????????????????????????????????",
-            "??????????????????\"????\"?????????????\"?????\"?????????\"???\"????????????????2026.06.28"
+            "進擊的台灣：【2025最新】台中必吃家鄉味「甘蔗滷封肉」連續6年獲必比登推薦！創新料理「肉粽蛋餅」銅板價包進整顆肉粽？！陳怡廷 (台北、台中、苗栗、雲林、高雄必吃美食)《進擊的台灣》第606集",
+            "國興衛視：黃仁勳愛店就這家！冠軍港姐陳曉華也上癮「台北必吃豬腳飯」🔥【台灣好吃驚】",
+            "非凡大探索：【完整版】平鎮道地客家菜\"炒芋頭苗\"軟爛入味！老闆怕人餓，超狂\"大鋼盆滷味\"免費加菜！巷仔內的\"炒鱔魚\"猛火快炒鑊氣噴香！【非凡大探索】2026.06.28"
           ],
           "url": "https://www.youtube.com/watch?v=x2a32Fifvwo",
           "updated": "2026-06-30",
@@ -392,17 +392,17 @@
     },
     {
       "placeId": "",
-      "name": "??",
-      "city": "???",
-      "area": "???",
+      "name": "牡丹",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??"
+        "牡丹"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 100,
           "confidence": "high",
           "metrics": {
@@ -412,35 +412,35 @@
             "topVideos": [
               {
                 "id": "AFRqmytj5gY",
-                "title": "??????????-????????????",
-                "channelTitle": "YMH ??????",
+                "title": "［新北雙溪］牡丹車站-低調且充滿特色的寧靜時光",
+                "channelTitle": "YMH 旅遊隨手紀錄",
                 "publishedAt": "2026-01-31T09:52:25Z",
                 "views": 76024,
                 "url": "https://www.youtube.com/watch?v=AFRqmytj5gY"
               },
               {
                 "id": "u_YCWBn5WOw",
-                "title": "??????!\"10????\"????????????????????????20260109???iNEWS",
-                "channelTitle": "????? x 54Free??",
+                "title": "麵包控快來看!\"10多種口味\"厚片吐司，客人不斷回購原因大公開│【吃貨請跟上】20260109│三立iNEWS",
+                "channelTitle": "吃貨請跟上 x 54Free食代",
                 "publishedAt": "2026-01-09T09:00:06Z",
                 "views": 19906,
                 "url": "https://www.youtube.com/watch?v=u_YCWBn5WOw"
               },
               {
                 "id": "YPTYSzmvCMk",
-                "title": "???!???????.????.??????\"????\"??????? ????20260103???iNEWS",
-                "channelTitle": "????? x 54Free??",
+                "title": "看過來!邊玩邊吃，清境.新埔老街.雙溪老街美食\"必吃清單\"｜【吃貨請跟上 完整版】20260103│三立iNEWS",
+                "channelTitle": "吃貨請跟上 x 54Free食代",
                 "publishedAt": "2026-01-03T10:00:06Z",
                 "views": 4175,
                 "url": "https://www.youtube.com/watch?v=YPTYSzmvCMk"
               }
             ],
-            "query": "??? ?? ??"
+            "query": "台北市 牡丹 美食"
           },
           "evidence": [
-            "YMH ?????????????????-????????????",
-            "????? x 54Free?????????!\"10????\"????????????????????????20260109???iNEWS",
-            "????? x 54Free??????!???????.????.??????\"????\"??????? ????20260103???iNEWS"
+            "YMH 旅遊隨手紀錄：［新北雙溪］牡丹車站-低調且充滿特色的寧靜時光",
+            "吃貨請跟上 x 54Free食代：麵包控快來看!\"10多種口味\"厚片吐司，客人不斷回購原因大公開│【吃貨請跟上】20260109│三立iNEWS",
+            "吃貨請跟上 x 54Free食代：看過來!邊玩邊吃，清境.新埔老街.雙溪老街美食\"必吃清單\"｜【吃貨請跟上 完整版】20260103│三立iNEWS"
           ],
           "url": "https://www.youtube.com/watch?v=AFRqmytj5gY",
           "updated": "2026-06-30",
@@ -450,17 +450,17 @@
     },
     {
       "placeId": "",
-      "name": "???",
-      "city": "???",
-      "area": "???",
+      "name": "明壽司",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "???"
+        "明壽司"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "????",
+          "label": "影音提及",
           "score": 62,
           "confidence": "medium",
           "metrics": {
@@ -470,17 +470,17 @@
             "topVideos": [
               {
                 "id": "p6fZ7xcsTW4",
-                "title": "????????????????",
+                "title": "隱巷米其林一星明壽司咬一口就懂！",
                 "channelTitle": "SugarD.",
                 "publishedAt": "2026-02-12T09:01:15Z",
                 "views": 1250,
                 "url": "https://www.youtube.com/watch?v=p6fZ7xcsTW4"
               }
             ],
-            "query": "??? ??? ??"
+            "query": "台北市 明壽司 美食"
           },
           "evidence": [
-            "SugarD.?????????????????"
+            "SugarD.：隱巷米其林一星明壽司咬一口就懂！"
           ],
           "url": "https://www.youtube.com/watch?v=p6fZ7xcsTW4",
           "updated": "2026-06-30",
@@ -490,17 +490,17 @@
     },
     {
       "placeId": "",
-      "name": "????",
-      "city": "???",
-      "area": "???",
+      "name": "欣葉鐘菜",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "?? ??"
+        "欣葉 鐘菜"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 89,
           "confidence": "medium",
           "metrics": {
@@ -510,17 +510,17 @@
             "topVideos": [
               {
                 "id": "DsjWK9DbFzM",
-                "title": "??????????????????????AI???????????? ?? ??????????? ??  ????? Omakase ?? ???????? ??",
+                "title": "【🇹🇼台北美食】不訂位注定吃不到的餐廳！AI之父最愛的花膠雞煲私房菜 🐓 新鮮直送高質溫體牛火鍋 🐃  劇場式甜品 Omakase 🍨 必試台式雞湯拉麵 🍜",
                 "channelTitle": "to-do chris",
                 "publishedAt": "2026-03-08T13:00:06Z",
                 "views": 43219,
                 "url": "https://www.youtube.com/watch?v=DsjWK9DbFzM"
               }
             ],
-            "query": "??? ???? ??"
+            "query": "台北市 欣葉鐘菜 美食"
           },
           "evidence": [
-            "to-do chris???????????????????????AI???????????? ?? ??????????? ??  ????? Omakase ?? ???????? ??"
+            "to-do chris：【🇹🇼台北美食】不訂位注定吃不到的餐廳！AI之父最愛的花膠雞煲私房菜 🐓 新鮮直送高質溫體牛火鍋 🐃  劇場式甜品 Omakase 🍨 必試台式雞湯拉麵 🍜"
           ],
           "url": "https://www.youtube.com/watch?v=DsjWK9DbFzM",
           "updated": "2026-06-30",
@@ -530,17 +530,17 @@
     },
     {
       "placeId": "",
-      "name": "???????",
-      "city": "???",
-      "area": "???",
+      "name": "金蓬萊遵古台菜",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "???????"
+        "金蓬萊遵古台菜"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 100,
           "confidence": "high",
           "metrics": {
@@ -550,35 +550,35 @@
             "topVideos": [
               {
                 "id": "DD0Alhu91Ho",
-                "title": "??????????????????/???????????????/????????300???+?????/????????????????????-20260627??????Cheers???",
-                "channelTitle": "??Cheers",
+                "title": "周杰倫愛店台菜餐廳「八度摘星米其林」/陽明山「頂級蔬食秘境」揚名國際/高空餐酒館主打「300款啤酒+歐陸料理」/咖啡界傳奇「路易莎」外帶店翻轉出億元商機-20260627【全集】台灣Cheers｜陳瑩",
+                "channelTitle": "台灣Cheers",
                 "publishedAt": "2026-06-28T03:00:05Z",
                 "views": 22918,
                 "url": "https://www.youtube.com/watch?v=DD0Alhu91Ho"
               },
               {
                 "id": "zETLTMyxP84",
-                "title": "?????TOP9??????/?????/?????/?????/???????/???????/??????/????/???????????           @FoodinTaiwan",
-                "channelTitle": "?????",
+                "title": "【經典台菜TOP9】螃蟹麻油雞/酥炸豆乳雞/醬冬瓜絞肉/桂花布袋雞/茶香魚翅佛跳牆/土魠魚芋頭米粉/蒜香油條鮮蚵/鴨肉油飯/砂鍋魚頭【進擊的台灣】           @FoodinTaiwan",
+                "channelTitle": "進擊的台灣",
                 "publishedAt": "2026-03-07T04:00:46Z",
                 "views": 9187,
                 "url": "https://www.youtube.com/watch?v=zETLTMyxP84"
               },
               {
                 "id": "oCSnds5Rdcc",
-                "title": "???? ???? ????? ????????? ?????? ???? ???????? ????? #???",
-                "channelTitle": "???",
+                "title": "臺北美食 第一次吃 米其林一星 金蓬萊遵古台菜餐廳 在地朋友推薦 經典台菜 多道料理值得一試 餐廳氣氛棒 #吉利姐",
+                "channelTitle": "吉利姐",
                 "publishedAt": "2026-04-22T11:35:01Z",
                 "views": 8997,
                 "url": "https://www.youtube.com/watch?v=oCSnds5Rdcc"
               }
             ],
-            "query": "??? ??????? ??"
+            "query": "台北市 金蓬萊遵古台菜 美食"
           },
           "evidence": [
-            "??Cheers???????????????????/???????????????/????????300???+?????/????????????????????-20260627??????Cheers???",
-            "???????????TOP9??????/?????/?????/?????/???????/???????/??????/????/???????????           @FoodinTaiwan",
-            "???????? ???? ????? ????????? ?????? ???? ???????? ????? #???"
+            "台灣Cheers：周杰倫愛店台菜餐廳「八度摘星米其林」/陽明山「頂級蔬食秘境」揚名國際/高空餐酒館主打「300款啤酒+歐陸料理」/咖啡界傳奇「路易莎」外帶店翻轉出億元商機-20260627【全集】台灣Cheers｜陳瑩",
+            "進擊的台灣：【經典台菜TOP9】螃蟹麻油雞/酥炸豆乳雞/醬冬瓜絞肉/桂花布袋雞/茶香魚翅佛跳牆/土魠魚芋頭米粉/蒜香油條鮮蚵/鴨肉油飯/砂鍋魚頭【進擊的台灣】           @FoodinTaiwan",
+            "吉利姐：臺北美食 第一次吃 米其林一星 金蓬萊遵古台菜餐廳 在地朋友推薦 經典台菜 多道料理值得一試 餐廳氣氛棒 #吉利姐"
           ],
           "url": "https://www.youtube.com/watch?v=DD0Alhu91Ho",
           "updated": "2026-06-30",
@@ -588,19 +588,19 @@
     },
     {
       "placeId": "",
-      "name": "???????",
-      "city": "???",
-      "area": "???",
+      "name": "富錦樹台菜香檳",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??????? (??)",
-        "???????",
+        "富錦樹台菜香檳 (松山)",
+        "富錦樹台菜香檳",
         "Fujin Tree Taiwanese Cuisine & Champagne (Songshan)"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "????",
+          "label": "影音提及",
           "score": 53,
           "confidence": "medium",
           "metrics": {
@@ -610,17 +610,17 @@
             "topVideos": [
               {
                 "id": "2AOnCMWcgIg",
-                "title": "????????? ????? ?????? ?Becky??",
+                "title": "米其林一星餐廳嘗鮮 富錦樹台菜 聚餐食記🥢 ｜Becky日常",
                 "channelTitle": "Becky ",
                 "publishedAt": "2026-01-02T10:30:02Z",
                 "views": 399,
                 "url": "https://www.youtube.com/watch?v=2AOnCMWcgIg"
               }
             ],
-            "query": "??? ??????? ??"
+            "query": "台北市 富錦樹台菜香檳 美食"
           },
           "evidence": [
-            "Becky ?????????? ????? ?????? ?Becky??"
+            "Becky ：米其林一星餐廳嘗鮮 富錦樹台菜 聚餐食記🥢 ｜Becky日常"
           ],
           "url": "https://www.youtube.com/watch?v=2AOnCMWcgIg",
           "updated": "2026-06-30",
@@ -630,17 +630,17 @@
     },
     {
       "placeId": "",
-      "name": "??",
-      "city": "???",
-      "area": "???",
+      "name": "斑泊",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??"
+        "斑泊"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 100,
           "confidence": "medium",
           "metrics": {
@@ -650,17 +650,17 @@
             "topVideos": [
               {
                 "id": "kkvyMRy8aHo",
-                "title": "????????????????????????? 6 ?????????????????????????Liz ????",
-                "channelTitle": "Liz ???????? Self-taught Gourmet",
+                "title": "國民外交餐廳必備！外國朋友來台灣吃什麼？震撼老外的 6 間台北私藏名單，別再只帶他們去夜市｜餐廳推薦健檢【Liz 美食家】",
+                "channelTitle": "Liz 的美食家自學之路 Self-taught Gourmet",
                 "publishedAt": "2026-05-21T11:00:01Z",
                 "views": 106598,
                 "url": "https://www.youtube.com/watch?v=kkvyMRy8aHo"
               }
             ],
-            "query": "??? ?? ??"
+            "query": "台北市 斑泊 美食"
           },
           "evidence": [
-            "Liz ???????? Self-taught Gourmet?????????????????????????? 6 ?????????????????????????Liz ????"
+            "Liz 的美食家自學之路 Self-taught Gourmet：國民外交餐廳必備！外國朋友來台灣吃什麼？震撼老外的 6 間台北私藏名單，別再只帶他們去夜市｜餐廳推薦健檢【Liz 美食家】"
           ],
           "url": "https://www.youtube.com/watch?v=kkvyMRy8aHo",
           "updated": "2026-06-30",
@@ -670,17 +670,17 @@
     },
     {
       "placeId": "",
-      "name": "??",
-      "city": "???",
-      "area": "???",
+      "name": "雅閣",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??"
+        "雅閣"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 100,
           "confidence": "high",
           "metrics": {
@@ -690,35 +690,35 @@
             "topVideos": [
               {
                 "id": "eTETIReRzic",
-                "title": "2026?????????????????????????????????????????????????????????????CP???????????????????????",
-                "channelTitle": "???",
+                "title": "2026誇張的自助餐吃到飽！這是最便宜又大碗的霸主嗎?｜獨食｜中台灣餐廳｜西餐廳｜大廚料理｜尚順君樂飯店｜生魚片｜苗栗美食｜國旅｜CP值｜大食量｜全品項開箱｜大胃王吃播｜먹방｜探店",
+                "channelTitle": "蝦土豆",
                 "publishedAt": "2026-01-25T13:30:12Z",
                 "views": 140058,
                 "url": "https://www.youtube.com/watch?v=eTETIReRzic"
               },
               {
                 "id": "LEi_amaZZjE",
-                "title": "2025????? ??????????? ???? ?Buffet?TaiwanBuffet ???????????????????????????????????????",
-                "channelTitle": "????????",
+                "title": "2025年總結推薦 八家吃到飽｜台中吃到飽 ｜吃到飽 ｜Buffet｜TaiwanBuffet ｜美登利｜添好運｜林酒店｜溫莎咖啡廳｜路克火鍋｜承億酒店｜歐雅閣｜金園中餐廳｜",
+                "channelTitle": "餐盤先生與罐老闆",
                 "publishedAt": "2026-02-19T22:00:31Z",
                 "views": 8340,
                 "url": "https://www.youtube.com/watch?v=LEi_amaZZjE"
               },
               {
                 "id": "JSJjLu1a0_A",
-                "title": "2025????? ??????????? ???? ?Buffet?TaiwanBuffet ???????????????????????????????????????",
-                "channelTitle": "????????",
+                "title": "2025年總結推薦 八家吃到飽｜台中吃到飽 ｜吃到飽 ｜Buffet｜TaiwanBuffet ｜美登利｜添好運｜林酒店｜溫莎咖啡廳｜路克火鍋｜承億酒店｜歐雅閣｜金園中餐廳｜",
+                "channelTitle": "餐盤先生與罐老闆",
                 "publishedAt": "2026-02-21T08:00:21Z",
                 "views": 533,
                 "url": "https://www.youtube.com/watch?v=JSJjLu1a0_A"
               }
             ],
-            "query": "??? ?? ??"
+            "query": "台北市 雅閣 美食"
           },
           "evidence": [
-            "????2026?????????????????????????????????????????????????????????????CP???????????????????????",
-            "?????????2025????? ??????????? ???? ?Buffet?TaiwanBuffet ???????????????????????????????????????",
-            "?????????2025????? ??????????? ???? ?Buffet?TaiwanBuffet ???????????????????????????????????????"
+            "蝦土豆：2026誇張的自助餐吃到飽！這是最便宜又大碗的霸主嗎?｜獨食｜中台灣餐廳｜西餐廳｜大廚料理｜尚順君樂飯店｜生魚片｜苗栗美食｜國旅｜CP值｜大食量｜全品項開箱｜大胃王吃播｜먹방｜探店",
+            "餐盤先生與罐老闆：2025年總結推薦 八家吃到飽｜台中吃到飽 ｜吃到飽 ｜Buffet｜TaiwanBuffet ｜美登利｜添好運｜林酒店｜溫莎咖啡廳｜路克火鍋｜承億酒店｜歐雅閣｜金園中餐廳｜",
+            "餐盤先生與罐老闆：2025年總結推薦 八家吃到飽｜台中吃到飽 ｜吃到飽 ｜Buffet｜TaiwanBuffet ｜美登利｜添好運｜林酒店｜溫莎咖啡廳｜路克火鍋｜承億酒店｜歐雅閣｜金園中餐廳｜"
           ],
           "url": "https://www.youtube.com/watch?v=eTETIReRzic",
           "updated": "2026-06-30",
@@ -728,21 +728,21 @@
     },
     {
       "placeId": "",
-      "name": "?? Ta?rroir",
-      "city": "???",
-      "area": "???",
+      "name": "態芮 Taïrroir",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??",
-        "Ta?rroir",
+        "態芮",
+        "Taïrroir",
         "Tairroir",
-        "?? Ta?rroir",
-        "Ta?rroir ??"
+        "態芮 Taïrroir",
+        "Taïrroir 態芮"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 82,
           "confidence": "medium",
           "metrics": {
@@ -752,7 +752,7 @@
             "topVideos": [
               {
                 "id": "QSL-Nrw4w1o",
-                "title": "inline ?? ep.21 | ??????????",
+                "title": "inline 週報 ep.21 | 台灣有哪些三星餐廳？",
                 "channelTitle": "inline Official",
                 "publishedAt": "2026-06-18T05:25:57Z",
                 "views": 2492,
@@ -760,18 +760,18 @@
               },
               {
                 "id": "nSW-W89nClU",
-                "title": "????????\"???\"???????????7???????????20260507???iNEWS",
-                "channelTitle": "????iNEWS",
+                "title": "母親節帶媽媽來吃\"米其林\"，全台北中南餐廳，精選7家必吃│【吃貨請跟上】20260507│三立iNEWS",
+                "channelTitle": "三立財經iNEWS",
                 "publishedAt": "2026-05-07T08:00:06Z",
                 "views": 412,
                 "url": "https://www.youtube.com/watch?v=nSW-W89nClU"
               }
             ],
-            "query": "??? ?? Ta?rroir ??"
+            "query": "台北市 態芮 Taïrroir 美食"
           },
           "evidence": [
-            "inline Official?inline ?? ep.21 | ??????????",
-            "????iNEWS?????????\"???\"???????????7???????????20260507???iNEWS"
+            "inline Official：inline 週報 ep.21 | 台灣有哪些三星餐廳？",
+            "三立財經iNEWS：母親節帶媽媽來吃\"米其林\"，全台北中南餐廳，精選7家必吃│【吃貨請跟上】20260507│三立iNEWS"
           ],
           "url": "https://www.youtube.com/watch?v=QSL-Nrw4w1o",
           "updated": "2026-06-30",
@@ -781,17 +781,17 @@
     },
     {
       "placeId": "",
-      "name": "???",
-      "city": "???",
-      "area": "???",
+      "name": "請客樓",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "???"
+        "請客樓"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 90,
           "confidence": "medium",
           "metrics": {
@@ -801,26 +801,26 @@
             "topVideos": [
               {
                 "id": "8UcwbjVWoFE",
-                "title": "2026???????????x?????????????????????????",
-                "channelTitle": "Emile ???",
+                "title": "2026全聯年菜懶人包！美味堂x請客樓值得買嗎？石二鍋魚餃、義美咖啡泡芙新品試吃！",
+                "channelTitle": "Emile 艾彌兒",
                 "publishedAt": "2026-02-06T10:00:13Z",
                 "views": 20203,
                 "url": "https://www.youtube.com/watch?v=8UcwbjVWoFE"
               },
               {
                 "id": "vG50o08oyJo",
-                "title": "???????? ???????????? 5 Michelin-Selected Chinese Restaurants in Taiwan",
-                "channelTitle": "???? jingxin_kevin",
+                "title": "台灣台北🇹🇼 雙北五間米其林推薦中餐廳 5 Michelin-Selected Chinese Restaurants in Taiwan",
+                "channelTitle": "凱文食記 jingxin_kevin",
                 "publishedAt": "2026-03-17T04:30:40Z",
                 "views": 805,
                 "url": "https://www.youtube.com/watch?v=vG50o08oyJo"
               }
             ],
-            "query": "??? ??? ??"
+            "query": "台北市 請客樓 美食"
           },
           "evidence": [
-            "Emile ????2026???????????x?????????????????????????",
-            "???? jingxin_kevin????????? ???????????? 5 Michelin-Selected Chinese Restaurants in Taiwan"
+            "Emile 艾彌兒：2026全聯年菜懶人包！美味堂x請客樓值得買嗎？石二鍋魚餃、義美咖啡泡芙新品試吃！",
+            "凱文食記 jingxin_kevin：台灣台北🇹🇼 雙北五間米其林推薦中餐廳 5 Michelin-Selected Chinese Restaurants in Taiwan"
           ],
           "url": "https://www.youtube.com/watch?v=8UcwbjVWoFE",
           "updated": "2026-06-30",
@@ -830,17 +830,17 @@
     },
     {
       "placeId": "",
-      "name": "??",
-      "city": "???",
-      "area": "???",
+      "name": "頤宮",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "??"
+        "頤宮"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "?????",
+          "label": "影音熱度高",
           "score": 91,
           "confidence": "high",
           "metrics": {
@@ -850,7 +850,7 @@
             "topVideos": [
               {
                 "id": "QSL-Nrw4w1o",
-                "title": "inline ?? ep.21 | ??????????",
+                "title": "inline 週報 ep.21 | 台灣有哪些三星餐廳？",
                 "channelTitle": "inline Official",
                 "publishedAt": "2026-06-18T05:25:57Z",
                 "views": 2492,
@@ -858,27 +858,27 @@
               },
               {
                 "id": "vG50o08oyJo",
-                "title": "???????? ???????????? 5 Michelin-Selected Chinese Restaurants in Taiwan",
-                "channelTitle": "???? jingxin_kevin",
+                "title": "台灣台北🇹🇼 雙北五間米其林推薦中餐廳 5 Michelin-Selected Chinese Restaurants in Taiwan",
+                "channelTitle": "凱文食記 jingxin_kevin",
                 "publishedAt": "2026-03-17T04:30:40Z",
                 "views": 805,
                 "url": "https://www.youtube.com/watch?v=vG50o08oyJo"
               },
               {
                 "id": "OglBhCiRkUI",
-                "title": "?? 3. ???????????????#eating #cooking",
+                "title": "🥩 3. 黑蒜可可牛小排（高級風味變化）#eating #cooking",
                 "channelTitle": "RuiYan Huang",
                 "publishedAt": "2026-01-14T04:12:12Z",
                 "views": 17,
                 "url": "https://www.youtube.com/watch?v=OglBhCiRkUI"
               }
             ],
-            "query": "??? ?? ??"
+            "query": "台北市 頤宮 美食"
           },
           "evidence": [
-            "inline Official?inline ?? ep.21 | ??????????",
-            "???? jingxin_kevin????????? ???????????? 5 Michelin-Selected Chinese Restaurants in Taiwan",
-            "RuiYan Huang??? 3. ???????????????#eating #cooking"
+            "inline Official：inline 週報 ep.21 | 台灣有哪些三星餐廳？",
+            "凱文食記 jingxin_kevin：台灣台北🇹🇼 雙北五間米其林推薦中餐廳 5 Michelin-Selected Chinese Restaurants in Taiwan",
+            "RuiYan Huang：🥩 3. 黑蒜可可牛小排（高級風味變化）#eating #cooking"
           ],
           "url": "https://www.youtube.com/watch?v=QSL-Nrw4w1o",
           "updated": "2026-06-30",
@@ -888,17 +888,17 @@
     },
     {
       "placeId": "",
-      "name": "???",
-      "city": "???",
-      "area": "???",
+      "name": "鮨嘉仁",
+      "city": "台北市",
+      "area": "台北市",
       "aliases": [
-        "? ??"
+        "鮨 嘉仁"
       ],
       "signals": [
         {
           "type": "youtubeBuzz",
           "sourceId": "youtube-api",
-          "label": "????",
+          "label": "影音提及",
           "score": 71,
           "confidence": "medium",
           "metrics": {
@@ -908,17 +908,17 @@
             "topVideos": [
               {
                 "id": "jAlZqGg_hKg",
-                "title": "#??? #?????????28? #???? #??? #??????? ??????????????????????????????????????????????",
-                "channelTitle": "???????",
+                "title": "#鮨嘉仁 #臺北市中山區吉林路28號 #日本料理 #米其林 #鬍子哥美食指南 讓你吃得飽的，米其林一星日本料理，很多日本料理是吃不飽的，更不要說米其林一星了，吉林路好棒。",
+                "channelTitle": "鬍子哥美食指南",
                 "publishedAt": "2026-04-13T11:43:55Z",
                 "views": 2297,
                 "url": "https://www.youtube.com/watch?v=jAlZqGg_hKg"
               }
             ],
-            "query": "??? ??? ??"
+            "query": "台北市 鮨嘉仁 美食"
           },
           "evidence": [
-            "????????#??? #?????????28? #???? #??? #??????? ??????????????????????????????????????????????"
+            "鬍子哥美食指南：#鮨嘉仁 #臺北市中山區吉林路28號 #日本料理 #米其林 #鬍子哥美食指南 讓你吃得飽的，米其林一星日本料理，很多日本料理是吃不飽的，更不要說米其林一星了，吉林路好棒。"
           ],
           "url": "https://www.youtube.com/watch?v=jAlZqGg_hKg",
           "updated": "2026-06-30",
@@ -928,45 +928,45 @@
     }
   ],
   "_recordSchema": {
-    "placeId": "Google place_id???????????",
-    "name": "??????? placeId ?? city + normalized name ???",
-    "city": "????????????????",
-    "area": "????????",
+    "placeId": "Google place_id；有值時優先用來合併。",
+    "name": "餐廳名稱；沒有 placeId 時用 city + normalized name 比對。",
+    "city": "縣市，使用台北市、新北市等格式。",
+    "area": "行政區，可空白。",
     "aliases": [
-      "????????????"
+      "可選，分店名或常見別名。"
     ],
     "signals": [
       {
         "type": "fiftyBest | socialBuzz | youtubeBuzz | mediaMention | platformCertification | queueSignal",
         "sourceId": "sourceCatalog.id",
-        "label": "???????? ???????????????",
-        "score": "0-100 ??????????",
+        "label": "顯示用標籤，例如 社群熱店、媒體推薦、平台嚴選。",
+        "score": "0-100 或定義中的分數範圍。",
         "confidence": "high | medium | low",
         "evidence": [
-          "?????????????"
+          "可追溯摘要，不放整篇文章。"
         ],
-        "url": "?????????",
+        "url": "來源網址，可空白。",
         "updated": "YYYY-MM-DD"
       }
     ]
   },
   "_example": {
     "placeId": "",
-    "name": "????",
-    "city": "???",
-    "area": "???",
+    "name": "範例店名",
+    "city": "台北市",
+    "area": "中正區",
     "aliases": [
-      "????"
+      "範例別名"
     ],
     "signals": [
       {
         "type": "socialBuzz",
         "sourceId": "social-buzz",
-        "label": "????",
+        "label": "社群熱店",
         "score": 82,
         "confidence": "medium",
         "evidence": [
-          "?????? 30 ????????????????"
+          "批次整理：近 30 天社群討論量高於同區同類型店家。"
         ],
         "url": "",
         "updated": "2026-06-26"
