@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-06-30T23:28:58.263Z",
+  "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+  "candidates": 222,
+  "mergedExisting": 27,
+  "addedRestaurants": 195,
+  "skippedDuplicate": 0,
+  "skippedMissingCityOrName": 0,
+  "policy": "Michelin selected restaurants are imported as weak guide=michelin_selected awards. They get low rank bonus and lower-priority badges than stars/Bib/500-series."
+}

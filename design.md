@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.3
+版本：2026.07.01.4
 
 ## 專案目標
 
@@ -30,7 +30,7 @@
 - `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
 - `assets/social-signal-config.json`：社群熱度批次更新設定，目前以 YouTube Data API 為第一階段來源，控制每次查詢餐廳數、影片數、時間範圍與分數權重。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
-- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項、500 碗官方文字名單高信心 415 筆，並保留來源 URL。500 甜目前先支援格式與徽章，待批次來源驗證後再匯入正式資料。
+- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、米其林入選、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、米其林入選 222 筆、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項、500 碗官方文字名單高信心 415 筆，並保留來源 URL。500 甜目前先支援格式與徽章，待批次來源驗證後再匯入正式資料。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/update-external-signals.js`：外部社群訊號批次更新腳本。讀取 `assets/awards-taiwan.json` 作為候選餐廳，使用 YouTube Data API 查詢近期影片，只在影片標題或描述命中店名 / 別名時寫入 `assets/external-signals.json`。
 - `scripts/export-release.ps1`：版本匯出腳本。
@@ -404,6 +404,7 @@ assets/awards-taiwan.json
 目前正式獎牌來源包含：
 
 - Michelin 2025 星級：53 筆，含三星 3、二星 7、一星 43。
+- Michelin 2025 入選餐廳：222 筆，使用低權重弱徽章，低於星級、必比登與 500 系列。
 - Michelin 2025 必比登：144 筆。
 - Michelin 2025 綠星：7 筆，只顯示徽章，不參與美味加權。
 - 500盤：260 筆。
@@ -413,7 +414,7 @@ assets/awards-taiwan.json
 可加入但必須分層處理的外部來源：
 
 - Google Maps reviews：已是主資料來源，使用 Places 評分、評論數、摘要與服務欄位；不得另存大量評論全文。
-- Michelin Guide Taiwan：正式獎牌來源，星級與必比登可加權，綠星只顯示永續徽章。
+- Michelin Guide Taiwan：正式獎牌來源，星級與必比登可加權；入選餐廳只做弱加分與弱徽章；綠星只顯示永續徽章。
 - 500盤、500碗、500甜：正式獎牌來源，批次整理後進 `assets/awards-taiwan.json`，只做中高權重加分。
 - 50 Best：正式獎牌來源，高權重但只影響少數入榜店。
 - 愛食記、OpenRice、Tripadvisor：平台口碑/聲量來源，預設不放進 `awards-taiwan.json`；只能在授權 API、手動整理或可追溯批次資料可用時寫入 `assets/external-signals.json`，作小幅輔助訊號與提示，不取代 Google 評分。

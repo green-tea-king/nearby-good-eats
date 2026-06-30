@@ -1,5 +1,5 @@
 {
-  "version": "2026.07.01.3",
+  "version": "2026.07.01.4",
   "policy": {
     "runtimeLookup": false,
     "batchOnly": true,
@@ -31,6 +31,6 @@
     "file": "assets/awards-taiwan.json",
     "maxNameLength": 40,
     "skipGuides": [],
-    "priorityGuides": ["michelin", "bib", "500plate", "500bowl", "500sweet", "50best"]
+    "priorityGuides": ["michelin", "bib", "500plate", "500bowl", "500sweet", "50best", "michelin_selected"]
   }
 }
