@@ -96,7 +96,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;}
-html,body,#splash,.rank-list,.rank-info-sheet{
+html,body,#splash,.rank-list{
   scrollbar-width:thin;
   scrollbar-color:var(--scroll-thumb) var(--scroll-track);
 }
@@ -167,9 +167,8 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
    ============================================================ */
 #rankView{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;align-items:center;}
 .rank-head{flex:none;display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--bg);width:100%;max-width:480px;}
-.rank-refresh,.rank-filter-btn,.rank-info-btn{flex:none;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t);}
-.rank-refresh:active,.rank-filter-btn:active,.rank-info-btn:active{color:var(--accent-bright);border-color:var(--accent);}
-.rank-refresh.spin svg{animation:rkspin .8s linear infinite;}
+.rank-filter-btn{flex:none;width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);transition:color var(--t),border-color var(--t);}
+.rank-filter-btn:active{color:var(--accent-bright);border-color:var(--accent);}
 @keyframes rkspin{to{transform:rotate(360deg);}}
 .rank-titles{flex:1;min-width:0;display:flex;align-items:center;}
 .rank-logo{display:block;width:min(158px,41vw);max-height:46px;height:auto;object-fit:contain;object-position:left center;}
@@ -189,20 +188,6 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .guide-card[data-state="error"] .guide-dot{background:var(--accent-bright);}
 .guide-card[data-state="error"] .guide-message{color:var(--accent-bright);}
 @keyframes guidePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 4px rgba(200,16,46,.1);}50%{transform:scale(1.35);box-shadow:0 0 0 7px rgba(200,16,46,.03);}}
-.rank-info-modal{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.62);backdrop-filter:blur(5px);display:flex;align-items:flex-end;justify-content:center;padding-top:44px;}
-.rank-info-modal.hidden{display:none;}
-.rank-info-sheet{width:100%;max-width:480px;max-height:82vh;overflow-y:auto;background:var(--bg);border:1px solid var(--line);border-bottom:none;border-radius:20px 20px 0 0;padding:16px 20px calc(22px + env(safe-area-inset-bottom,0));box-shadow:0 -18px 48px rgba(0,0,0,.45);animation:rise var(--t) ease both;}
-.ri-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px;}
-.ri-head b{font-size:15px;color:var(--accent-bright);letter-spacing:.03em;}
-.ri-close{flex:none;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px solid var(--line);color:var(--text-dim);}
-.ri-body{display:flex;flex-direction:column;gap:14px;}
-.ri-block b{display:block;font-size:13px;color:var(--text);font-weight:600;margin-bottom:7px;letter-spacing:.02em;}
-.ri-formula{font-family:var(--mono);font-size:12.5px;color:var(--accent-bright);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 12px;text-align:center;margin-bottom:7px;}
-.ri-block p,.ri-note{font-size:12px;line-height:1.65;color:var(--text-dim);margin:0;}
-.ri-list{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px;}
-.ri-list li{font-size:12.5px;color:var(--text-dim);padding-left:14px;position:relative;}
-.ri-list li::before{content:"";position:absolute;left:2px;top:8px;width:4px;height:4px;border-radius:50%;background:var(--accent);}
-.ri-total{font-size:13px;font-weight:600;color:var(--text);text-align:center;padding:10px;border-radius:8px;background:var(--surface);border:1px solid var(--accent);}
 /* 篩選列 */
 .rank-filters{flex:none;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;background:var(--bg);}
 .rank-filters .fg{display:flex;align-items:center;gap:9px;}
@@ -579,15 +564,9 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
   <div class="rank-head">
-    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v06.24.2</span></div>
-    <button class="rank-info-btn" id="rankInfoBtn" aria-label="綜合評價說明" title="綜合評價說明">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 1 1 4.9 2.3c-1.1.8-1.7 1.3-1.7 2.7"/><path d="M12 17h.01"/></svg>
-    </button>
+    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v06.30.3</span></div>
     <button class="rank-filter-btn" id="rankFilterBtn" aria-label="開啟濾網" title="濾網">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <button class="rank-refresh" id="rankRefresh" aria-label="重新整理" title="重新整理">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
     </button>
   </div>
   <div class="rank-guide" aria-live="polite" aria-atomic="true">
@@ -603,36 +582,6 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
   <div class="rank-filters hidden" id="rankFilters"></div>
   <div class="rank-list" id="rankList"></div>
 </section>
-
-<div id="rankInfoModal" class="rank-info-modal hidden" role="dialog" aria-modal="true" aria-labelledby="rankInfoTitle">
-  <div class="rank-info-sheet">
-    <div class="ri-head">
-      <b id="rankInfoTitle">綜合評價怎麼算？</b>
-      <button class="ri-close" id="rankInfoClose" aria-label="關閉說明">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="ri-body">
-      <div class="ri-block">
-        <b>① 貝氏加權分數</b>
-        <div class="ri-formula">分數 ＝ ( C × m ＋ n × r ) ÷ ( C ＋ n )</div>
-        <p>r＝Google 評分，n＝評論數，m＝當批平均分，C＝150（可信度門檻）。評論數少的高分店會被拉回平均，「評論多又高分」才會浮上來，避免「5.0 分但只有 3 則」灌水。</p>
-      </div>
-      <div class="ri-block">
-        <b>② 評鑑加分</b>
-        <ul class="ri-list">
-          <li>米其林　三星 +0.5・二星 +0.4・一星 +0.3</li>
-          <li>50 Best　+0.45（只影響少數真實入榜店）</li>
-          <li>必比登推介　+0.22</li>
-          <li>500 盤　每盤 +0.03（上限 +0.35）</li>
-          <li>外部評鑑總加分上限 +0.75，Google 評分與評論數仍是主體</li>
-        </ul>
-      </div>
-      <div class="ri-total">綜合評價 ＝ Google 貝氏分數 ＋ 評論量信心加分 ＋ 外部評鑑加分 ＋ 營業/時段加分 － 距離扣分</div>
-      <p class="ri-note">未篩選時列全台綜合前 3 名（第 1 名在最上）。濾網優先使用 Google 真欄位（評分、評論數、價位、素食、適合團體、可訂位等），其次把「吃到飽、素食」等條件加入 Google 搜尋詞。若未來接上後端 AI，可再用 Google 真資料做二次標籤判斷。</p>
-    </div>
-  </div>
-</div>
 
 <!-- ============ 主畫面 ============ -->
 <div id="app">
@@ -1278,8 +1227,6 @@ function pushTransientUiHistory(){
 }
 function closeTopTransientUi(){
   if (closePhotoLightbox()) return true;
-  const info = $("#rankInfoModal");
-  if (info && !info.classList.contains("hidden")) { info.classList.add("hidden"); return true; }
   const pick = $("#pickView");
   if (pick && !pick.classList.contains("hidden")) { pick.classList.add("hidden"); return true; }
   const area = $("#areaModal");
@@ -1342,10 +1289,6 @@ function closeRankFiltersFromViewportChange(e){
   closeRankFilters();
 }
 
-$("#rankRefresh").addEventListener("click", () => {
-  trackUsage("refresh", { view:"leaderboard" });
-  openLeaderboard(true);
-});
 $("#rankFilterBtn").addEventListener("click", () => {
   const panel = $("#rankFilters");
   const opening = panel.classList.contains("hidden");
@@ -1367,14 +1310,6 @@ document.addEventListener("touchmove", closeRankFiltersFromOutside, { capture:tr
 document.addEventListener("gesturestart", closeRankFiltersFromOutside, { capture:true, passive:true });
 window.addEventListener("resize", closeRankFiltersFromViewportChange, { passive:true });
 window.visualViewport?.addEventListener("resize", closeRankFiltersFromViewportChange, { passive:true });
-$("#rankInfoBtn").addEventListener("click", () => {
-  $("#rankInfoModal").classList.remove("hidden");
-  pushTransientUiHistory();
-});
-$("#rankInfoClose").addEventListener("click", () => $("#rankInfoModal").classList.add("hidden"));
-$("#rankInfoModal").addEventListener("click", e => {
-  if (e.target.id === "rankInfoModal") $("#rankInfoModal").classList.add("hidden");
-});
 $("#photoLightboxClose").addEventListener("click", closePhotoLightbox);
 $("#photoLightbox").addEventListener("click", e => {
   if (e.target.id === "photoLightbox") closePhotoLightbox();
@@ -1388,7 +1323,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.06.27.22";
+const APP_VERSION_FALLBACK = "2026.06.30.3";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2130,7 +2065,6 @@ async function ensureRankPool(force){
   }
   $("#rankList").innerHTML = `<div class="rank-note">整理全台美食中…</div>`;
   setGuideWorking("正在整理 Google 真資料候選池，評分與評論數會先做加權排序。");
-  $("#rankRefresh").classList.add("spin");
   try{
     await ensureAwards();
     let Place = null;
@@ -2152,8 +2086,6 @@ async function ensureRankPool(force){
     $("#rankList").innerHTML = `<div class="rank-note">排行榜載入失敗：${escapeHTML(msg)}</div>`;
     setGuideError(msg);
     rankPool = null;
-  }finally{
-    $("#rankRefresh").classList.remove("spin");
   }
 }
 
