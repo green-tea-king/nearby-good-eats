@@ -1,0 +1,50 @@
+{
+  "version": "manual-platform-2026-07-01",
+  "updated": "2026-07-01",
+  "description": "人工或 AI 整理後的平台訊號入口。只接受可追溯來源，不在使用者搜尋時即時查外部網站。",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "batchOnly": true,
+    "allowedSources": [
+      "ifoodie",
+      "openrice-tw",
+      "tripadvisor-tw"
+    ],
+    "notes": [
+      "每筆資料必須有 sourceId、url、updated、confidence、reviewedBy。",
+      "平台資料只做輔助訊號，不取代 Google 評分與評論數。",
+      "沒有授權 API 或可追溯公開來源時，先保留空資料，不要寫假資料。"
+    ]
+  },
+  "restaurants": [],
+  "schema": {
+    "restaurants[]": {
+      "name": "餐廳名稱，需與 Google 店名或 awards-taiwan aliases 可比對。",
+      "city": "縣市，例如 台北市。",
+      "area": "行政區，可空白。",
+      "aliases": [
+        "可選，其他常見名稱"
+      ],
+      "signals": [
+        {
+          "type": "platformRating",
+          "sourceId": "ifoodie | openrice-tw | tripadvisor-tw",
+          "label": "平台口碑",
+          "score": "0-100，只作輔助加分。",
+          "confidence": "high | medium | low",
+          "metrics": {
+            "rating": "平台評分，可選。",
+            "reviewCount": "平台評論數，可選。",
+            "rank": "平台榜單名次，可選。"
+          },
+          "evidence": [
+            "一到三句可追溯摘要，不要貼整篇文章。"
+          ],
+          "url": "來源頁 URL，必填。",
+          "updated": "YYYY-MM-DD",
+          "reviewedBy": "人工審核者或資料整理流程名稱"
+        }
+      ]
+    }
+  }
+}

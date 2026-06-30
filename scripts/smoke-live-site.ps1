@@ -86,6 +86,12 @@ foreach ($RequiredSource in @("500bowl", "500sweet", "google-maps-reviews", "ifo
   }
 }
 
+$ManualSignalsText = Read-TextUrl "$BaseUrl/assets/platform-signals.manual.json?cacheBust=$CacheBust"
+$ManualSignals = $ManualSignalsText | ConvertFrom-Json
+if ($ManualSignals.policy.runtimeExternalLookup -ne $false -or $ManualSignals.policy.batchOnly -ne $true) {
+  throw "Manual platform signals must stay batch-only and disable runtime lookup"
+}
+
 [pscustomobject]@{
   ok = $true
   baseUrl = $BaseUrl

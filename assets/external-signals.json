@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-06-30",
-  "updated": "2026-06-30",
+  "version": "platform-merge-2026-07-01",
+  "updated": "2026-07-01",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -45,7 +45,7 @@
       "updateCadence": "yearly",
       "runtimeLookup": false,
       "dataFile": "assets/awards-taiwan.json",
-      "status": "schema-ready; data pending verified batch import"
+      "status": "imported; verified batch import"
     },
     {
       "id": "500sweet",
@@ -110,6 +110,7 @@
       "type": "platform",
       "updateCadence": "batch/manual",
       "runtimeLookup": false,
+      "dataFile": "assets/platform-signals.manual.json",
       "rankImpact": "light",
       "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
     },
@@ -119,6 +120,7 @@
       "type": "platform",
       "updateCadence": "batch/manual",
       "runtimeLookup": false,
+      "dataFile": "assets/platform-signals.manual.json",
       "rankImpact": "light",
       "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
     },
@@ -128,6 +130,7 @@
       "type": "platform",
       "updateCadence": "batch/manual",
       "runtimeLookup": false,
+      "dataFile": "assets/platform-signals.manual.json",
       "rankImpact": "light",
       "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
     }
@@ -1084,6 +1087,12 @@
     "lastStatus": "completed",
     "nextAwardOffset": 33,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 1
+    "lastUpdatedSignals": 1,
+    "platformManualMerge": {
+      "lastRun": "2026-06-30T23:47:03.504Z",
+      "sourceFile": "assets/platform-signals.manual.json",
+      "mergedRestaurants": 0,
+      "mergedSignals": 0
+    }
   }
 }
