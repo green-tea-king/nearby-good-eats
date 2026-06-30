@@ -393,6 +393,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge .yr{opacity:.6;font-size:9.5px;font-family:var(--mono);}
 .badge.michelin{background:var(--gold-weak);color:var(--michelin);border-color:rgba(200,162,76,.32);}
 .badge.michelin::before{content:"✦";font-size:9px;}
+.badge.selected{background:rgba(200,162,76,.08);color:var(--text-dim);border-color:rgba(200,162,76,.22);}
 .badge.fifty{background:rgba(255,255,255,.10);color:var(--text);border-color:rgba(255,255,255,.24);}
 .badge.fifty::before{content:"50";font-size:8.5px;font-family:var(--mono);color:var(--gold);}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
@@ -574,7 +575,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
   <div class="rank-head">
-    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.01.2</span></div>
+    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.01.4</span></div>
     <button class="rank-filter-btn" id="rankFilterBtn" aria-label="開啟濾網" title="濾網">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -790,6 +791,7 @@ const CONFIG = {
   // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
   AWARD_BONUS: {
     michelin: { "三星": 0.5, "二星": 0.4, "一星": 0.3 }, // 高權重，但仍只疊加在 Google 分數上
+    michelinSelected: 0.08,     // 米其林入選：弱加分，低於星級、必比登與 500 系列
     fiftyBest: 0.45,          // 50 Best：高權重、少數店適用
     bib: 0.22,                // 必比登推介：中高權重
     platePerUnit: 0.03,       // 500 盤 / 500 碗 / 500 甜：中高權重，依單位數遞增
@@ -1341,7 +1343,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.01.2";
+const APP_VERSION_FALLBACK = "2026.07.01.4";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -4123,9 +4125,12 @@ function awardBonus(awards){
   let fiftyBest = 0;
   let bib = 0;
   let plate = 0;
+  let selected = 0;
   for (const a of (awards||[])) {
     if (a.guide === "michelin") {
       michelin = Math.max(michelin, CONFIG.AWARD_BONUS.michelin[a.level] || 0);
+    } else if (a.guide === "michelin_selected") {
+      selected = CONFIG.AWARD_BONUS.michelinSelected;
     } else if (a.guide === "50best") {
       fiftyBest = CONFIG.AWARD_BONUS.fiftyBest;
     } else if (a.guide === "bib") {
@@ -4135,7 +4140,7 @@ function awardBonus(awards){
       plate = Math.max(plate, Math.min(units * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap));
     }
   }
-  return Math.min(michelin + fiftyBest + bib + plate, CONFIG.AWARD_BONUS.totalCap);
+  return Math.min(michelin + fiftyBest + bib + plate + selected, CONFIG.AWARD_BONUS.totalCap);
 }
 
 function socialSignalBonus(signals){
@@ -4544,6 +4549,7 @@ function cardHTML(r, rank){
 function badgeHTML(a){
   const year = escapeHTML(String(a.year || ""));
   if (a.guide==="michelin") return `<span class="badge michelin" title="MICHELIN Guide ${year} ${escapeHTML(a.level||"")}">米其林 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="michelin_selected") return `<span class="badge selected" title="MICHELIN Selected ${year}">米其林入選<span class="yr">${year}</span></span>`;
   if (a.guide==="bib") return `<span class="badge bib" title="MICHELIN Bib Gourmand ${year}">必比登<span class="yr">${year}</span></span>`;
   if (a.guide==="greenstar") return `<span class="badge greenstar" title="MICHELIN Green Star ${year}">綠星<span class="yr">${year}</span></span>`;
   if (a.guide==="50best") return `<span class="badge fifty" title="50 Best ${year} ${escapeHTML(a.level||"")}">50 Best ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
@@ -4830,7 +4836,8 @@ function normalizeAwards(awards){
     : (a.guide === "greenstar" ? 4
     : (a.guide === "500plate" ? 5
     : (a.guide === "500bowl" ? 6
-    : (a.guide === "500sweet" ? 7 : 9))))));
+    : (a.guide === "500sweet" ? 7
+    : (a.guide === "michelin_selected" ? 8 : 9)))))));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
       const plates = Array.isArray(a.dishPlates)

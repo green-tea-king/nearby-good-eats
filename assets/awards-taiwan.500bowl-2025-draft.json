@@ -1,5 +1,5 @@
 {
-  "_README": "台灣餐廳評鑑名單入口（真實資料）。維護＝改本檔 + push，不動程式碼。guide 可為 michelin / michelin_selected / bib / greenstar / 500plate / 500bowl / 500sweet / 50best；500plate 給 plates，500bowl 給 bowls，500sweet 給 sweets（皆可彙總單位數）。徽章須帶 year。2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項；500碗已匯入 2025 官方文字名單高信心資料；500甜保留格式，尚未匯入未驗證資料。Google 評分/評論數仍是排序主體，外部評鑑只做加分。",
+  "_README": "台灣餐廳評鑑名單入口（真實資料）。維護＝改本檔 + push，不動程式碼。guide 可為 michelin / bib / greenstar / 500plate / 500bowl / 500sweet / 50best；500plate 給 plates，500bowl 給 bowls，500sweet 給 sweets（皆可彙總單位數）。徽章須帶 year。2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項；500碗已匯入 2025 官方文字名單高信心資料；500甜保留格式，尚未匯入未驗證資料。Google 評分/評論數仍是排序主體，外部評鑑只做加分。",
   "_coverage": {
     "current": [
       "台北市",
@@ -20,7 +20,7 @@
       "澎湖縣"
     ],
     "planned": [],
-    "note": "2025 已擴充：米其林星級 53 家、必比登推介 144 家、500 盤官方文字名單 260 筆餐廳獎項。500碗/500甜僅先支援格式與前端徽章，待批次來源驗證後再匯入。沒有真實來源的店家不顯示評鑑徽章，避免誤標。 2025 500碗已匯入官方文字名單高信心資料，跨縣市列保留在 merge report 待人工覆核。 2025 Michelin 入選餐廳已以低權重弱徽章匯入，來源為官方完整名單。"
+    "note": "2025 已擴充：米其林星級 53 家、必比登推介 144 家、500 盤官方文字名單 260 筆餐廳獎項。500碗/500甜僅先支援格式與前端徽章，待批次來源驗證後再匯入。沒有真實來源的店家不顯示評鑑徽章，避免誤標。 2025 500碗已匯入官方文字名單高信心資料，跨縣市列保留在 merge report 待人工覆核。"
   },
   "_sources": [
     "https://guide.michelin.com/tw/zh_TW",
@@ -64,21 +64,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "千味海鮮",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "大慈天然素食",
@@ -151,12 +136,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -180,12 +159,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -197,21 +170,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "与玥樓",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "与玥樓頂級粵菜餐廳",
@@ -235,21 +193,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "元",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "元紀．台灣菜",
@@ -403,21 +346,6 @@
       "aliases": []
     },
     {
-      "name": "卉寓",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "可口牛肉麵",
       "city": "台中市",
       "address": "台中市",
@@ -525,21 +453,6 @@
       "aliases": []
     },
     {
-      "name": "在來",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "地坊",
       "aliases": [],
       "city": "台中市",
@@ -548,12 +461,6 @@
       "awards": [
         {
           "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
@@ -716,12 +623,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -750,36 +651,6 @@
       "aliases": []
     },
     {
-      "name": "京華煙雲",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "咕嚕咕嚕原住民音樂餐廳",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "夜間部爌肉飯",
       "city": "台中市",
       "address": "台中市",
@@ -806,12 +677,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -823,36 +688,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "東引釣客",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "東方龍",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "東海蓮心冰‧雞爪凍",
@@ -937,21 +772,6 @@
       ],
       "city": "台中市",
       "aliases": []
-    },
-    {
-      "name": "阿禧師懷舊餐館",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "南陽路炒麵豬血湯",
@@ -1063,12 +883,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -1188,21 +1002,6 @@
       "aliases": []
     },
     {
-      "name": "梅子",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "梅子活海鮮餐廳",
       "city": "台中市",
       "address": "台中市",
@@ -1277,36 +1076,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "魚麗共同廚房",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "鳥苑",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "鳥苑 Torien Yakitori",
@@ -1448,36 +1217,6 @@
       "aliases": []
     },
     {
-      "name": "菇神 (新社)",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "越南你好",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "鈞苰牛肉麵",
       "address": "",
       "awards": [
@@ -1506,21 +1245,6 @@
       ],
       "city": "台中市",
       "aliases": []
-    },
-    {
-      "name": "溫叨",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "溫叨古早味料理餐廳",
@@ -1616,21 +1340,6 @@
       "aliases": []
     },
     {
-      "name": "滿堂",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "聚眾緣麵館",
       "address": "",
       "awards": [
@@ -1692,21 +1401,6 @@
       "aliases": []
     },
     {
-      "name": "潔",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "豬肉榮小料理",
       "address": "",
       "awards": [
@@ -1716,12 +1410,6 @@
           "bowls": 1,
           "level": "1碗",
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台中市",
@@ -1780,21 +1468,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "膳馨 (西區)",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "龍富 天婦羅",
@@ -1890,21 +1563,6 @@
       "aliases": []
     },
     {
-      "name": "瀞",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "羅家古早味",
       "address": "",
       "awards": [
@@ -1934,21 +1592,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "響海鮮",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "馨苑 (西區)",
@@ -2013,21 +1656,6 @@
       "aliases": []
     },
     {
-      "name": "FIRNS",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "Fleur de Sel",
       "city": "台中市",
       "address": "台中市",
@@ -2044,21 +1672,6 @@
       ],
       "aliases": [
         "鹽之華"
-      ]
-    },
-    {
-      "name": "Forchetta",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
       ]
     },
     {
@@ -2114,21 +1727,6 @@
       "aliases": []
     },
     {
-      "name": "KR Prime Steak",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "L'Atelier par Yao",
       "city": "台中市",
       "address": "台中市",
@@ -2144,21 +1742,6 @@
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
       ],
       "aliases": []
-    },
-    {
-      "name": "meatGQ",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "Oretachi No Nikuya",
@@ -2180,21 +1763,6 @@
       ]
     },
     {
-      "name": "PI",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "Sur-",
       "city": "台中市",
       "address": "台中市",
@@ -2211,21 +1779,6 @@
       ],
       "aliases": [
         "澀"
-      ]
-    },
-    {
-      "name": "UNA-VERSE",
-      "aliases": [],
-      "city": "台中市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
       ]
     },
     {
@@ -2351,21 +1904,6 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
-    },
-    {
-      "name": "八和 (大安)",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "十三香精緻麵食",
@@ -2585,21 +2123,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "大腕",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "大腕燒肉專門店",
@@ -2831,21 +2354,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "川畝園",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "川畝園麵食館",
       "address": "",
       "awards": [
@@ -2950,21 +2458,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "五月雪客家私房珍釀",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "允壽司",
@@ -3115,21 +2608,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "天婦羅 杉村",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "太春小館（民生店）",
       "awards": [
         {
@@ -3193,21 +2671,6 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
-    },
-    {
-      "name": "月夜岩",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "月夜岩 蟹懷石",
@@ -3415,36 +2878,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "北平陶然亭",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "北馥樓",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "可甜可鹹 X 豆花專賣店",
@@ -3727,21 +3160,6 @@
       "aliases": []
     },
     {
-      "name": "伊茲密爾土耳其廚房",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "先進海產店",
       "awards": [
         {
@@ -3891,21 +3309,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "同",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "同安街麵線羹",
@@ -4068,21 +3471,6 @@
       "aliases": []
     },
     {
-      "name": "江牛樓",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "江南春",
       "awards": [
         {
@@ -4209,21 +3597,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
-      "name": "老烤箱",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "老牌山東水餃大王",
       "address": "",
       "awards": [
@@ -4288,21 +3661,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "但馬家涮涮鍋 (本館)",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "何記手工蒸餃",
@@ -4497,21 +3855,6 @@
       "aliases": []
     },
     {
-      "name": "辰園",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "酉志",
       "awards": [
         {
@@ -4567,21 +3910,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "叁酒弍沏",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "周記肉粥店",
@@ -4648,21 +3976,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "和蒔炭火割烹",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "咖哩嚕哆",
@@ -4736,21 +4049,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "承家",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "承家私廚",
@@ -4928,21 +4226,6 @@
       "aliases": []
     },
     {
-      "name": "林家蔬菜羊肉爐",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "欣葉小聚",
       "address": "台北市南港區經貿二路166號",
       "awards": [
@@ -4963,12 +4246,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -4998,21 +4275,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "泔",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "知名李",
       "address": "台北市",
       "awards": [
@@ -5033,21 +4295,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "空盤",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "金仙魯肉飯 松山店",
@@ -5164,21 +4411,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "阿城鵝肉 (中山)",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "阿春滷味",
@@ -5370,12 +4602,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -5458,12 +4684,6 @@
           "bowls": 1,
           "level": "1碗",
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -5613,36 +4833,6 @@
       "aliases": []
     },
     {
-      "name": "頁小館",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "香色",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "香色 XIANG SE",
       "address": "台北市中正區湖口街1-2號",
       "awards": [
@@ -5716,12 +4906,6 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -5767,21 +4951,6 @@
       "aliases": []
     },
     {
-      "name": "桌藏",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "海產街蚵仔麵線",
       "address": "",
       "awards": [
@@ -5795,21 +4964,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "真的好海鮮",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "秦味館",
@@ -5961,36 +5115,6 @@
       "aliases": []
     },
     {
-      "name": "掬",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "教父牛排",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "梁記嘉義雞肉飯",
       "address": "",
       "awards": [
@@ -6006,21 +5130,6 @@
       "aliases": []
     },
     {
-      "name": "梵燒肉",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "欲罷不能鹹水雞東區商圈店",
       "address": "",
       "awards": [
@@ -6034,21 +5143,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "清真中國牛肉麵食館 (大安)",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "爽記麵攤仔",
@@ -6077,21 +5171,6 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
-    },
-    {
-      "name": "笹鮨",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "船軒鄉村煙燻滷味",
@@ -6180,36 +5259,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "魚庒",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "麻糬寶寶",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "勝記油飯",
@@ -6302,21 +5351,6 @@
       "aliases": []
     },
     {
-      "name": "晶華軒",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "晶華軒 Silks House",
       "address": "台北市中山區中山北路二段39巷3號",
       "awards": [
@@ -6399,21 +5433,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
-      "name": "琥珀",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "番紅花印度美饌",
       "address": "台北市士林區天母東路38之6號",
       "awards": [
@@ -6425,21 +5444,6 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
-    },
-    {
-      "name": "筌",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "貳零捌公館",
@@ -6475,12 +5479,6 @@
       "awards": [
         {
           "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
@@ -6631,12 +5629,6 @@
           "bowls": 1,
           "level": "1碗",
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -6676,21 +5668,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "雍翠庭",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "鼎泰豐",
@@ -6785,36 +5762,6 @@
       ]
     },
     {
-      "name": "榕居",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "榮榮園",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "福大蒸餃館",
       "address": "",
       "awards": [
@@ -6858,21 +5805,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "駄介",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "鳳城燒臘粵菜",
@@ -6995,21 +5927,6 @@
       "aliases": []
     },
     {
-      "name": "磐石坊",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "請客樓",
       "address": "台北市中正區忠孝東路一段12號17樓",
       "awards": [
@@ -7077,36 +5994,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "穆記牛肉麵",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "興蓬萊台菜 (中山北路)",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "蕭家小館",
@@ -7182,21 +6069,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "總裁藝文空間",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "謙安和",
       "address": "台北市大安區",
       "awards": [
@@ -7235,66 +6107,6 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
-    },
-    {
-      "name": "鮨中澤",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "鮨天本 登龍門",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "鮨香",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "鮨野村",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "鮨隆",
@@ -7461,36 +6273,6 @@
       "aliases": []
     },
     {
-      "name": "蘭",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "麟聚",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "饞食坊",
       "address": "",
       "awards": [
@@ -7504,36 +6286,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "讚",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "驥園川菜",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "驥園川菜餐廳",
@@ -7620,36 +6372,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "AJIMI",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Aleisha",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "Amamoto 鮨天本",
@@ -7764,12 +6486,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -7910,21 +6626,6 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
-      "name": "Clover",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "CLOVER BELLAVITA",
@@ -8097,12 +6798,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -8126,27 +6821,6 @@
       "awards": [
         {
           "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Ephernité",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
@@ -8293,12 +6967,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -8475,12 +7143,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -8608,21 +7270,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "Lin",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "Little Lam Noodle Bar",
       "address": "",
       "awards": [
@@ -8664,21 +7311,6 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
-      "name": "Longtail",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "LOPFAIT 樂斐",
@@ -8830,12 +7462,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -8849,21 +7475,6 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
-      "name": "N°168 Prime牛排館 (中山）",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "NOBUO",
@@ -9141,21 +7752,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "Robin's 鐵板燒",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "Salt & Stone",
       "awards": [
         {
@@ -9247,21 +7843,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "Set.",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "Solo Pasta",
       "address": "台北市大安區安和路一段29-1號",
       "awards": [
@@ -9332,21 +7913,6 @@
       "aliases": []
     },
     {
-      "name": "Thai & Thai",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "The Antipodean（內湖店）",
       "awards": [
         {
@@ -9387,21 +7953,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "The Ukai",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "The Ukai Taipei Teppanyaki",
@@ -9475,12 +8026,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台北市",
@@ -9543,36 +8088,6 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
-      "name": "Yuu",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Zaap",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "Zaaptaipei",
@@ -10029,21 +8544,6 @@
       "aliases": []
     },
     {
-      "name": "川泰號虱目魚丸",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "公園口紅燒土魠魚焿",
       "address": "",
       "awards": [
@@ -10112,51 +8612,6 @@
       "aliases": []
     },
     {
-      "name": "毛蔬",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "牛五蔵",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "王家燻羊肉",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "古早味魚丸湯",
       "address": "",
       "awards": [
@@ -10185,21 +8640,6 @@
       ],
       "city": "台南市",
       "aliases": []
-    },
-    {
-      "name": "甘旨",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "田媽媽 長盈海味屋",
@@ -10263,21 +8703,6 @@
       "aliases": []
     },
     {
-      "name": "再發號",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "吃麵吧",
       "city": "台南市",
       "address": "台南市",
@@ -10323,21 +8748,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "有你真好 湘菜沙龍",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "竹海產",
@@ -10423,21 +8833,6 @@
       "aliases": []
     },
     {
-      "name": "沙淘宮廟海產",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "咖哩鬥陣",
       "address": "",
       "awards": [
@@ -10513,21 +8908,6 @@
       ],
       "city": "台南市",
       "aliases": []
-    },
-    {
-      "name": "欣欣餐廳",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "知味料理館",
@@ -10636,36 +9016,6 @@
       "aliases": []
     },
     {
-      "name": "阿村牛肉湯 (保安路)",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "阿明豬心冬粉 (保安路)",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "阿星鹹粥",
       "city": "台南市",
       "address": "台南市",
@@ -10736,21 +9086,6 @@
       "aliases": []
     },
     {
-      "name": "阿裕牛肉 (崑崙路)",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "阿銘牛肉麵",
       "address": "",
       "awards": [
@@ -10775,12 +9110,6 @@
           "bowls": 1,
           "level": "1碗",
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台南市",
@@ -10856,66 +9185,6 @@
       "aliases": []
     },
     {
-      "name": "城邊真味炒鱔魚專家",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "帝一鐤",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "香草小餐酒",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "原則",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "員林肉圓",
       "address": "",
       "awards": [
@@ -10929,21 +9198,6 @@
       ],
       "city": "台南市",
       "aliases": []
-    },
-    {
-      "name": "啢啢餐桌",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "基明飯桌仔",
@@ -11087,12 +9341,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -11104,21 +9352,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "揚梅吐氣",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "棠口水煎包",
@@ -11214,36 +9447,6 @@
       "aliases": []
     },
     {
-      "name": "開元路無名虱目魚",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "順德牛肉湯",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "黃胖妞豬心",
       "address": "",
       "awards": [
@@ -11275,36 +9478,6 @@
       "aliases": []
     },
     {
-      "name": "黑琵食堂",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "傳家鹹粥",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "圓環牛肉湯",
       "address": "",
       "awards": [
@@ -11329,12 +9502,6 @@
           "bowls": 1,
           "level": "1碗",
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "city": "台南市",
@@ -11595,21 +9762,6 @@
       "aliases": []
     },
     {
-      "name": "橄饗家",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "錕羊肉",
       "address": "",
       "awards": [
@@ -11695,36 +9847,6 @@
       "aliases": []
     },
     {
-      "name": "豐之海鮮漁府",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "繭 小料理",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "糯夫米糕",
       "address": "",
       "awards": [
@@ -11738,21 +9860,6 @@
       ],
       "city": "台南市",
       "aliases": []
-    },
-    {
-      "name": "饕弄杯",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "FOUFOU餐酒館",
@@ -11776,36 +9883,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "FUKAI",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Hara Peko",
-      "aliases": [],
-      "city": "台南市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "Mo",
@@ -13099,21 +11176,6 @@
       "aliases": []
     },
     {
-      "name": "三禾清豐",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "三郎麵包廠",
       "address": "",
       "awards": [
@@ -13127,36 +11189,6 @@
       ],
       "city": "高雄市",
       "aliases": []
-    },
-    {
-      "name": "三輪的店",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "三餐暖食 (苓雅)",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "大胖豬油拌麵",
@@ -13235,21 +11267,6 @@
       "aliases": []
     },
     {
-      "name": "天廚",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "牛老大涮牛肉 (自強二路)",
       "city": "高雄市",
       "address": "高雄市",
@@ -13264,51 +11281,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "仙香飲食店",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "仙桃素",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "冬瓜與胖子",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "冬鄉小廚",
@@ -13363,36 +11335,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "古家海鮮",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "台南旺",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "四口田手作麻辣「正」",
@@ -13543,21 +11485,6 @@
       "aliases": []
     },
     {
-      "name": "好蟳屋",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "米院子油飯",
       "city": "高雄市",
       "address": "高雄市",
@@ -13572,21 +11499,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "老新台菜 (九如二路)",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "吳記肉圓",
@@ -13617,21 +11529,6 @@
       ],
       "city": "高雄市",
       "aliases": []
-    },
-    {
-      "name": "沐",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "秀明豬心冬粉",
@@ -13679,21 +11576,6 @@
       ],
       "city": "高雄市",
       "aliases": []
-    },
-    {
-      "name": "波記食堂",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "芳德豬肉冬粉",
@@ -13755,21 +11637,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "長生29",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "阿凡沙茶麻醬麵",
@@ -13992,51 +11859,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "柏弘肉燥",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "秋",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "美享地",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "香四海現做旗魚黑輪",
@@ -14321,21 +12143,6 @@
       "aliases": []
     },
     {
-      "name": "溫度劑",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "廖記米糕",
       "city": "高雄市",
       "address": "高雄市",
@@ -14421,21 +12228,6 @@
       "aliases": []
     },
     {
-      "name": "鄭家切仔麵",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "橋仔頭黃家肉燥飯 (橋頭)",
       "city": "高雄市",
       "address": "高雄市",
@@ -14450,21 +12242,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "鴨肉珍 (五福四路)",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "鍾家高雄綠豆湯大王",
@@ -14544,21 +12321,6 @@
       "aliases": []
     },
     {
-      "name": "薩瑪法國小館",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "蟳之屋",
       "city": "高雄市",
       "address": "高雄市",
@@ -14569,12 +12331,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -14586,21 +12342,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "鯷魚",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "鐵盒保哥滷味",
@@ -14654,36 +12395,6 @@
       ],
       "city": "高雄市",
       "aliases": []
-    },
-    {
-      "name": "Apis Grill",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "CRATAIN",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "Dong Café 冬咖啡",
@@ -14781,36 +12492,6 @@
       "aliases": []
     },
     {
-      "name": "J Parc",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Li.nu",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "LKK肉圓",
       "address": "",
       "awards": [
@@ -14836,12 +12517,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -14853,21 +12528,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "Nibbon",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "nid.",
@@ -14939,27 +12599,6 @@
       "awards": [
         {
           "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Ukai-tei",
-      "aliases": [],
-      "city": "高雄市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
@@ -15455,21 +13094,6 @@
       "aliases": []
     },
     {
-      "name": "三分俗氣",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "三姐妹農家樂",
       "city": "新北市",
       "address": "新北市",
@@ -15549,21 +13173,6 @@
       "aliases": []
     },
     {
-      "name": "今大魯肉飯",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "天然本味老麵饅頭店",
       "address": "",
       "awards": [
@@ -15579,21 +13188,6 @@
       "aliases": []
     },
     {
-      "name": "天然茶莊",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "尤協豐豆干店",
       "address": "",
       "awards": [
@@ -15607,21 +13201,6 @@
       ],
       "city": "新北市",
       "aliases": []
-    },
-    {
-      "name": "心怡素食",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "北京餡餅粥",
@@ -15754,36 +13333,6 @@
       "aliases": []
     },
     {
-      "name": "竹林雞肉 (永和)",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "老徐的店",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "吳記北平餡餅專賣店",
       "address": "",
       "awards": [
@@ -15883,21 +13432,6 @@
       "aliases": []
     },
     {
-      "name": "奇園",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "店小二 (大同北路)",
       "city": "新北市",
       "address": "新北市",
@@ -15968,21 +13502,6 @@
       "aliases": []
     },
     {
-      "name": "阿柑姨芋圓",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "阿倍麵線",
       "address": "",
       "awards": [
@@ -16028,21 +13547,6 @@
       "aliases": []
     },
     {
-      "name": "阿嬤家",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "阿薇緬甸小吃店",
       "address": "",
       "awards": [
@@ -16056,21 +13560,6 @@
       ],
       "city": "新北市",
       "aliases": []
-    },
-    {
-      "name": "青雅",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "南川麵館",
@@ -16104,21 +13593,6 @@
       "aliases": []
     },
     {
-      "name": "洵廚",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "珍品餐飲坊",
       "city": "新北市",
       "address": "新北市",
@@ -16148,51 +13622,6 @@
       ],
       "city": "新北市",
       "aliases": []
-    },
-    {
-      "name": "食養山房",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "首烏",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "家宴",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "海園活海鮮餐廳",
@@ -16243,12 +13672,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
       "sources": [
@@ -16260,36 +13683,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "張記傳統魚丸",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "梅工作坊西餐",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "富關東煮",
@@ -16338,21 +13731,6 @@
       "aliases": []
     },
     {
-      "name": "黑殿飯店 (創始店)",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "新莊羊肉榮",
       "address": "",
       "awards": [
@@ -16398,21 +13776,6 @@
       "aliases": []
     },
     {
-      "name": "萬得富爸爸肉骨茶王中王",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "葉家藥燉排骨",
       "city": "新北市",
       "address": "新北市",
@@ -16427,21 +13790,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "嘉邑海鮮小館",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "福州金魚麵店",
@@ -16472,21 +13820,6 @@
       ],
       "city": "新北市",
       "aliases": []
-    },
-    {
-      "name": "樂也",
-      "aliases": [],
-      "city": "新北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "樂沐糕餅舖",
@@ -16612,36 +13945,6 @@
       "aliases": []
     },
     {
-      "name": "皿富器食",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "石坊小井",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "禾日香 (民族路)",
       "city": "新竹市",
       "address": "新竹市",
@@ -16713,36 +14016,6 @@
       "aliases": []
     },
     {
-      "name": "非常好吃素刈包",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "南門壹食",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "原味鴨肉麵",
       "city": "新竹市",
       "address": "新竹市",
@@ -16757,66 +14030,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "海口刈包",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "高宅",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "常嚐料理廚房",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "淳和食",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "清香飲食店",
@@ -16840,36 +14053,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "荷竹園",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "野叔",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "菜園",
@@ -16911,21 +14094,6 @@
       "aliases": []
     },
     {
-      "name": "廟口鴨香飯 (中山路)",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "貓的堅持",
       "city": "新竹市",
       "address": "新竹市",
@@ -16963,156 +14131,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "藝軒私房料理",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "鷹王肉圓",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "TAIVII",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Yummy私房料理",
-      "aliases": [],
-      "city": "新竹市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "川阜",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "竹東排骨酥麵 (竹東)",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "老頭擺",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "彼刻",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "泥磚屋",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "客家本色",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "春嬌粄條",
@@ -17179,21 +14197,6 @@
       "aliases": []
     },
     {
-      "name": "耕野月眉",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "善菓堂",
       "city": "新竹縣",
       "address": "新竹縣",
@@ -17210,36 +14213,6 @@
       "aliases": []
     },
     {
-      "name": "黑皮驊",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "裏月・晴酒",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
       "name": "鄒記菜包 (中正路)",
       "city": "新竹縣",
       "address": "新竹縣",
@@ -17254,21 +14227,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "鮨安",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "鴻金食堂",
@@ -17301,51 +14259,6 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
-    },
-    {
-      "name": "Firoo",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "SABI",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "ZenA",
-      "aliases": [],
-      "city": "新竹縣",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
     },
     {
       "name": "大元蔴薯",
