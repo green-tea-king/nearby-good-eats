@@ -1,6 +1,6 @@
 {
-  "version": "2026.06.27.1",
-  "updated": "2026-06-27",
+  "version": "api-batch-2026-06-30",
+  "updated": "2026-06-30",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -67,43 +67,78 @@
       "type": "platform",
       "updateCadence": "monthly",
       "runtimeLookup": false
+    },
+    {
+      "id": "youtube-api",
+      "label": "YouTube Data API",
+      "type": "social",
+      "updateCadence": "weekly",
+      "runtimeLookup": false,
+      "quotaPolicy": "batch-only; default 10 restaurant searches per run"
     }
   ],
   "signalDefinitions": {
     "award": {
       "label": "外部評鑑",
-      "scoreRange": [0, 1],
+      "scoreRange": [
+        0,
+        1
+      ],
       "display": "badge",
       "rankUse": "strong"
     },
     "fiftyBest": {
       "label": "50 Best",
-      "scoreRange": [0, 1],
+      "scoreRange": [
+        0,
+        1
+      ],
       "display": "badge",
       "rankUse": "strongFewStoresOnly"
     },
     "socialBuzz": {
       "label": "社群聲量",
-      "scoreRange": [0, 100],
+      "scoreRange": [
+        0,
+        100
+      ],
       "display": "badgeWhenHighConfidence",
       "rankUse": "medium"
     },
     "mediaMention": {
       "label": "媒體推薦",
-      "scoreRange": [0, 100],
+      "scoreRange": [
+        0,
+        100
+      ],
       "display": "badgeWhenHighConfidence",
       "rankUse": "medium"
     },
     "platformCertification": {
       "label": "平台認證",
-      "scoreRange": [0, 100],
+      "scoreRange": [
+        0,
+        100
+      ],
       "display": "badgeWhenHighConfidence",
       "rankUse": "medium"
     },
     "queueSignal": {
       "label": "排隊熱度",
-      "scoreRange": [0, 100],
+      "scoreRange": [
+        0,
+        100
+      ],
       "display": "detailOnly",
+      "rankUse": "light"
+    },
+    "youtubeBuzz": {
+      "label": "影音聲量",
+      "scoreRange": [
+        0,
+        100
+      ],
+      "display": "badgeWhenHighConfidence",
       "rankUse": "light"
     }
   },
@@ -113,15 +148,19 @@
     "name": "餐廳名稱；沒有 placeId 時用 city + normalized name 比對。",
     "city": "縣市，使用台北市、新北市等格式。",
     "area": "行政區，可空白。",
-    "aliases": ["可選，分店名或常見別名。"],
+    "aliases": [
+      "可選，分店名或常見別名。"
+    ],
     "signals": [
       {
-        "type": "fiftyBest | socialBuzz | mediaMention | platformCertification | queueSignal",
+        "type": "fiftyBest | socialBuzz | youtubeBuzz | mediaMention | platformCertification | queueSignal",
         "sourceId": "sourceCatalog.id",
         "label": "顯示用標籤，例如 社群熱店、媒體推薦、平台嚴選。",
         "score": "0-100 或定義中的分數範圍。",
         "confidence": "high | medium | low",
-        "evidence": ["可追溯摘要，不放整篇文章。"],
+        "evidence": [
+          "可追溯摘要，不放整篇文章。"
+        ],
         "url": "來源網址，可空白。",
         "updated": "YYYY-MM-DD"
       }
@@ -132,7 +171,9 @@
     "name": "範例店名",
     "city": "台北市",
     "area": "中正區",
-    "aliases": ["範例別名"],
+    "aliases": [
+      "範例別名"
+    ],
     "signals": [
       {
         "type": "socialBuzz",
@@ -140,10 +181,19 @@
         "label": "社群熱店",
         "score": 82,
         "confidence": "medium",
-        "evidence": ["批次整理：近 30 天社群討論量高於同區同類型店家。"],
+        "evidence": [
+          "批次整理：近 30 天社群討論量高於同區同類型店家。"
+        ],
         "url": "",
         "updated": "2026-06-26"
       }
     ]
+  },
+  "automation": {
+    "provider": "youtube",
+    "lastRun": "2026-06-30T13:46:54.796Z",
+    "lastStatus": "skipped_missing_api_key",
+    "nextAwardOffset": 0,
+    "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets."
   }
 }
