@@ -390,7 +390,7 @@ https://green-tea-king.github.io/nearby-good-eats/
 4. 手機寬度截圖或互動驗證。
 5. 使用 `scripts/deploy-github-contents.ps1` 透過 GitHub Git Data API 建立單一 commit；本機不依賴 `.git`。
 6. 等 GitHub Pages 更新。
-7. 用正式 URL 驗證 `VERSION` 與新版功能。
+7. 用 `scripts/smoke-live-site.ps1 -ExpectedVersion <VERSION>` 驗證正式 URL 的 `VERSION`、首頁版本與獎牌資料統計。
 
 ## 外部獎牌資料建構
 

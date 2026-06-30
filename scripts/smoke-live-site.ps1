@@ -1,0 +1,71 @@
+param(
+  [string]$BaseUrl = "https://green-tea-king.github.io/nearby-good-eats",
+  [string]$ExpectedVersion = ""
+)
+
+$ErrorActionPreference = "Stop"
+
+function Read-TextUrl {
+  param([string]$Url)
+  $Response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 30
+  if ($Response.Content -is [byte[]]) {
+    return [Text.Encoding]::UTF8.GetString($Response.Content)
+  }
+  return [string]$Response.Content
+}
+
+$CacheBust = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+$Version = (Read-TextUrl "$BaseUrl/VERSION?cacheBust=$CacheBust").Trim()
+if ($ExpectedVersion -and $Version -ne $ExpectedVersion) {
+  throw "VERSION mismatch. expected=$ExpectedVersion live=$Version"
+}
+
+$Html = Read-TextUrl "$BaseUrl/index.html?cacheBust=$CacheBust"
+$ShortVersion = "v" + ($Version -replace "^20\d\d\.", "")
+if ($ShortVersion -notmatch "^v\d\d\.") {
+  throw "Unexpected short version format: $ShortVersion"
+}
+if ($Html -notlike "*$Version*" -and $Html -notlike "*$ShortVersion*") {
+  throw "Homepage does not contain live version $Version or $ShortVersion"
+}
+if ($Html -notlike "*greenstar*") {
+  throw "Homepage is missing greenstar rendering support"
+}
+
+$AwardsText = Read-TextUrl "$BaseUrl/assets/awards-taiwan.json?cacheBust=$CacheBust"
+$Awards = $AwardsText | ConvertFrom-Json
+$Guides = @{}
+foreach ($Restaurant in $Awards.restaurants) {
+  foreach ($Award in $Restaurant.awards) {
+    $Guides[$Award.guide] = 1 + ($Guides[$Award.guide] -as [int])
+  }
+}
+
+$Expected = [ordered]@{
+  restaurants = 427
+  michelin = 53
+  bib = 144
+  greenstar = 7
+  "500plate" = 260
+}
+
+$Actual = [ordered]@{
+  restaurants = $Awards.restaurants.Count
+  michelin = $Guides["michelin"]
+  bib = $Guides["bib"]
+  greenstar = $Guides["greenstar"]
+  "500plate" = $Guides["500plate"]
+}
+
+foreach ($Key in $Expected.Keys) {
+  if (($Actual[$Key] -as [int]) -ne ($Expected[$Key] -as [int])) {
+    throw "Awards count mismatch for $Key. expected=$($Expected[$Key]) live=$($Actual[$Key])"
+  }
+}
+
+[pscustomobject]@{
+  ok = $true
+  baseUrl = $BaseUrl
+  version = $Version
+  awards = $Actual
+} | ConvertTo-Json -Compress

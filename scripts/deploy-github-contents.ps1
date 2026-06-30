@@ -27,6 +27,7 @@ $Files = @(
   "scripts/build-michelin-taiwan-2025-official.js",
   "scripts/review-michelin-taiwan-2025-official-import.js",
   "scripts/validate-awards-data.js",
+  "scripts/smoke-live-site.ps1",
   "scripts/build-michelin-taipei-candidates.js",
   "scripts/review-michelin-award-import.js",
   "scripts/deploy-github-contents.ps1"
