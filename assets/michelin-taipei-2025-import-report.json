@@ -1,0 +1,3535 @@
+{
+  "generatedAt": "2026-06-30T13:56:51.062Z",
+  "policy": {
+    "source": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-21\\github\\nearby-good-eats\\assets\\michelin-taipei-2025-candidates.json",
+    "target": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-21\\github\\nearby-good-eats\\assets\\awards-taiwan.json",
+    "outputDraft": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-21\\github\\nearby-good-eats\\assets\\awards-taiwan.michelin-2025-draft.json",
+    "outputReport": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-21\\github\\nearby-good-eats\\assets\\michelin-taipei-2025-import-report.json",
+    "autoMerge": "Only matchedHigh; michelin_selected is not merged into live awards."
+  },
+  "summary": {
+    "total": 163,
+    "matchedHigh": 14,
+    "matchedMedium": 45,
+    "needsReview": 12,
+    "newCandidate": 92,
+    "conflicts": 0,
+    "autoMerged": 14
+  },
+  "matchedHigh": [
+    {
+      "name": "Ad Astra",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "23，45巷，第2段，中山北路，中山區，台北市",
+      "phone": "",
+      "cuisine": "歐陸當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Ad Astra",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "Circum-",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "地下二樓，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2581 6575",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Circum-",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "FRASSI",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "1樓，299 樂群三路，中山區，台北市",
+      "phone": "+886 2 8502 6383",
+      "cuisine": "義大利當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "FRASSI",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "INITA",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "1，52弄，12巷，第3段，八德路，松山區，台北市",
+      "phone": "+886 2 2577 0886",
+      "cuisine": "義大利當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Inita",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "Impromptu by Paul Lee",
+      "aliases": [
+        "Impromptu"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "地下一樓，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2521 2518",
+      "cuisine": "創新料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "IMPROMPTU BY PAUL LEE",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "La Vie by Thomas Bühner",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "1樓，Noke Mall，200 樂群三路，中山區，台北市",
+      "phone": "+886 937 857 869",
+      "cuisine": "歐陸當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "La Vie by Thomas Bühner",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "NOBUO",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "8 泰安街，中正區，台北市",
+      "phone": "+886 2 2351 3345",
+      "cuisine": "當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "NOBUO",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "SENS",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "12，127巷，第3段，民生東路，松山區，台北市",
+      "phone": "+886 2 2718 6388",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Sens",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "Sushi Kajin",
+      "aliases": [
+        "鮨嘉仁"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "28 吉林路，中山區，台北市",
+      "phone": "",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "鮨嘉仁",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "Sushi Ryu",
+      "aliases": [
+        "鮨隆"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "60-5，第2段，新生北路，中山區，台北市",
+      "phone": "+886 2 2581 8380",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "鮨隆",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "Wok by O'BOND",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "18 龍江路，中山區，台北市",
+      "phone": "+886 2 2778 4503",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Wok by O'BOND",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "ZEA",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "5，20弄，300巷，第4段，仁愛路，大安區，台北市",
+      "phone": "",
+      "cuisine": "拉丁美洲料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Zea",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "de nuit",
+      "aliases": [
+        "De Nuit"
+      ],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "175，第4段，信義路，大安區，台北市",
+      "phone": "+886 2 2700 1958",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "De Nuit",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "A",
+      "aliases": [
+        "Restaurant A"
+      ],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "4樓，Building 2，Diamond Towers，Shin Kong Mitsukoshi，282，第3段，忠孝東路，大安區，台北市",
+      "phone": "+886 2 2721 8088",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Restaurant A",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "exactName",
+          "address"
+        ]
+      }
+    }
+  ],
+  "matchedMedium": [
+    {
+      "name": "Fujin Tree Taiwanese Cuisine & Champagne (Songshan)",
+      "aliases": [
+        "富錦樹台菜香檳",
+        "富錦樹台菜香檳 松山"
+      ],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "17，199巷，敦化北路，松山區，台北市",
+      "phone": "+886 2 8712 8770",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "富錦樹台菜香檳",
+        "aliases": [],
+        "address": "台北市松山區敦化北路199巷17號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Golden Formosa",
+      "aliases": [
+        "金蓬萊遵古台菜"
+      ],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "101 天母東路，士林區，台北市",
+      "phone": "+886 2 2871 1517",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "金蓬萊遵古台菜",
+        "aliases": [],
+        "address": "台北市士林區天母東路101號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Ming Fu",
+      "aliases": [
+        "明福台菜海產"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "18-1，137巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2562 9287",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "明福台菜海產",
+        "aliases": [],
+        "address": "台北市中山區中山北路二段137巷",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Mountain and Sea House",
+      "aliases": [
+        "山海樓"
+      ],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "94，第2段，仁愛路，中正區，台北市",
+      "phone": "+886 2 2351 3345",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "山海樓",
+        "aliases": [],
+        "address": "台北市中正區仁愛路二段94號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Shin Yeh Taiwanese Signature",
+      "aliases": [
+        "欣葉鐘菜"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "Marriott Midtown，199 樂群二路，中山區，台北市",
+      "phone": "+886 2 2532 7373",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "欣葉鐘菜",
+        "aliases": [],
+        "address": "台北市中山區樂群二路199號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Sushiyoshi",
+      "aliases": [
+        "鮨よし"
+      ],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "12，19弄，216巷，第4段，忠孝東路，大安區，台北市",
+      "phone": "+886 2 2721 5560",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "壽司芳 Sushiyoshi",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "fuzzyName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "T+T",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "11，165巷，敦化北路，松山區，台北市",
+      "phone": "+886 2 2719 9191",
+      "cuisine": "亞洲當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "T+T",
+        "aliases": [],
+        "address": "台北市松山區富錦街",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "The Guest House",
+      "aliases": [
+        "請客樓"
+      ],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "17樓，Sheraton Grand Hotel，12，第1段，忠孝東路，中正區，台北市",
+      "phone": "+886 2 2321 1818",
+      "cuisine": "淮揚菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "請客樓",
+        "aliases": [],
+        "address": "台北市中正區忠孝東路一段12號17樓",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Tien Hsiang Lo",
+      "aliases": [
+        "天香樓"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "地下一樓，亞都麗緻大飯店，41，第2段，民權東路，中山區，台北市",
+      "phone": "+886 2 2597 1234",
+      "cuisine": "杭州菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "天香樓",
+        "aliases": [],
+        "address": "台北市中山區",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Ya Ge",
+      "aliases": [
+        "雅閣"
+      ],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "3樓，Mandarin Oriental Hotel，158 敦化北路，松山區，台北市",
+      "phone": "+886 2 2715 6788",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "雅閣",
+        "aliases": [],
+        "address": "台北市松山區敦化北路158號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "aMaze",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "598 明水路，中山區，台北市",
+      "phone": "+886 2 8501 5980",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "心宴 aMaze",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "fuzzyName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "Eika",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "58 民樂街，大同區，台北市",
+      "phone": "+886 2 2550 6863",
+      "cuisine": "日本當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "盈科 EIKA",
+        "aliases": [],
+        "address": "台北市",
+        "reasons": [
+          "fuzzyName",
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "logy",
+      "aliases": [
+        "Logy"
+      ],
+      "city": "台北市",
+      "area": "內湖區",
+      "address": "39，258巷，瑞光路，內湖區，台北市",
+      "phone": "",
+      "cuisine": "亞洲當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "logy",
+        "aliases": [],
+        "address": "台北市大安區安和路一段",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Le Palais",
+      "aliases": [
+        "頤宮"
+      ],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "17樓，君品酒店，3，第1段，承德路，大同區，台北市",
+      "phone": "+886 2 2181 9985",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "三星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "頤宮",
+        "aliases": [],
+        "address": "台北市大同區承德路一段3號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Chi Chia Chuang (Changchun Road)",
+      "aliases": [
+        "雞家莊",
+        "雞家莊 長春店"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "55 長春路，中山區，台北市",
+      "phone": "+886 2 2581 5954",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "雞家莊",
+        "aliases": [],
+        "address": "台北市中山區長春路55號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Chung Chia Sheng Jian Bao",
+      "aliases": [
+        "鍾家原上海生煎包"
+      ],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "士林夜市，38 小東街，士林區，台北市",
+      "phone": "+886 2 8861 2713",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "鍾家原上海生煎包",
+        "aliases": [],
+        "address": "台北市士林區小東街38號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Da-Qiao-Tou Tube Rice Pudding (Yanping North Road)",
+      "aliases": [
+        "大橋頭老牌筒仔米糕"
+      ],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "41，第3段，延平北路，大同區，台北市",
+      "phone": "+886 2 2594 4685",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "大橋頭老牌筒仔米糕",
+        "aliases": [],
+        "address": "台北市大同區延平北路三段41號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Din Tai Fung (Xinyi Road)",
+      "aliases": [
+        "鼎泰豐",
+        "鼎泰豐 信義店"
+      ],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "277，第2段，信義路，大安區，台北市",
+      "phone": "+886 2 2395 2395",
+      "cuisine": "上海菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "鼎泰豐",
+        "aliases": [],
+        "address": "台北市大安區信義路二段277號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Good Friend Cold Noodles",
+      "aliases": [
+        "好朋友涼麵"
+      ],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "士林夜市，31 大南路，士林區，台北市",
+      "phone": "+886 2 2881 1197",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "好朋友涼麵",
+        "aliases": [],
+        "address": "台北市士林區大南路31號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "HUGH dessert dining",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "56，136巷，第3段，重慶北路，大同區，台北市",
+      "phone": "+886 2 2598 0223",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "HUGH dessert dining",
+        "aliases": [],
+        "address": "台北市大同區重慶北路三段136巷56號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Hang Zhou Xiao Long Bao (Da'an)",
+      "aliases": [
+        "杭州小籠湯包",
+        "杭州小籠湯包 大安"
+      ],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "17 & 19，第2段，杭州南路，大安區，台北市",
+      "phone": "+886 2 2393 1757",
+      "cuisine": "點心",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "杭州小籠湯包",
+        "aliases": [],
+        "address": "台北市大安區杭州南路二段17號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Hsiao Cho Chih Chia",
+      "aliases": [
+        "小酌之家"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "420 吉林路，中山區，台北市",
+      "phone": "+886 2 2598 8067",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "小酌之家",
+        "aliases": [],
+        "address": "台北市中山區吉林路420號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Hsiung Chi Scallion Pancake",
+      "aliases": [
+        "雄記蔥抓餅"
+      ],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "公館夜市，2，108巷，第4段，羅斯福路，中正區，台北市",
+      "phone": "+886 932 948 003",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "雄記蔥抓餅",
+        "aliases": [],
+        "address": "台北市中正區羅斯福路四段108巷2號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Huang Chi Lu Rou Fan",
+      "aliases": [
+        "黃記魯肉飯"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "28，183巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2595 8396",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "黃記魯肉飯",
+        "aliases": [],
+        "address": "台北市中山區中山北路二段183巷28號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Inn's+ (Shuangcheng Street)",
+      "aliases": [
+        "隱食家",
+        "隱食家 雙城街"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "8，28巷，雙城街，中山區，台北市",
+      "phone": "+886 2 2595 8055",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "隱食家",
+        "aliases": [],
+        "address": "台北市中山區雙城街28巷8號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Little Tree Food (Da'an Road)",
+      "aliases": [
+        "小小樹食",
+        "小小樹食 大安路"
+      ],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "17，116巷，第1段，大安路，大安區，台北市",
+      "phone": "+886 2 2778 2277",
+      "cuisine": "素食",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "小小樹食",
+        "aliases": [],
+        "address": "台北市大安區大安路一段116巷17號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Mai Mien Yen Tsai",
+      "aliases": [
+        "賣麵炎仔"
+      ],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "106 安西街，大同區，台北市",
+      "phone": "+886 2 2557 7087",
+      "cuisine": "麵食",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "賣麵炎仔",
+        "aliases": [],
+        "address": "台北市大同區安西街106號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Pàng",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "181 文昌街，大安區，台北市",
+      "phone": "",
+      "cuisine": "墨西哥料理",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "Pàng",
+        "aliases": [],
+        "address": "台北市大安區文昌街181號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Serenity (Zhongzheng)",
+      "aliases": [
+        "祥和蔬食",
+        "祥和蔬食 中正"
+      ],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "1，1巷，鎮江街，中正區，台北市",
+      "phone": "+886 2 2357 0377",
+      "cuisine": "素食",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "祥和蔬食",
+        "aliases": [],
+        "address": "台北市中正區鎮江街1巷1號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Shin Yeh Taiwanese Delight (Nangang)",
+      "aliases": [
+        "欣葉小聚",
+        "欣葉小聚 南港"
+      ],
+      "city": "台北市",
+      "area": "中國信託金融園區",
+      "address": "A棟，中國信託金融園區，166 經貿二路，南港區，台北市",
+      "phone": "+886 2 2785 1819",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "欣葉小聚",
+        "aliases": [],
+        "address": "台北市南港區經貿二路166號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Sung Chu Yuan",
+      "aliases": [
+        "松竹園"
+      ],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "546 永公路，士林區，台北市",
+      "phone": "+886 2 2861 6261",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "松竹園",
+        "aliases": [],
+        "address": "台北市士林區永公路546號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Tableau by Craig Yang",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "33，78巷，第1段，安和路，大安區，台北市",
+      "phone": "+886 920 580 853",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "Tableau by Craig Yang",
+        "aliases": [],
+        "address": "台北市大安區",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Tsui Feng Yuan",
+      "aliases": [
+        "醉楓園小館"
+      ],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "5，8巷，第3段，八德路，松山區，台北市",
+      "phone": "+886 2 2577 9528",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "醉楓園小館",
+        "aliases": [],
+        "address": "台北市松山區八德路三段8巷5號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Wang's Broth",
+      "aliases": [
+        "小王煮瓜"
+      ],
+      "city": "台北市",
+      "area": "萬華區",
+      "address": "華西街 Night Market，153號攤，17-4 華西街，萬華區，台北市",
+      "phone": "+886 2 2370 7118",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "小王煮瓜",
+        "aliases": [],
+        "address": "台北市萬華區華西街17之4號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Xiao Ping Kitchen (Zhongshan)",
+      "aliases": [
+        "小品雅廚"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "130 中原街，中山區，台北市",
+      "phone": "+886 2 2592 9924",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "小品雅廚",
+        "aliases": [],
+        "address": "台北市中山區中原街130號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Yi Jia Zi",
+      "aliases": [
+        "一甲子餐飲"
+      ],
+      "city": "台北市",
+      "area": "萬華區",
+      "address": "79 康定路，萬華區，台北市",
+      "phone": "+886 2 2311 5241",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "一甲子餐飲",
+        "aliases": [],
+        "address": "台北市萬華區康定路79號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Yuan Fang Guabao",
+      "aliases": [
+        "源芳刈包"
+      ],
+      "city": "台北市",
+      "area": "萬華區",
+      "address": "華西街 Night Market，161號攤，17-2 華西街，萬華區，台北市",
+      "phone": "+886 2 2381 0249",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "源芳刈包",
+        "aliases": [],
+        "address": "台北市萬華區華西街17之2號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Bencotto",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "6樓，Mandarin Oriental Hotel，158 敦化北路，松山區，台北市",
+      "phone": "+886 2 2715 6868",
+      "cuisine": "義大利菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Bencotto",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Fon-Cé",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "15，233巷，第1段，敦化南路，大安區，台北市",
+      "phone": "+886 2 2711 0528",
+      "cuisine": "拉丁美洲料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Fon-Cé",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Jarana",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "8，46弄，553巷，第4段，忠孝東路，信義區，台北市",
+      "phone": "+886 2 2756 8858",
+      "cuisine": "西班牙菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Jarana",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Lao Shan Dong Homemade Noodles",
+      "aliases": [
+        "老山東牛肉家常麵店"
+      ],
+      "city": "台北市",
+      "area": "萬華區",
+      "address": "店鋪15，地下一樓，70 西寧南路，萬華區，台北市",
+      "phone": "+886 2 2389 1216",
+      "cuisine": "麵食",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "老山東牛肉家常麵店",
+        "aliases": [],
+        "address": "台北市萬華區西寧南路70號",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Mume",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "28 四維路，大安區，台北市",
+      "phone": "+886 2 2700 0901",
+      "cuisine": "歐陸當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "MUME",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Tutto Bello",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "15，25巷，雙城街，中山區，台北市",
+      "phone": "+886 2 2592 3355",
+      "cuisine": "義大利當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Tutto Bello",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "fumée",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "B3，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2536 1600",
+      "cuisine": "日式串燒",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "fumée",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "ÉCRU",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "19，177巷，第1段，敦化南路，大安區，台北市",
+      "phone": "+886 2 2779 0146",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "ÉCRU",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "exactName"
+        ]
+      }
+    }
+  ],
+  "needsReview": [
+    {
+      "name": "L'Atelier de Joël Robuchon",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "5樓，寶麗廣塲，28 松仁路，信義區，台北市",
+      "phone": "+886 2 8729 2628",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "侯布雄 L'ATELIER de Joël Robuchon",
+        "aliases": [],
+        "address": "台北市信義區松仁路28號",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Molino de Urdániz",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "1樓，慕舍酒店，61，第1段，建國北路，中山區，台北市",
+      "phone": "+886 2 2500 6832",
+      "cuisine": "西班牙當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "渥達尼斯磨坊 Molino de Urdániz",
+        "aliases": [],
+        "address": "台北市中山區建國北路一段61號",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Taïrroir",
+      "aliases": [
+        "態芮",
+        "Tairroir"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "6樓，299 樂群三路，中山區，台北市",
+      "phone": "+886 2 8501 5500",
+      "cuisine": "台灣當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "三星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "態芮 Taïrroir",
+        "aliases": [],
+        "address": "台北市中山區樂群三路299號",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Clavius",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "120 富錦街，松山區，台北市",
+      "phone": "+886 2 2514 0356",
+      "cuisine": "素食",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "雲川水月 Clavius",
+        "aliases": [],
+        "address": "台北市松山區",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "MoonMoonFood (Qingdao East Road)",
+      "aliases": [
+        "雙月食品社",
+        "雙月食品社 青島店"
+      ],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "6-2 青島東路，中正區，台北市",
+      "phone": "+886 2 3393 8953",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": {
+        "name": "雙月食品",
+        "aliases": [],
+        "address": "台北市中正區青島東路6之2號",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Clover",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "4樓，寶麗廣塲，28 松仁路，信義區，台北市",
+      "phone": "+886 2 8729 2788",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "CLOVER BELLAVITA",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Lin",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "6，25弄，300巷，第4段，仁愛路，大安區，台北市",
+      "phone": "+886 2 2368 7868",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "渥達尼斯磨坊 Molino de Urdániz",
+        "aliases": [],
+        "address": "台北市中山區建國北路一段61號",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Set.",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "110，第2段，承德路，大同區，台北市",
+      "phone": "+886 935 391 095",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Bogart's Smokehouse Taipei",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Silks House",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "3樓，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2523 8000",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "晶華軒 Silks House",
+        "aliases": [],
+        "address": "台北市中山區中山北路二段39巷3號",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "The Ukai",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "46樓，微風南山，17 松智路，信義區，台北市",
+      "phone": "+886 2 7730 1166",
+      "cuisine": "鐵板燒",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "The Ukai Taipei Teppanyaki",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Xiang Se",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "1-2 湖口街，中正區，台北市",
+      "phone": "+886 2 2358 1819",
+      "cuisine": "歐陸當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "香色 XIANG SE",
+        "aliases": [],
+        "address": "台北市中正區湖口街1-2號",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    },
+    {
+      "name": "Zaap",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "6，345巷，吳興街，信義區，台北市",
+      "phone": "+886 2 2720 1148",
+      "cuisine": "泰國菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Zaaptaipei",
+        "aliases": [],
+        "address": "",
+        "reasons": [
+          "fuzzyName"
+        ]
+      }
+    }
+  ],
+  "newCandidate": [
+    {
+      "name": "Ban Bo",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "38，265巷，樂群二路，中山區，台北市",
+      "phone": "+886 2 8502 9168",
+      "cuisine": "台灣當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Chuan Ya",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "46樓，微風南山，17 松智路，信義區，台北市",
+      "phone": "+886 2 2722 0303",
+      "cuisine": "川菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Hosu",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "17，20弄，300巷，第4段，仁愛路，大安區，台北市",
+      "phone": "",
+      "cuisine": "台灣當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Ken Anhe",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "4，127巷，第1段，安和路，大安區，台北市",
+      "phone": "+886 2 2700 8128",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Kitcho",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "48，181巷，第4段，忠孝東路，大安區，台北市",
+      "phone": "+886 2 2771 1020",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Mipon",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "3樓，Grand Mayfull Hotel，55 樂群二路，中山區，台北市",
+      "phone": "+886 2 7722 3391",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Motoichi",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "11，27弄，216巷，第4段，忠孝東路，大安區，台北市",
+      "phone": "+886 2 2778 3380",
+      "cuisine": "日式天婦羅",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Paris 1930 de Hideki Takayama",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "2樓，亞都麗緻大飯店，41，第2段，民權東路，中山區，台北市",
+      "phone": "+886 2 2597 1234",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sushi Akira",
+      "aliases": [
+        "鮨明"
+      ],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "6-3，25巷，雙城街，中山區，台北市",
+      "phone": "+886 2 2596 1069",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Mudan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "17，52巷，四維路，大安區，台北市",
+      "phone": "+886 2 2706 8699",
+      "cuisine": "日式天婦羅",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Yu Kapo",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "9-1 三民路，松山區，台北市",
+      "phone": "+886 2 2503 0303",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Jen Ho Yuan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "2樓，112，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2536 4459",
+      "cuisine": "雲南菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Jin Shang Hsuan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "111，155巷，敦化北路，松山區，台北市",
+      "phone": "+886 2 8770 6086",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Mao Yuan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "185，第2段，長安東路，中山區，台北市",
+      "phone": "+886 2 2752 8587",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Saffron Fine Indian Cuisine",
+      "aliases": [],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "38-6 天母東路，士林區，台北市",
+      "phone": "+886 2 2871 4842",
+      "cuisine": "印度菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sinchao Rice Shoppe",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "2樓，Breeze Xin Yi，68，第5段，忠孝東路，信義區，台北市",
+      "phone": "+886 2 2723 9976",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Soft Power",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "21，30弄，135巷，第2段，民權東路，中山區，台北市",
+      "phone": "+886 2 2502 9543",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Su Lai Chuan",
+      "aliases": [
+        "素來川"
+      ],
+      "city": "台北市",
+      "area": "萬華區",
+      "address": "4，176巷，第3段，和平西路，萬華區，台北市",
+      "phone": "+886 2 2302 6595",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Talking Heads",
+      "aliases": [
+        "湘帝御膳食堂"
+      ],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "25 四維路，大安區，台北市",
+      "phone": "+886 2 2325 4566",
+      "cuisine": "湖南菜",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Unnamed Clay Oven Roll",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "南機場夜市，74號攤，311巷，第2段，中華路，中正區，台北市",
+      "phone": "",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Wu Wang Tsai Chi",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "南機場夜市，29，313巷，第2段，中華路，中正區，台北市",
+      "phone": "+886 930 406 677",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "3927",
+      "aliases": [],
+      "city": "台北市",
+      "area": "",
+      "address": "14，101巷，第4段，忠孝東路，台北市",
+      "phone": "+886 2 2731 0137",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "44 SV",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "10，33弄，216巷，第4段，忠孝東路，大安區，台北市",
+      "phone": "+886 2 2711 7272",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "85TD",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "85樓，台北市 101，7，第5段，信義路，信義區，台北市",
+      "phone": "+886 2 8101 0085",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "A Cheng Goose (Zhongshan)",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "162 吉林路，中山區，台北市",
+      "phone": "+886 2 2541 5238",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "AJIMI",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "5，19弄，52巷，四維路，大安區，台北市",
+      "phone": "+886 2 2703 1881",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Aleisha",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "16，4弄，217巷，第3段，忠孝東路，大安區，台北市",
+      "phone": "+886 978 003 000",
+      "cuisine": "地中海料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Antico Forno",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "141 瑞安街，大安區，台北市",
+      "phone": "+886 2 2706 3322",
+      "cuisine": "義大利菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Baho (Da'an)",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "4，102巷，第1段，安和路，大安區，台北市",
+      "phone": "+886 2 2325 0531",
+      "cuisine": "燒烤",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "CEO 1950",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "24，62巷，第3段，新生北路，中山區，台北市",
+      "phone": "+886 2 2592 6692",
+      "cuisine": "歐陸當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Cheng Jia",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "6，92巷，第2段，民權東路，中山區，台北市",
+      "phone": "+886 2 2522 1276",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Chinese Cuisine",
+      "aliases": [],
+      "city": "台北市",
+      "area": "北投區",
+      "address": "北投麗禧溫泉酒店，30 幽雅路，北投區，台北市",
+      "phone": "+886 2 2898 8888",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Ching Jiao",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "9，第2段，濟南路，中正區，台北市",
+      "phone": "+886 2 3322 6292",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Chuan Mu Yuan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "120，第2段，承德路，大同區，台北市",
+      "phone": "+886 2 2556 3800",
+      "cuisine": "點心",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Da-Wan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "5樓，199 敬業二路，中山區，台北市",
+      "phone": "+886 2 2711 0179",
+      "cuisine": "燒烤",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Danny's Steakhouse",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "58 樂群三路，中山區，台北市",
+      "phone": "+886 2 8501 1838",
+      "cuisine": "牛排館",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Dasuke",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "375-2 四維路，大安區，台北市",
+      "phone": "+886 2 2700 0375",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "EMBERS",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "24，122巷，第4段，仁愛路，大安區，台北市",
+      "phone": "+886 2 7751 5598",
+      "cuisine": "台灣當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Ephernité",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "233，第2段，安和路，大安區，台北市",
+      "phone": "+886 2 2732 0732",
+      "cuisine": "法國當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Gi Yuan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "324，第1段，敦化南路，大安區，台北市",
+      "phone": "+886 2 2708 3110",
+      "cuisine": "川菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Halal Chinese Beef Noodles (Da'an)",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "1，7弄，137巷，延吉街，大安區，台北市",
+      "phone": "+886 2 2721 4771",
+      "cuisine": "麵食",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Hijo",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "170，第2段，長安東路，中山區，台北市",
+      "phone": "+886 2 2751 7272",
+      "cuisine": "海鮮",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Izmir Turk Kitchen",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "14，147巷，第1段，基隆路，信義區，台北市",
+      "phone": "+886 912 157 996",
+      "cuisine": "土耳其菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "JUNTO",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "2樓，捷絲旅 The Blue，22 館前路，中正區，台北市",
+      "phone": "+886 976 684 366",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "KOICHIRO",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "5樓，301 樂群三路，中山區，台北市",
+      "phone": "+886 2 8501 5808",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "KUR",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "6，109巷，第1段，安和路，大安區，台北市",
+      "phone": "+886 2 2784 8099",
+      "cuisine": "日本當代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Kiku",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "4，135巷，第1段，安和路，大安區，台北市",
+      "phone": "+886 2 2700 2701",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Komboi",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "28，270巷，第1段，敦化南路，大安區，台北市",
+      "phone": "+886 2 8772 0372",
+      "cuisine": "現代料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Kou Gyu Rou",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "6 民樂街，大同區，台北市",
+      "phone": "",
+      "cuisine": "麵食",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Lin Ju",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "100 敦化北路，松山區，台北市",
+      "phone": "+886 2 2712 2700",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Lin's Vegetable Lamb Hotpot",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "327 吉林路，中山區，台北市",
+      "phone": "+886 2 2592 5174",
+      "cuisine": "火鍋",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Longtail",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "174，第2段，敦化南路，大安區，台北市",
+      "phone": "+886 2 2732 6616",
+      "cuisine": "創新料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "May Snow Hakka Food",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "16，329巷，第1段，敦化南路，大安區，台北市",
+      "phone": "+886 2 2700 6248",
+      "cuisine": "客家菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Mochi Baby",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "111 饒河街，松山區，台北市",
+      "phone": "+886 958 088 550",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Muji Beef Noodles",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "239 吳興街，信義區，台北市",
+      "phone": "+886 2 2722 2707",
+      "cuisine": "麵食",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "N°168 Prime Steakhouse (Zhongshan)",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "4樓，維多麗亞酒店，168 敬業四路，中山區，台北市",
+      "phone": "+886 2 6602 5678",
+      "cuisine": "牛排館",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Open Smile",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "441 莊敬路，信義區，台北市",
+      "phone": "+886 2 2758 6866",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "PEI FULL",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "2樓，國聯大飯店，200 光復南路，大安區，台北市",
+      "phone": "+886 2 2773 1515",
+      "cuisine": "江浙菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Page",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "4，20弄，595巷，北安路，中山區，台北市",
+      "phone": "+886 2 2532 8003",
+      "cuisine": "國際料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Really Good Seafood",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "222，第1段，復興南路，大安區，台北市",
+      "phone": "+886 2 2771 3000",
+      "cuisine": "海鮮",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Robin's Teppanyaki",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "2樓，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2523 8000",
+      "cuisine": "鐵板燒",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Rong Ju",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "Capella，139 敦化北路，松山區，台北市",
+      "phone": "+886 2 7709 6868",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Rong Rong Yuan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "2樓，25，第4段，信義路，大安區，台北市",
+      "phone": "+886 2 2703 8822",
+      "cuisine": "浙江菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sansan Bistro",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "170，第2段，敦化南路，大安區，台北市",
+      "phone": "+886 2 2732 3388",
+      "cuisine": "川菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sasa",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "6，42巷，第2段，中山北路，中山區，台北市",
+      "phone": "+886 2 2561 1246",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sate House",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "15 樂利路，大安區，台北市",
+      "phone": "+886 2 2732 5048",
+      "cuisine": "印尼菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Shih Chia Big Rice Ball",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "58，第3段，延平北路，大同區，台北市",
+      "phone": "+886 2 2585 7655",
+      "cuisine": "小吃",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Shin Yeh Taiwanese Cuisine",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "34-1 雙城街，中山區，台北市",
+      "phone": "+886 2 2596 3255",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Shing-Peng-Lai (Zhongshan North Road)",
+      "aliases": [],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "55，第7段，中山北路，士林區，台北市",
+      "phone": "+886 2 2877 1168",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sushi Kaori",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "10，458巷，林森北路，中山區，台北市",
+      "phone": "+886 2 2531 9568",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sushi Nakazawa",
+      "aliases": [],
+      "city": "台北市",
+      "area": "信義區",
+      "address": "6，452巷，第4段，仁愛路，信義區，台北市",
+      "phone": "+886 2 2758 0266",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sushi Nomura",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "4，19弄，300巷，第4段，仁愛路，大安區，台北市",
+      "phone": "+886 2 2707 7518",
+      "cuisine": "壽司",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Sushi Touryuumon",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "16，27弄，216巷，忠孝東路，大安區，台北市",
+      "phone": "",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Taiwan Rice Dining Hall",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "12，175巷，第2段，和平東路，大安區，台北市",
+      "phone": "+886 905 244 754",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Tajimaya Shabu Shabu",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "5樓，THE ARCADE，166 敦化北路，松山區，台北市",
+      "phone": "+886 2 2712 1606",
+      "cuisine": "涮涮鍋",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Tao Luan Ting Roast Peking Duck Palace",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "2樓，86 復興北路，松山區，台北市",
+      "phone": "+886 2 2778 7805",
+      "cuisine": "北京菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Tempura Sugimura",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "2樓，Marriott Midtown，199 樂群二路，中山區，台北市",
+      "phone": "+886 2 8501 1157",
+      "cuisine": "日式天婦羅",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Thai & Thai",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "5樓，THE ARCADE，158 敦化北路，松山區，台北市",
+      "phone": "+886 2 2719 6689",
+      "cuisine": "泰國菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "The Dragon",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中正區",
+      "address": "地下一樓，Sheraton Grand Hotel，12，第1段，忠孝東路，中正區，台北市",
+      "phone": "+886 2 2321 1818",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Tien Hsia San Chueh",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "3，27巷，第4段，仁愛路，大安區，台北市",
+      "phone": "+886 2 2741 6299",
+      "cuisine": "麵食",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Toh-A'",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "9，23弄，76巷，第2段，和平東路，大安區，台北市",
+      "phone": "+886 2 2377 0952",
+      "cuisine": "創新料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Toriaezu Curry",
+      "aliases": [],
+      "city": "台北市",
+      "area": "松山區",
+      "address": "146 三民路，松山區，台北市",
+      "phone": "+886 2 2745 5225",
+      "cuisine": "咖哩",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Tsuki Yo Iwa",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "9，25巷，雙城街，中山區，台北市",
+      "phone": "+886 2 2585 9221",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Uke",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "37，78巷，第1段，安和路，大安區，台北市",
+      "phone": "+886 2 2700 8779",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Uosho",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "24，83巷，第1段，中山北路，中山區，台北市",
+      "phone": "+886 2 2531 8611",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Vanne Yakiniku",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "2樓，235，第1段，敦化南路，大安區，台北市",
+      "phone": "+886 2 2771 0597",
+      "cuisine": "燒烤",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Wamaki",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "1，36巷，第2段，長安東路，中山區，台北市",
+      "phone": "+886 2 2542 7700",
+      "cuisine": "日本料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Yangming Spring (Shilin)",
+      "aliases": [],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "119-1 菁山路，士林區，台北市",
+      "phone": "+886 2 2862 0178",
+      "cuisine": "素食",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Yu Yu 1969",
+      "aliases": [],
+      "city": "台北市",
+      "area": "中山區",
+      "address": "48 遼寧街，中山區，台北市",
+      "phone": "+886 2 2776 0443",
+      "cuisine": "台灣菜",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Yuan Huan Pien Oyster Egg Omelette",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大同區",
+      "address": "寧夏夜市，46 寧夏路，大同區，台北市",
+      "phone": "+886 2 2558 0198",
+      "cuisine": "街頭小吃",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Yuu",
+      "aliases": [],
+      "city": "台北市",
+      "area": "大安區",
+      "address": "15，33弄，216巷，第4段，忠孝東路，大安區，台北市",
+      "phone": "+886 2 2711 2080",
+      "cuisine": "創意料理",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    },
+    {
+      "name": "Zan",
+      "aliases": [],
+      "city": "台北市",
+      "area": "士林區",
+      "address": "地下一樓，192-1，第4段，承德路，士林區，台北市",
+      "phone": "+886 2 2880 1880",
+      "cuisine": "鐵板燒",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": null
+    }
+  ],
+  "conflicts": []
+}
