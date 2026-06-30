@@ -1,0 +1,36 @@
+{
+  "version": "manual-500sweet-2025",
+  "updated": "2026-07-01",
+  "sourceUrl": "https://udn.com/500sweetaward/",
+  "description": "500甜 2025 人工或 AI 整理入口。官方頁目前無法由靜態 HTML 穩定解析完整名單，因此只接受有可追溯來源 URL 的人工覆核資料。",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "batchOnly": true,
+    "requireReviewedBy": true,
+    "requireSourceUrl": true,
+    "notes": [
+      "沒有完整可追溯名單時保持空陣列，不產生假資料。",
+      "每筆餐廳必須含 city、name、sourceUrl、reviewedBy。",
+      "若只有入選而無甜數，可填 level: 入選；若有作品甜數，可填 sweets 或 dishSweets。"
+    ]
+  },
+  "restaurants": [],
+  "schema": {
+    "restaurants[]": {
+      "name": "甜點店或餐廳名稱，必填。",
+      "city": "縣市，必填。",
+      "area": "行政區，可選。",
+      "address": "地址，可選。",
+      "aliases": [
+        "其他常見名稱，可選。"
+      ],
+      "sweets": "得獎甜點數，可選。",
+      "dishSweets": [
+        "各作品甜數，可選。"
+      ],
+      "level": "例如 入選 或 1甜，可選。",
+      "sourceUrl": "來源 URL，必填。",
+      "reviewedBy": "人工審核者或整理流程名稱，必填。"
+    }
+  }
+}

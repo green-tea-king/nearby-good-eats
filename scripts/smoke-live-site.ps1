@@ -92,6 +92,17 @@ if ($ManualSignals.policy.runtimeExternalLookup -ne $false -or $ManualSignals.po
   throw "Manual platform signals must stay batch-only and disable runtime lookup"
 }
 
+$SweetManualText = Read-TextUrl "$BaseUrl/assets/500sweet-2025-manual.json?cacheBust=$CacheBust"
+$SweetManual = $SweetManualText | ConvertFrom-Json
+if ($SweetManual.policy.runtimeExternalLookup -ne $false -or $SweetManual.policy.batchOnly -ne $true) {
+  throw "500sweet manual source must stay batch-only and disable runtime lookup"
+}
+$SweetReportText = Read-TextUrl "$BaseUrl/assets/500sweet-2025-source-report.json?cacheBust=$CacheBust"
+$SweetReport = $SweetReportText | ConvertFrom-Json
+if ($SweetReport.parseReady -ne $false -or $SweetReport.decision -ne "do_not_import") {
+  throw "500sweet official source unexpectedly changed; review parser before importing"
+}
+
 [pscustomobject]@{
   ok = $true
   baseUrl = $BaseUrl
