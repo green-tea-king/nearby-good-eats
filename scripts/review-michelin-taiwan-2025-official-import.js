@@ -44,6 +44,14 @@ function unique(values) {
   return [...new Set((values || []).filter(Boolean))];
 }
 
+function cleanAliases(name, aliases) {
+  const nameKey = normalizeName(name);
+  return unique(aliases).filter((alias) => {
+    const aliasKey = normalizeName(alias);
+    return aliasKey && aliasKey !== nameKey;
+  });
+}
+
 function classify(candidate, existing) {
   const city = candidate.city || "";
   const candidateNames = namesOf(candidate).map(normalizeName).filter(Boolean);
@@ -101,7 +109,7 @@ function main() {
     const entry = {
       name: candidate.name,
       city: candidate.city,
-      aliases: candidate.aliases || [],
+      aliases: cleanAliases(candidate.name, candidate.aliases),
       awards: candidate.awards,
       match: result.row ? { name: result.row.name, city: result.row.city, reasons: result.reasons || [] } : null,
     };
@@ -110,7 +118,11 @@ function main() {
 
     if (result.status === "matchedHigh") {
       const target = draft.restaurants[result.index];
-      target.aliases = unique([...(target.aliases || []), candidate.name, ...(candidate.aliases || [])]);
+      target.aliases = cleanAliases(target.name, [
+        ...(target.aliases || []),
+        candidate.name,
+        ...(candidate.aliases || []),
+      ]);
       target.source = target.source || candidate.source;
       target.awards = mergeAwards(target.awards, candidate.awards);
       if (!onlySelected) report.summary.autoMerged += 1;
@@ -121,7 +133,7 @@ function main() {
       if (!onlySelected) {
         draft.restaurants.push({
           name: candidate.name,
-          aliases: candidate.aliases || [],
+          aliases: cleanAliases(candidate.name, candidate.aliases),
           city: candidate.city,
           address: candidate.address || "",
           source: candidate.source,
