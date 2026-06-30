@@ -574,7 +574,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
   <div class="rank-head">
-    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.01.1</span></div>
+    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.01.2</span></div>
     <button class="rank-filter-btn" id="rankFilterBtn" aria-label="開啟濾網" title="濾網">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -799,6 +799,8 @@ const CONFIG = {
   SOCIAL_SIGNAL_BONUS: {
     youtubeCap: 0.12,          // 社群聲量只做小加分，避免壓過 Google 評分/評論數
     socialCap: 0.10,
+    platformCap: 0.08,         // 愛食記 / OpenRice / Tripadvisor 等平台口碑，僅作輔助
+    mediaCap: 0.08,
     totalCap: 0.14,
     confidence: { high:1, medium:0.75, low:0.45 },
   },
@@ -1339,7 +1341,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.01.1";
+const APP_VERSION_FALLBACK = "2026.07.01.2";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -4140,19 +4142,24 @@ function socialSignalBonus(signals){
   const cfg = CONFIG.SOCIAL_SIGNAL_BONUS;
   let youtube = 0;
   let social = 0;
+  let platform = 0;
+  let media = 0;
   for (const s of (signals || [])){
     const score = Math.max(0, Math.min(100, Number(s.score) || 0)) / 100;
     const conf = cfg.confidence[String(s.confidence || "medium").toLowerCase()] ?? cfg.confidence.medium;
     const weighted = score * conf;
     if (s.type === "youtubeBuzz") youtube = Math.max(youtube, weighted * cfg.youtubeCap);
     else if (s.type === "socialBuzz") social = Math.max(social, weighted * cfg.socialCap);
+    else if (s.type === "platformRating" || s.type === "platformCertification") platform = Math.max(platform, weighted * cfg.platformCap);
+    else if (s.type === "mediaMention") media = Math.max(media, weighted * cfg.mediaCap);
   }
-  return Math.min(youtube + social, cfg.totalCap);
+  return Math.min(youtube + social + platform + media, cfg.totalCap);
 }
 
 function primarySocialSignal(signals){
+  const visibleTypes = new Set(["youtubeBuzz", "socialBuzz", "mediaMention", "platformRating", "platformCertification"]);
   return (signals || [])
-    .filter(s => s && (s.type === "youtubeBuzz" || s.type === "socialBuzz"))
+    .filter(s => s && visibleTypes.has(s.type))
     .sort((a,b) => (Number(b.score)||0) - (Number(a.score)||0))[0] || null;
 }
 
@@ -4379,7 +4386,7 @@ function photoStripHTML(photoUrls, name){
 
 function socialBadgeHTML(signal){
   if (!signal) return "";
-  const label = signal.label || (signal.type === "youtubeBuzz" ? "影音熱度" : "社群熱度");
+  const label = signal.label || (signal.type === "youtubeBuzz" ? "影音熱度" : (signal.type === "platformRating" ? "平台口碑" : "社群熱度"));
   return `<span class="badge social" title="${escapeHTML(label)} ${Number(signal.score || 0)}">${escapeHTML(label)}</span>`;
 }
 function compactNumber(n){
@@ -4399,11 +4406,13 @@ function socialSignalDetailHTML(r){
     signal.label || "社群熱度",
     videoCount ? `${videoCount} 支影片` : "",
     views ? `約 ${compactNumber(views)} 次觀看` : "",
+    metrics.rating ? `平台評分 ${escapeHTML(metrics.rating)}` : "",
+    metrics.reviewCount ? `${compactNumber(metrics.reviewCount)} 則平台評論` : "",
     signal.score != null ? `熱度 ${Math.round(Number(signal.score) || 0)}` : "",
   ].filter(Boolean);
   const link = top.url || signal.url || "";
-  const source = top.channelTitle ? `來源：${top.channelTitle}` : "來源：YouTube Data API";
-  return `<div class="social-signal"><span class="k">社群熱度</span><span class="v">${escapeHTML(parts.join(" · "))}${link ? ` · <a href="${escapeHTML(link)}" target="_blank" rel="noopener">查看來源</a>` : ""}<br><small>${escapeHTML(source)}</small></span></div>`;
+  const source = top.channelTitle ? `來源：${top.channelTitle}` : `來源：${signal.sourceLabel || signal.sourceId || "外部批次資料"}`;
+  return `<div class="social-signal"><span class="k">外部口碑</span><span class="v">${escapeHTML(parts.join(" · "))}${link ? ` · <a href="${escapeHTML(link)}" target="_blank" rel="noopener">查看來源</a>` : ""}<br><small>${escapeHTML(source)}</small></span></div>`;
 }
 
 function cardHTML(r, rank){

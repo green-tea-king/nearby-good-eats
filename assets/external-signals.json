@@ -39,6 +39,24 @@
       "dataFile": "assets/awards-taiwan.json"
     },
     {
+      "id": "500bowl",
+      "label": "500碗",
+      "type": "award",
+      "updateCadence": "yearly",
+      "runtimeLookup": false,
+      "dataFile": "assets/awards-taiwan.json",
+      "status": "schema-ready; data pending verified batch import"
+    },
+    {
+      "id": "500sweet",
+      "label": "500甜",
+      "type": "award",
+      "updateCadence": "yearly",
+      "runtimeLookup": false,
+      "dataFile": "assets/awards-taiwan.json",
+      "status": "schema-ready; data pending verified batch import"
+    },
+    {
       "id": "50best",
       "label": "50 Best",
       "type": "award",
@@ -75,6 +93,43 @@
       "updateCadence": "weekly",
       "runtimeLookup": false,
       "quotaPolicy": "batch-only; default 10 restaurant searches per run"
+    },
+    {
+      "id": "google-maps-reviews",
+      "label": "Google Maps 評論",
+      "type": "platform",
+      "updateCadence": "runtime-via-google-places",
+      "runtimeLookup": false,
+      "dataFile": "Google Places API response",
+      "rankImpact": "primary",
+      "notes": "主排序來源已由 Google Places rating / userRatingCount / summaries 提供，不在 external-signals 重複存大量評論。"
+    },
+    {
+      "id": "ifoodie",
+      "label": "愛食記",
+      "type": "platform",
+      "updateCadence": "batch/manual",
+      "runtimeLookup": false,
+      "rankImpact": "light",
+      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
+    },
+    {
+      "id": "openrice-tw",
+      "label": "OpenRice 台灣",
+      "type": "platform",
+      "updateCadence": "batch/manual",
+      "runtimeLookup": false,
+      "rankImpact": "light",
+      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
+    },
+    {
+      "id": "tripadvisor-tw",
+      "label": "Tripadvisor 台灣",
+      "type": "platform",
+      "updateCadence": "batch/manual",
+      "runtimeLookup": false,
+      "rankImpact": "light",
+      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
     }
   ],
   "signalDefinitions": {
@@ -122,6 +177,15 @@
       ],
       "display": "badgeWhenHighConfidence",
       "rankUse": "medium"
+    },
+    "platformRating": {
+      "label": "平台口碑",
+      "scoreRange": [
+        0,
+        100
+      ],
+      "display": "badgeWhenHighConfidence",
+      "rankUse": "light"
     },
     "queueSignal": {
       "label": "排隊熱度",

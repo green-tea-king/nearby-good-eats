@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.1
+版本：2026.07.01.2
 
 ## 專案目標
 
@@ -416,6 +416,35 @@ assets/awards-taiwan.json
 - 500盤、500碗、500甜：正式獎牌來源，批次整理後進 `assets/awards-taiwan.json`，只做中高權重加分。
 - 50 Best：正式獎牌來源，高權重但只影響少數入榜店。
 - 愛食記、OpenRice、Tripadvisor：平台口碑/聲量來源，預設不放進 `awards-taiwan.json`；只能在授權 API、手動整理或可追溯批次資料可用時寫入 `assets/external-signals.json`，作小幅輔助訊號與提示，不取代 Google 評分。
+
+平台型來源若要寫入 `assets/external-signals.json`，信號格式固定如下：
+
+```json
+{
+  "type": "platformRating",
+  "sourceId": "ifoodie",
+  "sourceLabel": "愛食記",
+  "label": "愛食記口碑",
+  "score": 80,
+  "confidence": "medium",
+  "metrics": {
+    "rating": 4.3,
+    "reviewCount": 120
+  },
+  "url": "https://...",
+  "updated": "2026-07-01",
+  "reviewedBy": "manual-batch"
+}
+```
+
+驗證規則：
+
+- `sourceId` 必須存在於 `sourceCatalog`。
+- `type` 只能用 `platformRating`、`platformCertification`、`mediaMention`、`socialBuzz`、`youtubeBuzz` 等已定義類型。
+- `score` 必須是 0 到 100。
+- `confidence` 必須是 `high` / `medium` / `low`。
+- 平台口碑必須保留 `url`。
+- 使用者搜尋時不得即時查愛食記、OpenRice、Tripadvisor；只能讀批次整理後的靜態檔。
 
 重建流程：
 

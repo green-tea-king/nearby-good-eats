@@ -66,6 +66,15 @@ foreach ($Key in $Expected.Keys) {
   }
 }
 
+$SignalsText = Read-TextUrl "$BaseUrl/assets/external-signals.json?cacheBust=$CacheBust"
+$Signals = $SignalsText | ConvertFrom-Json
+$SourceIds = @($Signals.sourceCatalog | ForEach-Object { $_.id })
+foreach ($RequiredSource in @("500bowl", "500sweet", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
+  if ($SourceIds -notcontains $RequiredSource) {
+    throw "External signals sourceCatalog missing $RequiredSource"
+  }
+}
+
 [pscustomobject]@{
   ok = $true
   baseUrl = $BaseUrl
