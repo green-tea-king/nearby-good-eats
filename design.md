@@ -412,9 +412,10 @@ assets/awards-taiwan.json
 ```text
 node scripts/build-michelin-taiwan-2025-official.js
 node scripts/review-michelin-taiwan-2025-official-import.js
+node scripts/validate-awards-data.js
 ```
 
-第一支腳本抓取 Michelin Guide Taiwan 2025 官方完整名單並保存快照，解析星級、綠星、入選餐廳；必比登沿用已整理的 144 筆正式資料，並以官方必比登文章確認總數。第二支腳本產生合併報告與草稿，只自動合併高信心命中；純 `michelin_selected` 入選餐廳保留在報告中，不進正式加分來源，避免卡片徽章過多。
+第一支腳本抓取 Michelin Guide Taiwan 2025 官方完整名單並保存快照，解析星級、綠星、入選餐廳；必比登沿用已整理的 144 筆正式資料，並以官方必比登文章確認總數。第二支腳本產生合併報告與草稿，只自動合併高信心命中；純 `michelin_selected` 入選餐廳保留在報告中，不進正式加分來源，避免卡片徽章過多。第三支腳本固定檢查正式資料筆數、獎項統計、guide 白名單、重複同店 key，以及正式檔與 draft 是否一致。
 
 重要限制：
 
