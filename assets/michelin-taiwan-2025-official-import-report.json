@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T13:58:13.954Z",
+  "generatedAt": "2026-06-30T14:28:32.791Z",
   "policy": {
     "source": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-21\\github\\nearby-good-eats\\assets\\michelin-taiwan-2025-official-candidates.json",
     "target": "C:\\Users\\Administrator\\Documents\\Codex\\2026-06-21\\github\\nearby-good-eats\\assets\\awards-taiwan.json",
@@ -9,11 +9,11 @@
   },
   "summary": {
     "total": 420,
-    "matchedHigh": 216,
+    "matchedHigh": 220,
     "matchedMedium": 9,
-    "newCandidate": 195,
-    "autoMerged": 198,
-    "autoAdded": 4,
+    "newCandidate": 191,
+    "autoMerged": 202,
+    "autoAdded": 0,
     "skippedSelectedOnly": 218
   },
   "matchedHigh": [
@@ -1186,6 +1186,32 @@
       }
     },
     {
+      "name": "EMBERS",
+      "city": "台北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "EMBERS",
+        "city": "台北市",
+        "reasons": [
+          "city",
+          "exactName"
+        ]
+      }
+    },
+    {
       "name": "小小樹食 （大安路）",
       "city": "台北市",
       "aliases": [
@@ -1202,6 +1228,87 @@
       "match": {
         "name": "小小樹食",
         "city": "台北市",
+        "reasons": [
+          "city",
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "陽明春天（士林）",
+      "city": "台北市",
+      "aliases": [
+        "陽明春天",
+        "Yangming Spring (Shilin)"
+      ],
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "陽明春天（士林）",
+        "city": "台北市",
+        "reasons": [
+          "city",
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "地坊",
+      "city": "台中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "地坊",
+        "city": "台中市",
+        "reasons": [
+          "city",
+          "exactName"
+        ]
+      }
+    },
+    {
+      "name": "Thomas Chien",
+      "city": "高雄市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ],
+      "match": {
+        "name": "Thomas Chien",
+        "city": "高雄市",
         "reasons": [
           "city",
           "exactName"
@@ -1649,7 +1756,10 @@
     {
       "name": "小小樹食",
       "city": "台北市",
-      "aliases": [],
+      "aliases": [
+        "小小樹食 （大安路）",
+        "Little Tree Food (Da'an Road)"
+      ],
       "awards": [
         {
           "guide": "bib",
@@ -4659,85 +4769,6 @@
     }
   ],
   "newCandidate": [
-    {
-      "name": "EMBERS",
-      "city": "台北市",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ],
-      "match": null
-    },
-    {
-      "name": "陽明春天（士林）",
-      "city": "台北市",
-      "aliases": [
-        "陽明春天",
-        "Yangming Spring (Shilin)"
-      ],
-      "awards": [
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ],
-      "match": null
-    },
-    {
-      "name": "地坊",
-      "city": "台中市",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ],
-      "match": null
-    },
-    {
-      "name": "Thomas Chien",
-      "city": "高雄市",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ],
-      "match": null
-    },
     {
       "name": "叁酒弍沏",
       "city": "台北市",
