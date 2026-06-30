@@ -360,15 +360,31 @@
           "guide": "michelin",
           "level": "二星",
           "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
         }
       ],
       "city": "台北市",
       "aliases": [
         "盈科",
         "EIKA",
-        "EIKA 盈科"
+        "EIKA 盈科",
+        "Eika"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "sources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ]
     },
     {
       "name": "茂園",
@@ -436,7 +452,8 @@
       "city": "台北市",
       "aliases": [
         "渥達尼斯磨坊",
-        "Molino de Urdániz"
+        "Molino de Urdániz",
+        "Molino de Urdaniz"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -545,7 +562,8 @@
       "city": "台北市",
       "aliases": [
         "壽司芳",
-        "Sushiyoshi"
+        "Sushiyoshi",
+        "Sushi Yoshi"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -557,15 +575,31 @@
           "guide": "michelin",
           "level": "三星",
           "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
         }
       ],
       "city": "台北市",
       "aliases": [
         "態芮",
         "Taïrroir",
-        "Taïrroir 態芮"
+        "Taïrroir 態芮",
+        "Tairroir"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "sources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ]
     },
     {
       "name": "賣麵炎仔",
@@ -4213,27 +4247,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "EIKA 盈科",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "name": "Extension 1 by 橘色",
       "awards": [
         {
@@ -5214,27 +5227,6 @@
           "guide": "500plate",
           "plates": 3,
           "level": "3盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "name": "Taïrroir 態芮",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
           "year": 2025
         }
       ],
@@ -7298,29 +7290,6 @@
       "aliases": []
     },
     {
-      "name": "雋 中餐廳 GEN by Matt Chen",
-      "city": "高雄市",
-      "address": "高雄市",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 2,
-          "level": "2盤",
-          "year": 2025
-        }
-      ],
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "name": "廖記米糕",
       "city": "高雄市",
       "address": "高雄市",
@@ -7532,10 +7501,22 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 2,
+          "level": "2盤",
+          "year": 2025
         }
       ],
       "sources": [
-        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
       ],
       "aliases": [
         "雋",

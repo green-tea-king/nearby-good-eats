@@ -388,7 +388,7 @@ https://green-tea-king.github.io/nearby-good-eats/
 2. 更新 `VERSION`。
 3. 本機檢查 JavaScript 語法。
 4. 手機寬度截圖或互動驗證。
-5. 使用 GitHub CLI / GitHub Contents API 上傳檔案；本機不依賴 `.git`。
+5. 使用 `scripts/deploy-github-contents.ps1` 透過 GitHub Git Data API 建立單一 commit；本機不依賴 `.git`。
 6. 等 GitHub Pages 更新。
 7. 用正式 URL 驗證 `VERSION` 與新版功能。
 
@@ -453,6 +453,7 @@ VERSION = 2026.06.27.22
 - 分享路由必須保持 `?place=` 可直接打開。
 - 新增大資料時優先放在 `assets/`，不要全部塞進 `index.html`。
 - AI 相關功能應走後端 proxy，不要在前端放 AI key。
+- 在 Windows / PowerShell 讀取 `.js`、`.json`、`.md` 時要明確指定 UTF-8，例如 `Get-Content -Encoding UTF8`，避免把正常中文誤判成 mojibake。
 
 ## 後續可優化方向
 
