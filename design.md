@@ -388,10 +388,39 @@ https://green-tea-king.github.io/nearby-good-eats/
 2. 更新 `VERSION`。
 3. 本機檢查 JavaScript 語法。
 4. 手機寬度截圖或互動驗證。
-5. `git commit`
-6. `git push origin main`
-7. 等 GitHub Pages 更新。
-8. 用正式 URL 驗證 `VERSION` 與新版功能。
+5. 使用 GitHub CLI / GitHub Contents API 上傳檔案；本機不依賴 `.git`。
+6. 等 GitHub Pages 更新。
+7. 用正式 URL 驗證 `VERSION` 與新版功能。
+
+## 外部獎牌資料建構
+
+外部獎牌資料採批次建構，不在前端即時查外部網站。正式前端讀取：
+
+```text
+assets/awards-taiwan.json
+```
+
+目前正式獎牌來源包含：
+
+- Michelin 2025 星級：53 筆，含三星 3、二星 7、一星 43。
+- Michelin 2025 必比登：144 筆。
+- Michelin 2025 綠星：7 筆，只顯示徽章，不參與美味加權。
+- 500盤：260 筆。
+
+重建流程：
+
+```text
+node scripts/build-michelin-taiwan-2025-official.js
+node scripts/review-michelin-taiwan-2025-official-import.js
+```
+
+第一支腳本抓取 Michelin Guide Taiwan 2025 官方完整名單並保存快照，解析星級、綠星、入選餐廳；必比登沿用已整理的 144 筆正式資料，並以官方必比登文章確認總數。第二支腳本產生合併報告與草稿，只自動合併高信心命中；純 `michelin_selected` 入選餐廳保留在報告中，不進正式加分來源，避免卡片徽章過多。
+
+重要限制：
+
+- 2026 完整名單尚未正式發布前，不建立 2026 完整星級或必比登資料。
+- Wikipedia 或公開資料只用於補別名，不作為獎項主來源。
+- 新增資料時必須保留來源 URL、年份與審核報告。
 
 ## 版本規則
 
