@@ -60,7 +60,7 @@ if ($SettingsText -notlike "*externalTestMode: true*") {
 }
 
 $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
-foreach ($RequiredFilterText in @("key:""award""", "tier:""static""")) {
+foreach ($RequiredFilterText in @("key:""award""", "tier:""static""", 'guide:"michelin"', 'level:"三星"', 'level:"二星"', 'level:"一星"', 'guide:"500sweet"')) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
