@@ -795,6 +795,8 @@ const CONFIG = {
     MID_COUNT: 200,
     LOW_COUNT_PENALTY: 0.05,
     MID_COUNT_PENALTY: 0.08,
+    PROMO_TEXT_PENALTY: 0.06,
+    MAX_PENALTY: 0.14,
   },
 
   // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
@@ -1352,7 +1354,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.01.12";
+const APP_VERSION_FALLBACK = "2026.07.01.13";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -3205,18 +3207,20 @@ async function fetchRankRich(cands){
 
 function rankCardData(c){
   const rich = rankRich[c.id] || {};
-  const trust = reviewTrustAdjustment(c);
+  const trust = reviewTrustAdjustment({ ...c, ...rich });
+  const extraTrustPenalty = Math.max(0, trust.penalty - Number(c.tPenalty || 0));
+  const displayComposite = c.composite - extraTrustPenalty;
   const C = CONFIG.BAYES.C, m = Math.round(rankPoolM*100)/100, n = c.count.toLocaleString();
   const formula = `貝氏 (${C}×${m}＋${n}×${c.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${c.bScore.toFixed(2)}`
     + (c.rBonus>0 ? `，＋評論量 ${c.rBonus.toFixed(2)}` : ``)
-    + (c.tPenalty>0 ? `，－可信度 ${c.tPenalty.toFixed(2)}` : ``)
+    + (trust.penalty>0 ? `，－可信度 ${trust.penalty.toFixed(2)}` : ``)
     + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``)
     + (c.sBonus>0 ? `，＋熱度 ${c.sBonus.toFixed(2)}` : ``)
-    + `，綜合 ${c.composite.toFixed(2)}`;
+    + `，綜合 ${displayComposite.toFixed(2)}`;
   return Object.assign({
     id:c.id, name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
-    dist:c.loc ? Math.round(distanceM(state.center, c.loc)) : null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:c.aiReason || "",
+    dist:c.loc ? Math.round(distanceM(state.center, c.loc)) : null, lbCity:c.city, composite:displayComposite, lbFormula:formula, aiReason:c.aiReason || "",
     reviewTrustLabel:trust.label, reviewTrustNote:trust.note,
     socialBonus:c.sBonus || 0,
     externalSignals:c.externalSignals || [],
@@ -4151,29 +4155,59 @@ function reviewCountBonus(count){
   return Math.min(Math.log10((count || 0) + 1) * cfg.SCALE, cfg.CAP);
 }
 
+function reviewNoiseHints(item){
+  const text = [
+    item?.reviewSummary,
+    item?.summary,
+    item?.generativeSummary,
+  ].filter(Boolean).join(" ").normalize("NFKC");
+  if (!text) return [];
+  const patterns = [
+    { label:"五星換贈品", re: /(五星|5星|好評|評論|評價).{0,10}(送|換|贈|折扣|優惠|招待)|送.{0,6}(五星|5星|好評|評論|評價)/i },
+    { label:"打卡送禮", re: /打卡.{0,10}(送|換|贈|折扣|優惠|招待)/i },
+    { label:"評價活動", re: /(Google|谷歌)?\s*(評論|評價|好評).{0,10}(活動|抽獎|兌換|贈送)/i },
+  ];
+  return patterns.filter(({ re }) => re.test(text)).map(({ label }) => label);
+}
+
 function reviewTrustAdjustment(item){
   const rating = Number(item?.rating || 0);
   const count = Number(item?.count || 0);
   const cfg = CONFIG.REVIEW_TRUST;
+  const noiseHints = reviewNoiseHints(item);
+  let penalty = 0;
+  let label = "";
+  let note = "";
   if (rating >= cfg.VERY_HIGH_RATING && count > 0 && count < cfg.MID_COUNT) {
-    return {
-      penalty: cfg.MID_COUNT_PENALTY,
-      label: "高分樣本偏少",
-      note: `Google ${rating.toFixed(1)} 星，但目前只有 ${count.toLocaleString()} 則評論，已保守降低評論可信度。`,
-    };
+    penalty += cfg.MID_COUNT_PENALTY;
+    label = "高分樣本偏少";
+    note = `Google ${rating.toFixed(1)} 星，但目前只有 ${count.toLocaleString()} 則評論，已保守降低評論可信度。`;
+  } else if (rating >= cfg.HIGH_RATING && count > 0 && count < cfg.LOW_COUNT) {
+    penalty += cfg.LOW_COUNT_PENALTY;
+    label = "樣本偏少";
+    note = `Google ${rating.toFixed(1)} 星，評論數 ${count.toLocaleString()} 則仍偏少，已保守調整。`;
+  } else if (count >= 10000) {
+    label = "大樣本口碑";
+    note = "Google 評論數達萬則以上，樣本量較穩定；仍保留外部評鑑與距離條件交叉判斷。";
+  } else if (count >= 1000) {
+    label = "中高樣本";
+    note = "Google 評論數達千則以上，樣本量比少量五星更穩定。";
+  } else if (count >= 200) {
+    label = "一般樣本";
+    note = "Google 評論數已達基本樣本量，仍以評分、評論量、距離與外部評鑑共同排序。";
+  } else if (count > 0) {
+    label = "樣本較少";
+    note = "Google 評論數較少，貝氏分數已自動往當批平均收斂，避免少量五星過度領先。";
+  } else {
+    label = "無評論樣本";
+    note = "Google 尚未提供足夠評論樣本。";
   }
-  if (rating >= cfg.HIGH_RATING && count > 0 && count < cfg.LOW_COUNT) {
-    return {
-      penalty: cfg.LOW_COUNT_PENALTY,
-      label: "樣本偏少",
-      note: `Google ${rating.toFixed(1)} 星，評論數 ${count.toLocaleString()} 則仍偏少，已保守調整。`,
-    };
+  if (noiseHints.length) {
+    penalty += cfg.PROMO_TEXT_PENALTY;
+    label = `${label}＋評價活動警訊`;
+    note = `${note} Google 摘要出現「${noiseHints.join("、")}」相關用語，這不是洗評判定，但已作保守提示與小幅可信度調整。`;
   }
-  if (count >= 10000) return { penalty:0, label:"大樣本口碑", note:"Google 評論數達萬則以上，樣本量較穩定；仍保留外部評鑑與距離條件交叉判斷。" };
-  if (count >= 1000) return { penalty:0, label:"中高樣本", note:"Google 評論數達千則以上，樣本量比少量五星更穩定。" };
-  if (count >= 200) return { penalty:0, label:"一般樣本", note:"Google 評論數已達基本樣本量，仍以評分、評論量、距離與外部評鑑共同排序。" };
-  if (count > 0) return { penalty:0, label:"樣本較少", note:"Google 評論數較少，貝氏分數已自動往當批平均收斂，避免少量五星過度領先。" };
-  return { penalty:0, label:"無評論樣本", note:"Google 尚未提供足夠評論樣本。" };
+  return { penalty:Math.min(penalty, cfg.MAX_PENALTY), label, note, noiseHints };
 }
 
 function awardBonus(awards){

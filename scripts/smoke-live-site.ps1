@@ -34,6 +34,9 @@ if ($Html -notlike "*greenstar*") {
 if ($Html -notlike "*500bowl*" -or $Html -notlike "*500sweet*") {
   throw "Homepage is missing 500bowl/500sweet rendering support"
 }
+if ($Html -notlike "*reviewNoiseHints*" -or $Html -notlike "*PROMO_TEXT_PENALTY*") {
+  throw "Homepage is missing Google review noise guard"
+}
 
 $SettingsText = Read-TextUrl "$BaseUrl/assets/app-settings.js?cacheBust=$CacheBust"
 if ($SettingsText -notlike "*externalTestMode: true*") {
