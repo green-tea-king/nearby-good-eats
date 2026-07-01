@@ -1,0 +1,240 @@
+{
+  "version": "50best-discovery-taiwan-candidates",
+  "generatedAt": "2026-07-01T22:27:40.413Z",
+  "sourceUrl": "https://www.theworlds50best.com/discovery/sitemap/taiwan/taipei",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_page_batch",
+    "restaurantOnly": true,
+    "notes": [
+      "50 Best Discovery 台灣 Taipei 官方頁面批次整理；只匯入餐廳頁，不匯入 Bar/Hotel。",
+      "此來源是 guide/discovery 型推薦，權重低於 Asia's 50 Best 排名與 Google 評分評論主體。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "Adachi",
+      "city": "臺北市",
+      "address": "12, Lane 239, Zhuangjing Road, Xinyi District, Taipei, 110",
+      "aliases": [],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Coast",
+      "city": "臺北市",
+      "address": "No. 3, Lane 39, Section 2, Zhongshan North Road, Taipei, 10491",
+      "aliases": [],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Coast.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Impromptu by Paul Lee",
+      "city": "臺北市",
+      "address": "3 Lane 39, Section 2, Zhongshan North Road, Zhongshan District, Taipei, Taipei & Taichung, Taiwan 10491",
+      "aliases": [],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Impromptu-by-Paul-Lee.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Le Palais",
+      "city": "臺北市",
+      "address": "3, Section 1, Chengde Road, Datong District, Taipei, 103",
+      "aliases": [
+        "頤宮",
+        "頤宮中餐廳"
+      ],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Le-Palais.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Logy",
+      "city": "臺北市",
+      "address": "6, Lane 109, Section 1, Anhe Road, Da’an District, Taipei, Taipei & Taichung,",
+      "aliases": [
+        "logy"
+      ],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Logy.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "MUME",
+      "city": "臺北市",
+      "address": "No. 28 Siwei Road, Da'an District, Taipei, 106",
+      "aliases": [
+        "Mume"
+      ],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Mume.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Restaurant A",
+      "city": "臺北市",
+      "address": "4F, Building 2, Diamond Towers, Shin Kong Mitsukoshi, 282, Section 3, Zhongxiao East Road, Da’an District, Taipei, 106",
+      "aliases": [],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Restaurant-A.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Silks House",
+      "city": "臺北市",
+      "address": "Lane 39, 3F Zhongshan North Road, Zhongshan district, Taipei, 104",
+      "aliases": [],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Silks-House.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Sushi Amamoto",
+      "city": "臺北市",
+      "address": "371, Section 4, Ren'ai Road, Da’an District, Taipei, Taipei & Taichung,",
+      "aliases": [],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Sushi-Amamoto.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Tairroir",
+      "city": "臺北市",
+      "address": "299 Lequn 3rd Road, Zhongshan District, Taipei, Taipei & Taichung, 10462",
+      "aliases": [
+        "態芮",
+        "Taïrroir"
+      ],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Ta%C3%AFrroir.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "ZEA",
+      "city": "臺北市",
+      "address": "No 5, Alley 20, Lane 300, Section 4, Ren'ai Rd, Da’an District, Taipei, 106",
+      "aliases": [
+        "Zea"
+      ],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Zea.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "雅閣",
+      "city": "臺北市",
+      "address": "No. 158, DunHua N Rd, Songshan District, Taipei, Taipei & Taichung, Taiwan 10548",
+      "aliases": [
+        "Ya Ge"
+      ],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Ya-Ge.html"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "鼎泰豐",
+      "city": "臺北市",
+      "address": "No. 194, Section 2, Xinyi Road, Da'an District, Taipei, 106",
+      "aliases": [
+        "Din Tai Fung"
+      ],
+      "sourceSummary": "Taipei, Taiwan",
+      "awards": [
+        {
+          "guide": "50bestdiscovery",
+          "year": 2026,
+          "level": "Discovery",
+          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Din-Tai-Fung.html"
+        }
+      ],
+      "importConfidence": "high"
+    }
+  ]
+}

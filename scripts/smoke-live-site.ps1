@@ -87,7 +87,7 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 1342
+  restaurants = 1344
   michelin = 53
   "michelin_selected" = 222
   bib = 144
@@ -96,6 +96,7 @@ $Expected = [ordered]@{
   "500bowl" = 415
   "500sweet" = 328
   "50best" = 2
+  "50bestdiscovery" = 13
   "oad" = 29
   "thebestchef" = 4
   "tatlerbest" = 20
@@ -112,6 +113,7 @@ $Actual = [ordered]@{
   "500bowl" = $Guides["500bowl"]
   "500sweet" = $Guides["500sweet"]
   "50best" = $Guides["50best"]
+  "50bestdiscovery" = $Guides["50bestdiscovery"]
   "oad" = $Guides["oad"]
   "thebestchef" = $Guides["thebestchef"]
   "tatlerbest" = $Guides["tatlerbest"]
@@ -152,7 +154,7 @@ foreach ($RequiredPlatform in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
 $CoverageText = Read-TextUrl "$BaseUrl/assets/external-source-coverage.json?cacheBust=$CacheBust"
 $Coverage = $CoverageText | ConvertFrom-Json
 $CoverageIds = @($Coverage.sources | ForEach-Object { $_.id })
-foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "50best", "oad", "thebestchef", "tatlerbest", "worldculinary", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
+foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "tatlerbest", "worldculinary", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
   if ($CoverageIds -notcontains $RequiredCoverage) {
     throw "External source coverage missing $RequiredCoverage"
   }

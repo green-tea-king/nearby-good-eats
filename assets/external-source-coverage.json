@@ -12,13 +12,14 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1342,
+    "awardsRestaurants": 1344,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
     "platformManualRestaurants": 2,
     "platformManualSignals": 6,
     "externalAwardSources": 3,
+    "fiftyDiscoveryCandidates": 13,
     "oadCandidates": 29,
     "bestChefCandidates": 4
   },
@@ -74,6 +75,16 @@
       "dataFile": "assets/awards-taiwan.json",
       "sourceFile": "assets/external-awards.manual.json",
       "count": 2,
+      "runtimeLookup": false
+    },
+    {
+      "id": "50bestdiscovery",
+      "label": "50 Best Discovery",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/50best-discovery-taiwan-candidates.json",
+      "count": 13,
+      "candidates": 13,
       "runtimeLookup": false
     },
     {

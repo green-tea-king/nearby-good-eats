@@ -5,6 +5,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const externalSignalsPath = path.join(repoRoot, "assets", "external-signals.json");
 const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual.json");
+const fiftyDiscoveryCandidatesPath = path.join(repoRoot, "assets", "50best-discovery-taiwan-candidates.json");
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
@@ -45,6 +46,7 @@ function main() {
   const guides = countGuides(awards);
   const externalSignals = readJson(externalSignalsPath);
   const externalAwards = fs.existsSync(externalAwardsPath) ? readJson(externalAwardsPath) : { sources: [] };
+  const fiftyDiscoveryCandidates = fs.existsSync(fiftyDiscoveryCandidatesPath) ? readJson(fiftyDiscoveryCandidatesPath) : { restaurants: [] };
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
@@ -76,6 +78,7 @@ function main() {
       platformManualRestaurants: platformRows.length,
       platformManualSignals: platformSignals,
       externalAwardSources: (externalAwards.sources || []).length,
+      fiftyDiscoveryCandidates: (fiftyDiscoveryCandidates.restaurants || []).length,
       oadCandidates: (oadCandidates.restaurants || []).length,
       bestChefCandidates: (bestChefCandidates.restaurants || []).length,
     },
@@ -128,6 +131,16 @@ function main() {
         dataFile: "assets/awards-taiwan.json",
         sourceFile: "assets/external-awards.manual.json",
         count: guides["50best"] || 0,
+        runtimeLookup: false,
+      },
+      {
+        id: "50bestdiscovery",
+        label: "50 Best Discovery",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/50best-discovery-taiwan-candidates.json",
+        count: guides["50bestdiscovery"] || 0,
+        candidates: (fiftyDiscoveryCandidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {

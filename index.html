@@ -396,6 +396,8 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge.selected{background:rgba(200,162,76,.08);color:var(--text-dim);border-color:rgba(200,162,76,.22);}
 .badge.fifty{background:rgba(255,255,255,.10);color:var(--text);border-color:rgba(255,255,255,.24);}
 .badge.fifty::before{content:"50";font-size:8.5px;font-family:var(--mono);color:var(--gold);}
+.badge.discovery{background:rgba(255,255,255,.07);color:var(--text-dim);border-color:rgba(255,255,255,.2);}
+.badge.discovery::before{content:"50D";font-size:8px;font-family:var(--mono);color:var(--gold);}
 .badge.oad{background:rgba(255,255,255,.08);color:var(--text-dim);border-color:rgba(255,255,255,.22);}
 .badge.oad::before{content:"OAD";font-size:8px;font-family:var(--mono);color:var(--gold);}
 .badge.mediaaward{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.26);}
@@ -807,6 +809,7 @@ const CONFIG = {
     michelin: { "三星": 0.5, "二星": 0.4, "一星": 0.3 }, // 高權重，但仍只疊加在 Google 分數上
     michelinSelected: 0.08,     // 米其林入選：弱加分，低於星級、必比登與 500 系列
     fiftyBest: 0.45,          // 50 Best：高權重、少數店適用
+    fiftyBestDiscovery: 0.1,  // 50 Best Discovery：官方推薦但非排名，僅小幅加分
     oad: { top50: 0.24, top100: 0.2, top200: 0.14, recommended: 0.08 },
     worldCulinary: 0.18,
     tatlerBest: 0.16,
@@ -1345,7 +1348,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"50 Best", guide:"50best"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
+  { key:"award",   label:"評鑑", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"50 Best", guide:"50best"}, {label:"50 Discovery", guide:"50bestdiscovery"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, award:[], city:"", area:"", village:"" };
 let rankFilterDraft = null;
@@ -4239,6 +4242,8 @@ function awardBonus(awards){
       selected = CONFIG.AWARD_BONUS.michelinSelected;
     } else if (a.guide === "50best") {
       fiftyBest = CONFIG.AWARD_BONUS.fiftyBest;
+    } else if (a.guide === "50bestdiscovery") {
+      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.fiftyBestDiscovery);
     } else if (a.guide === "worldculinary") {
       fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.worldCulinary);
     } else if (a.guide === "tatlerbest") {
@@ -4677,6 +4682,7 @@ function badgeHTML(a){
   if (a.guide==="bib") return `<span class="badge bib" title="MICHELIN Bib Gourmand ${year}">必比登<span class="yr">${year}</span></span>`;
   if (a.guide==="greenstar") return `<span class="badge greenstar" title="MICHELIN Green Star ${year}">綠星<span class="yr">${year}</span></span>`;
   if (a.guide==="50best") return `<span class="badge fifty" title="50 Best ${year} ${escapeHTML(a.level||"")}">50 Best ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="50bestdiscovery") return `<span class="badge discovery" title="50 Best Discovery ${year}">50 Discovery<span class="yr">${year}</span></span>`;
   if (a.guide==="oad") return `<span class="badge oad" title="OAD ${year} ${escapeHTML(a.level||"")}">OAD ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="thebestchef") return `<span class="badge bestchef" title="The Best Chef ${year} ${escapeHTML(a.level||"")}">Best Chef ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="tatlerbest") return `<span class="badge mediaaward" title="Tatler Best ${year} ${escapeHTML(a.level||"")}">Tatler${a.level ? ` ${escapeHTML(a.level)}` : ""}<span class="yr">${year}</span></span>`;
@@ -4966,10 +4972,11 @@ function normalizeAwards(awards){
     : (a.guide === "bib" ? 6
     : (a.guide === "greenstar" ? 7
     : (a.guide === "tatlerbest" ? 8
-    : (a.guide === "500plate" ? 9
-    : (a.guide === "500bowl" ? 10
-    : (a.guide === "500sweet" ? 11
-    : (a.guide === "michelin_selected" ? 12 : 13)))))))))));
+    : (a.guide === "50bestdiscovery" ? 9
+    : (a.guide === "500plate" ? 10
+    : (a.guide === "500bowl" ? 11
+    : (a.guide === "500sweet" ? 12
+    : (a.guide === "michelin_selected" ? 13 : 14))))))))))));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
       const plates = Array.isArray(a.dishPlates)
