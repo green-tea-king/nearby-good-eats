@@ -787,6 +787,14 @@ const CONFIG = {
     SCALE: 0.06, // 評論量信心加分：同星等時評論數多者更前
     CAP: 0.32,   // 避免超大店只靠評論數壓過品質
   },
+  REVIEW_TRUST: {
+    HIGH_RATING: 4.8,
+    VERY_HIGH_RATING: 4.9,
+    LOW_COUNT: 100,
+    MID_COUNT: 200,
+    LOW_COUNT_PENALTY: 0.05,
+    MID_COUNT_PENALTY: 0.08,
+  },
 
   // ── 評鑑加分（Step 2 比對後疊加；公式集中此處）
   AWARD_BONUS: {
@@ -1343,7 +1351,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.01.7";
+const APP_VERSION_FALLBACK = "2026.07.01.8";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2073,7 +2081,8 @@ function finalizeRankCandidates(items, { sortDistance=false }={}){
     x.aBonus = awardBonus(x.awards);
     x.rBonus = reviewCountBonus(x.count);
     x.sBonus = socialSignalBonus(x.externalSignals);
-    x.composite = x.bScore + x.aBonus + x.rBonus + x.sBonus;
+    x.tPenalty = reviewTrustAdjustment(x).penalty;
+    x.composite = x.bScore + x.aBonus + x.rBonus + x.sBonus - x.tPenalty;
   });
   all.sort((a,b) => (b.composite - a.composite) || (sortDistance ? ((a.dist || 0) - (b.dist || 0)) : 0));
   return groupRankBranches(all);
@@ -3195,9 +3204,11 @@ async function fetchRankRich(cands){
 
 function rankCardData(c){
   const rich = rankRich[c.id] || {};
+  const trust = reviewTrustAdjustment(c);
   const C = CONFIG.BAYES.C, m = Math.round(rankPoolM*100)/100, n = c.count.toLocaleString();
   const formula = `貝氏 (${C}×${m}＋${n}×${c.rating.toFixed(1)})÷(${C}＋${n}) ＝ ${c.bScore.toFixed(2)}`
     + (c.rBonus>0 ? `，＋評論量 ${c.rBonus.toFixed(2)}` : ``)
+    + (c.tPenalty>0 ? `，－可信度 ${c.tPenalty.toFixed(2)}` : ``)
     + (c.aBonus>0 ? `，＋評鑑 ${c.aBonus.toFixed(2)}` : ``)
     + (c.sBonus>0 ? `，＋熱度 ${c.sBonus.toFixed(2)}` : ``)
     + `，綜合 ${c.composite.toFixed(2)}`;
@@ -3205,6 +3216,7 @@ function rankCardData(c){
     id:c.id, name:c.name, rating:c.rating, count:c.count, priceLevel:c.priceLevel,
     address:c.address, loc:c.loc || {lat:0,lng:0}, awards:c.awards, typeName:c.ptd,
     dist:c.loc ? Math.round(distanceM(state.center, c.loc)) : null, lbCity:c.city, composite:c.composite, lbFormula:formula, aiReason:c.aiReason || "",
+    reviewTrustLabel:trust.label, reviewTrustNote:trust.note,
     socialBonus:c.sBonus || 0,
     externalSignals:c.externalSignals || [],
     socialSignal:c.socialSignal || null,
@@ -4138,6 +4150,31 @@ function reviewCountBonus(count){
   return Math.min(Math.log10((count || 0) + 1) * cfg.SCALE, cfg.CAP);
 }
 
+function reviewTrustAdjustment(item){
+  const rating = Number(item?.rating || 0);
+  const count = Number(item?.count || 0);
+  const cfg = CONFIG.REVIEW_TRUST;
+  if (rating >= cfg.VERY_HIGH_RATING && count > 0 && count < cfg.MID_COUNT) {
+    return {
+      penalty: cfg.MID_COUNT_PENALTY,
+      label: "高分樣本偏少",
+      note: `Google ${rating.toFixed(1)} 星，但目前只有 ${count.toLocaleString()} 則評論，已保守降低評論可信度。`,
+    };
+  }
+  if (rating >= cfg.HIGH_RATING && count > 0 && count < cfg.LOW_COUNT) {
+    return {
+      penalty: cfg.LOW_COUNT_PENALTY,
+      label: "樣本偏少",
+      note: `Google ${rating.toFixed(1)} 星，評論數 ${count.toLocaleString()} 則仍偏少，已保守調整。`,
+    };
+  }
+  if (count >= 10000) return { penalty:0, label:"大樣本口碑", note:"Google 評論數達萬則以上，樣本量較穩定；仍保留外部評鑑與距離條件交叉判斷。" };
+  if (count >= 1000) return { penalty:0, label:"中高樣本", note:"Google 評論數達千則以上，樣本量比少量五星更穩定。" };
+  if (count >= 200) return { penalty:0, label:"一般樣本", note:"Google 評論數已達基本樣本量，仍以評分、評論量、距離與外部評鑑共同排序。" };
+  if (count > 0) return { penalty:0, label:"樣本較少", note:"Google 評論數較少，貝氏分數已自動往當批平均收斂，避免少量五星過度領先。" };
+  return { penalty:0, label:"無評論樣本", note:"Google 尚未提供足夠評論樣本。" };
+}
+
 function awardBonus(awards){
   let michelin = 0;
   let fiftyBest = 0;
@@ -4289,10 +4326,12 @@ function rankAndRender(){
     i.bayesScore = bayes(i, m);
     i.reviewCountBonus = reviewCountBonus(i.count);
     i.socialBonus = socialSignalBonus(i.externalSignals);
+    i.trustPenalty = reviewTrustAdjustment(i).penalty;
     i.composite = i.bayesScore
       + i.reviewCountBonus
       + awardBonus(i.awards)
       + i.socialBonus
+      - i.trustPenalty
       - (state.wholeArea ? 0 : (i.dist/100) * CONFIG.DISTANCE_PENALTY_PER_100M)
       + (i.openNow === true ? CONFIG.OPEN_BONUS : 0)
       + mealMatchBonus(i);
@@ -4546,6 +4585,7 @@ function cardHTML(r, rank){
         ${ai}
         ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
         ${r.lbFormula?`<div class="line"><span class="k">綜合</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
+        ${r.reviewTrustNote?`<div class="line"><span class="k">評論</span><span class="v">${escapeHTML(r.reviewTrustLabel || "評論可信度")}：${escapeHTML(r.reviewTrustNote)}</span></div>`:""}
         ${routeDetail(r)?`<div class="line"><span class="k">路線</span><span class="v">${escapeHTML(routeDetail(r))}</span></div>`:""}
         ${r.generativeSummary?`<div class="line"><span class="k">Google</span><span class="v sum3">${escapeHTML(r.generativeSummary)}</span></div>`:""}
         ${r.reviewSummary?`<div class="line"><span class="k">摘要</span><span class="v sum3">${escapeHTML(r.reviewSummary)}</span></div>`:""}
