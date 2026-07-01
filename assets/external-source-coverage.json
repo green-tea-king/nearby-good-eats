@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1508,
+    "awardsRestaurants": 7523,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -32,7 +32,8 @@
     "tcfPraiseCandidates": 0,
     "tcfPraiseNeedsCityReview": 36,
     "taichungLowCarbonCandidates": 20,
-    "muslimFriendlyCandidates": 75
+    "muslimFriendlyCandidates": 75,
+    "fdaRestaurantHygieneCandidates": 6104
   },
   "sources": [
     {
@@ -199,6 +200,16 @@
       "candidatesFile": "assets/muslim-friendly-2026-candidates.json",
       "count": 74,
       "candidates": 75,
+      "runtimeLookup": false
+    },
+    {
+      "id": "fdagrade",
+      "label": "餐飲衛生分級",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/fda-restaurant-hygiene-2024-candidates.json",
+      "count": 6041,
+      "candidates": 6104,
       "runtimeLookup": false
     },
     {

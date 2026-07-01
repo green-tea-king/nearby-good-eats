@@ -16,6 +16,7 @@ const michelinSpecialCandidatesPath = path.join(repoRoot, "assets", "michelin-sp
 const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-candidates.json");
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
+const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -65,6 +66,7 @@ function main() {
   const tcfPraiseCandidates = fs.existsSync(tcfPraiseCandidatesPath) ? readJson(tcfPraiseCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
+  const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -108,6 +110,7 @@ function main() {
       tcfPraiseNeedsCityReview: (tcfPraiseCandidates.needsCityReview || []).length,
       taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
       muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
+      fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
     },
     sources: [
       {
@@ -271,6 +274,16 @@ function main() {
         candidatesFile: "assets/muslim-friendly-2026-candidates.json",
         count: guides.muslimfriendly || 0,
         candidates: (muslimFriendlyCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "fdagrade",
+        label: "餐飲衛生分級",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/fda-restaurant-hygiene-2024-candidates.json",
+        count: guides.fdagrade || 0,
+        candidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {

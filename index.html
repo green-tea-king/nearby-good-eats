@@ -418,6 +418,8 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge.localcert::before{content:"✓";font-size:9px;color:var(--plate);}
 .badge.muslimcert{background:rgba(95,185,138,.12);color:var(--green);border-color:rgba(95,185,138,.28);}
 .badge.muslimcert::before{content:"H";font-size:9px;font-family:var(--mono);color:var(--green);}
+.badge.fdagrade{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.28);}
+.badge.fdagrade::before{content:"FDA";font-size:8px;font-family:var(--mono);color:var(--plate);}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
 .badge.plate{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.26);}
 .badge.bowl{background:rgba(200,162,76,.13);color:var(--gold);border-color:rgba(200,162,76,.28);}
@@ -835,6 +837,7 @@ const CONFIG = {
     gdgAwards: 0.04,
     taichungLowCarbon: 0.03,
     muslimFriendly: 0.05,
+    fdaGrade: { "優": 0.02, "良": 0.01 },
     bib: 0.22,                // 必比登推介：中高權重
     platePerUnit: 0.03,       // 500 盤 / 500 碗 / 500 甜：中高權重，依單位數遞增
     plateCap: 0.35,           // 500 系列加分上限，避免壓過 Google 主體
@@ -1369,7 +1372,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑可複選", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林特別獎", guide:"michelinspecial"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"GDG入圍", guide:"gdgawards"}, {label:"台中低碳", guide:"taichunglowcarbon"}, {label:"穆斯林友善", guide:"muslimfriendly"}, {label:"50 Best", guide:"50best"}, {label:"50 Discovery", guide:"50bestdiscovery"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"FMG永續", guide:"fmg"}, {label:"設計獎", guide:"designawards"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
+  { key:"award",   label:"評鑑可複選", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林特別獎", guide:"michelinspecial"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"GDG入圍", guide:"gdgawards"}, {label:"台中低碳", guide:"taichunglowcarbon"}, {label:"穆斯林友善", guide:"muslimfriendly"}, {label:"食安優級", guide:"fdagrade", level:"優"}, {label:"食安良級", guide:"fdagrade", level:"良"}, {label:"50 Best", guide:"50best"}, {label:"50 Discovery", guide:"50bestdiscovery"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"FMG永續", guide:"fmg"}, {label:"設計獎", guide:"designawards"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, award:[], city:"", area:"", village:"" };
 let rankFilterDraft = null;
@@ -4299,6 +4302,8 @@ function awardBonus(awards){
       fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.taichungLowCarbon);
     } else if (a.guide === "muslimfriendly") {
       fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.muslimFriendly);
+    } else if (a.guide === "fdagrade") {
+      selected = Math.max(selected, CONFIG.AWARD_BONUS.fdaGrade[a.level] || 0);
     } else if (a.guide === "bib") {
       bib = CONFIG.AWARD_BONUS.bib;
     } else if (a.guide === "500plate" || a.guide === "500bowl" || a.guide === "500sweet") {
@@ -4733,6 +4738,7 @@ function badgeHTML(a){
   if (a.guide==="gdgawards") return `<span class="badge gdgaward" title="綠色餐飲指南年度評鑑 ${year} ${escapeHTML(a.level||"")}">GDG ${escapeHTML(a.level||"入圍")}<span class="yr">${year}</span></span>`;
   if (a.guide==="taichunglowcarbon") return `<span class="badge localcert" title="臺中市低碳餐廳認證 ${year}">台中低碳<span class="yr">${year}</span></span>`;
   if (a.guide==="muslimfriendly") return `<span class="badge muslimcert" title="穆斯林友善餐飲認證 ${year} ${escapeHTML(a.level||"")}">穆斯林 ${escapeHTML(a.level||"友善")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="fdagrade") return `<span class="badge fdagrade" title="餐飲衛生管理分級評核 ${year} ${escapeHTML(a.level||"")}">食安 ${escapeHTML(a.level||"分級")}<span class="yr">${year}</span></span>`;
   if (a.guide==="tatlerbest") return `<span class="badge mediaaward" title="Tatler Best ${year} ${escapeHTML(a.level||"")}">Tatler${a.level ? ` ${escapeHTML(a.level)}` : ""}<span class="yr">${year}</span></span>`;
   if (a.guide==="worldculinary") return `<span class="badge mediaaward" title="World Culinary Awards ${year} ${escapeHTML(a.level||"")}">World Culinary${a.winner ? " Winner" : ""}<span class="yr">${year}</span></span>`;
   if (a.guide==="500plate") {
@@ -5027,11 +5033,12 @@ function normalizeAwards(awards){
     : (a.guide === "gdgawards" ? 13
     : (a.guide === "taichunglowcarbon" ? 14
     : (a.guide === "muslimfriendly" ? 15
-    : (a.guide === "designawards" ? 16
-    : (a.guide === "500plate" ? 17
-    : (a.guide === "500bowl" ? 18
-    : (a.guide === "500sweet" ? 19
-    : (a.guide === "michelin_selected" ? 20 : 21)))))))))))))))))));
+    : (a.guide === "fdagrade" ? 16
+    : (a.guide === "designawards" ? 17
+    : (a.guide === "500plate" ? 18
+    : (a.guide === "500bowl" ? 19
+    : (a.guide === "500sweet" ? 20
+    : (a.guide === "michelin_selected" ? 21 : 22))))))))))))))))))));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
       const plates = Array.isArray(a.dishPlates)

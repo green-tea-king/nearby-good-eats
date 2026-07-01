@@ -14,6 +14,7 @@ const gdgAwardsCandidatesPath = path.join(repoRoot, "assets", "gdg-awards-2025-c
 const michelinSpecialCandidatesPath = path.join(repoRoot, "assets", "michelin-special-awards-2025-candidates.json");
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
+const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
 const reportPath = path.join(repoRoot, "assets", "external-awards-merge-report.json");
 
 function readJson(file) {
@@ -117,6 +118,7 @@ function main() {
   const michelinSpecialCandidates = fs.existsSync(michelinSpecialCandidatesPath) ? readJson(michelinSpecialCandidatesPath) : { restaurants: [] };
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
+  const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
   const mergeCandidates = [
     ...(externalAwards.restaurants || []),
     ...(fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
@@ -129,6 +131,7 @@ function main() {
     ...(michelinSpecialCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(taichungLowCarbonCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(muslimFriendlyCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...(fdaRestaurantHygieneCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
   ];
   const rows = Array.isArray(awards.restaurants) ? awards.restaurants : [];
   const errors = validateExternalAwards(externalAwards);
@@ -146,6 +149,7 @@ function main() {
       ...(fs.existsSync(michelinSpecialCandidatesPath) ? ["assets/michelin-special-awards-2025-candidates.json"] : []),
       ...(fs.existsSync(taichungLowCarbonCandidatesPath) ? ["assets/taichung-low-carbon-2023-candidates.json"] : []),
       ...(fs.existsSync(muslimFriendlyCandidatesPath) ? ["assets/muslim-friendly-2026-candidates.json"] : []),
+      ...(fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? ["assets/fda-restaurant-hygiene-2024-candidates.json"] : []),
     ],
     candidates: mergeCandidates.length,
     manualCandidates: (externalAwards.restaurants || []).length,
@@ -159,6 +163,7 @@ function main() {
     michelinSpecialCandidates: (michelinSpecialCandidates.restaurants || []).length,
     taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
     muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
+    fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
     skippedFiftyDiscoveryNeedsReview: (fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedOadNeedsReview: (oadCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedBestChefNeedsReview: (bestChefCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
@@ -242,6 +247,7 @@ function main() {
     ...(michelinSpecialCandidates.sourceUrl ? [michelinSpecialCandidates.sourceUrl] : []),
     ...(taichungLowCarbonCandidates.sourceUrl ? [taichungLowCarbonCandidates.sourceUrl] : []),
     ...(muslimFriendlyCandidates.sourceUrl ? [muslimFriendlyCandidates.sourceUrl] : []),
+    ...(fdaRestaurantHygieneCandidates.sourcePageUrl ? [fdaRestaurantHygieneCandidates.sourcePageUrl] : []),
   ].filter(Boolean))];
 
   writeJson(awardsPath, awards);
