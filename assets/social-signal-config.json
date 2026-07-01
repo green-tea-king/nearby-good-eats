@@ -1,5 +1,5 @@
 {
-  "version": "2026.07.01.18",
+  "version": "2026.07.01.19",
   "policy": {
     "runtimeLookup": false,
     "batchOnly": true,
