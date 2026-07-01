@@ -1,5 +1,5 @@
 {
-  "_README": "台灣餐廳評鑑名單入口（真實資料）。維護＝改本檔 + push，不動程式碼。guide 可為 michelin / michelin_selected / bib / greenstar / 500plate / 500bowl / 500sweet / 50best；500plate 給 plates，500bowl 給 bowls，500sweet 給 sweets（皆可彙總單位數）。徽章須帶 year。2025 已擴充米其林星級 53 家、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項；500碗已匯入 2025 官方文字名單高信心資料；500甜保留格式，尚未匯入未驗證資料。Google 評分/評論數仍是排序主體，外部評鑑只做加分。",
+  "_README": "??????????????????????? + push???????guide ?? michelin / michelin_selected / bib / greenstar / 500plate / 500bowl / 500sweet / 50best?500plate ? plates?500bowl ? bowls?500sweet ? sweets?????????????? year?2025 ???????? 53 ??????? 222 ????? 144 ??500 ??????? 260 ??????500 ?????????? 415 ??500 ?????????? 328 ??Google ??/???????????????????",
   "_coverage": {
     "current": [
       "台北市",
@@ -20,7 +20,7 @@
       "澎湖縣"
     ],
     "planned": [],
-    "note": "2025 已擴充：米其林星級 53 家、必比登推介 144 家、500 盤官方文字名單 260 筆餐廳獎項。500碗/500甜僅先支援格式與前端徽章，待批次來源驗證後再匯入。沒有真實來源的店家不顯示評鑑徽章，避免誤標。 2025 500碗已匯入官方文字名單高信心資料，跨縣市列保留在 merge report 待人工覆核。 2025 Michelin 入選餐廳已以低權重弱徽章匯入，來源為官方完整名單。"
+    "note": "2025 ????????? 53 ??????? 222 ??????? 144 ??500 ??????? 260 ??????500 ?????????? 415 ??500 ?????????? 328 ??500 ??????500 ??? / ??????????????????? merge report ????????????????????????????"
   },
   "_sources": [
     "https://guide.michelin.com/tw/zh_TW",
@@ -30,7 +30,8 @@
     "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
     "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
     "https://udn.com/news/story/7266/8933484",
-    "https://500times.udn.com/wtimes/story/123497/8874123"
+    "https://500times.udn.com/wtimes/story/123497/8874123",
+    "https://500times.udn.com/wtimes/story/124537/8931871"
   ],
   "updated": "2026-07-01",
   "restaurants": [
@@ -47,6 +48,22 @@
         }
       ],
       "city": "台中市",
+      "aliases": []
+    },
+    {
+      "name": "一中豐仁冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -199,6 +216,22 @@
       "aliases": []
     },
     {
+      "name": "不二糕餅",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "与玥樓",
       "aliases": [],
       "city": "台中市",
@@ -252,6 +285,22 @@
       ]
     },
     {
+      "name": "元紀 • 台灣菜",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "元紀．台灣菜",
       "city": "台中市",
       "address": "台中市",
@@ -287,6 +336,38 @@
         }
       ],
       "city": "台中市",
+      "aliases": []
+    },
+    {
+      "name": "天天饅頭",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "巴蕾麵包",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -357,6 +438,22 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
+      "aliases": []
+    },
+    {
+      "name": "牛B葫蘆王 逢甲總店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -660,6 +757,22 @@
       "aliases": []
     },
     {
+      "name": "坂神本舖長崎蛋糕",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "沁園春",
       "city": "台中市",
       "address": "台中市",
@@ -796,6 +909,22 @@
       "aliases": []
     },
     {
+      "name": "奉咖啡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "明娟樓",
       "city": "台中市",
       "address": "台中市",
@@ -855,6 +984,22 @@
       ]
     },
     {
+      "name": "東東芋圓 本店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "東海蓮心冰‧雞爪凍",
       "address": "",
       "awards": [
@@ -890,6 +1035,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "金樹冰果室",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "阿斗伯冷凍芋",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 3,
+          "level": "3甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -954,6 +1131,22 @@
       ]
     },
     {
+      "name": "俊美",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "南陽路炒麵豬血湯",
       "address": "",
       "awards": [
@@ -1004,6 +1197,22 @@
         }
       ],
       "city": "台中市",
+      "aliases": []
+    },
+    {
+      "name": "美村點頭冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -1173,6 +1382,22 @@
       "aliases": []
     },
     {
+      "name": "堂本麵包店 (亞森洋果子)",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 6,
+          "level": "6甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "康康豬豬血湯",
       "address": "",
       "awards": [
@@ -1253,6 +1478,22 @@
         }
       ],
       "city": "台中市",
+      "aliases": []
+    },
+    {
+      "name": "陳記涼茶本舖",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -1448,6 +1689,22 @@
       "aliases": []
     },
     {
+      "name": "硬翰拔絲米血",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "菇神 (新社)",
       "aliases": [],
       "city": "台中市",
@@ -1631,6 +1888,22 @@
       ]
     },
     {
+      "name": "碧月Dessert",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "聚眾緣麵館",
       "address": "",
       "awards": [
@@ -1782,6 +2055,22 @@
       "aliases": []
     },
     {
+      "name": "戰豆冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "膳馨 (西區)",
       "aliases": [],
       "city": "台中市",
@@ -1872,6 +2161,38 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
+      "aliases": []
+    },
+    {
+      "name": "豐仁冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "豐原廟東菱角酥",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -1967,6 +2288,38 @@
       "aliases": []
     },
     {
+      "name": "麵包林里.Boulangerie Pangolin",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "讓一糖 蛋糕專賣店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Brass Hana 銅錵日式涮涮鍋",
       "city": "台中市",
       "address": "台中市",
@@ -1987,6 +2340,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "CJSJ 2.0",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Creammm.t",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
       "aliases": []
     },
     {
@@ -2062,6 +2447,22 @@
       ]
     },
     {
+      "name": "FReNCHIE FReNCHIE",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Glou Suru",
       "city": "台中市",
       "address": "台中市",
@@ -2100,6 +2501,13 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "sources": [
@@ -2127,6 +2535,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "L.Z. DESSART 無框架甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "L'Atelier par Yao",
@@ -2159,6 +2583,54 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "MINIMAL",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 5,
+          "level": "5甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Mr. 啃",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "National Park bakery 國家公園餅店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "Oretachi No Nikuya",
@@ -2225,6 +2697,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 4,
+          "level": "4甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ]
     },
@@ -2248,6 +2727,22 @@
       ]
     },
     {
+      "name": "パーラー 映",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台中市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "1117 一起cafe",
       "awards": [
         {
@@ -2266,6 +2761,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "1789 Café Pâtisserie",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -2302,6 +2813,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "1NAM desserts&drinks",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "216粉圓大王",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -2353,6 +2896,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "人和園雲南餐廳",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "八和 (大安)",
       "aliases": [],
       "city": "台北市",
@@ -2366,6 +2925,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "八和和牛燒肉專門店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "十三香精緻麵食",
@@ -2476,6 +3051,22 @@
       "aliases": []
     },
     {
+      "name": "三日月茶空間(和菓子)",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "三禾小廚私房菜",
       "awards": [
         {
@@ -2497,6 +3088,54 @@
       "aliases": []
     },
     {
+      "name": "三角冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "三明堂",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "三統漢菓子 suntone",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "上上咖啡",
       "address": "",
       "awards": [
@@ -2509,6 +3148,38 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "口口家豆花甜湯chez Lu Taiwanese dessert",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "土然巧克力專門店TERRA Bean to Bar Chocolate",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 5,
+          "level": "5甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -2539,6 +3210,38 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "大三元酒樓",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "大水缸養生甜品",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -3016,6 +3719,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "六丁目咖啡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "六品小館",
       "awards": [
         {
@@ -3034,6 +3753,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "六順豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -3069,6 +3804,22 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "天下三絕麵食館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "天天利",
@@ -3188,6 +3939,13 @@
         {
           "guide": "bib",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -3228,6 +3986,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "木白甜點咖啡店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -3381,6 +4155,22 @@
       "aliases": []
     },
     {
+      "name": "以利泡泡冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "兄弟飯店 蘭花廳",
       "awards": [
         {
@@ -3399,6 +4189,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "加福奇士蛋糕專門店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -3432,6 +4238,54 @@
       ]
     },
     {
+      "name": "北投大地酒店 奇岩一號中餐廳",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "北門鳳李冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "北港甜湯",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "北馥樓",
       "aliases": [],
       "city": "台北市",
@@ -3447,6 +4301,22 @@
       ]
     },
     {
+      "name": "卉堂",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "可甜可鹹 X 豆花專賣店",
       "address": "",
       "awards": [
@@ -3456,6 +4326,13 @@
           "bowls": 1,
           "level": "1碗",
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -3646,6 +4523,22 @@
       "aliases": []
     },
     {
+      "name": "平安京茶事",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "永樂雞捲大王",
       "address": "",
       "awards": [
@@ -3697,6 +4590,22 @@
       "aliases": []
     },
     {
+      "name": "生計食品",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "石牌無名手工蛋餅",
       "address": "",
       "awards": [
@@ -3724,6 +4633,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "立裴米緹咖啡館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -3793,6 +4718,22 @@
       "aliases": []
     },
     {
+      "name": "全統西點麵包 CHUAN TUNG",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "匠樂割烹壽司",
       "awards": [
         {
@@ -3826,6 +4767,38 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "吃吃看Tasters",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "吃咖 Chikafe",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -3872,6 +4845,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "吉那圈咖啡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "吉品海鮮（敦南店）",
       "awards": [
         {
@@ -3908,6 +4897,22 @@
       ]
     },
     {
+      "name": "同心圓紅豆餅",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "同安街麵線羹",
       "address": "",
       "awards": [
@@ -3920,6 +4925,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "在室。甜點|En vie Pâtisserie",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -3970,6 +4991,22 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "好粿緣",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "好嶼",
@@ -4023,6 +5060,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "庄頭豆花担",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -4116,6 +5169,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "江記東門豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -4354,6 +5423,54 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "折田菓舖",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "杉味豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "杏仁核 Amygdala",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "村子口",
       "address": "",
       "awards": [
@@ -4454,6 +5571,54 @@
       "aliases": []
     },
     {
+      "name": "芋香園",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "豆之坊",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "貝克宅",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "赤身燒肉 USHIO Taipei",
       "awards": [
         {
@@ -4533,6 +5698,22 @@
       "aliases": []
     },
     {
+      "name": "亞都麗緻大飯店 巴賽麗廳 La Brasserie",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "京丘・炭火燒鳥專門店",
       "awards": [
         {
@@ -4551,6 +5732,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "佳德糕餅",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "來呷甜甜品",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -4629,6 +5842,22 @@
       "aliases": []
     },
     {
+      "name": "呷二嘴",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "呷味鮮處女蟳",
       "awards": [
         {
@@ -4663,6 +5892,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "咖朵咖啡Caldo Cafe",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "咖哩嚕哆",
@@ -4774,6 +6019,22 @@
       "aliases": []
     },
     {
+      "name": "承繼CHENG JI",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 3,
+          "level": "3甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "昇冠雞排專賣店",
       "address": "",
       "awards": [
@@ -4786,6 +6047,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "明月堂",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -4956,6 +6233,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "欣葉台菜",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "欣葉台菜創始店",
       "awards": [
         {
@@ -5104,6 +6397,38 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "金雞母Jingimoo",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "長板凳工作室。PT_handmade",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "阿川蚵仔麵線",
@@ -5286,6 +6611,22 @@
       "aliases": []
     },
     {
+      "name": "阿猜嬤甜湯",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "阿富海鮮粥",
       "address": "",
       "awards": [
@@ -5406,6 +6747,70 @@
       "aliases": []
     },
     {
+      "name": "南機場芋頭大王",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "南蠻堂",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "室香Savour Kaffee",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "屋頂上的貓",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "巷口無名麵店",
       "address": "",
       "awards": [
@@ -5432,6 +6837,38 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "拾米屋",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "拾穗Bakery",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "施家麻油腰花",
@@ -5485,6 +6922,38 @@
       "aliases": []
     },
     {
+      "name": "春美冰菓室",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "昭和食堂",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "珍好呷越南河粉",
       "address": "",
       "awards": [
@@ -5528,6 +6997,13 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -5556,6 +7032,13 @@
           "plates": 11,
           "level": "11盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -5596,6 +7079,22 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "重本書店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "面對面",
@@ -5708,6 +7207,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "悄悄好食 杭州南店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "捌伍添第",
       "address": "台北市",
       "awards": [
@@ -5735,6 +7250,70 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "捌伍添第 85TD",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "時常在這裡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "柴進來雞蛋糕",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "栗林裏Li lin li",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 12,
+          "level": "12甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "桂姐臭豆腐",
@@ -5797,6 +7376,22 @@
       "aliases": []
     },
     {
+      "name": "珠寶盒法式點心坊",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 3,
+          "level": "3甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "真的好海鮮",
       "aliases": [],
       "city": "台北市",
@@ -5810,6 +7405,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "秘方雪人兄弟",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "秦味館",
@@ -5834,6 +7445,22 @@
       "aliases": []
     },
     {
+      "name": "秦味館 Qin Wei Guan",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "茗香園冰室（忠孝店 ）",
       "address": "",
       "awards": [
@@ -5846,6 +7473,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "茶菓一色",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -5931,6 +7574,22 @@
       "aliases": []
     },
     {
+      "name": "巢nido",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "張阿花香菇肉羹",
       "address": "",
       "awards": [
@@ -5958,6 +7617,54 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "御品元冰火湯圓",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "御菓子花雨。okashi Kau",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "捲捲村",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -6036,6 +7743,38 @@
       "aliases": []
     },
     {
+      "name": "涼食帖",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "深夜裡的法國手工甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "清真中國牛肉麵食館 (大安)",
       "aliases": [],
       "city": "台北市",
@@ -6063,6 +7802,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "甜拾 dessert",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -6150,6 +7905,70 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "通化夜市九份芋圓",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "造糕的人",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "陳耀訓·麵包埠 YOSHI BAKERY",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "陸 和洋私廚料理",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "頂好紫琳蒸餃館",
@@ -6240,6 +8059,13 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -6285,6 +8111,22 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "晴光紅豆餅",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "晴光意麵",
@@ -6371,6 +8213,38 @@
       "aliases": []
     },
     {
+      "name": "港記酥皇",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "滋養和菓子",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 3,
+          "level": "3甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "無名阿婆油飯",
       "address": "",
       "awards": [
@@ -6440,6 +8314,54 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "給冷鴿手作甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "菓實日",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "菸花Op.118.2",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "貳零捌公館",
@@ -6592,6 +8514,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "黑岩古早味黑砂糖剉冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "黑美林",
       "address": "",
       "awards": [
@@ -6622,6 +8560,22 @@
       "aliases": []
     },
     {
+      "name": "圓仔豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "圓環邊蚵仔煎",
       "address": "",
       "awards": [
@@ -6640,6 +8594,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "搖滾牛冰淇淋",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -6664,6 +8634,13 @@
           "plates": 6,
           "level": "6盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -6691,6 +8668,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "雹仔豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "鼎泰豐",
@@ -6800,6 +8793,22 @@
       ]
     },
     {
+      "name": "榕美樹館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "榮榮園",
       "aliases": [],
       "city": "台北市",
@@ -6813,6 +8822,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "榮榮園浙寧餐廳",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "福大蒸餃館",
@@ -6857,6 +8882,38 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "綠逗薏人",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "臺一牛奶大王",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -6995,6 +9052,38 @@
       "aliases": []
     },
     {
+      "name": "慶祝烘焙",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "熟成餐酒館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "磐石坊",
       "aliases": [],
       "city": "台北市",
@@ -7064,6 +9153,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "橘色涮涮鍋",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "燕山湯圓",
       "address": "",
       "awards": [
@@ -7092,6 +9197,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "興寧街古早味手工挫冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "興蓬萊台菜 (中山北路)",
@@ -7139,6 +9260,22 @@
       "aliases": []
     },
     {
+      "name": "貓下去敦北俱樂部",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "遼寧街黑白切",
       "address": "",
       "awards": [
@@ -7151,6 +9288,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "靜岡勝政日式豬排",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -7180,6 +9333,38 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "頤宮中餐廳 Le Palais",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "駱師傅法式冰淇淋之家",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "總裁藝文空間",
@@ -7325,6 +9510,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "點冰室·ジャビン",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "雙月食品",
       "address": "台北市中正區青島東路6之2號",
       "awards": [
@@ -7336,6 +9537,22 @@
       "city": "台北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "雙連圓仔湯",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "雙葉海鮮魚麵",
@@ -7446,6 +9663,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "騷豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "麵線傳奇",
       "address": "",
       "awards": [
@@ -7474,6 +9707,38 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "鐵木Ironwood Coffee",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "饗 A Joy",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "麟聚",
@@ -7572,6 +9837,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "ABCD . A Better Coffee & Doughnut",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Ad Astra",
       "address": "台北市",
       "awards": [
@@ -7585,6 +9866,13 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -7637,6 +9925,22 @@
       ]
     },
     {
+      "name": "akeruE Dessert",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 4,
+          "level": "4甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Aleisha",
       "aliases": [],
       "city": "台北市",
@@ -7670,6 +9974,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "amamoto bros.",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -7757,6 +10077,22 @@
       "aliases": []
     },
     {
+      "name": "BEMO Salon",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Bencotto",
       "awards": [
         {
@@ -7821,6 +10157,22 @@
       "aliases": []
     },
     {
+      "name": "Brillante Pâtisserie 星忱甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 4,
+          "level": "4甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Butcher by LanPengYou",
       "awards": [
         {
@@ -7863,6 +10215,22 @@
       "aliases": []
     },
     {
+      "name": "Café Parmentier",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Canvas",
       "awards": [
         {
@@ -7881,6 +10249,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "CHIFFON手工蛋糕店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -7955,6 +10339,13 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -7966,6 +10357,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "COFE 喫茶咖啡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 6,
+          "level": "6甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "COMEME康蜜蛋塔",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -7990,6 +10413,22 @@
       "aliases": []
     },
     {
+      "name": "COQUOLOGY 料理生活",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Cosi O Cosi 義大利餐廳",
       "address": "",
       "awards": [
@@ -8002,6 +10441,22 @@
         }
       ],
       "city": "台北市",
+      "aliases": []
+    },
+    {
+      "name": "COVA MONTENAPOLEONE",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -8020,6 +10475,38 @@
       "aliases": []
     },
     {
+      "name": "Cypress & Chestnut",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "DE LOIN 德朗火鍋",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "De Nuit",
       "address": "台北市",
       "awards": [
@@ -8033,6 +10520,13 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -8048,6 +10542,38 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "Deux Doux",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Dolce gelateria 手工義式冰淇淋",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "DOMANI 義式餐廳",
       "awards": [
         {
@@ -8055,6 +10581,13 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -8066,6 +10599,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Double V",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 8,
+          "level": "8甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -8149,6 +10698,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ]
     },
@@ -8192,6 +10748,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Flügel studio",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Fly cafe",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -8357,12 +10945,67 @@
       "aliases": []
     },
     {
+      "name": "Heritage Bakery & Cafe|美式烘培坊 Goo Donut",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "HiSugar 嗨糖 日式可麗餅 クレープ Crepe",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "hoshing1947 合興壹玖肆柒",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "HUGH dessert dining",
       "address": "台北市大同區重慶北路三段136巷56號",
       "awards": [
         {
           "guide": "bib",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 8,
+          "level": "8甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -8468,6 +11111,22 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "ISM主義甜時",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Jarana",
       "awards": [
         {
@@ -8481,6 +11140,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 3,
+          "level": "3甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -8494,6 +11160,70 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Joey's Restaurant and bar",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Kaffee Amadeus 阿瑪迪斯咖啡館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Kaju菓樹",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Kakigori toshihiko",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "Kitkit 創意川食",
@@ -8514,6 +11244,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Koshi Café",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -8580,6 +11326,38 @@
       "aliases": []
     },
     {
+      "name": "LA BOUTIQUE de Joël Robuchon Taipei 侯布雄法式精品甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "La Fossette 老法的酒窩",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "La Vie by Thomas Bühner",
       "address": "台北市",
       "awards": [
@@ -8606,6 +11384,102 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Lady Chef 甜法",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Lady M",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Le Cinq",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Le Ruban Pâtisserie 法朋烘焙甜點坊",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 8,
+          "level": "8甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Library Angte紅茶圖圕館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Libreadry 巢屋",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "Lin",
@@ -8744,6 +11618,22 @@
       "aliases": []
     },
     {
+      "name": "M&CO Restaurant & Tearoom",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Magic Touch",
       "awards": [
         {
@@ -8801,6 +11691,102 @@
       "aliases": []
     },
     {
+      "name": "MATCHA ONE 齊東店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "MERCER BRUNCH TAIWAN",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "MHO甜點工作室| L'Atelier de Mlle HO",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Mine kitchen",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Miss V Bakery",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "misu misu|提拉米蘇專賣店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Mizue",
       "address": "台北市",
       "awards": [
@@ -8820,6 +11806,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Mr. 雪腐",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -8879,6 +11881,13 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -8984,6 +11993,38 @@
       "aliases": []
     },
     {
+      "name": "PASTi Trattoria",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Pierre Herme",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "PIZZAROUND 比薩斜躺",
       "awards": [
         {
@@ -9023,6 +12064,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Pokapoka Bakery",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -9068,6 +12125,22 @@
       "aliases": []
     },
     {
+      "name": "Quelques Pâtisseries 某某甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 8,
+          "level": "8甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Reale Cucina Italiana",
       "awards": [
         {
@@ -9086,6 +12159,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Regent Taipei 台北晶華酒店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -9123,6 +12212,13 @@
           "plates": 4,
           "level": "4盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -9163,6 +12259,13 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -9174,6 +12277,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Sam Liu 小山姆",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Saturn Landing Turkish Coffee",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -9219,6 +12354,22 @@
       "aliases": []
     },
     {
+      "name": "SEASON Artisan Pâtissier",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 5,
+          "level": "5甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Sens",
       "address": "台北市",
       "awards": [
@@ -9232,6 +12383,13 @@
           "plates": 6,
           "level": "6盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -9262,6 +12420,54 @@
       ]
     },
     {
+      "name": "Sheryl's Recipe 嗜甜女子",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Silks House 晶華軒",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Smith & Wollensky",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Solo Pasta",
       "address": "台北市大安區安和路一段29-1號",
       "awards": [
@@ -9270,6 +12476,13 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -9281,6 +12494,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "STONE Espresso Bar & Coffee Roaster",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Süivre Lab 順流實驗室",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -9347,6 +12592,22 @@
       ]
     },
     {
+      "name": "That cake thoo 台北客製化蛋糕",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "The Antipodean（內湖店）",
       "awards": [
         {
@@ -9386,6 +12647,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "The COACH Coffee Shop",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -9447,6 +12724,22 @@
       "aliases": []
     },
     {
+      "name": "TRIPLE T",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "TUGA",
       "awards": [
         {
@@ -9481,6 +12774,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "city": "台北市",
@@ -9517,6 +12817,22 @@
       "aliases": []
     },
     {
+      "name": "WILD DONKEY 野驢小餐館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "Wok by O'BOND",
       "address": "台北市",
       "awards": [
@@ -9543,6 +12859,54 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Woolloomoolloo",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "WUNIQUE Pâtisserie 吳一無二法式甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 4,
+          "level": "4甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Yu Chocolatier 畬室 法式巧克力甜點創作",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 16,
+          "level": "16甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "Yuu",
@@ -9685,6 +13049,22 @@
       "aliases": []
     },
     {
+      "name": "台東\"讚\"甘蔗檸檬汁",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台東縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "池上吉本肉圓",
       "address": "",
       "awards": [
@@ -9813,6 +13193,38 @@
       "aliases": []
     },
     {
+      "name": "柴源製菓",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台東縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "陳記麻糬",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台東縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "德布西咖啡 江賢二藝術園區會館",
       "city": "台東縣",
       "address": "台東縣",
@@ -9848,6 +13260,38 @@
         }
       ],
       "city": "台東縣",
+      "aliases": []
+    },
+    {
+      "name": "癡愛玉",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台東縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "蘭嶼漂流木餐廳",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台東縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -9905,6 +13349,22 @@
       "aliases": []
     },
     {
+      "name": "一品清冰品-阿燕姨冰枝店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "二空燕京蔥油餅",
       "address": "",
       "awards": [
@@ -9917,6 +13377,22 @@
         }
       ],
       "city": "台南市",
+      "aliases": []
+    },
+    {
+      "name": "八寶彬圓仔惠",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -10059,6 +13535,22 @@
       "aliases": []
     },
     {
+      "name": "六甲媽祖廟剉冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "友愛街旅館",
       "city": "台南市",
       "address": "台南市",
@@ -10142,6 +13634,22 @@
       ]
     },
     {
+      "name": "犬首燒",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "王家燻羊肉",
       "aliases": [],
       "city": "台南市",
@@ -10184,6 +13692,38 @@
         }
       ],
       "city": "台南市",
+      "aliases": []
+    },
+    {
+      "name": "台南府城 吳萬春蜜餞",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "永南興餅舖",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -10278,6 +13818,22 @@
       ]
     },
     {
+      "name": "冰鄉",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "吃麵吧",
       "city": "台南市",
       "address": "台南市",
@@ -10291,6 +13847,22 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
+      "aliases": []
+    },
+    {
+      "name": "吃麵吧Jai Mi Ba",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -10352,6 +13924,22 @@
         }
       ],
       "city": "台南市",
+      "aliases": []
+    },
+    {
+      "name": "老正牌• 阿堯師雞蛋糕",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -10515,6 +14103,22 @@
       "aliases": []
     },
     {
+      "name": "林家茂子白糖粿蕃薯椪(原國華街口)",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "欣欣餐廳",
       "aliases": [],
       "city": "台南市",
@@ -10621,6 +14225,22 @@
       "aliases": []
     },
     {
+      "name": "阿田水果店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "阿江鱔魚意麵",
       "address": "",
       "awards": [
@@ -10682,6 +14302,22 @@
       "aliases": []
     },
     {
+      "name": "阿美純手工麻糬",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "阿美飯店",
       "city": "台南市",
       "address": "台南市",
@@ -10733,6 +14369,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "阿華粿店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -10886,6 +14538,22 @@
       ]
     },
     {
+      "name": "軌咖啡(鬼咖啡)",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "香草小餐酒",
       "aliases": [],
       "city": "台南市",
@@ -10931,6 +14599,22 @@
       "aliases": []
     },
     {
+      "name": "泰成水果店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "啢啢餐桌",
       "aliases": [],
       "city": "台南市",
@@ -10958,6 +14642,22 @@
         }
       ],
       "city": "台南市",
+      "aliases": []
+    },
+    {
+      "name": "梅楓正宗古早味粉圓",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -11012,6 +14712,38 @@
         }
       ],
       "city": "台南市",
+      "aliases": []
+    },
+    {
+      "name": "清吉水果",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "莉莉水果店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 4,
+          "level": "4甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -11077,6 +14809,22 @@
       "aliases": []
     },
     {
+      "name": "富源冰菓部",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "寓點",
       "city": "台南市",
       "address": "台南市",
@@ -11093,6 +14841,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "sources": [
@@ -11259,6 +15014,22 @@
       "aliases": []
     },
     {
+      "name": "黃家米糕栫",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "黃家蝦捲",
       "city": "台南市",
       "address": "台南市",
@@ -11341,6 +15112,22 @@
       "aliases": []
     },
     {
+      "name": "溫點 Warmplace",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "矮仔成蝦仁飯",
       "address": "",
       "awards": [
@@ -11401,6 +15188,22 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
+      "aliases": []
+    },
+    {
+      "name": "葡吉麵包店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -11493,6 +15296,38 @@
         }
       ],
       "city": "台南市",
+      "aliases": []
+    },
+    {
+      "name": "蜜桃香楊桃湯",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "蜷尾家",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
       "aliases": []
     },
     {
@@ -11725,6 +15560,22 @@
       ]
     },
     {
+      "name": "寶來香餅舖",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "糯夫米糕",
       "address": "",
       "awards": [
@@ -11753,6 +15604,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "Chun純薏仁。甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "FOUFOU餐酒館",
@@ -11831,6 +15698,22 @@
       "aliases": []
     },
     {
+      "name": "Perfe'dough",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "台南市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "一香飲食店 麻醬麵",
       "address": "",
       "awards": [
@@ -11866,6 +15749,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "小食粑 Rice Mini Cake",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "小涼園冰果室",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -11919,6 +15834,22 @@
         }
       ],
       "city": "宜蘭縣",
+      "aliases": []
+    },
+    {
+      "name": "白水豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -11990,6 +15921,22 @@
       "aliases": []
     },
     {
+      "name": "老元香",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "老吳碳烤燒烤餅",
       "address": "",
       "awards": [
@@ -12002,6 +15949,22 @@
         }
       ],
       "city": "宜蘭縣",
+      "aliases": []
+    },
+    {
+      "name": "和平豆花(宜蘭)",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12058,6 +16021,22 @@
       "aliases": []
     },
     {
+      "name": "南館市場",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "紅樓中餐廳",
       "city": "宜蘭縣",
       "address": "宜蘭縣",
@@ -12078,6 +16057,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "逗可可:甜點研究室",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12141,6 +16136,22 @@
       "aliases": []
     },
     {
+      "name": "越穗香手作甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "嘟好燒",
       "address": "",
       "awards": [
@@ -12153,6 +16164,22 @@
         }
       ],
       "city": "宜蘭縣",
+      "aliases": []
+    },
+    {
+      "name": "聯發冰工坊",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12176,6 +16203,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "Tjuku cafe 啾咕咖啡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "宜蘭縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12221,6 +16264,22 @@
         }
       ],
       "city": "花蓮縣",
+      "aliases": []
+    },
+    {
+      "name": "找到了可頌小売所",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "花蓮縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12292,6 +16351,22 @@
       "aliases": []
     },
     {
+      "name": "蘭二㼗 Lan Er Ting 中式創意甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "花蓮縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "HANG OUT手工漢堡（慶降Kiciyang）",
       "address": "",
       "awards": [
@@ -12304,6 +16379,38 @@
         }
       ],
       "city": "花蓮縣",
+      "aliases": []
+    },
+    {
+      "name": "YUTUZU",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "花蓮縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "海霓蜜坊Honey workshop",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "金門縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12387,6 +16494,22 @@
         }
       ],
       "city": "南投縣",
+      "aliases": []
+    },
+    {
+      "name": "沒有豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "南投縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12615,6 +16738,22 @@
       "aliases": []
     },
     {
+      "name": "波波廚房 Kitchen Swell",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "屏東縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "阿卿姐飯湯",
       "address": "",
       "awards": [
@@ -12735,6 +16874,22 @@
       "aliases": []
     },
     {
+      "name": "莉姆姆的歌",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "屏東縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "菊子 Wouli 889（菊子窩裡）",
       "address": "",
       "awards": [
@@ -12747,6 +16902,22 @@
         }
       ],
       "city": "屏東縣",
+      "aliases": []
+    },
+    {
+      "name": "菜寮豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "屏東縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12780,6 +16951,22 @@
       "aliases": []
     },
     {
+      "name": "福灣巧克力",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "屏東縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "歸來肉圓老店",
       "address": "",
       "awards": [
@@ -12805,6 +16992,13 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "sources": [
@@ -12838,6 +17032,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "北苗市場_阿婆手工粉圓",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "苗栗縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -12909,6 +17119,54 @@
       "aliases": []
     },
     {
+      "name": "屋咖人Vug Ka Ngin",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "苗栗縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "穿龍老屋豆腐坊",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "苗栗縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "福樂麵店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "苗栗縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "仁利菜包",
       "address": "",
       "awards": [
@@ -12944,6 +17202,38 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "老街溪綿綿冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "桃園市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "艾蕾蒂法式甜點",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "桃園市",
+      "area": "",
       "aliases": []
     },
     {
@@ -13099,6 +17389,22 @@
       "aliases": []
     },
     {
+      "name": "藍嵐",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "桃園市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "三禾清豐",
       "aliases": [],
       "city": "高雄市",
@@ -13189,6 +17495,22 @@
       "aliases": []
     },
     {
+      "name": "小雅芋頭西米露專賣店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "小暫渡米糕四神湯",
       "address": "",
       "awards": [
@@ -13220,6 +17542,38 @@
       "aliases": []
     },
     {
+      "name": "小露吃",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "仁愛一街綠豆湯",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "天天沙茶火鍋",
       "address": "",
       "awards": [
@@ -13232,6 +17586,22 @@
         }
       ],
       "city": "高雄市",
+      "aliases": []
+    },
+    {
+      "name": "天池冬瓜茶",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
       "aliases": []
     },
     {
@@ -13589,6 +17959,22 @@
       ]
     },
     {
+      "name": "冷熱飲之家",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "吳記肉圓",
       "address": "",
       "awards": [
@@ -13616,6 +18002,22 @@
         }
       ],
       "city": "高雄市",
+      "aliases": []
+    },
+    {
+      "name": "李家圓仔湯",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
       "aliases": []
     },
     {
@@ -13663,6 +18065,22 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
+      "aliases": []
+    },
+    {
+      "name": "呷百二自然洋果子",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
       "aliases": []
     },
     {
@@ -13962,6 +18380,22 @@
       "aliases": []
     },
     {
+      "name": "拜樹頭烘焙商店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "春蘭割包",
       "city": "高雄市",
       "address": "高雄市",
@@ -14037,6 +18471,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "若生靜巷",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "香四海現做旗魚黑輪",
@@ -14166,6 +18616,38 @@
         }
       ],
       "city": "高雄市",
+      "aliases": []
+    },
+    {
+      "name": "猜心泡芙",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "莎士比亞烘焙坊",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
       "aliases": []
     },
     {
@@ -14336,6 +18818,22 @@
       ]
     },
     {
+      "name": "雋 GEN by Matt Chen",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "廖記米糕",
       "city": "高雄市",
       "address": "高雄市",
@@ -14349,6 +18847,22 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
+      "aliases": []
+    },
+    {
+      "name": "旗山 常美冰店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
       "aliases": []
     },
     {
@@ -14807,6 +19321,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ]
     },
@@ -14890,6 +19411,22 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
+      "aliases": []
+    },
+    {
+      "name": "OCEAN BAKERY",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "高雄市",
+      "area": "",
       "aliases": []
     },
     {
@@ -15076,6 +19613,22 @@
         }
       ],
       "city": "基隆市",
+      "aliases": []
+    },
+    {
+      "name": "李鵠餅店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "基隆市",
+      "area": "",
       "aliases": []
     },
     {
@@ -15365,6 +19918,22 @@
       "aliases": []
     },
     {
+      "name": "目鏡仔麥芽酥",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "雲林縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "老街碗粿",
       "address": "",
       "awards": [
@@ -15392,6 +19961,22 @@
         }
       ],
       "city": "雲林縣",
+      "aliases": []
+    },
+    {
+      "name": "長興圓仔冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "雲林縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -15437,6 +20022,54 @@
         }
       ],
       "city": "雲林縣",
+      "aliases": []
+    },
+    {
+      "name": "溝仔垻清涼冰店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "雲林縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "粳粽林",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "雲林縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "碳烤鴨蛋糕",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "雲林縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -15868,6 +20501,22 @@
       "aliases": []
     },
     {
+      "name": "豆林豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "車頭鹹粥",
       "address": "",
       "awards": [
@@ -15911,6 +20560,22 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
+      "aliases": []
+    },
+    {
+      "name": "林口米苔目冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -16180,6 +20845,38 @@
       ]
     },
     {
+      "name": "香帥蛋糕",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "倆樂 LiAng Le",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "家宴",
       "aliases": [],
       "city": "新北市",
@@ -16230,6 +20927,22 @@
         }
       ],
       "city": "新北市",
+      "aliases": []
+    },
+    {
+      "name": "粉圓王",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -16292,6 +21005,22 @@
       ]
     },
     {
+      "name": "野事草店Wild Herbs",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "富關東煮",
       "address": "",
       "awards": [
@@ -16351,6 +21080,22 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
+    },
+    {
+      "name": "新建成餅店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
     },
     {
       "name": "新莊羊肉榮",
@@ -16581,6 +21326,22 @@
       "aliases": []
     },
     {
+      "name": "龍鳳堂餅舖",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "蘆洲-總讚手作蔥餅",
       "address": "",
       "awards": [
@@ -16593,6 +21354,86 @@
         }
       ],
       "city": "新北市",
+      "aliases": []
+    },
+    {
+      "name": "Le Môut Pâtisserie Boulangerie 樂沐糕餅舖",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "NINE SKY 九天",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Quartet Kaffe 適芳咖啡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Urban Canyon by Brown Study 城市峽谷咖啡館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "YUYU Pâtisserie",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "新北市",
+      "area": "",
       "aliases": []
     },
     {
@@ -17348,6 +22189,22 @@
       ]
     },
     {
+      "name": "(源記)鹿港傳統粉粿冰",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "大元蔴薯",
       "address": "",
       "awards": [
@@ -17360,6 +22217,38 @@
         }
       ],
       "city": "彰化縣",
+      "aliases": []
+    },
+    {
+      "name": "大元蔴糬(鹹麻糬)",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "不二坊",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -17420,6 +22309,22 @@
         }
       ],
       "city": "彰化縣",
+      "aliases": []
+    },
+    {
+      "name": "玉瓏坊名產麻糬",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -17513,6 +22418,54 @@
       "aliases": []
     },
     {
+      "name": "幸福販賣所 The Happiness Shop",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "怡古齋人文茶館",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "明豐珍兔仔寮牛舌餅",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "林家素食",
       "address": "",
       "awards": [
@@ -17585,6 +22538,22 @@
         }
       ],
       "city": "彰化縣",
+      "aliases": []
+    },
+    {
+      "name": "施豆花",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
       "aliases": []
     },
     {
@@ -17678,6 +22647,22 @@
       "aliases": []
     },
     {
+      "name": "新口味食品行",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
       "name": "煲魚鋪 鮮魚湯專賣店",
       "address": "",
       "awards": [
@@ -17720,6 +22705,54 @@
         }
       ],
       "city": "彰化縣",
+      "aliases": []
+    },
+    {
+      "name": "寶珍香桂圓蛋糕創始店",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "BEAR BAKERY 小熊菓子",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
+      "aliases": []
+    },
+    {
+      "name": "Bruce Coffee 自家焙煎咖啡",
+      "address": "",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "city": "彰化縣",
+      "area": "",
       "aliases": []
     },
     {

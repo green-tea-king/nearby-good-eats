@@ -3,12 +3,13 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
-const draftPath = path.join(repoRoot, "assets", "awards-taiwan.michelin-selected-2025-draft.json");
+const draftPath = path.join(repoRoot, "assets", "awards-taiwan.500sweet-2025-draft.json");
 const sweetManualPath = path.join(repoRoot, "assets", "500sweet-2025-manual.json");
+const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
 
 const ALLOWED_GUIDES = new Set(["michelin", "michelin_selected", "bib", "greenstar", "500plate", "500bowl", "500sweet", "50best"]);
 const EXPECTED = {
-  restaurants: 1028,
+  restaurants: 1332,
   guides: {
     michelin: 53,
     "michelin_selected": 222,
@@ -16,6 +17,7 @@ const EXPECTED = {
     greenstar: 7,
     "500plate": 260,
     "500bowl": 415,
+    "500sweet": 328,
   },
 };
 
@@ -169,19 +171,42 @@ function validateSweetManual(data) {
   };
 }
 
+function validateSweetCandidates(data) {
+  const errors = [];
+  const rows = data.restaurants || [];
+  if (data.sourceUrl !== "https://500times.udn.com/wtimes/story/124537/8931871") {
+    errors.push("500sweet candidates sourceUrl changed; review import source before accepting");
+  }
+  if (rows.length !== 356) errors.push(`500sweet candidates expected 356, got ${rows.length}`);
+  const highConfidence = rows.filter((row) => row.importConfidence === "high").length;
+  const skippedNonCity = rows.filter((row) => row.importConfidence === "skip_non_city_bucket").length;
+  const needsCityReview = rows.filter((row) => row.importConfidence === "needs_city_review").length;
+  if (highConfidence !== 328) errors.push(`500sweet high confidence expected 328, got ${highConfidence}`);
+  if (skippedNonCity !== 23) errors.push(`500sweet skipped non-city expected 23, got ${skippedNonCity}`);
+  if (needsCityReview !== 5) errors.push(`500sweet needs city review expected 5, got ${needsCityReview}`);
+  return { rows: rows.length, highConfidence, skippedNonCity, needsCityReview, errors };
+}
+
 function main() {
   const formal = readJson(awardsPath);
   const draft = readJson(draftPath);
   const result = validateAwards(formal);
   const draftErrors = compareFormalAndDraft(formal, draft);
   const sweetManual = fs.existsSync(sweetManualPath) ? validateSweetManual(readJson(sweetManualPath)) : { rows: 0, errors: [] };
-  const errors = [...result.errors, ...draftErrors, ...sweetManual.errors];
+  const sweetCandidates = fs.existsSync(sweetCandidatesPath) ? validateSweetCandidates(readJson(sweetCandidatesPath)) : { rows: 0, highConfidence: 0, errors: ["missing 500sweet candidates"] };
+  const errors = [...result.errors, ...draftErrors, ...sweetManual.errors, ...sweetCandidates.errors];
 
   const summary = {
     ok: errors.length === 0,
     restaurants: (formal.restaurants || []).length,
     guides: result.guides,
     sweetManualRows: sweetManual.rows,
+    sweetCandidates: {
+      rows: sweetCandidates.rows,
+      highConfidence: sweetCandidates.highConfidence,
+      skippedNonCity: sweetCandidates.skippedNonCity,
+      needsCityReview: sweetCandidates.needsCityReview,
+    },
     errors,
   };
 

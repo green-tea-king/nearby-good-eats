@@ -54,7 +54,7 @@
       "updateCadence": "yearly",
       "runtimeLookup": false,
       "dataFile": "assets/awards-taiwan.json",
-      "status": "schema-ready; data pending verified batch import"
+      "status": "imported; verified batch import"
     },
     {
       "id": "50best",

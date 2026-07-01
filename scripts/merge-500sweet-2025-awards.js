@@ -4,6 +4,7 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const manualPath = path.join(repoRoot, "assets", "500sweet-2025-manual.json");
+const candidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
 const draftPath = path.join(repoRoot, "assets", "awards-taiwan.500sweet-2025-draft.json");
 const reportPath = path.join(repoRoot, "assets", "500sweet-2025-merge-report.json");
 
@@ -27,6 +28,12 @@ function normalizeName(value) {
 
 function identity(row) {
   return `${row.city || ""}|${normalizeName(row.name)}`;
+}
+
+function identityKeys(row) {
+  return [row.name, ...(row.aliases || [])]
+    .map((name) => `${row.city || ""}|${normalizeName(name)}`)
+    .filter((key) => !key.endsWith("|"));
 }
 
 function awardKey(award) {
@@ -63,6 +70,21 @@ function validateManual(manual) {
   return errors;
 }
 
+function validateCandidates(candidates) {
+  const errors = [];
+  for (const [index, row] of (candidates.restaurants || []).entries()) {
+    const prefix = `candidates.restaurants[${index}]`;
+    if (!row.name) errors.push(`${prefix} missing name`);
+    if (row.importConfidence === "high" && !row.city) errors.push(`${prefix} high confidence row missing city`);
+    for (const award of row.awards || []) {
+      if (award.guide !== "500sweet") errors.push(`${prefix} invalid guide ${award.guide}`);
+      if (award.year !== 2025) errors.push(`${prefix} invalid year ${award.year}`);
+      if (!award.url) errors.push(`${prefix} award missing url`);
+    }
+  }
+  return errors;
+}
+
 function buildAward(row) {
   const dishSweets = Array.isArray(row.dishSweets) ? row.dishSweets.map(Number).filter((value) => Number.isFinite(value) && value > 0) : [];
   const sweets = Number(row.sweets || (dishSweets.length ? dishSweets.reduce((sum, value) => sum + value, 0) : 0)) || undefined;
@@ -76,14 +98,39 @@ function buildAward(row) {
   };
 }
 
+function candidateToManualShape(row) {
+  const award = (row.awards || []).find((item) => item.guide === "500sweet") || {};
+  return {
+    name: row.name,
+    city: row.city,
+    address: row.address || "",
+    aliases: row.aliases || [],
+    sweets: award.sweets,
+    dishSweets: award.dishSweets,
+    level: award.level,
+    sourceUrl: award.url || row.source?.url,
+    reviewedBy: "scripts/build-500sweet-2025-candidates.js",
+  };
+}
+
 function merge() {
   const awards = readJson(awardsPath);
   const manual = readJson(manualPath);
-  const errors = validateManual(manual);
+  const candidates = fs.existsSync(candidatesPath) ? readJson(candidatesPath) : { restaurants: [] };
+  const errors = [...validateManual(manual), ...validateCandidates(candidates)];
+  const candidateRows = (candidates.restaurants || [])
+    .filter((row) => row.importConfidence === "high")
+    .map(candidateToManualShape);
+  const manualRows = manual.restaurants || [];
+  const mergeRows = [...candidateRows, ...manualRows];
   const report = {
     generatedAt: new Date().toISOString(),
-    source: manual.sourceUrl,
-    candidates: (manual.restaurants || []).length,
+    source: candidates.sourceUrl || manual.sourceUrl,
+    candidates: (candidates.restaurants || []).length,
+    highConfidenceCandidates: candidateRows.length,
+    manualRows: manualRows.length,
+    skippedNeedsReview: (candidates.restaurants || []).filter((row) => row.importConfidence === "needs_city_review").length,
+    skippedNonCityBucket: (candidates.restaurants || []).filter((row) => row.importConfidence === "skip_non_city_bucket").length,
     addedRestaurants: 0,
     updatedExistingRestaurants: 0,
     skippedDuplicateAward: 0,
@@ -97,8 +144,11 @@ function merge() {
   }
 
   const rows = Array.isArray(awards.restaurants) ? awards.restaurants : [];
-  const byKey = new Map(rows.map((row) => [identity(row), row]));
-  for (const candidate of manual.restaurants || []) {
+  const byKey = new Map();
+  for (const row of rows) {
+    for (const key of identityKeys(row)) byKey.set(key, row);
+  }
+  for (const candidate of mergeRows) {
     const key = identity(candidate);
     let target = byKey.get(key);
     const existed = Boolean(target);
@@ -132,6 +182,11 @@ function merge() {
 
   awards.restaurants = rows.sort((a, b) => `${a.city || ""}${a.name}`.localeCompare(`${b.city || ""}${b.name}`, "zh-Hant"));
   awards.updated = taipeiDate();
+  awards._README = awards._README
+    .replace("500甜保留格式，尚未匯入未驗證資料", "500甜已匯入 2025 官方文字名單高信心資料")
+    .replace("500甜目前先支援格式與徽章，待批次來源驗證後再匯入正式資料", "500甜已匯入 2025 官方文字名單高信心資料");
+  awards._coverage.note = `${String(awards._coverage.note || "").replace("500甜僅先支援格式與前端徽章，待批次來源驗證後再匯入。", "500甜已匯入 2025 官方文字名單高信心資料，連鎖與線上通路保留在 merge report 待人工覆核。")} 2025 500甜已匯入官方文字名單高信心資料。`;
+  if (candidates.sourceUrl && !awards._sources.includes(candidates.sourceUrl)) awards._sources.push(candidates.sourceUrl);
   if ((manual.restaurants || []).length && !awards._sources.includes(manual.sourceUrl)) awards._sources.push(manual.sourceUrl);
 
   writeJson(draftPath, awards);
