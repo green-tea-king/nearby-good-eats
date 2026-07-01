@@ -3,6 +3,7 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const signalsPath = path.join(repoRoot, "assets", "external-signals.json");
+const coveragePath = path.join(repoRoot, "assets", "external-source-coverage.json");
 const manualSignalsPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformImportCsvPath = path.join(repoRoot, "assets", "platform-signals.import.csv");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
@@ -170,6 +171,21 @@ if (fs.existsSync(platformImportCsvPath)) {
     headers: csvReport.headers,
   };
   report.errors.push(...csvReport.errors);
+  report.ok = report.errors.length === 0;
+}
+if (fs.existsSync(coveragePath)) {
+  const coverage = readJson(coveragePath);
+  const requiredCoverage = ["michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw"];
+  const coverageIds = new Set((coverage.sources || []).map((source) => source.id));
+  for (const id of requiredCoverage) {
+    if (!coverageIds.has(id)) report.errors.push(`external source coverage missing: ${id}`);
+  }
+  if (coverage.policy?.runtimeExternalLookup !== false || coverage.policy?.noFakeData !== true) {
+    report.errors.push("external source coverage policy must disable runtime lookup and fake data");
+  }
+  report.externalSourceCoverage = {
+    sources: coverageIds.size,
+  };
   report.ok = report.errors.length === 0;
 }
 console.log(JSON.stringify(report, null, 2));
