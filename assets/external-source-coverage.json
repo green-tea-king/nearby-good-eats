@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1414,
+    "awardsRestaurants": 1434,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -30,7 +30,8 @@
     "gdgAwardsNeedsCityReview": 51,
     "michelinSpecialCandidates": 4,
     "tcfPraiseCandidates": 0,
-    "tcfPraiseNeedsCityReview": 36
+    "tcfPraiseNeedsCityReview": 36,
+    "taichungLowCarbonCandidates": 20
   },
   "sources": [
     {
@@ -177,6 +178,16 @@
       "count": 0,
       "candidates": 0,
       "needsCityReview": 36,
+      "runtimeLookup": false
+    },
+    {
+      "id": "taichunglowcarbon",
+      "label": "臺中市低碳餐廳認證",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/taichung-low-carbon-2023-candidates.json",
+      "count": 20,
+      "candidates": 20,
       "runtimeLookup": false
     },
     {

@@ -42,7 +42,8 @@
     "https://www.gdg.asia/article/235/1421",
     "https://ipuregreen.org/veg/",
     "https://greenmedia.today/article_detail.php?cid=7&mid=1407",
-    "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
+    "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled",
+    "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -7662,6 +7663,20 @@
       "aliases": []
     },
     {
+      "name": "三時福利社",
+      "city": "臺中市",
+      "address": "臺中市西區民生路 356 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "上海未名麵點",
       "city": "臺中市",
       "address": "台中市",
@@ -8037,6 +8052,20 @@
       "aliases": []
     },
     {
+      "name": "水相餐聚苑",
+      "city": "臺中市",
+      "address": "臺中市北屯區經貿三路二段 100 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "水湳台中肉圓",
       "address": "",
       "awards": [
@@ -8330,6 +8359,20 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
+    },
+    {
+      "name": "有之和牛-臺中文心店",
+      "city": "臺中市",
+      "address": "臺中市西屯區文心路二段 568 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
     },
     {
       "name": "老士官擀麵",
@@ -8651,6 +8694,20 @@
       "aliases": []
     },
     {
+      "name": "金色三麥-臺中市政店",
+      "city": "臺中市",
+      "address": "臺中市西屯區市政路 20 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "金悅軒",
       "city": "臺中市",
       "address": "台中市",
@@ -8688,6 +8745,20 @@
       "city": "臺中市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "長榮桂冠酒店咖啡廳",
+      "city": "臺中市",
+      "address": "臺中市西屯區臺灣大道二段 666 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
     },
     {
       "name": "阿斗伯冷凍芋",
@@ -8798,6 +8869,50 @@
       "aliases": []
     },
     {
+      "name": "屋馬燒肉-中港店",
+      "city": "臺中市",
+      "address": "臺中市西屯區臺灣大道三段 300 號",
+      "aliases": [
+        "屋馬燒肉(臺中中港店)"
+      ],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
+      "name": "屋馬燒肉-文心店",
+      "city": "臺中市",
+      "address": "臺中市南屯區文心路一段 436 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
+      "name": "屋馬燒肉-園邸店",
+      "city": "臺中市",
+      "address": "臺中市西區公益路 111 號 1 樓",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "春日宴 粵菜喜宴",
       "city": "臺中市",
       "address": "台中市",
@@ -8834,6 +8949,22 @@
       ],
       "city": "臺中市",
       "aliases": []
+    },
+    {
+      "name": "紅巢燒肉工房",
+      "city": "臺中市",
+      "address": "臺中市南屯區公益路二段 836 號",
+      "aliases": [
+        "Hongchao BBQ Restaurant"
+      ],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
     },
     {
       "name": "美村點頭冰",
@@ -9100,6 +9231,20 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "梨子咖啡館-崇德店",
+      "city": "臺中市",
+      "address": "臺中市北屯區崇德路三段 1 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
     },
     {
       "name": "清水燒炸粿",
@@ -9554,6 +9699,22 @@
       "aliases": []
     },
     {
+      "name": "滬舍餘味餐館",
+      "city": "臺中市",
+      "address": "臺中市南屯區公益路二段 537 號",
+      "aliases": [
+        "滬舍餘味"
+      ],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "滿堂",
       "aliases": [],
       "city": "臺中市",
@@ -9630,6 +9791,22 @@
       "aliases": []
     },
     {
+      "name": "臺中日月千禧酒店-旅覓酒吧",
+      "city": "臺中市",
+      "address": "臺中市西屯區市政路 77 號",
+      "aliases": [
+        "旅覓酒吧"
+      ],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "鳳記鵝肉老店",
       "city": "臺中市",
       "address": "台中市",
@@ -9672,6 +9849,20 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "熱浪島南洋蔬食茶堂",
+      "city": "臺中市",
+      "address": "臺中市南屯區向上路三段 536 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
       ]
     },
@@ -9767,6 +9958,22 @@
       "aliases": []
     },
     {
+      "name": "築間幸福鍋物-臺中市政二店",
+      "city": "臺中市",
+      "address": "臺中市西屯區文心路二段 213 號",
+      "aliases": [
+        "築間幸福鍋物(市政二店)"
+      ],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "膳馨 (西區)",
       "aliases": [],
       "city": "臺中市",
@@ -9782,6 +9989,20 @@
       ]
     },
     {
+      "name": "膳馨民間創作料理",
+      "city": "臺中市",
+      "address": "臺中市西區存中街 21 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
       "name": "貓居蔬食",
       "city": "臺中市",
       "address": "",
@@ -9793,6 +10014,20 @@
           "level": "1星",
           "stars": 1,
           "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
+      "name": "默爾 Pasta Pizza-北屯店",
+      "city": "臺中市",
+      "address": "臺中市北屯區安順四街 2 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
       ]
     },
@@ -9997,6 +10232,36 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
+    },
+    {
+      "name": "馨苑小料理-北屯店",
+      "city": "臺中市",
+      "address": "臺中市北屯區文昌東十一街 14 巷 1 號",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
+      "name": "馨苑小料理-西區店",
+      "city": "臺中市",
+      "address": "臺中市西區民生北路 106 號",
+      "aliases": [
+        "馨苑"
+      ],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
     },
     {
       "name": "麵包林里.Boulangerie Pangolin",
@@ -10217,6 +10482,36 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "HUN-臺中一中店",
+      "city": "臺中市",
+      "address": "臺中市北區三民路三段 114 號 2 樓",
+      "aliases": [
+        "HUN混 義大利麵 一中店"
+      ],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
+    },
+    {
+      "name": "JAI-臺中水湳店",
+      "city": "臺中市",
+      "address": "臺中市北屯區中清路二段 903 號二樓",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "taichunglowcarbon",
+          "year": 2023,
+          "level": "低碳認證",
+          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+        }
+      ]
     },
     {
       "name": "JL Studio",
