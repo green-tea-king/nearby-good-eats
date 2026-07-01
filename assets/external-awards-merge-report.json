@@ -1,22 +1,25 @@
 {
-  "generatedAt": "2026-07-01T22:27:45.689Z",
+  "generatedAt": "2026-07-01T22:34:29.172Z",
   "sourceFiles": [
     "assets/external-awards.manual.json",
     "assets/50best-discovery-taiwan-candidates.json",
     "assets/oad-asia-2025-candidates.json",
-    "assets/thebestchef-taiwan-2025-candidates.json"
+    "assets/thebestchef-taiwan-2025-candidates.json",
+    "assets/restaurant-design-awards-taiwan-candidates.json"
   ],
-  "candidates": 68,
+  "candidates": 71,
   "manualCandidates": 22,
   "fiftyDiscoveryCandidates": 13,
   "oadCandidates": 29,
   "bestChefCandidates": 4,
+  "designAwardsCandidates": 3,
   "skippedFiftyDiscoveryNeedsReview": 0,
   "skippedOadNeedsReview": 0,
   "skippedBestChefNeedsReview": 0,
+  "skippedDesignAwardsNeedsReview": 0,
   "addedRestaurants": 2,
-  "updatedExistingRestaurants": 11,
-  "skippedDuplicateAward": 59,
-  "mergedAwards": 13,
+  "updatedExistingRestaurants": 1,
+  "skippedDuplicateAward": 72,
+  "mergedAwards": 3,
   "errors": []
 }

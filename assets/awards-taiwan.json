@@ -37,7 +37,8 @@
     "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
     "https://www.oadguides.com/lists/asia/top-restaurants/2025",
     "https://thebestchefawards.com/",
-    "https://www.theworlds50best.com/discovery/sitemap/taiwan/taipei"
+    "https://www.theworlds50best.com/discovery/sitemap/taiwan/taipei",
+    "https://restaurantandbardesignawards.com/awards-archive"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -3817,7 +3818,10 @@
     },
     {
       "name": "Thomas Chien",
-      "aliases": [],
+      "aliases": [
+        "Thomas Chien Restaurant",
+        "Thomas Chien 法式餐廳"
+      ],
       "city": "高雄市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -3832,6 +3836,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "designawards",
+          "year": 2024,
+          "level": "Sustainability",
+          "designer": "TaG Living",
+          "url": "https://restaurantandbardesignawards.com/awards-archive/2024"
         }
       ]
     },
@@ -9764,6 +9775,23 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "Sukiyaki Kitaro",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [
+        "壽喜燒一丁"
+      ],
+      "awards": [
+        {
+          "guide": "designawards",
+          "year": 2025,
+          "level": "Surface Interiors",
+          "designer": "Sky Vision",
+          "url": "https://restaurantandbardesignawards.com/awards-archive/2025"
         }
       ]
     },
@@ -19665,6 +19693,21 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "RAW",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "designawards",
+          "year": 2015,
+          "level": "Asia Restaurant",
+          "designer": "WEIJENBERG",
+          "url": "https://restaurantandbardesignawards.com/awards-archive/2015"
+        }
+      ]
     },
     {
       "name": "Reale Cucina Italiana",

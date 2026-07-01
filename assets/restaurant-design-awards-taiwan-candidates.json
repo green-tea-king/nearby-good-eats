@@ -1,0 +1,66 @@
+{
+  "version": "restaurant-design-awards-taiwan-candidates",
+  "generatedAt": "2026-07-01T22:34:28.347Z",
+  "sourceUrl": "https://restaurantandbardesignawards.com/awards-archive",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_archive_batch",
+    "designSignalOnly": true,
+    "notes": [
+      "Restaurant & Bar Design Awards 官方 archive 批次整理 Taiwan 得獎項目。",
+      "此來源是空間/設計獎，不是餐點風味評分；只做低權重認證徽章與小幅外部信號。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "Thomas Chien",
+      "city": "高雄市",
+      "aliases": [
+        "Thomas Chien Restaurant",
+        "Thomas Chien 法式餐廳"
+      ],
+      "awards": [
+        {
+          "guide": "designawards",
+          "year": 2024,
+          "level": "Sustainability",
+          "designer": "TaG Living",
+          "url": "https://restaurantandbardesignawards.com/awards-archive/2024"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Sukiyaki Kitaro",
+      "city": "臺中市",
+      "aliases": [
+        "壽喜燒一丁"
+      ],
+      "awards": [
+        {
+          "guide": "designawards",
+          "year": 2025,
+          "level": "Surface Interiors",
+          "designer": "Sky Vision",
+          "url": "https://restaurantandbardesignawards.com/awards-archive/2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "RAW",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "designawards",
+          "year": 2015,
+          "level": "Asia Restaurant",
+          "designer": "WEIJENBERG",
+          "url": "https://restaurantandbardesignawards.com/awards-archive/2015"
+        }
+      ],
+      "importConfidence": "high"
+    }
+  ]
+}

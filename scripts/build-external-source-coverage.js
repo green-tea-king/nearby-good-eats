@@ -8,6 +8,7 @@ const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual
 const fiftyDiscoveryCandidatesPath = path.join(repoRoot, "assets", "50best-discovery-taiwan-candidates.json");
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
+const designAwardsCandidatesPath = path.join(repoRoot, "assets", "restaurant-design-awards-taiwan-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -49,6 +50,7 @@ function main() {
   const fiftyDiscoveryCandidates = fs.existsSync(fiftyDiscoveryCandidatesPath) ? readJson(fiftyDiscoveryCandidatesPath) : { restaurants: [] };
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
+  const designAwardsCandidates = fs.existsSync(designAwardsCandidatesPath) ? readJson(designAwardsCandidatesPath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -81,6 +83,7 @@ function main() {
       fiftyDiscoveryCandidates: (fiftyDiscoveryCandidates.restaurants || []).length,
       oadCandidates: (oadCandidates.restaurants || []).length,
       bestChefCandidates: (bestChefCandidates.restaurants || []).length,
+      designAwardsCandidates: (designAwardsCandidates.restaurants || []).length,
     },
     sources: [
       {
@@ -161,6 +164,16 @@ function main() {
         candidatesFile: "assets/thebestchef-taiwan-2025-candidates.json",
         count: guides.thebestchef || 0,
         candidates: (bestChefCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "designawards",
+        label: "Restaurant & Bar Design Awards",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/restaurant-design-awards-taiwan-candidates.json",
+        count: guides.designawards || 0,
+        candidates: (designAwardsCandidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {

@@ -7,6 +7,7 @@ const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual
 const fiftyDiscoveryCandidatesPath = path.join(repoRoot, "assets", "50best-discovery-taiwan-candidates.json");
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
+const designAwardsCandidatesPath = path.join(repoRoot, "assets", "restaurant-design-awards-taiwan-candidates.json");
 const reportPath = path.join(repoRoot, "assets", "external-awards-merge-report.json");
 
 function readJson(file) {
@@ -103,11 +104,13 @@ function main() {
   const fiftyDiscoveryCandidates = fs.existsSync(fiftyDiscoveryCandidatesPath) ? readJson(fiftyDiscoveryCandidatesPath) : { restaurants: [] };
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
+  const designAwardsCandidates = fs.existsSync(designAwardsCandidatesPath) ? readJson(designAwardsCandidatesPath) : { restaurants: [] };
   const mergeCandidates = [
     ...(externalAwards.restaurants || []),
     ...(fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(oadCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(bestChefCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...(designAwardsCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
   ];
   const rows = Array.isArray(awards.restaurants) ? awards.restaurants : [];
   const errors = validateExternalAwards(externalAwards);
@@ -118,15 +121,18 @@ function main() {
       ...(fs.existsSync(fiftyDiscoveryCandidatesPath) ? ["assets/50best-discovery-taiwan-candidates.json"] : []),
       ...(fs.existsSync(oadCandidatesPath) ? ["assets/oad-asia-2025-candidates.json"] : []),
       ...(fs.existsSync(bestChefCandidatesPath) ? ["assets/thebestchef-taiwan-2025-candidates.json"] : []),
+      ...(fs.existsSync(designAwardsCandidatesPath) ? ["assets/restaurant-design-awards-taiwan-candidates.json"] : []),
     ],
     candidates: mergeCandidates.length,
     manualCandidates: (externalAwards.restaurants || []).length,
     fiftyDiscoveryCandidates: (fiftyDiscoveryCandidates.restaurants || []).length,
     oadCandidates: (oadCandidates.restaurants || []).length,
     bestChefCandidates: (bestChefCandidates.restaurants || []).length,
+    designAwardsCandidates: (designAwardsCandidates.restaurants || []).length,
     skippedFiftyDiscoveryNeedsReview: (fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedOadNeedsReview: (oadCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedBestChefNeedsReview: (bestChefCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    skippedDesignAwardsNeedsReview: (designAwardsCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     addedRestaurants: 0,
     updatedExistingRestaurants: 0,
     skippedDuplicateAward: 0,
@@ -189,6 +195,7 @@ function main() {
     ...(fiftyDiscoveryCandidates.sourceUrl ? [fiftyDiscoveryCandidates.sourceUrl] : []),
     ...(oadCandidates.sourceUrl ? [oadCandidates.sourceUrl] : []),
     ...(bestChefCandidates.source ? [bestChefCandidates.source] : []),
+    ...(designAwardsCandidates.sourceUrl ? [designAwardsCandidates.sourceUrl] : []),
   ].filter(Boolean))];
 
   writeJson(awardsPath, awards);

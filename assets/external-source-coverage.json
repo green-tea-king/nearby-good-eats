@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1344,
+    "awardsRestaurants": 1346,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -21,7 +21,8 @@
     "externalAwardSources": 3,
     "fiftyDiscoveryCandidates": 13,
     "oadCandidates": 29,
-    "bestChefCandidates": 4
+    "bestChefCandidates": 4,
+    "designAwardsCandidates": 3
   },
   "sources": [
     {
@@ -105,6 +106,16 @@
       "candidatesFile": "assets/thebestchef-taiwan-2025-candidates.json",
       "count": 4,
       "candidates": 4,
+      "runtimeLookup": false
+    },
+    {
+      "id": "designawards",
+      "label": "Restaurant & Bar Design Awards",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/restaurant-design-awards-taiwan-candidates.json",
+      "count": 3,
+      "candidates": 3,
       "runtimeLookup": false
     },
     {
