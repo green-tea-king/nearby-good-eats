@@ -71,7 +71,8 @@ $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$Cach
 $MichelinThreeStar = "$([char]0x4E09)$([char]0x661F)"
 $MichelinTwoStar = "$([char]0x4E8C)$([char]0x661F)"
 $MichelinOneStar = "$([char]0x4E00)$([char]0x661F)"
-foreach ($RequiredFilterText in @("key:""award""", "tier:""static""", "評鑑可複選", 'guide:"michelin"', "level:""$MichelinThreeStar""", "level:""$MichelinTwoStar""", "level:""$MichelinOneStar""", 'guide:"greenveggie"', 'guide:"500sweet"')) {
+$MultiAwardLabel = "$([char]0x8A55)$([char]0x9451)$([char]0x53EF)$([char]0x8907)$([char]0x9078)"
+foreach ($RequiredFilterText in @("key:`"award`"", "tier:`"static`"", $MultiAwardLabel, "guide:`"michelin`"", "level:`"$MichelinThreeStar`"", "level:`"$MichelinTwoStar`"", "level:`"$MichelinOneStar`"", "guide:`"greenveggie`"", "guide:`"500sweet`"")) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
