@@ -4,6 +4,8 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const externalSignalsPath = path.join(repoRoot, "assets", "external-signals.json");
+const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual.json");
+const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -41,6 +43,8 @@ function main() {
   const awards = readJson(awardsPath);
   const guides = countGuides(awards);
   const externalSignals = readJson(externalSignalsPath);
+  const externalAwards = readJson(externalAwardsPath);
+  const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -69,6 +73,8 @@ function main() {
       externalSignals: (externalSignals.restaurants || []).reduce((sum, row) => sum + ((row.signals || []).length), 0),
       platformManualRestaurants: platformRows.length,
       platformManualSignals: platformSignals,
+      externalAwardSources: (externalAwards.sources || []).length,
+      oadCandidates: (oadCandidates.restaurants || []).length,
     },
     sources: [
       {
@@ -110,6 +116,43 @@ function main() {
         count: guides["500sweet"] || 0,
         candidates: (sweetCandidates.restaurants || []).length,
         highConfidence: (sweetCandidates.restaurants || []).filter((row) => row.importConfidence === "high").length,
+        runtimeLookup: false,
+      },
+      {
+        id: "50best",
+        label: "50 Best",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        sourceFile: "assets/external-awards.manual.json",
+        count: guides["50best"] || 0,
+        runtimeLookup: false,
+      },
+      {
+        id: "oad",
+        label: "OAD Top Restaurants Asia",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/oad-asia-2025-candidates.json",
+        count: guides.oad || 0,
+        candidates: (oadCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "tatlerbest",
+        label: "Tatler Best",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        sourceFile: "assets/external-awards.manual.json",
+        count: guides.tatlerbest || 0,
+        runtimeLookup: false,
+      },
+      {
+        id: "worldculinary",
+        label: "World Culinary Awards",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        sourceFile: "assets/external-awards.manual.json",
+        count: guides.worldculinary || 0,
         runtimeLookup: false,
       },
       {

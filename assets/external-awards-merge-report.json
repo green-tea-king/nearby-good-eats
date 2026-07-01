@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-07-01T22:11:29.431Z",
+  "sourceFiles": [
+    "assets/external-awards.manual.json",
+    "assets/oad-asia-2025-candidates.json"
+  ],
+  "candidates": 51,
+  "manualCandidates": 22,
+  "oadCandidates": 29,
+  "skippedOadNeedsReview": 0,
+  "addedRestaurants": 7,
+  "updatedExistingRestaurants": 22,
+  "skippedDuplicateAward": 26,
+  "mergedAwards": 29,
+  "errors": []
+}
