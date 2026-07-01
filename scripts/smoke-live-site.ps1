@@ -39,7 +39,7 @@ if ($Html -notlike "*reviewNoiseHints*" -or $Html -notlike "*PROMO_TEXT_PENALTY*
 }
 
 $AdminHtml = Read-TextUrl "$BaseUrl/admin.html?cacheBust=$CacheBust"
-foreach ($RequiredAdminText in @("外部來源覆蓋", "sourceCoverageRows", "external-source-coverage.json")) {
+foreach ($RequiredAdminText in @("sourceCoverageRows", "external-source-coverage.json", "source-card")) {
   if ($AdminHtml -notlike "*$RequiredAdminText*") {
     throw "Admin page is missing external source coverage dashboard: $RequiredAdminText"
   }
