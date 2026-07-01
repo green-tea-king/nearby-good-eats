@@ -102,6 +102,23 @@ foreach ($RequiredSource in @("500bowl", "500sweet", "google-maps-reviews", "ifo
     throw "External signals sourceCatalog missing $RequiredSource"
   }
 }
+$PlatformCounts = @{
+  ifoodie = 0
+  "openrice-tw" = 0
+  "tripadvisor-tw" = 0
+}
+foreach ($Restaurant in $Signals.restaurants) {
+  foreach ($Signal in $Restaurant.signals) {
+    if ($PlatformCounts.ContainsKey([string]$Signal.sourceId)) {
+      $PlatformCounts[[string]$Signal.sourceId] += 1
+    }
+  }
+}
+foreach ($RequiredPlatform in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
+  if (($PlatformCounts[$RequiredPlatform] -as [int]) -le 0) {
+    throw "External signals missing platform data: $RequiredPlatform"
+  }
+}
 $CoverageText = Read-TextUrl "$BaseUrl/assets/external-source-coverage.json?cacheBust=$CacheBust"
 $Coverage = $CoverageText | ConvertFrom-Json
 $CoverageIds = @($Coverage.sources | ForEach-Object { $_.id })
@@ -113,11 +130,23 @@ foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", 
 if ($Coverage.policy.runtimeExternalLookup -ne $false -or $Coverage.policy.noFakeData -ne $true) {
   throw "External source coverage policy must disable runtime lookup and fake data"
 }
+foreach ($RequiredPlatform in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
+  $PlatformCoverage = @($Coverage.sources | Where-Object { $_.id -eq $RequiredPlatform })[0]
+  if ($PlatformCoverage.status -ne "manual_data_available") {
+    throw "External source coverage should show manual data for $RequiredPlatform"
+  }
+  if (($PlatformCoverage.currentManualSignals -as [int]) -le 0) {
+    throw "External source coverage missing manual signals for $RequiredPlatform"
+  }
+}
 
 $ManualSignalsText = Read-TextUrl "$BaseUrl/assets/platform-signals.manual.json?cacheBust=$CacheBust"
 $ManualSignals = $ManualSignalsText | ConvertFrom-Json
 if ($ManualSignals.policy.runtimeExternalLookup -ne $false -or $ManualSignals.policy.batchOnly -ne $true) {
   throw "Manual platform signals must stay batch-only and disable runtime lookup"
+}
+if (($ManualSignals.restaurants.Count -as [int]) -lt 2) {
+  throw "Manual platform signals should include at least two seed restaurants"
 }
 $PlatformImportCsv = Read-TextUrl "$BaseUrl/assets/platform-signals.import.csv?cacheBust=$CacheBust"
 foreach ($RequiredHeader in @("sourceId", "confidence", "reviewedBy")) {

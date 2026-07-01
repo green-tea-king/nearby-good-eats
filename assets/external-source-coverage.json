@@ -14,10 +14,10 @@
   "summary": {
     "awardsRestaurants": 1332,
     "externalSignalSources": 14,
-    "externalSignalRestaurants": 17,
-    "externalSignals": 17,
-    "platformManualRestaurants": 0,
-    "platformManualSignals": 0
+    "externalSignalRestaurants": 19,
+    "externalSignals": 23,
+    "platformManualRestaurants": 2,
+    "platformManualSignals": 6
   },
   "sources": [
     {
@@ -88,12 +88,12 @@
     {
       "id": "ifoodie",
       "label": "愛食記",
-      "status": "batch_pipeline_ready_no_data",
+      "status": "manual_data_available",
       "dataFile": "assets/platform-signals.manual.json",
       "importCsv": "assets/platform-signals.import.csv",
       "sourceCatalogPresent": true,
-      "currentManualRows": 0,
-      "currentManualSignals": 0,
+      "currentManualRows": 2,
+      "currentManualSignals": 2,
       "probeDecision": "do_not_auto_import",
       "recommendedImportMode": "manual_or_authorized_api",
       "runtimeLookup": false
@@ -101,12 +101,12 @@
     {
       "id": "openrice-tw",
       "label": "OpenRice 台灣",
-      "status": "batch_pipeline_ready_no_data",
+      "status": "manual_data_available",
       "dataFile": "assets/platform-signals.manual.json",
       "importCsv": "assets/platform-signals.import.csv",
       "sourceCatalogPresent": true,
-      "currentManualRows": 0,
-      "currentManualSignals": 0,
+      "currentManualRows": 2,
+      "currentManualSignals": 2,
       "probeDecision": "do_not_auto_import",
       "recommendedImportMode": "manual_or_authorized_api",
       "runtimeLookup": false
@@ -114,12 +114,12 @@
     {
       "id": "tripadvisor-tw",
       "label": "Tripadvisor 台灣",
-      "status": "batch_pipeline_ready_no_data",
+      "status": "manual_data_available",
       "dataFile": "assets/platform-signals.manual.json",
       "importCsv": "assets/platform-signals.import.csv",
       "sourceCatalogPresent": true,
-      "currentManualRows": 0,
-      "currentManualSignals": 0,
+      "currentManualRows": 2,
+      "currentManualSignals": 2,
       "probeDecision": "do_not_auto_import",
       "recommendedImportMode": "manual_or_authorized_api",
       "runtimeLookup": false

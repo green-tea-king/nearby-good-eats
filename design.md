@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.15
+版本：2026.07.01.16
 
 ## 專案目標
 
@@ -227,7 +227,7 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 - 社群聲量、平台認證、媒體推薦等外部資料不做使用者查詢時的即時抓取；先批次整理進 `assets/external-signals.json`，再由前端讀取，降低 API 成本並避免來源不穩。
 - 社群聲量採 API 優先、批次更新。第一階段來源為 YouTube Data API：每次預設只查 10 家候選餐廳、每家最多 8 支影片，影片必須命中店名或別名才可寫入。分數依影片數、90 天內影片數與觀看數對數加權產生，僅作輔助訊號。
 - `youtubeBuzz` 已接入前端排序與詳情：排序最多只加 `0.12`，社群訊號總加分上限 `0.14`；卡片第一眼只顯示小徽章，展開詳情才顯示影片數、觀看數與來源連結。
-- 愛食記、OpenRice、Tripadvisor 先採手動 / AI 整理檔匯入：資料必須有來源 URL、信心等級、更新日期與審核者，合併後以 `platformRating` 或 `platformCertification` 做小幅輔助加分；沒有資料就不顯示徽章，不用猜測。
+- 愛食記、OpenRice、Tripadvisor 先採手動 / AI 整理檔匯入：資料必須有來源 URL、信心等級、更新日期與審核者，合併後以 `platformRating` 或 `platformCertification` 做小幅輔助加分；沒有資料就不顯示徽章，不用猜測。2026-07-01 已建立第一批種子資料：2 家餐廳、6 筆平台訊號，三個平台各 2 筆。
 - 2026-07-01 平台來源探測結果：愛食記頁面可讀但 robots 有廣泛限制；OpenRice 與 Tripadvisor 也不符合安全自動解析條件。因此三者都維持手動整理或授權 API，不做自動抓取匯入。
 - 卡片認證章分兩類：
   - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援米其林星級、必比登、綠星、500 盤、500 碗、500 甜、50 Best；資料帶縣市與來源欄位，前端會合併同店多獎項並避免跨縣市誤標。
@@ -438,7 +438,7 @@ assets/awards-taiwan.json
 - 500盤、500碗、500甜：正式獎牌來源，批次整理後進 `assets/awards-taiwan.json`，只做中高權重加分。
 - 50 Best：正式獎牌來源，高權重但只影響少數入榜店。
 - 愛食記、OpenRice、Tripadvisor：平台口碑/聲量來源，預設不放進 `awards-taiwan.json`；只能在授權 API、手動整理或可追溯批次資料可用時寫入 `assets/external-signals.json`，作小幅輔助訊號與提示，不取代 Google 評分。
-- `assets/external-source-coverage.json` 是目前覆蓋狀態的權威摘要：評鑑來源會標示 `integrated_data`，平台來源在尚無人工資料時標示 `batch_pipeline_ready_no_data`。
+- `assets/external-source-coverage.json` 是目前覆蓋狀態的權威摘要：評鑑來源會標示 `integrated_data`，平台來源在已有審核資料時標示 `manual_data_available`，尚無人工資料時標示 `batch_pipeline_ready_no_data`。
 - 後台會讀取 `assets/external-source-coverage.json` 顯示「外部來源覆蓋」，讓管理員一眼分辨已整合來源、執行時來源與只有批次管線但尚無資料的平台來源。
 - 平台資料目前以 `assets/platform-signals.manual.json` 作為審核入口，執行 `node scripts/merge-platform-signals.js` 後才會進 `assets/external-signals.json`。這個流程是為了避免前端即時查外站、節省成本，也避免來源結構改版導致正式站壞掉。
 - 若資料來源先由人工、AI 或試算表整理，優先填 `assets/platform-signals.import.csv`，再執行 `node scripts/import-platform-signals-csv.js` 轉成審核 JSON。CSV 沒有資料時保持空表，不產生假訊號。
@@ -458,6 +458,13 @@ node scripts/validate-external-signals.js
 ```
 
 `aliases` 與 `evidence` 可用 `|` 或 `;` 分隔多值。`sourceId` 只接受 `ifoodie`、`openrice-tw`、`tripadvisor-tw`；每列都必須有 `url`、`updated`、`reviewedBy`，避免沒有來源證據的口碑資料進入排序。
+
+目前平台種子資料規則：
+
+- `ifoodie` 可使用平台評分與評論數，但仍只作輔助加分。
+- `openrice-tw` 目前以餐廳資料頁、食記、相片、菜單等存在性作 `platformCertification`，未直接寫入無法確認的評分。
+- `tripadvisor-tw` 樣本數低時使用 `low` 或 `medium` 信心；低信心只作小幅輔助，不顯示成強認證。
+- 三個平台資料都必須通過 `scripts/import-platform-signals-csv.js`、`scripts/merge-platform-signals.js`、`scripts/validate-external-signals.js` 與 `scripts/validate-external-source-coverage.js`。
 
 平台型來源若要寫入 `assets/external-signals.json`，信號格式固定如下：
 
