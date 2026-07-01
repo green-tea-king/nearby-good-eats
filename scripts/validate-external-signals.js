@@ -56,6 +56,11 @@ function validate(data) {
   }
 
   const rows = Array.isArray(data.restaurants) ? data.restaurants : [];
+  const platformCounts = {
+    ifoodie: 0,
+    "openrice-tw": 0,
+    "tripadvisor-tw": 0,
+  };
   for (const [rowIndex, row] of rows.entries()) {
     if (!row.name) errors.push(`restaurants[${rowIndex}] missing name`);
     if (!row.city) errors.push(`restaurants[${rowIndex}] missing city`);
@@ -73,7 +78,13 @@ function validate(data) {
       if ((signal.type === "platformRating" || signal.type === "platformCertification") && !signal.url) {
         errors.push(`${prefix} platform signal must include source url`);
       }
+      if (Object.prototype.hasOwnProperty.call(platformCounts, signal.sourceId)) {
+        platformCounts[signal.sourceId] += 1;
+      }
     }
+  }
+  for (const [sourceId, count] of Object.entries(platformCounts)) {
+    if (count <= 0) errors.push(`external-signals missing platform source data: ${sourceId}`);
   }
 
   return {
@@ -81,6 +92,7 @@ function validate(data) {
     sources: sourceIds.size,
     restaurants: rows.length,
     signals: rows.reduce((sum, row) => sum + (Array.isArray(row.signals) ? row.signals.length : 0), 0),
+    platformCounts,
     errors,
   };
 }
@@ -92,6 +104,11 @@ function validateManualPlatformSignals(data) {
   }
   const allowedSources = new Set(["ifoodie", "openrice-tw", "tripadvisor-tw"]);
   const rows = Array.isArray(data.restaurants) ? data.restaurants : [];
+  const sourceCounts = {
+    ifoodie: 0,
+    "openrice-tw": 0,
+    "tripadvisor-tw": 0,
+  };
   for (const [rowIndex, row] of rows.entries()) {
     if (!row.name) errors.push(`platform manual restaurants[${rowIndex}] missing name`);
     if (!row.city) errors.push(`platform manual restaurants[${rowIndex}] missing city`);
@@ -103,11 +120,18 @@ function validateManualPlatformSignals(data) {
       if (!signal.url) errors.push(`${prefix} missing url`);
       if (!signal.updated) errors.push(`${prefix} missing updated`);
       if (!signal.reviewedBy) errors.push(`${prefix} missing reviewedBy`);
+      if (Object.prototype.hasOwnProperty.call(sourceCounts, signal.sourceId)) {
+        sourceCounts[signal.sourceId] += 1;
+      }
     }
+  }
+  for (const [sourceId, count] of Object.entries(sourceCounts)) {
+    if (count <= 0) errors.push(`platform manual missing source data: ${sourceId}`);
   }
   return {
     rows: rows.length,
     signals: rows.reduce((sum, row) => sum + (Array.isArray(row.signals) ? row.signals.length : 0), 0),
+    sourceCounts,
     errors,
   };
 }
@@ -153,6 +177,7 @@ if (fs.existsSync(manualSignalsPath)) {
   report.manualPlatformSignals = {
     rows: manualReport.rows,
     signals: manualReport.signals,
+    sourceCounts: manualReport.sourceCounts,
   };
   report.errors.push(...manualReport.errors);
   report.ok = report.errors.length === 0;

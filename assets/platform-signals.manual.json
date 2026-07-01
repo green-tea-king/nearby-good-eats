@@ -16,7 +16,131 @@
       "沒有授權 API 或可追溯公開來源時，先保留空資料，不要寫假資料。"
     ]
   },
-  "restaurants": [],
+  "restaurants": [
+    {
+      "name": "屋馬燒肉 中港店",
+      "city": "台中市",
+      "area": "西屯區",
+      "aliases": [
+        "屋馬燒肉中港店",
+        "Umai Yakiniku Zhonggang",
+        "Umai Yakiniku zhonggang"
+      ],
+      "signals": [
+        {
+          "type": "platformRating",
+          "sourceId": "ifoodie",
+          "label": "愛食記口碑",
+          "score": 86,
+          "confidence": "high",
+          "metrics": {
+            "rating": 4.7,
+            "reviewCount": 149
+          },
+          "evidence": [
+            "愛食記餐廳頁與搜尋摘要列出 4.7、149 則評論。",
+            "頁面整理燒肉、火鍋、推薦菜色與聚餐情境。"
+          ],
+          "url": "https://ifoodie.tw/restaurant/559be6bbc03a101f6d8b6e68-%E5%B1%8B%E9%A6%AC%E7%87%92%E8%82%89-%E4%B8%AD%E6%B8%AF%E5%BA%97",
+          "updated": "2026-07-01",
+          "reviewedBy": "codex-batch-review"
+        },
+        {
+          "type": "platformCertification",
+          "sourceId": "openrice-tw",
+          "label": "OpenRice 資料頁",
+          "score": 66,
+          "confidence": "medium",
+          "evidence": [
+            "OpenRice 餐廳頁列出地址、電話、食記、相片及菜單。",
+            "頁面描述主要菜式包含雙人套餐與屋馬燒肉。"
+          ],
+          "url": "https://tw.openrice.com/zh-tw/taipei/r-%E5%B1%8B%E9%A6%AC%E7%87%92%E8%82%89-%E4%B8%AD%E6%B8%AF%E5%BA%97-%E8%A5%BF%E5%B1%AF%E5%8D%80-%E6%97%A5%E5%BC%8F%E6%96%99%E7%90%86-%E5%85%B6%E4%BB%96%E7%87%92%E8%82%89-r201103/",
+          "updated": "2026-07-01",
+          "reviewedBy": "codex-batch-review"
+        },
+        {
+          "type": "platformRating",
+          "sourceId": "tripadvisor-tw",
+          "label": "Tripadvisor 旅客口碑",
+          "score": 72,
+          "confidence": "medium",
+          "metrics": {
+            "rating": 4.5
+          },
+          "evidence": [
+            "Tripadvisor 評論指出屋馬中港店適合商務、家庭與朋友聚餐。",
+            "多則評論提到肉品、服務、份量與雞湯，只作輔助訊號。"
+          ],
+          "url": "https://www.tripadvisor.com.tw/Restaurant_Review-g13808534-d6135609-Reviews-Umai_Yakiniku_zhonggang-Xitun_Taichung.html",
+          "updated": "2026-07-01",
+          "reviewedBy": "codex-batch-review"
+        }
+      ]
+    },
+    {
+      "name": "祥和蔬食料理 慶城店",
+      "city": "台北市",
+      "area": "松山區",
+      "aliases": [
+        "祥和蔬食料理",
+        "Serenity Vegetarian Restaurant"
+      ],
+      "signals": [
+        {
+          "type": "platformRating",
+          "sourceId": "ifoodie",
+          "label": "愛食記口碑",
+          "score": 88,
+          "confidence": "high",
+          "metrics": {
+            "rating": 4.9,
+            "reviewCount": 30
+          },
+          "evidence": [
+            "愛食記頁面列出 4.9、30 則評論、百選店",
+            "分類為台北松山區素食。",
+            "頁面整理餐種、推薦菜色與適合家庭/朋友/商務聚餐。"
+          ],
+          "url": "https://ifoodie.tw/restaurant/5c1a543f2756dd1b5d3ba224-%E7%A5%A5%E5%92%8C%E8%94%AC%E9%A3%9F%E6%96%99%E7%90%86-%E6%85%B6%E5%9F%8E%E5%BA%97",
+          "updated": "2026-07-01",
+          "reviewedBy": "codex-batch-review"
+        },
+        {
+          "type": "platformCertification",
+          "sourceId": "openrice-tw",
+          "label": "OpenRice 資料頁",
+          "score": 68,
+          "confidence": "medium",
+          "evidence": [
+            "OpenRice 餐廳頁列出地址、電話、食記、相片與菜單。",
+            "頁面標示松山區、台灣料理、素食與家庭聚餐情境。"
+          ],
+          "url": "https://tw.openrice.com/zh-tw/taipei/r-%E7%A5%A5%E5%92%8C%E8%94%AC%E9%A3%9F%E6%96%99%E7%90%86-%E6%9D%BE%E5%B1%B1%E5%8D%80-%E5%8F%B0%E7%81%A3%E6%96%99%E7%90%86-%E8%8C%B6%E9%A1%9E%E9%A3%B2%E5%93%81-r492657",
+          "updated": "2026-07-01",
+          "reviewedBy": "codex-batch-review"
+        },
+        {
+          "type": "platformRating",
+          "sourceId": "tripadvisor-tw",
+          "label": "Tripadvisor 旅客口碑",
+          "score": 58,
+          "confidence": "low",
+          "metrics": {
+            "rating": 5,
+            "reviewCount": 1
+          },
+          "evidence": [
+            "Tripadvisor 頁面有 1 則評論，評分 5 分。",
+            "樣本數低，因此只作低信心輔助訊號。"
+          ],
+          "url": "https://www.tripadvisor.com.tw/Restaurant_Review-g13806900-d19273342-Reviews-Xianghe_Shu_Shi_Liaoli_Qing_Cheng-Songshan_Taipei.html",
+          "updated": "2026-07-01",
+          "reviewedBy": "codex-batch-review"
+        }
+      ]
+    }
+  ],
   "schema": {
     "restaurants[]": {
       "name": "餐廳名稱，需與 Google 店名或 awards-taiwan aliases 可比對。",

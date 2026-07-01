@@ -129,15 +129,17 @@ function main() {
       },
       ...["ifoodie", "openrice-tw", "tripadvisor-tw"].map((id) => {
         const probe = platformProbe(id, platformProbeReport);
+        const currentManualRows = platformRows.filter((row) => (row.signals || []).some((signal) => signal.sourceId === id)).length;
+        const currentManualSignals = platformRows.reduce((sum, row) => sum + (row.signals || []).filter((signal) => signal.sourceId === id).length, 0);
         return {
           id,
           label: probe.label || id,
-          status: platformSignals ? "manual_data_available" : "batch_pipeline_ready_no_data",
+          status: currentManualSignals ? "manual_data_available" : "batch_pipeline_ready_no_data",
           dataFile: "assets/platform-signals.manual.json",
           importCsv: "assets/platform-signals.import.csv",
           sourceCatalogPresent: sourceCatalogIds.has(id),
-          currentManualRows: platformRows.filter((row) => (row.signals || []).some((signal) => signal.sourceId === id)).length,
-          currentManualSignals: platformRows.reduce((sum, row) => sum + (row.signals || []).filter((signal) => signal.sourceId === id).length, 0),
+          currentManualRows,
+          currentManualSignals,
           probeDecision: probe.decision || "",
           recommendedImportMode: probe.recommendedImportMode || "manual_or_authorized_api",
           runtimeLookup: false,

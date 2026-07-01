@@ -59,6 +59,10 @@ function main() {
     if (source.runtimeLookup !== false) errors.push(`${id} must disable runtimeLookup`);
     if (!source.sourceCatalogPresent) errors.push(`${id} missing sourceCatalogPresent`);
     if (!["batch_pipeline_ready_no_data", "manual_data_available"].includes(source.status)) errors.push(`${id} invalid status ${source.status}`);
+    if (source.status === "manual_data_available") {
+      if (Number(source.currentManualRows || 0) <= 0) errors.push(`${id} manual data status requires currentManualRows > 0`);
+      if (Number(source.currentManualSignals || 0) <= 0) errors.push(`${id} manual data status requires currentManualSignals > 0`);
+    }
   }
   const report = {
     ok: errors.length === 0,
