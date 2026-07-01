@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-07-01T00:25:10.309Z",
+  "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871",
+  "candidates": 356,
+  "highConfidence": 328,
+  "needsCityReview": 5,
+  "skippedNonCityBucket": 23,
+  "bySweets": {
+    "1": 298,
+    "2": 35,
+    "3": 5,
+    "4": 7,
+    "5": 3,
+    "6": 2,
+    "8": 4,
+    "12": 1,
+    "16": 1
+  },
+  "note": "候選資料來自 500甜官方頁文字名單。只自動合併有單一明確縣市的高信心資料；連鎖與線上通路不自動匯入，避免跨地區誤標。"
+}

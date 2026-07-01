@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.10
+版本：2026.07.01.11
 
 ## 專案目標
 
@@ -32,13 +32,15 @@
 - `assets/platform-source-probe-report.json`：平台來源可用性探測報告。只記錄愛食記、OpenRice、Tripadvisor 是否適合批次整理，不匯入餐廳資料。
 - `assets/social-signal-config.json`：社群熱度批次更新設定，目前以 YouTube Data API 為第一階段來源，控制每次查詢餐廳數、影片數、時間範圍與分數權重。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
-- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、米其林入選、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、米其林入選 222 筆、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項、500 碗官方文字名單高信心 415 筆，並保留來源 URL。500 甜目前先支援格式與徽章，待批次來源驗證後再匯入正式資料。
-- `assets/500sweet-2025-manual.json`：500甜人工 / AI 整理入口。官方頁目前是前端 app shell，靜態 HTML 與 JS bundle 都不能穩定取得完整名單，因此只接受有來源 URL 與審核者的可追溯資料。
+- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、米其林入選、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、米其林入選 222 筆、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項、500 碗官方文字名單高信心 415 筆、500 甜官方文字名單高信心 328 筆，並保留來源 URL。
+- `assets/500sweet-2025-manual.json`：500甜人工 / AI 整理入口。官方完整名單已可由 `https://500times.udn.com/wtimes/story/124537/8931871` 批次解析；人工檔只用於補充需人工覆核的縣市不明、連鎖或線上通路資料。
+- `assets/500sweet-2025-candidates.json`：500甜 2025 官方文字名單候選檔，共 356 筆；只將單一明確縣市的 328 筆高信心資料自動匯入正式評鑑。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/update-external-signals.js`：外部社群訊號批次更新腳本。讀取 `assets/awards-taiwan.json` 作為候選餐廳，使用 YouTube Data API 查詢近期影片，只在影片標題或描述命中店名 / 別名時寫入 `assets/external-signals.json`。
 - `scripts/merge-platform-signals.js`：合併人工或 AI 整理的平台訊號，例如愛食記、OpenRice、Tripadvisor。此腳本只讀 `assets/platform-signals.manual.json`，不即時爬外站。
 - `scripts/probe-platform-sources.js`：探測愛食記、OpenRice、Tripadvisor 的公開頁與 robots 狀態，產生 `assets/platform-source-probe-report.json`。此腳本只做來源可用性判斷，不產生餐廳訊號。
-- `scripts/merge-500sweet-2025-awards.js`：合併 `assets/500sweet-2025-manual.json` 到 500甜 draft。手動檔為空時只產生報告，不寫入假資料。
+- `scripts/build-500sweet-2025-candidates.js`：批次解析 500甜 2025 官方完整名單，產生候選檔與 import report；不由前端即時查外站。
+- `scripts/merge-500sweet-2025-awards.js`：合併 `assets/500sweet-2025-candidates.json` 的高信心資料與 `assets/500sweet-2025-manual.json` 人工補充資料到 500甜 draft。
 - `scripts/export-release.ps1`：版本匯出腳本。
 - `RELEASES.md`：版本匯出流程備註。
 
@@ -422,7 +424,7 @@ assets/awards-taiwan.json
 - Michelin 2025 綠星：7 筆，只顯示徽章，不參與美味加權。
 - 500盤：260 筆。
 - 500碗：415 筆，來自 2025 第三屆 500碗官方頁文字名單的單一縣市高信心解析；47 筆跨縣市列保留在 merge report 待人工覆核。
-- 500甜：目前先完成 guide 格式、前端徽章、加權與驗證白名單；`scripts/probe-500sweet-2025-source.js` 會檢查官網 HTML 與 JS bundle 是否可穩定取得完整文字名單。2026-07-01 探測結果為不可安全解析，因此不匯入資料。若取得可追溯文字名單，先填入 `assets/500sweet-2025-manual.json`，再跑 `node scripts/merge-500sweet-2025-awards.js` 產生 draft 與 merge report。
+- 500甜：328 筆，來自 2025 第一屆 500甜官方頁文字名單的單一縣市高信心解析；5 筆新竹 / 嘉義縣市需人工判斷、23 筆連鎖與線上通路保留在 merge report 待人工覆核。
 
 可加入但必須分層處理的外部來源：
 
@@ -482,13 +484,15 @@ node scripts/validate-awards-data.js
 
 第一支腳本讀取 500碗官方文字名單並輸出 `assets/500bowl-2025-candidates.json` 與 `assets/500bowl-2025-import-report.json`。第二支腳本只合併單一縣市高信心資料到 `assets/awards-taiwan.500bowl-2025-draft.json`，跨縣市列保留在 `assets/500bowl-2025-merge-report.json` 待人工覆核。第三支腳本固定驗證正式資料與最新 draft 一致。
 
-500甜探測流程：
+500甜批次更新流程：
 
 ```text
-node scripts/probe-500sweet-2025-source.js
+node scripts/build-500sweet-2025-candidates.js
+node scripts/merge-500sweet-2025-awards.js
+node scripts/validate-awards-data.js
 ```
 
-若 `assets/500sweet-2025-source-report.json` 顯示 `parseReady:false`，不得直接從官方頁自動匯入 500甜資料；只能保留前端與資料格式支援，或使用 `assets/500sweet-2025-manual.json` 放入有來源 URL 與人工覆核的整理資料。
+第一支腳本讀取 500甜官方完整名單頁並輸出 `assets/500sweet-2025-candidates.json` 與 `assets/500sweet-2025-import-report.json`。第二支腳本只合併單一縣市高信心資料到 `assets/awards-taiwan.500sweet-2025-draft.json`；新竹 / 嘉義縣市不明列、連鎖與線上通路保留在 `assets/500sweet-2025-merge-report.json` 待人工覆核。第三支腳本固定驗證正式資料與最新 500甜 draft 一致。
 
 重要限制：
 

@@ -1,9 +1,13 @@
 {
-  "generatedAt": "2026-06-30T23:53:27.848Z",
-  "source": "https://udn.com/500sweetaward/",
-  "candidates": 0,
-  "addedRestaurants": 0,
-  "updatedExistingRestaurants": 0,
+  "generatedAt": "2026-07-01T00:25:27.285Z",
+  "source": "https://500times.udn.com/wtimes/story/124537/8931871",
+  "candidates": 356,
+  "highConfidenceCandidates": 328,
+  "manualRows": 0,
+  "skippedNeedsReview": 5,
+  "skippedNonCityBucket": 23,
+  "addedRestaurants": 304,
+  "updatedExistingRestaurants": 24,
   "skippedDuplicateAward": 0,
   "errors": []
 }

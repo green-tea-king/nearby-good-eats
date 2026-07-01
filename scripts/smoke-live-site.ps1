@@ -57,13 +57,14 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 1028
+  restaurants = 1332
   michelin = 53
   "michelin_selected" = 222
   bib = 144
   greenstar = 7
   "500plate" = 260
   "500bowl" = 415
+  "500sweet" = 328
 }
 
 $Actual = [ordered]@{
@@ -74,6 +75,7 @@ $Actual = [ordered]@{
   greenstar = $Guides["greenstar"]
   "500plate" = $Guides["500plate"]
   "500bowl" = $Guides["500bowl"]
+  "500sweet" = $Guides["500sweet"]
 }
 
 foreach ($Key in $Expected.Keys) {
