@@ -1,16 +1,22 @@
 {
-  "generatedAt": "2026-07-01T22:58:16.913Z",
-  "sourceUrl": "https://greenmedia.today/article_detail.php?cid=7&mid=1407",
-  "sourceRows": 60,
-  "candidates": 9,
-  "needsCityReview": 51,
+  "generatedAt": "2026-07-01T23:55:48.226Z",
+  "sourceUrl": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
+  "sourceRows": 25,
+  "candidates": 21,
+  "needsCityReview": 4,
   "categoryCounts": {
-    "有機友善食材運用獎": 1,
-    "在地當季食材獎": 2,
-    "最有潛力新星 2025": 2,
-    "新經濟營運獎": 2,
-    "年度最佳主廚": 1,
-    "GDG 年度大獎": 1
+    "有機友善食材運用獎": 4,
+    "在地當季食材運用獎": 4,
+    "地球永續餐盤獎": 1,
+    "最佳永續海洋獎": 2,
+    "最友善員工獎": 2,
+    "均衡飲食推廣獎": 1,
+    "最友善社區獎": 1,
+    "最佳低碳實踐獎": 1,
+    "最佳全食運用獎": 1,
+    "資源循環再利用獎": 1,
+    "新經濟營運獎": 1,
+    "最有潛力新星": 2
   },
   "errors": []
 }

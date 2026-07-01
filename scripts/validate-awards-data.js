@@ -9,7 +9,7 @@ const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candida
 
 const ALLOWED_GUIDES = new Set(["michelin", "michelin_selected", "michelinspecial", "bib", "greenstar", "500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "gdgawards", "taichunglowcarbon", "muslimfriendly", "fdagrade", "tatlerbest", "worldculinary"]);
 const EXPECTED = {
-  restaurants: 7530,
+  restaurants: 7544,
   guides: {
     michelin: 53,
     "michelinspecial": 4,
@@ -26,7 +26,7 @@ const EXPECTED = {
     "designawards": 3,
     "fmg": 20,
     "greenveggie": 65,
-    "gdgawards": 9,
+    "gdgawards": 29,
     "taichunglowcarbon": 20,
     "muslimfriendly": 74,
     "fdagrade": 6041,

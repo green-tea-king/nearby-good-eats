@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T23:47:22.568Z",
+  "generatedAt": "2026-07-01T23:56:00.135Z",
   "sourceFiles": [
     "assets/external-awards.manual.json",
     "assets/50best-discovery-taiwan-candidates.json",
@@ -14,7 +14,7 @@
     "assets/muslim-friendly-2026-candidates.json",
     "assets/fda-restaurant-hygiene-2024-candidates.json"
   ],
-  "candidates": 6368,
+  "candidates": 6380,
   "manualCandidates": 22,
   "fiftyDiscoveryCandidates": 13,
   "oadCandidates": 29,
@@ -22,7 +22,7 @@
   "designAwardsCandidates": 3,
   "fmgCandidates": 20,
   "greenVeggieCandidates": 65,
-  "gdgAwardsCandidates": 9,
+  "gdgAwardsCandidates": 21,
   "michelinSpecialCandidates": 4,
   "taichungLowCarbonCandidates": 20,
   "muslimFriendlyCandidates": 75,
@@ -33,10 +33,10 @@
   "skippedDesignAwardsNeedsReview": 0,
   "skippedFmgNeedsReview": 0,
   "skippedGreenVeggieNeedsReview": 0,
-  "skippedGdgAwardsNeedsReview": 51,
-  "addedRestaurants": 7,
-  "updatedExistingRestaurants": 0,
-  "skippedDuplicateAward": 6365,
-  "mergedAwards": 7,
+  "skippedGdgAwardsNeedsReview": 4,
+  "addedRestaurants": 14,
+  "updatedExistingRestaurants": 6,
+  "skippedDuplicateAward": 6364,
+  "mergedAwards": 20,
   "errors": []
 }
