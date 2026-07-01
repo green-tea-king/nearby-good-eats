@@ -189,7 +189,7 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .guide-card[data-state="error"] .guide-message{color:var(--accent-bright);}
 @keyframes guidePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 4px rgba(200,16,46,.1);}50%{transform:scale(1.35);box-shadow:0 0 0 7px rgba(200,16,46,.03);}}
 /* 篩選列 */
-.rank-filters{position:sticky;top:0;z-index:48;display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;margin:0 auto;background:color-mix(in srgb, var(--bg) 96%, transparent);box-shadow:0 12px 28px -24px rgba(0,0,0,.8);}
+.rank-filters{display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;margin:0 auto;background:var(--bg);}
 .rank-filters .fg{display:flex;align-items:flex-start;gap:9px;}
 .rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
 .rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;flex-wrap:wrap;overflow:visible;scrollbar-width:none;padding-bottom:1px;}
@@ -1327,7 +1327,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.01.20";
+const APP_VERSION_FALLBACK = "2026.07.01.21";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
