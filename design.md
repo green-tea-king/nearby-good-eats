@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.14
+版本：2026.07.01.15
 
 ## 專案目標
 
@@ -17,7 +17,7 @@
 ## 主要檔案
 
 - `index.html`：主要 App，包含 HTML、CSS、JavaScript。
-- `admin.html`：Firebase 後台統計頁，登入管理員可看使用紀錄。
+- `admin.html`：Firebase 後台統計頁，登入管理員可看使用紀錄、API 估算成本與外部來源覆蓋狀態。
 - `assets/app-settings.js`：公開的非機密執行設定，集中管理後端 proxy 與資料檔路徑；不得放 Google Maps secret key。
 - `assets/filter-rules.js`：排行榜濾網定義與精準度層級。
 - `firebase-config.js`：Firebase Auth / Firestore 設定，未填寫前登入功能保持關閉。
@@ -439,6 +439,7 @@ assets/awards-taiwan.json
 - 50 Best：正式獎牌來源，高權重但只影響少數入榜店。
 - 愛食記、OpenRice、Tripadvisor：平台口碑/聲量來源，預設不放進 `awards-taiwan.json`；只能在授權 API、手動整理或可追溯批次資料可用時寫入 `assets/external-signals.json`，作小幅輔助訊號與提示，不取代 Google 評分。
 - `assets/external-source-coverage.json` 是目前覆蓋狀態的權威摘要：評鑑來源會標示 `integrated_data`，平台來源在尚無人工資料時標示 `batch_pipeline_ready_no_data`。
+- 後台會讀取 `assets/external-source-coverage.json` 顯示「外部來源覆蓋」，讓管理員一眼分辨已整合來源、執行時來源與只有批次管線但尚無資料的平台來源。
 - 平台資料目前以 `assets/platform-signals.manual.json` 作為審核入口，執行 `node scripts/merge-platform-signals.js` 後才會進 `assets/external-signals.json`。這個流程是為了避免前端即時查外站、節省成本，也避免來源結構改版導致正式站壞掉。
 - 若資料來源先由人工、AI 或試算表整理，優先填 `assets/platform-signals.import.csv`，再執行 `node scripts/import-platform-signals-csv.js` 轉成審核 JSON。CSV 沒有資料時保持空表，不產生假訊號。
 
