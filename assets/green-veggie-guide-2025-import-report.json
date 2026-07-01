@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-07-01T22:50:14.396Z",
+  "sourceUrl": "https://ipuregreen.org/veg/",
+  "candidates": 58,
+  "needsCityReview": 7,
+  "counts": {
+    "threeStar": 6,
+    "twoStar": 20,
+    "oneStar": 32
+  },
+  "errors": []
+}

@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1364,
+    "awardsRestaurants": 1415,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -23,7 +23,9 @@
     "oadCandidates": 29,
     "bestChefCandidates": 4,
     "designAwardsCandidates": 3,
-    "fmgCandidates": 20
+    "fmgCandidates": 20,
+    "greenVeggieCandidates": 58,
+    "greenVeggieNeedsCityReview": 7
   },
   "sources": [
     {
@@ -127,6 +129,17 @@
       "candidatesFile": "assets/fmg-taiwan-2025-candidates.json",
       "count": 20,
       "candidates": 20,
+      "runtimeLookup": false
+    },
+    {
+      "id": "greenveggie",
+      "label": "綠・蔬食評鑑指南",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/green-veggie-guide-2025-candidates.json",
+      "count": 58,
+      "candidates": 58,
+      "needsCityReview": 7,
       "runtimeLookup": false
     },
     {

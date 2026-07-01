@@ -9,6 +9,7 @@ const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidate
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
 const designAwardsCandidatesPath = path.join(repoRoot, "assets", "restaurant-design-awards-taiwan-candidates.json");
 const fmgCandidatesPath = path.join(repoRoot, "assets", "fmg-taiwan-2025-candidates.json");
+const greenVeggieCandidatesPath = path.join(repoRoot, "assets", "green-veggie-guide-2025-candidates.json");
 const reportPath = path.join(repoRoot, "assets", "external-awards-merge-report.json");
 
 function readJson(file) {
@@ -107,6 +108,7 @@ function main() {
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
   const designAwardsCandidates = fs.existsSync(designAwardsCandidatesPath) ? readJson(designAwardsCandidatesPath) : { restaurants: [] };
   const fmgCandidates = fs.existsSync(fmgCandidatesPath) ? readJson(fmgCandidatesPath) : { restaurants: [] };
+  const greenVeggieCandidates = fs.existsSync(greenVeggieCandidatesPath) ? readJson(greenVeggieCandidatesPath) : { restaurants: [] };
   const mergeCandidates = [
     ...(externalAwards.restaurants || []),
     ...(fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
@@ -114,6 +116,7 @@ function main() {
     ...(bestChefCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(designAwardsCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(fmgCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...(greenVeggieCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
   ];
   const rows = Array.isArray(awards.restaurants) ? awards.restaurants : [];
   const errors = validateExternalAwards(externalAwards);
@@ -126,6 +129,7 @@ function main() {
       ...(fs.existsSync(bestChefCandidatesPath) ? ["assets/thebestchef-taiwan-2025-candidates.json"] : []),
       ...(fs.existsSync(designAwardsCandidatesPath) ? ["assets/restaurant-design-awards-taiwan-candidates.json"] : []),
       ...(fs.existsSync(fmgCandidatesPath) ? ["assets/fmg-taiwan-2025-candidates.json"] : []),
+      ...(fs.existsSync(greenVeggieCandidatesPath) ? ["assets/green-veggie-guide-2025-candidates.json"] : []),
     ],
     candidates: mergeCandidates.length,
     manualCandidates: (externalAwards.restaurants || []).length,
@@ -134,11 +138,14 @@ function main() {
     bestChefCandidates: (bestChefCandidates.restaurants || []).length,
     designAwardsCandidates: (designAwardsCandidates.restaurants || []).length,
     fmgCandidates: (fmgCandidates.restaurants || []).length,
+    greenVeggieCandidates: (greenVeggieCandidates.restaurants || []).length,
     skippedFiftyDiscoveryNeedsReview: (fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedOadNeedsReview: (oadCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedBestChefNeedsReview: (bestChefCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedDesignAwardsNeedsReview: (designAwardsCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedFmgNeedsReview: (fmgCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    skippedGreenVeggieNeedsReview: (greenVeggieCandidates.needsCityReview || []).length
+      + (greenVeggieCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     addedRestaurants: 0,
     updatedExistingRestaurants: 0,
     skippedDuplicateAward: 0,
@@ -203,6 +210,7 @@ function main() {
     ...(bestChefCandidates.source ? [bestChefCandidates.source] : []),
     ...(designAwardsCandidates.sourceUrl ? [designAwardsCandidates.sourceUrl] : []),
     ...(fmgCandidates.sourceUrl ? [fmgCandidates.sourceUrl] : []),
+    ...(greenVeggieCandidates.sourceUrl ? [greenVeggieCandidates.sourceUrl] : []),
   ].filter(Boolean))];
 
   writeJson(awardsPath, awards);

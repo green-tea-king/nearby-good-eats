@@ -39,7 +39,8 @@
     "https://thebestchefawards.com/",
     "https://www.theworlds50best.com/discovery/sitemap/taiwan/taipei",
     "https://restaurantandbardesignawards.com/awards-archive",
-    "https://www.gdg.asia/article/235/1421"
+    "https://www.gdg.asia/article/235/1421",
+    "https://ipuregreen.org/veg/"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -390,6 +391,21 @@
       "aliases": []
     },
     {
+      "name": "食不二蔬食",
+      "city": "宜蘭縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "逗可可:甜點研究室",
       "address": "",
       "awards": [
@@ -710,6 +726,21 @@
       ],
       "city": "花蓮縣",
       "aliases": []
+    },
+    {
+      "name": "pitatto+菜",
+      "city": "花蓮縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "YUTUZU",
@@ -1138,6 +1169,21 @@
       ],
       "city": "屏東縣",
       "aliases": []
+    },
+    {
+      "name": "打舖2號店",
+      "city": "屏東縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "正源萬巒豬腳",
@@ -1702,6 +1748,21 @@
       "aliases": []
     },
     {
+      "name": "入木三分無菜單料理",
+      "city": "桃園市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "仁利菜包",
       "address": "",
       "awards": [
@@ -2028,6 +2089,23 @@
       ],
       "city": "高雄市",
       "aliases": []
+    },
+    {
+      "name": "小明星餐館 Little Star Diner",
+      "city": "高雄市",
+      "address": "",
+      "aliases": [
+        "小明星餐館"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "小雅芋頭西米露專賣店",
@@ -3186,6 +3264,21 @@
       "aliases": []
     },
     {
+      "name": "惠中蔬食",
+      "city": "高雄市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "曾記廚房",
       "address": "",
       "awards": [
@@ -3385,6 +3478,21 @@
       "aliases": []
     },
     {
+      "name": "慈香庭素食餐廳高雄旗艦店",
+      "city": "高雄市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "旗山 常美冰店",
       "address": "",
       "awards": [
@@ -3399,6 +3507,23 @@
       "city": "高雄市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "漢來蔬食 Hi Lai vegetables",
+      "city": "高雄市",
+      "address": "",
+      "aliases": [
+        "漢來蔬食"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
     },
     {
       "name": "蒜泥雖小",
@@ -3452,6 +3577,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "蔬慕 Vegan Amore",
+      "city": "高雄市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "賣塩順",
@@ -4805,6 +4945,28 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
+      "name": "毋肉 Vegetable 1999",
+      "city": "新北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
         }
       ]
     },
@@ -4822,6 +4984,23 @@
       ],
       "city": "新北市",
       "aliases": []
+    },
+    {
+      "name": "布佬廚房 Bruce’s Kitchen",
+      "city": "新北市",
+      "address": "",
+      "aliases": [
+        "布佬廚房"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
     },
     {
       "name": "正莊古早味好吃雞肉店",
@@ -5619,6 +5798,24 @@
       "aliases": []
     },
     {
+      "name": "雲川水月 Clavius",
+      "city": "新北市",
+      "address": "",
+      "aliases": [
+        "雲川水月",
+        "Clavius"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "黑殿飯店 (創始店)",
       "aliases": [],
       "city": "新北市",
@@ -6304,6 +6501,21 @@
       "aliases": []
     },
     {
+      "name": "新築窟",
+      "city": "新竹市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "廟口鴨香飯 (中山路)",
       "aliases": [],
       "city": "新竹市",
@@ -6384,6 +6596,23 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "Anjali Café & Yoga 植物飲食瑜伽聚落",
+      "city": "新竹市",
+      "address": "",
+      "aliases": [
+        "Anjali Café & Yoga"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
         }
       ]
     },
@@ -8744,6 +8973,21 @@
       "aliases": []
     },
     {
+      "name": "掬翠拾煙蔬食創作料理",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "梅子",
       "aliases": [],
       "city": "臺中市",
@@ -8990,6 +9234,21 @@
       "aliases": []
     },
     {
+      "name": "植橪．和食",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "湖南味牛肉麵",
       "address": "",
       "awards": [
@@ -9062,6 +9321,21 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "越哉Viet Chay 越南素料理",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
         }
       ]
     },
@@ -9233,6 +9507,21 @@
       "city": "臺中市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "綠舍奇蹟健康蔬食",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
     },
     {
       "name": "聚眾緣麵館",
@@ -9413,6 +9702,21 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "貓居蔬食",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
         }
       ]
     },
@@ -9727,6 +10031,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "Enrich Restaurant & Cafe",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "FIRNS",
@@ -10055,6 +10374,24 @@
       ]
     },
     {
+      "name": "SUN BERNO光焙若蔬食",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [
+        "光焙若蔬食",
+        "SUN BERNO"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "Sur-",
       "city": "臺中市",
       "address": "台中市",
@@ -10071,6 +10408,23 @@
       ],
       "aliases": [
         "澀"
+      ]
+    },
+    {
+      "name": "TERRA de Verdant 豐土",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [
+        "豐土"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
       ]
     },
     {
@@ -10593,6 +10947,21 @@
       "aliases": []
     },
     {
+      "name": "大人山養",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "大三元豆漿",
       "address": "",
       "awards": [
@@ -10775,6 +11144,13 @@
           "guide": "greenstar",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
         }
       ],
       "city": "臺北市",
@@ -10783,6 +11159,21 @@
         "Little Tree Food (Da'an Road)"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "小小樹食0km山物所",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
     },
     {
       "name": "小王煮瓜",
@@ -10936,6 +11327,21 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "山間倉房",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ]
+    },
+    {
       "name": "川畝園",
       "aliases": [],
       "city": "臺北市",
@@ -11036,6 +11442,21 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "不葷主義",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "中山對酌",
       "awards": [
         {
@@ -11068,6 +11489,21 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "五郎時食",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
         }
       ]
     },
@@ -11746,7 +12182,8 @@
       "address": "",
       "aliases": [
         "茶苑",
-        "Grand Hyatt Taipei 茶苑"
+        "Grand Hyatt Taipei 茶苑",
+        "Cha Lounge"
       ],
       "awards": [
         {
@@ -11755,6 +12192,13 @@
           "level": "3星",
           "stars": 3,
           "url": "https://www.gdg.asia/article/235/1421"
+        },
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
         }
       ]
     },
@@ -12550,6 +12994,21 @@
       "aliases": []
     },
     {
+      "name": "旭穗蔬食VEGANala",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "江牛樓",
       "aliases": [],
       "city": "臺北市",
@@ -12750,6 +13209,21 @@
       ],
       "city": "臺北市",
       "aliases": []
+    },
+    {
+      "name": "自在天 昆布水つけ麺",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
     },
     {
       "name": "艾迪墨西哥餐廳",
@@ -13789,6 +14263,21 @@
       "aliases": []
     },
     {
+      "name": "知初 the Root Kitchen",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "空盤",
       "aliases": [],
       "city": "臺北市",
@@ -14529,6 +15018,21 @@
       "aliases": []
     },
     {
+      "name": "美蔬齋 Mei shu zhai",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "胖都督中式精緻麵食",
       "address": "",
       "awards": [
@@ -14638,6 +15142,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "原蔬生活",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "家鄉碳烤香雞排",
@@ -15303,6 +15822,13 @@
         {
           "guide": "bib",
           "year": 2025
+        },
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
         }
       ],
       "city": "臺北市",
@@ -15522,6 +16048,23 @@
       "aliases": []
     },
     {
+      "name": "善菓堂 SHAN GUO TANG",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [
+        "善菓堂"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ]
+    },
+    {
       "name": "富錦樹台菜香檳",
       "address": "台北市松山區敦化北路199巷17號",
       "awards": [
@@ -15573,6 +16116,21 @@
       ],
       "city": "臺北市",
       "aliases": []
+    },
+    {
+      "name": "斐得蔬食Verdure",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "斑泊",
@@ -15749,6 +16307,21 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "無所洋食",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "琥珀",
       "aliases": [],
       "city": "臺北市",
@@ -15824,6 +16397,21 @@
       "aliases": []
     },
     {
+      "name": "菜鳥書蒔",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "菸花Op.118.2",
       "address": "",
       "awards": [
@@ -15881,6 +16469,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
         }
       ]
     },
@@ -16117,6 +16712,21 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "遇見蔬食館",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "鄒記食舖",
       "address": "台北市",
       "awards": [
@@ -16144,6 +16754,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "鈺善閣 ‧ 素 ‧ 養生懷石",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "雍翠庭",
@@ -16386,6 +17011,21 @@
       ],
       "city": "臺北市",
       "aliases": []
+    },
+    {
+      "name": "福屋拉麵 (福屋ラーメン)",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "福德涼麵",
@@ -16632,6 +17272,23 @@
       ]
     },
     {
+      "name": "蔬軾 So Veg Restaurant",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [
+        "蔬軾"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "請客樓",
       "address": "台北市中正區忠孝東路一段12號17樓",
       "awards": [
@@ -16693,6 +17350,36 @@
       "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+    },
+    {
+      "name": "養心沙龍",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
+      "name": "養心茶樓-台北中山",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "橘色涮涮鍋",
@@ -17621,6 +18308,21 @@
       "aliases": []
     },
     {
+      "name": "BaganHood 蔬食餐酒館",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ]
+    },
+    {
       "name": "BELLINI CAFFÈ（台北復興店）",
       "awards": [
         {
@@ -18470,6 +19172,13 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
+        },
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
         }
       ],
       "city": "臺北市",
@@ -18653,6 +19362,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "Herbivore Vegan",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "Heritage Bakery & Cafe|美式烘培坊 Goo Donut",
@@ -19899,6 +20623,13 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
+        },
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
         }
       ],
       "city": "臺北市",
@@ -19969,6 +20700,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "Preserve For our Future",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "Qi 27 (Sushi 27)",
@@ -20580,6 +21326,21 @@
       "aliases": []
     },
     {
+      "name": "THE ARIGATOU 蔬食餐廳",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ]
+    },
+    {
       "name": "The Chapter",
       "awards": [
         {
@@ -20747,6 +21508,21 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
+      "name": "Uncle Q by Veganday",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "Wagyu Mania",
       "awards": [
         {
@@ -20842,6 +21618,21 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "Yache 韓式蔬食",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
     },
     {
       "name": "Yu Chocolatier 畬室 法式巧克力甜點創作",
@@ -21396,6 +22187,21 @@
       "aliases": []
     },
     {
+      "name": "八寶閣御廚房",
+      "city": "臺南市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ]
+    },
+    {
       "name": "十平",
       "address": "",
       "awards": [
@@ -21599,6 +22405,21 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "毛蔬亞洲蔬食",
+      "city": "臺南市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
         }
       ]
     },
@@ -22518,6 +23339,21 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "春草舒願",
+      "city": "臺南市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
         }
       ]
     },

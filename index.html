@@ -408,6 +408,8 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge.designaward::before{content:"D";font-size:9px;font-family:var(--mono);color:var(--plate);}
 .badge.fmg{background:rgba(95,185,138,.12);color:var(--green);border-color:rgba(95,185,138,.30);}
 .badge.fmg::before{content:"FMG";font-size:8px;font-family:var(--mono);color:var(--green);}
+.badge.greenveggie{background:rgba(95,185,138,.15);color:var(--green);border-color:rgba(95,185,138,.34);}
+.badge.greenveggie::before{content:"V";font-size:9px;font-family:var(--mono);color:var(--green);}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
 .badge.plate{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.26);}
 .badge.bowl{background:rgba(200,162,76,.13);color:var(--gold);border-color:rgba(200,162,76,.28);}
@@ -820,6 +822,7 @@ const CONFIG = {
     theBestChef: { three: 0.24, two: 0.18, one: 0.12 },
     designAwards: 0.05,
     fmg: { three: 0.12, two: 0.08, one: 0.04 },
+    greenVeggie: { three: 0.18, two: 0.12, one: 0.07 },
     bib: 0.22,                // 必比登推介：中高權重
     platePerUnit: 0.03,       // 500 盤 / 500 碗 / 500 甜：中高權重，依單位數遞增
     plateCap: 0.35,           // 500 系列加分上限，避免壓過 Google 主體
@@ -1354,7 +1357,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"50 Best", guide:"50best"}, {label:"50 Discovery", guide:"50bestdiscovery"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"FMG永續", guide:"fmg"}, {label:"設計獎", guide:"designawards"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
+  { key:"award",   label:"評鑑可複選", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"50 Best", guide:"50best"}, {label:"50 Discovery", guide:"50bestdiscovery"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"FMG永續", guide:"fmg"}, {label:"設計獎", guide:"designawards"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, award:[], city:"", area:"", village:"" };
 let rankFilterDraft = null;
@@ -4271,6 +4274,11 @@ function awardBonus(awards){
       const cfg = CONFIG.AWARD_BONUS.fmg;
       const bonus = stars >= 3 ? cfg.three : (stars >= 2 ? cfg.two : cfg.one);
       fiftyBest = Math.max(fiftyBest, bonus);
+    } else if (a.guide === "greenveggie") {
+      const stars = Number(a.stars || String(a.level || "").match(/\d+/)?.[0] || 1);
+      const cfg = CONFIG.AWARD_BONUS.greenVeggie;
+      const bonus = stars >= 3 ? cfg.three : (stars >= 2 ? cfg.two : cfg.one);
+      fiftyBest = Math.max(fiftyBest, bonus);
     } else if (a.guide === "bib") {
       bib = CONFIG.AWARD_BONUS.bib;
     } else if (a.guide === "500plate" || a.guide === "500bowl" || a.guide === "500sweet") {
@@ -4700,6 +4708,7 @@ function badgeHTML(a){
   if (a.guide==="thebestchef") return `<span class="badge bestchef" title="The Best Chef ${year} ${escapeHTML(a.level||"")}">Best Chef ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="designawards") return `<span class="badge designaward" title="Restaurant & Bar Design Awards ${year} ${escapeHTML(a.level||"")}">設計獎 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="fmg") return `<span class="badge fmg" title="Food Made Good ${year} ${escapeHTML(a.level||"")}">FMG ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="greenveggie") return `<span class="badge greenveggie" title="綠・蔬食評鑑指南 ${year} ${escapeHTML(a.level||"")}">綠蔬食 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="tatlerbest") return `<span class="badge mediaaward" title="Tatler Best ${year} ${escapeHTML(a.level||"")}">Tatler${a.level ? ` ${escapeHTML(a.level)}` : ""}<span class="yr">${year}</span></span>`;
   if (a.guide==="worldculinary") return `<span class="badge mediaaward" title="World Culinary Awards ${year} ${escapeHTML(a.level||"")}">World Culinary${a.winner ? " Winner" : ""}<span class="yr">${year}</span></span>`;
   if (a.guide==="500plate") {
@@ -4988,12 +4997,13 @@ function normalizeAwards(awards){
     : (a.guide === "greenstar" ? 7
     : (a.guide === "tatlerbest" ? 8
     : (a.guide === "50bestdiscovery" ? 9
-    : (a.guide === "fmg" ? 10
-    : (a.guide === "designawards" ? 11
-    : (a.guide === "500plate" ? 12
-    : (a.guide === "500bowl" ? 13
-    : (a.guide === "500sweet" ? 14
-    : (a.guide === "michelin_selected" ? 15 : 16))))))))))))));
+    : (a.guide === "greenveggie" ? 10
+    : (a.guide === "fmg" ? 11
+    : (a.guide === "designawards" ? 12
+    : (a.guide === "500plate" ? 13
+    : (a.guide === "500bowl" ? 14
+    : (a.guide === "500sweet" ? 15
+    : (a.guide === "michelin_selected" ? 16 : 17)))))))))))))));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
       const plates = Array.isArray(a.dishPlates)

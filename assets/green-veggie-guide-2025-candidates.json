@@ -1,0 +1,1020 @@
+{
+  "version": "green-veggie-guide-2025-candidates",
+  "generatedAt": "2026-07-01T22:50:14.396Z",
+  "sourceUrl": "https://ipuregreen.org/veg/",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_site_batch",
+    "vegetarianSignalOnly": true,
+    "notes": [
+      "綠色公益基金會 2025《綠・蔬食評鑑指南》星級名單批次整理。",
+      "只匯入可判定城市的高信心資料；城市未確定者保留在 needsCityReview，避免跨城市誤配。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "山間倉房",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "foldie 蔬食餐酒館",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "THE ARIGATOU 蔬食餐廳",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "善菓堂 SHAN GUO TANG",
+      "city": "臺北市",
+      "aliases": [
+        "善菓堂"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "祥和蔬食料理",
+      "city": "臺北市",
+      "aliases": [
+        "祥和蔬食"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "五郎時食",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "惠中蔬食",
+      "city": "高雄市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "小小樹食0km山物所",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "茶苑 Cha Lounge",
+      "city": "臺北市",
+      "aliases": [
+        "茶苑",
+        "Cha Lounge"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "綠舍奇蹟健康蔬食",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "雲川水月 Clavius",
+      "city": "新北市",
+      "aliases": [
+        "雲川水月",
+        "Clavius"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "越哉Viet Chay 越南素料理",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "植橪．和食",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "春草舒願",
+      "city": "臺南市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "自在天 昆布水つけ麺",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "新築窟",
+      "city": "新竹市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "蔬軾 So Veg Restaurant",
+      "city": "臺北市",
+      "aliases": [
+        "蔬軾"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "食不二蔬食",
+      "city": "宜蘭縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "不葷主義",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Plants Eatery",
+      "city": "臺北市",
+      "aliases": [
+        "Plants"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "小小樹食",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "漢來蔬食 Hi Lai vegetables",
+      "city": "高雄市",
+      "aliases": [
+        "漢來蔬食"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "陽明春天",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "BaganHood 蔬食餐酒館",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "布佬廚房 Bruce’s Kitchen",
+      "city": "新北市",
+      "aliases": [
+        "布佬廚房"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "掬翠拾煙蔬食創作料理",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://ipuregreen.org/veg/?tag=2star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "菜鳥書蒔",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "旭穗蔬食VEGANala",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "養心沙龍",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "鈺善閣 ‧ 素 ‧ 養生懷石",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "遇見蔬食館",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "無所洋食",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "斐得蔬食Verdure",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "原蔬生活",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "美蔬齋 Mei shu zhai",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "知初 the Root Kitchen",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "毋肉 Vegetable 1999",
+      "city": "新北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "心怡素食",
+      "city": "新北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "大人山養",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Yache 韓式蔬食",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "TERRA de Verdant 豐土",
+      "city": "臺中市",
+      "aliases": [
+        "豐土"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Anjali Café & Yoga 植物飲食瑜伽聚落",
+      "city": "新竹市",
+      "aliases": [
+        "Anjali Café & Yoga"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "毛蔬亞洲蔬食",
+      "city": "臺南市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "八寶閣御廚房",
+      "city": "臺南市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "慈香庭素食餐廳高雄旗艦店",
+      "city": "高雄市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "打舖2號店",
+      "city": "屏東縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "入木三分無菜單料理",
+      "city": "桃園市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Preserve For our Future",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "pitatto+菜",
+      "city": "花蓮縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Enrich Restaurant & Cafe",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "貓居蔬食",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "小明星餐館 Little Star Diner",
+      "city": "高雄市",
+      "aliases": [
+        "小明星餐館"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "蔬慕 Vegan Amore",
+      "city": "高雄市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Uncle Q by Veganday",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "SUN BERNO光焙若蔬食",
+      "city": "臺中市",
+      "aliases": [
+        "光焙若蔬食",
+        "SUN BERNO"
+      ],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "Herbivore Vegan",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "養心茶樓-台北中山",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "福屋拉麵 (福屋ラーメン)",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "high"
+    }
+  ],
+  "needsCityReview": [
+    {
+      "name": "靜點咖啡",
+      "city": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "needs_city_review"
+    },
+    {
+      "name": "沐素musu料理",
+      "city": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "needs_city_review"
+    },
+    {
+      "name": "禪廚蔬食餐廳",
+      "city": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "needs_city_review"
+    },
+    {
+      "name": "Chao・炒炒蔬食熱炒",
+      "city": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "needs_city_review"
+    },
+    {
+      "name": "無口小廚",
+      "city": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "needs_city_review"
+    },
+    {
+      "name": "曙光居蔬食料理",
+      "city": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "needs_city_review"
+    },
+    {
+      "name": "恆。好 餐廳畫廊",
+      "city": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "greenveggie",
+          "year": 2025,
+          "level": "1星",
+          "stars": 1,
+          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+        }
+      ],
+      "importConfidence": "needs_city_review"
+    }
+  ]
+}

@@ -71,7 +71,7 @@ $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$Cach
 $MichelinThreeStar = "$([char]0x4E09)$([char]0x661F)"
 $MichelinTwoStar = "$([char]0x4E8C)$([char]0x661F)"
 $MichelinOneStar = "$([char]0x4E00)$([char]0x661F)"
-foreach ($RequiredFilterText in @("key:""award""", "tier:""static""", 'guide:"michelin"', "level:""$MichelinThreeStar""", "level:""$MichelinTwoStar""", "level:""$MichelinOneStar""", 'guide:"500sweet"')) {
+foreach ($RequiredFilterText in @("key:""award""", "tier:""static""", "評鑑可複選", 'guide:"michelin"', "level:""$MichelinThreeStar""", "level:""$MichelinTwoStar""", "level:""$MichelinOneStar""", 'guide:"greenveggie"', 'guide:"500sweet"')) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
@@ -87,7 +87,7 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 1364
+  restaurants = 1415
   michelin = 53
   "michelin_selected" = 222
   bib = 144
@@ -101,6 +101,7 @@ $Expected = [ordered]@{
   "thebestchef" = 4
   "designawards" = 3
   "fmg" = 20
+  "greenveggie" = 58
   "tatlerbest" = 20
   "worldculinary" = 4
 }
@@ -120,6 +121,7 @@ $Actual = [ordered]@{
   "thebestchef" = $Guides["thebestchef"]
   "designawards" = $Guides["designawards"]
   "fmg" = $Guides["fmg"]
+  "greenveggie" = $Guides["greenveggie"]
   "tatlerbest" = $Guides["tatlerbest"]
   "worldculinary" = $Guides["worldculinary"]
 }
@@ -158,7 +160,7 @@ foreach ($RequiredPlatform in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
 $CoverageText = Read-TextUrl "$BaseUrl/assets/external-source-coverage.json?cacheBust=$CacheBust"
 $Coverage = $CoverageText | ConvertFrom-Json
 $CoverageIds = @($Coverage.sources | ForEach-Object { $_.id })
-foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "tatlerbest", "worldculinary", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
+foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "tatlerbest", "worldculinary", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
   if ($CoverageIds -notcontains $RequiredCoverage) {
     throw "External source coverage missing $RequiredCoverage"
   }

@@ -34,6 +34,7 @@ function main() {
     "thebestchef",
     "designawards",
     "fmg",
+    "greenveggie",
     "tatlerbest",
     "worldculinary",
     "google-maps-reviews",
@@ -52,7 +53,7 @@ function main() {
   if (michelin.counts?.selected !== (guides.michelin_selected || 0)) errors.push("michelin selected count mismatch");
   if (michelin.counts?.bib !== (guides.bib || 0)) errors.push("bib count mismatch");
   if (michelin.counts?.greenstar !== (guides.greenstar || 0)) errors.push("greenstar count mismatch");
-  for (const guide of ["500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "tatlerbest", "worldculinary"]) {
+  for (const guide of ["500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "tatlerbest", "worldculinary"]) {
     const source = sources.get(guide) || {};
     if (source.count !== (guides[guide] || 0)) errors.push(`${guide} count mismatch`);
     if (source.status !== "integrated_data") errors.push(`${guide} must be integrated_data`);

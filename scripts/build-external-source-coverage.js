@@ -10,6 +10,7 @@ const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidate
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
 const designAwardsCandidatesPath = path.join(repoRoot, "assets", "restaurant-design-awards-taiwan-candidates.json");
 const fmgCandidatesPath = path.join(repoRoot, "assets", "fmg-taiwan-2025-candidates.json");
+const greenVeggieCandidatesPath = path.join(repoRoot, "assets", "green-veggie-guide-2025-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -53,6 +54,7 @@ function main() {
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
   const designAwardsCandidates = fs.existsSync(designAwardsCandidatesPath) ? readJson(designAwardsCandidatesPath) : { restaurants: [] };
   const fmgCandidates = fs.existsSync(fmgCandidatesPath) ? readJson(fmgCandidatesPath) : { restaurants: [] };
+  const greenVeggieCandidates = fs.existsSync(greenVeggieCandidatesPath) ? readJson(greenVeggieCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -87,6 +89,8 @@ function main() {
       bestChefCandidates: (bestChefCandidates.restaurants || []).length,
       designAwardsCandidates: (designAwardsCandidates.restaurants || []).length,
       fmgCandidates: (fmgCandidates.restaurants || []).length,
+      greenVeggieCandidates: (greenVeggieCandidates.restaurants || []).length,
+      greenVeggieNeedsCityReview: (greenVeggieCandidates.needsCityReview || []).length,
     },
     sources: [
       {
@@ -187,6 +191,17 @@ function main() {
         candidatesFile: "assets/fmg-taiwan-2025-candidates.json",
         count: guides.fmg || 0,
         candidates: (fmgCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "greenveggie",
+        label: "綠・蔬食評鑑指南",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/green-veggie-guide-2025-candidates.json",
+        count: guides.greenveggie || 0,
+        candidates: (greenVeggieCandidates.restaurants || []).length,
+        needsCityReview: (greenVeggieCandidates.needsCityReview || []).length,
         runtimeLookup: false,
       },
       {
