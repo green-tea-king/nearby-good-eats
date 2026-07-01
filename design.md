@@ -29,6 +29,7 @@
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
 - `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
 - `assets/platform-signals.manual.json`：愛食記、OpenRice、Tripadvisor 等平台資料的人工 / AI 整理入口。此檔只放有 URL、審核者與信心等級的可追溯資料，經 `scripts/merge-platform-signals.js` 合併進 `assets/external-signals.json`。
+- `assets/platform-source-probe-report.json`：平台來源可用性探測報告。只記錄愛食記、OpenRice、Tripadvisor 是否適合批次整理，不匯入餐廳資料。
 - `assets/social-signal-config.json`：社群熱度批次更新設定，目前以 YouTube Data API 為第一階段來源，控制每次查詢餐廳數、影片數、時間範圍與分數權重。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
 - `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、米其林入選、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、米其林入選 222 筆、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項、500 碗官方文字名單高信心 415 筆，並保留來源 URL。500 甜目前先支援格式與徽章，待批次來源驗證後再匯入正式資料。
@@ -36,6 +37,7 @@
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/update-external-signals.js`：外部社群訊號批次更新腳本。讀取 `assets/awards-taiwan.json` 作為候選餐廳，使用 YouTube Data API 查詢近期影片，只在影片標題或描述命中店名 / 別名時寫入 `assets/external-signals.json`。
 - `scripts/merge-platform-signals.js`：合併人工或 AI 整理的平台訊號，例如愛食記、OpenRice、Tripadvisor。此腳本只讀 `assets/platform-signals.manual.json`，不即時爬外站。
+- `scripts/probe-platform-sources.js`：探測愛食記、OpenRice、Tripadvisor 的公開頁與 robots 狀態，產生 `assets/platform-source-probe-report.json`。此腳本只做來源可用性判斷，不產生餐廳訊號。
 - `scripts/merge-500sweet-2025-awards.js`：合併 `assets/500sweet-2025-manual.json` 到 500甜 draft。手動檔為空時只產生報告，不寫入假資料。
 - `scripts/export-release.ps1`：版本匯出腳本。
 - `RELEASES.md`：版本匯出流程備註。
@@ -217,6 +219,7 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 - 社群聲量採 API 優先、批次更新。第一階段來源為 YouTube Data API：每次預設只查 10 家候選餐廳、每家最多 8 支影片，影片必須命中店名或別名才可寫入。分數依影片數、90 天內影片數與觀看數對數加權產生，僅作輔助訊號。
 - `youtubeBuzz` 已接入前端排序與詳情：排序最多只加 `0.12`，社群訊號總加分上限 `0.14`；卡片第一眼只顯示小徽章，展開詳情才顯示影片數、觀看數與來源連結。
 - 愛食記、OpenRice、Tripadvisor 先採手動 / AI 整理檔匯入：資料必須有來源 URL、信心等級、更新日期與審核者，合併後以 `platformRating` 或 `platformCertification` 做小幅輔助加分；沒有資料就不顯示徽章，不用猜測。
+- 2026-07-01 平台來源探測結果：愛食記頁面可讀但 robots 有廣泛限制；OpenRice 與 Tripadvisor 也不符合安全自動解析條件。因此三者都維持手動整理或授權 API，不做自動抓取匯入。
 - 卡片認證章分兩類：
   - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援米其林星級、必比登、綠星、500 盤、500 碗、500 甜、50 Best；資料帶縣市與來源欄位，前端會合併同店多獎項並避免跨縣市誤標。
   - Google 真欄位認證：由 Google rating / userRatingCount / Places 服務欄位產生，例如高分認證、千則口碑、可訂位、聚餐友善、素食友善、戶外座位、寵物友善、無障礙資訊。

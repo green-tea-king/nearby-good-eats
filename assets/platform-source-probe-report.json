@@ -1,0 +1,102 @@
+{
+  "version": "platform-probe-2026-07-01",
+  "generatedAt": "2026-07-01T00:06:15.799Z",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "batchOnly": true,
+    "importRequiresManualReview": true,
+    "notes": [
+      "本報告只判斷來源可用性，不匯入餐廳資料。",
+      "任何平台資料都必須先整理進 assets/platform-signals.manual.json，通過驗證後才可合併。",
+      "若來源要求授權 API、登入或 robots 限制，維持 manual/API-only，不做自動抓取。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "ifoodie",
+      "label": "愛食記",
+      "url": "https://ifoodie.tw/",
+      "robotsUrl": "https://ifoodie.tw/robots.txt",
+      "runtimeLookup": false,
+      "recommendedImportMode": "manual_or_authorized_api",
+      "status": "reachable",
+      "evidence": {
+        "page": {
+          "statusCode": 200,
+          "contentType": "text/html; charset=utf-8",
+          "htmlBytes": 436331,
+          "textBytes": 8826,
+          "matchedTokens": [
+            "愛食記",
+            "餐廳",
+            "美食",
+            "評分"
+          ]
+        },
+        "robots": {
+          "statusCode": 200,
+          "bytes": 2030,
+          "available": true,
+          "disallowAll": true,
+          "note": "robots.txt has a broad Disallow: / rule; use manual/API only."
+        }
+      },
+      "decision": "do_not_auto_import",
+      "note": "不符合安全自動解析條件；維持手動整理或授權 API 流程。"
+    },
+    {
+      "id": "openrice-tw",
+      "label": "OpenRice 台灣",
+      "url": "https://tw.openrice.com/",
+      "robotsUrl": "https://tw.openrice.com/robots.txt",
+      "runtimeLookup": false,
+      "recommendedImportMode": "manual_or_authorized_api",
+      "status": "reachable",
+      "evidence": {
+        "page": {
+          "statusCode": 200,
+          "contentType": "text/html; charset=utf-8",
+          "htmlBytes": 147196,
+          "textBytes": 71784,
+          "matchedTokens": []
+        },
+        "robots": {
+          "statusCode": 200,
+          "bytes": 2461,
+          "available": true,
+          "disallowAll": true,
+          "note": "robots.txt has a broad Disallow: / rule; use manual/API only."
+        }
+      },
+      "decision": "do_not_auto_import",
+      "note": "不符合安全自動解析條件；維持手動整理或授權 API 流程。"
+    },
+    {
+      "id": "tripadvisor-tw",
+      "label": "Tripadvisor 台灣",
+      "url": "https://www.tripadvisor.com.tw/Restaurants-g293910-Taiwan.html",
+      "robotsUrl": "https://www.tripadvisor.com.tw/robots.txt",
+      "runtimeLookup": false,
+      "recommendedImportMode": "manual_or_authorized_api",
+      "status": "not_reachable",
+      "evidence": {
+        "page": {
+          "statusCode": 403,
+          "contentType": "text/html;charset=utf-8",
+          "htmlBytes": 784,
+          "textBytes": 62,
+          "matchedTokens": []
+        },
+        "robots": {
+          "statusCode": 200,
+          "bytes": 25726,
+          "available": true,
+          "disallowAll": true,
+          "note": "robots.txt has a broad Disallow: / rule; use manual/API only."
+        }
+      },
+      "decision": "do_not_auto_import",
+      "note": "不符合安全自動解析條件；維持手動整理或授權 API 流程。"
+    }
+  ]
+}

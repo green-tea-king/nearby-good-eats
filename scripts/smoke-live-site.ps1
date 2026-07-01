@@ -91,6 +91,17 @@ $ManualSignals = $ManualSignalsText | ConvertFrom-Json
 if ($ManualSignals.policy.runtimeExternalLookup -ne $false -or $ManualSignals.policy.batchOnly -ne $true) {
   throw "Manual platform signals must stay batch-only and disable runtime lookup"
 }
+$PlatformProbeText = Read-TextUrl "$BaseUrl/assets/platform-source-probe-report.json?cacheBust=$CacheBust"
+$PlatformProbe = $PlatformProbeText | ConvertFrom-Json
+$ProbeIds = @($PlatformProbe.sources | ForEach-Object { $_.id })
+foreach ($RequiredProbe in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
+  if ($ProbeIds -notcontains $RequiredProbe) {
+    throw "Platform source probe missing $RequiredProbe"
+  }
+}
+if ($PlatformProbe.policy.runtimeExternalLookup -ne $false -or $PlatformProbe.policy.batchOnly -ne $true) {
+  throw "Platform source probe must stay batch-only and disable runtime lookup"
+}
 
 $SweetManualText = Read-TextUrl "$BaseUrl/assets/500sweet-2025-manual.json?cacheBust=$CacheBust"
 $SweetManual = $SweetManualText | ConvertFrom-Json
