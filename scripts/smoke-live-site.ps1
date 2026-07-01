@@ -35,6 +35,11 @@ if ($Html -notlike "*500bowl*" -or $Html -notlike "*500sweet*") {
   throw "Homepage is missing 500bowl/500sweet rendering support"
 }
 
+$SettingsText = Read-TextUrl "$BaseUrl/assets/app-settings.js?cacheBust=$CacheBust"
+if ($SettingsText -notlike "*externalTestMode: true*") {
+  throw "External phone testing mode is not enabled in app settings"
+}
+
 $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
 foreach ($RequiredFilterText in @("key:""award""", "tier:""static""")) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {

@@ -3,6 +3,11 @@
 window.APP_SETTINGS = {
   apiBaseUrl: "",
   googleMapsApiKey: "AIzaSyBtViT280p8qtdm4PT2QUnMypdMssTV1-k",
+  apiLimits: {
+    externalTestMode: true,
+    dailySearchLimit: null,
+    note: "2026-07-01 外部手機測試：暫停每日搜尋封鎖，保留登入與後台紀錄。",
+  },
   // Fill after registering the Web app in Firebase App Check. Empty keeps App Check optional on the proxy.
   appCheckSiteKey: "",
   appCheckDebugToken: false,

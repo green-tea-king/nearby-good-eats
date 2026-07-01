@@ -246,7 +246,7 @@ function resultDetail(e){
   return [filters, top].filter(Boolean).join("｜");
 }
 function downloadCsv(){
-  const header = ["kind","time","email","type","sessionId","path","payload","ok","latencyMs","estimatedUnits","estimatedCostUsd","quotaBlocked","quotaRemaining","error"];
+  const header = ["kind","time","email","type","sessionId","path","payload","ok","latencyMs","estimatedUnits","estimatedCostUsd","quotaTestOpen","quotaBlocked","quotaRemaining","error"];
   const usageLines = currentEvents.map(e => [
     "usage",
     fmtTime(e.createdAt),
@@ -255,6 +255,7 @@ function downloadCsv(){
     e.sessionId || "",
     e.path || "",
     JSON.stringify(e.payload || {}).replace(/\r?\n/g, " "),
+    "",
     "",
     "",
     "",
@@ -275,6 +276,7 @@ function downloadCsv(){
     e.latencyMs || "",
     e.estimatedUnits || "",
     e.estimatedCostUsd || "",
+    e.quotaTestOpen === true ? "true" : "false",
     e.quotaBlocked === true ? "true" : "false",
     e.quotaRemaining ?? "",
     e.error || "",
