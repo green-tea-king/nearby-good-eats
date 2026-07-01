@@ -1221,7 +1221,7 @@ function bootApp(){
    開場流程
    ============================================================ */
 function closeRankFilters(){
-  $("#rankFilters")?.classList.add("hidden");
+  $("#rankFilters")?.classList.remove("hidden");
   discardRankFilterDraft();
 }
 function openPhotoLightbox(src, caption=""){
@@ -1303,15 +1303,10 @@ function rankFilterShouldIgnoreViewportEvent(e){
   return rankFilterHasFocus() || rankFilterIsEditing() || rankFilterRecentlyActive();
 }
 function closeRankFiltersFromOutside(e){
-  if (!rankFiltersOpen()) return;
-  if (rankFilterEventInside(e)) { markRankFilterInteraction(); return; }
-  if (rankFilterShouldIgnoreViewportEvent(e)) return;
-  closeRankFilters();
+  if (rankFilterEventInside(e)) markRankFilterInteraction();
 }
 function closeRankFiltersFromViewportChange(e){
-  if (!rankFiltersOpen()) return;
-  if (rankFilterShouldIgnoreViewportEvent(e)) return;
-  closeRankFilters();
+  if (rankFilterShouldIgnoreViewportEvent(e)) markRankFilterInteraction();
 }
 
 $("#photoLightboxClose").addEventListener("click", closePhotoLightbox);
@@ -1327,7 +1322,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.01.21";
+const APP_VERSION_FALLBACK = "2026.07.01.22";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1558,7 +1553,8 @@ async function openSharedPlaceRoute(placeId){
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
   closeRankFilters();
-  $("#rankFilters").classList.add("hidden");
+  buildRankFilterBar();
+  $("#rankFilters").classList.remove("hidden");
   $("#rankList").innerHTML = `<div class="rank-note">載入分享卡片…</div>`;
   try{
     const card = await fetchSharedPlaceCard(placeId);

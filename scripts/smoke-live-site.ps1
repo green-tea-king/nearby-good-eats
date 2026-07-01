@@ -43,6 +43,9 @@ if ($Html -like "*id=`"rankFilterBtn`"*") {
 if ($Html -notlike "*<div class=`"rank-filters`" id=`"rankFilters`"></div>*") {
   throw "Leaderboard filters should be visible by default"
 }
+if ($Html -like '*rankFilters").classList.add("hidden")*' -or $Html -like '*rankFilters")?.classList.add("hidden")*') {
+  throw "Leaderboard filters must not be hidden by runtime close logic"
+}
 if ($Html -like "*addEventListener(`"touchmove`", closeRankFiltersFromOutside*" -or $Html -like "*addEventListener(`"scroll`", closeRankFiltersFromOutside*") {
   throw "Leaderboard filters should not auto-close on page drag or scroll"
 }
