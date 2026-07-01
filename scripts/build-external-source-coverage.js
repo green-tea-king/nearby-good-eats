@@ -15,6 +15,7 @@ const gdgAwardsCandidatesPath = path.join(repoRoot, "assets", "gdg-awards-2025-c
 const michelinSpecialCandidatesPath = path.join(repoRoot, "assets", "michelin-special-awards-2025-candidates.json");
 const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-candidates.json");
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
+const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -63,6 +64,7 @@ function main() {
   const michelinSpecialCandidates = fs.existsSync(michelinSpecialCandidatesPath) ? readJson(michelinSpecialCandidatesPath) : { restaurants: [] };
   const tcfPraiseCandidates = fs.existsSync(tcfPraiseCandidatesPath) ? readJson(tcfPraiseCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
+  const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -105,6 +107,7 @@ function main() {
       tcfPraiseCandidates: (tcfPraiseCandidates.restaurants || []).length,
       tcfPraiseNeedsCityReview: (tcfPraiseCandidates.needsCityReview || []).length,
       taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
+      muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
     },
     sources: [
       {
@@ -258,6 +261,16 @@ function main() {
         candidatesFile: "assets/taichung-low-carbon-2023-candidates.json",
         count: guides.taichunglowcarbon || 0,
         candidates: (taichungLowCarbonCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "muslimfriendly",
+        label: "穆斯林友善餐飲認證",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/muslim-friendly-2026-candidates.json",
+        count: guides.muslimfriendly || 0,
+        candidates: (muslimFriendlyCandidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {

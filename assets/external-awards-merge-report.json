@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T23:15:06.566Z",
+  "generatedAt": "2026-07-01T23:22:53.017Z",
   "sourceFiles": [
     "assets/external-awards.manual.json",
     "assets/50best-discovery-taiwan-candidates.json",
@@ -10,9 +10,10 @@
     "assets/green-veggie-guide-2025-candidates.json",
     "assets/gdg-awards-2025-candidates.json",
     "assets/michelin-special-awards-2025-candidates.json",
-    "assets/taichung-low-carbon-2023-candidates.json"
+    "assets/taichung-low-carbon-2023-candidates.json",
+    "assets/muslim-friendly-2026-candidates.json"
   ],
-  "candidates": 182,
+  "candidates": 257,
   "manualCandidates": 22,
   "fiftyDiscoveryCandidates": 13,
   "oadCandidates": 29,
@@ -23,6 +24,7 @@
   "gdgAwardsCandidates": 9,
   "michelinSpecialCandidates": 4,
   "taichungLowCarbonCandidates": 20,
+  "muslimFriendlyCandidates": 75,
   "skippedFiftyDiscoveryNeedsReview": 0,
   "skippedOadNeedsReview": 0,
   "skippedBestChefNeedsReview": 0,
@@ -30,9 +32,9 @@
   "skippedFmgNeedsReview": 0,
   "skippedGreenVeggieNeedsReview": 7,
   "skippedGdgAwardsNeedsReview": 51,
-  "addedRestaurants": 20,
+  "addedRestaurants": 74,
   "updatedExistingRestaurants": 0,
-  "skippedDuplicateAward": 166,
-  "mergedAwards": 20,
+  "skippedDuplicateAward": 187,
+  "mergedAwards": 74,
   "errors": []
 }

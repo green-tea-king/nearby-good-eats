@@ -43,7 +43,8 @@
     "https://ipuregreen.org/veg/",
     "https://greenmedia.today/article_detail.php?cid=7&mid=1407",
     "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled",
-    "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
+    "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf",
+    "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -61,6 +62,29 @@
       ],
       "city": "宜蘭縣",
       "aliases": []
+    },
+    {
+      "name": "九號咖啡石城館",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣頭城鎮石城路19號之6",
+      "cuisine": "飲品",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "飲品",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "大仁哥蔗香脆皮桶仔雞",
@@ -118,6 +142,29 @@
       "aliases": []
     },
     {
+      "name": "川岩咖啡館-康綺文化工作室",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣頭城鎮協天路636巷36-2號",
+      "cuisine": "飲品/點心",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "飲品/點心",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "元町活海鮮",
       "city": "宜蘭縣",
       "address": "宜蘭縣",
@@ -139,6 +186,29 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "水屋厚茶",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣礁溪鄉礁溪路四段103號",
+      "cuisine": "飲品",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "飲品",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "四海居小吃部",
@@ -325,6 +395,29 @@
       "aliases": []
     },
     {
+      "name": "阿賽喇冰",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣蘇澳鎮江夏路9號",
+      "cuisine": "飲品/點心",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "飲品/點心",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "南方澳無名蝦餅蚵嗲蘿蔔糕",
       "address": "",
       "awards": [
@@ -371,6 +464,29 @@
       "aliases": []
     },
     {
+      "name": "春不老驛站",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣冬山鄉丸山路259號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "紅樓中餐廳",
       "city": "宜蘭縣",
       "address": "宜蘭縣",
@@ -409,6 +525,29 @@
       ]
     },
     {
+      "name": "聊吧",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣冬山鄉中正路35號",
+      "cuisine": "飲品/點心",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "飲品/點心",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "逗可可:甜點研究室",
       "address": "",
       "awards": [
@@ -423,6 +562,29 @@
       "city": "宜蘭縣",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "啾咕咖啡",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣頭城鎮港口里港墘路60號2樓",
+      "cuisine": "飲品",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "飲品",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "彭記蔥油餅",
@@ -453,6 +615,29 @@
       ],
       "city": "宜蘭縣",
       "aliases": []
+    },
+    {
+      "name": "無所時時",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣五結鄉公園一路35號",
+      "cuisine": "飲品/點心",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "飲品/點心",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "番割田甕缸雞",
@@ -555,6 +740,29 @@
       "aliases": []
     },
     {
+      "name": "IBU廚房 x 冬瓜山書店",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣冬山鄉南興路54巷9號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "Tjuku cafe 啾咕咖啡",
       "address": "",
       "awards": [
@@ -569,6 +777,29 @@
       "city": "宜蘭縣",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "VEGAN蔬食餐廳-三合餅鋪有限公司",
+      "city": "宜蘭縣",
+      "district": "",
+      "address": "宜蘭縣宜蘭市梅洲二路65號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "小廢柴 Little Sleepyhead",
@@ -668,6 +899,52 @@
       ],
       "city": "花蓮縣",
       "aliases": []
+    },
+    {
+      "name": "瑪丁娜印度小館",
+      "city": "花蓮縣",
+      "district": "",
+      "address": "花蓮縣花蓮市和平路482號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "瑪丁娜印度小館-林森店",
+      "city": "花蓮縣",
+      "district": "",
+      "address": "花蓮縣花蓮市林森路121號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "福源海鮮",
@@ -1596,7 +1873,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "cuisine": "Taiwanese"
     },
     {
       "name": "LAND",
@@ -1655,6 +1933,29 @@
       ]
     },
     {
+      "name": "爪哇殿咖啡",
+      "city": "苗栗縣",
+      "district": "",
+      "address": "苗栗縣竹南鎮博愛街194號1樓",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "台灣因哈特國際清真認證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "北苗市場_阿婆手工粉圓",
       "address": "",
       "awards": [
@@ -1699,6 +2000,29 @@
       ],
       "city": "苗栗縣",
       "aliases": []
+    },
+    {
+      "name": "東村18健康廚房",
+      "city": "苗栗縣",
+      "district": "",
+      "address": "苗栗縣南庄鄉文化路7-1號",
+      "cuisine": "餐飲",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "餐飲",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "台灣因哈特國際清真認證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "阿梅姐日常手作·味自慢糧倉",
@@ -1787,6 +2111,29 @@
       "aliases": []
     },
     {
+      "name": "礦工餐廳-巴巴坑道",
+      "city": "苗栗縣",
+      "district": "",
+      "address": "苗栗縣三灣鄉頂寮村祭山湖 15 之 1 樓",
+      "cuisine": "餐飲",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "餐飲",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "台灣因哈特國際清真認證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "入木三分無菜單料理",
       "city": "桃園市",
       "address": "",
@@ -1815,6 +2162,52 @@
       ],
       "city": "桃園市",
       "aliases": []
+    },
+    {
+      "name": "台北中東料理坊",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市大園區航站南路15號出境B1 (美食廣場)",
+      "cuisine": "中東料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "中東料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "匠骰子牛麻辣麵 台灣桃園店",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市蘆竹區桃園街95號1樓",
+      "cuisine": "中式麵食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "中式麵食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "江家羊肉",
@@ -1963,6 +2356,75 @@
       "aliases": []
     },
     {
+      "name": "姚牛丸",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市中壢區龍平二街3號",
+      "cuisine": "印尼料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印尼料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅-桃捷高鐵A18站",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市中壢區青埔里高鐵北路一段5號",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅-桃園車站店",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市桃園區中正路1號",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "胡家潤餅",
       "address": "",
       "awards": [
@@ -1976,6 +2438,98 @@
       ],
       "city": "桃園市",
       "aliases": []
+    },
+    {
+      "name": "柴神興業有限公司-Furger 芙格漢堡餐車(中壢中原店)",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市中壢區民有街76號1樓",
+      "cuisine": "漢堡",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "漢堡",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "巴勒克清真產業有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "柴神興業有限公司-Furger 芙格漢堡餐車(桃園高鐵店)",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市中壢區高鐵北路一段5號(2樓穿堂層，萊爾富旁邊，往華泰名品城連通道)",
+      "cuisine": "漢堡",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "漢堡",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "巴勒克清真產業有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "清真合閃妹小廚",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市中壢區中正五路186號",
+      "cuisine": "雲南料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "雲南料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "異域故事館Halal專用餐廳",
+      "city": "桃園市",
+      "district": "",
+      "address": "桃園市平鎮區中山路70號",
+      "cuisine": "早午餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "早午餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "聯璽商務開發有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "魚師父活魚餐廳",
@@ -2268,6 +2822,29 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "爪哇真美食餐廳",
+      "city": "高雄市",
+      "district": "",
+      "address": "高雄市新興區南華路206號",
+      "cuisine": "印尼料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印尼料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
         }
       ]
     },
@@ -3251,6 +3828,29 @@
       "aliases": []
     },
     {
+      "name": "高雄清真館",
+      "city": "高雄市",
+      "district": "",
+      "address": "高雄市苓雅區正義里建軍路13號",
+      "cuisine": "中式麵食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "中式麵食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "堀江麵",
       "address": "",
       "awards": [
@@ -4177,7 +4777,8 @@
       ],
       "aliases": [
         "承"
-      ]
+      ],
+      "cuisine": "Japanese"
     },
     {
       "name": "the FRONT HOUSE",
@@ -4282,6 +4883,29 @@
       ],
       "city": "基隆市",
       "aliases": []
+    },
+    {
+      "name": "巴基斯坦廚房",
+      "city": "基隆市",
+      "district": "",
+      "address": "基隆市中正區信三路25號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "水產餃子館",
@@ -4426,6 +5050,29 @@
       ],
       "city": "基隆市",
       "aliases": []
+    },
+    {
+      "name": "美真小舖",
+      "city": "基隆市",
+      "district": "",
+      "address": "基隆市信義區信二路211號1樓",
+      "cuisine": "印尼料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印尼料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "素志久碳烤三明治",
@@ -5180,6 +5827,29 @@
       "aliases": []
     },
     {
+      "name": "地中海私房料理",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市深坑區北深路三段22號",
+      "cuisine": "地中海料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "地中海料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "朱記花枝羹",
       "address": "",
       "awards": [
@@ -5369,6 +6039,29 @@
         "https://udn.com/news/story/7266/8933484"
       ],
       "aliases": []
+    },
+    {
+      "name": "旺旺來亞州咖哩屋",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市中和區華新街23號",
+      "cuisine": "午晚餐料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "林口米苔目冰",
@@ -5813,6 +6506,29 @@
       ]
     },
     {
+      "name": "清真泰式廚房",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市永和區中興街92號1樓",
+      "cuisine": "泰式料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "泰式料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "野事草店Wild Herbs",
       "address": "",
       "awards": [
@@ -6000,6 +6716,29 @@
       "aliases": []
     },
     {
+      "name": "達卡印度廚房",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市林口區文化三路一段171號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "嘉邑海鮮小館",
       "aliases": [],
       "city": "新北市",
@@ -6011,6 +6750,52 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "瑪莎拉印度餐廳 三芝店",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市三芝區北勢子12-7號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "瑪莎拉印度餐廳 板橋店",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市板橋區文化路二段476號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
         }
       ]
     },
@@ -6168,6 +6953,29 @@
       "aliases": []
     },
     {
+      "name": "鍋棧精緻養生鍋",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市泰山區明志路三段38號",
+      "cuisine": "中式料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "中式料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "蘆洲-總讚手作蔥餅",
       "address": "",
       "awards": [
@@ -6181,6 +6989,52 @@
       ],
       "city": "新北市",
       "aliases": []
+    },
+    {
+      "name": "蘆洲紅燒羊肉拉麵-三重店",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市三重區龍濱路265號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "聯璽商務開發有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "蘆洲紅燒羊肉拉麵-淡水店",
+      "city": "新北市",
+      "district": "",
+      "address": "新北市淡水區中正路243號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "聯璽商務開發有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "Le Môut Pâtisserie Boulangerie 樂沐糕餅舖",
@@ -6739,6 +7593,29 @@
       ]
     },
     {
+      "name": "六福開發(股)公司 阿拉丁餐廳",
+      "city": "新竹縣",
+      "district": "",
+      "address": "新竹縣關西鎮仁安里拱子溝60號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "竹東排骨酥麵 (竹東)",
       "aliases": [],
       "city": "新竹縣",
@@ -6955,6 +7832,52 @@
       "aliases": []
     },
     {
+      "name": "璞鈺素食餐廳",
+      "city": "新竹縣",
+      "district": "",
+      "address": "新竹縣北埔鄉廟前街8號",
+      "cuisine": "洗/禮/餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "洗/禮/餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "國際穆斯林觀光產業聯合發展協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "璞鈺擂茶",
+      "city": "新竹縣",
+      "district": "",
+      "address": "新竹縣北埔鄉廟前街8號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "台灣因哈特國際清真認證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "鮨安",
       "aliases": [],
       "city": "新竹縣",
@@ -7043,6 +7966,52 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "烏司答土耳其居家料理",
+      "city": "嘉義市",
+      "district": "",
+      "address": "嘉義市東區大雅路一段858巷25號",
+      "cuisine": "土耳其料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "土耳其料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "爵士印尼風小館",
+      "city": "嘉義市",
+      "district": "",
+      "address": "嘉義市西區西門街1號",
+      "cuisine": "印尼料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印尼料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
         }
       ]
     },
@@ -8171,6 +9140,29 @@
       ]
     },
     {
+      "name": "半畝塘餐廳",
+      "city": "臺中市",
+      "district": "西區",
+      "address": "臺中市西區向上路一段95號2樓",
+      "cuisine": "餐飲",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "餐飲",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "台灣因哈特國際清真認證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "可口牛肉麵",
       "city": "臺中市",
       "address": "台中市",
@@ -9149,6 +10141,29 @@
       "aliases": []
     },
     {
+      "name": "紙箱王主題餐廳創意園區",
+      "city": "臺中市",
+      "district": "北屯區",
+      "address": "臺中市北屯區東山路2段2巷3號",
+      "cuisine": "洗/禮/餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "洗/禮/餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "台灣因哈特國際清真認證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "堂本麵包店 (亞森洋果子)",
       "address": "",
       "awards": [
@@ -9744,6 +10759,29 @@
       "city": "臺中市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "福爾摩沙酒店聯盟",
+      "city": "臺中市",
+      "district": "西區",
+      "address": "臺中市西區向上路一段95號二樓",
+      "cuisine": "洗/禮/餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "洗/禮/餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "國際穆斯林觀光產業聯合發展協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=5&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "綠舍奇蹟健康蔬食",
@@ -10580,7 +11618,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "cuisine": "Modern Singaporean"
     },
     {
       "name": "KR Prime Steak",
@@ -10844,7 +11883,8 @@
       ],
       "aliases": [
         "元紀"
-      ]
+      ],
+      "cuisine": "Taiwanese"
     },
     {
       "name": "パーラー 映",
@@ -11695,7 +12735,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Taiwanese"
     },
     {
       "name": "山間倉房",
@@ -12000,6 +13041,29 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "友善清真水料理食品有限公司",
+      "city": "臺北市",
+      "district": "松山區",
+      "address": "臺北市松山區敦化北路155巷17號",
+      "cuisine": "中式料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "中式料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "(大園清真寺)環亞貝爾國際標準驗證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "天下三絕",
@@ -12743,6 +13807,29 @@
       "aliases": []
     },
     {
+      "name": "台北遠東香格里拉飯店-八方廳",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "臺北市大安區全安里敦化南路二段201號",
+      "cuisine": "宴會廳",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "宴會廳",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=4&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "史大華精緻麵食",
       "address": "",
       "awards": [
@@ -13108,7 +14195,8 @@
       "aliases": [
         "Kitcho Sushi"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Sushi"
     },
     {
       "name": "吉那圈咖啡",
@@ -13479,6 +14567,29 @@
       "aliases": []
     },
     {
+      "name": "池先生士林芝山站有限公司-池先生(士林分店)",
+      "city": "臺北市",
+      "district": "士林區",
+      "address": "臺北市士林區福華路150號1樓",
+      "cuisine": "馬來西亞清真餐飲",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "馬來西亞清真餐飲",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "巴勒克清真產業有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "百年台菜「豐」辦桌",
       "awards": [
         {
@@ -13826,7 +14937,8 @@
       "aliases": [
         "Mudan Tempura"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Tempura"
     },
     {
       "name": "秀蘭小館",
@@ -14027,6 +15139,52 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "亞瑟蘭印度料理-內湖店",
+      "city": "臺北市",
+      "district": "內湖區",
+      "address": "臺北市內湖區文湖街60巷2號",
+      "cuisine": "中國回教協會",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "中國回教協會",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "亞瑟蘭印度餐廳",
+      "city": "臺北市",
+      "district": "士林區",
+      "address": "臺北市士林區德行西路114號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
     },
     {
       "name": "京丘・炭火燒鳥專門店",
@@ -14754,7 +15912,8 @@
       "aliases": [
         "Golden Formosa"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Taiwanese"
     },
     {
       "name": "金賞軒",
@@ -14817,6 +15976,29 @@
       "aliases": []
     },
     {
+      "name": "阿布都中東料理",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "臺北市大安區新生南路三段106號2樓之1",
+      "cuisine": "中東料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "中東料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "阿永小吃店",
       "address": "",
       "awards": [
@@ -14830,6 +16012,29 @@
       ],
       "city": "臺北市",
       "aliases": []
+    },
+    {
+      "name": "阿里巴巴的廚房",
+      "city": "臺北市",
+      "district": "中山區",
+      "address": "臺北市中山區南京東路二段56號2樓",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
     },
     {
       "name": "阿花魷魚羹 羊肉羹",
@@ -15334,6 +16539,167 @@
       "aliases": []
     },
     {
+      "name": "炸雞大獅-信義永吉店",
+      "city": "臺北市",
+      "district": "信義區",
+      "address": "台北市信義區永吉路30巷119號",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅-內湖家樂福",
+      "city": "臺北市",
+      "district": "內湖區",
+      "address": "臺北市內湖區民善街88號",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅-公館二店",
+      "city": "臺北市",
+      "district": "中正區",
+      "address": "台北市中正區羅斯福路四段24巷14號",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅-南港二館",
+      "city": "臺北市",
+      "district": "南港區",
+      "address": "臺北市南港區經貿二路2號B1",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅北市南港一館",
+      "city": "臺北市",
+      "district": "南港區",
+      "address": "臺北市南港區經貿二路1號",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅北市南港環球店",
+      "city": "臺北市",
+      "district": "南港區",
+      "address": "臺北市南港區忠孝東路七段317號B1",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "炸鷄大獅西門桂林店",
+      "city": "臺北市",
+      "district": "萬華區",
+      "address": "臺北市萬華區桂林路1號",
+      "cuisine": "速食",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "速食",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "珍好呷越南河粉",
       "address": "",
       "awards": [
@@ -15565,6 +16931,29 @@
       "aliases": []
     },
     {
+      "name": "原味德里-北車店",
+      "city": "臺北市",
+      "district": "中正區",
+      "address": "臺北市中正區北平西路3號2樓",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "原蔬生活",
       "city": "臺北市",
       "address": "",
@@ -15700,6 +17089,29 @@
       "aliases": []
     },
     {
+      "name": "柴神興業有限公司-Furger 芙格漢堡公館店",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "臺北市大安區羅斯福路四段52巷2號(捷運公館站4號出口)",
+      "cuisine": "漢堡",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "漢堡",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "巴勒克清真產業有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "柴進來雞蛋糕",
       "address": "",
       "awards": [
@@ -15777,6 +17189,29 @@
       ]
     },
     {
+      "name": "泰姬印度餐廳",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "臺北市大安區市民大道四段48巷1號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "海產街蚵仔麵線",
       "address": "",
       "awards": [
@@ -15819,6 +17254,29 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "真的好海鮮餐廳",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "臺北市大安區復興南路一段222號",
+      "cuisine": "海鮮餐-套團餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "海鮮餐-套團餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
         }
       ]
     },
@@ -16021,6 +17479,29 @@
       "aliases": []
     },
     {
+      "name": "張家清真黃牛肉麵館",
+      "city": "臺北市",
+      "district": "中正區",
+      "address": "臺北市中正區延平南路21號",
+      "cuisine": "中式料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "中式料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "張媽媽香大雞排",
       "address": "",
       "awards": [
@@ -16129,6 +17610,29 @@
       "aliases": []
     },
     {
+      "name": "梅居休閒農場",
+      "city": "臺北市",
+      "district": "士林區",
+      "address": "臺北市士林區平等里平菁街 43 巷 99 號",
+      "cuisine": "午晚餐",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "伊斯蘭商務發展有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "梵燒肉",
       "aliases": [],
       "city": "臺北市",
@@ -16191,6 +17695,29 @@
       "aliases": []
     },
     {
+      "name": "清真中國牛肉麵食館",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "臺北市大安區延吉街137巷7弄1號",
+      "cuisine": "中式料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "中式料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "（大園清真寺）環亞貝爾國際標準驗證有限公司",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "清真中國牛肉麵食館 (大安)",
       "aliases": [],
       "city": "臺北市",
@@ -16202,6 +17729,52 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "清真昆明園餐廳",
+      "city": "臺北市",
+      "district": "松山區",
+      "address": "臺北市松山區復興北路81巷26號",
+      "cuisine": "異國料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "異國料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
+      "name": "清真黃牛肉麵館",
+      "city": "臺北市",
+      "district": "中正區",
+      "address": "臺北市中正區延平南路23號",
+      "cuisine": "中式料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "中式料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
         }
       ]
     },
@@ -16482,6 +18055,29 @@
           "level": "3星",
           "stars": 3,
           "url": "https://ipuregreen.org/veg/?tag=3star2025"
+        }
+      ]
+    },
+    {
+      "name": "壹千零壹夜",
+      "city": "臺北市",
+      "district": "松山區",
+      "address": "台北市松山區八德路四段618號2樓",
+      "cuisine": "波斯料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "波斯料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
         }
       ]
     },
@@ -16771,6 +18367,29 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
+      "name": "登陸土星土耳其咖啡",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "臺北市大安區永康街75巷14-2號",
+      "cuisine": "午晚餐料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MFR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MFR",
+          "cuisine": "午晚餐料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=3&sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "筌",
       "aliases": [],
       "city": "臺北市",
@@ -16962,7 +18581,8 @@
       "aliases": [
         "Ya Ge"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Cantonese"
     },
     {
       "name": "雲川水月 Clavius",
@@ -17339,7 +18959,8 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "cuisine": "Taiwanese/French"
     },
     {
       "name": "榕居",
@@ -17511,6 +19132,29 @@
       ]
     },
     {
+      "name": "酷思多披薩",
+      "city": "臺北市",
+      "district": "中正區",
+      "address": "臺北市中正區連雲街74-1號",
+      "cuisine": "義大利料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "義大利料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "駄介",
       "aliases": [],
       "city": "臺北市",
@@ -17662,6 +19306,29 @@
       "aliases": []
     },
     {
+      "name": "暮娜餐館",
+      "city": "臺北市",
+      "district": "中正區",
+      "address": "臺北市中正區延平南路252號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
+    },
+    {
       "name": "熟成餐酒館",
       "address": "",
       "awards": [
@@ -17744,7 +19411,8 @@
       "aliases": [
         "The Guest House"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Chinese"
     },
     {
       "name": "賣麵炎仔",
@@ -18013,7 +19681,8 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "cuisine": "Cantonese"
     },
     {
       "name": "駱師傅法式冰淇淋之家",
@@ -18167,7 +19836,8 @@
       "aliases": [
         "Sushi Ryu"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Sushi"
     },
     {
       "name": "鮨嘉仁",
@@ -18413,6 +20083,29 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "饗印印度巴基斯坦料理餐廳",
+      "city": "臺北市",
+      "district": "信義區",
+      "address": "臺北市信義區基隆路一段366號",
+      "cuisine": "印度料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "印度料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+        }
+      ]
     },
     {
       "name": "麟聚",
@@ -18813,7 +20506,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Italian"
     },
     {
       "name": "Bogart's Smokehouse Taipei",
@@ -19071,7 +20765,9 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "address": "No. 3, Lane 39, Section 2, Zhongshan North Road, Taipei, 10491",
+      "cuisine": "Southeast Asian"
     },
     {
       "name": "COFE 喫茶咖啡",
@@ -19217,7 +20913,8 @@
           "rank": 419,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "Yakiniku"
     },
     {
       "name": "DE LOIN 德朗火鍋",
@@ -19476,7 +21173,8 @@
           "rank": 439,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "French"
     },
     {
       "name": "Extension 1 by 橘色",
@@ -19711,7 +21409,8 @@
           "rank": 234,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "Yakitori"
     },
     {
       "name": "Gen by Matt Chen",
@@ -19894,7 +21593,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Innovative"
     },
     {
       "name": "inari Izakaya 現代居酒屋",
@@ -20192,7 +21892,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "cuisine": "French"
     },
     {
       "name": "LA BOUTIQUE de Joël Robuchon Taipei 侯布雄法式精品甜點",
@@ -20299,7 +22000,8 @@
           "rank": 249,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "Contemporary French"
     },
     {
       "name": "Le Cinq",
@@ -20460,7 +22162,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Modern European"
     },
     {
       "name": "Longtail",
@@ -20490,7 +22193,8 @@
           "rank": 301,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "Cantonese"
     },
     {
       "name": "LOPFAIT 樂斐",
@@ -20808,7 +22512,9 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "address": "No. 28 Siwei Road, Da'an District, Taipei, 106",
+      "cuisine": "Creative Cuisine"
     },
     {
       "name": "N°168 Prime牛排館 (中山）",
@@ -20900,7 +22606,8 @@
           "rank": 304,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "Asian-French"
     },
     {
       "name": "Pàng",
@@ -21138,7 +22845,8 @@
           "rank": 282,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "Sushi"
     },
     {
       "name": "Quelques Pâtisseries 某某甜點",
@@ -21481,7 +23189,7 @@
     {
       "name": "Silks House",
       "city": "臺北市",
-      "address": "",
+      "address": "Lane 39, 3F Zhongshan North Road, Zhongshan district, Taipei, 104",
       "aliases": [],
       "awards": [
         {
@@ -21503,7 +23211,8 @@
           "level": "Discovery",
           "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Silks-House.html"
         }
-      ]
+      ],
+      "cuisine": "Cantonese"
     },
     {
       "name": "Silks House 晶華軒",
@@ -21625,7 +23334,8 @@
           "rank": 433,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
-      ]
+      ],
+      "cuisine": "Sushi"
     },
     {
       "name": "T+T",
@@ -21646,7 +23356,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "cuisine": "Asian"
     },
     {
       "name": "Tableau by Craig Yang",
@@ -23842,6 +25553,29 @@
       "city": "臺南市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "烏司答土耳其居家料理臺南店",
+      "city": "臺南市",
+      "district": "中西區",
+      "address": "臺南市中西區開山路129號",
+      "cuisine": "土耳其料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "muslimfriendly",
+          "year": "年份待確認",
+          "level": "MR",
+          "awardName": "穆斯林友善餐飲認證",
+          "certType": "MR",
+          "cuisine": "土耳其料理",
+          "sourceName": "交通部觀光署接待穆斯林餐廳及旅館",
+          "certifier": "中國回教協會",
+          "extractedAt": "2026-07-02",
+          "notes": "來源清單未提供逐店認證年份；依使用者規則標記為年份待確認。",
+          "url": "https://www.taiwan.net.tw/m1.aspx?page=2&sNo=0020118"
+        }
+      ]
     },
     {
       "name": "啢啢餐桌",

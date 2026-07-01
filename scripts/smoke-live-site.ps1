@@ -72,7 +72,7 @@ $MichelinThreeStar = "$([char]0x4E09)$([char]0x661F)"
 $MichelinTwoStar = "$([char]0x4E8C)$([char]0x661F)"
 $MichelinOneStar = "$([char]0x4E00)$([char]0x661F)"
 $MultiAwardLabel = "$([char]0x8A55)$([char]0x9451)$([char]0x53EF)$([char]0x8907)$([char]0x9078)"
-foreach ($RequiredFilterText in @("key:`"award`"", "tier:`"static`"", $MultiAwardLabel, "guide:`"michelin`"", "level:`"$MichelinThreeStar`"", "level:`"$MichelinTwoStar`"", "level:`"$MichelinOneStar`"", "guide:`"michelinspecial`"", "guide:`"greenveggie`"", "guide:`"gdgawards`"", "guide:`"taichunglowcarbon`"", "guide:`"500sweet`"")) {
+foreach ($RequiredFilterText in @("key:`"award`"", "tier:`"static`"", $MultiAwardLabel, "guide:`"michelin`"", "level:`"$MichelinThreeStar`"", "level:`"$MichelinTwoStar`"", "level:`"$MichelinOneStar`"", "guide:`"michelinspecial`"", "guide:`"greenveggie`"", "guide:`"gdgawards`"", "guide:`"taichunglowcarbon`"", "guide:`"muslimfriendly`"", "guide:`"500sweet`"")) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
@@ -88,7 +88,7 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 1434
+  restaurants = 1508
   michelin = 53
   "michelinspecial" = 4
   "michelin_selected" = 222
@@ -106,6 +106,7 @@ $Expected = [ordered]@{
   "greenveggie" = 58
   "gdgawards" = 9
   "taichunglowcarbon" = 20
+  "muslimfriendly" = 74
   "tatlerbest" = 20
   "worldculinary" = 4
 }
@@ -129,6 +130,7 @@ $Actual = [ordered]@{
   "greenveggie" = $Guides["greenveggie"]
   "gdgawards" = $Guides["gdgawards"]
   "taichunglowcarbon" = $Guides["taichunglowcarbon"]
+  "muslimfriendly" = $Guides["muslimfriendly"]
   "tatlerbest" = $Guides["tatlerbest"]
   "worldculinary" = $Guides["worldculinary"]
 }
@@ -167,7 +169,7 @@ foreach ($RequiredPlatform in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
 $CoverageText = Read-TextUrl "$BaseUrl/assets/external-source-coverage.json?cacheBust=$CacheBust"
 $Coverage = $CoverageText | ConvertFrom-Json
 $CoverageIds = @($Coverage.sources | ForEach-Object { $_.id })
-foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "gdgawards", "michelinspecial", "tcfpraise", "taichunglowcarbon", "tatlerbest", "worldculinary", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
+foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "gdgawards", "michelinspecial", "tcfpraise", "taichunglowcarbon", "muslimfriendly", "tatlerbest", "worldculinary", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
   if ($CoverageIds -notcontains $RequiredCoverage) {
     throw "External source coverage missing $RequiredCoverage"
   }

@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1434,
+    "awardsRestaurants": 1508,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -31,7 +31,8 @@
     "michelinSpecialCandidates": 4,
     "tcfPraiseCandidates": 0,
     "tcfPraiseNeedsCityReview": 36,
-    "taichungLowCarbonCandidates": 20
+    "taichungLowCarbonCandidates": 20,
+    "muslimFriendlyCandidates": 75
   },
   "sources": [
     {
@@ -188,6 +189,16 @@
       "candidatesFile": "assets/taichung-low-carbon-2023-candidates.json",
       "count": 20,
       "candidates": 20,
+      "runtimeLookup": false
+    },
+    {
+      "id": "muslimfriendly",
+      "label": "穆斯林友善餐飲認證",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/muslim-friendly-2026-candidates.json",
+      "count": 74,
+      "candidates": 75,
       "runtimeLookup": false
     },
     {
