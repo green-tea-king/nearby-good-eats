@@ -37,6 +37,15 @@ if ($Html -notlike "*500bowl*" -or $Html -notlike "*500sweet*") {
 if ($Html -notlike "*reviewNoiseHints*" -or $Html -notlike "*PROMO_TEXT_PENALTY*") {
   throw "Homepage is missing Google review noise guard"
 }
+if ($Html -like "*id=`"rankFilterBtn`"*") {
+  throw "Leaderboard hamburger filter button should be removed"
+}
+if ($Html -notlike "*<div class=`"rank-filters`" id=`"rankFilters`"></div>*") {
+  throw "Leaderboard filters should be visible by default"
+}
+if ($Html -like "*addEventListener(`"touchmove`", closeRankFiltersFromOutside*" -or $Html -like "*addEventListener(`"scroll`", closeRankFiltersFromOutside*") {
+  throw "Leaderboard filters should not auto-close on page drag or scroll"
+}
 
 $AdminHtml = Read-TextUrl "$BaseUrl/admin.html?cacheBust=$CacheBust"
 foreach ($RequiredAdminText in @("sourceCoverageRows", "external-source-coverage.json", "source-card")) {
