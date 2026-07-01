@@ -95,6 +95,17 @@ foreach ($RequiredSource in @("500bowl", "500sweet", "google-maps-reviews", "ifo
     throw "External signals sourceCatalog missing $RequiredSource"
   }
 }
+$CoverageText = Read-TextUrl "$BaseUrl/assets/external-source-coverage.json?cacheBust=$CacheBust"
+$Coverage = $CoverageText | ConvertFrom-Json
+$CoverageIds = @($Coverage.sources | ForEach-Object { $_.id })
+foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
+  if ($CoverageIds -notcontains $RequiredCoverage) {
+    throw "External source coverage missing $RequiredCoverage"
+  }
+}
+if ($Coverage.policy.runtimeExternalLookup -ne $false -or $Coverage.policy.noFakeData -ne $true) {
+  throw "External source coverage policy must disable runtime lookup and fake data"
+}
 
 $ManualSignalsText = Read-TextUrl "$BaseUrl/assets/platform-signals.manual.json?cacheBust=$CacheBust"
 $ManualSignals = $ManualSignalsText | ConvertFrom-Json

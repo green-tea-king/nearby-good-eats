@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.13
+版本：2026.07.01.14
 
 ## 專案目標
 
@@ -28,6 +28,7 @@
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
 - `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
+- `assets/external-source-coverage.json`：外部來源覆蓋狀態報告，列出米其林、500盤、500碗、500甜、Google 評論、愛食記、OpenRice、Tripadvisor 的目前狀態、資料數與匯入限制。
 - `assets/platform-signals.manual.json`：愛食記、OpenRice、Tripadvisor 等平台資料的人工 / AI 整理入口。此檔只放有 URL、審核者與信心等級的可追溯資料，經 `scripts/merge-platform-signals.js` 合併進 `assets/external-signals.json`。
 - `assets/platform-signals.import.csv`：平台口碑資料的表格匯入入口；欄位包含餐廳、縣市、來源、分數、信心、評論數、證據、URL 與審核者，經 `scripts/import-platform-signals-csv.js` 轉成 `platform-signals.manual.json`。
 - `assets/platform-source-probe-report.json`：平台來源可用性探測報告。只記錄愛食記、OpenRice、Tripadvisor 是否適合批次整理，不匯入餐廳資料。
@@ -38,6 +39,8 @@
 - `assets/500sweet-2025-candidates.json`：500甜 2025 官方文字名單候選檔，共 356 筆；只將單一明確縣市的 328 筆高信心資料自動匯入正式評鑑。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/update-external-signals.js`：外部社群訊號批次更新腳本。讀取 `assets/awards-taiwan.json` 作為候選餐廳，使用 YouTube Data API 查詢近期影片，只在影片標題或描述命中店名 / 別名時寫入 `assets/external-signals.json`。
+- `scripts/build-external-source-coverage.js`：依目前評鑑、外部訊號、平台 probe 與前端評論防噪程式產生 `assets/external-source-coverage.json`。
+- `scripts/validate-external-source-coverage.js`：驗證外部來源覆蓋報告與實際資料一致，避免把「只有匯入管線」誤認為「已有平台資料」。
 - `scripts/merge-platform-signals.js`：合併人工或 AI 整理的平台訊號，例如愛食記、OpenRice、Tripadvisor。此腳本只讀 `assets/platform-signals.manual.json`，不即時爬外站。
 - `scripts/import-platform-signals-csv.js`：把 `assets/platform-signals.import.csv` 轉換成 `assets/platform-signals.manual.json`，方便用試算表整理愛食記、OpenRice、Tripadvisor 來源。
 - `scripts/probe-platform-sources.js`：探測愛食記、OpenRice、Tripadvisor 的公開頁與 robots 狀態，產生 `assets/platform-source-probe-report.json`。此腳本只做來源可用性判斷，不產生餐廳訊號。
@@ -435,6 +438,7 @@ assets/awards-taiwan.json
 - 500盤、500碗、500甜：正式獎牌來源，批次整理後進 `assets/awards-taiwan.json`，只做中高權重加分。
 - 50 Best：正式獎牌來源，高權重但只影響少數入榜店。
 - 愛食記、OpenRice、Tripadvisor：平台口碑/聲量來源，預設不放進 `awards-taiwan.json`；只能在授權 API、手動整理或可追溯批次資料可用時寫入 `assets/external-signals.json`，作小幅輔助訊號與提示，不取代 Google 評分。
+- `assets/external-source-coverage.json` 是目前覆蓋狀態的權威摘要：評鑑來源會標示 `integrated_data`，平台來源在尚無人工資料時標示 `batch_pipeline_ready_no_data`。
 - 平台資料目前以 `assets/platform-signals.manual.json` 作為審核入口，執行 `node scripts/merge-platform-signals.js` 後才會進 `assets/external-signals.json`。這個流程是為了避免前端即時查外站、節省成本，也避免來源結構改版導致正式站壞掉。
 - 若資料來源先由人工、AI 或試算表整理，優先填 `assets/platform-signals.import.csv`，再執行 `node scripts/import-platform-signals-csv.js` 轉成審核 JSON。CSV 沒有資料時保持空表，不產生假訊號。
 
