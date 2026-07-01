@@ -25,7 +25,9 @@
     "designAwardsCandidates": 3,
     "fmgCandidates": 20,
     "greenVeggieCandidates": 58,
-    "greenVeggieNeedsCityReview": 7
+    "greenVeggieNeedsCityReview": 7,
+    "gdgAwardsCandidates": 9,
+    "gdgAwardsNeedsCityReview": 51
   },
   "sources": [
     {
@@ -140,6 +142,17 @@
       "count": 58,
       "candidates": 58,
       "needsCityReview": 7,
+      "runtimeLookup": false
+    },
+    {
+      "id": "gdgawards",
+      "label": "綠色餐飲指南年度評鑑入圍",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/gdg-awards-2025-candidates.json",
+      "count": 9,
+      "candidates": 9,
+      "needsCityReview": 51,
       "runtimeLookup": false
     },
     {

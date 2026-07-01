@@ -1,0 +1,595 @@
+{
+  "version": "gdg-awards-2025-candidates",
+  "generatedAt": "2026-07-01T22:58:16.913Z",
+  "sourceUrl": "https://greenmedia.today/article_detail.php?cid=7&mid=1407",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "public_article_batch_unique_existing_match_only",
+    "noRegionToCityGuess": true,
+    "notes": [
+      "來源為 Green Media / 綠色餐飲指南公開文章的 2025 年度評鑑入圍名單。",
+      "原文多數只列北區、中區、南區、東區或未列地點；不以區域推測縣市。",
+      "只有能從既有內建評鑑資料唯一比對到城市的店家自動匯入，其餘保留待人工補城市。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "天然茶莊",
+      "city": "新北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "有機友善食材運用獎",
+          "category": "有機友善食材運用獎",
+          "dimension": "食材向度｜Conscious Sourcing",
+          "region": "北區",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "拾米屋",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "在地當季食材獎",
+          "category": "在地當季食材獎",
+          "dimension": "食材向度｜Conscious Sourcing",
+          "region": "北區",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "LAND",
+      "city": "屏東縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "在地當季食材獎",
+          "category": "在地當季食材獎",
+          "dimension": "食材向度｜Conscious Sourcing",
+          "region": "南區",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "仕合廖家",
+      "city": "南投縣",
+      "aliases": [
+        "仕合廖家手作",
+        "仕合廖家手作便當"
+      ],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "最有潛力新星 2025",
+          "category": "最有潛力新星 2025",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "天然茶莊",
+      "city": "新北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "最有潛力新星 2025",
+          "category": "最有潛力新星 2025",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "心雕居",
+      "city": "苗栗縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "新經濟營運獎",
+          "category": "新經濟營運獎",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "泔米食堂",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "新經濟營運獎",
+          "category": "新經濟營運獎",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "仕合廖家",
+      "city": "南投縣",
+      "aliases": [
+        "仕合廖家手作",
+        "仕合廖家手作便當"
+      ],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "年度最佳主廚",
+          "category": "年度最佳主廚",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "EMBERS",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "GDG 年度大獎",
+          "category": "GDG 年度大獎",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name"
+    }
+  ],
+  "needsCityReview": [
+    {
+      "name": "藝食知選",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "呷米JIAMI餐廳",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "雙口呂文化廚房",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "Caf&eacute; Chat Leopard 豹紋喵喵",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "fifteen拾吾純植⻄餐廳",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "均食堂",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "後灣豆腐小學堂",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "馨窩良行Homelanie",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "而今餐酒館",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "趴利趴利台灣冰淇淋",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "阿樂樂代Aredetay",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "邂逅街冰淇淋",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "一簞食",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "有機友善食材運用獎",
+      "categoryEn": "Celebrate Organic & Eco-Friendly",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "小川鍋物",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "Caf&eacute; Chat Leopard 豹紋喵喵",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "Ponpie",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "&Icirc;LE 島嶼",
+      "region": "北區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "而今餐酒館",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "龜時間 go&ouml;od time",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "春日廚房",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "趴利趴利台灣冰淇淋",
+      "region": "南區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "柴米DailyKitchen",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "糧心聚落宜蘭店",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "叄三文化廚房",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "穀臼那哪手工麵包工作室",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "邂逅街冰淇淋",
+      "region": "東區",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "米蘭水烘焙坊",
+      "region": "離島",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "西尾半島物產店",
+      "region": "離島",
+      "dimension": "食材向度｜Conscious Sourcing",
+      "category": "在地當季食材獎",
+      "categoryEn": "Support Farmers & Fishers",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "許愿",
+      "region": "",
+      "dimension": "社會向度｜Caring Society",
+      "category": "均衡飲食推廣獎",
+      "categoryEn": "Feed People Well",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "友膳廚房",
+      "region": "",
+      "dimension": "社會向度｜Caring Society",
+      "category": "均衡飲食推廣獎",
+      "categoryEn": "Feed People Well",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "常不輕 dandelion",
+      "region": "",
+      "dimension": "社會向度｜Caring Society",
+      "category": "均衡飲食推廣獎",
+      "categoryEn": "Feed People Well",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "拾貳拾粹",
+      "region": "",
+      "dimension": "社會向度｜Caring Society",
+      "category": "均衡飲食推廣獎",
+      "categoryEn": "Feed People Well",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "無二會所",
+      "region": "",
+      "dimension": "社會向度｜Caring Society",
+      "category": "均衡飲食推廣獎",
+      "categoryEn": "Feed People Well",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "糖果廚房&bull;食農生活家",
+      "region": "",
+      "dimension": "環境向度｜Thriving Environment",
+      "category": "最佳全食料理獎",
+      "categoryEn": "Zero Food Waste",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "明日餐桌環境廚房",
+      "region": "",
+      "dimension": "環境向度｜Thriving Environment",
+      "category": "最佳全食料理獎",
+      "categoryEn": "Zero Food Waste",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "許愿",
+      "region": "",
+      "dimension": "環境向度｜Thriving Environment",
+      "category": "最佳全食料理獎",
+      "categoryEn": "Zero Food Waste",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "有火鍋",
+      "region": "",
+      "dimension": "環境向度｜Thriving Environment",
+      "category": "最佳全食料理獎",
+      "categoryEn": "Zero Food Waste",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "常不輕 dandelion",
+      "region": "",
+      "dimension": "環境向度｜Thriving Environment",
+      "category": "最佳全食料理獎",
+      "categoryEn": "Zero Food Waste",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "雙口呂文化廚房",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "最有潛力新星 2025",
+      "categoryEn": "GDG Rising Star",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "睿良餐廳",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "最有潛力新星 2025",
+      "categoryEn": "GDG Rising Star",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "舞牛森度假飯店",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "最有潛力新星 2025",
+      "categoryEn": "GDG Rising Star",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "Ponpie",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "最有潛力新星 2025",
+      "categoryEn": "GDG Rising Star",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "TU PANG地坊",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "新經濟營運獎",
+      "categoryEn": "New Economy Award",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "頭城農場",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "新經濟營運獎",
+      "categoryEn": "New Economy Award",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "仙湖休閒農場",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "新經濟營運獎",
+      "categoryEn": "New Economy Award",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "好嶼HOSU",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "年度最佳主廚",
+      "categoryEn": "Chef of the Year",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "Gien Jia挑食餐酒館",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "年度最佳主廚",
+      "categoryEn": "Chef of the Year",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "粮心聚落",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "年度最佳主廚",
+      "categoryEn": "Chef of the Year",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "拾穗Bakery&Kitchen",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "年度最佳主廚",
+      "categoryEn": "Chef of the Year",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "飛雀餐桌行動",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "GDG 年度大獎",
+      "categoryEn": "GDG Champion Award",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "好嶼HOSU",
+      "region": "",
+      "dimension": "年度最高榮譽｜Grand Honor Award",
+      "category": "GDG 年度大獎",
+      "categoryEn": "GDG Champion Award",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    }
+  ]
+}

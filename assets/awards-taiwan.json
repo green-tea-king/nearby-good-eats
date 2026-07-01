@@ -40,7 +40,8 @@
     "https://www.theworlds50best.com/discovery/sitemap/taiwan/taipei",
     "https://restaurantandbardesignawards.com/awards-archive",
     "https://www.gdg.asia/article/235/1421",
-    "https://ipuregreen.org/veg/"
+    "https://ipuregreen.org/veg/",
+    "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -892,6 +893,24 @@
           "level": "3星",
           "stars": 3,
           "url": "https://www.gdg.asia/article/235/1421"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "最有潛力新星 2025",
+          "category": "最有潛力新星 2025",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "年度最佳主廚",
+          "category": "年度最佳主廚",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ]
     },
@@ -1588,6 +1607,15 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "在地當季食材獎",
+          "category": "在地當季食材獎",
+          "dimension": "食材向度｜Conscious Sourcing",
+          "region": "南區",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ],
       "sources": [
@@ -1612,6 +1640,15 @@
           "level": "3星",
           "stars": 3,
           "url": "https://www.gdg.asia/article/235/1421"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "新經濟營運獎",
+          "category": "新經濟營運獎",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ]
     },
@@ -4915,6 +4952,24 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "有機友善食材運用獎",
+          "category": "有機友善食材運用獎",
+          "dimension": "食材向度｜Conscious Sourcing",
+          "region": "北區",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "最有潛力新星 2025",
+          "category": "最有潛力新星 2025",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ]
     },
@@ -14237,6 +14292,15 @@
           "level": "2星",
           "stars": 2,
           "url": "https://www.gdg.asia/article/235/1421"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "新經濟營運獎",
+          "category": "新經濟營運獎",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ]
     },
@@ -14807,6 +14871,15 @@
           "sweets": 2,
           "level": "2甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "在地當季食材獎",
+          "category": "在地當季食材獎",
+          "dimension": "食材向度｜Conscious Sourcing",
+          "region": "北區",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ],
       "city": "臺北市",
@@ -19031,6 +19104,15 @@
           "year": 2025,
           "level": "Best 20 Taiwan",
           "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "GDG 年度大獎",
+          "category": "GDG 年度大獎",
+          "dimension": "年度最高榮譽｜Grand Honor Award",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ]
     },
