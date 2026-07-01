@@ -1,7 +1,7 @@
 {
   "version": "manual-platform-2026-07-01",
   "updated": "2026-07-01",
-  "description": "人工或 AI 整理後的平台訊號入口。只接受可追溯來源，不在使用者搜尋時即時查外部網站。",
+  "description": "人工或 AI 整理後的平台訊號入口。由 assets/platform-signals.import.csv 批次轉換；只接受可追溯來源，不在使用者搜尋時即時查外部網站。",
   "policy": {
     "runtimeExternalLookup": false,
     "batchOnly": true,
@@ -23,7 +23,7 @@
       "city": "縣市，例如 台北市。",
       "area": "行政區，可空白。",
       "aliases": [
-        "可選，其他常見名稱"
+        "可選，其他常見名稱；CSV 用 | 或 ; 分隔。"
       ],
       "signals": [
         {

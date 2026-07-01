@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.11
+版本：2026.07.01.12
 
 ## 專案目標
 
@@ -29,6 +29,7 @@
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
 - `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
 - `assets/platform-signals.manual.json`：愛食記、OpenRice、Tripadvisor 等平台資料的人工 / AI 整理入口。此檔只放有 URL、審核者與信心等級的可追溯資料，經 `scripts/merge-platform-signals.js` 合併進 `assets/external-signals.json`。
+- `assets/platform-signals.import.csv`：平台口碑資料的表格匯入入口；欄位包含餐廳、縣市、來源、分數、信心、評論數、證據、URL 與審核者，經 `scripts/import-platform-signals-csv.js` 轉成 `platform-signals.manual.json`。
 - `assets/platform-source-probe-report.json`：平台來源可用性探測報告。只記錄愛食記、OpenRice、Tripadvisor 是否適合批次整理，不匯入餐廳資料。
 - `assets/social-signal-config.json`：社群熱度批次更新設定，目前以 YouTube Data API 為第一階段來源，控制每次查詢餐廳數、影片數、時間範圍與分數權重。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
@@ -38,6 +39,7 @@
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
 - `scripts/update-external-signals.js`：外部社群訊號批次更新腳本。讀取 `assets/awards-taiwan.json` 作為候選餐廳，使用 YouTube Data API 查詢近期影片，只在影片標題或描述命中店名 / 別名時寫入 `assets/external-signals.json`。
 - `scripts/merge-platform-signals.js`：合併人工或 AI 整理的平台訊號，例如愛食記、OpenRice、Tripadvisor。此腳本只讀 `assets/platform-signals.manual.json`，不即時爬外站。
+- `scripts/import-platform-signals-csv.js`：把 `assets/platform-signals.import.csv` 轉換成 `assets/platform-signals.manual.json`，方便用試算表整理愛食記、OpenRice、Tripadvisor 來源。
 - `scripts/probe-platform-sources.js`：探測愛食記、OpenRice、Tripadvisor 的公開頁與 robots 狀態，產生 `assets/platform-source-probe-report.json`。此腳本只做來源可用性判斷，不產生餐廳訊號。
 - `scripts/build-500sweet-2025-candidates.js`：批次解析 500甜 2025 官方完整名單，產生候選檔與 import report；不由前端即時查外站。
 - `scripts/merge-500sweet-2025-awards.js`：合併 `assets/500sweet-2025-candidates.json` 的高信心資料與 `assets/500sweet-2025-manual.json` 人工補充資料到 500甜 draft。
@@ -434,6 +436,23 @@ assets/awards-taiwan.json
 - 50 Best：正式獎牌來源，高權重但只影響少數入榜店。
 - 愛食記、OpenRice、Tripadvisor：平台口碑/聲量來源，預設不放進 `awards-taiwan.json`；只能在授權 API、手動整理或可追溯批次資料可用時寫入 `assets/external-signals.json`，作小幅輔助訊號與提示，不取代 Google 評分。
 - 平台資料目前以 `assets/platform-signals.manual.json` 作為審核入口，執行 `node scripts/merge-platform-signals.js` 後才會進 `assets/external-signals.json`。這個流程是為了避免前端即時查外站、節省成本，也避免來源結構改版導致正式站壞掉。
+- 若資料來源先由人工、AI 或試算表整理，優先填 `assets/platform-signals.import.csv`，再執行 `node scripts/import-platform-signals-csv.js` 轉成審核 JSON。CSV 沒有資料時保持空表，不產生假訊號。
+
+平台 CSV 欄位：
+
+```csv
+name,city,area,aliases,type,sourceId,label,score,confidence,rating,reviewCount,rank,evidence,url,updated,reviewedBy
+```
+
+平台 CSV 匯入流程：
+
+```text
+node scripts/import-platform-signals-csv.js
+node scripts/merge-platform-signals.js
+node scripts/validate-external-signals.js
+```
+
+`aliases` 與 `evidence` 可用 `|` 或 `;` 分隔多值。`sourceId` 只接受 `ifoodie`、`openrice-tw`、`tripadvisor-tw`；每列都必須有 `url`、`updated`、`reviewedBy`，避免沒有來源證據的口碑資料進入排序。
 
 平台型來源若要寫入 `assets/external-signals.json`，信號格式固定如下：
 

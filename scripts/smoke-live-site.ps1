@@ -98,6 +98,12 @@ $ManualSignals = $ManualSignalsText | ConvertFrom-Json
 if ($ManualSignals.policy.runtimeExternalLookup -ne $false -or $ManualSignals.policy.batchOnly -ne $true) {
   throw "Manual platform signals must stay batch-only and disable runtime lookup"
 }
+$PlatformImportCsv = Read-TextUrl "$BaseUrl/assets/platform-signals.import.csv?cacheBust=$CacheBust"
+foreach ($RequiredHeader in @("sourceId", "confidence", "reviewedBy")) {
+  if ($PlatformImportCsv -notlike "*$RequiredHeader*") {
+    throw "Platform import CSV is missing required header $RequiredHeader"
+  }
+}
 $PlatformProbeText = Read-TextUrl "$BaseUrl/assets/platform-source-probe-report.json?cacheBust=$CacheBust"
 $PlatformProbe = $PlatformProbeText | ConvertFrom-Json
 $ProbeIds = @($PlatformProbe.sources | ForEach-Object { $_.id })
