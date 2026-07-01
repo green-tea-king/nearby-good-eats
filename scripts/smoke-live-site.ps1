@@ -88,7 +88,7 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 7523
+  restaurants = 7530
   michelin = 53
   "michelinspecial" = 4
   "michelin_selected" = 222
@@ -103,7 +103,7 @@ $Expected = [ordered]@{
   "thebestchef" = 4
   "designawards" = 3
   "fmg" = 20
-  "greenveggie" = 58
+  "greenveggie" = 65
   "gdgawards" = 9
   "taichunglowcarbon" = 20
   "muslimfriendly" = 74

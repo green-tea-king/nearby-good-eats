@@ -908,12 +908,13 @@
         }
       ],
       "importConfidence": "high"
-    }
-  ],
-  "needsCityReview": [
+    },
     {
       "name": "靜點咖啡",
-      "city": "",
+      "city": "桃園市",
+      "district": "中壢區",
+      "address": "桃園市中壢區南園二路296巷50號",
+      "cuisine": "蔬食咖啡廳",
       "aliases": [],
       "awards": [
         {
@@ -921,14 +922,20 @@
           "year": 2025,
           "level": "1星",
           "stars": 1,
-          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+          "url": "https://ipuregreen.org/veg/?p=2971",
+          "notes": "城市依綠・蔬食評鑑指南桃園標籤頁確認，地址以蔬福生活公開頁交叉補齊。",
+          "extractedAt": "2026-07-01T23:47:22.530Z"
         }
       ],
-      "importConfidence": "needs_city_review"
+      "importConfidence": "high",
+      "matchedBy": "manual_public_source_confirmation"
     },
     {
       "name": "沐素musu料理",
-      "city": "",
+      "city": "彰化縣",
+      "district": "彰化市",
+      "address": "彰化縣彰化市雲長路192號",
+      "cuisine": "蔬食料理",
       "aliases": [],
       "awards": [
         {
@@ -936,14 +943,20 @@
           "year": 2025,
           "level": "1星",
           "stars": 1,
-          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+          "url": "https://ipuregreen.org/veg/?p=2944",
+          "notes": "地址與城市取自綠・蔬食評鑑指南店家頁。",
+          "extractedAt": "2026-07-01T23:47:22.530Z"
         }
       ],
-      "importConfidence": "needs_city_review"
+      "importConfidence": "high",
+      "matchedBy": "manual_public_source_confirmation"
     },
     {
       "name": "禪廚蔬食餐廳",
-      "city": "",
+      "city": "苗栗縣",
+      "district": "頭屋鄉",
+      "address": "苗栗縣頭屋鄉象山路188號",
+      "cuisine": "蔬食餐廳",
       "aliases": [],
       "awards": [
         {
@@ -951,14 +964,20 @@
           "year": 2025,
           "level": "1星",
           "stars": 1,
-          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+          "url": "https://ipuregreen.org/veg/?p=707",
+          "notes": "地址與城市取自綠・蔬食評鑑指南店家頁。",
+          "extractedAt": "2026-07-01T23:47:22.530Z"
         }
       ],
-      "importConfidence": "needs_city_review"
+      "importConfidence": "high",
+      "matchedBy": "manual_public_source_confirmation"
     },
     {
       "name": "Chao・炒炒蔬食熱炒",
-      "city": "",
+      "city": "台北市",
+      "district": "大安區",
+      "address": "台北市大安區大安路一段52巷21號",
+      "cuisine": "蔬食熱炒",
       "aliases": [],
       "awards": [
         {
@@ -966,14 +985,20 @@
           "year": 2025,
           "level": "1星",
           "stars": 1,
-          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+          "url": "https://ipuregreen.org/veg/?p=600",
+          "notes": "地址與城市取自綠・蔬食評鑑指南店家頁。",
+          "extractedAt": "2026-07-01T23:47:22.530Z"
         }
       ],
-      "importConfidence": "needs_city_review"
+      "importConfidence": "high",
+      "matchedBy": "manual_public_source_confirmation"
     },
     {
       "name": "無口小廚",
-      "city": "",
+      "city": "台北市",
+      "district": "大同區",
+      "address": "台北市大同區環河北路一段431號一樓",
+      "cuisine": "蔬食拉麵",
       "aliases": [],
       "awards": [
         {
@@ -981,14 +1006,20 @@
           "year": 2025,
           "level": "1星",
           "stars": 1,
-          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+          "url": "https://ipuregreen.org/veg/?p=567",
+          "notes": "城市依綠・蔬食評鑑指南店家頁確認，地址以公開食記頁交叉補齊。",
+          "extractedAt": "2026-07-01T23:47:22.530Z"
         }
       ],
-      "importConfidence": "needs_city_review"
+      "importConfidence": "high",
+      "matchedBy": "manual_public_source_confirmation"
     },
     {
       "name": "曙光居蔬食料理",
-      "city": "",
+      "city": "台中市",
+      "district": "西屯區",
+      "address": "台中市西屯區大墩十八街104號",
+      "cuisine": "蔬食餐廳",
       "aliases": [],
       "awards": [
         {
@@ -996,14 +1027,20 @@
           "year": 2025,
           "level": "1星",
           "stars": 1,
-          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+          "url": "https://ipuregreen.org/veg/?p=456",
+          "notes": "城市依綠・蔬食評鑑指南台中標籤頁確認，地址以公開食記頁交叉補齊。",
+          "extractedAt": "2026-07-01T23:47:22.530Z"
         }
       ],
-      "importConfidence": "needs_city_review"
+      "importConfidence": "high",
+      "matchedBy": "manual_public_source_confirmation"
     },
     {
       "name": "恆。好 餐廳畫廊",
-      "city": "",
+      "city": "屏東縣",
+      "district": "恆春鎮",
+      "address": "屏東縣恆春鎮東門路2巷11弄2號",
+      "cuisine": "蔬食餐廳",
       "aliases": [],
       "awards": [
         {
@@ -1011,10 +1048,14 @@
           "year": 2025,
           "level": "1星",
           "stars": 1,
-          "url": "https://ipuregreen.org/veg/?tag=1star2025"
+          "url": "https://ipuregreen.org/veg/?p=428",
+          "notes": "城市依綠・蔬食評鑑指南店家頁確認，地址以蔬福生活公開頁交叉補齊。",
+          "extractedAt": "2026-07-01T23:47:22.530Z"
         }
       ],
-      "importConfidence": "needs_city_review"
+      "importConfidence": "high",
+      "matchedBy": "manual_public_source_confirmation"
     }
-  ]
+  ],
+  "needsCityReview": []
 }

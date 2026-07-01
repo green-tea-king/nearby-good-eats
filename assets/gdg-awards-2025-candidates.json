@@ -180,6 +180,46 @@
       ],
       "importConfidence": "high",
       "matchedBy": "unique_existing_awards_name"
+    },
+    {
+      "name": "柴米DailyKitchen",
+      "city": "臺東縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "在地當季食材獎",
+          "category": "在地當季食材獎",
+          "dimension": "食材向度｜Conscious Sourcing",
+          "region": "東區",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407",
+          "extractedAt": "2026-07-01T23:47:22.568Z",
+          "notes": "以現有內建餐廳資料唯一名稱命中補齊城市。"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name_after_awards_refresh"
+    },
+    {
+      "name": "有火鍋",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "gdgawards",
+          "year": 2025,
+          "level": "最佳全食料理獎",
+          "category": "最佳全食料理獎",
+          "dimension": "環境向度｜Thriving Environment",
+          "region": "",
+          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407",
+          "extractedAt": "2026-07-01T23:47:22.568Z",
+          "notes": "以現有內建餐廳資料唯一名稱命中補齊城市。"
+        }
+      ],
+      "importConfidence": "high",
+      "matchedBy": "unique_existing_awards_name_after_awards_refresh"
     }
   ],
   "needsCityReview": [
@@ -352,14 +392,6 @@
       "reason": "city_not_in_source_and_no_unique_existing_match"
     },
     {
-      "name": "柴米DailyKitchen",
-      "region": "東區",
-      "dimension": "食材向度｜Conscious Sourcing",
-      "category": "在地當季食材獎",
-      "categoryEn": "Support Farmers & Fishers",
-      "reason": "city_not_in_source_and_no_unique_existing_match"
-    },
-    {
       "name": "糧心聚落宜蘭店",
       "region": "東區",
       "dimension": "食材向度｜Conscious Sourcing",
@@ -465,14 +497,6 @@
     },
     {
       "name": "許愿",
-      "region": "",
-      "dimension": "環境向度｜Thriving Environment",
-      "category": "最佳全食料理獎",
-      "categoryEn": "Zero Food Waste",
-      "reason": "city_not_in_source_and_no_unique_existing_match"
-    },
-    {
-      "name": "有火鍋",
       "region": "",
       "dimension": "環境向度｜Thriving Environment",
       "category": "最佳全食料理獎",

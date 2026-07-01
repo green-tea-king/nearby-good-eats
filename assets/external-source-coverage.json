@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 7523,
+    "awardsRestaurants": 7530,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -24,10 +24,10 @@
     "bestChefCandidates": 4,
     "designAwardsCandidates": 3,
     "fmgCandidates": 20,
-    "greenVeggieCandidates": 58,
-    "greenVeggieNeedsCityReview": 7,
-    "gdgAwardsCandidates": 9,
-    "gdgAwardsNeedsCityReview": 51,
+    "greenVeggieCandidates": 65,
+    "greenVeggieNeedsCityReview": 0,
+    "gdgAwardsCandidates": 11,
+    "gdgAwardsNeedsCityReview": 49,
     "michelinSpecialCandidates": 4,
     "tcfPraiseCandidates": 0,
     "tcfPraiseNeedsCityReview": 36,
@@ -145,9 +145,9 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/green-veggie-guide-2025-candidates.json",
-      "count": 58,
-      "candidates": 58,
-      "needsCityReview": 7,
+      "count": 65,
+      "candidates": 65,
+      "needsCityReview": 0,
       "runtimeLookup": false
     },
     {
@@ -157,8 +157,8 @@
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/gdg-awards-2025-candidates.json",
       "count": 9,
-      "candidates": 9,
-      "needsCityReview": 51,
+      "candidates": 11,
+      "needsCityReview": 49,
       "runtimeLookup": false
     },
     {
