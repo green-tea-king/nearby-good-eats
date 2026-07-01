@@ -1,0 +1,83 @@
+{
+  "version": "thebestchef-taiwan-2025-candidates",
+  "generatedAt": "2026-07-02T00:00:00.000+08:00",
+  "source": "https://thebestchefawards.com/",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "manual_official_page_batch",
+    "notes": [
+      "The Best Chef 官方個人頁面整理。只做外部評鑑加分與徽章提示，不取代 Google 評分與評論數主排序。",
+      "官方頁面將台灣地點標為 China；本資料庫依實際城市轉為台灣縣市欄位。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "Logy",
+      "city": "臺北市",
+      "aliases": ["logy"],
+      "chef": "Ryogo Tahara",
+      "address": "39, Lane 258, Ruiguang Road, Neihu District, Taipei",
+      "awards": [
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "Two knives",
+          "knives": 2,
+          "url": "https://thebestchefawards.com/chefs/ryogo-tahara/"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "JL Studio",
+      "city": "臺中市",
+      "aliases": ["JL STUDIO"],
+      "chef": "Jimmy Lim",
+      "address": "2F, 689, Section 4, Yifeng Road, Nantun District, Taichung, 408",
+      "awards": [
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "Two knives",
+          "knives": 2,
+          "url": "https://thebestchefawards.com/chefs/jimmy-lim/"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "de nuit",
+      "city": "臺北市",
+      "aliases": ["De Nuit"],
+      "chef": "Kei Koo",
+      "address": "175, Section 4, Xinyi Road, Da'an District, Taipei",
+      "awards": [
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "One knife",
+          "knives": 1,
+          "url": "https://thebestchefawards.com/chefs/kei-koo/"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "ZEA",
+      "city": "臺北市",
+      "aliases": ["Zea"],
+      "chef": "Joaquin Elizondo",
+      "address": "5, Alley 20, Lane 300, Section 4, Ren'ai Road, Da'an District, Taipei",
+      "awards": [
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "One knife",
+          "knives": 1,
+          "url": "https://thebestchefawards.com/chefs/joaquin-elizondo/"
+        }
+      ],
+      "importConfidence": "high"
+    }
+  ]
+}

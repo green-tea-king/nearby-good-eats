@@ -1,16 +1,19 @@
 {
-  "generatedAt": "2026-07-01T22:14:44.104Z",
+  "generatedAt": "2026-07-01T22:20:28.179Z",
   "sourceFiles": [
     "assets/external-awards.manual.json",
-    "assets/oad-asia-2025-candidates.json"
+    "assets/oad-asia-2025-candidates.json",
+    "assets/thebestchef-taiwan-2025-candidates.json"
   ],
-  "candidates": 51,
+  "candidates": 55,
   "manualCandidates": 22,
   "oadCandidates": 29,
+  "bestChefCandidates": 4,
   "skippedOadNeedsReview": 0,
-  "addedRestaurants": 12,
-  "updatedExistingRestaurants": 43,
-  "skippedDuplicateAward": 0,
-  "mergedAwards": 55,
+  "skippedBestChefNeedsReview": 0,
+  "addedRestaurants": 0,
+  "updatedExistingRestaurants": 5,
+  "skippedDuplicateAward": 54,
+  "mergedAwards": 5,
   "errors": []
 }

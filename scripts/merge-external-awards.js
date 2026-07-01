@@ -5,6 +5,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual.json");
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
+const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
 const reportPath = path.join(repoRoot, "assets", "external-awards-merge-report.json");
 
 function readJson(file) {
@@ -99,19 +100,27 @@ function main() {
   const awards = readJson(awardsPath);
   const externalAwards = readJson(externalAwardsPath);
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
+  const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
   const mergeCandidates = [
     ...(externalAwards.restaurants || []),
     ...(oadCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...(bestChefCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
   ];
   const rows = Array.isArray(awards.restaurants) ? awards.restaurants : [];
   const errors = validateExternalAwards(externalAwards);
   const report = {
     generatedAt: new Date().toISOString(),
-    sourceFiles: ["assets/external-awards.manual.json", ...(fs.existsSync(oadCandidatesPath) ? ["assets/oad-asia-2025-candidates.json"] : [])],
+    sourceFiles: [
+      "assets/external-awards.manual.json",
+      ...(fs.existsSync(oadCandidatesPath) ? ["assets/oad-asia-2025-candidates.json"] : []),
+      ...(fs.existsSync(bestChefCandidatesPath) ? ["assets/thebestchef-taiwan-2025-candidates.json"] : []),
+    ],
     candidates: mergeCandidates.length,
     manualCandidates: (externalAwards.restaurants || []).length,
     oadCandidates: (oadCandidates.restaurants || []).length,
+    bestChefCandidates: (bestChefCandidates.restaurants || []).length,
     skippedOadNeedsReview: (oadCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    skippedBestChefNeedsReview: (bestChefCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     addedRestaurants: 0,
     updatedExistingRestaurants: 0,
     skippedDuplicateAward: 0,
@@ -172,6 +181,7 @@ function main() {
     ...(awards._sources || []),
     ...((externalAwards.sources || []).map((source) => source.url)),
     ...(oadCandidates.sourceUrl ? [oadCandidates.sourceUrl] : []),
+    ...(bestChefCandidates.source ? [bestChefCandidates.source] : []),
   ].filter(Boolean))];
 
   writeJson(awardsPath, awards);

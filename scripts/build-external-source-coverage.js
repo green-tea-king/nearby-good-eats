@@ -6,6 +6,7 @@ const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const externalSignalsPath = path.join(repoRoot, "assets", "external-signals.json");
 const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual.json");
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
+const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -45,6 +46,7 @@ function main() {
   const externalSignals = readJson(externalSignalsPath);
   const externalAwards = fs.existsSync(externalAwardsPath) ? readJson(externalAwardsPath) : { sources: [] };
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
+  const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -75,6 +77,7 @@ function main() {
       platformManualSignals: platformSignals,
       externalAwardSources: (externalAwards.sources || []).length,
       oadCandidates: (oadCandidates.restaurants || []).length,
+      bestChefCandidates: (bestChefCandidates.restaurants || []).length,
     },
     sources: [
       {
@@ -135,6 +138,16 @@ function main() {
         candidatesFile: "assets/oad-asia-2025-candidates.json",
         count: guides.oad || 0,
         candidates: (oadCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "thebestchef",
+        label: "The Best Chef Awards",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/thebestchef-taiwan-2025-candidates.json",
+        count: guides.thebestchef || 0,
+        candidates: (bestChefCandidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {

@@ -35,7 +35,8 @@
     "https://www.tatlerasia.com/list/best-restaurants-taiwan",
     "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
     "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
-    "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+    "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+    "https://thebestchefawards.com/"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -51,7 +52,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -66,13 +67,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "上海未名麵點",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -89,7 +90,7 @@
     {
       "name": "千味海鮮",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -113,7 +114,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -128,7 +129,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -143,7 +144,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -158,12 +159,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "小樂沐",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -192,7 +193,7 @@
     },
     {
       "name": "山与",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -231,14 +232,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "与玥樓",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -252,7 +253,7 @@
     },
     {
       "name": "与玥樓頂級粵菜餐廳",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -276,7 +277,7 @@
     {
       "name": "元",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -300,13 +301,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "元紀．台灣菜",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -339,7 +340,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -354,7 +355,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -370,13 +371,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "木公麥面",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -392,7 +393,7 @@
     },
     {
       "name": "水赤床",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -425,12 +426,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "牛稼莊",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -456,7 +457,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -472,12 +473,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "功夫上海手工魚丸",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -506,7 +507,7 @@
     {
       "name": "卉寓",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -520,7 +521,7 @@
     },
     {
       "name": "可口牛肉麵",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -536,7 +537,7 @@
     },
     {
       "name": "台中肉員",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -569,7 +570,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -584,7 +585,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -599,12 +600,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "皮諾可可",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -628,7 +629,7 @@
     {
       "name": "在來",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -643,7 +644,7 @@
     {
       "name": "地坊",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -662,7 +663,7 @@
     },
     {
       "name": "好菜",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -685,7 +686,7 @@
     },
     {
       "name": "好菜 (西區)",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -701,7 +702,7 @@
     },
     {
       "name": "老士官擀麵",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -727,7 +728,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -742,7 +743,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -757,7 +758,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -772,13 +773,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "沁園春",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -801,7 +802,7 @@
     },
     {
       "name": "沐明鍋物",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -824,7 +825,7 @@
     },
     {
       "name": "沙卡",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -863,13 +864,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "京華煙雲",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -884,7 +885,7 @@
     {
       "name": "咕嚕咕嚕原住民音樂餐廳",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -898,7 +899,7 @@
     },
     {
       "name": "夜間部爌肉飯",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -924,13 +925,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "明娟樓",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -960,7 +961,7 @@
     {
       "name": "東引釣客",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -975,7 +976,7 @@
     {
       "name": "東方龍",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -999,7 +1000,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -1015,12 +1016,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "金悅軒",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1053,7 +1054,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -1069,7 +1070,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -1085,12 +1086,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "阿坤麵",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1116,13 +1117,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "阿禧師懷舊餐館",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1146,7 +1147,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -1162,12 +1163,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "春日宴 粵菜喜宴",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1200,7 +1201,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1215,7 +1216,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -1231,12 +1232,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "范記金之園 (中區)",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1262,12 +1263,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "飛花落院",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1296,7 +1297,7 @@
     },
     {
       "name": "香．寓",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1319,7 +1320,7 @@
     },
     {
       "name": "俺達の肉屋",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1352,7 +1353,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1367,7 +1368,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1382,7 +1383,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1397,7 +1398,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -1413,13 +1414,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "梅子",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1433,7 +1434,7 @@
     },
     {
       "name": "梅子活海鮮餐廳",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1466,7 +1467,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1481,7 +1482,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1496,13 +1497,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "頂粵吉品",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1526,7 +1527,7 @@
     {
       "name": "魚麗共同廚房",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1541,7 +1542,7 @@
     {
       "name": "鳥苑",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1555,7 +1556,7 @@
     },
     {
       "name": "鳥苑 Torien Yakitori",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1578,7 +1579,7 @@
     },
     {
       "name": "富狀元豬腳",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1601,7 +1602,7 @@
     },
     {
       "name": "富貴亭",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1627,12 +1628,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "富鼎旺 (中區)",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1648,7 +1649,7 @@
     },
     {
       "name": "彭城堂",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1674,7 +1675,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1689,7 +1690,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1704,14 +1705,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "菇神 (新社)",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1726,7 +1727,7 @@
     {
       "name": "越南你好",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1750,7 +1751,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1765,13 +1766,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "溫叨",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1785,7 +1786,7 @@
     },
     {
       "name": "溫叨古早味料理餐廳",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1818,12 +1819,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "裡小樓",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1839,7 +1840,7 @@
     },
     {
       "name": "裡小樓小料理",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -1862,7 +1863,7 @@
     },
     {
       "name": "滬舍餘味 (南屯)",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1879,7 +1880,7 @@
     {
       "name": "滿堂",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -1903,7 +1904,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -1919,7 +1920,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -1934,12 +1935,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "鳳記鵝肉老店",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -1965,13 +1966,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "潔",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2001,7 +2002,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
@@ -2016,12 +2017,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "醉月樓",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -2037,7 +2038,7 @@
     },
     {
       "name": "醉月樓台灣菜",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -2070,14 +2071,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "膳馨 (西區)",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2091,7 +2092,7 @@
     },
     {
       "name": "龍富 天婦羅",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -2114,7 +2115,7 @@
     },
     {
       "name": "曙光居",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -2130,7 +2131,7 @@
     },
     {
       "name": "澀 Sur-",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -2153,7 +2154,7 @@
     },
     {
       "name": "繡球",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -2179,7 +2180,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -2195,7 +2196,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -2211,13 +2212,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "瀞",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2241,12 +2242,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "aliases": []
     },
     {
       "name": "羅家古早味 (南屯)",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -2263,7 +2264,7 @@
     {
       "name": "響海鮮",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2277,7 +2278,7 @@
     },
     {
       "name": "馨苑 (西區)",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -2303,7 +2304,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -2319,13 +2320,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "Brass Hana 銅錵日式涮涮鍋",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -2358,7 +2359,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -2374,13 +2375,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "enPure 瀞",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -2404,7 +2405,7 @@
     {
       "name": "FIRNS",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2418,7 +2419,7 @@
     },
     {
       "name": "Fleur de Sel",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2438,7 +2439,7 @@
     {
       "name": "Forchetta",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2462,13 +2463,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "Glou Suru",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -2492,7 +2493,7 @@
     {
       "name": "KR Prime Steak",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2516,13 +2517,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "L'Atelier par Yao",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2540,7 +2541,7 @@
     {
       "name": "meatGQ",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2564,7 +2565,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -2580,7 +2581,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -2596,13 +2597,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
     {
       "name": "Oretachi No Nikuya",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2622,7 +2623,7 @@
     {
       "name": "PI",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2636,7 +2637,7 @@
     },
     {
       "name": "Sur-",
-      "city": "台中市",
+      "city": "臺中市",
       "address": "台中市",
       "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2656,7 +2657,7 @@
     {
       "name": "UNA-VERSE",
       "aliases": [],
-      "city": "台中市",
+      "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2687,7 +2688,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台中市",
+      "city": "臺中市",
       "area": "",
       "aliases": []
     },
@@ -2701,7 +2702,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -2724,7 +2725,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -2740,7 +2741,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -2753,7 +2754,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -2776,7 +2777,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -2792,7 +2793,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -2812,7 +2813,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -2828,7 +2829,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -2840,7 +2841,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -2856,14 +2857,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "八和 (大安)",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2887,7 +2888,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -2903,7 +2904,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -2918,7 +2919,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -2931,7 +2932,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -2952,7 +2953,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -2975,7 +2976,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -2988,7 +2989,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3011,7 +3012,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3025,7 +3026,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3048,7 +3049,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3064,7 +3065,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3080,7 +3081,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3096,7 +3097,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3111,7 +3112,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3127,7 +3128,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3143,7 +3144,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3158,7 +3159,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3173,7 +3174,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3189,7 +3190,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3205,7 +3206,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3220,7 +3221,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3235,13 +3236,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "大腕",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3263,7 +3264,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3283,7 +3284,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -3299,7 +3300,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3314,7 +3315,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3331,7 +3332,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [
         "小小樹食 （大安路）",
         "Little Tree Food (Da'an Road)"
@@ -3347,7 +3348,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -3360,7 +3361,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -3374,7 +3375,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3394,7 +3395,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -3410,7 +3411,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3423,7 +3424,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3446,13 +3447,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "川畝園",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3476,7 +3477,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3489,7 +3490,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3510,7 +3511,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3537,7 +3538,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3559,7 +3560,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3573,7 +3574,7 @@
     {
       "name": "五月雪客家私房珍釀",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3595,7 +3596,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3622,7 +3623,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3646,7 +3647,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3660,7 +3661,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3683,7 +3684,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3697,7 +3698,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3717,7 +3718,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -3733,7 +3734,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3749,7 +3750,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3764,7 +3765,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -3777,14 +3778,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "天婦羅 杉村",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3806,7 +3807,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3827,7 +3828,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -3841,7 +3842,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [
         "心宴",
         "aMaze"
@@ -3864,14 +3865,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "月夜岩",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3893,7 +3894,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3916,7 +3917,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -3930,7 +3931,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3951,7 +3952,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3972,7 +3973,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -3993,7 +3994,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4016,7 +4017,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4031,7 +4032,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4046,7 +4047,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4059,7 +4060,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4082,7 +4083,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4096,7 +4097,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4119,7 +4120,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4135,13 +4136,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "北平陶然亭",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -4165,7 +4166,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4181,7 +4182,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4197,14 +4198,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "北馥樓",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -4228,7 +4229,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4251,7 +4252,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4264,7 +4265,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4285,7 +4286,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4306,7 +4307,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4327,7 +4328,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4348,7 +4349,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4369,7 +4370,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4390,7 +4391,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4413,7 +4414,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4427,7 +4428,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4450,7 +4451,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4466,7 +4467,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4481,7 +4482,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4494,7 +4495,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4517,7 +4518,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4533,7 +4534,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4548,7 +4549,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4563,14 +4564,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "伊茲密爾土耳其廚房",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -4592,7 +4593,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4615,7 +4616,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4630,7 +4631,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4645,7 +4646,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4659,7 +4660,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4682,7 +4683,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4697,7 +4698,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4713,7 +4714,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4729,7 +4730,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4744,7 +4745,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4758,7 +4759,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4772,7 +4773,7 @@
     {
       "name": "同",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -4796,7 +4797,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4812,7 +4813,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4827,7 +4828,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4841,7 +4842,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4864,7 +4865,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -4876,7 +4877,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -4892,7 +4893,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4917,7 +4918,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4939,7 +4940,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4962,7 +4963,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -4976,7 +4977,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -4997,7 +4998,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5011,7 +5012,7 @@
     {
       "name": "江牛樓",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -5033,7 +5034,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5056,7 +5057,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5071,7 +5072,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5085,7 +5086,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5106,7 +5107,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5127,7 +5128,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5148,7 +5149,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -5161,14 +5162,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "老烤箱",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -5192,7 +5193,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5207,7 +5208,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5220,7 +5221,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5243,13 +5244,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "但馬家涮涮鍋 (本館)",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -5273,7 +5274,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5286,7 +5287,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5306,7 +5307,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -5322,7 +5323,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5338,7 +5339,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5354,7 +5355,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5370,7 +5371,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5383,7 +5384,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5404,7 +5405,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5427,7 +5428,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5442,7 +5443,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5458,7 +5459,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5474,7 +5475,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5488,7 +5489,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5510,7 +5511,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5524,7 +5525,7 @@
     {
       "name": "辰園",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -5546,7 +5547,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5569,7 +5570,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5583,7 +5584,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5606,7 +5607,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5622,7 +5623,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5638,13 +5639,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "叁酒弍沏",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -5668,7 +5669,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5683,7 +5684,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5698,7 +5699,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5713,7 +5714,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5727,7 +5728,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5741,7 +5742,7 @@
     {
       "name": "和蒔炭火割烹",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -5765,7 +5766,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5781,7 +5782,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5795,7 +5796,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5816,7 +5817,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5839,13 +5840,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "承家",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -5867,7 +5868,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5890,7 +5891,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5906,7 +5907,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -5921,7 +5922,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -5941,7 +5942,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5962,7 +5963,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -5976,7 +5977,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -5996,7 +5997,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -6010,7 +6011,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -6033,13 +6034,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "林家蔬菜羊肉爐",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -6060,7 +6061,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -6076,7 +6077,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6096,7 +6097,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -6118,14 +6119,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "泔",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -6148,7 +6149,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -6162,7 +6163,7 @@
     {
       "name": "空盤",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -6186,7 +6187,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6198,7 +6199,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -6214,7 +6215,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6230,7 +6231,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6246,7 +6247,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6261,7 +6262,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6276,7 +6277,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6291,13 +6292,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "阿城鵝肉 (中山)",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -6321,7 +6322,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6336,7 +6337,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6351,7 +6352,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6366,7 +6367,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6381,7 +6382,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6396,7 +6397,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6411,7 +6412,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6426,7 +6427,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6442,7 +6443,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6457,7 +6458,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6472,7 +6473,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6485,7 +6486,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [
         "侯布雄",
         "L'Atelier de Joël Robuchon"
@@ -6504,7 +6505,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6523,7 +6524,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -6547,7 +6548,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6562,7 +6563,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6578,7 +6579,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6594,7 +6595,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6610,7 +6611,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6626,7 +6627,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6638,7 +6639,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -6654,7 +6655,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6670,7 +6671,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6686,7 +6687,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6707,7 +6708,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6722,7 +6723,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6737,7 +6738,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6753,7 +6754,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6769,7 +6770,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6784,7 +6785,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6805,7 +6806,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -6828,7 +6829,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6840,7 +6841,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -6856,7 +6857,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -6872,13 +6873,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "頁小館",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -6893,7 +6894,7 @@
     {
       "name": "香色",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -6916,7 +6917,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -6939,7 +6940,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -6958,7 +6959,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -6982,7 +6983,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7003,7 +7004,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -7027,7 +7028,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7043,7 +7044,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7059,7 +7060,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7075,7 +7076,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7091,7 +7092,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7106,13 +7107,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "桌藏",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7136,7 +7137,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7151,14 +7152,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "真的好海鮮",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7182,7 +7183,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7197,7 +7198,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -7220,7 +7221,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7236,7 +7237,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7251,7 +7252,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7267,7 +7268,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7282,7 +7283,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7297,7 +7298,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7312,7 +7313,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7326,7 +7327,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -7349,7 +7350,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7365,7 +7366,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7380,7 +7381,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7395,7 +7396,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7411,7 +7412,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7427,14 +7428,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "掬",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7449,7 +7450,7 @@
     {
       "name": "教父牛排",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7473,13 +7474,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "梵燒肉",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7503,7 +7504,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7518,7 +7519,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7534,14 +7535,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "清真中國牛肉麵食館 (大安)",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7565,7 +7566,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7580,7 +7581,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7593,14 +7594,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "笹鮨",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7624,7 +7625,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7639,7 +7640,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7654,7 +7655,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7666,7 +7667,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -7682,7 +7683,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7698,7 +7699,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7714,7 +7715,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7730,7 +7731,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7746,7 +7747,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7761,13 +7762,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "魚庒",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7782,7 +7783,7 @@
     {
       "name": "麻糬寶寶",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7806,7 +7807,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7832,7 +7833,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -7859,7 +7860,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7872,7 +7873,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -7888,7 +7889,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -7904,13 +7905,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "晶華軒",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -7933,7 +7934,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -7954,7 +7955,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [
         "渥達尼斯磨坊",
         "Molino de Urdániz"
@@ -7973,7 +7974,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -7988,7 +7989,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8004,7 +8005,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8020,7 +8021,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8032,14 +8033,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "琥珀",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8060,14 +8061,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "筌",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8091,7 +8092,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8107,7 +8108,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8123,7 +8124,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8138,7 +8139,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -8155,7 +8156,7 @@
         "陽明春天",
         "Yangming Spring (Shilin)"
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8188,7 +8189,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -8204,7 +8205,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8216,7 +8217,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -8232,7 +8233,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8247,7 +8248,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8259,7 +8260,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -8275,7 +8276,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8291,7 +8292,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8306,7 +8307,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8321,7 +8322,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8343,7 +8344,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8358,7 +8359,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8371,7 +8372,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -8393,7 +8394,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -8407,7 +8408,7 @@
     {
       "name": "雍翠庭",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8431,7 +8432,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8450,7 +8451,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -8472,7 +8473,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [
         "壽司芳",
         "Sushi Yoshi"
@@ -8491,13 +8492,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "榕居",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8521,14 +8522,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "榮榮園",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8552,7 +8553,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8568,7 +8569,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8583,7 +8584,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8598,7 +8599,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8613,7 +8614,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8629,14 +8630,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "駄介",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8660,7 +8661,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8675,7 +8676,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8690,7 +8691,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8705,7 +8706,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8720,7 +8721,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8735,7 +8736,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8750,7 +8751,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8765,7 +8766,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8780,7 +8781,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8796,14 +8797,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "磐石坊",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8824,7 +8825,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -8837,7 +8838,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -8853,7 +8854,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8869,13 +8870,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "穆記牛肉麵",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8899,14 +8900,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "興蓬萊台菜 (中山北路)",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -8930,7 +8931,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8945,7 +8946,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8960,7 +8961,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -8976,7 +8977,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -8991,13 +8992,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
-      "name": "頤宮中餐廳 Le Palais",
-      "address": "",
+      "name": "頤宮",
+      "address": "台北市大同區承德路一段3號",
       "awards": [
         {
           "guide": "500sweet",
@@ -9005,11 +9006,48 @@
           "sweets": 2,
           "level": "2甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "michelin",
+          "level": "三星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 6,
+          "level": "6盤",
+          "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.121",
+          "rank": 121,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
-      "aliases": []
+      "aliases": [
+        "Le Palais",
+        "頤宮中餐廳",
+        "頤宮中餐廳 Le Palais"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ]
     },
     {
       "name": "駱師傅法式冰淇淋之家",
@@ -9023,14 +9061,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "總裁藝文空間",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9052,7 +9090,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -9065,7 +9103,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -9078,14 +9116,14 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
       "name": "鮨中澤",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9100,7 +9138,7 @@
     {
       "name": "鮨天本 登龍門",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9115,7 +9153,7 @@
     {
       "name": "鮨香",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9130,7 +9168,7 @@
     {
       "name": "鮨野村",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9152,7 +9190,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -9168,7 +9206,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9181,7 +9219,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -9197,7 +9235,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9213,7 +9251,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -9225,7 +9263,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -9241,7 +9279,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -9256,7 +9294,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -9271,7 +9309,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -9285,7 +9323,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9305,7 +9343,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -9321,7 +9359,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9337,13 +9375,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "蘭",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9367,7 +9405,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9383,14 +9421,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "麟聚",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9414,13 +9452,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "讚",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9435,7 +9473,7 @@
     {
       "name": "驥園川菜",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9458,7 +9496,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9479,7 +9517,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
@@ -9495,7 +9533,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9510,7 +9548,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9524,7 +9562,7 @@
     {
       "name": "AJIMI",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9548,14 +9586,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "Aleisha",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9577,7 +9615,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9600,7 +9638,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9614,7 +9652,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9635,7 +9673,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9656,7 +9694,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9677,7 +9715,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9700,7 +9738,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9714,7 +9752,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9737,7 +9775,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -9752,7 +9790,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9766,7 +9804,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9787,7 +9825,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9810,7 +9848,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9824,7 +9862,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9847,7 +9885,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9867,7 +9905,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9882,7 +9920,7 @@
     {
       "name": "Clover",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -9904,7 +9942,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9927,7 +9965,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9943,7 +9981,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9957,7 +9995,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -9980,7 +10018,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -9996,7 +10034,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -10011,7 +10049,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10027,7 +10065,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -10042,7 +10080,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10058,7 +10096,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10074,7 +10112,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10090,7 +10128,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10111,7 +10149,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10134,7 +10172,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10148,7 +10186,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10175,7 +10213,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10197,7 +10235,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10218,7 +10256,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10241,7 +10279,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10257,7 +10295,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10271,7 +10309,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10292,7 +10330,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10313,7 +10351,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10340,7 +10378,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10368,7 +10406,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10391,7 +10429,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10412,7 +10450,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10435,7 +10473,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10451,7 +10489,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10467,7 +10505,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10487,7 +10525,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -10501,7 +10539,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10522,7 +10560,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10545,7 +10583,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10572,7 +10610,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10596,7 +10634,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10612,7 +10650,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10628,7 +10666,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10644,7 +10682,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10658,7 +10696,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10681,7 +10719,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10695,7 +10733,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10716,7 +10754,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10739,7 +10777,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10755,7 +10793,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10775,7 +10813,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10799,7 +10837,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10815,7 +10853,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10831,7 +10869,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10847,7 +10885,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10863,7 +10901,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -10879,14 +10917,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "Lin",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -10910,13 +10948,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
       "name": "Longtail",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -10938,7 +10976,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10959,7 +10997,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -10980,7 +11018,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11003,7 +11041,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11017,7 +11055,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11038,7 +11076,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11061,7 +11099,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": []
     },
     {
@@ -11076,7 +11114,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11092,7 +11130,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11108,7 +11146,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11124,7 +11162,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11140,7 +11178,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11156,7 +11194,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11171,7 +11209,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11194,14 +11232,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "N°168 Prime牛排館 (中山）",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -11223,7 +11261,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11249,7 +11287,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11271,7 +11309,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11292,7 +11330,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11315,7 +11353,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11331,7 +11369,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11345,7 +11383,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11366,7 +11404,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11389,7 +11427,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11403,7 +11441,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11424,7 +11462,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11447,7 +11485,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11461,7 +11499,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11484,7 +11522,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11498,7 +11536,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11512,7 +11550,7 @@
     {
       "name": "Robin's 鐵板燒",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -11541,7 +11579,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11564,7 +11602,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11580,7 +11618,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11594,7 +11632,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11615,7 +11653,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11638,7 +11676,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11665,7 +11703,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11680,7 +11718,7 @@
     {
       "name": "Set.",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -11704,7 +11742,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11720,7 +11758,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11736,7 +11774,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11758,7 +11796,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11781,7 +11819,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11797,7 +11835,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11810,7 +11848,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
@@ -11824,7 +11862,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11838,7 +11876,7 @@
     {
       "name": "Thai & Thai",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -11862,7 +11900,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -11876,7 +11914,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11897,7 +11935,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11920,14 +11958,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "The Ukai",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -11949,7 +11987,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11971,7 +12009,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -11994,7 +12032,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -12008,7 +12046,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -12042,7 +12080,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -12064,7 +12102,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -12087,7 +12125,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -12107,7 +12145,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -12131,7 +12169,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -12147,7 +12185,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
@@ -12163,14 +12201,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "area": "",
       "aliases": []
     },
     {
       "name": "Yuu",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -12185,7 +12223,7 @@
     {
       "name": "Zaap",
       "aliases": [],
-      "city": "台北市",
+      "city": "臺北市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -12207,7 +12245,7 @@
           "year": 2025
         }
       ],
-      "city": "台北市",
+      "city": "臺北市",
       "sources": [
         {
           "guide": "500plate",
@@ -12220,7 +12258,7 @@
     },
     {
       "name": "大巴六九景觀餐廳",
-      "city": "台東縣",
+      "city": "臺東縣",
       "address": "台東縣",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -12253,12 +12291,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
       "name": "半野生活",
-      "city": "台東縣",
+      "city": "臺東縣",
       "address": "台東縣",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -12291,7 +12329,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "area": "",
       "aliases": []
     },
@@ -12307,12 +12345,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
       "name": "夜月酒食",
-      "city": "台東縣",
+      "city": "臺東縣",
       "address": "台東縣",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -12345,7 +12383,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
@@ -12360,7 +12398,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
@@ -12375,7 +12413,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
@@ -12390,7 +12428,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
@@ -12405,7 +12443,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
@@ -12420,7 +12458,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
@@ -12435,7 +12473,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "area": "",
       "aliases": []
     },
@@ -12451,13 +12489,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "area": "",
       "aliases": []
     },
     {
       "name": "德布西咖啡 江賢二藝術園區會館",
-      "city": "台東縣",
+      "city": "臺東縣",
       "address": "台東縣",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -12490,7 +12528,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
@@ -12505,7 +12543,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "area": "",
       "aliases": []
     },
@@ -12521,13 +12559,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "area": "",
       "aliases": []
     },
     {
       "name": "Les Potes 博友好食商行",
-      "city": "台東縣",
+      "city": "臺東縣",
       "address": "台東縣",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -12560,12 +12598,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台東縣",
+      "city": "臺東縣",
       "aliases": []
     },
     {
       "name": "一味品",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -12591,7 +12629,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -12607,7 +12645,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -12622,13 +12660,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "八寶彬圓仔惠 (國華街)",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -12654,12 +12692,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "三好一公道當歸鴨",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -12685,12 +12723,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "大勇街無名鹹粥",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -12706,7 +12744,7 @@
     },
     {
       "name": "小公園擔仔麵",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -12732,13 +12770,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "川泰號虱目魚丸",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -12762,7 +12800,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -12777,13 +12815,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "友愛街旅館",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -12816,7 +12854,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -12831,13 +12869,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "毛蔬",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -12852,7 +12890,7 @@
     {
       "name": "牛五蔵",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -12876,14 +12914,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "王家燻羊肉",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -12907,7 +12945,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -12922,7 +12960,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -12937,7 +12975,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -12953,14 +12991,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "甘旨",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -12974,7 +13012,7 @@
     },
     {
       "name": "田媽媽 長盈海味屋",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13000,7 +13038,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13015,7 +13053,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13030,13 +13068,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "再發號",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13060,13 +13098,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "吃麵吧",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13092,7 +13130,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -13108,12 +13146,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "好農家米糕",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13130,7 +13168,7 @@
     {
       "name": "有你真好 湘菜沙龍",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13154,7 +13192,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13169,7 +13207,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -13185,7 +13223,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13200,12 +13238,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "西羅殿牛肉湯",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13238,13 +13276,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "沙淘宮廟海產",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13268,12 +13306,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "尚好吃牛肉湯",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13299,12 +13337,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "東香台菜海味料理",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13330,7 +13368,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13345,14 +13383,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "欣欣餐廳",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13366,7 +13404,7 @@
     },
     {
       "name": "知味料理館",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -13399,7 +13437,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13414,7 +13452,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13429,12 +13467,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "阿文米粿",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13467,7 +13505,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -13483,13 +13521,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "阿村牛肉湯 (保安路)",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13504,7 +13542,7 @@
     {
       "name": "阿明豬心冬粉 (保安路)",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13518,7 +13556,7 @@
     },
     {
       "name": "阿星鹹粥",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13544,13 +13582,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "阿美飯店",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13576,12 +13614,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "阿財牛肉湯 平豐店",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -13614,14 +13652,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "阿裕牛肉 (崑崙路)",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13645,7 +13683,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13666,12 +13704,12 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "阿興虱目魚",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13697,12 +13735,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "阿霞飯店",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -13735,13 +13773,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "城邊真味炒鱔魚專家",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13756,7 +13794,7 @@
     {
       "name": "帝一鐤",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13780,14 +13818,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "香草小餐酒",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13802,7 +13840,7 @@
     {
       "name": "原則",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13826,7 +13864,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13841,14 +13879,14 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "啢啢餐桌",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -13872,7 +13910,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13887,13 +13925,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "梅鑫海產",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -13916,7 +13954,7 @@
     },
     {
       "name": "添厚",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -13942,7 +13980,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -13957,7 +13995,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -13973,7 +14011,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -13989,12 +14027,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "麥謎食驗室",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14010,7 +14048,7 @@
     },
     {
       "name": "博仁堂",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14036,7 +14074,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14051,13 +14089,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "寓點",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -14094,7 +14132,7 @@
     {
       "name": "揚梅吐氣",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14118,7 +14156,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14133,12 +14171,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "無名羊肉湯",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14164,12 +14202,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "筑馨居",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14185,7 +14223,7 @@
     },
     {
       "name": "開元紅燒土魠魚羮",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14202,7 +14240,7 @@
     {
       "name": "開元路無名虱目魚",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14217,7 +14255,7 @@
     {
       "name": "順德牛肉湯",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14241,7 +14279,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14256,13 +14294,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "黃家蝦捲",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14279,7 +14317,7 @@
     {
       "name": "黑琵食堂",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14294,7 +14332,7 @@
     {
       "name": "傳家鹹粥",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14318,7 +14356,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14339,7 +14377,7 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14354,7 +14392,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -14370,12 +14408,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "落成米糕",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14391,7 +14429,7 @@
     },
     {
       "name": "葉家小卷米粉",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14407,7 +14445,7 @@
     },
     {
       "name": "葉桑生炒鴨肉焿",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14433,7 +14471,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -14449,12 +14487,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "誠實鍋燒意麵",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14480,7 +14518,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14495,12 +14533,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "福泰飯桌第三代",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14526,7 +14564,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14541,7 +14579,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -14557,7 +14595,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -14573,7 +14611,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14588,7 +14626,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14603,7 +14641,7 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
@@ -14618,12 +14656,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "蓮霧腳羊肉湯",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14639,7 +14677,7 @@
     },
     {
       "name": "曉璘海產碳烤",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -14663,7 +14701,7 @@
     {
       "name": "橄饗家",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14687,12 +14725,12 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "謝掌櫃",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14708,7 +14746,7 @@
     },
     {
       "name": "鮨聚善",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -14731,7 +14769,7 @@
     },
     {
       "name": "鮮蒸蝦仁肉圓",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -14757,13 +14795,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "豐之海鮮漁府",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14778,7 +14816,7 @@
     {
       "name": "繭 小料理",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14802,7 +14840,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -14818,13 +14856,13 @@
           "url": "https://500times.udn.com/wtimes/story/123497/8874123"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "aliases": []
     },
     {
       "name": "饕弄杯",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14848,13 +14886,13 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
     {
       "name": "FOUFOU餐酒館",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -14878,7 +14916,7 @@
     {
       "name": "FUKAI",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14893,7 +14931,7 @@
     {
       "name": "Hara Peko",
       "aliases": [],
-      "city": "台南市",
+      "city": "臺南市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -14907,7 +14945,7 @@
     },
     {
       "name": "Mo",
-      "city": "台南市",
+      "city": "臺南市",
       "address": "台南市",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
@@ -14940,7 +14978,7 @@
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
-      "city": "台南市",
+      "city": "臺南市",
       "area": "",
       "aliases": []
     },
@@ -22055,6 +22093,13 @@
           "level": "Asia No.34",
           "rank": 34,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        },
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "Two knives",
+          "knives": 2,
+          "url": "https://thebestchefawards.com/chefs/jimmy-lim/"
         }
       ],
       "sources": [
@@ -22434,42 +22479,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "頤宮",
-      "address": "台北市大同區承德路一段3號",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "三星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 6,
-          "level": "6盤",
-          "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        }
-      ],
-      "city": "臺北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [
-        "頤宮中餐廳"
-      ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "鮨隆",
       "address": "台北市",
       "awards": [
@@ -22651,6 +22660,13 @@
           "year": 2025,
           "level": "Best 20 Taiwan",
           "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "One knife",
+          "knives": 1,
+          "url": "https://thebestchefawards.com/chefs/kei-koo/"
         }
       ],
       "city": "臺北市",
@@ -22890,21 +22906,6 @@
       ]
     },
     {
-      "name": "Le Palais",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.121",
-          "rank": 121,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        }
-      ]
-    },
-    {
       "name": "logy",
       "address": "台北市大安區安和路一段",
       "awards": [
@@ -22944,6 +22945,13 @@
           "level": "Asia No.32",
           "rank": 32,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        },
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "Two knives",
+          "knives": 2,
+          "url": "https://thebestchefawards.com/chefs/ryogo-tahara/"
         }
       ],
       "city": "臺北市",
@@ -23221,6 +23229,13 @@
           "year": 2025,
           "level": "Best 20 Taiwan",
           "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "thebestchef",
+          "year": 2025,
+          "level": "One knife",
+          "knives": 1,
+          "url": "https://thebestchefawards.com/chefs/joaquin-elizondo/"
         }
       ],
       "city": "臺北市",

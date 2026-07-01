@@ -12,14 +12,15 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1344,
+    "awardsRestaurants": 1342,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
     "platformManualRestaurants": 2,
     "platformManualSignals": 6,
     "externalAwardSources": 3,
-    "oadCandidates": 29
+    "oadCandidates": 29,
+    "bestChefCandidates": 4
   },
   "sources": [
     {
@@ -83,6 +84,16 @@
       "candidatesFile": "assets/oad-asia-2025-candidates.json",
       "count": 29,
       "candidates": 29,
+      "runtimeLookup": false
+    },
+    {
+      "id": "thebestchef",
+      "label": "The Best Chef Awards",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/thebestchef-taiwan-2025-candidates.json",
+      "count": 4,
+      "candidates": 4,
       "runtimeLookup": false
     },
     {
