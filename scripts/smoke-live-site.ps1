@@ -46,6 +46,11 @@ if ($Html -notlike "*<div class=`"rank-filters`" id=`"rankFilters`"></div>*") {
 if ($Html -like '*rankFilters").classList.add("hidden")*' -or $Html -like '*rankFilters")?.classList.add("hidden")*') {
   throw "Leaderboard filters must not be hidden by runtime close logic"
 }
+foreach ($RequiredAwardMultiSelectText in @("function rankAwardValues", "rankAwardValues(f).includes(o.label)", "wanted.some")) {
+  if ($Html -notlike "*$RequiredAwardMultiSelectText*") {
+    throw "Award filter multi-select support is missing: $RequiredAwardMultiSelectText"
+  }
+}
 if ($Html -like "*addEventListener(`"touchmove`", closeRankFiltersFromOutside*" -or $Html -like "*addEventListener(`"scroll`", closeRankFiltersFromOutside*") {
   throw "Leaderboard filters should not auto-close on page drag or scroll"
 }
