@@ -4,6 +4,7 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..");
 const signalsPath = path.join(repoRoot, "assets", "external-signals.json");
 const manualSignalsPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
+const platformImportCsvPath = path.join(repoRoot, "assets", "platform-signals.import.csv");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 
 const ALLOWED_SIGNAL_TYPES = new Set([
@@ -134,6 +135,17 @@ function validatePlatformProbeReport(data) {
   };
 }
 
+function validatePlatformImportCsv(filePath) {
+  const text = fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
+  const firstLine = text.split(/\r?\n/).find((line) => line.trim()) || "";
+  const headers = firstLine.split(",").map((value) => value.trim());
+  const required = ["name","city","area","aliases","type","sourceId","label","score","confidence","rating","reviewCount","rank","evidence","url","updated","reviewedBy"];
+  const errors = required
+    .filter((header) => !headers.includes(header))
+    .map((header) => `platform import csv missing header: ${header}`);
+  return { headers: headers.length, errors };
+}
+
 const report = validate(readJson(signalsPath));
 if (fs.existsSync(manualSignalsPath)) {
   const manualReport = validateManualPlatformSignals(readJson(manualSignalsPath));
@@ -150,6 +162,14 @@ if (fs.existsSync(platformProbePath)) {
     sources: probeReport.sources,
   };
   report.errors.push(...probeReport.errors);
+  report.ok = report.errors.length === 0;
+}
+if (fs.existsSync(platformImportCsvPath)) {
+  const csvReport = validatePlatformImportCsv(platformImportCsvPath);
+  report.platformImportCsv = {
+    headers: csvReport.headers,
+  };
+  report.errors.push(...csvReport.errors);
   report.ok = report.errors.length === 0;
 }
 console.log(JSON.stringify(report, null, 2));

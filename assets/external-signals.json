@@ -1095,7 +1095,7 @@
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
     "lastUpdatedSignals": 1,
     "platformManualMerge": {
-      "lastRun": "2026-06-30T23:47:03.504Z",
+      "lastRun": "2026-07-01T00:39:05.613Z",
       "sourceFile": "assets/platform-signals.manual.json",
       "mergedRestaurants": 0,
       "mergedSignals": 0
