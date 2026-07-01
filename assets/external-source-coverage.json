@@ -1,6 +1,6 @@
 {
   "version": "external-source-coverage-2026-07-01",
-  "updated": "2026-07-01",
+  "updated": "2026-07-02",
   "policy": {
     "runtimeExternalLookup": false,
     "costFirst": true,
@@ -12,12 +12,14 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1332,
+    "awardsRestaurants": 1344,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
     "platformManualRestaurants": 2,
-    "platformManualSignals": 6
+    "platformManualSignals": 6,
+    "externalAwardSources": 3,
+    "oadCandidates": 29
   },
   "sources": [
     {
@@ -62,6 +64,43 @@
       "count": 328,
       "candidates": 356,
       "highConfidence": 328,
+      "runtimeLookup": false
+    },
+    {
+      "id": "50best",
+      "label": "50 Best",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "sourceFile": "assets/external-awards.manual.json",
+      "count": 2,
+      "runtimeLookup": false
+    },
+    {
+      "id": "oad",
+      "label": "OAD Top Restaurants Asia",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/oad-asia-2025-candidates.json",
+      "count": 29,
+      "candidates": 29,
+      "runtimeLookup": false
+    },
+    {
+      "id": "tatlerbest",
+      "label": "Tatler Best",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "sourceFile": "assets/external-awards.manual.json",
+      "count": 20,
+      "runtimeLookup": false
+    },
+    {
+      "id": "worldculinary",
+      "label": "World Culinary Awards",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "sourceFile": "assets/external-awards.manual.json",
+      "count": 4,
       "runtimeLookup": false
     },
     {

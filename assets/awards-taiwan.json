@@ -31,9 +31,13 @@
     "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
     "https://udn.com/news/story/7266/8933484",
     "https://500times.udn.com/wtimes/story/123497/8874123",
-    "https://500times.udn.com/wtimes/story/124537/8931871"
+    "https://500times.udn.com/wtimes/story/124537/8931871",
+    "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+    "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
+    "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+    "https://www.oadguides.com/lists/asia/top-restaurants/2025"
   ],
-  "updated": "2026-07-01",
+  "updated": "2026-07-02",
   "restaurants": [
     {
       "name": "「傳」台中正老牌香菇肉羹",
@@ -2486,42 +2490,6 @@
       "aliases": []
     },
     {
-      "name": "JL Studio",
-      "city": "台中市",
-      "address": "台中市",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "三星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 2,
-          "level": "2盤",
-          "year": 2025
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 2,
-          "level": "2甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ],
-      "sources": [
-        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "name": "KR Prime Steak",
       "aliases": [],
       "city": "台中市",
@@ -2705,25 +2673,6 @@
           "level": "4甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
-      ]
-    },
-    {
-      "name": "YUENJI",
-      "city": "台中市",
-      "address": "台中市",
-      "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        }
-      ],
-      "sources": [
-        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
-      ],
-      "aliases": [
-        "元紀"
       ]
     },
     {
@@ -3499,39 +3448,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "山海樓",
-      "address": "台北市中正區仁愛路二段94號",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 2,
-          "level": "2盤",
-          "year": 2025
-        },
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "川畝園",
@@ -4817,34 +4733,6 @@
       "aliases": []
     },
     {
-      "name": "吉兆割烹壽司",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "吉那圈咖啡",
       "address": "",
       "awards": [
@@ -5486,34 +5374,6 @@
       "aliases": []
     },
     {
-      "name": "牡丹",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "二星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 7,
-          "level": "7盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "秀蘭小館",
       "awards": [
         {
@@ -6094,34 +5954,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
-      "name": "明福台菜海產",
-      "address": "台北市中山區中山北路二段137巷",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 3,
-          "level": "3盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "杭州小籠湯包",
       "address": "台北市大安區杭州南路二段17號",
       "awards": [
@@ -6356,34 +6188,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "金蓬萊遵古台菜",
-      "address": "台北市士林區天母東路101號",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 3,
-          "level": "3盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "金賞軒",
@@ -6982,46 +6786,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "盈科 EIKA",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "二星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 1,
-          "level": "1甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ],
-      "city": "台北市",
-      "aliases": [
-        "盈科",
-        "Eika",
-        "EIKA 盈科"
-      ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "sources": [
-        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ]
     },
     {
       "name": "紅棉 Red Cotton",
@@ -8444,20 +8208,6 @@
       "aliases": []
     },
     {
-      "name": "雅閣",
-      "address": "台北市松山區敦化北路158號",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "雲川水月 Clavius",
       "address": "台北市松山區",
       "awards": [
@@ -8743,39 +8493,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "態芮 Taïrroir",
-      "address": "台北市中山區樂群三路299號",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "三星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "aliases": [
-        "態芮",
-        "Tairroir",
-        "Taïrroir 態芮"
-      ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "sources": [
-        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ]
     },
     {
       "name": "榕居",
@@ -9099,34 +8816,6 @@
       ]
     },
     {
-      "name": "請客樓",
-      "address": "台北市中正區忠孝東路一段12號17樓",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 7,
-          "level": "7盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "賣麵炎仔",
       "address": "台北市大同區安西街106號",
       "awards": [
@@ -9307,34 +8996,6 @@
       "aliases": []
     },
     {
-      "name": "頤宮",
-      "address": "台北市大同區承德路一段3號",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "三星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 6,
-          "level": "6盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "頤宮中餐廳 Le Palais",
       "address": "",
       "awards": [
@@ -9480,20 +9141,6 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
-    },
-    {
-      "name": "鮨隆",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "鮨嘉仁",
@@ -9853,41 +9500,6 @@
       "aliases": []
     },
     {
-      "name": "Ad Astra",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 3,
-          "level": "3盤",
-          "year": 2025
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 1,
-          "level": "1甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "Adachi 足立壽司",
       "address": "台北市",
       "awards": [
@@ -10091,34 +9703,6 @@
       "city": "台北市",
       "area": "",
       "aliases": []
-    },
-    {
-      "name": "Bencotto",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Bogart's Smokehouse Taipei",
@@ -10332,34 +9916,6 @@
       "aliases": []
     },
     {
-      "name": "COAST",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 2,
-          "level": "2盤",
-          "year": 2025
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 1,
-          "level": "1甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "name": "COFE 喫茶咖啡",
       "address": "",
       "awards": [
@@ -10507,41 +10063,6 @@
       "aliases": []
     },
     {
-      "name": "De Nuit",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 3,
-          "level": "3盤",
-          "year": 2025
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 1,
-          "level": "1甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "Deux Doux",
       "address": "",
       "awards": [
@@ -10665,48 +10186,6 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
-      "name": "EMBERS",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "Ephernité",
-      "aliases": [],
-      "city": "台北市",
-      "address": "",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 1,
-          "level": "1甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ]
     },
     {
       "name": "Extension 1 by 橘色",
@@ -11013,34 +10492,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
     },
     {
-      "name": "IMPROMPTU BY PAUL LEE",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "inari Izakaya 現代居酒屋",
       "awards": [
         {
@@ -11081,34 +10532,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "Inita",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "ISM主義甜時",
@@ -11285,27 +10708,6 @@
     },
     {
       "name": "L.C Française 法租界",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "name": "L’Atelier de Joël Robuchon Taipei",
       "awards": [
         {
           "guide": "500plate",
@@ -11510,34 +10912,6 @@
       ],
       "city": "台北市",
       "aliases": []
-    },
-    {
-      "name": "logy",
-      "address": "台北市大安區安和路一段",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "二星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 7,
-          "level": "7盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Longtail",
@@ -11825,34 +11199,6 @@
       "aliases": []
     },
     {
-      "name": "MUME",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 2,
-          "level": "2盤",
-          "year": 2025
-        },
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "N°168 Prime牛排館 (中山）",
       "aliases": [],
       "city": "台北市",
@@ -11866,41 +11212,6 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
-    },
-    {
-      "name": "NOBUO",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 3,
-          "level": "3盤",
-          "year": 2025
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 1,
-          "level": "1甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "onefifteen 初衣食午",
@@ -12199,44 +11510,6 @@
       "aliases": []
     },
     {
-      "name": "Restaurant A",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "二星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 4,
-          "level": "4盤",
-          "year": 2025
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "sweets": 1,
-          "level": "1甜",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [
-        "A",
-        "A Restaurant"
-      ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
       "name": "Robin's 鐵板燒",
       "aliases": [],
       "city": "台北市",
@@ -12527,20 +11800,6 @@
       "city": "台北市",
       "area": "",
       "aliases": []
-    },
-    {
-      "name": "T+T",
-      "address": "台北市松山區富錦街",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "Tableau by Craig Yang",
@@ -12958,34 +12217,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "Zea",
-      "address": "台北市",
-      "awards": [
-        {
-          "guide": "michelin",
-          "level": "一星",
-          "year": 2025
-        },
-        {
-          "guide": "500plate",
-          "plates": 3,
-          "level": "3盤",
-          "year": 2025
-        }
-      ],
-      "city": "台北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
-      "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "大巴六九景觀餐廳",
@@ -16999,6 +16230,19 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.105",
+          "rank": 105,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "sources": [
@@ -19439,6 +18683,13 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 346,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "sources": [
@@ -22754,6 +22005,1235 @@
       "city": "彰化縣",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "JL Studio",
+      "city": "臺中市",
+      "address": "台中市",
+      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "三星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 2,
+          "level": "2盤",
+          "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 2,
+          "level": "2甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "50best",
+          "year": 2026,
+          "level": "Asia No.50",
+          "rank": 50,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+        },
+        {
+          "guide": "worldculinary",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Nominee",
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.34",
+          "rank": 34,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "sources": [
+        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "name": "YUENJI",
+      "city": "臺中市",
+      "address": "台中市",
+      "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.127",
+          "rank": 127,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "sources": [
+        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
+      ],
+      "aliases": [
+        "元紀"
+      ]
+    },
+    {
+      "name": "山海樓",
+      "address": "台北市中正區仁愛路二段94號",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 2,
+          "level": "2盤",
+          "year": 2025
+        },
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.200",
+          "rank": 200,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "吉兆割烹壽司",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 389,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [
+        "Kitcho Sushi"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "牡丹",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 7,
+          "level": "7盤",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 284,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [
+        "Mudan Tempura"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "明福台菜海產",
+      "address": "台北市中山區中山北路二段137巷",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 3,
+          "level": "3盤",
+          "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [
+        "明福"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "金蓬萊遵古台菜",
+      "address": "台北市士林區天母東路101號",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 3,
+          "level": "3盤",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 425,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [
+        "Golden Formosa"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "盈科 EIKA",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "aliases": [
+        "盈科",
+        "Eika",
+        "EIKA 盈科"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "sources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ]
+    },
+    {
+      "name": "雅閣",
+      "address": "台北市松山區敦化北路158號",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 458,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "aliases": [
+        "Ya Ge"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "態芮 Taïrroir",
+      "address": "台北市中山區樂群三路299號",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "三星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.128",
+          "rank": 128,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "aliases": [
+        "態芮",
+        "Tairroir",
+        "Taïrroir 態芮"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "sources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ]
+    },
+    {
+      "name": "請客樓",
+      "address": "台北市中正區忠孝東路一段12號17樓",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 7,
+          "level": "7盤",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 442,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [
+        "The Guest House"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "頤宮",
+      "address": "台北市大同區承德路一段3號",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "三星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 6,
+          "level": "6盤",
+          "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [
+        "頤宮中餐廳"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "鮨隆",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 378,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "aliases": [
+        "Sushi Ryu"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Ad Astra",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 3,
+          "level": "3盤",
+          "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Bencotto",
+      "awards": [
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 398,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "COAST",
+      "awards": [
+        {
+          "guide": "500plate",
+          "plates": 2,
+          "level": "2盤",
+          "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.172",
+          "rank": 172,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "name": "Da-Wan",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 419,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "De Nuit",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 3,
+          "level": "3盤",
+          "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "EMBERS",
+      "aliases": [],
+      "city": "臺北市",
+      "address": "",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "awards": [
+        {
+          "guide": "greenstar",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ]
+    },
+    {
+      "name": "Ephernité",
+      "aliases": [],
+      "city": "臺北市",
+      "address": "",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "awards": [
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 439,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "French Windows",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "worldculinary",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Nominee",
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+        }
+      ]
+    },
+    {
+      "name": "fumee Yakitori",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 234,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "Gen by Matt Chen",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [
+        "Gen"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ]
+    },
+    {
+      "name": "IMPROMPTU BY PAUL LEE",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 257,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Inita",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "L’Atelier de Joël Robuchon Taipei",
+      "awards": [
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 274,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "name": "Le Beaujour",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 249,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "Le Palais",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.121",
+          "rank": 121,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "logy",
+      "address": "台北市大安區安和路一段",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 7,
+          "level": "7盤",
+          "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "50best",
+          "year": 2026,
+          "level": "Asia No.22",
+          "rank": 22,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+        },
+        {
+          "guide": "worldculinary",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Nominee",
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.32",
+          "rank": 32,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Longyue",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 301,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "MUME",
+      "awards": [
+        {
+          "guide": "500plate",
+          "plates": 2,
+          "level": "2盤",
+          "year": 2025
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "worldculinary",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Winner",
+          "winner": true,
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.86",
+          "rank": 86,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "NOBUO",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 3,
+          "level": "3盤",
+          "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Orchid Restaurant",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 304,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "Qi 27 (Sushi 27)",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 282,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "Restaurant A",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "二星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 4,
+          "level": "4盤",
+          "year": 2025
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [
+        "A",
+        "A Restaurant"
+      ],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Silks House",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.88",
+          "rank": 88,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "Sushi Nomura",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 433,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ]
+    },
+    {
+      "name": "T+T",
+      "address": "台北市松山區富錦街",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 471,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "city": "臺北市",
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    },
+    {
+      "name": "Yuenji",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ]
+    },
+    {
+      "name": "Zea",
+      "address": "台北市",
+      "awards": [
+        {
+          "guide": "michelin",
+          "level": "一星",
+          "year": 2025
+        },
+        {
+          "guide": "500plate",
+          "plates": 3,
+          "level": "3盤",
+          "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        }
+      ],
+      "city": "臺北市",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ],
+      "aliases": [],
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "來福海鮮餐廳",

@@ -1,0 +1,1010 @@
+{
+  "version": "oad-asia-2025-candidates",
+  "generatedAt": "2026-07-01T22:14:44.064Z",
+  "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+  "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+  "restaurants": [
+    {
+      "name": "Logy",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Modern European",
+      "chef": "Ryogo Tahara",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.32",
+          "rank": 32,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Logy",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 32,
+          "chef": "Ryogo Tahara",
+          "cuisine": "Modern European",
+          "friendlyUrl": "logy"
+        }
+      }
+    },
+    {
+      "name": "JL Studio",
+      "city": "臺中市",
+      "aliases": [],
+      "cuisine": "Modern Singaporean",
+      "chef": "Jimmy Lim Tyan Yaw",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.34",
+          "rank": 34,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "JL STUDIO",
+          "location1": "Taichung",
+          "location2": "Taiwan",
+          "rank": 34,
+          "chef": "Jimmy Lim Tyan Yaw",
+          "cuisine": "Modern Singaporean",
+          "friendlyUrl": "jl-studio"
+        }
+      }
+    },
+    {
+      "name": "MUME",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Creative Cuisine",
+      "chef": "Richie Lin",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.86",
+          "rank": 86,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Mume",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 86,
+          "chef": "Richie Lin",
+          "cuisine": "Creative Cuisine",
+          "friendlyUrl": "mume"
+        }
+      }
+    },
+    {
+      "name": "Silks House",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Cantonese",
+      "chef": "Max Wo",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.88",
+          "rank": 88,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Silks House",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 88,
+          "chef": "Max Wo",
+          "cuisine": "Cantonese",
+          "friendlyUrl": "silks-house"
+        }
+      }
+    },
+    {
+      "name": "Akame",
+      "city": "屏東縣",
+      "aliases": [],
+      "cuisine": "Taiwanese",
+      "chef": "Alex Peng",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.105",
+          "rank": 105,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Akame",
+          "location1": "Pingtung",
+          "location2": "Taiwan",
+          "rank": 105,
+          "chef": "Alex Peng",
+          "cuisine": "Taiwanese",
+          "friendlyUrl": "akame"
+        }
+      }
+    },
+    {
+      "name": "Le Palais",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Cantonese",
+      "chef": "Ken Chan",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.121",
+          "rank": 121,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Le Palais",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 121,
+          "chef": "Ken Chan",
+          "cuisine": "Cantonese",
+          "friendlyUrl": "le-palais"
+        }
+      }
+    },
+    {
+      "name": "Yuenji",
+      "city": "臺中市",
+      "aliases": [
+        "元紀"
+      ],
+      "cuisine": "Taiwanese",
+      "chef": "Lee Yen-Chi",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.127",
+          "rank": 127,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "YUENJI",
+          "location1": "Taichung",
+          "location2": "Taiwan",
+          "rank": 127,
+          "chef": "Lee Yen-Chi",
+          "cuisine": "Taiwanese",
+          "friendlyUrl": "yuenji"
+        }
+      }
+    },
+    {
+      "name": "Taïrroir",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Taiwanese/French",
+      "chef": "Kai Ho",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.128",
+          "rank": 128,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Taïrroir",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 128,
+          "chef": "Kai Ho",
+          "cuisine": "Taiwanese/French",
+          "friendlyUrl": "tairroir"
+        }
+      }
+    },
+    {
+      "name": "Coast",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Southeast Asian",
+      "chef": "Pod Jessada",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.172",
+          "rank": 172,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Coast",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 172,
+          "chef": "Pod Jessada",
+          "cuisine": "Southeast Asian",
+          "friendlyUrl": "coast"
+        }
+      }
+    },
+    {
+      "name": "Mountain and Sea House",
+      "city": "臺北市",
+      "aliases": [
+        "山海樓"
+      ],
+      "cuisine": "Taiwanese",
+      "chef": "Tsai Jui-lang",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia No.200",
+          "rank": 200,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Mountain & Sea House Restaurant",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 200,
+          "chef": "Tsai Jui-lang",
+          "cuisine": "Taiwanese",
+          "friendlyUrl": "mountain-sea-house-restaurant"
+        }
+      }
+    },
+    {
+      "name": "Fumée Yakitori",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Yakitori",
+      "chef": "Ryu Shunsuke",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 234,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Fumée Yakitori",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 234,
+          "chef": "Ryu Shunsuke",
+          "cuisine": "Yakitori",
+          "friendlyUrl": "fumee-yakitori"
+        }
+      }
+    },
+    {
+      "name": "Le Beaujour",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Contemporary French",
+      "chef": "Pili Chiang",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 249,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Le Beaujour",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 249,
+          "chef": "Pili Chiang",
+          "cuisine": "Contemporary French",
+          "friendlyUrl": "le-beaujour"
+        }
+      }
+    },
+    {
+      "name": "Impromptu by Paul Lee",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Innovative",
+      "chef": "Paul Lee",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 257,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Impromptu by Paul Lee",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 257,
+          "chef": "Paul Lee",
+          "cuisine": "Innovative",
+          "friendlyUrl": "impromptu-by-paul-lee"
+        }
+      }
+    },
+    {
+      "name": "L'Atelier de Joël Robuchon (Taipei)",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "French",
+      "chef": "Yohei Matsuo",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 274,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "L'Atelier de Joël Robuchon (Taipei)",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 274,
+          "chef": "Yohei Matsuo",
+          "cuisine": "French",
+          "friendlyUrl": "latelier-de-joel-robuchon-taipei"
+        }
+      }
+    },
+    {
+      "name": "Qi 27 (Sushi 27)",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Sushi",
+      "chef": "Wei-Jen Chen",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 282,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Qi 27 (Sushi 27)",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 282,
+          "chef": "Wei-Jen Chen",
+          "cuisine": "Sushi",
+          "friendlyUrl": "qi-27-sushi-27"
+        }
+      }
+    },
+    {
+      "name": "牡丹",
+      "city": "臺北市",
+      "aliases": [
+        "Mudan Tempura"
+      ],
+      "cuisine": "Tempura",
+      "chef": "Various",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 284,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Mudan Tempura",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 284,
+          "chef": "Various",
+          "cuisine": "Tempura",
+          "friendlyUrl": "mudan-tempura"
+        }
+      }
+    },
+    {
+      "name": "Longyue",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Cantonese",
+      "chef": "Fook Chun-Wu",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 301,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Longyue",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 301,
+          "chef": "Fook Chun-Wu",
+          "cuisine": "Cantonese",
+          "friendlyUrl": "longyue"
+        }
+      }
+    },
+    {
+      "name": "Orchid Restaurant",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Asian-French",
+      "chef": "Sato Kiyoshi",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 304,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Orchid Restaurant",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 304,
+          "chef": "Sato Kiyoshi",
+          "cuisine": "Asian-French",
+          "friendlyUrl": "orchid-restaurant"
+        }
+      }
+    },
+    {
+      "name": "Sho",
+      "city": "高雄市",
+      "aliases": [],
+      "cuisine": "Japanese",
+      "chef": "Fujimoto Shoichi",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 346,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Sho",
+          "location1": "Kaohsiung",
+          "location2": "Taiwan",
+          "rank": 346,
+          "chef": "Fujimoto Shoichi",
+          "cuisine": "Japanese",
+          "friendlyUrl": "sho"
+        }
+      }
+    },
+    {
+      "name": "鮨隆",
+      "city": "臺北市",
+      "aliases": [
+        "Sushi Ryu"
+      ],
+      "cuisine": "Sushi",
+      "chef": "Yonglong Yang",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 378,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Sushi Ryu",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 378,
+          "chef": "Yonglong Yang",
+          "cuisine": "Sushi",
+          "friendlyUrl": "sushi-ryu"
+        }
+      }
+    },
+    {
+      "name": "吉兆割烹壽司",
+      "city": "臺北市",
+      "aliases": [
+        "Kitcho Sushi"
+      ],
+      "cuisine": "Sushi",
+      "chef": "Kyo Hsu",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 389,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Kitcho Sushi",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 389,
+          "chef": "Kyo Hsu",
+          "cuisine": "Sushi",
+          "friendlyUrl": "kitcho-sushi"
+        }
+      }
+    },
+    {
+      "name": "Bencotto",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Italian",
+      "chef": "Emanuele Bergamo",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 398,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Bencotto",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 398,
+          "chef": "Emanuele Bergamo",
+          "cuisine": "Italian",
+          "friendlyUrl": "bencotto"
+        }
+      }
+    },
+    {
+      "name": "Da-Wan",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Yakiniku",
+      "chef": "Dahon Huang",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 419,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Da-Wan",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 419,
+          "chef": "Dahon Huang",
+          "cuisine": "Yakiniku",
+          "friendlyUrl": "da-wan"
+        }
+      }
+    },
+    {
+      "name": "金蓬萊遵古台菜",
+      "city": "臺北市",
+      "aliases": [
+        "Golden Formosa"
+      ],
+      "cuisine": "Taiwanese",
+      "chef": "Eric Chen",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 425,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Golden Formosa",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 425,
+          "chef": "Eric Chen",
+          "cuisine": "Taiwanese",
+          "friendlyUrl": "golden-formosa"
+        }
+      }
+    },
+    {
+      "name": "Sushi Nomura",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Sushi",
+      "chef": "Yuji Nomura",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 433,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Sushi Nomura",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 433,
+          "chef": "Yuji Nomura",
+          "cuisine": "Sushi",
+          "friendlyUrl": "sushi-nomura"
+        }
+      }
+    },
+    {
+      "name": "Ephernité",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "French",
+      "chef": "Vanessa Huang",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 439,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Ephernité",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 439,
+          "chef": "Vanessa Huang",
+          "cuisine": "French",
+          "friendlyUrl": "ephernite"
+        }
+      }
+    },
+    {
+      "name": "請客樓",
+      "city": "臺北市",
+      "aliases": [
+        "The Guest House"
+      ],
+      "cuisine": "Chinese",
+      "chef": "Lin Ju-Wei",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 442,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "The Guest House",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 442,
+          "chef": "Lin Ju-Wei",
+          "cuisine": "Chinese",
+          "friendlyUrl": "the-guest-house"
+        }
+      }
+    },
+    {
+      "name": "雅閣",
+      "city": "臺北市",
+      "aliases": [
+        "Ya Ge"
+      ],
+      "cuisine": "Cantonese",
+      "chef": "Various",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 458,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "Ya Ge",
+          "location1": "Taipei City",
+          "location2": "Taiwan",
+          "rank": 458,
+          "chef": "Various",
+          "cuisine": "Cantonese",
+          "friendlyUrl": "ya-ge"
+        }
+      }
+    },
+    {
+      "name": "T+T",
+      "city": "臺北市",
+      "aliases": [],
+      "cuisine": "Asian",
+      "chef": "Johnny Tsai",
+      "sourceUrl": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+      "sourceEndpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+      "sourceListId": 117,
+      "importConfidence": "high",
+      "awards": [
+        {
+          "guide": "oad",
+          "year": 2025,
+          "level": "Asia Recommended",
+          "rank": 471,
+          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        }
+      ],
+      "source": {
+        "title": "OAD Top Restaurants in Asia 2025",
+        "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025",
+        "endpoint": "https://www.oadguides.com/lists/getrestaurantsbylistIdAndYear",
+        "raw": {
+          "name": "T+T",
+          "location1": "Taipei",
+          "location2": "Taiwan",
+          "rank": 471,
+          "chef": "Johnny Tsai",
+          "cuisine": "Asian",
+          "friendlyUrl": "t-t"
+        }
+      }
+    }
+  ]
+}

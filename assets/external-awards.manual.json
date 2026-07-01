@@ -1,0 +1,55 @@
+{
+  "version": "external-awards-manual-2026-07-02",
+  "updated": "2026-07-02",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "batchOnly": true,
+    "noFakeData": true,
+    "notes": [
+      "This file stores non-API award signals collected from public award/list pages.",
+      "Google rating and review count remain the primary ranking signals; these awards only add bounded bonus and badges.",
+      "Rows must keep a sourceUrl so future review can verify provenance."
+    ]
+  },
+  "sources": [
+    {
+      "id": "tatler-best-taiwan-2025",
+      "label": "Tatler Best Restaurants Taiwan 2025",
+      "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+    },
+    {
+      "id": "world-culinary-awards-taiwan-2025",
+      "label": "World Culinary Awards Taiwan 2025",
+      "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+    },
+    {
+      "id": "asias-50-best-restaurants-2026",
+      "label": "Asia's 50 Best Restaurants 2026",
+      "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+    }
+  ],
+  "restaurants": [
+    { "name": "Restaurant A", "city": "臺北市", "aliases": ["A", "A Restaurant"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Ad Astra", "city": "臺北市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Akame", "city": "屏東縣", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Coast", "city": "臺北市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "De Nuit", "city": "臺北市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Eika", "city": "臺北市", "aliases": ["盈科"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Embers", "city": "臺北市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Ephernite", "city": "臺北市", "aliases": ["Ephernité"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "fumee Yakitori", "city": "臺北市", "aliases": ["fumée Yakitori"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Gen by Matt Chen", "city": "臺北市", "aliases": ["Gen"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "INITA", "city": "臺北市", "aliases": ["Inita"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "JL Studio", "city": "臺中市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }, { "guide": "50best", "year": 2026, "level": "Asia No.50", "rank": 50, "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50" }, { "guide": "worldculinary", "year": 2025, "level": "Taiwan Best Restaurant Nominee", "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025" }] },
+    { "name": "Le Palais", "city": "臺北市", "aliases": ["頤宮", "頤宮中餐廳"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Logy", "city": "臺北市", "aliases": ["logy"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }, { "guide": "50best", "year": 2026, "level": "Asia No.22", "rank": 22, "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50" }, { "guide": "worldculinary", "year": 2025, "level": "Taiwan Best Restaurant Nominee", "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025" }] },
+    { "name": "Ming Fu", "city": "臺北市", "aliases": ["明福台菜海產", "明福"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "MUME", "city": "臺北市", "aliases": [], "awards": [{ "guide": "worldculinary", "year": 2025, "level": "Taiwan Best Restaurant Winner", "winner": true, "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025" }] },
+    { "name": "Nobuo", "city": "臺北市", "aliases": ["NOBUO"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Silks House", "city": "臺北市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Tairroir", "city": "臺北市", "aliases": ["態芮", "Taïrroir"], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Yuenji", "city": "臺北市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "Zea", "city": "臺北市", "aliases": [], "awards": [{ "guide": "tatlerbest", "year": 2025, "level": "Best 20 Taiwan", "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan" }] },
+    { "name": "French Windows", "city": "臺北市", "aliases": [], "awards": [{ "guide": "worldculinary", "year": 2025, "level": "Taiwan Best Restaurant Nominee", "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025" }] }
+  ]
+}

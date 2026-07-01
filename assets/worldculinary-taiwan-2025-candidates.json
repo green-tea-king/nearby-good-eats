@@ -1,0 +1,10 @@
+{
+  "source": "https://worldculinaryawards.com/award/taiwan-best-restaurant",
+  "generatedBy": "scripts/manual-collect-award-sources.js",
+  "generatedAt": "2026-07-01",
+  "restaurants": [
+    {"name": "MUME", "city": "Taipei"},
+    {"name": "JL Studio", "city": "Taipei"},
+    {"name": "Logy", "city": "Taipei"}
+  ]
+}

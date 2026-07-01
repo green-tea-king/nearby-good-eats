@@ -8,6 +8,9 @@ admin.initializeApp();
 const db = admin.firestore();
 const GOOGLE_MAPS_API_KEY = defineSecret("GOOGLE_MAPS_API_KEY");
 const REQUIRE_APP_CHECK = process.env.REQUIRE_APP_CHECK === "true";
+// Temporary external phone testing mode: keep logging apiEvents, but do not block searches by daily quota.
+// Set DISABLE_SEARCH_QUOTA=false when restoring the 30/day rule.
+const DISABLE_SEARCH_QUOTA = process.env.DISABLE_SEARCH_QUOTA !== "false";
 const DAILY_SEARCH_LIMIT = Number(process.env.DAILY_SEARCH_LIMIT || 30);
 const SEARCH_ACTIONS = new Set(["textSearch", "nearbySearch"]);
 const API_COST_USD = {
@@ -203,11 +206,14 @@ function estimatedCostUsd(action) {
 
 async function enforceSearchQuota(decoded, action, payload = {}) {
   if (!SEARCH_ACTIONS.has(action)) {
-    return { quotaCharged: false, quotaAdmin: false, quotaLimit: DAILY_SEARCH_LIMIT, quotaRemaining: null };
+    return { quotaCharged: false, quotaAdmin: false, quotaTestOpen: DISABLE_SEARCH_QUOTA, quotaLimit: DAILY_SEARCH_LIMIT, quotaRemaining: null };
+  }
+  if (DISABLE_SEARCH_QUOTA) {
+    return { quotaCharged: false, quotaAdmin: false, quotaTestOpen: true, quotaLimit: null, quotaRemaining: null };
   }
   const adminUser = await isAdminEmail(decoded.email || "");
   if (adminUser) {
-    return { quotaCharged: false, quotaAdmin: true, quotaLimit: null, quotaRemaining: null };
+    return { quotaCharged: false, quotaAdmin: true, quotaTestOpen: false, quotaLimit: null, quotaRemaining: null };
   }
   const day = taipeiDayKey();
   const quotaDoc = db.collection("quotaUsage").doc(`${decoded.uid}_${day}`);
@@ -608,6 +614,7 @@ async function logApiEvent(decoded, action, started, ok, extra = {}) {
       estimatedCostUsd: extra.estimatedCostUsd ?? estimatedCostUsd(action),
       quotaCharged: extra.quotaCharged === true,
       quotaAdmin: extra.quotaAdmin === true,
+      quotaTestOpen: extra.quotaTestOpen === true,
       quotaBlocked: extra.quotaBlocked === true,
       quotaLimit: extra.quotaLimit ?? null,
       quotaRemaining: extra.quotaRemaining ?? null,

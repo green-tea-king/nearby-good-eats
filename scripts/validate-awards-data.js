@@ -7,9 +7,9 @@ const draftPath = path.join(repoRoot, "assets", "awards-taiwan.500sweet-2025-dra
 const sweetManualPath = path.join(repoRoot, "assets", "500sweet-2025-manual.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
 
-const ALLOWED_GUIDES = new Set(["michelin", "michelin_selected", "bib", "greenstar", "500plate", "500bowl", "500sweet", "50best"]);
+const ALLOWED_GUIDES = new Set(["michelin", "michelin_selected", "bib", "greenstar", "500plate", "500bowl", "500sweet", "50best", "oad", "tatlerbest", "worldculinary"]);
 const EXPECTED = {
-  restaurants: 1332,
+  restaurants: 1344,
   guides: {
     michelin: 53,
     "michelin_selected": 222,
@@ -18,6 +18,10 @@ const EXPECTED = {
     "500plate": 260,
     "500bowl": 415,
     "500sweet": 328,
+    "50best": 2,
+    "oad": 29,
+    "tatlerbest": 20,
+    "worldculinary": 4,
   },
 };
 

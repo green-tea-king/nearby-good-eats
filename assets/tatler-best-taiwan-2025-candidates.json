@@ -1,0 +1,27 @@
+{
+  "source": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+  "generatedBy": "scripts/manual-collect-award-sources.js",
+  "generatedAt": "2026-07-01",
+  "restaurants": [
+    {"name": "Restaurant A", "city": "Taipei"},
+    {"name": "Ad Astra", "city": "Taipei"},
+    {"name": "Akame", "city": "Taiwan"},
+    {"name": "Coast", "city": "Taipei"},
+    {"name": "De Nuit", "city": "Taipei"},
+    {"name": "Eika", "city": "Taipei"},
+    {"name": "Embers", "city": "Taipei"},
+    {"name": "Ephernite", "city": "Taipei"},
+    {"name": "fumee Yakitori", "city": "Taipei"},
+    {"name": "Gen by Matt Chen", "city": "Taipei"},
+    {"name": "INITA", "city": "Taipei"},
+    {"name": "JL Studio", "city": "Taipei"},
+    {"name": "Le Palais", "city": "Taipei"},
+    {"name": "Logy", "city": "Taipei"},
+    {"name": "Ming Fu", "city": "Taipei"},
+    {"name": "Nobuo", "city": "Taipei"},
+    {"name": "Silks House", "city": "Taipei"},
+    {"name": "Tairroir", "city": "Taipei"},
+    {"name": "Yuenji", "city": "Taipei"},
+    {"name": "Zea", "city": "Taipei"}
+  ]
+}
