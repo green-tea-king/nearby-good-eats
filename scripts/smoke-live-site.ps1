@@ -60,7 +60,10 @@ if ($SettingsText -notlike "*externalTestMode: true*") {
 }
 
 $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
-foreach ($RequiredFilterText in @("key:""award""", "tier:""static""", 'guide:"michelin"', 'level:"三星"', 'level:"二星"', 'level:"一星"', 'guide:"500sweet"')) {
+$MichelinThreeStar = "$([char]0x4E09)$([char]0x661F)"
+$MichelinTwoStar = "$([char]0x4E8C)$([char]0x661F)"
+$MichelinOneStar = "$([char]0x4E00)$([char]0x661F)"
+foreach ($RequiredFilterText in @("key:""award""", "tier:""static""", 'guide:"michelin"', "level:""$MichelinThreeStar""", "level:""$MichelinTwoStar""", "level:""$MichelinOneStar""", 'guide:"500sweet"')) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
