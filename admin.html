@@ -41,6 +41,17 @@ h1{font-size:22px;font-weight:650;letter-spacing:.02em;}
 .num{font-family:var(--mono);color:var(--gold);font-size:13px;}
 .bar{grid-column:1/-1;height:5px;background:var(--surface-2);border-radius:99px;overflow:hidden;}
 .bar i{display:block;height:100%;background:var(--accent);border-radius:99px;}
+.source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px;}
+.source-card{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:11px;min-width:0;}
+.source-card.integrated{border-color:rgba(95,185,138,.45);}
+.source-card.pipeline{border-color:rgba(216,174,66,.35);}
+.source-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;}
+.source-name{font-size:13px;color:var(--text);font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.source-state{font-size:10px;border-radius:999px;padding:2px 7px;border:1px solid var(--line);color:var(--text-dim);white-space:nowrap;}
+.source-card.integrated .source-state{color:var(--green);border-color:rgba(95,185,138,.45);}
+.source-card.pipeline .source-state{color:var(--gold);border-color:rgba(216,174,66,.35);}
+.source-count{font-family:var(--mono);font-size:18px;color:var(--gold);line-height:1.1;}
+.source-note{font-size:11px;color:var(--text-dim);line-height:1.45;margin-top:4px;}
 table{width:100%;border-collapse:collapse;font-size:12px;}
 th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
 th{color:var(--text-faint);font-weight:500;}
@@ -49,7 +60,7 @@ tr:last-child td{border-bottom:none;}
 .pill{display:inline-flex;padding:2px 7px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--text);font-size:11px;white-space:nowrap;}
 .empty{padding:18px 14px;color:var(--text-dim);font-size:13px;}
 .hidden{display:none!important;}
-@media(max-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}.panels{grid-template-columns:1fr;}.toolbar{align-items:flex-start;flex-direction:column;}.toolbar .actions{width:100%;}.toolbar .actions .btn{flex:1;}}
+@media(max-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}.panels{grid-template-columns:1fr;}.source-grid{grid-template-columns:1fr}.toolbar{align-items:flex-start;flex-direction:column;}.toolbar .actions{width:100%;}.toolbar .actions .btn{flex:1;}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.head{align-items:flex-start;flex-direction:column}.head .actions{width:100%;}.head .actions .btn{flex:1}.wrap{padding-inline:14px;}th:nth-child(2),td:nth-child(2){display:none;}}
 </style>
 </head>
@@ -93,6 +104,10 @@ tr:last-child td{border-bottom:none;}
   </section>
 
   <section class="panels hidden" id="dashboard">
+    <section class="panel wide">
+      <h2>外部來源覆蓋</h2>
+      <div class="source-grid" id="sourceCoverageRows"></div>
+    </section>
     <section class="panel">
       <h2>事件分布</h2>
       <div class="list" id="eventTypeRows"></div>
@@ -165,6 +180,7 @@ let currentUser = null;
 let currentDays = 1;
 let currentEvents = [];
 let currentApiEvents = [];
+let sourceCoverage = null;
 
 function configured(){
   return !!(firebaseCfg.apiKey && firebaseCfg.authDomain && firebaseCfg.projectId && firebaseCfg.appId);
@@ -225,6 +241,59 @@ function renderTopRows(id, rows, opts={}){
       <div class="num">${r.count}</div>
       <div class="bar"><i style="width:${Math.max(7, Math.round(r.count / max * 100))}%"></i></div>
     </div>`).join("") || `<div class="empty">目前沒有資料</div>`;
+}
+function sourceStatusLabel(source){
+  if (source.status === "integrated_data") return "已整合";
+  if (source.status === "runtime_primary_with_noise_guard") return "執行中";
+  if (source.status === "manual_data_available") return "人工資料";
+  if (source.status === "batch_pipeline_ready_no_data") return "待匯入";
+  return source.status || "未知";
+}
+function sourceCountLabel(source){
+  if (source.count != null) return source.count;
+  if (source.id === "michelin-guide-taiwan" && source.counts) {
+    return `星${source.counts.stars || 0} 必${source.counts.bib || 0} 入${source.counts.selected || 0} 綠${source.counts.greenstar || 0}`;
+  }
+  if (source.id === "google-maps-reviews") return "即時";
+  if (source.counts) return Object.values(source.counts).reduce((sum, value) => sum + Number(value || 0), 0);
+  if (source.currentManualSignals != null) return source.currentManualSignals;
+  return "-";
+}
+function sourceNote(source){
+  if (source.id === "google-maps-reviews") return "Google 評分/評論數為排序主體，含洗評與活動文字降噪。";
+  if (source.status === "batch_pipeline_ready_no_data") return "已有安全批次入口，但尚未匯入可追溯資料。";
+  if (source.id === "michelin-guide-taiwan") return `星級 ${source.counts?.stars || 0}、必比登 ${source.counts?.bib || 0}、入選 ${source.counts?.selected || 0}、綠星 ${source.counts?.greenstar || 0}`;
+  return source.runtimeLookup === false ? "只讀本地批次資料，不在使用者搜尋時即時外查。" : "執行時資料來源。";
+}
+function renderSourceCoverage(){
+  const target = $("sourceCoverageRows");
+  if (!target) return;
+  const sources = sourceCoverage?.sources || [];
+  target.innerHTML = sources.map(source => {
+    const integrated = ["integrated_data", "runtime_primary_with_noise_guard", "manual_data_available"].includes(source.status);
+    return `
+      <div class="source-card ${integrated ? "integrated" : "pipeline"}">
+        <div class="source-top">
+          <div class="source-name">${escapeHtml(source.label || source.id)}</div>
+          <div class="source-state">${escapeHtml(sourceStatusLabel(source))}</div>
+        </div>
+        <div class="source-count">${escapeHtml(sourceCountLabel(source))}</div>
+        <div class="source-note">${escapeHtml(sourceNote(source))}</div>
+      </div>`;
+  }).join("") || `<div class="empty">尚未載入來源覆蓋資料</div>`;
+}
+async function loadSourceCoverage(){
+  try{
+    const res = await fetch("assets/external-source-coverage.json", { cache:"no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    sourceCoverage = await res.json();
+  }catch(e){
+    sourceCoverage = {
+      sources: [],
+      error: e.message,
+    };
+  }
+  renderSourceCoverage();
 }
 function filterLabel(e){
   const p = e.payload || {};
@@ -300,6 +369,7 @@ async function loadAdminStats(user){
   const [usageSnap, apiSnap] = await Promise.all([
     db.collection("usageEvents").where("createdAt", ">=", since).orderBy("createdAt", "desc").limit(1000).get(),
     db.collection("apiEvents").where("createdAt", ">=", since).orderBy("createdAt", "desc").limit(1000).get().catch(() => ({ docs:[] })),
+    loadSourceCoverage(),
   ]);
   currentEvents = usageSnap.docs.map(d => ({ id:d.id, ...d.data() }));
   currentApiEvents = apiSnap.docs.map(d => ({ id:d.id, ...d.data() }));
@@ -338,6 +408,7 @@ function renderStats(user, events, apiEvents=[]){
     return { ...r, meta:`粗估 $${cost.toFixed(2)} / 封鎖 ${blocked}` };
   }));
   renderTopRows("quotaRows", countBy(apiEvents.filter(e => e.quotaBlocked === true), e => e.email || e.uid || e.action).map(r => ({ ...r, meta:"超過每日搜尋上限" })));
+  renderSourceCoverage();
 
   const resultEvents = events.filter(e => ["leaderboard_result","search_result","route_result"].includes(e.type));
   $("resultRows").innerHTML = resultEvents.slice(0,50).map(e => `

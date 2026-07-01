@@ -38,6 +38,13 @@ if ($Html -notlike "*reviewNoiseHints*" -or $Html -notlike "*PROMO_TEXT_PENALTY*
   throw "Homepage is missing Google review noise guard"
 }
 
+$AdminHtml = Read-TextUrl "$BaseUrl/admin.html?cacheBust=$CacheBust"
+foreach ($RequiredAdminText in @("外部來源覆蓋", "sourceCoverageRows", "external-source-coverage.json")) {
+  if ($AdminHtml -notlike "*$RequiredAdminText*") {
+    throw "Admin page is missing external source coverage dashboard: $RequiredAdminText"
+  }
+}
+
 $SettingsText = Read-TextUrl "$BaseUrl/assets/app-settings.js?cacheBust=$CacheBust"
 if ($SettingsText -notlike "*externalTestMode: true*") {
   throw "External phone testing mode is not enabled in app settings"
