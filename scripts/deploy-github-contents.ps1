@@ -13,9 +13,12 @@ Set-Location $RepoRoot
 
 $Files = @(
   "index.html",
+  "admin.html",
   ".nojekyll",
   "VERSION",
   "design.md",
+  "firebase-config.js",
+  "assets/app-settings.js",
   "assets/awards-taiwan.json",
   "assets/500bowl-2025-candidates.json",
   "assets/500bowl-2025-import-report.json",
