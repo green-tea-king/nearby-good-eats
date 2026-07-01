@@ -4,6 +4,7 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..");
 const signalsPath = path.join(repoRoot, "assets", "external-signals.json");
 const manualSignalsPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
+const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 
 const ALLOWED_SIGNAL_TYPES = new Set([
   "award",
@@ -109,6 +110,30 @@ function validateManualPlatformSignals(data) {
   };
 }
 
+function validatePlatformProbeReport(data) {
+  const errors = [];
+  if (!data.policy || data.policy.runtimeExternalLookup !== false || data.policy.batchOnly !== true || data.policy.importRequiresManualReview !== true) {
+    errors.push("platform-source-probe-report.json policy must enforce batch-only manual-review imports");
+  }
+  const required = new Set(["ifoodie", "openrice-tw", "tripadvisor-tw"]);
+  const sources = Array.isArray(data.sources) ? data.sources : [];
+  const ids = new Set(sources.map((source) => source.id));
+  for (const id of required) {
+    if (!ids.has(id)) errors.push(`platform probe missing source: ${id}`);
+  }
+  for (const source of sources) {
+    if (source.runtimeLookup !== false) errors.push(`platform probe ${source.id || "(unknown)"} must set runtimeLookup=false`);
+    if (!source.decision) errors.push(`platform probe ${source.id || "(unknown)"} missing decision`);
+    if (source.decision !== "do_not_auto_import" && source.decision !== "manual_review_required") {
+      errors.push(`platform probe ${source.id || "(unknown)"} invalid decision: ${source.decision}`);
+    }
+  }
+  return {
+    sources: sources.length,
+    errors,
+  };
+}
+
 const report = validate(readJson(signalsPath));
 if (fs.existsSync(manualSignalsPath)) {
   const manualReport = validateManualPlatformSignals(readJson(manualSignalsPath));
@@ -117,6 +142,14 @@ if (fs.existsSync(manualSignalsPath)) {
     signals: manualReport.signals,
   };
   report.errors.push(...manualReport.errors);
+  report.ok = report.errors.length === 0;
+}
+if (fs.existsSync(platformProbePath)) {
+  const probeReport = validatePlatformProbeReport(readJson(platformProbePath));
+  report.platformProbe = {
+    sources: probeReport.sources,
+  };
+  report.errors.push(...probeReport.errors);
   report.ok = report.errors.length === 0;
 }
 console.log(JSON.stringify(report, null, 2));

@@ -111,8 +111,10 @@
       "updateCadence": "batch/manual",
       "runtimeLookup": false,
       "dataFile": "assets/platform-signals.manual.json",
+      "probeReport": "assets/platform-source-probe-report.json",
       "rankImpact": "light",
-      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
+      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入",
+      "status": "probe says manual/API only; no automatic scraping"
     },
     {
       "id": "openrice-tw",
@@ -121,8 +123,10 @@
       "updateCadence": "batch/manual",
       "runtimeLookup": false,
       "dataFile": "assets/platform-signals.manual.json",
+      "probeReport": "assets/platform-source-probe-report.json",
       "rankImpact": "light",
-      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
+      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入",
+      "status": "probe says manual/API only; no automatic scraping"
     },
     {
       "id": "tripadvisor-tw",
@@ -131,8 +135,10 @@
       "updateCadence": "batch/manual",
       "runtimeLookup": false,
       "dataFile": "assets/platform-signals.manual.json",
+      "probeReport": "assets/platform-source-probe-report.json",
       "rankImpact": "light",
-      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入"
+      "permission": "授權 API、手動整理或可追溯公開資料後才可寫入",
+      "status": "probe says manual/API only; no automatic scraping"
     }
   ],
   "signalDefinitions": {
