@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.4
+版本：2026.07.01.10
 
 ## 專案目標
 
@@ -159,6 +159,8 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 目前先部署 GitHub Pages 靜態版，`assets/app-settings.js` 暫時使用 Google Maps browser key fallback，不走 Firebase Functions proxy，避免 Blaze 付費門檻阻塞上線。這個 key 必須在 Google Cloud 設定 HTTP referrer 與 API 限制。若後續出現濫用或成本風險，再回到 Functions proxy / App Check / rate limit 架構。
 
 搜尋類 API (`textSearch`、`nearbySearch`) 套用每日使用者配額：一般使用者每天 30 次搜尋，管理員不限。一次排行榜整理即使內部查多個縣市，也會用同一個 quota key 合併計算成一次使用者搜尋。
+
+2026-07-01 外部手機測試期間，`assets/app-settings.js` 設定 `apiLimits.externalTestMode:true`，Functions proxy 預設 `DISABLE_SEARCH_QUOTA !== "false"`，因此暫停每日 30 次搜尋封鎖，但仍保留 Google 登入、`usageEvents` 與 `apiEvents` 紀錄。明天恢復管控時，將 Functions 環境變數設為 `DISABLE_SEARCH_QUOTA=false`，並把 `assets/app-settings.js` 的 `externalTestMode` 改回 `false`。
 
 `apiEvents` 會記錄 action、成功/失敗、延遲、估算單位、粗估成本、App Check 狀態、配額剩餘與配額封鎖。`admin.html` 會顯示 API 次數、錯誤率、成本估算、API 使用者排行與錯誤/配額排行。成本估算只供控管趨勢，正式帳務仍以 Google Cloud Billing 為準。
 
