@@ -38,7 +38,8 @@
     "https://www.oadguides.com/lists/asia/top-restaurants/2025",
     "https://thebestchefawards.com/",
     "https://www.theworlds50best.com/discovery/sitemap/taiwan/taipei",
-    "https://restaurantandbardesignawards.com/awards-archive"
+    "https://restaurantandbardesignawards.com/awards-archive",
+    "https://www.gdg.asia/article/235/1421"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -766,6 +767,104 @@
       "aliases": []
     },
     {
+      "name": "小川埔里環保酵素園區",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
+      "name": "小半天風味餐坊",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [
+        "田媽媽小半天風味餐坊"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
+      "name": "山中小廚房",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
+      "name": "山慕民宿",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
+      "name": "丘山茶",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [
+        "丘山茶Hilltea",
+        "Hilltea"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
+      "name": "仕合廖家",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [
+        "仕合廖家手作",
+        "仕合廖家手作便當"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
       "name": "包葉扣仔嗲",
       "address": "",
       "awards": [
@@ -811,6 +910,21 @@
       "aliases": []
     },
     {
+      "name": "吟詩企業有限公司",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
       "name": "汶傳統米食坊",
       "address": "",
       "awards": [
@@ -840,6 +954,21 @@
       "city": "南投縣",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "虎嘯山嵐",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
     },
     {
       "name": "阿章意麵",
@@ -887,6 +1016,40 @@
       "aliases": []
     },
     {
+      "name": "雲品溫泉酒店 雲月舫",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [
+        "雲月舫"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
+      "name": "慢午野食有限公司",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [
+        "慢午野食"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
       "name": "澄食 和食料理",
       "address": "",
       "awards": [
@@ -930,6 +1093,21 @@
       ],
       "city": "南投縣",
       "aliases": []
+    },
+    {
+      "name": "SMOK製甜所",
+      "city": "南投縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
     },
     {
       "name": "上讚肉圓 大腸 粉腸(27攤)",
@@ -1375,6 +1553,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "name": "心雕居",
+      "city": "苗栗縣",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
     },
     {
       "name": "北苗市場_阿婆手工粉圓",
@@ -7083,6 +7276,24 @@
       "aliases": []
     },
     {
+      "name": "A-Teng生態飲食工作坊x飲食空間",
+      "city": "彰化縣",
+      "address": "",
+      "aliases": [
+        "A-Teng生態飲食工作坊",
+        "A-Teng"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
       "name": "BEAR BAKERY 小熊菓子",
       "address": "",
       "awards": [
@@ -7295,6 +7506,21 @@
       "aliases": []
     },
     {
+      "name": "山東餃子牛肉麵館",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
       "name": "不二糕餅",
       "address": "",
       "awards": [
@@ -7309,6 +7535,23 @@
       "city": "臺中市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "不老夢想125號 不老食光",
+      "city": "臺中市",
+      "address": "",
+      "aliases": [
+        "不老食光"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
     },
     {
       "name": "与玥樓",
@@ -7717,7 +7960,9 @@
     },
     {
       "name": "地坊",
-      "aliases": [],
+      "aliases": [
+        "TU PANG"
+      ],
       "city": "臺中市",
       "address": "",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -7732,6 +7977,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
         }
       ]
     },
@@ -9488,6 +9740,13 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
         }
       ]
     },
@@ -11482,6 +11741,24 @@
       "aliases": []
     },
     {
+      "name": "台北君悅酒店 茶苑",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [
+        "茶苑",
+        "Grand Hyatt Taipei 茶苑"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
+    },
+    {
       "name": "台北君悅酒店 雲錦中餐廳",
       "awards": [
         {
@@ -13471,6 +13748,21 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        }
+      ]
+    },
+    {
+      "name": "泔米食堂",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
         }
       ]
     },
@@ -16141,6 +16433,21 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
+    },
+    {
+      "name": "臺北醫學大學附設醫院營養室",
+      "city": "臺北市",
+      "address": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ]
     },
     {
       "name": "駄介",

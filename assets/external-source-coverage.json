@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1346,
+    "awardsRestaurants": 1364,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -22,7 +22,8 @@
     "fiftyDiscoveryCandidates": 13,
     "oadCandidates": 29,
     "bestChefCandidates": 4,
-    "designAwardsCandidates": 3
+    "designAwardsCandidates": 3,
+    "fmgCandidates": 20
   },
   "sources": [
     {
@@ -116,6 +117,16 @@
       "candidatesFile": "assets/restaurant-design-awards-taiwan-candidates.json",
       "count": 3,
       "candidates": 3,
+      "runtimeLookup": false
+    },
+    {
+      "id": "fmg",
+      "label": "Food Made Good Taiwan",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/fmg-taiwan-2025-candidates.json",
+      "count": 20,
+      "candidates": 20,
       "runtimeLookup": false
     },
     {

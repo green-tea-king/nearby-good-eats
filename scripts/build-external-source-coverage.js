@@ -9,6 +9,7 @@ const fiftyDiscoveryCandidatesPath = path.join(repoRoot, "assets", "50best-disco
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
 const designAwardsCandidatesPath = path.join(repoRoot, "assets", "restaurant-design-awards-taiwan-candidates.json");
+const fmgCandidatesPath = path.join(repoRoot, "assets", "fmg-taiwan-2025-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -51,6 +52,7 @@ function main() {
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
   const designAwardsCandidates = fs.existsSync(designAwardsCandidatesPath) ? readJson(designAwardsCandidatesPath) : { restaurants: [] };
+  const fmgCandidates = fs.existsSync(fmgCandidatesPath) ? readJson(fmgCandidatesPath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -84,6 +86,7 @@ function main() {
       oadCandidates: (oadCandidates.restaurants || []).length,
       bestChefCandidates: (bestChefCandidates.restaurants || []).length,
       designAwardsCandidates: (designAwardsCandidates.restaurants || []).length,
+      fmgCandidates: (fmgCandidates.restaurants || []).length,
     },
     sources: [
       {
@@ -174,6 +177,16 @@ function main() {
         candidatesFile: "assets/restaurant-design-awards-taiwan-candidates.json",
         count: guides.designawards || 0,
         candidates: (designAwardsCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "fmg",
+        label: "Food Made Good Taiwan",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/fmg-taiwan-2025-candidates.json",
+        count: guides.fmg || 0,
+        candidates: (fmgCandidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {

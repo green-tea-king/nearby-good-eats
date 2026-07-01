@@ -1,0 +1,344 @@
+{
+  "version": "fmg-taiwan-2025-candidates",
+  "generatedAt": "2026-07-01T22:40:05.540Z",
+  "sourceUrl": "https://www.gdg.asia/article/235/1421",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_article_batch",
+    "sustainabilitySignalOnly": true,
+    "notes": [
+      "綠色餐飲指南 GDG 官方文章列出 2025 Food Made Good 星級認證名單。",
+      "FMG 是永續餐飲評鑑；只做永續徽章與小幅加分，不取代 Google 評分、評論數與餐飲評鑑主體。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "SMOK製甜所",
+      "city": "南投縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "小川埔里環保酵素園區",
+      "city": "南投縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "山慕民宿",
+      "city": "南投縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "仕合廖家",
+      "city": "南投縣",
+      "aliases": [
+        "仕合廖家手作",
+        "仕合廖家手作便當"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "吟詩企業有限公司",
+      "city": "南投縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "雲品溫泉酒店 雲月舫",
+      "city": "南投縣",
+      "aliases": [
+        "雲品溫泉酒店-雲月舫",
+        "雲月舫"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "慢午野食有限公司",
+      "city": "南投縣",
+      "aliases": [
+        "慢午野食"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "A-Teng生態飲食工作坊x飲食空間",
+      "city": "彰化縣",
+      "aliases": [
+        "A-Teng生態飲食工作坊",
+        "A-Teng"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "TU PANG地坊",
+      "city": "臺中市",
+      "aliases": [
+        "地坊",
+        "TU PANG"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "心雕居",
+      "city": "苗栗縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "台北君悅酒店 茶苑",
+      "city": "臺北市",
+      "aliases": [
+        "台北君悅酒店-茶苑",
+        "茶苑",
+        "Grand Hyatt Taipei 茶苑"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "3星",
+          "stars": 3,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "小半天風味餐坊",
+      "city": "南投縣",
+      "aliases": [
+        "田媽媽小半天風味餐坊"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "山中小廚房",
+      "city": "南投縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "丘山茶",
+      "city": "南投縣",
+      "aliases": [
+        "丘山茶Hilltea",
+        "Hilltea"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "虎嘯山嵐",
+      "city": "南投縣",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "FIRNS",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "山東餃子牛肉麵館",
+      "city": "臺中市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "不老夢想125號 不老食光",
+      "city": "臺中市",
+      "aliases": [
+        "不老夢想125號-不老食光",
+        "不老食光"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "泔米食堂",
+      "city": "臺北市",
+      "aliases": [
+        "泔 米食堂"
+      ],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "臺北醫學大學附設醫院營養室",
+      "city": "臺北市",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fmg",
+          "year": 2025,
+          "level": "2星",
+          "stars": 2,
+          "url": "https://www.gdg.asia/article/235/1421"
+        }
+      ],
+      "importConfidence": "high"
+    }
+  ]
+}
