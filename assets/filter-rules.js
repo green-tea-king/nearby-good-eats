@@ -5,5 +5,5 @@ window.RANK_FILTER_DEFS = [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑", tier:"static", opts:[{label:"不限"}, {label:"米其林星"}, {label:"米其林入選"}, {label:"必比登"}, {label:"綠星"}, {label:"500盤"}, {label:"500碗"}] },
+  { key:"award",   label:"評鑑", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];

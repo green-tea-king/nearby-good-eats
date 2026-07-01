@@ -190,9 +190,9 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 @keyframes guidePulse{0%,100%{transform:scale(1);box-shadow:0 0 0 4px rgba(200,16,46,.1);}50%{transform:scale(1.35);box-shadow:0 0 0 7px rgba(200,16,46,.03);}}
 /* 篩選列 */
 .rank-filters{display:flex;flex-direction:column;gap:7px;padding:11px 16px 12px;border-bottom:1px solid var(--line);width:100%;max-width:480px;margin:0 auto;background:var(--bg);}
-.rank-filters .fg{display:flex;align-items:center;gap:9px;}
+.rank-filters .fg{display:flex;align-items:flex-start;gap:9px;}
 .rank-filters .fg-lab{flex:none;width:34px;font-size:11px;color:var(--text-faint);letter-spacing:.08em;}
-.rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:1px;}
+.rank-filters .fg-chips{flex:1;min-width:0;display:flex;gap:6px;flex-wrap:wrap;overflow:visible;scrollbar-width:none;padding-bottom:1px;}
 .rank-filters .fg-chips::-webkit-scrollbar{display:none;}
 .rank-filters .fg-location .fg-chips{display:grid;grid-template-columns:minmax(76px,1fr) minmax(76px,1fr) minmax(76px,1fr);overflow:visible;}
 .rank-filters .fg-location .fsel{width:100%;max-width:none;}
@@ -1327,7 +1327,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.01.17";
+const APP_VERSION_FALLBACK = "2026.07.01.18";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1340,6 +1340,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
+  { key:"award",   label:"評鑑", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, award:null, city:"", area:"", village:"" };
 let rankFilterDraft = null;
@@ -2559,13 +2560,24 @@ function rankTagMatch(item, key, value){
 function rankAwardMatch(item, value){
   if (!value || value === "不限") return true;
   const awards = item.awards || [];
+  const option = (RANK_FILTERS.find(g => g.key === "award")?.opts || []).find(o => o.label === value);
+  if (option?.guide) {
+    return awards.some(a =>
+      a.guide === option.guide
+      && (!option.level || a.level === option.level)
+    );
+  }
   const has = guide => awards.some(a => a.guide === guide);
+  if (value === "米其林三星") return awards.some(a => a.guide === "michelin" && a.level === "三星");
+  if (value === "米其林二星") return awards.some(a => a.guide === "michelin" && a.level === "二星");
+  if (value === "米其林一星") return awards.some(a => a.guide === "michelin" && a.level === "一星");
   if (value === "米其林星") return awards.some(a => a.guide === "michelin");
   if (value === "米其林入選") return has("michelin_selected");
   if (value === "必比登") return has("bib");
   if (value === "綠星") return has("greenstar");
   if (value === "500盤") return has("500plate");
   if (value === "500碗") return has("500bowl");
+  if (value === "500甜") return has("500sweet");
   return false;
 }
 function normalizeKeywordValue(value){
