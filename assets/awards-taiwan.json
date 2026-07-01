@@ -41,7 +41,8 @@
     "https://restaurantandbardesignawards.com/awards-archive",
     "https://www.gdg.asia/article/235/1421",
     "https://ipuregreen.org/veg/",
-    "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
+    "https://greenmedia.today/article_detail.php?cid=7&mid=1407",
+    "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -2516,12 +2517,22 @@
         {
           "guide": "bib",
           "year": 2025
+        },
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "年輕主廚大獎",
+          "awardName": "Young Chef Award",
+          "recipient": "Yung Yen Hsia",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
         }
       ],
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [
+        "Yung Yen"
+      ]
     },
     {
       "name": "田山餐館",
@@ -4177,13 +4188,23 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
+        },
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "服務大獎",
+          "awardName": "Service Award",
+          "recipient": "Kiky Chen",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
         }
       ],
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
       ],
       "aliases": [
-        "方蒔"
+        "方蒔",
+        "the FRONT HOUSE 方蒔",
+        "方蒔 the Front House"
       ]
     },
     {
@@ -11816,14 +11837,36 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
+        },
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "年度開業大獎",
+          "awardName": "Opening of the Year Award",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
+        },
+        {
+          "guide": "500plate",
+          "plates": 6,
+          "level": "6盤",
+          "year": 2025
         }
       ],
       "city": "臺北市",
       "aliases": [
         "心宴",
-        "aMaze"
+        "aMaze",
+        "aMaze 心宴"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "sources": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
+        }
+      ]
     },
     {
       "name": "心潮飯店",
@@ -12955,6 +12998,14 @@
           "guide": "greenstar",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+        },
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "侍酒師大獎",
+          "awardName": "Sommelier Award",
+          "recipient": "Yia Yia Chen",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
         }
       ],
       "city": "臺北市",
@@ -12966,7 +13017,9 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": [],
+      "aliases": [
+        "HOSU"
+      ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
@@ -18336,27 +18389,6 @@
       ],
       "city": "臺北市",
       "area": "",
-      "aliases": []
-    },
-    {
-      "name": "aMaze 心宴",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 6,
-          "level": "6盤",
-          "year": 2025
-        }
-      ],
-      "city": "臺北市",
-      "sources": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
-        }
-      ],
       "aliases": []
     },
     {

@@ -10,6 +10,11 @@ const CANONICAL_GROUPS = [
     canonicalName: "頤宮",
     aliases: ["Le Palais", "頤宮中餐廳", "頤宮中餐廳 Le Palais"],
   },
+  {
+    city: "臺北市",
+    canonicalName: "心宴 aMaze",
+    aliases: ["aMaze", "aMaze 心宴", "心宴"],
+  },
 ];
 
 function normalizeName(value) {

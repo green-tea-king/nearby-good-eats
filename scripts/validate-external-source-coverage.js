@@ -36,6 +36,8 @@ function main() {
     "fmg",
     "greenveggie",
     "gdgawards",
+    "michelinspecial",
+    "tcfpraise",
     "tatlerbest",
     "worldculinary",
     "google-maps-reviews",
@@ -54,12 +56,16 @@ function main() {
   if (michelin.counts?.selected !== (guides.michelin_selected || 0)) errors.push("michelin selected count mismatch");
   if (michelin.counts?.bib !== (guides.bib || 0)) errors.push("bib count mismatch");
   if (michelin.counts?.greenstar !== (guides.greenstar || 0)) errors.push("greenstar count mismatch");
-  for (const guide of ["500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "gdgawards", "tatlerbest", "worldculinary"]) {
+  for (const guide of ["500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "gdgawards", "michelinspecial", "tatlerbest", "worldculinary"]) {
     const source = sources.get(guide) || {};
     if (source.count !== (guides[guide] || 0)) errors.push(`${guide} count mismatch`);
     if (source.status !== "integrated_data") errors.push(`${guide} must be integrated_data`);
     if (source.runtimeLookup !== false) errors.push(`${guide} must disable runtimeLookup`);
   }
+  const tcf = sources.get("tcfpraise") || {};
+  if (tcf.runtimeLookup !== false) errors.push("tcfpraise must disable runtimeLookup");
+  if (!["integrated_data", "candidate_needs_city_review"].includes(tcf.status)) errors.push(`tcfpraise invalid status ${tcf.status}`);
+  if (tcf.status === "candidate_needs_city_review" && Number(tcf.needsCityReview || 0) <= 0) errors.push("tcfpraise needsCityReview status requires rows");
   const google = sources.get("google-maps-reviews") || {};
   if (google.status !== "runtime_primary_with_noise_guard") errors.push("google reviews status mismatch");
   for (const key of ["bayesianScore", "reviewCountBonus", "reviewNoiseHints", "promoTextPenalty", "noFullReviewStorage"]) {

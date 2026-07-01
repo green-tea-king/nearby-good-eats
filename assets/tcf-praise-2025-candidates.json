@@ -1,0 +1,163 @@
+{
+  "version": "tcf-praise-2025-candidates",
+  "generatedAt": "2026-07-01T23:06:35.309Z",
+  "sourceUrl": "https://www.tcf.org.tw/page/news/show.aspx?num=48&lang=TW",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_article_batch_unique_existing_match_only",
+    "noCityGuess": true,
+    "notes": [
+      "來源為社團法人台灣餐飲業聯盟公開新聞稿，列出 2025 美食指南點讚榜臺灣站 32 家入選名單。",
+      "來源站目前 TLS 憑證與網域不匹配，為避免腳本關閉 TLS 驗證，名單以可追溯固定批次列入腳本。",
+      "原文未列縣市；只有能從既有內建資料唯一比對到城市的店家自動匯入，其餘保留待人工補城市。",
+      "此來源作為品牌/人氣認可徽章與低權重加分，不取代 Google 評分、評論數與主要餐飲評鑑。"
+    ]
+  },
+  "restaurants": [],
+  "needsCityReview": [
+    {
+      "name": "府城食府正宗台南料理",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "蛋小白",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "南僑讚岐急凍熟麵",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "BBJ",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "黑金傳奇",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "逸之牛",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "稻香村懷舊料理",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "澎富企業",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "知山田頂級燒肉",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "福相麻辣香鍋",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "晶粵軒烤鴨餐廳",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "鴨覓烤鴨餐廳",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "福樓餐廳",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "廚房有雞 粵菜餐廳",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "田園素食",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "福安專業土雞料理餐廳",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "一鍋三饗",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "大楊梅鵝莊",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "趙海真私廚",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "洪毓姗（蔡家虹）手作三明治",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "聚豐園江浙美食餐廳",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "焰遇燒肉",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "星馬快餐",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "SOL-Tainan",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "小樽手作珈琲",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "食代鐵板燒",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "南星鐵板燒",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "がんこ莞固和食",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "悅華軒",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "新方海鮮宴會館",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "焿大王",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "魔法咖哩",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "Q勁麵館",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "三個老總",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "焦糖楓",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    },
+    {
+      "name": "少點鹽健康餐盒專賣",
+      "reason": "city_not_in_source_and_no_unique_existing_match"
+    }
+  ]
+}

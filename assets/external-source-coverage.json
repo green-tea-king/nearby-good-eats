@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 1415,
+    "awardsRestaurants": 1414,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -27,7 +27,10 @@
     "greenVeggieCandidates": 58,
     "greenVeggieNeedsCityReview": 7,
     "gdgAwardsCandidates": 9,
-    "gdgAwardsNeedsCityReview": 51
+    "gdgAwardsNeedsCityReview": 51,
+    "michelinSpecialCandidates": 4,
+    "tcfPraiseCandidates": 0,
+    "tcfPraiseNeedsCityReview": 36
   },
   "sources": [
     {
@@ -153,6 +156,27 @@
       "count": 9,
       "candidates": 9,
       "needsCityReview": 51,
+      "runtimeLookup": false
+    },
+    {
+      "id": "michelinspecial",
+      "label": "米其林特別獎",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/michelin-special-awards-2025-candidates.json",
+      "count": 4,
+      "candidates": 4,
+      "runtimeLookup": false
+    },
+    {
+      "id": "tcfpraise",
+      "label": "美食指南點讚榜臺灣站",
+      "status": "candidate_needs_city_review",
+      "dataFile": null,
+      "candidatesFile": "assets/tcf-praise-2025-candidates.json",
+      "count": 0,
+      "candidates": 0,
+      "needsCityReview": 36,
       "runtimeLookup": false
     },
     {

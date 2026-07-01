@@ -1,0 +1,90 @@
+{
+  "version": "michelin-special-awards-2025-candidates",
+  "generatedAt": "2026-07-01T23:06:35.273Z",
+  "sourceUrl": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_article_batch",
+    "notes": [
+      "來源為 Michelin 官方企業新聞稿，列出 2025 臺灣米其林指南特別獎項。",
+      "特別獎項作為徽章與中低權重加分，不改變既有星級、必比登、入選資料。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "Hosu",
+      "city": "臺北市",
+      "aliases": [
+        "好嶼",
+        "HOSU"
+      ],
+      "awards": [
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "侍酒師大獎",
+          "awardName": "Sommelier Award",
+          "recipient": "Yia Yia Chen",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "The Front House",
+      "city": "高雄市",
+      "aliases": [
+        "方蒔",
+        "the FRONT HOUSE 方蒔",
+        "方蒔 the Front House"
+      ],
+      "awards": [
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "服務大獎",
+          "awardName": "Service Award",
+          "recipient": "Kiky Chen",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "aMaze",
+      "city": "臺北市",
+      "aliases": [
+        "心宴",
+        "aMaze 心宴"
+      ],
+      "awards": [
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "年度開業大獎",
+          "awardName": "Opening of the Year Award",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
+        }
+      ],
+      "importConfidence": "high"
+    },
+    {
+      "name": "永筵小館",
+      "city": "高雄市",
+      "aliases": [
+        "Yung Yen"
+      ],
+      "awards": [
+        {
+          "guide": "michelinspecial",
+          "year": 2025,
+          "level": "年輕主廚大獎",
+          "awardName": "Young Chef Award",
+          "recipient": "Yung Yen Hsia",
+          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
+        }
+      ],
+      "importConfidence": "high"
+    }
+  ]
+}

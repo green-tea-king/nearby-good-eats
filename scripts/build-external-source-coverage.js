@@ -12,6 +12,8 @@ const designAwardsCandidatesPath = path.join(repoRoot, "assets", "restaurant-des
 const fmgCandidatesPath = path.join(repoRoot, "assets", "fmg-taiwan-2025-candidates.json");
 const greenVeggieCandidatesPath = path.join(repoRoot, "assets", "green-veggie-guide-2025-candidates.json");
 const gdgAwardsCandidatesPath = path.join(repoRoot, "assets", "gdg-awards-2025-candidates.json");
+const michelinSpecialCandidatesPath = path.join(repoRoot, "assets", "michelin-special-awards-2025-candidates.json");
+const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-candidates.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -57,6 +59,8 @@ function main() {
   const fmgCandidates = fs.existsSync(fmgCandidatesPath) ? readJson(fmgCandidatesPath) : { restaurants: [] };
   const greenVeggieCandidates = fs.existsSync(greenVeggieCandidatesPath) ? readJson(greenVeggieCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const gdgAwardsCandidates = fs.existsSync(gdgAwardsCandidatesPath) ? readJson(gdgAwardsCandidatesPath) : { restaurants: [], needsCityReview: [] };
+  const michelinSpecialCandidates = fs.existsSync(michelinSpecialCandidatesPath) ? readJson(michelinSpecialCandidatesPath) : { restaurants: [] };
+  const tcfPraiseCandidates = fs.existsSync(tcfPraiseCandidatesPath) ? readJson(tcfPraiseCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -95,6 +99,9 @@ function main() {
       greenVeggieNeedsCityReview: (greenVeggieCandidates.needsCityReview || []).length,
       gdgAwardsCandidates: (gdgAwardsCandidates.restaurants || []).length,
       gdgAwardsNeedsCityReview: (gdgAwardsCandidates.needsCityReview || []).length,
+      michelinSpecialCandidates: (michelinSpecialCandidates.restaurants || []).length,
+      tcfPraiseCandidates: (tcfPraiseCandidates.restaurants || []).length,
+      tcfPraiseNeedsCityReview: (tcfPraiseCandidates.needsCityReview || []).length,
     },
     sources: [
       {
@@ -217,6 +224,27 @@ function main() {
         count: guides.gdgawards || 0,
         candidates: (gdgAwardsCandidates.restaurants || []).length,
         needsCityReview: (gdgAwardsCandidates.needsCityReview || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "michelinspecial",
+        label: "米其林特別獎",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/michelin-special-awards-2025-candidates.json",
+        count: guides.michelinspecial || 0,
+        candidates: (michelinSpecialCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "tcfpraise",
+        label: "美食指南點讚榜臺灣站",
+        status: (tcfPraiseCandidates.restaurants || []).length ? "integrated_data" : "candidate_needs_city_review",
+        dataFile: (tcfPraiseCandidates.restaurants || []).length ? "assets/awards-taiwan.json" : null,
+        candidatesFile: "assets/tcf-praise-2025-candidates.json",
+        count: guides.tcfpraise || 0,
+        candidates: (tcfPraiseCandidates.restaurants || []).length,
+        needsCityReview: (tcfPraiseCandidates.needsCityReview || []).length,
         runtimeLookup: false,
       },
       {
