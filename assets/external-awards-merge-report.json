@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T12:26:49.868Z",
+  "generatedAt": "2026-07-02T22:54:55.504Z",
   "sourceFiles": [
     "assets/external-awards.manual.json",
     "assets/tatler-best-taiwan-2025-candidates.json",
@@ -16,9 +16,14 @@
     "assets/tcf-praise-2025-candidates.json",
     "assets/taichung-low-carbon-2023-candidates.json",
     "assets/muslim-friendly-2026-candidates.json",
-    "assets/fda-restaurant-hygiene-2024-candidates.json"
+    "assets/fda-restaurant-hygiene-2024-candidates.json",
+    "assets/moenv-green-restaurants-2026-candidates.json",
+    "assets/fda-haccp-hotel-restaurants-2026-candidates.json",
+    "assets/amot-traceability-awards-2024-candidates.json",
+    "assets/amot-traceability-awards-2026-candidates.json",
+    "assets/taichung-golden-awards-2024-candidates.json"
   ],
-  "candidates": 6410,
+  "candidates": 10255,
   "manualCandidates": 0,
   "tatlerCandidates": 20,
   "worldCulinaryCandidates": 4,
@@ -35,6 +40,11 @@
   "taichungLowCarbonCandidates": 20,
   "muslimFriendlyCandidates": 75,
   "fdaRestaurantHygieneCandidates": 6104,
+  "moenvGreenCandidates": 3471,
+  "fdaHaccpHotelCandidates": 42,
+  "amotTraceCandidates": 31,
+  "amotTrace2026Candidates": 69,
+  "taichungGoldCandidates": 398,
   "skippedFiftyDiscoveryNeedsReview": 0,
   "skippedTatlerNeedsReview": 0,
   "skippedWorldCulinaryNeedsReview": 0,
@@ -46,9 +56,10 @@
   "skippedGreenVeggieNeedsReview": 0,
   "skippedGdgAwardsNeedsReview": 4,
   "skippedTcfPraiseNeedsReview": 8,
-  "addedRestaurants": 0,
-  "updatedExistingRestaurants": 0,
-  "skippedDuplicateAward": 6415,
-  "mergedAwards": 0,
+  "smallSampleThreshold": 30,
+  "addedRestaurants": 104,
+  "updatedExistingRestaurants": 294,
+  "skippedDuplicateAward": 9857,
+  "mergedAwards": 398,
   "errors": []
 }

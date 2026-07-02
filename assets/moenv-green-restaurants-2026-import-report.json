@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-07-02T22:14:54.399Z",
+  "sourcePageUrl": "https://data.moenv.gov.tw/dataset/detail/GIS_P_11",
+  "sourceApiUrl": "https://data.moenv.gov.tw/api/frontstage/datastore.search",
+  "resourceId": "d51ff618-8ec0-4d3a-8bcd-6ca5c85a205e",
+  "totalFromSource": 3472,
+  "fetchedBatches": 4,
+  "candidates": 3471,
+  "needsManualReview": 0,
+  "errors": []
+}

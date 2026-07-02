@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 7566,
+    "awardsRestaurants": 11000,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -37,6 +37,13 @@
     "taichungLowCarbonCandidates": 20,
     "muslimFriendlyCandidates": 75,
     "fdaRestaurantHygieneCandidates": 6104,
+    "moenvGreenCandidates": 3471,
+    "fdaHaccpHotelCandidates": 42,
+    "amotTraceCandidates": 31,
+    "amotTraceNeedsManualReview": 9,
+    "amotTrace2026Candidates": 69,
+    "amotTrace2026NeedsManualReview": 3,
+    "taichungGoldCandidates": 398,
     "externalAwardReviewQueue": 3
   },
   "sources": [
@@ -53,7 +60,7 @@
         "stars": 53,
         "selected": 222,
         "bib": 144,
-        "greenstar": 7
+        "greenstar": 0
       },
       "runtimeLookup": false
     },
@@ -90,7 +97,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "sourceFile": "assets/asias-50-best-restaurants-2026-candidates.json",
-      "count": 4,
+      "count": 0,
       "candidates": 4,
       "sourceCatalog": [
         "asias-50-best-restaurants-2026"
@@ -103,7 +110,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/50best-discovery-taiwan-candidates.json",
-      "count": 13,
+      "count": 0,
       "candidates": 13,
       "runtimeLookup": false
     },
@@ -113,7 +120,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/oad-asia-2025-candidates.json",
-      "count": 29,
+      "count": 0,
       "candidates": 29,
       "runtimeLookup": false
     },
@@ -123,7 +130,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/thebestchef-taiwan-2025-candidates.json",
-      "count": 4,
+      "count": 0,
       "candidates": 4,
       "runtimeLookup": false
     },
@@ -133,7 +140,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/restaurant-design-awards-taiwan-candidates.json",
-      "count": 3,
+      "count": 0,
       "candidates": 3,
       "runtimeLookup": false
     },
@@ -143,7 +150,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/fmg-taiwan-2025-candidates.json",
-      "count": 20,
+      "count": 0,
       "candidates": 20,
       "runtimeLookup": false
     },
@@ -164,7 +171,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/gdg-awards-2025-candidates.json",
-      "count": 29,
+      "count": 0,
       "candidates": 21,
       "needsCityReview": 4,
       "runtimeLookup": false
@@ -175,7 +182,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/michelin-special-awards-2025-candidates.json",
-      "count": 4,
+      "count": 0,
       "candidates": 4,
       "runtimeLookup": false
     },
@@ -185,7 +192,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/tcf-praise-2025-candidates.json",
-      "count": 24,
+      "count": 0,
       "candidates": 24,
       "needsCityReview": 8,
       "runtimeLookup": false
@@ -196,7 +203,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/taichung-low-carbon-2023-candidates.json",
-      "count": 20,
+      "count": 0,
       "candidates": 20,
       "runtimeLookup": false
     },
@@ -221,12 +228,64 @@
       "runtimeLookup": false
     },
     {
+      "id": "moenvgreen",
+      "label": "環保餐廳",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/moenv-green-restaurants-2026-candidates.json",
+      "count": 3464,
+      "candidates": 3471,
+      "runtimeLookup": false
+    },
+    {
+      "id": "fdahaccp",
+      "label": "HACCP",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/fda-haccp-hotel-restaurants-2026-candidates.json",
+      "count": 42,
+      "candidates": 42,
+      "runtimeLookup": false
+    },
+    {
+      "id": "amottrace",
+      "label": "AMOT 溯源餐廳",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/amot-traceability-awards-2024-candidates.json",
+      "count": 100,
+      "candidates": 31,
+      "needsManualReview": 9,
+      "runtimeLookup": false
+    },
+    {
+      "id": "amottrace-2026",
+      "label": "AMOT 溯源餐廳 2026",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/amot-traceability-awards-2026-candidates.json",
+      "count": 100,
+      "candidates": 69,
+      "needsManualReview": 3,
+      "runtimeLookup": false
+    },
+    {
+      "id": "taichunggold",
+      "label": "臺中金饌獎",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/taichung-golden-awards-2024-candidates.json",
+      "count": 398,
+      "candidates": 398,
+      "runtimeLookup": false
+    },
+    {
       "id": "tatlerbest",
       "label": "Tatler Best",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "sourceFile": "assets/tatler-best-taiwan-2025-candidates.json",
-      "count": 25,
+      "count": 0,
       "candidates": 20,
       "sourceCatalog": [
         "tatler-best-taiwan-2025-top20",
@@ -244,7 +303,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "sourceFile": "assets/world-culinary-awards-taiwan-2025-candidates.json",
-      "count": 4,
+      "count": 0,
       "candidates": 4,
       "sourceCatalog": [
         "world-culinary-awards-taiwan-2025"

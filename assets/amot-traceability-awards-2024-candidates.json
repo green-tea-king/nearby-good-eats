@@ -1,0 +1,967 @@
+{
+  "version": "amot-traceability-awards-2024-candidates",
+  "generatedAt": "2026-07-02T22:39:34.799270Z",
+  "sourceUrl": "https://www.amot.org.tw/news/detail/102/",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "public_web_batch",
+    "notes": [
+      "評鑑名單來自 AMOT 第九屆星級溯源餐廳公開頁面。",
+      "地址與料理種類來自 AMOT 溯源餐廳公開列表頁。",
+      "僅匯入可對應到公開列表頁的餐廳；未對上者保留在待人工確認。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "大戶屋",
+      "city": "高雄市",
+      "district": "左營區",
+      "address": "高雄市左營區博愛二路777號4樓",
+      "cuisine": "日式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "大戶屋"
+      }
+    },
+    {
+      "name": "水月囍樓",
+      "city": "屏東縣",
+      "district": "屏東市",
+      "address": "屏東市和生路二段574號",
+      "cuisine": "中式",
+      "aliases": [
+        "水月囍樓有限公司"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "水月囍樓有限公司"
+      }
+    },
+    {
+      "name": "宮保王食品有限公司",
+      "city": "台北市",
+      "district": "南港區",
+      "address": "台北市南港區南港路三段149巷49弄14號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "宮保王食品有限公司"
+      }
+    },
+    {
+      "name": "石二鍋 12hotpot",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區民權東路三段19號",
+      "cuisine": "火鍋",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "石二鍋 12hotpot"
+      }
+    },
+    {
+      "name": "港都熱炒",
+      "city": "新北市",
+      "district": "中和區",
+      "address": "新北市中和區大勇街12號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "港都熱炒"
+      }
+    },
+    {
+      "name": "臺中市大安區農會飛天豬主題餐館",
+      "city": "台中市",
+      "district": "大安區",
+      "address": "臺中市大安區龜壳里大安港路541號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "臺中市大安區農會飛天豬主題餐館"
+      }
+    },
+    {
+      "name": "雙翼食品有限公司",
+      "city": "新北市",
+      "district": "樹林區",
+      "address": "新北市樹林區忠愛街三號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "雙翼食品有限公司"
+      }
+    },
+    {
+      "name": "君品酒店 頤宮中餐廳Le Palais",
+      "city": "台北市",
+      "district": "大同區",
+      "address": "台北市大同區承德路一段3號17樓",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "君品酒店 頤宮中餐廳Le Palais"
+      }
+    },
+    {
+      "name": "雲品溫泉酒店 KEN CAN by Ken Chan",
+      "city": "南投縣",
+      "district": "魚池鄉",
+      "address": "55546 南投縣魚池鄉日月潭中正路23號",
+      "cuisine": "中式",
+      "aliases": [
+        "雲品溫泉酒店日月潭"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "雲品溫泉酒店日月潭"
+      }
+    },
+    {
+      "name": "這一鍋",
+      "city": "台中市",
+      "district": "西屯區",
+      "address": "(407)台中市西屯區朝富路36號",
+      "cuisine": "火鍋",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "這一鍋"
+      }
+    },
+    {
+      "name": "將捷金鬱金香酒店-河畔餐廳",
+      "city": "新北市",
+      "district": "淡水區",
+      "address": "25172新北市淡水區中正路一段2號",
+      "cuisine": "西式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "將捷金鬱金香酒店-河畔餐廳"
+      }
+    },
+    {
+      "name": "大地酒店-月兒彎彎",
+      "city": "台北市",
+      "district": "北投區",
+      "address": "台北市北投區奇岩路一號2樓",
+      "cuisine": "火鍋",
+      "aliases": [
+        "大地酒店月兒彎彎涮涮鍋"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "大地酒店月兒彎彎涮涮鍋"
+      }
+    },
+    {
+      "name": "五餅二魚餐廳",
+      "city": "花蓮縣",
+      "district": "壽豐鄉",
+      "address": "花蓮縣壽豐鄉共和村魚池45號",
+      "cuisine": "中式",
+      "aliases": [
+        "立川漁場休閒農場 五餅二魚餐廳\""
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "立川漁場休閒農場 五餅二魚餐廳\""
+      }
+    },
+    {
+      "name": "禾馨月子餐",
+      "city": "台北市",
+      "district": "士林區",
+      "address": "台北市士林區中正路289-1號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "禾馨月子餐"
+      }
+    },
+    {
+      "name": "禾馨醫療",
+      "city": "台北市",
+      "district": "內湖區",
+      "address": "臺北市內湖區民權東路六段42號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "三星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "禾馨醫療"
+      }
+    },
+    {
+      "name": "礁溪老爺酒店",
+      "city": "宜蘭縣",
+      "district": "礁溪鄉",
+      "address": "宜蘭縣礁溪鄉大忠村五峰路69號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "礁溪老爺酒店"
+      }
+    },
+    {
+      "name": "豐盛號",
+      "city": "台北市",
+      "district": "士林區",
+      "address": "台北市士林區中正路223巷4號1樓",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "豐盛號"
+      }
+    },
+    {
+      "name": "池上木片便當",
+      "city": "台北市",
+      "district": "中正區",
+      "address": "台北市中正區汀州路3段64號",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "池上木片便當"
+      }
+    },
+    {
+      "name": "靜宜大學-食品營養系 學生實習餐廳",
+      "city": "台中市",
+      "district": "沙鹿區",
+      "address": "台中市沙鹿區台灣大道7段200號（靜宜大學-食品營養學系）",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "靜宜大學-食品營養系 學生實習餐廳"
+      }
+    },
+    {
+      "name": "老四川",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區長安東路二段112號",
+      "cuisine": "火鍋",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "老四川"
+      }
+    },
+    {
+      "name": "古坑服務區：國道食堂（豐味棧）",
+      "city": "雲林縣",
+      "district": "古坑鄉",
+      "address": "雲林縣古坑鄉崁腳村新興100號",
+      "cuisine": "中式",
+      "aliases": [
+        "豐味棧(古坑服務區)"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "豐味棧(古坑服務區)"
+      }
+    },
+    {
+      "name": "豐味棧(湖口服務區)",
+      "city": "新竹縣",
+      "district": "湖口鄉",
+      "address": "新竹縣湖口鄉榮光路158號(國道1號，湖口服務區北站)",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "豐味棧(湖口服務區)"
+      }
+    },
+    {
+      "name": "魔法咖哩",
+      "city": "新北市",
+      "district": "淡水區",
+      "address": "新北市淡水區中山路 8 號 8 樓",
+      "cuisine": "日式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "魔法咖哩"
+      }
+    },
+    {
+      "name": "台北六福萬怡酒店 粵亮廣式料理餐廳",
+      "city": "台北市",
+      "district": "南港區",
+      "address": "台北市南港區忠孝東路七段359號8樓",
+      "cuisine": "異國料理",
+      "aliases": [
+        "台北六福萬怡酒店"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "台北六福萬怡酒店"
+      }
+    },
+    {
+      "name": "伊府將鍋燒",
+      "city": "高雄市",
+      "district": "苓雅區",
+      "address": "高雄市苓雅區武廟路93號",
+      "cuisine": "中式",
+      "aliases": [
+        "伊府將 鍋燒"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "伊府將 鍋燒"
+      }
+    },
+    {
+      "name": "甘擔廚房",
+      "city": "台北市",
+      "district": "松山區",
+      "address": "台北市松山區東興路7號1樓",
+      "cuisine": "中式",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "甘擔廚房"
+      }
+    },
+    {
+      "name": "茶自點複合式餐飲",
+      "city": "桃園市",
+      "district": "桃園區",
+      "address": "桃園市桃園區中正路743號",
+      "cuisine": "中式",
+      "aliases": [
+        "六兄弟實業有限公司(茶自點)"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "六兄弟實業有限公司(茶自點)"
+      }
+    },
+    {
+      "name": "果然匯",
+      "city": "新北市",
+      "district": "板橋區",
+      "address": "新北市板橋區中山路一段152號11樓",
+      "cuisine": "異國料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "果然匯"
+      }
+    },
+    {
+      "name": "SAIKABO",
+      "city": "新北市",
+      "district": "板橋區",
+      "address": "新北市板橋區新站路28號9樓",
+      "cuisine": "異國料理",
+      "aliases": [
+        "Saikabo韓國旬彩料理"
+      ],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "Saikabo韓國旬彩料理"
+      }
+    },
+    {
+      "name": "這一小鍋",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "(104)台北市中山區南京西路14號3樓(308櫃)",
+      "cuisine": "火鍋",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "這一小鍋"
+      }
+    },
+    {
+      "name": "築間幸福鍋物",
+      "city": "台中市",
+      "district": "西屯區",
+      "address": "407臺中市西屯區臺灣大道三段789號14樓之2",
+      "cuisine": "火鍋",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "amottrace",
+          "year": "2024",
+          "level": "二星",
+          "awardName": "星級溯源餐廳",
+          "certType": "traceability_restaurant",
+          "sourceName": "AMOT 第九屆星級溯源餐廳評鑑",
+          "certifier": "台灣農業跨領域發展協會 AMOT",
+          "extractedAt": "2026-07-03",
+          "notes": "依 AMOT 第九屆星級溯源餐廳評鑑得獎名單，地址與菜系取自 AMOT 溯源餐廳公開列表頁。",
+          "url": "https://www.amot.org.tw/news/detail/102/"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "awardSourceUrl": "https://www.amot.org.tw/news/detail/102/",
+        "restSourceUrl": "https://www.amot.org.tw/rest/?id=1",
+        "rawAwardName": "築間幸福鍋物"
+      }
+    }
+  ],
+  "needsManualReview": [
+    {
+      "name": "和德昌股份有限公司-麥當勞授權發展商",
+      "level": "三星",
+      "year": "2024",
+      "reason": "matched_rest_missing_structured_location",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "天然茶莊(天然茶花私廚)",
+      "level": "三星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "光光盒餐",
+      "level": "三星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "財團法人辜公亮基金會和信治癌中心醫院",
+      "level": "三星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "君品酒店 雲軒西餐廳 La Rotisserie",
+      "level": "三星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "池農田媽媽養生美食餐坊",
+      "level": "二星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "臻好食客棧-機場店",
+      "level": "二星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "憶鵝食(中壢服務區)",
+      "level": "二星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    },
+    {
+      "name": "靜宜大學-健康緣素",
+      "level": "一星",
+      "year": "2024",
+      "reason": "no_current_rest_list_match",
+      "sourceUrl": "https://www.amot.org.tw/news/detail/102/"
+    }
+  ]
+}

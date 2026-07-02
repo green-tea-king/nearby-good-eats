@@ -422,6 +422,14 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .badge.localcert::before{content:"✓";font-size:9px;color:var(--plate);}
 .badge.muslimcert{background:rgba(95,185,138,.12);color:var(--green);border-color:rgba(95,185,138,.28);}
 .badge.muslimcert::before{content:"H";font-size:9px;font-family:var(--mono);color:var(--green);}
+.badge.ecocert{background:rgba(95,185,138,.10);color:var(--green);border-color:rgba(95,185,138,.24);}
+.badge.ecocert::before{content:"E";font-size:9px;font-family:var(--mono);color:var(--green);}
+.badge.haccpcert{background:rgba(200,162,76,.12);color:var(--gold);border-color:rgba(200,162,76,.28);}
+.badge.haccpcert::before{content:"H";font-size:9px;font-family:var(--mono);color:var(--gold);}
+.badge.tracecert{background:rgba(39,174,96,.12);color:#23874e;border-color:rgba(39,174,96,.28);}
+.badge.tracecert::before{content:"T";font-size:9px;font-family:var(--mono);color:#23874e;}
+.badge.goldencert{background:rgba(214,144,28,.12);color:#b36f00;border-color:rgba(214,144,28,.28);}
+.badge.goldencert::before{content:"G";font-size:9px;font-family:var(--mono);color:#b36f00;}
 .badge.fdagrade{background:rgba(143,179,196,.12);color:var(--plate);border-color:rgba(143,179,196,.28);}
 .badge.fdagrade::before{content:"FDA";font-size:8px;font-family:var(--mono);color:var(--plate);}
 .badge.bib{background:rgba(236,90,106,.13);color:var(--bib);border-color:rgba(236,90,106,.3);}
@@ -1376,7 +1384,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑（可複選）", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"穆斯林友善", guide:"muslimfriendly"}, {label:"食安優級", guide:"fdagrade", level:"優"}, {label:"食安良級", guide:"fdagrade", level:"良"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
+  { key:"award",   label:"評鑑（可複選）", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"環保餐廳", guide:"moenvgreen"}, {label:"HACCP", guide:"fdahaccp"}, {label:"溯源餐廳", guide:"amottrace"}, {label:"金饌獎", guide:"taichunggold"}, {label:"穆斯林友善", guide:"muslimfriendly"}, {label:"食安優級", guide:"fdagrade", level:"優"}, {label:"食安良級", guide:"fdagrade", level:"良"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, award:[], city:"", area:"", village:"" };
 let rankFilterDraft = null;
@@ -4749,6 +4757,10 @@ function badgeHTML(a){
   if (a.guide==="designawards") return `<span class="badge designaward" title="Restaurant & Bar Design Awards ${year} ${escapeHTML(a.level||"")}">設計獎 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="fmg") return `<span class="badge fmg" title="Food Made Good ${year} ${escapeHTML(a.level||"")}">FMG ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
   if (a.guide==="greenveggie") return `<span class="badge greenveggie" title="綠・蔬食評鑑指南 ${year} ${escapeHTML(a.level||"")}">綠蔬食 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="moenvgreen") return `<span class="badge ecocert" title="環保餐廳 ${year} ${escapeHTML(a.level||"")}">環保餐廳<span class="yr">${year}</span></span>`;
+  if (a.guide==="fdahaccp") return `<span class="badge haccpcert" title="旅館附設餐廳 HACCP ${year} ${escapeHTML(a.level||"")}">HACCP<span class="yr">${year}</span></span>`;
+  if (a.guide==="amottrace") return `<span class="badge tracecert" title="AMOT 溯源餐廳 ${year} ${escapeHTML(a.level||"")}">溯源 ${escapeHTML(a.level||"餐廳")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="taichunggold") return `<span class="badge goldencert" title="臺中金饌獎 ${year} ${escapeHTML(a.level||"")}">金饌 ${escapeHTML(a.level||"獎")}<span class="yr">${year}</span></span>`;
   if (a.guide==="gdgawards") return `<span class="badge gdgaward" title="綠色餐飲指南年度得獎 ${year} ${escapeHTML(a.level||"")}">GDG ${escapeHTML(a.level||"得獎")}<span class="yr">${year}</span></span>`;
   if (a.guide==="tcfpraise") return `<span class="badge mediaaward" title="美食指南點讚榜 ${year} ${escapeHTML(a.level||"")}">點讚榜<span class="yr">${year}</span></span>`;
   if (a.guide==="taichunglowcarbon") return `<span class="badge localcert" title="臺中市低碳餐廳認證 ${year}">台中低碳<span class="yr">${year}</span></span>`;

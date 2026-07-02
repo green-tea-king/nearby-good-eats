@@ -19,6 +19,11 @@ const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-c
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
 const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
+const moenvGreenCandidatesPath = path.join(repoRoot, "assets", "moenv-green-restaurants-2026-candidates.json");
+const fdaHaccpHotelCandidatesPath = path.join(repoRoot, "assets", "fda-haccp-hotel-restaurants-2026-candidates.json");
+const amotTraceCandidatesPath = path.join(repoRoot, "assets", "amot-traceability-awards-2024-candidates.json");
+const amotTrace2026CandidatesPath = path.join(repoRoot, "assets", "amot-traceability-awards-2026-candidates.json");
+const taichungGoldCandidatesPath = path.join(repoRoot, "assets", "taichung-golden-awards-2024-candidates.json");
 const reportPath = path.join(repoRoot, "assets", "external-awards-merge-report.json");
 const MIN_GUIDE_COUNT = 30;
 
@@ -134,6 +139,11 @@ function main() {
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
+  const moenvGreenCandidates = fs.existsSync(moenvGreenCandidatesPath) ? readJson(moenvGreenCandidatesPath) : { restaurants: [] };
+  const fdaHaccpHotelCandidates = fs.existsSync(fdaHaccpHotelCandidatesPath) ? readJson(fdaHaccpHotelCandidatesPath) : { restaurants: [] };
+  const amotTraceCandidates = fs.existsSync(amotTraceCandidatesPath) ? readJson(amotTraceCandidatesPath) : { restaurants: [] };
+  const amotTrace2026Candidates = fs.existsSync(amotTrace2026CandidatesPath) ? readJson(amotTrace2026CandidatesPath) : { restaurants: [] };
+  const taichungGoldCandidates = fs.existsSync(taichungGoldCandidatesPath) ? readJson(taichungGoldCandidatesPath) : { restaurants: [] };
   const mergeCandidates = [
     ...((externalAwards.restaurants || []).length >= MIN_GUIDE_COUNT ? (externalAwards.restaurants || []) : []),
     ...eligibleRows(tatlerCandidates),
@@ -151,6 +161,11 @@ function main() {
     ...eligibleRows(taichungLowCarbonCandidates),
     ...eligibleRows(muslimFriendlyCandidates),
     ...eligibleRows(fdaRestaurantHygieneCandidates),
+    ...eligibleRows(moenvGreenCandidates),
+    ...eligibleRows(fdaHaccpHotelCandidates),
+    ...eligibleRows(amotTraceCandidates),
+    ...eligibleRows(amotTrace2026Candidates),
+    ...eligibleRows(taichungGoldCandidates),
   ];
   const rows = Array.isArray(awards.restaurants) ? awards.restaurants : [];
   const errors = validateExternalAwards(externalAwards);
@@ -173,6 +188,11 @@ function main() {
       ...(fs.existsSync(taichungLowCarbonCandidatesPath) ? ["assets/taichung-low-carbon-2023-candidates.json"] : []),
       ...(fs.existsSync(muslimFriendlyCandidatesPath) ? ["assets/muslim-friendly-2026-candidates.json"] : []),
       ...(fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? ["assets/fda-restaurant-hygiene-2024-candidates.json"] : []),
+      ...(fs.existsSync(moenvGreenCandidatesPath) ? ["assets/moenv-green-restaurants-2026-candidates.json"] : []),
+      ...(fs.existsSync(fdaHaccpHotelCandidatesPath) ? ["assets/fda-haccp-hotel-restaurants-2026-candidates.json"] : []),
+      ...(fs.existsSync(amotTraceCandidatesPath) ? ["assets/amot-traceability-awards-2024-candidates.json"] : []),
+      ...(fs.existsSync(amotTrace2026CandidatesPath) ? ["assets/amot-traceability-awards-2026-candidates.json"] : []),
+      ...(fs.existsSync(taichungGoldCandidatesPath) ? ["assets/taichung-golden-awards-2024-candidates.json"] : []),
     ],
     candidates: mergeCandidates.length,
     manualCandidates: (externalAwards.restaurants || []).length,
@@ -191,6 +211,11 @@ function main() {
     taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
     muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
     fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
+    moenvGreenCandidates: (moenvGreenCandidates.restaurants || []).length,
+    fdaHaccpHotelCandidates: (fdaHaccpHotelCandidates.restaurants || []).length,
+    amotTraceCandidates: (amotTraceCandidates.restaurants || []).length,
+    amotTrace2026Candidates: (amotTrace2026Candidates.restaurants || []).length,
+    taichungGoldCandidates: (taichungGoldCandidates.restaurants || []).length,
     skippedFiftyDiscoveryNeedsReview: (fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedTatlerNeedsReview: (tatlerCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedWorldCulinaryNeedsReview: (worldCulinaryCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
@@ -288,6 +313,8 @@ function main() {
     ...(taichungLowCarbonCandidates.sourceUrl ? [taichungLowCarbonCandidates.sourceUrl] : []),
     ...(muslimFriendlyCandidates.sourceUrl ? [muslimFriendlyCandidates.sourceUrl] : []),
     ...(fdaRestaurantHygieneCandidates.sourcePageUrl ? [fdaRestaurantHygieneCandidates.sourcePageUrl] : []),
+    ...(moenvGreenCandidates.sourcePageUrl ? [moenvGreenCandidates.sourcePageUrl] : []),
+    ...(fdaHaccpHotelCandidates.sourcePageUrl ? [fdaHaccpHotelCandidates.sourcePageUrl] : []),
   ].filter(Boolean))];
 
   writeJson(awardsPath, awards);

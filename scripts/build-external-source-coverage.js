@@ -20,6 +20,11 @@ const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-c
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
 const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
+const moenvGreenCandidatesPath = path.join(repoRoot, "assets", "moenv-green-restaurants-2026-candidates.json");
+const fdaHaccpHotelCandidatesPath = path.join(repoRoot, "assets", "fda-haccp-hotel-restaurants-2026-candidates.json");
+const amotTraceCandidatesPath = path.join(repoRoot, "assets", "amot-traceability-awards-2024-candidates.json");
+const amotTrace2026CandidatesPath = path.join(repoRoot, "assets", "amot-traceability-awards-2026-candidates.json");
+const taichungGoldCandidatesPath = path.join(repoRoot, "assets", "taichung-golden-awards-2024-candidates.json");
 const externalAwardReviewQueuePath = path.join(repoRoot, "assets", "external-award-review-queue.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
@@ -74,6 +79,11 @@ function main() {
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
+  const moenvGreenCandidates = fs.existsSync(moenvGreenCandidatesPath) ? readJson(moenvGreenCandidatesPath) : { restaurants: [] };
+  const fdaHaccpHotelCandidates = fs.existsSync(fdaHaccpHotelCandidatesPath) ? readJson(fdaHaccpHotelCandidatesPath) : { restaurants: [] };
+  const amotTraceCandidates = fs.existsSync(amotTraceCandidatesPath) ? readJson(amotTraceCandidatesPath) : { restaurants: [], needsManualReview: [] };
+  const amotTrace2026Candidates = fs.existsSync(amotTrace2026CandidatesPath) ? readJson(amotTrace2026CandidatesPath) : { restaurants: [], needsManualReview: [] };
+  const taichungGoldCandidates = fs.existsSync(taichungGoldCandidatesPath) ? readJson(taichungGoldCandidatesPath) : { restaurants: [] };
   const externalAwardReviewQueue = fs.existsSync(externalAwardReviewQueuePath) ? readJson(externalAwardReviewQueuePath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
@@ -122,6 +132,13 @@ function main() {
       taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
       muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
       fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
+      moenvGreenCandidates: (moenvGreenCandidates.restaurants || []).length,
+      fdaHaccpHotelCandidates: (fdaHaccpHotelCandidates.restaurants || []).length,
+      amotTraceCandidates: (amotTraceCandidates.restaurants || []).length,
+      amotTraceNeedsManualReview: (amotTraceCandidates.needsManualReview || []).length,
+      amotTrace2026Candidates: (amotTrace2026Candidates.restaurants || []).length,
+      amotTrace2026NeedsManualReview: (amotTrace2026Candidates.needsManualReview || []).length,
+      taichungGoldCandidates: (taichungGoldCandidates.restaurants || []).length,
       externalAwardReviewQueue: (externalAwardReviewQueue.restaurants || []).length,
     },
     sources: [
@@ -298,6 +315,58 @@ function main() {
         candidatesFile: "assets/fda-restaurant-hygiene-2024-candidates.json",
         count: guides.fdagrade || 0,
         candidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "moenvgreen",
+        label: "環保餐廳",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/moenv-green-restaurants-2026-candidates.json",
+        count: guides.moenvgreen || 0,
+        candidates: (moenvGreenCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "fdahaccp",
+        label: "HACCP",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/fda-haccp-hotel-restaurants-2026-candidates.json",
+        count: guides.fdahaccp || 0,
+        candidates: (fdaHaccpHotelCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "amottrace",
+        label: "AMOT 溯源餐廳",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/amot-traceability-awards-2024-candidates.json",
+        count: guides.amottrace || 0,
+        candidates: (amotTraceCandidates.restaurants || []).length,
+        needsManualReview: (amotTraceCandidates.needsManualReview || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "amottrace-2026",
+        label: "AMOT 溯源餐廳 2026",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/amot-traceability-awards-2026-candidates.json",
+        count: guides.amottrace || 0,
+        candidates: (amotTrace2026Candidates.restaurants || []).length,
+        needsManualReview: (amotTrace2026Candidates.needsManualReview || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "taichunggold",
+        label: "臺中金饌獎",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/taichung-golden-awards-2024-candidates.json",
+        count: guides.taichunggold || 0,
+        candidates: (taichungGoldCandidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {

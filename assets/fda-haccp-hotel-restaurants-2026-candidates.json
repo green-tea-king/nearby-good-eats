@@ -1,0 +1,1152 @@
+{
+  "version": "fda-haccp-hotel-restaurants-2026-candidates",
+  "generatedAt": "2026-07-02T22:28:35.684164Z",
+  "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325",
+  "sourceFileUrl": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3",
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_pdf_batch",
+    "nationalCertificationList": true,
+    "notes": [
+      "資料來源為食藥署公開 PDF，批次整理後供本地內建資料庫使用。",
+      "名單說明涵蓋 109-111 年查核合格或複查合格旅館附設餐廳。",
+      "因原始資料未提供店家逐筆年份，year 一律標示為年份待確認。"
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "日月千禧酒店-饗樂全日餐廳",
+      "city": "台中市",
+      "district": "西屯區",
+      "address": "台中市西屯區市政路 77 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 1,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "台北 W 飯店-宴會廳",
+      "city": "台北市",
+      "district": "信義區",
+      "address": "台北市信義區忠孝東路 5 段 10 號 8 樓",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 2,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "台北晶華酒店-宴會廳",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區中山北路二段 39 巷 3 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 3,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "遠東國際大飯店-上海醉月樓",
+      "city": "台北市",
+      "district": "大安區",
+      "address": "台北市大安區敦化南路 2 段 201 號、203 號 1 至 5 樓",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 4,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "福華大飯店",
+      "city": "台北市",
+      "district": "大安區",
+      "address": "台北市大安區仁愛路 3 段 160 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 5,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "君品酒店-宴會廳",
+      "city": "台北市",
+      "district": "大同區",
+      "address": "台北市大同區承德路一段 3 號 5 樓",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 6,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "台北喜來登大飯店-宴會廳",
+      "city": "台北市",
+      "district": "中正區",
+      "address": "台北市中正區忠孝東路 1 段 12 號 B2",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 7,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "JR 東日本大飯店台北-鉑麗安廳",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區南京東路三段 133 號 B1F",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 8,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "國聯大飯店",
+      "city": "台北市",
+      "district": "大安區",
+      "address": "台北市大安區光復路 200 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 9,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "美麗信花園酒店-青庭餐廳",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區市民大道 3 段 83 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 10,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "美福大飯店-潮粵坊",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區樂群二路 55 號 1 樓",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 11,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "萬豪酒店-宴會廳",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區樂群二路 199 號 5F",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 12,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "台北老爺酒店-明宮粵菜廳",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區中山北路 2 段 37 之 1 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 13,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "台北君悅大飯店-宴會廳",
+      "city": "台北市",
+      "district": "信義區",
+      "address": "台北市信義區西村里松壽路 2 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 14,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "北投麗禧溫泉酒店",
+      "city": "台北市",
+      "district": "北投區",
+      "address": "台北市北投區幽雅路 30 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 15,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "兄弟大飯店-桂花廳",
+      "city": "台北市",
+      "district": "松山區",
+      "address": "台北市松山區南京東路 3 段 255 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 16,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "雀客藏居台北陽明山溫泉飯店",
+      "city": "台北市",
+      "district": "士林區",
+      "address": "台北市士林區格致路 237 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 17,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "維多麗亞酒店-大宴會廳",
+      "city": "台北市",
+      "district": "中山區",
+      "address": "台北市中山區敬業四路 168 號 1F",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 18,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "三德大飯店-承德樓",
+      "city": "台北市",
+      "district": "大同區",
+      "address": "台北市大同區承德路 3 段 49 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 19,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "娜路彎大酒店",
+      "city": "台東縣",
+      "district": "台東市",
+      "address": "台東縣台東市連航路 66 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 20,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "日暉國際渡假村-蝴蝶蘭中餐廳",
+      "city": "台東縣",
+      "district": "池上鄉",
+      "address": "台東縣池上鄉新興村新興 107 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 21,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "台南大飯店",
+      "city": "台南市",
+      "district": "中西區",
+      "address": "台南市中西區成功路 1 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 22,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "綠舞國際觀光飯店-蝶舞咖啡廳",
+      "city": "宜蘭縣",
+      "district": "五結鄉",
+      "address": "宜蘭縣五結鄉錦眾村五濱路 2 段 459 號 3F",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 23,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "長榮鳳凰酒店",
+      "city": "宜蘭縣",
+      "district": "礁溪鄉",
+      "address": "宜蘭縣礁溪鄉健康路 77 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 24,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "理想大地渡假飯店-風味餐聽",
+      "city": "花蓮縣",
+      "district": "壽豐鄉",
+      "address": "花蓮縣壽豐鄉共和村理想路 1 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 25,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "花蓮翰品酒店-怡華中餐廳",
+      "city": "花蓮縣",
+      "district": "花蓮市",
+      "address": "花蓮縣花蓮市永興路 2 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 26,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "太魯閣晶英酒店-梅園中餐廳",
+      "city": "花蓮縣",
+      "district": "秀林鄉",
+      "address": "花蓮縣秀林鄉富世村天祥路 18 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 27,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "雲品溫泉酒店-丹彤廳",
+      "city": "南投縣",
+      "district": "魚池鄉",
+      "address": "南投縣魚池鄉水社村中正路 23 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 28,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "雲品溫泉酒店-Ken Can by Ken Chan",
+      "city": "南投縣",
+      "district": "魚池鄉",
+      "address": "南投縣魚池鄉水社村中正路 23 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 29,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "雲品溫泉酒店-西餐廳",
+      "city": "南投縣",
+      "district": "魚池鄉",
+      "address": "南投縣魚池鄉水社村中正路 23 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 30,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "涵碧樓大飯店-西餐廳",
+      "city": "南投縣",
+      "district": "魚池鄉",
+      "address": "南投縣魚池鄉水社村中興路 142 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 31,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "涵碧樓大飯店-中餐廳",
+      "city": "南投縣",
+      "district": "魚池鄉",
+      "address": "南投縣魚池鄉水社村中興路 142 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 32,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "墾丁凱撒大飯店",
+      "city": "屏東縣",
+      "district": "恆春鎮",
+      "address": "屏東縣恆春鎮墾丁路 6 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 33,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "名人堂花園大飯店-朝桂餐廳",
+      "city": "桃園市",
+      "district": "龍潭區",
+      "address": "桃園市龍潭區民生路 141 巷 150 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 34,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "尊爵天際大飯店-江浙廳(天饌廳、青雲廳、紫雲廳)",
+      "city": "桃園市",
+      "district": "蘆竹區",
+      "address": "桃園市蘆竹區南崁路一段 108 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 35,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "桃園喜來登酒店-禧粵樓中餐廳",
+      "city": "桃園市",
+      "district": "大園區",
+      "address": "桃園市大園區南港里大觀路 777 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 36,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "和逸飯店桃園館中餐廳",
+      "city": "桃園市",
+      "district": "中壢區",
+      "address": "桃園市中壢區春德路 101 號 二樓",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 37,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "台北諾富特華航桃園機場飯店",
+      "city": "桃園市",
+      "district": "大園區",
+      "address": "桃園市大園區航站南路 1-1 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 38,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "麗尊大酒店",
+      "city": "高雄市",
+      "district": "苓雅區",
+      "address": "高雄市苓雅區五福一路 105 號 3 樓",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 39,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "福容大飯店淡水漁人碼頭店",
+      "city": "新北市",
+      "district": "淡水區",
+      "address": "新北市淡水區觀海路 83 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 40,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "板橋凱撒大飯店",
+      "city": "新北市",
+      "district": "板橋區",
+      "address": "新北市板橋區縣民大道二段 8 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光/五星級旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 41,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    },
+    {
+      "name": "老爺大酒店-中餐廳",
+      "city": "新竹市",
+      "district": "東區",
+      "address": "新竹市東區光復路一段 227 號",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "fdahaccp",
+          "year": "年份待確認",
+          "level": "國際觀光旅館附設餐廳",
+          "awardName": "旅館業附設餐廳 HACCP 符合性參考名單",
+          "certType": "hotel_restaurant_haccp",
+          "sourceName": "衛生機關執行旅館業附設餐廳實施食品安全管制系統符合性參考名單",
+          "certifier": "衛生福利部食品藥物管理署",
+          "extractedAt": "2026-07-03",
+          "notes": "名單說明涵蓋 109-111 年查核合格或複查合格業者，但未提供各店獨立年份，故標示為年份待確認。",
+          "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638226216741466806&iid=12559&type=3"
+        }
+      ],
+      "importConfidence": "high",
+      "sourceMeta": {
+        "sequence": 42,
+        "sourcePageUrl": "https://www.fda.gov.tw/TC/site.aspx?sid=325"
+      }
+    }
+  ]
+}
