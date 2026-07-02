@@ -12,6 +12,7 @@ const fmgCandidatesPath = path.join(repoRoot, "assets", "fmg-taiwan-2025-candida
 const greenVeggieCandidatesPath = path.join(repoRoot, "assets", "green-veggie-guide-2025-candidates.json");
 const gdgAwardsCandidatesPath = path.join(repoRoot, "assets", "gdg-awards-2025-candidates.json");
 const michelinSpecialCandidatesPath = path.join(repoRoot, "assets", "michelin-special-awards-2025-candidates.json");
+const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-candidates.json");
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
 const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
@@ -116,6 +117,7 @@ function main() {
   const greenVeggieCandidates = fs.existsSync(greenVeggieCandidatesPath) ? readJson(greenVeggieCandidatesPath) : { restaurants: [] };
   const gdgAwardsCandidates = fs.existsSync(gdgAwardsCandidatesPath) ? readJson(gdgAwardsCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const michelinSpecialCandidates = fs.existsSync(michelinSpecialCandidatesPath) ? readJson(michelinSpecialCandidatesPath) : { restaurants: [] };
+  const tcfPraiseCandidates = fs.existsSync(tcfPraiseCandidatesPath) ? readJson(tcfPraiseCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
@@ -129,6 +131,7 @@ function main() {
     ...(greenVeggieCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(gdgAwardsCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(michelinSpecialCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...(tcfPraiseCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(taichungLowCarbonCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(muslimFriendlyCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(fdaRestaurantHygieneCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
@@ -147,6 +150,7 @@ function main() {
       ...(fs.existsSync(greenVeggieCandidatesPath) ? ["assets/green-veggie-guide-2025-candidates.json"] : []),
       ...(fs.existsSync(gdgAwardsCandidatesPath) ? ["assets/gdg-awards-2025-candidates.json"] : []),
       ...(fs.existsSync(michelinSpecialCandidatesPath) ? ["assets/michelin-special-awards-2025-candidates.json"] : []),
+      ...(fs.existsSync(tcfPraiseCandidatesPath) ? ["assets/tcf-praise-2025-candidates.json"] : []),
       ...(fs.existsSync(taichungLowCarbonCandidatesPath) ? ["assets/taichung-low-carbon-2023-candidates.json"] : []),
       ...(fs.existsSync(muslimFriendlyCandidatesPath) ? ["assets/muslim-friendly-2026-candidates.json"] : []),
       ...(fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? ["assets/fda-restaurant-hygiene-2024-candidates.json"] : []),
@@ -161,6 +165,7 @@ function main() {
     greenVeggieCandidates: (greenVeggieCandidates.restaurants || []).length,
     gdgAwardsCandidates: (gdgAwardsCandidates.restaurants || []).length,
     michelinSpecialCandidates: (michelinSpecialCandidates.restaurants || []).length,
+    tcfPraiseCandidates: (tcfPraiseCandidates.restaurants || []).length,
     taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
     muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
     fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
@@ -173,6 +178,8 @@ function main() {
       + (greenVeggieCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedGdgAwardsNeedsReview: (gdgAwardsCandidates.needsCityReview || []).length
       + (gdgAwardsCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    skippedTcfPraiseNeedsReview: (tcfPraiseCandidates.needsCityReview || []).length
+      + (tcfPraiseCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     addedRestaurants: 0,
     updatedExistingRestaurants: 0,
     skippedDuplicateAward: 0,
@@ -245,6 +252,7 @@ function main() {
     ...(greenVeggieCandidates.sourceUrl ? [greenVeggieCandidates.sourceUrl] : []),
     ...(gdgAwardsCandidates.sourceUrl ? [gdgAwardsCandidates.sourceUrl] : []),
     ...(michelinSpecialCandidates.sourceUrl ? [michelinSpecialCandidates.sourceUrl] : []),
+    ...(tcfPraiseCandidates.sourceUrl ? [tcfPraiseCandidates.sourceUrl] : []),
     ...(taichungLowCarbonCandidates.sourceUrl ? [taichungLowCarbonCandidates.sourceUrl] : []),
     ...(muslimFriendlyCandidates.sourceUrl ? [muslimFriendlyCandidates.sourceUrl] : []),
     ...(fdaRestaurantHygieneCandidates.sourcePageUrl ? [fdaRestaurantHygieneCandidates.sourcePageUrl] : []),

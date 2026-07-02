@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 7544,
+    "awardsRestaurants": 7568,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -29,8 +29,8 @@
     "gdgAwardsCandidates": 21,
     "gdgAwardsNeedsCityReview": 4,
     "michelinSpecialCandidates": 4,
-    "tcfPraiseCandidates": 0,
-    "tcfPraiseNeedsCityReview": 36,
+    "tcfPraiseCandidates": 24,
+    "tcfPraiseNeedsCityReview": 12,
     "taichungLowCarbonCandidates": 20,
     "muslimFriendlyCandidates": 75,
     "fdaRestaurantHygieneCandidates": 6104
@@ -174,12 +174,12 @@
     {
       "id": "tcfpraise",
       "label": "美食指南點讚榜臺灣站",
-      "status": "candidate_needs_city_review",
-      "dataFile": null,
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/tcf-praise-2025-candidates.json",
-      "count": 0,
-      "candidates": 0,
-      "needsCityReview": 36,
+      "count": 24,
+      "candidates": 24,
+      "needsCityReview": 12,
       "runtimeLookup": false
     },
     {

@@ -72,7 +72,7 @@ $MichelinThreeStar = "$([char]0x4E09)$([char]0x661F)"
 $MichelinTwoStar = "$([char]0x4E8C)$([char]0x661F)"
 $MichelinOneStar = "$([char]0x4E00)$([char]0x661F)"
 $MultiAwardLabel = "$([char]0x8A55)$([char]0x9451)$([char]0x53EF)$([char]0x8907)$([char]0x9078)"
-foreach ($RequiredFilterText in @("key:`"award`"", "tier:`"static`"", $MultiAwardLabel, "guide:`"michelin`"", "level:`"$MichelinThreeStar`"", "level:`"$MichelinTwoStar`"", "level:`"$MichelinOneStar`"", "guide:`"michelinspecial`"", "guide:`"greenveggie`"", "guide:`"gdgawards`"", "guide:`"taichunglowcarbon`"", "guide:`"muslimfriendly`"", "guide:`"fdagrade`"", "guide:`"500sweet`"")) {
+foreach ($RequiredFilterText in @("key:`"award`"", "tier:`"static`"", $MultiAwardLabel, "guide:`"michelin`"", "level:`"$MichelinThreeStar`"", "level:`"$MichelinTwoStar`"", "level:`"$MichelinOneStar`"", "guide:`"michelinspecial`"", "guide:`"greenveggie`"", "guide:`"gdgawards`"", "guide:`"tcfpraise`"", "guide:`"taichunglowcarbon`"", "guide:`"muslimfriendly`"", "guide:`"fdagrade`"", "guide:`"500sweet`"")) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
@@ -88,7 +88,7 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 7544
+  restaurants = 7568
   michelin = 53
   "michelinspecial" = 4
   "michelin_selected" = 222
@@ -105,6 +105,7 @@ $Expected = [ordered]@{
   "fmg" = 20
   "greenveggie" = 65
   "gdgawards" = 29
+  "tcfpraise" = 24
   "taichunglowcarbon" = 20
   "muslimfriendly" = 74
   "fdagrade" = 6041
@@ -130,6 +131,7 @@ $Actual = [ordered]@{
   "fmg" = $Guides["fmg"]
   "greenveggie" = $Guides["greenveggie"]
   "gdgawards" = $Guides["gdgawards"]
+  "tcfpraise" = $Guides["tcfpraise"]
   "taichunglowcarbon" = $Guides["taichunglowcarbon"]
   "muslimfriendly" = $Guides["muslimfriendly"]
   "fdagrade" = $Guides["fdagrade"]
