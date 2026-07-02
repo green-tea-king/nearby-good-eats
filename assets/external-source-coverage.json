@@ -1,6 +1,6 @@
 {
   "version": "external-source-coverage-2026-07-01",
-  "updated": "2026-07-02",
+  "updated": "2026-07-03",
   "policy": {
     "runtimeExternalLookup": false,
     "costFirst": true,
