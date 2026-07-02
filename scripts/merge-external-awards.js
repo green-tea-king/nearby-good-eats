@@ -20,6 +20,7 @@ const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
 const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
 const reportPath = path.join(repoRoot, "assets", "external-awards-merge-report.json");
+const MIN_GUIDE_COUNT = 30;
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -109,6 +110,12 @@ function validateExternalAwards(data) {
   return errors;
 }
 
+function eligibleRows(data) {
+  const rows = data.restaurants || [];
+  if (rows.length < MIN_GUIDE_COUNT) return [];
+  return rows.filter((row) => row.importConfidence === "high");
+}
+
 function main() {
   const awards = readJson(awardsPath);
   const externalAwards = readJson(externalAwardsPath);
@@ -128,22 +135,22 @@ function main() {
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
   const mergeCandidates = [
-    ...(externalAwards.restaurants || []),
-    ...(tatlerCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(worldCulinaryCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(fiftyBestCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(oadCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(bestChefCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(designAwardsCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(fmgCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(greenVeggieCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(gdgAwardsCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(michelinSpecialCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(tcfPraiseCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(taichungLowCarbonCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(muslimFriendlyCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
-    ...(fdaRestaurantHygieneCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...((externalAwards.restaurants || []).length >= MIN_GUIDE_COUNT ? (externalAwards.restaurants || []) : []),
+    ...eligibleRows(tatlerCandidates),
+    ...eligibleRows(worldCulinaryCandidates),
+    ...eligibleRows(fiftyBestCandidates),
+    ...eligibleRows(fiftyDiscoveryCandidates),
+    ...eligibleRows(oadCandidates),
+    ...eligibleRows(bestChefCandidates),
+    ...eligibleRows(designAwardsCandidates),
+    ...eligibleRows(fmgCandidates),
+    ...eligibleRows(greenVeggieCandidates),
+    ...eligibleRows(gdgAwardsCandidates),
+    ...eligibleRows(michelinSpecialCandidates),
+    ...eligibleRows(tcfPraiseCandidates),
+    ...eligibleRows(taichungLowCarbonCandidates),
+    ...eligibleRows(muslimFriendlyCandidates),
+    ...eligibleRows(fdaRestaurantHygieneCandidates),
   ];
   const rows = Array.isArray(awards.restaurants) ? awards.restaurants : [];
   const errors = validateExternalAwards(externalAwards);
@@ -198,6 +205,7 @@ function main() {
       + (gdgAwardsCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedTcfPraiseNeedsReview: (tcfPraiseCandidates.needsCityReview || []).length
       + (tcfPraiseCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    smallSampleThreshold: MIN_GUIDE_COUNT,
     addedRestaurants: 0,
     updatedExistingRestaurants: 0,
     skippedDuplicateAward: 0,

@@ -51,7 +51,7 @@
     "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=french-tatler-best-restaurants",
     "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants"
   ],
-  "updated": "2026-07-02",
+  "updated": "2026-07-03",
   "restaurants": [
     {
       "name": "一香飲食店 麻醬麵",
@@ -2784,27 +2784,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633122214612&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 宜蘭縣113年度通過餐飲衛生管理分級評核名單。 電話 03-9615168 登錄字號 G-129288501-00000-9"
-        }
-      ]
-    },
-    {
-      "name": "糧心聚落宜蘭店",
-      "city": "宜蘭縣",
-      "district": "員山鄉",
-      "address": "宜蘭縣員山鄉茄苳路28巷2-3號",
-      "cuisine": "友善食材料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "在地當季食材運用獎",
-          "category": "在地當季食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "東區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.instagram.com/reel/DVcmGMdkrT0/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
         }
       ]
     },
@@ -6196,27 +6175,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633123854132&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 花蓮縣113年度通過餐飲衛生管理分級評核名單。 電話 0966-715262(非訂購) 登錄字號 U-200078757-00000-3"
-        }
-      ]
-    },
-    {
-      "name": "阿樂樂代 Aredetay",
-      "city": "花蓮縣",
-      "district": "光復鄉",
-      "address": "花蓮縣光復鄉富田一街56號",
-      "cuisine": "阿美族料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "有機友善食材運用獎",
-          "category": "有機友善食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "東區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.verse.com.tw/article/aredetay-in-hualien 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
         }
       ]
     },
@@ -9914,156 +9872,6 @@
       ]
     },
     {
-      "name": "一碗食舖",
-      "city": "南投縣",
-      "district": "埔里鎮",
-      "address": "南投縣埔里鎮籃城路25號",
-      "cuisine": "蔬食定食",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "在地當季食材運用獎",
-          "category": "在地當季食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "中區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://travel.nantou.gov.tw/attractions/%E4%B8%80%E7%A2%97%E9%A3%9F%E8%88%96/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
-    },
-    {
-      "name": "小川埔里環保酵素園區",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
-      "name": "小半天風味餐坊",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [
-        "田媽媽小半天風味餐坊"
-      ],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
-      "name": "山中小廚房",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
-      "name": "山慕民宿",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
-      "name": "丘山茶",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [
-        "丘山茶Hilltea",
-        "Hilltea"
-      ],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
-      "name": "仕合廖家",
-      "city": "南投縣",
-      "address": "南投縣草屯鎮成功路一段202號",
-      "aliases": [
-        "仕合廖家手作",
-        "仕合廖家手作便當"
-      ],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最有潛力新星 2025",
-          "category": "最有潛力新星 2025",
-          "dimension": "年度最高榮譽｜Grand Honor Award",
-          "region": "",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "年度最佳主廚",
-          "category": "年度最佳主廚",
-          "dimension": "年度最高榮譽｜Grand Honor Award",
-          "region": "",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最有潛力新星",
-          "category": "最有潛力新星",
-          "dimension": "Grand Honor Award",
-          "region": "中區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://smiletaiwan.cw.com.tw/article/8285 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ],
-      "district": "草屯鎮",
-      "cuisine": "手作御食"
-    },
-    {
       "name": "包葉扣仔嗲",
       "address": "",
       "awards": [
@@ -10109,21 +9917,6 @@
       "aliases": []
     },
     {
-      "name": "吟詩企業有限公司",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
       "name": "汶傳統米食坊",
       "address": "",
       "awards": [
@@ -10153,21 +9946,6 @@
       "city": "南投縣",
       "area": "",
       "aliases": []
-    },
-    {
-      "name": "虎嘯山嵐",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
     },
     {
       "name": "阿章意麵",
@@ -10215,40 +9993,6 @@
       "aliases": []
     },
     {
-      "name": "雲品溫泉酒店 雲月舫",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [
-        "雲月舫"
-      ],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
-      "name": "慢午野食有限公司",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [
-        "慢午野食"
-      ],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
       "name": "澄食 和食料理",
       "address": "",
       "awards": [
@@ -10292,21 +10036,6 @@
       ],
       "city": "南投縣",
       "aliases": []
-    },
-    {
-      "name": "SMOK製甜所",
-      "city": "南投縣",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
     },
     {
       "name": "85度C枋寮店",
@@ -11864,27 +11593,6 @@
       ]
     },
     {
-      "name": "春日廚房",
-      "city": "屏東縣",
-      "district": "春日鄉",
-      "address": "屏東縣春日鄉春日路172號",
-      "cuisine": "排灣族料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "在地當季食材運用獎",
-          "category": "在地當季食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "南區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://smiletaiwan.cw.com.tw/article/7725 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
-    },
-    {
       "name": "春日廚房 Kasuga’s Kitchen",
       "address": "",
       "awards": [
@@ -13260,19 +12968,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.105",
-          "rank": 105,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "sources": [
@@ -13298,15 +12993,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "在地當季食材獎",
-          "category": "在地當季食材獎",
-          "dimension": "食材向度｜Conscious Sourcing",
-          "region": "南區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ],
       "sources": [
@@ -13639,32 +13325,6 @@
           "notes": "來源檔案標示 苗栗縣113年度通過餐飲衛生管理分級評核名單。 電話 0920-592-888 登錄字號 K-149048706-00010-7"
         }
       ]
-    },
-    {
-      "name": "心雕居",
-      "city": "苗栗縣",
-      "address": "苗栗縣苑裡鎮出水路64號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "新經濟營運獎",
-          "category": "新經濟營運獎",
-          "dimension": "年度最高榮譽｜Grand Honor Award",
-          "region": "",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
-        }
-      ],
-      "district": "苑裡鎮",
-      "cuisine": "在地小農餐廳"
     },
     {
       "name": "爪哇殿咖啡",
@@ -19159,25 +18819,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633042793620&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 桃園市113年度通過餐飲衛生管理分級評核名單。 登錄字號 H-200197706-00001-7"
-        }
-      ]
-    },
-    {
-      "name": "大楊梅鵝莊",
-      "city": "桃園市",
-      "district": "楊梅區",
-      "address": "桃園市楊梅區大平街42號",
-      "cuisine": "客家鵝肉",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://best-goose.com/about.asp"
         }
       ]
     },
@@ -26661,25 +26302,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633042793620&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 桃園市113年度通過餐飲衛生管理分級評核名單。 登錄字號 H-202267384-00001-9"
-        }
-      ]
-    },
-    {
-      "name": "知山田頂級燒肉",
-      "city": "桃園市",
-      "district": "桃園區",
-      "address": "桃園市桃園區大興西路三段255號",
-      "cuisine": "燒肉",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.tcf.org.tw/page/news/show.aspx?num=55"
         }
       ]
     },
@@ -34977,25 +34599,6 @@
       ]
     },
     {
-      "name": "晶粵軒烤鴨餐廳",
-      "city": "桃園市",
-      "district": "桃園區",
-      "address": "桃園市桃園區南平路166號2F",
-      "cuisine": "港式烤鴨",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://inline.app/booking/-O7XszbGclpg_Xhl7Vle%3Ainline-live-3/-O7XszoxNL1rCp5Bklcf"
-        }
-      ]
-    },
-    {
       "name": "森本家-桃園環球A8店",
       "city": "桃園市",
       "district": "龜山區",
@@ -39485,27 +39088,6 @@
       ]
     },
     {
-      "name": "雙口呂文化廚房",
-      "city": "桃園市",
-      "district": "大溪區",
-      "address": "桃園市大溪區南興路一段277號",
-      "cuisine": "臺灣米食",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "有機友善食材運用獎",
-          "category": "有機友善食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://wem.tycg.gov.tw/News_Photo_Content.aspx?n=14934&s=1157516 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
-    },
-    {
       "name": "懶得煮客家麵食館",
       "city": "桃園市",
       "district": "平鎮",
@@ -43466,25 +43048,6 @@
       ]
     },
     {
-      "name": "Q勁麵館",
-      "city": "桃園市",
-      "district": "龜山區",
-      "address": "桃園市龜山區文化一路10巷42弄35號",
-      "cuisine": "麵館",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/p/Q%E5%8B%81%E9%BA%B5%E9%A4%A8%E9%95%B7%E5%BA%9A%E5%BA%97-61554760757074/"
-        }
-      ]
-    },
-    {
       "name": "QBurger-八德中華店",
       "city": "桃園市",
       "district": "八德區",
@@ -46345,27 +45908,6 @@
       ]
     },
     {
-      "name": "TINA 廚房-桃園八德埤塘公園",
-      "city": "桃園市",
-      "district": "八德區",
-      "address": "",
-      "cuisine": "有機餐廳",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最佳低碳實踐獎",
-          "category": "最佳低碳實踐獎",
-          "dimension": "Thriving Environment",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.facebook.com/GreenDiningGuide/posts/2025-%E5%9C%8B%E9%9A%9B%E7%B6%A0%E8%89%B2%E9%A4%90%E9%A3%B2%E5%B9%B4%E6%9C%83%E6%9A%A8%E9%A0%92%E7%8D%8E%E5%85%B8%E7%A6%AE-%E5%BE%97%E7%8D%8E%E5%9B%9E%E9%A1%A7%E6%9C%80%E4%BD%B3%E4%BD%8E%E7%A2%B3%E5%AF%A6%E8%B8%90%E7%8D%8E-tina%E5%BB%9A%E6%88%BF-%E6%A1%83%E5%9C%92%E5%85%AB%E5%BE%B7%E5%9F%A4%E5%A1%98%E5%85%AC%E5%9C%92%E9%88%BA%E7%B5%B1%E9%A3%9F%E5%93%81%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E9%80%8F%E9%81%8E%E6%AD%A4%E7%8D%8E%E9%A0%85%E9%BC%93%E5%8B%B5%E9%A4%90%E9%A3%B2%E6%A5%AD%E8%80%85%E9%99%8D%E4%BD%8E%E8%87%AA%E8%BA%AB%E7%9A%84%E7%92%B0%E5%A2%83%E8%A1%9D%E6%93%8A%E5%BE%9E%E6%BA%AB%E5%AE%A4/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。 已確認在桃園市八德區埤塘公園內，但公開摘要未帶出完整門牌，先保留空地址。"
-        }
-      ]
-    },
-    {
       "name": "Tina Coffee/cà phê 越南咖啡",
       "city": "桃園市",
       "district": "桃園區",
@@ -47747,14 +47289,6 @@
         {
           "guide": "bib",
           "year": 2025
-        },
-        {
-          "guide": "michelinspecial",
-          "year": 2025,
-          "level": "年輕主廚大獎",
-          "awardName": "Young Chef Award",
-          "recipient": "Yung Yen Hsia",
-          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
         }
       ],
       "sources": [
@@ -48570,27 +48104,6 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "而今餐酒館",
-      "city": "高雄市",
-      "district": "前金區",
-      "address": "高雄市前金區自立二路53巷27號",
-      "cuisine": "餐酒館",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "有機友善食材運用獎",
-          "category": "有機友善食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "南區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://smiletaiwan.cw.com.tw/article/6256 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
         }
       ]
     },
@@ -52499,25 +52012,6 @@
       "district": "高雄"
     },
     {
-      "name": "逸之牛",
-      "city": "高雄市",
-      "district": "新興區",
-      "address": "高雄市新興區中正四路46號",
-      "cuisine": "日式炸牛排與燒肉",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/ICHIGYU/"
-        }
-      ]
-    },
-    {
       "name": "微兜-漢神巨蛋店",
       "city": "高雄市",
       "district": "左營區",
@@ -54627,12 +54121,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "sources": [
@@ -54960,13 +54448,6 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 346,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "sources": [
@@ -54988,14 +54469,6 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
-        },
-        {
-          "guide": "michelinspecial",
-          "year": 2025,
-          "level": "服務大獎",
-          "awardName": "Service Award",
-          "recipient": "Kiky Chen",
-          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
         }
       ],
       "sources": [
@@ -55019,22 +54492,10 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
           "guide": "michelin_selected",
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "designawards",
-          "year": 2024,
-          "level": "Sustainability",
-          "designer": "TaG Living",
-          "url": "https://restaurantandbardesignawards.com/awards-archive/2024"
         }
       ]
     },
@@ -57078,27 +56539,6 @@
       ]
     },
     {
-      "name": "甘苦人魅力農店",
-      "city": "雲林縣",
-      "district": "口湖鄉",
-      "address": "雲林縣口湖鄉梧南村光明路163號",
-      "cuisine": "海鮮與在地食材料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最友善社區獎",
-          "category": "最友善社區獎",
-          "dimension": "Caring Society",
-          "region": "中區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://greenmedia.today/map_greens.php?rid=432 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
-    },
-    {
       "name": "目鏡仔麥芽酥",
       "address": "",
       "awards": [
@@ -59114,25 +58554,6 @@
       ]
     },
     {
-      "name": "稻香村懷舊料理",
-      "city": "雲林縣",
-      "district": "斗南鎮",
-      "address": "雲林縣斗南鎮光華路36號",
-      "cuisine": "懷舊台菜",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://tour.yunlin.gov.tw/main/modules/MySpace/index.php?xmlid=1037876"
-        }
-      ]
-    },
-    {
       "name": "賞味家早餐店",
       "city": "雲林縣",
       "district": "西螺鎮",
@@ -59524,25 +58945,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633036923578&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 新北市113年度通過餐飲衛生管理分級評核名單。 電話 02-24965089 登錄字號 F-200161029-00001-4"
-        }
-      ]
-    },
-    {
-      "name": "一鍋三饗",
-      "city": "新北市",
-      "district": "板橋區",
-      "address": "新北市板橋區民族路33號",
-      "cuisine": "火鍋與鐵板燒",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/OnePotTripleFeast/"
         }
       ]
     },
@@ -60786,35 +60188,6 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "有機友善食材運用獎",
-          "category": "有機友善食材運用獎",
-          "dimension": "食材向度｜Conscious Sourcing",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最有潛力新星 2025",
-          "category": "最有潛力新星 2025",
-          "dimension": "年度最高榮譽｜Grand Honor Award",
-          "region": "",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最有潛力新星",
-          "category": "最有潛力新星",
-          "dimension": "Grand Honor Award",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.naturetea.com.tw/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
         }
       ],
       "district": "汐止區",
@@ -67012,25 +66385,6 @@
       ]
     },
     {
-      "name": "黑金傳奇",
-      "city": "新北市",
-      "district": "淡水區",
-      "address": "新北市淡水區公明街6號",
-      "cuisine": "黑糖飲品與伴手禮",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://th.openrice.com/zh/newtaipei-keelung/r-%E9%BB%91%E9%87%91%E5%82%B3%E5%A5%87%E9%BB%91%E7%B3%96%E8%96%91%E6%AF%8D%E8%8C%B6-tamsui-district-taiwanese-r137968/menus"
-        }
-      ]
-    },
-    {
       "name": "黑殿飯店 (創始店)",
       "aliases": [],
       "city": "新北市",
@@ -67202,25 +66556,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633036923578&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 新北市113年度通過餐飲衛生管理分級評核名單。 電話 02-26830466 登錄字號 F-200219009-00001-6"
-        }
-      ]
-    },
-    {
-      "name": "新方海鮮宴會館",
-      "city": "新北市",
-      "district": "五股區",
-      "address": "新北市五股區成泰路一段194-2號",
-      "cuisine": "海鮮宴會",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://wanlicrab.tw/features/crab-restaurants-mrt/119-wugu-dist/287-xinfang"
         }
       ]
     },
@@ -76101,27 +75436,6 @@
       ]
     },
     {
-      "name": "fifteen 拾吾純植西餐廳",
-      "city": "新竹縣",
-      "district": "竹北市",
-      "address": "新竹縣竹北市文興路205號",
-      "cuisine": "純植西餐",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "地球永續餐盤獎",
-          "category": "地球永續餐盤獎",
-          "dimension": "Conscious Sourcing",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.threads.com/%40fifteen_cuisine_tw 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
-    },
-    {
       "name": "Firoo",
       "aliases": [],
       "city": "新竹縣",
@@ -82987,24 +82301,6 @@
       "aliases": []
     },
     {
-      "name": "A-Teng生態飲食工作坊x飲食空間",
-      "city": "彰化縣",
-      "address": "",
-      "aliases": [
-        "A-Teng生態飲食工作坊",
-        "A-Teng"
-      ],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
       "name": "BEAR BAKERY 小熊菓子",
       "address": "",
       "awards": [
@@ -83408,21 +82704,6 @@
       ]
     },
     {
-      "name": "三時福利社",
-      "city": "臺中市",
-      "address": "臺中市西區民生路 356 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "三商巧福-中山醫店",
       "city": "臺中市",
       "district": "台中市",
@@ -83821,13 +83102,6 @@
       "aliases": [],
       "awards": [
         {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        },
-        {
           "guide": "fdagrade",
           "year": 2024,
           "level": "良",
@@ -83876,47 +83150,6 @@
       "city": "臺中市",
       "area": "",
       "aliases": []
-    },
-    {
-      "name": "不老夢想125號 不老食光",
-      "city": "臺中市",
-      "address": "臺中市北區雙十路一段125號",
-      "aliases": [
-        "不老食光"
-      ],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最友善員工獎",
-          "category": "最友善員工獎",
-          "dimension": "Caring Society",
-          "region": "中區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.bulao125.com/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "資源循環再利用獎",
-          "category": "資源循環再利用獎",
-          "dimension": "Thriving Environment",
-          "region": "中區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.bulao125.com/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ],
-      "district": "北區",
-      "cuisine": "友善餐廳"
     },
     {
       "name": "与玥樓",
@@ -84290,21 +83523,6 @@
       ],
       "aliases": [],
       "district": "台中"
-    },
-    {
-      "name": "水相餐聚苑",
-      "city": "臺中市",
-      "address": "臺中市北屯區經貿三路二段 100 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
     },
     {
       "name": "水晶冰坊",
@@ -84991,22 +84209,10 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
           "guide": "michelin_selected",
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
         }
       ]
     },
@@ -85252,21 +84458,6 @@
       ]
     },
     {
-      "name": "有之和牛-臺中文心店",
-      "city": "臺中市",
-      "address": "臺中市西屯區文心路二段 568 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "有火鍋",
       "city": "臺中市",
       "district": "台中市",
@@ -85283,17 +84474,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633104284012&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺中市113年度通過餐飲衛生管理分級評核名單。 電話 04-2389-4562 登錄字號 B-190147357-00000-5"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "有機友善食材運用獎",
-          "category": "有機友善食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "中區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.opentable.com.tw/restaurant/profile/181448 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
         }
       ]
     },
@@ -86623,21 +85803,6 @@
       ]
     },
     {
-      "name": "金色三麥-臺中市政店",
-      "city": "臺中市",
-      "address": "臺中市西屯區市政路 20 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "金悅軒",
       "city": "臺中市",
       "address": "台中市",
@@ -86768,21 +85933,6 @@
           "notes": "來源檔案標示 臺中市113年度通過餐飲衛生管理分級評核名單。 電話 04-2313-9988#2882 登錄字號 B-186517856-00001-6"
         }
       ]
-    },
-    {
-      "name": "長榮桂冠酒店咖啡廳",
-      "city": "臺中市",
-      "address": "臺中市西屯區臺灣大道二段 666 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
     },
     {
       "name": "阿斗伯冷凍芋",
@@ -87114,53 +86264,6 @@
       ]
     },
     {
-      "name": "屋馬燒肉-中港店",
-      "city": "臺中市",
-      "address": "臺中市西屯區臺灣大道三段 300 號",
-      "aliases": [
-        "屋馬燒肉(臺中中港店)"
-      ],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
-      "name": "屋馬燒肉-文心店",
-      "city": "臺中市",
-      "address": "臺中市南屯區文心路一段 436 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
-      "name": "屋馬燒肉-園邸店",
-      "city": "臺中市",
-      "address": "臺中市西區公益路 111 號 1 樓",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "星饗道國際自助餐",
       "city": "臺中市",
       "district": "台中市",
@@ -87420,23 +86523,6 @@
       ]
     },
     {
-      "name": "紅巢燒肉工房",
-      "city": "臺中市",
-      "address": "臺中市南屯區公益路二段 836 號",
-      "aliases": [
-        "Hongchao BBQ Restaurant"
-      ],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "紅蕃鐵板燒-豐原太平洋百貨",
       "city": "臺中市",
       "district": "台中市",
@@ -87648,25 +86734,6 @@
       ],
       "aliases": [],
       "district": "台中"
-    },
-    {
-      "name": "食代鐵板燒",
-      "city": "臺中市",
-      "district": "東區",
-      "address": "臺中市東區南京路66號3樓",
-      "cuisine": "鐵板燒",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.threads.com/%40wangying8115/post/DXWLdK5DsNF/%E5%8F%B0%E4%B8%AD%E7%AB%99%E5%89%8D%E7%BE%8E%E9%A3%9F%E9%A3%9F%E4%BB%A3%E9%90%B5%E6%9D%BF%E7%87%92-%E7%A7%80%E6%B3%B0%E7%AB%99%E5%89%8D%E5%BA%97%E9%A6%99%E7%85%8E%E9%AE%AE%E9%AD%9A%E6%8E%92%E5%A5%97%E9%A4%90%E9%99%84%E5%B0%8F%E8%8F%9C%E8%92%B8%E8%9B%8B%E6%99%82%E8%94%AC%E8%88%87%E9%BB%9E%E5%BF%83%E4%B8%80%E6%AC%A1%E6%BB%BF%E8%B6%B3%E5%93%88%E5%9B%89%E6%88%91%E6%98%AF%E7%8E%8B%E7%80%A0%E5%B8%B8%E8%A8%80%E9%81%93%E9%A3%9F%E4%BB%A3%E9%90%B5%E6%9D%BF%E7%87%92%E6%AF%8F%E4%B8%80%E5%8F%A3%E9%83%BD%E5%80%BC%E5%BE%97%E7%B4%B0%E7%B4%B0%E5%9B%9E%E5%91%B3%E8%BF%91%E6%9C%9F%E8%88%87%E8%A6%AA%E5%8F%8B%E5%89%8D%E5%BE%80%E5%8F%B0%E4%B8%AD%E8%BC%95%E6%97%85%E8%A1%8C%E6%BC%AB%E6%AD%A5%E8%87%B3%E5%8F%B0%E4%B8%AD%E5%B8%82"
-        }
-      ]
     },
     {
       "name": "香．寓",
@@ -88256,12 +87323,6 @@
       "aliases": [],
       "awards": [
         {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        },
-        {
           "guide": "fdagrade",
           "year": 2024,
           "level": "優",
@@ -88547,27 +87608,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633104284012&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺中市113年度通過餐飲衛生管理分級評核名單。 電話 04-2332-3232 登錄字號 B-202278480-00001-2"
-        }
-      ]
-    },
-    {
-      "name": "許愿",
-      "city": "臺中市",
-      "district": "西區",
-      "address": "",
-      "cuisine": "烘焙與飯食",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "均衡飲食推廣獎",
-          "category": "均衡飲食推廣獎",
-          "dimension": "Caring Society",
-          "region": "中區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.facebook.com/GreenDiningGuide/photos/%E8%A8%B1%E6%84%BF%E7%94%A8%E5%8E%9F%E8%88%87%E5%BF%83%E7%83%98%E7%84%99%E5%87%BA%E5%AE%B6%E7%9A%84%E5%91%B3%E9%81%93%E5%9C%A8%E5%8F%B0%E4%B8%AD%E8%A5%BF%E5%8D%80%E7%9A%84%E5%BA%B7%E6%A8%82%E8%A1%97%E6%9C%89%E4%B8%80%E9%96%93%E5%90%8D%E7%82%BA-%E8%A8%B1%E6%84%BF-%E7%9A%84%E7%83%98%E7%84%99%E5%9D%8A%E7%94%B1%E9%86%AB%E8%AD%B7%E8%83%8C%E6%99%AF%E7%9A%84%E6%A5%8A%E5%AA%9B%E5%A9%B7%E8%88%87%E8%A8%B1%E7%AB%A3%E7%82%BA%E5%85%B1%E5%90%8C%E5%89%B5%E7%AB%8B%E4%BB%96%E5%80%91%E5%BE%9E%E5%8F%83%E8%88%87%E7%AB%B9%E8%9C%BB%E8%9C%93%E7%B6%A0%E5%B8%82%E9%9B%86%E9%96%8B%E5%A7%8B%E6%8E%A5%E8%A7%B8%E5%88%B0%E8%A8%B1%E5%A4%9A%E5%8F%8B%E5%96%84%E8%80%95%E4%BD%9C%E7%9A%84%E5%B0%8F%E8%BE%B2%E9%80%B2%E8%80%8C%E8%90%8C/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。 已確認在臺中市西區康樂街，但目前摘要未帶出完整門牌，先保留空地址。"
         }
       ]
     },
@@ -89870,23 +88910,6 @@
       "district": "台中"
     },
     {
-      "name": "滬舍餘味餐館",
-      "city": "臺中市",
-      "address": "臺中市南屯區公益路二段 537 號",
-      "aliases": [
-        "滬舍餘味"
-      ],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "滿堂",
       "aliases": [],
       "city": "臺中市",
@@ -90106,23 +89129,6 @@
       "aliases": []
     },
     {
-      "name": "臺中日月千禧酒店-旅覓酒吧",
-      "city": "臺中市",
-      "address": "臺中市西屯區市政路 77 號",
-      "aliases": [
-        "旅覓酒吧"
-      ],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "鳳記鵝肉老店",
       "city": "臺中市",
       "address": "台中市",
@@ -90248,21 +89254,6 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
-    },
-    {
-      "name": "熱浪島南洋蔬食茶堂",
-      "city": "臺中市",
-      "address": "臺中市南屯區向上路三段 536 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
     },
     {
       "name": "蔬軾新蔬食-台中榮總店",
@@ -90478,23 +89469,6 @@
       ]
     },
     {
-      "name": "築間幸福鍋物-臺中市政二店",
-      "city": "臺中市",
-      "address": "臺中市西屯區文心路二段 213 號",
-      "aliases": [
-        "築間幸福鍋物(市政二店)"
-      ],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "膳馨 (西區)",
       "aliases": [],
       "city": "臺中市",
@@ -90510,21 +89484,6 @@
       ]
     },
     {
-      "name": "膳馨民間創作料理",
-      "city": "臺中市",
-      "address": "臺中市西區存中街 21 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "貓居蔬食",
       "city": "臺中市",
       "address": "",
@@ -90538,21 +89497,6 @@
           "url": "https://ipuregreen.org/veg/?tag=1star2025"
         }
       ]
-    },
-    {
-      "name": "默爾 Pasta Pizza-北屯店",
-      "city": "臺中市",
-      "address": "臺中市北屯區安順四街 2 號",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
     },
     {
       "name": "默爾義大利餐廳-480店",
@@ -91148,12 +90092,6 @@
       "aliases": [],
       "awards": [
         {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        },
-        {
           "guide": "fdagrade",
           "year": 2024,
           "level": "良",
@@ -91166,23 +90104,6 @@
       ],
       "district": "台中市",
       "cuisine": "一般餐廳"
-    },
-    {
-      "name": "馨苑小料理-西區店",
-      "city": "臺中市",
-      "address": "臺中市西區民生北路 106 號",
-      "aliases": [
-        "馨苑"
-      ],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
     },
     {
       "name": "麵包林里.Boulangerie Pangolin",
@@ -91583,13 +90504,6 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
         }
       ]
     },
@@ -91709,23 +90623,6 @@
       ]
     },
     {
-      "name": "HUN-臺中一中店",
-      "city": "臺中市",
-      "address": "臺中市北區三民路三段 114 號 2 樓",
-      "aliases": [
-        "HUN混 義大利麵 一中店"
-      ],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "IL Volo pizza義波羅窯烤披薩",
       "city": "臺中市",
       "district": "台中市",
@@ -91766,21 +90663,6 @@
       ]
     },
     {
-      "name": "JAI-臺中水湳店",
-      "city": "臺中市",
-      "address": "臺中市北屯區中清路二段 903 號二樓",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "taichunglowcarbon",
-          "year": 2023,
-          "level": "低碳認證",
-          "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
-        }
-      ],
-      "district": "臺中"
-    },
-    {
       "name": "JL Studio",
       "city": "臺中市",
       "address": "台中市",
@@ -91803,39 +90685,6 @@
           "sweets": 2,
           "level": "2甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "50best",
-          "year": 2026,
-          "level": "Asia No.50",
-          "rank": 50,
-          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
-        },
-        {
-          "guide": "worldculinary",
-          "year": 2025,
-          "level": "Taiwan Best Restaurant Nominee",
-          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.34",
-          "rank": 34,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "thebestchef",
-          "year": 2025,
-          "level": "Two knives",
-          "knives": 2,
-          "url": "https://thebestchefawards.com/chefs/jimmy-lim/"
         }
       ],
       "sources": [
@@ -92482,23 +91331,6 @@
       ]
     },
     {
-      "name": "Sukiyaki Kitaro",
-      "city": "臺中市",
-      "address": "",
-      "aliases": [
-        "壽喜燒一丁"
-      ],
-      "awards": [
-        {
-          "guide": "designawards",
-          "year": 2025,
-          "level": "Surface Interiors",
-          "designer": "Sky Vision",
-          "url": "https://restaurantandbardesignawards.com/awards-archive/2025"
-        }
-      ]
-    },
-    {
       "name": "SUN BERNO光焙若蔬食",
       "city": "臺中市",
       "address": "",
@@ -92665,19 +91497,6 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.127",
-          "rank": 127,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "sources": [
@@ -95401,11 +94220,6 @@
           "year": 2025
         },
         {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
           "guide": "greenveggie",
           "year": 2025,
           "level": "2星",
@@ -96024,18 +94838,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.200",
-          "rank": 200,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -97135,13 +95937,6 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
-        },
-        {
-          "guide": "michelinspecial",
-          "year": 2025,
-          "level": "年度開業大獎",
-          "awardName": "Opening of the Year Award",
-          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
         },
         {
           "guide": "500plate",
@@ -98824,13 +97619,6 @@
         "Cha Lounge"
       ],
       "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "3星",
-          "stars": 3,
-          "url": "https://www.gdg.asia/article/235/1421"
-        },
         {
           "guide": "greenveggie",
           "year": 2025,
@@ -101275,13 +100063,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 389,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -101779,19 +100560,6 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
-        },
-        {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "michelinspecial",
-          "year": 2025,
-          "level": "侍酒師大獎",
-          "awardName": "Sommelier Award",
-          "recipient": "Yia Yia Chen",
-          "url": "https://www.michelin.com/en/publications/products-and-services/the-michelin-guide-taiwan-2025-unveiled"
         }
       ],
       "city": "臺北市",
@@ -103683,13 +102451,6 @@
           "plates": 7,
           "level": "7盤",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 284,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -104820,27 +103581,6 @@
       "aliases": []
     },
     {
-      "name": "呷米 JIAMI 餐廳",
-      "city": "臺北市",
-      "district": "中正區",
-      "address": "臺北市中正區重慶南路一段47號一樓",
-      "cuisine": "永續台灣料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最佳永續海洋獎",
-          "category": "最佳永續海洋獎",
-          "dimension": "Conscious Sourcing",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://shop.ichefpos.com/store/Zl-5bKvm/reserve/storeInfo 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
-    },
-    {
       "name": "呷味鮮處女蟳",
       "awards": [
         {
@@ -105963,12 +104703,6 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "city": "臺北市",
@@ -106411,30 +105145,6 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        }
-      ]
-    },
-    {
-      "name": "泔米食堂",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "新經濟營運獎",
-          "category": "新經濟營運獎",
-          "dimension": "年度最高榮譽｜Grand Honor Award",
-          "region": "",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ]
     },
@@ -107360,13 +106070,6 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 425,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -108637,15 +107340,6 @@
           "sweets": 2,
           "level": "2甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "在地當季食材獎",
-          "category": "在地當季食材獎",
-          "dimension": "食材向度｜Conscious Sourcing",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ],
       "city": "臺北市",
@@ -109543,21 +108237,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best Innovation",
-          "awardName": "Tatler Best Restaurants Taiwan 2025 Best Innovation",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants",
-          "capturedAt": "2026-07-02",
-          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows Eika with 2025 BEST INNOVATION badge."
         }
       ],
       "city": "臺北市",
@@ -110373,25 +109052,6 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
-    },
-    {
-      "name": "悅華軒",
-      "city": "臺北市",
-      "district": "大安區",
-      "address": "臺北市大安區復興南路一段283號2樓",
-      "cuisine": "粵菜",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.tcf.org.tw/page/news/show.aspx?num=56"
-        }
-      ]
     },
     {
       "name": "捌伍添第",
@@ -112071,27 +110731,6 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
-    },
-    {
-      "name": "常不輕 dandelion",
-      "city": "臺北市",
-      "district": "北投區",
-      "address": "臺北市北投區立德路8號1樓",
-      "cuisine": "蔬食",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最佳全食運用獎",
-          "category": "最佳全食運用獎",
-          "dimension": "Thriving Environment",
-          "region": "北區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.instagram.com/dandelion202310/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
     },
     {
       "name": "康青龍_台北101店",
@@ -114798,27 +113437,6 @@
       "district": ""
     },
     {
-      "name": "普橘島",
-      "city": "臺北市",
-      "district": "內湖區",
-      "address": "臺北市內湖區瑞湖街111號",
-      "cuisine": "企業員工餐廳",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最友善員工獎",
-          "category": "最友善員工獎",
-          "dimension": "Caring Society",
-          "region": "企業組",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://greenmedia.today/article_detail.php?cid=10&mid=743 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
-    },
-    {
       "name": "晴山日本料理-美福大飯店",
       "city": "臺北市",
       "district": "中山區",
@@ -115699,11 +114317,6 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
           "guide": "michelin_selected",
           "level": "入選餐廳",
           "year": 2025,
@@ -115802,19 +114415,6 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 458,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Ya-Ge.html"
         }
       ],
       "city": "臺北市",
@@ -118560,12 +117160,6 @@
           "plates": 4,
           "level": "4盤",
           "year": 2025
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Din-Tai-Fung.html"
         }
       ],
       "city": "臺北市",
@@ -118730,43 +117324,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.128",
-          "rank": 128,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Ta%C3%AFrroir.html"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Restaurant of the Year",
-          "awardName": "Tatler Best Restaurants Taiwan 2025 Restaurant of the Year",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
-          "capturedAt": "2026-07-02",
-          "notes": "Tatler Best Restaurants Taiwan 2025 official page shows 2025 RESTAURANT OF THE YEAR badge immediately before Ta?rroir entry."
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best-in-Class",
-          "awardName": "Tatler Best Restaurants Taiwan 2025 Best-in-Class",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
-          "capturedAt": "2026-07-02",
-          "notes": "Tatler Best Restaurants Taiwan 2025 official page shows 2025 BEST-IN-CLASS badge immediately before Ta?rroir entry."
         }
       ],
       "city": "臺北市",
@@ -119587,25 +118144,6 @@
       ]
     },
     {
-      "name": "聚豐園江浙美食餐廳",
-      "city": "臺北市",
-      "district": "松山區",
-      "address": "臺北市松山區民生東路三段122號",
-      "cuisine": "江浙菜",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/groups/Shanghaicuisine/"
-        }
-      ]
-    },
-    {
       "name": "臺一牛奶大王",
       "address": "",
       "awards": [
@@ -119862,21 +118400,6 @@
       ]
     },
     {
-      "name": "臺北醫學大學附設醫院營養室",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "fmg",
-          "year": 2025,
-          "level": "2星",
-          "stars": 2,
-          "url": "https://www.gdg.asia/article/235/1421"
-        }
-      ]
-    },
-    {
       "name": "蒲家廚房(東吳大學外雙溪校區)",
       "city": "臺北市",
       "district": "士林區",
@@ -119973,25 +118496,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f639033974486889367&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺北市113年度通過餐飲衛生管理分級評核名單。 電話 02-2362-5977 登錄字號 A-200133485-00001-4"
-        }
-      ]
-    },
-    {
-      "name": "趙海真私廚",
-      "city": "臺北市",
-      "district": "大安區",
-      "address": "臺北市大安區樂利路86巷6號",
-      "cuisine": "私廚中菜",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.instagram.com/reel/DP1aWgoCchn/"
         }
       ]
     },
@@ -123114,13 +121618,6 @@
           "plates": 7,
           "level": "7盤",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 442,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -124172,25 +122669,6 @@
           "plates": 6,
           "level": "6盤",
           "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.121",
-          "rank": 121,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Le-Palais.html"
         }
       ],
       "city": "臺北市",
@@ -124265,25 +122743,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f639033974486889367&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺北市113年度通過餐飲衛生管理分級評核名單。 電話 0912-883938 登錄字號 A-155954374-00001-1"
-        }
-      ]
-    },
-    {
-      "name": "鴨覓烤鴨餐廳",
-      "city": "臺北市",
-      "district": "信義區",
-      "address": "臺北市信義區松智路17號B1",
-      "cuisine": "烤鴨餐廳",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/p/%E9%B4%A8%E8%A6%93%E7%83%A4%E9%B4%A8%E9%A4%90%E5%BB%B3-61568438303928/"
         }
       ]
     },
@@ -124953,13 +123412,6 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 378,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -126438,12 +124890,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "city": "臺北市",
@@ -126461,25 +124907,6 @@
       "cuisine": "Contemporary",
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
-    },
-    {
-      "name": "Adachi",
-      "city": "臺北市",
-      "address": "12, Lane 239, Zhuangjing Road, Xinyi District, Taipei, 110",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
-        }
-      ],
-      "cuisine": "Sushi",
-      "district": "信義區",
-      "metadataSources": [
-        "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
       ]
     },
     {
@@ -127009,13 +125436,6 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 398,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -127557,25 +125977,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.172",
-          "rank": 172,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Coast.html"
         }
       ],
       "city": "臺北市",
@@ -127963,22 +126364,6 @@
       ]
     },
     {
-      "name": "Da-Wan",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 419,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        }
-      ],
-      "cuisine": "Yakiniku"
-    },
-    {
       "name": "DE LOIN 德朗火鍋",
       "address": "",
       "awards": [
@@ -128015,28 +126400,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "thebestchef",
-          "year": 2025,
-          "level": "One knife",
-          "knives": 1,
-          "url": "https://thebestchefawards.com/chefs/kei-koo/"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best Service",
-          "awardName": "Tatler Best Restaurants Taiwan 2025 Best Service",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=french-tatler-best-restaurants",
-          "capturedAt": "2026-07-02",
-          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows De Nuit with 2025 BEST SERVICE badge."
         }
       ],
       "city": "臺北市",
@@ -128289,30 +126652,10 @@
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
-          "guide": "greenstar",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
           "guide": "michelin_selected",
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "GDG 年度大獎",
-          "category": "GDG 年度大獎",
-          "dimension": "年度最高榮譽｜Grand Honor Award",
-          "region": "",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1407"
         }
       ]
     },
@@ -128335,19 +126678,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 439,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "cuisine": "French"
@@ -128566,24 +126896,6 @@
       "district": ""
     },
     {
-      "name": "French Windows",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "worldculinary",
-          "year": 2025,
-          "level": "Taiwan Best Restaurant Nominee",
-          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-        }
-      ],
-      "district": "松山區",
-      "metadataSources": [
-        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
-    },
-    {
       "name": "fufucatcafe",
       "city": "臺北市",
       "district": "萬華區",
@@ -128630,41 +126942,6 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-    },
-    {
-      "name": "fumee Yakitori",
-      "city": "臺北市",
-      "address": "台北市中山區中山北路二段39巷3號晶華酒店B3",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 234,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Rising Star",
-          "awardName": "Tatler Best Restaurants Taiwan 2025 Rising Star",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants",
-          "capturedAt": "2026-07-02",
-          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows fum?e Yakitori with 2025 RISING STAR badge."
-        }
-      ],
-      "cuisine": "日式串燒",
-      "district": "???",
-      "metadataSources": [
-        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-      ]
     },
     {
       "name": "FutiFudi 果滴滴_忠孝SOGO店",
@@ -129048,19 +127325,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 257,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Impromptu-by-Paul-Lee.html"
         }
       ],
       "city": "臺北市",
@@ -129153,12 +127417,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "city": "臺北市",
@@ -129716,13 +127974,6 @@
           "plates": 1,
           "level": "1盤",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 274,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -129891,22 +128142,6 @@
       ]
     },
     {
-      "name": "Le Beaujour",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 249,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        }
-      ],
-      "cuisine": "Contemporary French"
-    },
-    {
       "name": "Le Cafe咖啡廳-台北老爺大酒店",
       "city": "臺北市",
       "district": "中山區",
@@ -130054,45 +128289,6 @@
           "plates": 7,
           "level": "7盤",
           "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "50best",
-          "year": 2026,
-          "level": "Asia No.22",
-          "rank": 22,
-          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
-        },
-        {
-          "guide": "worldculinary",
-          "year": 2025,
-          "level": "Taiwan Best Restaurant Nominee",
-          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.32",
-          "rank": 32,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "thebestchef",
-          "year": 2025,
-          "level": "Two knives",
-          "knives": 2,
-          "url": "https://thebestchefawards.com/chefs/ryogo-tahara/"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Logy.html"
         }
       ],
       "city": "臺北市",
@@ -130123,22 +128319,6 @@
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
         }
       ]
-    },
-    {
-      "name": "Longyue",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 301,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        }
-      ],
-      "cuisine": "Cantonese"
     },
     {
       "name": "LOPFAIT 樂斐",
@@ -130825,36 +129005,6 @@
           "level": "入選餐廳",
           "year": 2025,
           "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
-        },
-        {
-          "guide": "worldculinary",
-          "year": 2025,
-          "level": "Taiwan Best Restaurant Winner",
-          "winner": true,
-          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.86",
-          "rank": 86,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Mume.html"
-        },
-        {
-          "guide": "50best",
-          "awardName": "Asia's 50 Best Restaurants 2026",
-          "year": 2026,
-          "level": "Asia No.61",
-          "rank": 61,
-          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
-          "capturedAt": "2026-07-02",
-          "notes": "Official list page continues through No.100 and shows MUME at No.61 in Taipei."
         }
       ],
       "city": "臺北市",
@@ -130948,12 +129098,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "city": "臺北市",
@@ -131073,22 +129217,6 @@
         }
       ],
       "aliases": []
-    },
-    {
-      "name": "Orchid Restaurant",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 304,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        }
-      ],
-      "cuisine": "Asian-French"
     },
     {
       "name": "Otto Pasta (銘傳大學)",
@@ -131975,22 +130103,6 @@
       ]
     },
     {
-      "name": "Qi 27 (Sushi 27)",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 282,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        }
-      ],
-      "cuisine": "Sushi"
-    },
-    {
       "name": "Quelques Pâtisseries 某某甜點",
       "address": "",
       "awards": [
@@ -132005,21 +130117,6 @@
       "city": "臺北市",
       "area": "",
       "aliases": []
-    },
-    {
-      "name": "RAW",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "designawards",
-          "year": 2015,
-          "level": "Asia Restaurant",
-          "designer": "WEIJENBERG",
-          "url": "https://restaurantandbardesignawards.com/awards-archive/2015"
-        }
-      ]
     },
     {
       "name": "Reale Cucina Italiana",
@@ -132100,18 +130197,6 @@
           "sweets": 1,
           "level": "1甜",
           "url": "https://500times.udn.com/wtimes/story/124537/8931871"
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Restaurant-A.html"
         }
       ],
       "city": "臺北市",
@@ -132613,45 +130698,6 @@
           "notes": "來源檔案標示 臺北市113年度通過餐飲衛生管理分級評核名單。 電話 02-29377617 登錄字號 A-200177583-00001-1"
         }
       ]
-    },
-    {
-      "name": "Silks House",
-      "city": "臺北市",
-      "address": "Lane 39, 3F Zhongshan North Road, Zhongshan district, Taipei, 104",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia No.88",
-          "rank": 88,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Silks-House.html"
-        },
-        {
-          "guide": "50best",
-          "awardName": "Asia's 50 Best Restaurants 2026",
-          "year": 2026,
-          "level": "Asia No.64",
-          "rank": 64,
-          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
-          "capturedAt": "2026-07-02",
-          "notes": "Official list page continues through No.100 and shows Silks House at No.64 in Taipei."
-        }
-      ],
-      "cuisine": "Cantonese",
-      "district": "中山區"
     },
     {
       "name": "Silks House 晶華軒",
@@ -135528,41 +133574,6 @@
       ]
     },
     {
-      "name": "Sushi Amamoto",
-      "city": "臺北市",
-      "address": "371, Section 4, Ren'ai Road, Da’an District, Taipei, Taipei & Taichung,",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Sushi-Amamoto.html"
-        }
-      ],
-      "district": "???",
-      "cuisine": "Japanese",
-      "metadataSources": [
-        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
-    },
-    {
-      "name": "Sushi Nomura",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 433,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
-        }
-      ],
-      "cuisine": "Sushi"
-    },
-    {
       "name": "T.G.I. FRIDAY'S_統一時代百貨",
       "city": "臺北市",
       "district": "信義區",
@@ -135590,13 +133601,6 @@
           "guide": "michelin",
           "level": "一星",
           "year": 2025
-        },
-        {
-          "guide": "oad",
-          "year": 2025,
-          "level": "Asia Recommended",
-          "rank": 471,
-          "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
         }
       ],
       "city": "臺北市",
@@ -136544,25 +134548,6 @@
           "plates": 3,
           "level": "3盤",
           "year": 2025
-        },
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        },
-        {
-          "guide": "thebestchef",
-          "year": 2025,
-          "level": "One knife",
-          "knives": 1,
-          "url": "https://thebestchefawards.com/chefs/joaquin-elizondo/"
-        },
-        {
-          "guide": "50bestdiscovery",
-          "year": 2026,
-          "level": "Discovery",
-          "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Zea.html"
         }
       ],
       "city": "臺北市",
@@ -137795,27 +135780,6 @@
       ],
       "city": "臺東縣",
       "aliases": []
-    },
-    {
-      "name": "米蘭水烘焙坊",
-      "city": "臺東縣",
-      "district": "蘭嶼鄉",
-      "address": "臺東縣蘭嶼鄉朗島村朗島32之1號",
-      "cuisine": "烘焙坊",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "在地當季食材運用獎",
-          "category": "在地當季食材運用獎",
-          "dimension": "Conscious Sourcing",
-          "region": "離島",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://twincn.com/item.aspx?no=85797204 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。"
-        }
-      ]
     },
     {
       "name": "自在軒健康茶飲台東店",
@@ -141579,25 +139543,6 @@
       ]
     },
     {
-      "name": "田園素食",
-      "city": "臺南市",
-      "district": "歸仁區",
-      "address": "臺南市歸仁區中正北路一段168-1號",
-      "cuisine": "素食",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://niceclaup313.pixnet.net/blog/posts/8234767064"
-        }
-      ]
-    },
-    {
       "name": "田媽媽 長盈海味屋",
       "city": "臺南市",
       "address": "台南市",
@@ -141616,17 +139561,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633115864088&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺南市113年度通過餐飲衛生管理分級評核名單。 電話 06-7850577 登錄字號 D-200180483-00003-9"
-        },
-        {
-          "guide": "gdgawards",
-          "year": 2025,
-          "level": "最佳永續海洋獎",
-          "category": "最佳永續海洋獎",
-          "dimension": "Conscious Sourcing",
-          "region": "南區",
-          "url": "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-          "extractedAt": "2026-07-01T23:55:48.226Z",
-          "notes": "地址輔助來源：https://www.agriharvest.tw/archives/123574/ 獎項名單來源為 Green Media 2025 國際綠色餐飲年會暨頒獎典禮得獎名單。 已確認在臺南市北門區三寮灣，但公開摘要未帶出完整門牌，先保留空地址。"
         }
       ],
       "sources": [
@@ -143355,25 +141289,6 @@
       "aliases": []
     },
     {
-      "name": "府城食府正宗台南料理",
-      "city": "臺南市",
-      "district": "安平區",
-      "address": "臺南市安平區華平路152號",
-      "cuisine": "台南料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/traditional.tainan.feast/?locale=zh_CN"
-        }
-      ]
-    },
-    {
       "name": "府城鮮饌(仁德服務區-北站)",
       "city": "臺南市",
       "district": "仁德區",
@@ -144398,25 +142313,6 @@
       "aliases": []
     },
     {
-      "name": "南星鐵板燒",
-      "city": "臺南市",
-      "district": "安平區",
-      "address": "臺南市安平區府前四街12號2樓",
-      "cuisine": "鐵板燒",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.klook.com/zh-TW/activity/189943-nansei-teppanyaki/"
-        }
-      ]
-    },
-    {
       "name": "南臺科大學生餐廳 佳園團膳",
       "city": "臺南市",
       "district": "永康區",
@@ -144523,25 +142419,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633115864088&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺南市113年度通過餐飲衛生管理分級評核名單。 電話 905729816 登錄字號 E-145142882-00000-6"
-        }
-      ]
-    },
-    {
-      "name": "星馬快餐",
-      "city": "臺南市",
-      "district": "善化區",
-      "address": "臺南市善化區民生路132號",
-      "cuisine": "星馬料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://shop.ichefpos.com/store/Ky8eHVS2/ordering"
         }
       ]
     },
@@ -146029,25 +143906,6 @@
       "aliases": []
     },
     {
-      "name": "焰遇燒肉",
-      "city": "臺南市",
-      "district": "新營區",
-      "address": "臺南市新營區新進路二段237號",
-      "cuisine": "燒肉",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://lyes.tw/yanyushaorou-%E7%84%B0%E9%81%87/"
-        }
-      ]
-    },
-    {
       "name": "等一下滷味",
       "city": "臺南市",
       "district": "仁德區",
@@ -147076,25 +144934,6 @@
       ]
     },
     {
-      "name": "福安專業土雞料理餐廳",
-      "city": "臺南市",
-      "district": "歸仁區",
-      "address": "臺南市歸仁區文化街一段165號",
-      "cuisine": "土雞料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.1989wolfe.com/2025/08/FuanChicken.html"
-        }
-      ]
-    },
-    {
       "name": "福來鱔魚意麵",
       "address": "",
       "awards": [
@@ -147123,25 +144962,6 @@
       ],
       "city": "臺南市",
       "aliases": []
-    },
-    {
-      "name": "福相麻辣香鍋",
-      "city": "臺南市",
-      "district": "北區",
-      "address": "臺南市北區公園南路281號",
-      "cuisine": "麻辣香鍋",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/fuxiang.ch/"
-        }
-      ]
     },
     {
       "name": "福泰飯桌第三代",
@@ -147237,25 +145057,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f638731633115864088&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺南市113年度通過餐飲衛生管理分級評核名單。 電話 06-295-7777 登錄字號 D-153171713-00000-9"
-        }
-      ]
-    },
-    {
-      "name": "福樓餐廳",
-      "city": "臺南市",
-      "district": "中西區",
-      "address": "臺南市中西區永華路一段300號",
-      "cuisine": "台菜",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.facebook.com/fulou.tainan/"
         }
       ]
     },
@@ -147360,25 +145161,6 @@
       ],
       "city": "臺南市",
       "aliases": []
-    },
-    {
-      "name": "廚房有雞 粵菜餐廳",
-      "city": "臺南市",
-      "district": "東區",
-      "address": "臺南市東區中華東路三段300號",
-      "cuisine": "粵菜",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.instagram.com/reel/DIfgKYIoBYL/"
-        }
-      ]
     },
     {
       "name": "廟口二代 清燉牛肉麵",
@@ -148496,25 +146278,6 @@
       ]
     },
     {
-      "name": "SOL-Tainan",
-      "city": "臺南市",
-      "district": "安平區",
-      "address": "臺南市安平區新港路二段585號4樓",
-      "cuisine": "無國界料理",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tcfpraise",
-          "year": 2025,
-          "level": "美食指南點讚榜（臺灣站）",
-          "awardName": "2025美食指南點讚榜（臺灣站）",
-          "url": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
-          "extractedAt": "2026-07-02T00:06:17.424Z",
-          "notes": "主來源為台灣餐飲業聯盟 2025 美食指南點讚榜（臺灣站）名單頁。 地址輔助來源：https://www.sol-restaurant.com/"
-        }
-      ]
-    },
-    {
       "name": "安心食品服務股份有限公司(澎湖門市部)",
       "city": "澎湖縣",
       "district": "馬公市",
@@ -148757,5 +146520,21 @@
       "note": "官方 2025 台灣完整名單；星級餐廳已補齊 3 三星、7 二星、43 一星，共 53 家。"
     },
     "Draft only: official Michelin Taiwan 2025 candidate import. Review before replacing live awards-taiwan.json."
+  ],
+  "_smallSampleThreshold": 30,
+  "_excludedSmallSampleGuides": [
+    "50best",
+    "50bestdiscovery",
+    "designawards",
+    "fmg",
+    "gdgawards",
+    "greenstar",
+    "michelinspecial",
+    "oad",
+    "taichunglowcarbon",
+    "tatlerbest",
+    "tcfpraise",
+    "thebestchef",
+    "worldculinary"
   ]
 }

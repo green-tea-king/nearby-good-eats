@@ -1,143 +1,136 @@
 {
-    "version":  "world-culinary-awards-taiwan-2025-candidates",
-    "generatedAt":  "2026-07-02T11:07:13.102Z",
-    "sourceUrl":  "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
-    "sourceCatalog":  [
-                          {
-                              "id":  "world-culinary-awards-taiwan-2025",
-                              "label":  "World Culinary Awards Taiwan Best Restaurant 2025",
-                              "url":  "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-                          }
-                      ],
-    "policy":  {
-                   "runtimeExternalLookup":  false,
-                   "importMode":  "official_page_batch",
-                   "authority":  "international_hospitality_award",
-                   "notes":  [
-                                 "Only World Culinary Awards Taiwan Best Restaurant 2025 entries are included.",
-                                 "Rows keep year, level, source URL, capturedAt, and notes for review provenance.",
-                                 "No runtime scraping or API lookup is used by the frontend."
-                             ]
-               },
-    "restaurants":  [
-                        {
-                            "name":  "JL Studio",
-                            "city":  "臺中市",
-                            "district":  "南屯區",
-                            "address":  "台中市",
-                            "cuisine":  "Modern Singaporean",
-                            "aliases":  [
-
-                                        ],
-                            "awards":  [
-                                           {
-                                               "guide":  "worldculinary",
-                                               "awardName":  "World Culinary Awards Taiwan Best Restaurant",
-                                               "year":  2025,
-                                               "level":  "Taiwan Best Restaurant Nominee",
-                                               "winner":  false,
-                                               "url":  "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
-                                               "capturedAt":  "2026-07-02",
-                                               "notes":  "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
-                                           }
-                                       ],
-                            "importConfidence":  "high",
-                            "reviewStatus":  "missing_address_and_cuisine_manual_verification_required",
-                            "missingFields":  [
-                                                  "address",
-                                                  "cuisine"
-                                              ],
-                            "lastVerifiedAt":  "2026-07-02",
-                            "reviewNotes":  [
-                                                "World Culinary Awards confirms the nominee name only. Current Mandarin Oriental Taipei dining page does not list French Windows, so hotel address and cuisine were not backfilled."
-                                            ],
-                            "sourceUrls":  [
-                                               "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-                                           ],
-                            "metadataSources":  [
-                                                    "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-                                                ]
-                        },
-                        {
-                            "name":  "French Windows",
-                            "city":  "臺北市",
-                            "district":  "松山區",
-                            "address":  "",
-                            "cuisine":  "",
-                            "aliases":  [
-
-                                        ],
-                            "awards":  [
-                                           {
-                                               "guide":  "worldculinary",
-                                               "awardName":  "World Culinary Awards Taiwan Best Restaurant",
-                                               "year":  2025,
-                                               "level":  "Taiwan Best Restaurant Nominee",
-                                               "winner":  false,
-                                               "url":  "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
-                                               "capturedAt":  "2026-07-02",
-                                               "notes":  "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
-                                           }
-                                       ],
-                            "importConfidence":  "high",
-                            "sourceUrls":  [
-                                               "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-                                           ],
-                            "metadataSources":  [
-                                                    "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-                                                ]
-                        },
-                        {
-                            "name":  "Logy",
-                            "city":  "臺北市",
-                            "district":  "大安區",
-                            "address":  "台北市大安區安和路一段",
-                            "cuisine":  "Modern European",
-                            "aliases":  [
-
-                                        ],
-                            "awards":  [
-                                           {
-                                               "guide":  "worldculinary",
-                                               "awardName":  "World Culinary Awards Taiwan Best Restaurant",
-                                               "year":  2025,
-                                               "level":  "Taiwan Best Restaurant Nominee",
-                                               "winner":  false,
-                                               "url":  "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
-                                               "capturedAt":  "2026-07-02",
-                                               "notes":  "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
-                                           }
-                                       ],
-                            "importConfidence":  "high",
-                            "sourceUrls":  [
-                                               "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-                                           ]
-                        },
-                        {
-                            "name":  "MUME",
-                            "city":  "臺北市",
-                            "district":  "大安區",
-                            "address":  "No. 28 Siwei Road, Da\u0027an District, Taipei, 106",
-                            "cuisine":  "Creative Cuisine",
-                            "aliases":  [
-
-                                        ],
-                            "awards":  [
-                                           {
-                                               "guide":  "worldculinary",
-                                               "awardName":  "World Culinary Awards Taiwan Best Restaurant",
-                                               "year":  2025,
-                                               "level":  "Taiwan Best Restaurant Winner",
-                                               "winner":  true,
-                                               "url":  "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
-                                               "capturedAt":  "2026-07-02",
-                                               "notes":  "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
-                                           }
-                                       ],
-                            "importConfidence":  "high",
-                            "sourceUrls":  [
-                                               "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
-                                           ]
-                        }
-                    ]
+  "version": "world-culinary-awards-taiwan-2025-candidates",
+  "generatedAt": "2026-07-02T11:07:13.102Z",
+  "sourceUrl": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
+  "sourceCatalog": [
+    {
+      "id": "world-culinary-awards-taiwan-2025",
+      "label": "World Culinary Awards Taiwan Best Restaurant 2025",
+      "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+    }
+  ],
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_page_batch",
+    "authority": "international_hospitality_award",
+    "notes": [
+      "Only World Culinary Awards Taiwan Best Restaurant 2025 entries are included.",
+      "Rows keep year, level, source URL, capturedAt, and notes for review provenance.",
+      "No runtime scraping or API lookup is used by the frontend."
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "JL Studio",
+      "city": "臺中市",
+      "district": "南屯區",
+      "address": "",
+      "cuisine": "Modern Singaporean",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "worldculinary",
+          "awardName": "World Culinary Awards Taiwan Best Restaurant",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Nominee",
+          "winner": false,
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "reviewStatus": "missing_address_and_cuisine_manual_verification_required",
+      "missingFields": [
+        "address",
+        "cuisine"
+      ],
+      "lastVerifiedAt": "2026-07-02",
+      "reviewNotes": [
+        "World Culinary Awards confirms the nominee name only. Current Mandarin Oriental Taipei dining page does not list French Windows, so hotel address and cuisine were not backfilled.",
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "sourceUrls": [
+        "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "French Windows",
+      "city": "臺北市",
+      "district": "松山區",
+      "address": "",
+      "cuisine": "",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "worldculinary",
+          "awardName": "World Culinary Awards Taiwan Best Restaurant",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Nominee",
+          "winner": false,
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Logy",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市大安區安和路一段",
+      "cuisine": "Modern European",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "worldculinary",
+          "awardName": "World Culinary Awards Taiwan Best Restaurant",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Nominee",
+          "winner": false,
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+      ]
+    },
+    {
+      "name": "MUME",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "No. 28 Siwei Road, Da'an District, Taipei, 106",
+      "cuisine": "Creative Cuisine",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "worldculinary",
+          "awardName": "World Culinary Awards Taiwan Best Restaurant",
+          "year": 2025,
+          "level": "Taiwan Best Restaurant Winner",
+          "winner": true,
+          "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from World Culinary Awards Taiwan Best Restaurant 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
+      ]
+    }
+  ]
 }

@@ -18,6 +18,14 @@ function writeJson(file, value) {
   fs.writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
+function hasStreetLevelAddress(value) {
+  const text = String(value || "").trim();
+  if (!text) return false;
+  if (/^[\u4e00-\u9fff]{2,3}[市縣]$/.test(text)) return false;
+  if (/^[\u4e00-\u9fff]{2,3}[市縣][\u4e00-\u9fff]{1,3}[區鄉鎮市]$/.test(text)) return false;
+  return /(\d|號|路|街|段|巷|弄|樓|之)/.test(text);
+}
+
 function normalize(value) {
   return String(value || "")
     .normalize("NFKC")
@@ -79,7 +87,7 @@ function enrichFile(file, awardsIndex) {
       row.district = match.district;
       districtFilled += 1;
     }
-    if (!row.address && match.address) {
+    if (!row.address && hasStreetLevelAddress(match.address)) {
       row.address = match.address;
       addressFilled += 1;
     }

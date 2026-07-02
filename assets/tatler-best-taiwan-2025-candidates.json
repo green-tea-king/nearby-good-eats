@@ -49,7 +49,7 @@
       "name": "Akame",
       "city": "屏東縣",
       "district": "屏東",
-      "address": "屏東縣",
+      "address": "",
       "cuisine": "Taiwanese",
       "aliases": [],
       "awards": [
@@ -66,13 +66,17 @@
       "importConfidence": "high",
       "sourceUrls": [
         "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     },
     {
       "name": "JL Studio",
       "city": "臺中市",
       "district": "南屯區",
-      "address": "台中市",
+      "address": "",
       "cuisine": "Modern Singaporean",
       "aliases": [],
       "awards": [
@@ -93,7 +97,8 @@
       ],
       "lastVerifiedAt": "2026-07-02",
       "reviewNotes": [
-        "Wikipedia confirms Kaohsiung and Cianjhen with Cantonese cuisine, but no authoritative public address was confirmed in this pass."
+        "Wikipedia confirms Kaohsiung and Cianjhen with Cantonese cuisine, but no authoritative public address was confirmed in this pass.",
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
       ],
       "sourceUrls": [
         "https://www.tatlerasia.com/list/best-restaurants-taiwan"
@@ -106,7 +111,7 @@
       "name": "Ad Astra",
       "city": "臺北市",
       "district": "中山區",
-      "address": "台北市",
+      "address": "",
       "cuisine": "Contemporary",
       "aliases": [],
       "awards": [
@@ -127,7 +132,8 @@
       ],
       "lastVerifiedAt": "2026-07-02",
       "reviewNotes": [
-        "Wikipedia confirms Taichung and Xitun with Taiwanese cuisine, but no authoritative public address was confirmed in this pass."
+        "Wikipedia confirms Taichung and Xitun with Taiwanese cuisine, but no authoritative public address was confirmed in this pass.",
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
       ],
       "sourceUrls": [
         "https://www.tatlerasia.com/list/best-restaurants-taiwan"
@@ -166,7 +172,7 @@
       "name": "De Nuit",
       "city": "臺北市",
       "district": "大安區",
-      "address": "台北市",
+      "address": "",
       "cuisine": "French",
       "aliases": [],
       "awards": [
@@ -196,13 +202,17 @@
       ],
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     },
     {
       "name": "Eika",
       "city": "臺北市",
       "district": "大同區",
-      "address": "台北市",
+      "address": "",
       "cuisine": "Japanese",
       "aliases": [
         "盈科",
@@ -235,7 +245,11 @@
       ],
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     },
     {
       "name": "Embers",
@@ -351,13 +365,17 @@
       ],
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     },
     {
       "name": "INITA",
       "city": "臺北市",
       "district": "松山區",
-      "address": "台北市",
+      "address": "",
       "cuisine": "Italian",
       "aliases": [],
       "awards": [
@@ -377,7 +395,11 @@
       ],
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     },
     {
       "name": "Le Palais",
@@ -465,7 +487,7 @@
       "name": "Nobuo",
       "city": "臺北市",
       "district": "中正區",
-      "address": "台北市",
+      "address": "",
       "cuisine": "Contemporary",
       "aliases": [],
       "awards": [
@@ -485,7 +507,11 @@
       ],
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     },
     {
       "name": "Restaurant A",
@@ -613,13 +639,17 @@
       ],
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     },
     {
       "name": "Zea",
       "city": "臺北市",
       "district": "大安區",
-      "address": "台北市",
+      "address": "",
       "cuisine": "Latin American",
       "aliases": [],
       "awards": [
@@ -639,7 +669,11 @@
       ],
       "metadataSources": [
         "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
-      ]
+      ],
+      "reviewNotes": [
+        "已移除僅含縣市/行政區的泛化地址，待人工補街道地址。"
+      ],
+      "reviewStatus": "missing_address_manual_verification_required"
     }
   ]
 }
