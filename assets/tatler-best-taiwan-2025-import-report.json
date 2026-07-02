@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-07-02T11:04:30.572Z",
+  "sourceUrl": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+  "restaurants": 20,
+  "awards": 25,
+  "levelCounts": {
+    "Best 20 Taiwan": 20,
+    "Best Service": 1,
+    "Best Innovation": 1,
+    "Rising Star": 1,
+    "Restaurant of the Year": 1,
+    "Best-in-Class": 1
+  },
+  "names": [
+    {
+      "name": "Akame",
+      "city": "屏東縣",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "JL Studio",
+      "city": "臺中市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Ad Astra",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Coast",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "De Nuit",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan",
+        "Best Service"
+      ]
+    },
+    {
+      "name": "Eika",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan",
+        "Best Innovation"
+      ]
+    },
+    {
+      "name": "Embers",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Ephernite",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "fumee Yakitori",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan",
+        "Rising Star"
+      ]
+    },
+    {
+      "name": "Gen by Matt Chen",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "INITA",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Le Palais",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Logy",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Ming Fu",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Nobuo",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Restaurant A",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Silks House",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Tairroir",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan",
+        "Restaurant of the Year",
+        "Best-in-Class"
+      ]
+    },
+    {
+      "name": "Yuenji",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    },
+    {
+      "name": "Zea",
+      "city": "臺北市",
+      "awards": [
+        "Best 20 Taiwan"
+      ]
+    }
+  ]
+}

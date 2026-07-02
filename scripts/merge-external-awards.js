@@ -4,6 +4,9 @@ const path = require("path");
 const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual.json");
+const tatlerCandidatesPath = path.join(repoRoot, "assets", "tatler-best-taiwan-2025-candidates.json");
+const worldCulinaryCandidatesPath = path.join(repoRoot, "assets", "world-culinary-awards-taiwan-2025-candidates.json");
+const fiftyBestCandidatesPath = path.join(repoRoot, "assets", "asias-50-best-restaurants-2026-candidates.json");
 const fiftyDiscoveryCandidatesPath = path.join(repoRoot, "assets", "50best-discovery-taiwan-candidates.json");
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
@@ -109,6 +112,9 @@ function validateExternalAwards(data) {
 function main() {
   const awards = readJson(awardsPath);
   const externalAwards = readJson(externalAwardsPath);
+  const tatlerCandidates = fs.existsSync(tatlerCandidatesPath) ? readJson(tatlerCandidatesPath) : { restaurants: [] };
+  const worldCulinaryCandidates = fs.existsSync(worldCulinaryCandidatesPath) ? readJson(worldCulinaryCandidatesPath) : { restaurants: [] };
+  const fiftyBestCandidates = fs.existsSync(fiftyBestCandidatesPath) ? readJson(fiftyBestCandidatesPath) : { restaurants: [], sourceCatalog: [] };
   const fiftyDiscoveryCandidates = fs.existsSync(fiftyDiscoveryCandidatesPath) ? readJson(fiftyDiscoveryCandidatesPath) : { restaurants: [] };
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
@@ -123,6 +129,9 @@ function main() {
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
   const mergeCandidates = [
     ...(externalAwards.restaurants || []),
+    ...(tatlerCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...(worldCulinaryCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
+    ...(fiftyBestCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(oadCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
     ...(bestChefCandidates.restaurants || []).filter((row) => row.importConfidence === "high"),
@@ -142,6 +151,9 @@ function main() {
     generatedAt: new Date().toISOString(),
     sourceFiles: [
       "assets/external-awards.manual.json",
+      ...(fs.existsSync(tatlerCandidatesPath) ? ["assets/tatler-best-taiwan-2025-candidates.json"] : []),
+      ...(fs.existsSync(worldCulinaryCandidatesPath) ? ["assets/world-culinary-awards-taiwan-2025-candidates.json"] : []),
+      ...(fs.existsSync(fiftyBestCandidatesPath) ? ["assets/asias-50-best-restaurants-2026-candidates.json"] : []),
       ...(fs.existsSync(fiftyDiscoveryCandidatesPath) ? ["assets/50best-discovery-taiwan-candidates.json"] : []),
       ...(fs.existsSync(oadCandidatesPath) ? ["assets/oad-asia-2025-candidates.json"] : []),
       ...(fs.existsSync(bestChefCandidatesPath) ? ["assets/thebestchef-taiwan-2025-candidates.json"] : []),
@@ -157,6 +169,9 @@ function main() {
     ],
     candidates: mergeCandidates.length,
     manualCandidates: (externalAwards.restaurants || []).length,
+    tatlerCandidates: (tatlerCandidates.restaurants || []).length,
+    worldCulinaryCandidates: (worldCulinaryCandidates.restaurants || []).length,
+    fiftyBestCandidates: (fiftyBestCandidates.restaurants || []).length,
     fiftyDiscoveryCandidates: (fiftyDiscoveryCandidates.restaurants || []).length,
     oadCandidates: (oadCandidates.restaurants || []).length,
     bestChefCandidates: (bestChefCandidates.restaurants || []).length,
@@ -170,6 +185,9 @@ function main() {
     muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
     fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
     skippedFiftyDiscoveryNeedsReview: (fiftyDiscoveryCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    skippedTatlerNeedsReview: (tatlerCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    skippedWorldCulinaryNeedsReview: (worldCulinaryCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
+    skippedFiftyBestNeedsReview: (fiftyBestCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedOadNeedsReview: (oadCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedBestChefNeedsReview: (bestChefCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
     skippedDesignAwardsNeedsReview: (designAwardsCandidates.restaurants || []).filter((row) => row.importConfidence !== "high").length,
@@ -244,6 +262,12 @@ function main() {
   awards._sources = [...new Set([
     ...(awards._sources || []),
     ...((externalAwards.sources || []).map((source) => source.url)),
+    ...(tatlerCandidates.sourceCatalog || []).map((source) => source.url),
+    ...(tatlerCandidates.sourceUrl ? [tatlerCandidates.sourceUrl] : []),
+    ...(worldCulinaryCandidates.sourceCatalog || []).map((source) => source.url),
+    ...(worldCulinaryCandidates.sourceUrl ? [worldCulinaryCandidates.sourceUrl] : []),
+    ...(fiftyBestCandidates.sourceCatalog || []).map((source) => source.url),
+    ...(fiftyBestCandidates.sourceUrl ? [fiftyBestCandidates.sourceUrl] : []),
     ...(fiftyDiscoveryCandidates.sourceUrl ? [fiftyDiscoveryCandidates.sourceUrl] : []),
     ...(oadCandidates.sourceUrl ? [oadCandidates.sourceUrl] : []),
     ...(bestChefCandidates.source ? [bestChefCandidates.source] : []),

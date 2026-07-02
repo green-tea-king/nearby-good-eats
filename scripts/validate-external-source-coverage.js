@@ -43,6 +43,7 @@ function main() {
     "fdagrade",
     "tatlerbest",
     "worldculinary",
+    "external-award-review-queue",
     "google-maps-reviews",
     "ifoodie",
     "openrice-tw",
@@ -69,6 +70,11 @@ function main() {
   if (tcf.runtimeLookup !== false) errors.push("tcfpraise must disable runtimeLookup");
   if (!["integrated_data", "candidate_needs_city_review"].includes(tcf.status)) errors.push(`tcfpraise invalid status ${tcf.status}`);
   if (tcf.status === "candidate_needs_city_review" && Number(tcf.needsCityReview || 0) <= 0) errors.push("tcfpraise needsCityReview status requires rows");
+  const reviewQueue = sources.get("external-award-review-queue") || {};
+  if (reviewQueue.runtimeLookup !== false) errors.push("external-award-review-queue must disable runtimeLookup");
+  if (reviewQueue.status !== "manual_verification_queue") errors.push("external-award-review-queue status mismatch");
+  if (reviewQueue.dataFile !== "assets/external-award-review-queue.json") errors.push("external-award-review-queue dataFile mismatch");
+  if (reviewQueue.count !== (coverage.summary?.externalAwardReviewQueue || 0)) errors.push("external-award-review-queue count mismatch");
   const google = sources.get("google-maps-reviews") || {};
   if (google.status !== "runtime_primary_with_noise_guard") errors.push("google reviews status mismatch");
   for (const key of ["bayesianScore", "reviewCountBonus", "reviewNoiseHints", "promoTextPenalty", "noFullReviewStorage"]) {

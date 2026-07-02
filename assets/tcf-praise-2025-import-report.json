@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-07-02T00:06:17.424Z",
+  "generatedAt": "2026-07-02T00:11:47.499Z",
   "sourceUrl": "https://www.tcf.org.tw/page/news/show.aspx?num=48",
   "sourceRows": 36,
   "candidates": 24,
-  "needsCityReview": 12,
+  "needsCityReview": 8,
+  "excludedNonRestaurant": 4,
   "errors": []
 }

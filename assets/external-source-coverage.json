@@ -12,13 +12,16 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 7568,
+    "awardsRestaurants": 7566,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
     "platformManualRestaurants": 2,
     "platformManualSignals": 6,
     "externalAwardSources": 3,
+    "tatlerCandidates": 20,
+    "worldCulinaryCandidates": 4,
+    "fiftyBestCandidates": 4,
     "fiftyDiscoveryCandidates": 13,
     "oadCandidates": 29,
     "bestChefCandidates": 4,
@@ -30,10 +33,11 @@
     "gdgAwardsNeedsCityReview": 4,
     "michelinSpecialCandidates": 4,
     "tcfPraiseCandidates": 24,
-    "tcfPraiseNeedsCityReview": 12,
+    "tcfPraiseNeedsCityReview": 8,
     "taichungLowCarbonCandidates": 20,
     "muslimFriendlyCandidates": 75,
-    "fdaRestaurantHygieneCandidates": 6104
+    "fdaRestaurantHygieneCandidates": 6104,
+    "externalAwardReviewQueue": 3
   },
   "sources": [
     {
@@ -85,8 +89,12 @@
       "label": "50 Best",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
-      "sourceFile": "assets/external-awards.manual.json",
-      "count": 2,
+      "sourceFile": "assets/asias-50-best-restaurants-2026-candidates.json",
+      "count": 4,
+      "candidates": 4,
+      "sourceCatalog": [
+        "asias-50-best-restaurants-2026"
+      ],
       "runtimeLookup": false
     },
     {
@@ -179,7 +187,7 @@
       "candidatesFile": "assets/tcf-praise-2025-candidates.json",
       "count": 24,
       "candidates": 24,
-      "needsCityReview": 12,
+      "needsCityReview": 8,
       "runtimeLookup": false
     },
     {
@@ -217,8 +225,17 @@
       "label": "Tatler Best",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
-      "sourceFile": "assets/external-awards.manual.json",
-      "count": 20,
+      "sourceFile": "assets/tatler-best-taiwan-2025-candidates.json",
+      "count": 25,
+      "candidates": 20,
+      "sourceCatalog": [
+        "tatler-best-taiwan-2025-top20",
+        "tatler-best-taiwan-2025-best-service",
+        "tatler-best-taiwan-2025-best-innovation",
+        "tatler-best-taiwan-2025-rising-star",
+        "tatler-best-taiwan-2025-restaurant-of-the-year",
+        "tatler-best-taiwan-2025-best-in-class"
+      ],
       "runtimeLookup": false
     },
     {
@@ -226,8 +243,20 @@
       "label": "World Culinary Awards",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
-      "sourceFile": "assets/external-awards.manual.json",
+      "sourceFile": "assets/world-culinary-awards-taiwan-2025-candidates.json",
       "count": 4,
+      "candidates": 4,
+      "sourceCatalog": [
+        "world-culinary-awards-taiwan-2025"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "external-award-review-queue",
+      "label": "External Award Review Queue",
+      "status": "manual_verification_queue",
+      "dataFile": "assets/external-award-review-queue.json",
+      "count": 3,
       "runtimeLookup": false
     },
     {

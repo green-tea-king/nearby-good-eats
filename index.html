@@ -197,6 +197,10 @@ button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:n
 .rank-filters .fg-location .fg-chips{display:grid;grid-template-columns:minmax(76px,1fr) minmax(76px,1fr) minmax(76px,1fr);overflow:visible;}
 .rank-filters .fg-location .fsel{width:100%;max-width:none;}
 .rank-filters .fg-keyword .fg-chips{display:grid;grid-template-columns:minmax(0,1fr);overflow:visible;}
+.rank-filters .fg-award{align-items:flex-start;}
+.rank-filters .fg-award .fg-chips{gap:7px;}
+.award-summary{flex-basis:100%;font-size:11px;line-height:1.4;color:var(--text-faint);padding:2px 2px 0;}
+.award-summary b{color:var(--text-dim);font-weight:600;}
 .keyword-input{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:16px;padding:8px 11px;outline:none;}
 .keyword-input::placeholder{color:var(--text-faint);}
 .filter-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:2px 2px 0 43px;}
@@ -1372,7 +1376,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑可複選", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林特別獎", guide:"michelinspecial"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"GDG得獎", guide:"gdgawards"}, {label:"點讚榜", guide:"tcfpraise"}, {label:"台中低碳", guide:"taichunglowcarbon"}, {label:"穆斯林友善", guide:"muslimfriendly"}, {label:"食安優級", guide:"fdagrade", level:"優"}, {label:"食安良級", guide:"fdagrade", level:"良"}, {label:"50 Best", guide:"50best"}, {label:"50 Discovery", guide:"50bestdiscovery"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"FMG永續", guide:"fmg"}, {label:"設計獎", guide:"designawards"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
+  { key:"award",   label:"評鑑（可複選）", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林特別獎", guide:"michelinspecial"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠星", guide:"greenstar"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"GDG得獎", guide:"gdgawards"}, {label:"點讚榜", guide:"tcfpraise"}, {label:"台中低碳", guide:"taichunglowcarbon"}, {label:"穆斯林友善", guide:"muslimfriendly"}, {label:"食安優級", guide:"fdagrade", level:"優"}, {label:"食安良級", guide:"fdagrade", level:"良"}, {label:"50 Best", guide:"50best"}, {label:"50 Discovery", guide:"50bestdiscovery"}, {label:"OAD", guide:"oad"}, {label:"The Best Chef", guide:"thebestchef"}, {label:"Tatler", guide:"tatlerbest"}, {label:"World Culinary", guide:"worldculinary"}, {label:"FMG永續", guide:"fmg"}, {label:"設計獎", guide:"designawards"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
 const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, award:[], city:"", area:"", village:"" };
 let rankFilterDraft = null;
@@ -1413,6 +1417,11 @@ function rankAwardValues(f=rankFilter){
 }
 function rankAwardText(f=rankFilter){
   return rankAwardValues(f).join("、");
+}
+function rankAwardSummaryHTML(f=rankFilter){
+  const selected = rankAwardValues(f);
+  if (!selected.length) return `<span class="award-summary">可複選，未限制評鑑等級。</span>`;
+  return `<span class="award-summary"><b>已選 ${selected.length} 項</b>：${escapeHTML(selected.join("\u3001"))}；符合任一項即保留。</span>`;
 }
 function editableRankFilter(){
   return rankFilterDraft || rankFilter;
@@ -3511,14 +3520,19 @@ function buildRankFilterBar(){
   html += `<div class="fg fg-keyword"><span class="fg-lab">關鍵字</span><div class="fg-chips">`
     + `<input id="rkKeyword" class="keyword-input" type="search" inputmode="search" enterkeyhint="search" maxlength="24" placeholder="例如：麵線、滷肉飯" value="${escapeHTML(f.keyword || "")}">`
     + `</div></div>`;
-  html += RANK_FILTERS.map(g =>
-    `<div class="fg${g.key==="travel" ? " fg-travel" : ""}"><span class="fg-lab">${g.label}</span><div class="fg-chips">`
-    + g.opts.map(o => `<button class="fchip${g.key==="award" ? ((o.label==="不限" ? !rankAwardValues(f).length : rankAwardValues(f).includes(o.label)) ? " on" : "") : (f[g.key]===o.label ? " on" : "")}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`).join("")
-    + (g.key==="travel"
-      ? `<button class="flocate" id="rkTravelLocate" type="button" aria-label="定位交通起點" title="定位交通起點"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></button>${rankOriginLabel ? `<span class="origin-hint">定位：${escapeHTML(rankOriginLabel)}</span>` : ""}`
-      : "")
-    + `</div></div>`
-  ).join("");
+  html += RANK_FILTERS.map(g => {
+    const selectedAwards = g.key === "award" ? rankAwardValues(f) : [];
+    const chips = g.opts.map(o => {
+      const isOn = g.key === "award"
+        ? (o.label === "\u4e0d\u9650" ? !selectedAwards.length : selectedAwards.includes(o.label))
+        : (f[g.key]===o.label);
+      return `<button type="button" class="fchip${isOn ? " on" : ""}" aria-pressed="${isOn ? "true" : "false"}" data-fkey="${g.key}" data-fval="${o.label}">${o.label}</button>`;
+    }).join("");
+    const extra = g.key === "travel"
+      ? `<button class="flocate" id="rkTravelLocate" type="button" aria-label="\u5b9a\u4f4d\u4ea4\u901a\u8d77\u9ede" title="\u5b9a\u4f4d\u4ea4\u901a\u8d77\u9ede"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></button>${rankOriginLabel ? `<span class="origin-hint">\u5b9a\u4f4d：${escapeHTML(rankOriginLabel)}</span>` : ""}`
+      : (g.key === "award" ? rankAwardSummaryHTML(f) : "");
+    return `<div class="fg${g.key==="travel" ? " fg-travel" : ""}${g.key==="award" ? " fg-award" : ""}"><span class="fg-lab">${g.label}</span><div class="fg-chips">${chips}${extra}</div></div>`;
+  }).join("");
   const active = Object.entries(f).some(([k,v]) => k === "award" ? rankAwardValues(f).length : (v && !(k==="open" && v===RANK_DEFAULT_OPEN) && !(k==="travel" && v===RANK_DEFAULT_TRAVEL)));
   html += `<div class="mode-hint"><b>目前模式</b>：${escapeHTML(rankModeHintText(f))}</div>`;
   html += `<div class="filter-precision"><b>判斷來源</b>：${escapeHTML(rankFilterPrecisionText(f))}</div>`;

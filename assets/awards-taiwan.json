@@ -47,7 +47,9 @@
     "https://www.taiwan.net.tw/m1.aspx?sNo=0020118",
     "https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237",
     "https://greenmedia.today/article_detail.php?cid=7&mid=1410",
-    "https://www.tcf.org.tw/page/news/show.aspx?num=48"
+    "https://www.tcf.org.tw/page/news/show.aspx?num=48",
+    "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=french-tatler-best-restaurants",
+    "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants"
   ],
   "updated": "2026-07-02",
   "restaurants": [
@@ -69,7 +71,7 @@
     {
       "name": "一起來速食店",
       "city": "宜蘭縣",
-      "district": "羅東鎮",
+      "district": "中山區",
       "address": "宜蘭縣羅東鎮民有街21巷7號",
       "cuisine": "伙食包及自助餐業",
       "aliases": [],
@@ -89,7 +91,7 @@
     {
       "name": "九號咖啡石城館",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣頭城鎮石城路19號之6",
       "cuisine": "飲品",
       "aliases": [],
@@ -190,7 +192,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "宜蘭"
     },
     {
       "name": "大嵌城甕缸雞",
@@ -267,7 +270,7 @@
     {
       "name": "川岩咖啡館-康綺文化工作室",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣頭城鎮協天路636巷36-2號",
       "cuisine": "飲品/點心",
       "aliases": [],
@@ -308,7 +311,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "宜蘭"
     },
     {
       "name": "六益包飯部",
@@ -353,7 +357,7 @@
     {
       "name": "水屋厚茶",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣礁溪鄉礁溪路四段103號",
       "cuisine": "飲品",
       "aliases": [],
@@ -650,7 +654,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "宜蘭"
     },
     {
       "name": "好運牛湯麵",
@@ -855,7 +860,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "宜蘭"
     },
     {
       "name": "宜珍自助餐",
@@ -1060,7 +1066,7 @@
     {
       "name": "阿賽喇冰",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣蘇澳鎮江夏路9號",
       "cuisine": "飲品/點心",
       "aliases": [],
@@ -1169,7 +1175,7 @@
     {
       "name": "春不老驛站",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣冬山鄉丸山路259號",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -1250,7 +1256,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "宜蘭"
     },
     {
       "name": "美味飲食店",
@@ -1830,7 +1837,7 @@
     {
       "name": "聊吧",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣冬山鄉中正路35號",
       "cuisine": "飲品/點心",
       "aliases": [],
@@ -1929,7 +1936,7 @@
     {
       "name": "啾咕咖啡",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣頭城鎮港口里港墘路60號2樓",
       "cuisine": "飲品",
       "aliases": [],
@@ -2022,7 +2029,7 @@
     {
       "name": "無所時時",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣五結鄉公園一路35號",
       "cuisine": "飲品/點心",
       "aliases": [],
@@ -2070,7 +2077,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "宜蘭"
     },
     {
       "name": "翔品港式燒臘店",
@@ -2961,7 +2969,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "宜蘭"
     },
     {
       "name": "驛饌餐飲店",
@@ -2986,7 +2995,7 @@
     {
       "name": "IBU廚房 x 冬瓜山書店",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣冬山鄉南興路54巷9號",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -3045,7 +3054,7 @@
     {
       "name": "VEGAN蔬食餐廳-三合餅鋪有限公司",
       "city": "宜蘭縣",
-      "district": "",
+      "district": "宜蘭",
       "address": "宜蘭縣宜蘭市梅洲二路65號",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -5907,7 +5916,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "花蓮"
     },
     {
       "name": "花蓮縣吉安鄉農會-花蓮保健作物加工廠",
@@ -8188,7 +8198,7 @@
     {
       "name": "瑪丁娜印度小館",
       "city": "花蓮縣",
-      "district": "",
+      "district": "花蓮",
       "address": "花蓮縣花蓮市和平路482號",
       "cuisine": "印度料理",
       "aliases": [],
@@ -8211,7 +8221,7 @@
     {
       "name": "瑪丁娜印度小館-林森店",
       "city": "花蓮縣",
-      "district": "",
+      "district": "花蓮",
       "address": "花蓮縣花蓮市林森路121號",
       "cuisine": "印度料理",
       "aliases": [],
@@ -9760,7 +9770,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "金門"
     },
     {
       "name": "滝禾製麵所-金門金城店",
@@ -10340,7 +10351,7 @@
     {
       "name": "八方雲集",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿民生路3-9號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10380,7 +10391,7 @@
     {
       "name": "八方雲集屏東民族店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿民族路131號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10460,7 +10471,7 @@
     {
       "name": "八方雲集屏東崇大店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿華盛街5-2號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10480,7 +10491,7 @@
     {
       "name": "八方雲集屏東崇朝店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿崇朝路8號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10500,7 +10511,7 @@
     {
       "name": "八方雲集屏東勝利店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿勝利路244號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10520,7 +10531,7 @@
     {
       "name": "八方雲集屏東新大連店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿大連路58-11號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10560,7 +10571,7 @@
     {
       "name": "八方雲集屏東廣東店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿廣東路601號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10640,7 +10651,7 @@
     {
       "name": "三商巧福屏東驛站店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -10675,7 +10686,7 @@
     {
       "name": "丸龜製麵",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -10715,7 +10726,7 @@
     {
       "name": "大初捲卷",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -10735,7 +10746,7 @@
     {
       "name": "大初燒肉",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號2樓",
       "cuisine": "自助餐廳",
       "aliases": [],
@@ -10770,7 +10781,7 @@
     {
       "name": "大煙囪美式餐酒館",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿菸廠路1-3號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10830,7 +10841,7 @@
     {
       "name": "大鍋頭海鮮涮涮鍋",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -10890,7 +10901,7 @@
     {
       "name": "五花馬水餃館屏東民生店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿民生路4之5",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10910,7 +10921,7 @@
     {
       "name": "五花馬水餃館新屏店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿台糖街3號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -10930,7 +10941,7 @@
     {
       "name": "五桐號屏東林森店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿林森路119-1號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -10950,7 +10961,7 @@
     {
       "name": "六角六枋寮店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣枋寮村中興路19號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -10970,7 +10981,7 @@
     {
       "name": "天澤咖哩飯、丼飯專賣",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -10990,7 +11001,7 @@
     {
       "name": "月季壽喜燒",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號",
       "cuisine": "自助餐廳",
       "aliases": [],
@@ -11030,7 +11041,7 @@
     {
       "name": "丼吧!",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -11070,7 +11081,7 @@
     {
       "name": "卡彿魯岸咖啡",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿瑞光里瑞民路8、10號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -11140,7 +11151,7 @@
     {
       "name": "禾速廚坊西巿場店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿和平路32號店鋪4",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -11160,7 +11171,7 @@
     {
       "name": "回味早午餐",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿仁愛路12-6號",
       "cuisine": "早餐店",
       "aliases": [],
@@ -11180,7 +11191,7 @@
     {
       "name": "安心食品服務股份有限公司",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿中正路271號",
       "cuisine": "速食業",
       "aliases": [],
@@ -11260,7 +11271,7 @@
     {
       "name": "早安美芝城屏東活力大豐店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿大豐路54號1樓",
       "cuisine": "早餐店",
       "aliases": [],
@@ -11300,7 +11311,7 @@
     {
       "name": "旭川壽司屋",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿豐榮街27號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -11350,7 +11361,7 @@
     {
       "name": "阡陌一肆",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿仁愛路90號5樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -11390,7 +11401,7 @@
     {
       "name": "吳家紅茶冰屏東大武店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿大武里大武路68號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -11410,7 +11421,7 @@
     {
       "name": "巫瑪手作廚房",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿民生路79-1號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -11430,7 +11441,7 @@
     {
       "name": "芋見綠豆",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿建豐路153號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -11505,7 +11516,7 @@
     {
       "name": "和德昌(股)公司屏東環球餐廳",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿仁愛路90號5F",
       "cuisine": "速食業",
       "aliases": [],
@@ -11666,7 +11677,7 @@
     {
       "name": "花燒肉-屏東店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿瑞光路三段36-1號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -11816,7 +11827,7 @@
     {
       "name": "庠懋食品企業社",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿公園東路49號",
       "cuisine": "其他(盒餐類)",
       "aliases": [],
@@ -11891,7 +11902,7 @@
     {
       "name": "玲恩幸福早餐坊",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿杭州街43-1號",
       "cuisine": "早餐店",
       "aliases": [],
@@ -11946,7 +11957,7 @@
     {
       "name": "虹美廚坊",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿豐榮街32號",
       "cuisine": "其他(盒餐類)",
       "aliases": [],
@@ -12041,7 +12052,7 @@
     {
       "name": "烤肉中心",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -12061,7 +12072,7 @@
     {
       "name": "茶之魔手",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿建國路418-9號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -12081,7 +12092,7 @@
     {
       "name": "茶湯會",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿廣東路118號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -12101,7 +12112,7 @@
     {
       "name": "茶湯會屏東林森店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿林森路119號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -12141,7 +12152,7 @@
     {
       "name": "迷客夏屏東民生店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿民生東路48-1號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -12161,7 +12172,7 @@
     {
       "name": "馬德里-屏東驛站店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -12266,7 +12277,7 @@
     {
       "name": "晨間廚房棒球店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿棒球路150號",
       "cuisine": "早餐店",
       "aliases": [],
@@ -12286,7 +12297,7 @@
     {
       "name": "梁社漢排骨便當",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿民族路165-1號",
       "cuisine": "其他(盒餐類)",
       "aliases": [],
@@ -12306,7 +12317,7 @@
     {
       "name": "梨燒五花",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿自立路270號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -12342,7 +12353,7 @@
     {
       "name": "陳媽媽豆漿專賣店-旗鑑店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿復興路486號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -12382,7 +12393,7 @@
     {
       "name": "麥當勞-屏東太平洋店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿中正路72號",
       "cuisine": "速食業",
       "aliases": [],
@@ -12422,7 +12433,7 @@
     {
       "name": "麥當勞屏東民生店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿民生路3之10號",
       "cuisine": "速食業",
       "aliases": [],
@@ -12582,7 +12593,7 @@
     {
       "name": "富士匠鍋物-新屏店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿台糖街3號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -12602,7 +12613,7 @@
     {
       "name": "富盈會館",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿和平路422號",
       "cuisine": "宴席餐廳",
       "aliases": [],
@@ -12622,7 +12633,7 @@
     {
       "name": "斑鳩的窩",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -12642,7 +12653,7 @@
     {
       "name": "滋滋小鉄板",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -12713,7 +12724,7 @@
     {
       "name": "華記薏仁豆花",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿廣東路606號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -12733,7 +12744,7 @@
     {
       "name": "逸間牛炙燒厚牛排",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號2樓",
       "cuisine": "自助餐廳",
       "aliases": [],
@@ -12773,7 +12784,7 @@
     {
       "name": "新千葉火鍋",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿太原路17-1號",
       "cuisine": "自助餐廳",
       "aliases": [],
@@ -12868,7 +12879,7 @@
     {
       "name": "嘟嘟餐廚",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿長春里民生路12-10號",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -12999,7 +13010,7 @@
     {
       "name": "橫濱九田家系拉麵",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -13059,7 +13070,7 @@
     {
       "name": "韓石食堂屏東店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -13079,7 +13090,7 @@
     {
       "name": "韓姜熙的小廚房屏東店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東縣屏東巿仁愛路90號5F/511櫃位",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -13119,7 +13130,7 @@
     {
       "name": "鮮茶道大武店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿大武路97號",
       "cuisine": "飲料冰品店",
       "aliases": [],
@@ -13139,7 +13150,7 @@
     {
       "name": "鮮茶道屏東驛站店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -13194,7 +13205,7 @@
     {
       "name": "囍 .早午餐",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿民生路61-4號",
       "cuisine": "早餐店",
       "aliases": [],
@@ -13214,7 +13225,7 @@
     {
       "name": "驢子先生-屏東驛站店",
       "city": "屏東縣",
-      "district": "",
+      "district": "屏東",
       "address": "屏東巿公勇路62號1樓",
       "cuisine": "美食街之小型餐飲店",
       "aliases": [],
@@ -13273,7 +13284,8 @@
         }
       ],
       "aliases": [],
-      "cuisine": "Taiwanese"
+      "cuisine": "Taiwanese",
+      "district": "屏東"
     },
     {
       "name": "LAND",
@@ -13305,7 +13317,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "屏東"
     },
     {
       "name": "QBurger潮州中山店",
@@ -13656,7 +13669,7 @@
     {
       "name": "爪哇殿咖啡",
       "city": "苗栗縣",
-      "district": "",
+      "district": "苗栗",
       "address": "苗栗縣竹南鎮博愛街194號1樓",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -14245,7 +14258,7 @@
     {
       "name": "東村18健康廚房",
       "city": "苗栗縣",
-      "district": "",
+      "district": "苗栗",
       "address": "苗栗縣南庄鄉文化路7-1號",
       "cuisine": "餐飲",
       "aliases": [],
@@ -14501,7 +14514,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "苗栗"
     },
     {
       "name": "青松自在",
@@ -15733,7 +15747,7 @@
     {
       "name": "礦工餐廳-巴巴坑道",
       "city": "苗栗縣",
-      "district": "",
+      "district": "苗栗",
       "address": "苗栗縣三灣鄉頂寮村祭山湖 15 之 1 樓",
       "cuisine": "餐飲",
       "aliases": [],
@@ -21425,7 +21439,7 @@
     {
       "name": "台北中東料理坊",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市大園區航站南路15號出境B1 (美食廣場)",
       "cuisine": "中東料理",
       "aliases": [],
@@ -22508,7 +22522,7 @@
     {
       "name": "匠骰子牛麻辣麵 台灣桃園店",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市蘆竹區桃園街95號1樓",
       "cuisine": "中式麵食",
       "aliases": [],
@@ -23929,7 +23943,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "桃園"
     },
     {
       "name": "竹蒸籠包子",
@@ -26096,7 +26111,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "桃園"
     },
     {
       "name": "東湖餐廳",
@@ -27792,7 +27808,7 @@
     {
       "name": "姚牛丸",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市中壢區龍平二街3號",
       "cuisine": "印尼料理",
       "aliases": [],
@@ -28395,7 +28411,7 @@
     {
       "name": "炸鷄大獅-桃捷高鐵A18站",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市中壢區青埔里高鐵北路一段5號",
       "cuisine": "速食",
       "aliases": [],
@@ -28418,7 +28434,7 @@
     {
       "name": "炸鷄大獅-桃園車站店",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市桃園區中正路1號",
       "cuisine": "速食",
       "aliases": [],
@@ -29116,7 +29132,7 @@
     {
       "name": "柴神興業有限公司-Furger 芙格漢堡餐車(中壢中原店)",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市中壢區民有街76號1樓",
       "cuisine": "漢堡",
       "aliases": [],
@@ -29139,7 +29155,7 @@
     {
       "name": "柴神興業有限公司-Furger 芙格漢堡餐車(桃園高鐵店)",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市中壢區高鐵北路一段5號(2樓穿堂層，萊爾富旁邊，往華泰名品城連通道)",
       "cuisine": "漢堡",
       "aliases": [],
@@ -33362,7 +33378,7 @@
     {
       "name": "清真合閃妹小廚",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市中壢區中正五路186號",
       "cuisine": "雲南料理",
       "aliases": [],
@@ -33405,7 +33421,7 @@
     {
       "name": "異域故事館Halal專用餐廳",
       "city": "桃園市",
-      "district": "",
+      "district": "桃園",
       "address": "桃園市平鎮區中山路70號",
       "cuisine": "早午餐",
       "aliases": [],
@@ -38190,7 +38206,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "桃園"
     },
     {
       "name": "樂農匯多肉植物家庭蔬食Café",
@@ -46920,7 +46937,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "小露吃",
@@ -47323,7 +47341,7 @@
     {
       "name": "爪哇真美食餐廳",
       "city": "高雄市",
-      "district": "",
+      "district": "高雄",
       "address": "高雄市新興區南華路206號",
       "cuisine": "印尼料理",
       "aliases": [],
@@ -47357,7 +47375,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "王品餐飲-和牛涮日式鍋物放題夢時代店",
@@ -47517,7 +47536,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "北港蔡三代筒仔米糕",
@@ -47548,7 +47568,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "古家海鮮",
@@ -47629,7 +47650,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "弘國食品有限公司",
@@ -47672,7 +47694,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "正宗鴨肉飯",
@@ -47688,7 +47711,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "永心浮島",
@@ -47711,7 +47735,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "永筵小館",
@@ -47737,7 +47762,8 @@
       ],
       "aliases": [
         "Yung Yen"
-      ]
+      ],
+      "district": "高雄"
     },
     {
       "name": "田山餐館",
@@ -47760,7 +47786,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "白玉樓",
@@ -47776,7 +47803,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "禾新黃金鴨肉",
@@ -48527,7 +48555,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "老新台菜 (九如二路)",
@@ -48676,7 +48705,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "良佳豬腳",
@@ -48692,7 +48722,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "豆府-北村豆腐家高雄新光左營店",
@@ -50236,7 +50267,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "金聖春海產",
@@ -50259,7 +50291,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "長生29",
@@ -50335,7 +50368,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "阿貴虱目魚店",
@@ -50403,7 +50437,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "前金肉燥飯",
@@ -50419,7 +50454,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "勁仁武小吃店",
@@ -50716,7 +50752,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "昭明海產家庭料理",
@@ -50732,7 +50769,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "柏弘肉燥",
@@ -51051,7 +51089,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "泰元",
@@ -51067,7 +51106,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "浪際",
@@ -51090,7 +51130,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "海天下",
@@ -51113,7 +51154,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "海方食品企業有限公司-高雄市立龍華國中",
@@ -51758,7 +51800,7 @@
     {
       "name": "高雄清真館",
       "city": "高雄市",
-      "district": "",
+      "district": "高雄",
       "address": "高雄市苓雅區正義里建軍路13號",
       "cuisine": "中式麵食",
       "aliases": [],
@@ -52336,7 +52378,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "無名肉燥飯",
@@ -52374,7 +52417,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "菜包李小吃部",
@@ -52397,7 +52441,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "菜根香自助餐",
@@ -52433,7 +52478,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "貳哥食堂",
@@ -52449,7 +52495,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "逸之牛",
@@ -52524,7 +52571,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "溜溜酸菜魚專賣店-夢時代店",
@@ -53191,7 +53239,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "慈香庭素食餐廳高雄旗艦店",
@@ -53712,7 +53761,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "蔬慕 Vegan Amore",
@@ -53763,7 +53813,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "鄧師傅功夫菜-大樂店",
@@ -53934,7 +53985,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "燒肉LIKE-夢時代店",
@@ -54147,7 +54199,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "鮨毅",
@@ -54170,7 +54223,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "舊市羊肉 (岡山)",
@@ -54186,7 +54240,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "薩瑪法國小館",
@@ -54230,7 +54285,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "餸便當",
@@ -54423,7 +54479,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "鑫西子灣自助餐",
@@ -54551,7 +54608,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "GEN",
@@ -54569,6 +54627,12 @@
           "plates": 2,
           "level": "2盤",
           "year": 2025
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "sources": [
@@ -54580,9 +54644,11 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": [
-        "雋",
-        "雋 中餐廳 GEN by Matt Chen"
+      "aliases": [],
+      "district": "???",
+      "cuisine": "Cantonese",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
       ]
     },
     {
@@ -54600,7 +54666,8 @@
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "Hâo Labo 法式小館",
@@ -54623,7 +54690,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "IKEA瑞典餐廳高雄店",
@@ -54724,7 +54792,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "Mo-Mo-Paradise高雄夢時代牧場",
@@ -54782,7 +54851,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "高雄"
     },
     {
       "name": "OCEAN BAKERY",
@@ -54905,7 +54975,8 @@
       "aliases": [
         "承"
       ],
-      "cuisine": "Japanese"
+      "cuisine": "Japanese",
+      "district": "高雄"
     },
     {
       "name": "the FRONT HOUSE",
@@ -54934,7 +55005,8 @@
         "方蒔",
         "the FRONT HOUSE 方蒔",
         "方蒔 the Front House"
-      ]
+      ],
+      "district": "高雄"
     },
     {
       "name": "Thomas Chien",
@@ -55034,7 +55106,7 @@
     {
       "name": "巴基斯坦廚房",
       "city": "基隆市",
-      "district": "",
+      "district": "基隆",
       "address": "基隆市中正區信三路25號",
       "cuisine": "印度料理",
       "aliases": [],
@@ -55240,7 +55312,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "基隆"
     },
     {
       "name": "成功市場黑白炒咖哩麵",
@@ -55501,7 +55574,7 @@
     {
       "name": "美真小舖",
       "city": "基隆市",
-      "district": "",
+      "district": "基隆",
       "address": "基隆市信義區信二路211號1樓",
       "cuisine": "印尼料理",
       "aliases": [],
@@ -55947,7 +56020,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "基隆"
     },
     {
       "name": "遠東賴家水煎包",
@@ -56130,7 +56204,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "基隆"
     },
     {
       "name": "cama café",
@@ -59920,7 +59995,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "三喜鴨肉坊",
@@ -59956,7 +60032,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "丸亀製麵-環球中和店",
@@ -60227,7 +60304,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "大團圓景觀餐廳",
@@ -60403,7 +60481,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "山海全觀茶坊",
@@ -61514,7 +61593,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "永貞好吃雞肉飯",
@@ -61592,7 +61672,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "瓦城-中和環球店",
@@ -61723,7 +61804,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "全芳味早餐店",
@@ -61828,7 +61910,7 @@
     {
       "name": "地中海私房料理",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市深坑區北深路三段22號",
       "cuisine": "地中海料理",
       "aliases": [],
@@ -62557,7 +62639,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "完食炒飯專門-致理總店",
@@ -62715,7 +62798,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "豆林豆花",
@@ -63197,7 +63281,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "拉亞漢堡-三重捷運店",
@@ -63242,7 +63327,7 @@
     {
       "name": "旺旺來亞州咖哩屋",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市中和區華新街23號",
       "cuisine": "午晚餐料理",
       "aliases": [],
@@ -63854,7 +63939,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "阿宏麵線",
@@ -63910,7 +63996,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "阿柑姨芋圓",
@@ -64298,7 +64385,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "宥宥素食蔬食",
@@ -64389,7 +64477,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "珍珍快炒店",
@@ -65004,7 +65093,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "海霸王-蘆洲店",
@@ -65184,7 +65274,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "迷客夏-新北永和得和店",
@@ -65819,7 +65910,7 @@
     {
       "name": "清真泰式廚房",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市永和區中興街92號1樓",
       "cuisine": "泰式料理",
       "aliases": [],
@@ -66719,7 +66810,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "越緣美食館",
@@ -67522,7 +67614,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "路易莎咖啡-土城日月光門市",
@@ -68147,7 +68240,7 @@
     {
       "name": "達卡印度廚房",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市林口區文化三路一段171號",
       "cuisine": "印度料理",
       "aliases": [],
@@ -68417,7 +68510,7 @@
     {
       "name": "瑪莎拉印度餐廳 三芝店",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市三芝區北勢子12-7號",
       "cuisine": "印度料理",
       "aliases": [],
@@ -68440,7 +68533,7 @@
     {
       "name": "瑪莎拉印度餐廳 板橋店",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市板橋區文化路二段476號",
       "cuisine": "印度料理",
       "aliases": [],
@@ -70036,7 +70129,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "蔬坊-板橋車站店",
@@ -70099,7 +70193,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "憶姿虹湯包-新莊店",
@@ -70375,7 +70470,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新北"
     },
     {
       "name": "賴阿婆芋圓",
@@ -70656,7 +70752,7 @@
     {
       "name": "鍋棧精緻養生鍋",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市泰山區明志路三段38號",
       "cuisine": "中式料理",
       "aliases": [],
@@ -71394,7 +71490,7 @@
     {
       "name": "蘆洲紅燒羊肉拉麵-三重店",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市三重區龍濱路265號",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -71417,7 +71513,7 @@
     {
       "name": "蘆洲紅燒羊肉拉麵-淡水店",
       "city": "新北市",
-      "district": "",
+      "district": "新北",
       "address": "新北市淡水區中正路243號",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -73011,7 +73107,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "皿富器食",
@@ -73057,7 +73154,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "弄味小廚",
@@ -73073,7 +73171,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "彼刻義式餐酒館",
@@ -73096,7 +73195,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "東門米粉攤",
@@ -73112,7 +73212,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "非常好吃素刈包",
@@ -73158,7 +73259,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "海口刈包",
@@ -73241,7 +73343,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "荷竹園",
@@ -73287,7 +73390,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "新陶芳",
@@ -73310,7 +73414,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "新築窟",
@@ -73356,7 +73461,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "鮨安",
@@ -73379,7 +73485,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "藝軒私房料理",
@@ -73856,7 +73963,7 @@
     {
       "name": "六福開發(股)公司 阿拉丁餐廳",
       "city": "新竹縣",
-      "district": "",
+      "district": "新竹",
       "address": "新竹縣關西鎮仁安里拱子溝60號",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -74565,7 +74672,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "美芝城小吃",
@@ -74601,7 +74709,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "唐草園",
@@ -74617,7 +74726,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "家禾手作麵食館-縣政店",
@@ -74713,7 +74823,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "格麥蛋糕",
@@ -75064,7 +75175,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "富野燒烤",
@@ -75330,7 +75442,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "鼎盛燒臘-竹北光明店",
@@ -75615,7 +75728,7 @@
     {
       "name": "璞鈺素食餐廳",
       "city": "新竹縣",
-      "district": "",
+      "district": "新竹",
       "address": "新竹縣北埔鄉廟前街8號",
       "cuisine": "洗/禮/餐",
       "aliases": [],
@@ -75638,7 +75751,7 @@
     {
       "name": "璞鈺擂茶",
       "city": "新竹縣",
-      "district": "",
+      "district": "新竹",
       "address": "新竹縣北埔鄉廟前街8號",
       "cuisine": "午晚餐",
       "aliases": [],
@@ -75767,7 +75880,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "簡單飲食店",
@@ -75883,7 +75997,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "新竹"
     },
     {
       "name": "BELLINI PASTA PASTA -竹北遠百店",
@@ -77554,7 +77669,7 @@
     {
       "name": "烏司答土耳其居家料理",
       "city": "嘉義市",
-      "district": "",
+      "district": "嘉義",
       "address": "嘉義市東區大雅路一段858巷25號",
       "cuisine": "土耳其料理",
       "aliases": [],
@@ -78777,7 +78892,7 @@
     {
       "name": "爵士印尼風小館",
       "city": "嘉義市",
-      "district": "",
+      "district": "嘉義",
       "address": "嘉義市西區西門街1號",
       "cuisine": "印尼料理",
       "aliases": [],
@@ -83304,7 +83419,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "三商巧福-中山醫店",
@@ -83360,7 +83476,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "千味海鮮",
@@ -83644,7 +83761,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "小樂涼冰果室",
@@ -83693,7 +83811,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "山東餃子牛肉麵館",
@@ -84001,7 +84120,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "六豊",
@@ -84124,7 +84244,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "木林森早午餐",
@@ -84167,7 +84288,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "水相餐聚苑",
@@ -84181,7 +84303,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "水晶冰坊",
@@ -84252,7 +84375,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "牛B葫蘆王 逢甲總店",
@@ -84331,7 +84455,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "北海岸海鮮婚宴會館",
@@ -84405,7 +84530,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "可瑞安韓式烤肉-豐原太平洋百貨",
@@ -84488,7 +84614,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "台中港酒店+Pier88",
@@ -84756,7 +84883,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "伊豆咖啡",
@@ -85003,7 +85131,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "好菜 (西區)",
@@ -85019,7 +85148,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "好運來洲際宴展中心",
@@ -85133,7 +85263,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "有火鍋",
@@ -85200,7 +85331,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "老四川巴蜀麻辣燙-台中公益店",
@@ -85364,7 +85496,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "沃克-台中朝富店",
@@ -85407,7 +85540,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "沐青餐廳",
@@ -85456,7 +85590,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "沙鹿肉圓福",
@@ -85697,7 +85832,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "奇化加韓國料理",
@@ -85782,7 +85918,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "東引釣客",
@@ -86497,7 +86634,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "金悅軒",
@@ -86520,7 +86658,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "金福華餐廳",
@@ -86642,7 +86781,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "阿斗伯冷凍芋",
@@ -86709,7 +86849,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "阿旺澄食堂",
@@ -86986,7 +87127,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "屋馬燒肉-文心店",
@@ -87000,7 +87142,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "屋馬燒肉-園邸店",
@@ -87014,7 +87157,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "星饗道國際自助餐",
@@ -87057,7 +87201,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "春珍茶飲專賣店",
@@ -87288,7 +87433,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "紅蕃鐵板燒-豐原太平洋百貨",
@@ -87455,7 +87601,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "風鼓崎猪血湯老店",
@@ -87499,7 +87646,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "食代鐵板燒",
@@ -87541,7 +87689,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "俺達の肉屋",
@@ -87564,7 +87713,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "原牛牛肉麵-泰安服務區",
@@ -88096,7 +88246,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "梨子咖啡館-崇德店",
@@ -88677,7 +88828,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "鹿行艸地",
@@ -88820,7 +88972,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "富貴亭",
@@ -88836,7 +88989,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "富貴亭飲食店",
@@ -88867,7 +89021,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "彭城堂",
@@ -88883,7 +89038,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "森森燒肉公益店",
@@ -89437,7 +89593,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "溫咖好-手作坊",
@@ -89608,7 +89765,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "裡小樓小料理",
@@ -89631,7 +89789,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "遇到茶茶飲店",
@@ -89707,7 +89866,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "滬舍餘味餐館",
@@ -89723,7 +89883,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "滿堂",
@@ -89958,7 +90119,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "鳳記鵝肉老店",
@@ -89974,7 +90136,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "寬華薑母鴨",
@@ -90098,7 +90261,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "蔬軾新蔬食-台中榮總店",
@@ -90170,7 +90334,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "醉月樓台灣菜",
@@ -90193,7 +90358,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "戰豆冰",
@@ -90325,7 +90491,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "膳馨 (西區)",
@@ -90354,7 +90521,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "貓居蔬食",
@@ -90383,7 +90551,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "默爾義大利餐廳-480店",
@@ -90466,7 +90635,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "龜記茗品龍井東海店",
@@ -90502,7 +90672,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "曙光居蔬食料理",
@@ -90544,7 +90715,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "濰克早午餐-逢甲店",
@@ -90700,7 +90872,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "豐仁冰",
@@ -90833,7 +91006,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "藝奇日本料理岩板燒台中國安店",
@@ -90964,7 +91138,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "馨苑小料理-北屯店",
@@ -91006,7 +91181,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "麵包林里.Boulangerie Pangolin",
@@ -91281,7 +91457,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "CAFE!N台中公益硬咖啡",
@@ -91376,7 +91553,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "Enrich Restaurant & Cafe",
@@ -91432,7 +91610,8 @@
       ],
       "aliases": [
         "鹽之華"
-      ]
+      ],
+      "district": "台中"
     },
     {
       "name": "Forchetta",
@@ -91506,7 +91685,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "GP健康廚房【柳陽南屯會館】",
@@ -91542,7 +91722,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "IL Volo pizza義波羅窯烤披薩",
@@ -91596,7 +91777,8 @@
           "level": "低碳認證",
           "url": "https://travel.taichung.gov.tw/content/files/High-quality-restaurants.pdf"
         }
-      ]
+      ],
+      "district": "臺中"
     },
     {
       "name": "JL Studio",
@@ -91666,7 +91848,11 @@
         }
       ],
       "aliases": [],
-      "cuisine": "Modern Singaporean"
+      "cuisine": "Modern Singaporean",
+      "district": "南屯區",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
     },
     {
       "name": "KOI PLUS 七期店",
@@ -91754,7 +91940,8 @@
       "sources": [
         "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台中"
     },
     {
       "name": "Lousia Coffee 路易．莎咖啡美村直營門市",
@@ -92016,7 +92203,8 @@
       ],
       "aliases": [
         "俺達的肉屋"
-      ]
+      ],
+      "district": "台中"
     },
     {
       "name": "PI",
@@ -92345,7 +92533,8 @@
       ],
       "aliases": [
         "澀"
-      ]
+      ],
+      "district": "台中"
     },
     {
       "name": "TEA'S 原味向上店",
@@ -92483,6 +92672,12 @@
           "level": "Asia No.127",
           "rank": 127,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ],
       "sources": [
@@ -92491,7 +92686,11 @@
       "aliases": [
         "元紀"
       ],
-      "cuisine": "Taiwanese"
+      "cuisine": "Taiwanese",
+      "district": "西屯區",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
     },
     {
       "name": "パーラー 映",
@@ -92797,7 +92996,7 @@
     {
       "name": "99早餐(大同大學)",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市中山北路3段40號",
       "cuisine": "大專院校餐廳",
       "aliases": [],
@@ -93192,7 +93391,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "一品山西刀削麵之家",
@@ -93400,7 +93600,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "人和園雲南餐廳",
@@ -93561,7 +93762,7 @@
     {
       "name": "八方雲集(大同大學)",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市中山北路3段40號",
       "cuisine": "大專院校餐廳",
       "aliases": [],
@@ -95138,7 +95339,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "大龍峒肉羹-米粉湯",
@@ -95216,7 +95418,8 @@
         "小小樹食 （大安路）",
         "Little Tree Food (Da'an Road)"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "小小樹食_新光DT店",
@@ -95304,7 +95507,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "小南門_統一時代百貨",
@@ -95437,7 +95641,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "小後苑 Backyard Jr.-新光三越信義新天地A9",
@@ -95531,7 +95736,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "小野家拉麵",
@@ -95843,7 +96049,8 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Taiwanese"
+      "cuisine": "Taiwanese",
+      "district": ""
     },
     {
       "name": "山嵐",
@@ -95978,7 +96185,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "不然早午餐ATT店",
@@ -96233,7 +96441,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "元晴茶行-一沐日",
@@ -96403,7 +96612,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "天下三絕麵食館",
@@ -96783,7 +96993,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "天婦羅 杉村",
@@ -96913,7 +97124,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "心宴 aMaze",
@@ -96952,7 +97164,8 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "district": ""
     },
     {
       "name": "心潮飯店",
@@ -96972,7 +97185,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "心潮飯店_微風信義店",
@@ -100050,7 +100264,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "平安京茶事",
@@ -100141,7 +100356,7 @@
     {
       "name": "玉福滷味(大同大學)",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市中山北路3段40號",
       "cuisine": "大專院校餐廳",
       "aliases": [],
@@ -100658,7 +100873,7 @@
     {
       "name": "石研室台式爆炒石頭火鍋-和億北車站",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市忠孝西路1段36號B 1",
       "cuisine": "連鎖火鍋業",
       "aliases": [],
@@ -101082,7 +101297,8 @@
         "Kitcho Sushi"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Sushi"
+      "cuisine": "Sushi",
+      "district": ""
     },
     {
       "name": "吉那圈咖啡",
@@ -101410,7 +101626,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "好食在（臺北醫學大學）",
@@ -101589,7 +101806,8 @@
       "aliases": [
         "HOSU"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "如嬌花膠雞．鍋物（民權一店）",
@@ -102070,7 +102288,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "米香台菜餐廳-美福大飯店",
@@ -102183,7 +102402,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "老山東牛肉家常麵店(萬祥號麵莊)",
@@ -103183,7 +103403,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "我家牛排(棋王有限公司)",
@@ -103484,7 +103705,8 @@
         "Mudan Tempura"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Tempura"
+      "cuisine": "Tempura",
+      "district": ""
     },
     {
       "name": "秀蘭小館",
@@ -103772,7 +103994,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "辛巴適餐飲有限公司_信義ATT 4 FUN",
@@ -105004,7 +105227,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "夜上海-新光三越信義新天地A4館",
@@ -105759,7 +105983,8 @@
       "aliases": [
         "明福"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "杭州小籠湯包",
@@ -105772,7 +105997,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "杰飽早餐(杰克大叔早餐吧)",
@@ -105886,7 +106112,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "板前中山",
@@ -106050,7 +106277,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "欣葉台菜",
@@ -106128,7 +106356,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "欣豐(佳欣食堂)(國立台灣大學城中校區)",
@@ -106289,7 +106518,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "知初 the Root Kitchen",
@@ -107152,7 +107382,8 @@
         "Golden Formosa"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Taiwanese"
+      "cuisine": "Taiwanese",
+      "district": ""
     },
     {
       "name": "金賞軒",
@@ -107165,7 +107396,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "金澤美味壽司",
@@ -107721,7 +107953,8 @@
         "侯布雄",
         "L'Atelier de Joël Robuchon"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "俄羅斯城堡",
@@ -108351,7 +108584,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "帝一味自助餐",
@@ -109315,6 +109549,15 @@
           "year": 2025,
           "level": "Best 20 Taiwan",
           "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best Innovation",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Best Innovation",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows Eika with 2025 BEST INNOVATION badge."
         }
       ],
       "city": "臺北市",
@@ -109332,7 +109575,8 @@
           "url": "https://500times.udn.com/wtimes/story/122412/9007797",
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
-      ]
+      ],
+      "district": ""
     },
     {
       "name": "紅豆食府_SOGO天母店",
@@ -109441,7 +109685,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "紅番茄餐飲事業有限公司 (台北市士林高商)",
@@ -109584,7 +109829,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "迦南園小吃 (臺北市立大學)",
@@ -109767,7 +110013,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "香茅廚_微風廣場",
@@ -110108,7 +110355,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "悄悄好食 杭州南店",
@@ -110172,7 +110420,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "捌伍添第 85TD",
@@ -110894,7 +111143,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "秦味館 Qin Wei Guan",
@@ -111743,7 +111993,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "國賓鹹粥",
@@ -112706,7 +112957,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "祥發港式茶餐廳",
@@ -112899,7 +113151,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "這一小鍋-台北誠品南西店",
@@ -114260,7 +114513,7 @@
     {
       "name": "喫茶趣TOGO-和平東路分公司",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市和平東路1段13號",
       "cuisine": "連鎖餐飲業",
       "aliases": [],
@@ -114456,7 +114709,8 @@
         "富錦樹台菜香檳 (松山)",
         "Fujin Tree Taiwanese Cuisine & Champagne (Songshan)"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "富錦樹台菜香檳-台北101",
@@ -114540,7 +114794,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "普橘島",
@@ -114669,7 +114924,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "曾德自助火鍋城",
@@ -114746,7 +115002,8 @@
         "渥達尼斯磨坊",
         "Molino de Urdániz"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "温暖好家",
@@ -114920,7 +115177,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "無所洋食",
@@ -114983,7 +115241,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "登陸土星土耳其咖啡",
@@ -115266,7 +115525,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "貳樓_微風台北車站店",
@@ -115476,7 +115736,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "雅口麻辣豆腐專賣",
@@ -115561,7 +115822,8 @@
         "Ya Ge"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Cantonese"
+      "cuisine": "Cantonese",
+      "district": "松山區"
     },
     {
       "name": "雲川水月 Clavius",
@@ -115574,7 +115836,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "雲泰小鎮餐坊",
@@ -115657,7 +115920,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "黑毛屋 南港中信店",
@@ -115925,7 +116189,7 @@
     {
       "name": "想點(大同大學)",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市中山北路3段40號",
       "cuisine": "大專院校餐廳",
       "aliases": [],
@@ -116229,7 +116493,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "溫州大餛飩-佳味溫州大餛飩小吃店",
@@ -118173,7 +118438,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "鈺善閣 ‧ 素 ‧ 養生懷石",
@@ -118314,7 +118580,8 @@
       "aliases": [
         "Din Tai Fung"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "鼎泰豐_SOGO復興店",
@@ -118371,7 +118638,8 @@
         "壽司芳",
         "Sushi Yoshi"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "夢駝鈴風味坊",
@@ -118481,6 +118749,24 @@
           "year": 2026,
           "level": "Discovery",
           "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Ta%C3%AFrroir.html"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Restaurant of the Year",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Restaurant of the Year",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official page shows 2025 RESTAURANT OF THE YEAR badge immediately before Ta?rroir entry."
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best-in-Class",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Best-in-Class",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official page shows 2025 BEST-IN-CLASS badge immediately before Ta?rroir entry."
         }
       ],
       "city": "臺北市",
@@ -118499,7 +118785,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "cuisine": "Taiwanese/French"
+      "cuisine": "Taiwanese/French",
+      "district": ""
     },
     {
       "name": "榕居",
@@ -120865,7 +121152,7 @@
     {
       "name": "摩斯漢堡-古亭店",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市和平東路1段15之1號",
       "cuisine": "連鎖餐飲業",
       "aliases": [],
@@ -121485,7 +121772,7 @@
     {
       "name": "摩斯漢堡-和平建國店",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市和平東路2段49之1號",
       "cuisine": "連鎖餐飲業",
       "aliases": [],
@@ -122849,7 +123136,8 @@
         "The Guest House"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Chinese"
+      "cuisine": "Chinese",
+      "district": ""
     },
     {
       "name": "賣灶_新光三越南西店一館",
@@ -122882,7 +123170,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "輪輪1976和食茶酒駅_台北信義新天地A11",
@@ -122915,7 +123204,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "養心沙龍",
@@ -123919,7 +124209,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "cuisine": "Cantonese"
+      "cuisine": "Cantonese",
+      "district": ""
     },
     {
       "name": "頤園護理之家",
@@ -124183,7 +124474,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "謝記海南雞飯_SOGO復興館",
@@ -124316,7 +124608,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "隱食家",
@@ -124329,7 +124622,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "韓天閣",
@@ -124673,7 +124967,8 @@
         "Sushi Ryu"
       ],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Sushi"
+      "cuisine": "Sushi",
+      "district": ""
     },
     {
       "name": "鮨嘉仁",
@@ -124687,7 +124982,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "鮮五丼 西門第一門市部",
@@ -125036,7 +125332,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "雙連圓仔湯",
@@ -125140,7 +125437,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "雞湯大叔_內湖店",
@@ -125587,7 +125885,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "爐鍋咖啡 (國立臺北藝術大學)",
@@ -125680,7 +125979,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "覺旅咖啡-新光三越信義新天地A4館",
@@ -126043,7 +126343,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "ㄚ寶檸檬_天母SOGO店",
@@ -126077,7 +126378,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "A華加湯滷味(國立臺灣科技大學)",
@@ -126154,7 +126456,12 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": "中山區",
+      "cuisine": "Contemporary",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
     },
     {
       "name": "Adachi",
@@ -126168,6 +126475,11 @@
           "level": "Discovery",
           "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
         }
+      ],
+      "cuisine": "Sushi",
+      "district": "信義區",
+      "metadataSources": [
+        "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
       ]
     },
     {
@@ -126190,7 +126502,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "AJIMI",
@@ -127170,7 +127483,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "Clover",
@@ -127714,6 +128028,15 @@
           "level": "One knife",
           "knives": 1,
           "url": "https://thebestchefawards.com/chefs/kei-koo/"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Best Service",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Best Service",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=french-tatler-best-restaurants",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows De Nuit with 2025 BEST SERVICE badge."
         }
       ],
       "city": "臺北市",
@@ -127726,7 +128049,12 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": "大安區",
+      "cuisine": "French",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
     },
     {
       "name": "Deux Doux",
@@ -128234,7 +128562,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "French Windows",
@@ -128248,6 +128577,10 @@
           "level": "Taiwan Best Restaurant Nominee",
           "url": "https://worldculinaryawards.com/award/taiwan-best-restaurant/2025"
         }
+      ],
+      "district": "松山區",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
       ]
     },
     {
@@ -128301,7 +128634,7 @@
     {
       "name": "fumee Yakitori",
       "city": "臺北市",
-      "address": "",
+      "address": "台北市中山區中山北路二段39巷3號晶華酒店B3",
       "aliases": [],
       "awards": [
         {
@@ -128316,9 +128649,22 @@
           "level": "Asia Recommended",
           "rank": 234,
           "url": "https://www.oadguides.com/lists/asia/top-restaurants/2025"
+        },
+        {
+          "guide": "tatlerbest",
+          "year": 2025,
+          "level": "Rising Star",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Rising Star",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows fum?e Yakitori with 2025 RISING STAR badge."
         }
       ],
-      "cuisine": "Yakitori"
+      "cuisine": "日式串燒",
+      "district": "???",
+      "metadataSources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      ]
     },
     {
       "name": "FutiFudi 果滴滴_忠孝SOGO店",
@@ -128357,22 +128703,6 @@
           "url": "https://www.fda.gov.tw/tc/includes/GetFile.ashx?id=f639033974486889367&type=4",
           "extractedAt": "2026-07-02T07:39:07.660843+08:00",
           "notes": "來源檔案標示 臺北市113年度通過餐飲衛生管理分級評核名單。 電話 25676488 登錄字號 A-127981688-00005-2"
-        }
-      ]
-    },
-    {
-      "name": "Gen by Matt Chen",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [
-        "Gen"
-      ],
-      "awards": [
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
         }
       ]
     },
@@ -128416,7 +128746,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "gonnaExpress_忠孝SOGO店",
@@ -128620,7 +128951,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "I'm PASTA PLUS_SOGO忠孝店",
@@ -128742,7 +129074,8 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Innovative"
+      "cuisine": "Innovative",
+      "district": ""
     },
     {
       "name": "inari Izakaya 現代居酒屋",
@@ -128838,7 +129171,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "inn cafe 西門店",
@@ -129481,7 +129815,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "Lady Chef 甜法",
@@ -129771,7 +130106,8 @@
       ],
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Modern European"
+      "cuisine": "Modern European",
+      "district": "大安區"
     },
     {
       "name": "Longtail",
@@ -130256,7 +130592,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "Mo-Mo Paradise 台北統一時代牧場",
@@ -130508,6 +130845,16 @@
           "year": 2026,
           "level": "Discovery",
           "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Mume.html"
+        },
+        {
+          "guide": "50best",
+          "awardName": "Asia's 50 Best Restaurants 2026",
+          "year": 2026,
+          "level": "Asia No.61",
+          "rank": 61,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+          "capturedAt": "2026-07-02",
+          "notes": "Official list page continues through No.100 and shows MUME at No.61 in Taipei."
         }
       ],
       "city": "臺北市",
@@ -130522,7 +130869,8 @@
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "address": "No. 28 Siwei Road, Da'an District, Taipei, 106",
-      "cuisine": "Creative Cuisine"
+      "cuisine": "Creative Cuisine",
+      "district": "大安區"
     },
     {
       "name": "N°168 Prime牛排館 (中山）",
@@ -130618,7 +130966,12 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": "中正區",
+      "cuisine": "Contemporary",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
     },
     {
       "name": "nukunukucatcafe-信義ATT 4 FUN",
@@ -130782,7 +131135,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "PappaRich金爸爸-新光三越信義新天地A9",
@@ -131727,7 +132081,7 @@
     },
     {
       "name": "Restaurant A",
-      "address": "台北市",
+      "address": "台北市大安區忠孝東路三段282號4樓",
       "awards": [
         {
           "guide": "michelin",
@@ -131773,7 +132127,12 @@
         "A",
         "A Restaurant"
       ],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": "大安區",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ],
+      "cuisine": "French"
     },
     {
       "name": "Restaurant-A_新光DT店",
@@ -132201,7 +132560,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "Set.",
@@ -132278,9 +132638,20 @@
           "year": 2026,
           "level": "Discovery",
           "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Silks-House.html"
+        },
+        {
+          "guide": "50best",
+          "awardName": "Asia's 50 Best Restaurants 2026",
+          "year": 2026,
+          "level": "Asia No.64",
+          "rank": 64,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+          "capturedAt": "2026-07-02",
+          "notes": "Official list page continues through No.100 and shows Silks House at No.64 in Taipei."
         }
       ],
-      "cuisine": "Cantonese"
+      "cuisine": "Cantonese",
+      "district": "中山區"
     },
     {
       "name": "Silks House 晶華軒",
@@ -132401,7 +132772,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "STARBUCKS COFFEE 北投大業門市",
@@ -133666,7 +134038,7 @@
     {
       "name": "STARBUCKS COFFEE_信義經貿門市",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市信義路5段106號1樓(國泰信義經貿大樓)",
       "cuisine": "連鎖餐飲業",
       "aliases": [],
@@ -135167,6 +135539,11 @@
           "level": "Discovery",
           "url": "https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Sushi-Amamoto.html"
         }
+      ],
+      "district": "???",
+      "cuisine": "Japanese",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
       ]
     },
     {
@@ -135225,7 +135602,8 @@
       "city": "臺北市",
       "aliases": [],
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "cuisine": "Asian"
+      "cuisine": "Asian",
+      "district": ""
     },
     {
       "name": "Tableau by Craig Yang",
@@ -135238,7 +135616,8 @@
       ],
       "city": "臺北市",
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "district": ""
     },
     {
       "name": "Tatami 私廚",
@@ -135481,7 +135860,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": ""
     },
     {
       "name": "Top Cap Steakhouse教父牛排-新光三越信義新天地A4館",
@@ -135873,7 +136253,8 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": ""
     },
     {
       "name": "Woolloomoolloo",
@@ -135985,7 +136366,7 @@
     {
       "name": "Yamasaki-站前店",
       "city": "臺北市",
-      "district": "",
+      "district": "臺北",
       "address": "臺北市忠孝西路1段49號",
       "cuisine": "連鎖烘焙業",
       "aliases": [],
@@ -136099,20 +136480,6 @@
       ]
     },
     {
-      "name": "Yuenji",
-      "city": "臺北市",
-      "address": "",
-      "aliases": [],
-      "awards": [
-        {
-          "guide": "tatlerbest",
-          "year": 2025,
-          "level": "Best 20 Taiwan",
-          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
-        }
-      ]
-    },
-    {
       "name": "Yuu",
       "aliases": [],
       "city": "臺北市",
@@ -136208,7 +136575,12 @@
         }
       ],
       "aliases": [],
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": "大安區",
+      "cuisine": "Latin American",
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
     },
     {
       "name": "40年老店土虱",
@@ -136491,7 +136863,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台東"
     },
     {
       "name": "大南橋早餐美食吧",
@@ -136869,7 +137242,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台東"
     },
     {
       "name": "可不可熟成紅茶台東正氣店",
@@ -137724,7 +138098,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台東"
     },
     {
       "name": "奇拉小屋咖啡館",
@@ -137954,7 +138329,7 @@
     {
       "name": "阿里岸美食餐廳",
       "city": "臺東縣",
-      "district": "",
+      "district": "台東",
       "address": "台東縣臨海路一段411號",
       "cuisine": "宴席餐廳",
       "aliases": [],
@@ -139209,7 +139584,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台東"
     },
     {
       "name": "慶豐製麵-食在好麵",
@@ -139739,7 +140115,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台東"
     },
     {
       "name": "POOZ新蘭灣柴燒窯烤披薩",
@@ -139770,7 +140147,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "一品清冰品-阿燕姨冰枝店",
@@ -139893,7 +140271,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "八寶閣御廚房",
@@ -139959,7 +140338,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "上舜碗粿",
@@ -140050,7 +140430,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "大道食品有限公司駐高雄榮民總醫院臺南分院",
@@ -140186,7 +140567,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "山記魚仔店",
@@ -140310,7 +140692,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "天心軒素食喜餅",
@@ -140506,7 +140889,7 @@
     {
       "name": "王品餐飲股份有限公司-肉次方台南府前店",
       "city": "臺南市",
-      "district": "",
+      "district": "臺南",
       "address": "臺南市府前路二段500號2樓之一",
       "cuisine": "一般餐廳",
       "aliases": [],
@@ -141423,7 +141806,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "吃麵吧Jai Mi Ba",
@@ -141570,7 +141954,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "安心食品服務股份有限公司-台南永華門市部",
@@ -141969,7 +142354,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "助仔碗粿",
@@ -142950,7 +143336,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "尚海海產",
@@ -143040,7 +143427,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "林家汕頭意麵",
@@ -143109,7 +143497,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "肯德基-台南大灣餐廳",
@@ -143677,7 +144066,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "阿田水果店",
@@ -143754,7 +144144,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "阿美純手工麻糬",
@@ -143786,7 +144177,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "阿娥意麵",
@@ -143824,7 +144216,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "阿華粿店",
@@ -143927,7 +144320,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "阿龍香腸熟肉",
@@ -143965,7 +144359,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "亮臻實業股份有限公司新光分公司（鰻魚日記西門店）",
@@ -145092,7 +145487,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "添厚",
@@ -145108,7 +145504,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "清子香腸熟肉",
@@ -145406,7 +145803,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "勝博殿台南中山店",
@@ -145442,7 +145840,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "喜粵樓宴會餐廳",
@@ -145549,7 +145948,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "揚梅吐氣",
@@ -145610,7 +146010,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "無名羊肉湯-大菜市",
@@ -145680,7 +146081,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "華味香",
@@ -145756,7 +146158,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "開元路無名虱目魚",
@@ -145893,7 +146296,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "黑琵食堂",
@@ -146286,7 +146690,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "葉家小卷米粉",
@@ -146302,7 +146707,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "葉桑生炒鴨肉焿",
@@ -146318,7 +146724,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "葉陶楊坊人文景觀餐廳",
@@ -146405,7 +146812,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "達客魷魚(仁德服務區-南站)",
@@ -146749,7 +147157,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "福隆佳宴餐廳",
@@ -147050,7 +147459,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "蔡媽媽古早味",
@@ -147113,7 +147523,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "橄饗家",
@@ -147299,7 +147710,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "鍋の燒",
@@ -147342,7 +147754,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "鮮豆屋",
@@ -147378,7 +147791,8 @@
       "sources": [
         "https://udn.com/news/story/7266/8933484"
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "鴻品牛肉湯",
@@ -147808,7 +148222,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "FUKAI",
@@ -147901,7 +148316,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "台南"
     },
     {
       "name": "Morning House",
@@ -148159,7 +148575,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "澎湖"
     },
     {
       "name": "和德昌股份有限公司(馬公中正餐廳)",
@@ -148242,7 +148659,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "澎湖"
     },
     {
       "name": "國防醫學院三軍總醫院澎湖分院",
@@ -148285,7 +148703,8 @@
           "note": "500輯 2025 第五屆完整得獎名單；文字如有誤植以官方圖片名單為準。"
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "district": "澎湖"
     },
     {
       "name": "鍋道樂精緻鍋物店",

@@ -1,0 +1,122 @@
+{
+  "version": "asias-50-best-restaurants-2026-candidates",
+  "generatedAt": "2026-07-02T12:23:16.841Z",
+  "sourceUrl": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+  "sourceCatalog": [
+    {
+      "id": "asias-50-best-restaurants-2026",
+      "label": "Asia's 50 Best Restaurants 2026",
+      "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+    }
+  ],
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_page_batch",
+    "authority": "international_restaurant_ranking",
+    "notes": [
+      "Only Taiwan restaurants explicitly present on the official Asia's 50 Best Restaurants 2026 list are included.",
+      "The official page continues beyond No.50 into the No.51-100 section on the same document."
+    ]
+  },
+  "restaurants": [
+    {
+      "name": "Logy",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市大安區安和路一段",
+      "cuisine": "Modern European",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "50best",
+          "awardName": "Asia's 50 Best Restaurants 2026",
+          "year": 2026,
+          "level": "Asia No.22",
+          "rank": 22,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+          "capturedAt": "2026-07-02",
+          "notes": "Official list page shows Logy at No.22 in Taipei."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+      ]
+    },
+    {
+      "name": "JL Studio",
+      "city": "臺中市",
+      "district": "南屯區",
+      "address": "台中市",
+      "cuisine": "Modern Singaporean",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "50best",
+          "awardName": "Asia's 50 Best Restaurants 2026",
+          "year": 2026,
+          "level": "Asia No.50",
+          "rank": 50,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+          "capturedAt": "2026-07-02",
+          "notes": "Official list page shows JL Studio at No.50 in Taichung."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "MUME",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "No. 28 Siwei Road, Da'an District, Taipei, 106",
+      "cuisine": "Creative Cuisine",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "50best",
+          "awardName": "Asia's 50 Best Restaurants 2026",
+          "year": 2026,
+          "level": "Asia No.61",
+          "rank": 61,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+          "capturedAt": "2026-07-02",
+          "notes": "Official list page continues through No.100 and shows MUME at No.61 in Taipei."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+      ]
+    },
+    {
+      "name": "Silks House",
+      "city": "臺北市",
+      "district": "中山區",
+      "address": "Lane 39, 3F Zhongshan North Road, Zhongshan district, Taipei, 104",
+      "cuisine": "Cantonese",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "50best",
+          "awardName": "Asia's 50 Best Restaurants 2026",
+          "year": 2026,
+          "level": "Asia No.64",
+          "rank": 64,
+          "url": "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50",
+          "capturedAt": "2026-07-02",
+          "notes": "Official list page continues through No.100 and shows Silks House at No.64 in Taipei."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.theworlds50best.com/restaurants/best-in-asia/list/1-50"
+      ]
+    }
+  ]
+}

@@ -1,27 +1,645 @@
 {
-  "source": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
-  "generatedBy": "scripts/manual-collect-award-sources.js",
-  "generatedAt": "2026-07-01",
+  "version": "tatler-best-taiwan-2025-candidates",
+  "generatedAt": "2026-07-02T11:04:30.572Z",
+  "sourceUrl": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+  "sourceCatalog": [
+    {
+      "id": "tatler-best-taiwan-2025-top20",
+      "label": "Tatler Best Restaurants Taiwan 2025 Top 20",
+      "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+    },
+    {
+      "id": "tatler-best-taiwan-2025-best-service",
+      "label": "Tatler Best Restaurants Taiwan 2025 Best Service",
+      "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=french-tatler-best-restaurants"
+    },
+    {
+      "id": "tatler-best-taiwan-2025-best-innovation",
+      "label": "Tatler Best Restaurants Taiwan 2025 Best Innovation",
+      "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants"
+    },
+    {
+      "id": "tatler-best-taiwan-2025-rising-star",
+      "label": "Tatler Best Restaurants Taiwan 2025 Rising Star",
+      "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants"
+    },
+    {
+      "id": "tatler-best-taiwan-2025-restaurant-of-the-year",
+      "label": "Tatler Best Restaurants Taiwan 2025 Restaurant of the Year",
+      "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+    },
+    {
+      "id": "tatler-best-taiwan-2025-best-in-class",
+      "label": "Tatler Best Restaurants Taiwan 2025 Best-in-Class",
+      "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+    }
+  ],
+  "policy": {
+    "runtimeExternalLookup": false,
+    "importMode": "official_page_batch",
+    "authority": "regional_hospitality_editorial_award",
+    "notes": [
+      "Only Tatler Best Taiwan 2025 restaurant awards are included.",
+      "Rows keep year, level, source URL, capturedAt, and notes for review provenance.",
+      "No runtime scraping or API lookup is used by the frontend."
+    ]
+  },
   "restaurants": [
-    {"name": "Restaurant A", "city": "Taipei"},
-    {"name": "Ad Astra", "city": "Taipei"},
-    {"name": "Akame", "city": "Taiwan"},
-    {"name": "Coast", "city": "Taipei"},
-    {"name": "De Nuit", "city": "Taipei"},
-    {"name": "Eika", "city": "Taipei"},
-    {"name": "Embers", "city": "Taipei"},
-    {"name": "Ephernite", "city": "Taipei"},
-    {"name": "fumee Yakitori", "city": "Taipei"},
-    {"name": "Gen by Matt Chen", "city": "Taipei"},
-    {"name": "INITA", "city": "Taipei"},
-    {"name": "JL Studio", "city": "Taipei"},
-    {"name": "Le Palais", "city": "Taipei"},
-    {"name": "Logy", "city": "Taipei"},
-    {"name": "Ming Fu", "city": "Taipei"},
-    {"name": "Nobuo", "city": "Taipei"},
-    {"name": "Silks House", "city": "Taipei"},
-    {"name": "Tairroir", "city": "Taipei"},
-    {"name": "Yuenji", "city": "Taipei"},
-    {"name": "Zea", "city": "Taipei"}
+    {
+      "name": "Akame",
+      "city": "屏東縣",
+      "district": "屏東",
+      "address": "屏東縣",
+      "cuisine": "Taiwanese",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ]
+    },
+    {
+      "name": "JL Studio",
+      "city": "臺中市",
+      "district": "南屯區",
+      "address": "台中市",
+      "cuisine": "Modern Singaporean",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "reviewStatus": "missing_address_manual_verification_required",
+      "missingFields": [
+        "address"
+      ],
+      "lastVerifiedAt": "2026-07-02",
+      "reviewNotes": [
+        "Wikipedia confirms Kaohsiung and Cianjhen with Cantonese cuisine, but no authoritative public address was confirmed in this pass."
+      ],
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Ad Astra",
+      "city": "臺北市",
+      "district": "中山區",
+      "address": "台北市",
+      "cuisine": "Contemporary",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "reviewStatus": "missing_address_manual_verification_required",
+      "missingFields": [
+        "address"
+      ],
+      "lastVerifiedAt": "2026-07-02",
+      "reviewNotes": [
+        "Wikipedia confirms Taichung and Xitun with Taiwanese cuisine, but no authoritative public address was confirmed in this pass."
+      ],
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Coast",
+      "city": "臺北市",
+      "district": "中山區",
+      "address": "No. 3, Lane 39, Section 2, Zhongshan North Road, Taipei, 10491",
+      "cuisine": "Southeast Asian",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "De Nuit",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市",
+      "cuisine": "French",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        },
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Best Service",
+          "year": 2025,
+          "level": "Best Service",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=french-tatler-best-restaurants",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows De Nuit with 2025 BEST SERVICE badge."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=french-tatler-best-restaurants"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Eika",
+      "city": "臺北市",
+      "district": "大同區",
+      "address": "台北市",
+      "cuisine": "Japanese",
+      "aliases": [
+        "盈科",
+        "EIKA 盈科"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        },
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Best Innovation",
+          "year": 2025,
+          "level": "Best Innovation",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows Eika with 2025 BEST INNOVATION badge."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Embers",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市大安區仁愛路四段122巷24號",
+      "cuisine": "台灣當代料理",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      ]
+    },
+    {
+      "name": "Ephernite",
+      "city": "???",
+      "district": "???",
+      "address": "???????????233?",
+      "cuisine": "??????",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      ]
+    },
+    {
+      "name": "fumee Yakitori",
+      "city": "???",
+      "district": "???",
+      "address": "????????????39?3?????B3",
+      "cuisine": "????",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        },
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Rising Star",
+          "year": 2025,
+          "level": "Rising Star",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official filtered page shows fum?e Yakitori with 2025 RISING STAR badge."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan?filter_1%5B%5D=japanese-tatler-best-restaurants"
+      ],
+      "metadataSources": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+      ]
+    },
+    {
+      "name": "Gen by Matt Chen",
+      "city": "高雄市",
+      "district": "前鎮區",
+      "address": "",
+      "cuisine": "Cantonese",
+      "aliases": [
+        "Gen"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "INITA",
+      "city": "臺北市",
+      "district": "松山區",
+      "address": "台北市",
+      "cuisine": "Italian",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Le Palais",
+      "city": "臺北市",
+      "district": "大同區",
+      "address": "台北市大同區承德路一段3號",
+      "cuisine": "Cantonese",
+      "aliases": [
+        "頤宮",
+        "頤宮中餐廳",
+        "頤宮中餐廳 Le Palais"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Logy",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市大安區安和路一段",
+      "cuisine": "Modern European",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ]
+    },
+    {
+      "name": "Ming Fu",
+      "city": "臺北市",
+      "district": "中山區",
+      "address": "台北市中山區中山北路二段137巷",
+      "cuisine": "Taiwanese",
+      "aliases": [
+        "明福台菜海產",
+        "明福"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Nobuo",
+      "city": "臺北市",
+      "district": "中正區",
+      "address": "台北市",
+      "cuisine": "Contemporary",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Restaurant A",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市大安區忠孝東路三段282號4樓",
+      "cuisine": "French",
+      "aliases": [
+        "A",
+        "A Restaurant"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Silks House",
+      "city": "臺北市",
+      "district": "中山區",
+      "address": "Lane 39, 3F Zhongshan North Road, Zhongshan district, Taipei, 104",
+      "cuisine": "Cantonese",
+      "aliases": [
+        "晶華軒 Silks House",
+        "Silks House 晶華軒"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ]
+    },
+    {
+      "name": "Tairroir",
+      "city": "臺北市",
+      "district": "中山區",
+      "address": "台北市中山區樂群三路299號",
+      "cuisine": "Taiwanese/French",
+      "aliases": [
+        "態芮",
+        "Taïrroir 態芮"
+      ],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        },
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Restaurant of the Year",
+          "year": 2025,
+          "level": "Restaurant of the Year",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official page shows 2025 RESTAURANT OF THE YEAR badge immediately before Ta?rroir entry."
+        },
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025 Best-in-Class",
+          "year": 2025,
+          "level": "Best-in-Class",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Tatler Best Restaurants Taiwan 2025 official page shows 2025 BEST-IN-CLASS badge immediately before Ta?rroir entry."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Yuenji",
+      "city": "臺中市",
+      "district": "西屯區",
+      "address": "",
+      "cuisine": "Taiwanese",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    },
+    {
+      "name": "Zea",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市",
+      "cuisine": "Latin American",
+      "aliases": [],
+      "awards": [
+        {
+          "guide": "tatlerbest",
+          "awardName": "Tatler Best Restaurants Taiwan 2025",
+          "year": 2025,
+          "level": "Best 20 Taiwan",
+          "url": "https://www.tatlerasia.com/list/best-restaurants-taiwan",
+          "capturedAt": "2026-07-02",
+          "notes": "Collected from Tatler Best Restaurants Taiwan 2025 official public page."
+        }
+      ],
+      "importConfidence": "high",
+      "sourceUrls": [
+        "https://www.tatlerasia.com/list/best-restaurants-taiwan"
+      ],
+      "metadataSources": [
+        "https://en.wikipedia.org/wiki/List_of_Michelin-starred_restaurants_in_Taiwan"
+      ]
+    }
   ]
 }

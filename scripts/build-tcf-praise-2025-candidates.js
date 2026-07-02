@@ -8,13 +8,13 @@ const sourceUrl = "https://www.tcf.org.tw/page/news/show.aspx?num=48";
 
 const ROWS = [
   { name: "府城食府正宗台南料理", city: "臺南市", district: "安平區", address: "臺南市安平區華平路152號", cuisine: "台南料理", addressSourceUrl: "https://www.facebook.com/traditional.tainan.feast/?locale=zh_CN" },
-  { name: "蛋小白", pendingReason: "公開資訊可確認為食品品牌，但目前未確認對應實體餐飲門市，不先當作餐廳據點匯入。" },
-  { name: "南僑讚岐急凍熟麵", pendingReason: "公開資訊可確認為食品品牌，不是單一餐廳門市，暫不當作餐廳據點匯入。" },
+  { name: "蛋小白", excludeReason: "公開資訊指向即食食品品牌，未確認有可對應之單一餐廳門市。" },
+  { name: "南僑讚岐急凍熟麵", excludeReason: "公開資訊指向食品品牌，不是餐廳門市。" },
   { name: "BBJ", pendingReason: "品牌名稱過短且公開頁面對位不足，無法安全確認縣市與地址。" },
   { name: "黑金傳奇", city: "新北市", district: "淡水區", address: "新北市淡水區公明街6號", cuisine: "黑糖飲品與伴手禮", addressSourceUrl: "https://th.openrice.com/zh/newtaipei-keelung/r-%E9%BB%91%E9%87%91%E5%82%B3%E5%A5%87%E9%BB%91%E7%B3%96%E8%96%91%E6%AF%8D%E8%8C%B6-tamsui-district-taiwanese-r137968/menus" },
   { name: "逸之牛", city: "高雄市", district: "新興區", address: "高雄市新興區中正四路46號", cuisine: "日式炸牛排與燒肉", addressSourceUrl: "https://www.facebook.com/ICHIGYU/" },
   { name: "稻香村懷舊料理", city: "雲林縣", district: "斗南鎮", address: "雲林縣斗南鎮光華路36號", cuisine: "懷舊台菜", addressSourceUrl: "https://tour.yunlin.gov.tw/main/modules/MySpace/index.php?xmlid=1037876" },
-  { name: "澎富企業", pendingReason: "公開資訊可確認為食品研發與代工企業，不是單一餐廳據點，暫不當作餐廳匯入。" },
+  { name: "澎富企業", excludeReason: "公開資訊指向食品研發與代工企業，不是餐廳據點。" },
   { name: "知山田頂級燒肉", city: "桃園市", district: "桃園區", address: "桃園市桃園區大興西路三段255號", cuisine: "燒肉", addressSourceUrl: "https://www.tcf.org.tw/page/news/show.aspx?num=55" },
   { name: "福相麻辣香鍋", city: "臺南市", district: "北區", address: "臺南市北區公園南路281號", cuisine: "麻辣香鍋", addressSourceUrl: "https://www.facebook.com/fuxiang.ch/" },
   { name: "晶粵軒烤鴨餐廳", city: "桃園市", district: "桃園區", address: "桃園市桃園區南平路166號2F", cuisine: "港式烤鴨", addressSourceUrl: "https://inline.app/booking/-O7XszbGclpg_Xhl7Vle%3Ainline-live-3/-O7XszoxNL1rCp5Bklcf" },
@@ -40,7 +40,7 @@ const ROWS = [
   { name: "焿大王", pendingReason: "品牌多店，得獎頁未指明是政大店、大溪店或其他門市。" },
   { name: "魔法咖哩", pendingReason: "品牌多店，得獎頁未指明是台北站前店或其他門市。" },
   { name: "Q勁麵館", city: "桃園市", district: "龜山區", address: "桃園市龜山區文化一路10巷42弄35號", cuisine: "麵館", addressSourceUrl: "https://www.facebook.com/p/Q%E5%8B%81%E9%BA%B5%E9%A4%A8%E9%95%B7%E5%BA%9A%E5%BA%97-61554760757074/" },
-  { name: "三個老總", pendingReason: "公開資訊主要指向酒品品牌，尚未確認對應實體餐飲據點。" },
+  { name: "三個老總", excludeReason: "公開資訊主要指向酒品品牌，非餐廳門市。" },
   { name: "焦糖楓", pendingReason: "品牌多店，得獎頁未指明是通化創始店或其他門市。" },
   { name: "少點鹽健康餐盒專賣", pendingReason: "連鎖門市多且得獎頁未指明門市，先不縮減成單店。" }
 ];
@@ -69,8 +69,17 @@ function main() {
   const generatedAt = new Date().toISOString();
   const restaurants = [];
   const needsCityReview = [];
+  const excludedNonRestaurant = [];
 
   for (const row of ROWS) {
+    if (row.excludeReason) {
+      excludedNonRestaurant.push({
+        name: row.name,
+        reason: row.excludeReason,
+        sourceUrl
+      });
+      continue;
+    }
     if (row.city) {
       restaurants.push({
         name: row.name,
@@ -103,11 +112,12 @@ function main() {
       notes: [
         "主來源改採可公開讀取的台灣餐飲業聯盟名單頁 num=48；原先 num=48&lang=TW 已 404。",
         "該名單頁文字宣稱 32 家，但實際列出 36 個品牌名稱；此差異保留在備註，不自行刪減名單。",
-        "多分店品牌、企業品牌或未能安全對位門市者保留在 needsCityReview，不猜測單店。"
+    "多分店品牌、企業品牌或未能安全對位門市者保留在 needsCityReview，不猜測單店。"
       ]
     },
     restaurants,
-    needsCityReview
+    needsCityReview,
+    excludedNonRestaurant
   };
 
   const report = {
@@ -116,6 +126,7 @@ function main() {
     sourceRows: ROWS.length,
     candidates: restaurants.length,
     needsCityReview: needsCityReview.length,
+    excludedNonRestaurant: excludedNonRestaurant.length,
     errors: []
   };
 

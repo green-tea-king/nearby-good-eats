@@ -5,6 +5,9 @@ const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
 const externalSignalsPath = path.join(repoRoot, "assets", "external-signals.json");
 const externalAwardsPath = path.join(repoRoot, "assets", "external-awards.manual.json");
+const tatlerCandidatesPath = path.join(repoRoot, "assets", "tatler-best-taiwan-2025-candidates.json");
+const worldCulinaryCandidatesPath = path.join(repoRoot, "assets", "world-culinary-awards-taiwan-2025-candidates.json");
+const fiftyBestCandidatesPath = path.join(repoRoot, "assets", "asias-50-best-restaurants-2026-candidates.json");
 const fiftyDiscoveryCandidatesPath = path.join(repoRoot, "assets", "50best-discovery-taiwan-candidates.json");
 const oadCandidatesPath = path.join(repoRoot, "assets", "oad-asia-2025-candidates.json");
 const bestChefCandidatesPath = path.join(repoRoot, "assets", "thebestchef-taiwan-2025-candidates.json");
@@ -17,6 +20,7 @@ const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-c
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
 const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
+const externalAwardReviewQueuePath = path.join(repoRoot, "assets", "external-award-review-queue.json");
 const platformManualPath = path.join(repoRoot, "assets", "platform-signals.manual.json");
 const platformProbePath = path.join(repoRoot, "assets", "platform-source-probe-report.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
@@ -55,6 +59,9 @@ function main() {
   const guides = countGuides(awards);
   const externalSignals = readJson(externalSignalsPath);
   const externalAwards = fs.existsSync(externalAwardsPath) ? readJson(externalAwardsPath) : { sources: [] };
+  const tatlerCandidates = fs.existsSync(tatlerCandidatesPath) ? readJson(tatlerCandidatesPath) : { restaurants: [], sourceCatalog: [] };
+  const worldCulinaryCandidates = fs.existsSync(worldCulinaryCandidatesPath) ? readJson(worldCulinaryCandidatesPath) : { restaurants: [], sourceCatalog: [] };
+  const fiftyBestCandidates = fs.existsSync(fiftyBestCandidatesPath) ? readJson(fiftyBestCandidatesPath) : { restaurants: [], sourceCatalog: [] };
   const fiftyDiscoveryCandidates = fs.existsSync(fiftyDiscoveryCandidatesPath) ? readJson(fiftyDiscoveryCandidatesPath) : { restaurants: [] };
   const oadCandidates = fs.existsSync(oadCandidatesPath) ? readJson(oadCandidatesPath) : { restaurants: [] };
   const bestChefCandidates = fs.existsSync(bestChefCandidatesPath) ? readJson(bestChefCandidatesPath) : { restaurants: [] };
@@ -67,6 +74,7 @@ function main() {
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
+  const externalAwardReviewQueue = fs.existsSync(externalAwardReviewQueuePath) ? readJson(externalAwardReviewQueuePath) : { restaurants: [] };
   const platformManual = readJson(platformManualPath);
   const platformProbeReport = readJson(platformProbePath);
   const sweetCandidates = readJson(sweetCandidatesPath);
@@ -96,6 +104,9 @@ function main() {
       platformManualRestaurants: platformRows.length,
       platformManualSignals: platformSignals,
       externalAwardSources: (externalAwards.sources || []).length,
+      tatlerCandidates: (tatlerCandidates.restaurants || []).length,
+      worldCulinaryCandidates: (worldCulinaryCandidates.restaurants || []).length,
+      fiftyBestCandidates: (fiftyBestCandidates.restaurants || []).length,
       fiftyDiscoveryCandidates: (fiftyDiscoveryCandidates.restaurants || []).length,
       oadCandidates: (oadCandidates.restaurants || []).length,
       bestChefCandidates: (bestChefCandidates.restaurants || []).length,
@@ -111,6 +122,7 @@ function main() {
       taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
       muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
       fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
+      externalAwardReviewQueue: (externalAwardReviewQueue.restaurants || []).length,
     },
     sources: [
       {
@@ -159,8 +171,10 @@ function main() {
         label: "50 Best",
         status: "integrated_data",
         dataFile: "assets/awards-taiwan.json",
-        sourceFile: "assets/external-awards.manual.json",
+        sourceFile: "assets/asias-50-best-restaurants-2026-candidates.json",
         count: guides["50best"] || 0,
+        candidates: (fiftyBestCandidates.restaurants || []).length,
+        sourceCatalog: (fiftyBestCandidates.sourceCatalog || []).map((source) => source.id),
         runtimeLookup: false,
       },
       {
@@ -291,8 +305,10 @@ function main() {
         label: "Tatler Best",
         status: "integrated_data",
         dataFile: "assets/awards-taiwan.json",
-        sourceFile: "assets/external-awards.manual.json",
+        sourceFile: "assets/tatler-best-taiwan-2025-candidates.json",
         count: guides.tatlerbest || 0,
+        candidates: (tatlerCandidates.restaurants || []).length,
+        sourceCatalog: (tatlerCandidates.sourceCatalog || []).map((source) => source.id),
         runtimeLookup: false,
       },
       {
@@ -300,8 +316,18 @@ function main() {
         label: "World Culinary Awards",
         status: "integrated_data",
         dataFile: "assets/awards-taiwan.json",
-        sourceFile: "assets/external-awards.manual.json",
+        sourceFile: "assets/world-culinary-awards-taiwan-2025-candidates.json",
         count: guides.worldculinary || 0,
+        candidates: (worldCulinaryCandidates.restaurants || []).length,
+        sourceCatalog: (worldCulinaryCandidates.sourceCatalog || []).map((source) => source.id),
+        runtimeLookup: false,
+      },
+      {
+        id: "external-award-review-queue",
+        label: "External Award Review Queue",
+        status: "manual_verification_queue",
+        dataFile: "assets/external-award-review-queue.json",
+        count: (externalAwardReviewQueue.restaurants || []).length,
         runtimeLookup: false,
       },
       {
