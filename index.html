@@ -611,7 +611,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
   <div class="rank-head">
-    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.03.2</span></div>
+    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.04.1</span></div>
   </div>
   <div class="rank-filters" id="rankFilters"></div>
   <div class="rank-guide" aria-live="polite" aria-atomic="true">
@@ -1371,7 +1371,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.03.02";
+const APP_VERSION_FALLBACK = "2026.07.04.01";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1384,9 +1384,29 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑（可複選）", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"綠蔬食", guide:"greenveggie"}, {label:"環保餐廳", guide:"moenvgreen"}, {label:"HACCP", guide:"fdahaccp"}, {label:"溯源餐廳", guide:"amottrace"}, {label:"金饌獎", guide:"taichunggold"}, {label:"穆斯林友善", guide:"muslimfriendly"}, {label:"食安優級", guide:"fdagrade", level:"優"}, {label:"食安良級", guide:"fdagrade", level:"良"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
+  { key:"award",   label:"評鑑（可複選）", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
-const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, service:null, diet:null, award:[], city:"", area:"", village:"" };
+if (!RANK_FILTERS.some(g => g.key === "cuisine")) {
+  const cuisineInsertAt = Math.max(0, RANK_FILTERS.findIndex(g => g.key === "service"));
+  RANK_FILTERS.splice(cuisineInsertAt, 0, {
+    key: "cuisine",
+    label: "菜系",
+    tier: "hard",
+    opts: [
+      { label: "不限" },
+      { label: "中式" },
+      { label: "西式" },
+      { label: "台灣菜" },
+      { label: "日本菜" },
+      { label: "麵食" },
+      { label: "小吃" },
+      { label: "海鮮" },
+      { label: "素食" },
+      { label: "甜點" }
+    ],
+  });
+}
+const rankFilter = { keyword:"", meal:null, travel:RANK_DEFAULT_TRAVEL, open:RANK_DEFAULT_OPEN, cuisine:null, service:null, diet:null, award:[], city:"", area:"", village:"" };
 let rankFilterDraft = null;
 let rankPool = null;     // 分類＋排名後的全台候選
 let rankPoolM = 4.0;     // 當批貝氏平均
@@ -1410,6 +1430,7 @@ function cloneRankFilter(src=rankFilter){
     meal:src.meal || null,
     travel:src.travel || RANK_DEFAULT_TRAVEL,
     open:src.open || RANK_DEFAULT_OPEN,
+    cuisine:src.cuisine || null,
     service:src.service || null,
     diet:src.diet || null,
     award:rankAwardValues(src),
@@ -1458,6 +1479,7 @@ function guideFilterSummary(f=rankFilter){
   if (f.travel) parts.push(`交通：${f.travel}${rankTravelLimitText ? " " + rankTravelLimitText(f.travel) : ""}`);
   if (f.open) parts.push(`營業：${f.open}`);
   if (f.meal) parts.push(`時段：${f.meal}`);
+  if (f.cuisine) parts.push(`菜系：${f.cuisine}`);
   if (f.service) parts.push(`吃法：${f.service}`);
   if (f.diet) parts.push(`飲食：${f.diet}`);
   if (rankAwardValues(f).length) parts.push(`評鑑：${rankAwardText(f)}`);
@@ -2606,8 +2628,34 @@ function rankMealMatch(item, value){
 function rankDietMatch(item, value){
   return (item.tags?.diet||[]).includes(value) || (item.aiTags?.diet||[]).includes(value);
 }
+function normalizeCuisineToken(value){
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/\u81fa/g, "\u53f0")
+    .replace(/\s+/g, "")
+    .toLowerCase();
+}
+function rankCuisineMatch(item, value){
+  const wanted = normalizeCuisineToken(value);
+  if (!wanted) return true;
+  const direct = normalizeCuisineToken(item.cuisine);
+  const tagValues = (item.tags?.cuisine || []).map(normalizeCuisineToken);
+  const aiValues = (item.aiTags?.cuisine || []).map(normalizeCuisineToken);
+  const all = [direct, ...tagValues, ...aiValues].filter(Boolean);
+  if (!all.length) return false;
+  if (all.includes(wanted)) return true;
+  if (wanted === normalizeCuisineToken("台灣菜")) return all.some(x => x.includes("台灣菜") || x.includes("台菜") || x.includes("臺灣菜"));
+  if (wanted === normalizeCuisineToken("日本菜")) return all.some(x => x.includes("日本") || x.includes("日式") || x.includes("壽司") || x.includes("燒鳥") || x.includes("天婦羅"));
+  if (wanted === normalizeCuisineToken("麵食")) return all.some(x => x.includes("麵"));
+  if (wanted === normalizeCuisineToken("小吃")) return all.some(x => x.includes("小吃"));
+  if (wanted === normalizeCuisineToken("海鮮")) return all.some(x => x.includes("海鮮"));
+  if (wanted === normalizeCuisineToken("素食")) return all.some(x => x.includes("素食") || x.includes("蔬食"));
+  if (wanted === normalizeCuisineToken("甜點")) return all.some(x => x.includes("甜點") || x.includes("甜品") || x.includes("冰") || x.includes("豆花") || x.includes("糕"));
+  return all.some(x => x.includes(wanted));
+}
 function rankTagMatch(item, key, value){
   if (key === "award") return rankAwardMatch(item, value);
+  if (key === "cuisine") return rankCuisineMatch(item, value);
   if (key === "service") return rankServiceMatch(item, value);
   if (key === "meal") return rankMealMatch(item, value);
   if (key === "diet") return rankDietMatch(item, value);
@@ -2864,6 +2912,7 @@ async function renderLeaderboard(){
     }
     if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
     if (f.open === "營業中" && x.openNow !== true) return false;
+    if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
     if (f.service && !rankTagMatch(x, "service", f.service)) return false;
     if (f.diet && !rankTagMatch(x, "diet", f.diet)) return false;
     if (rankAwardValues(f).length && !rankAwardMatch(x, f.award)) return false;
@@ -3573,7 +3622,7 @@ function buildRankFilterBar(){
     const changed = commitRankFilterDraft();
     rankKeywordPools = {};
     rankNearbyPools = {};
-    trackUsage("filter_apply", { keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", travel:rankFilter.travel || "", open:rankFilter.open || "", award:rankAwardText(rankFilter), city:rankFilter.city || "", area:rankFilter.area || "", village:rankFilter.village || "" });
+    trackUsage("filter_apply", { keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", cuisine:rankFilter.cuisine || "", travel:rankFilter.travel || "", open:rankFilter.open || "", award:rankAwardText(rankFilter), city:rankFilter.city || "", area:rankFilter.area || "", village:rankFilter.village || "" });
     closeRankFilters();
     safeRenderLeaderboard();
     if (changed) toast("已套用濾網");
@@ -4277,63 +4326,22 @@ function reviewTrustAdjustment(item){
 
 function awardBonus(awards){
   let michelin = 0;
-  let fiftyBest = 0;
   let bib = 0;
-  let plate = 0;
+  let list = 0;
   let selected = 0;
   for (const a of (awards||[])) {
     if (a.guide === "michelin") {
       michelin = Math.max(michelin, CONFIG.AWARD_BONUS.michelin[a.level] || 0);
-    } else if (a.guide === "michelinspecial") {
-      selected = Math.max(selected, CONFIG.AWARD_BONUS.michelinSpecial);
     } else if (a.guide === "michelin_selected") {
       selected = CONFIG.AWARD_BONUS.michelinSelected;
-    } else if (a.guide === "50best") {
-      fiftyBest = CONFIG.AWARD_BONUS.fiftyBest;
-    } else if (a.guide === "50bestdiscovery") {
-      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.fiftyBestDiscovery);
-    } else if (a.guide === "worldculinary") {
-      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.worldCulinary);
-    } else if (a.guide === "tatlerbest") {
-      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.tatlerBest);
-    } else if (a.guide === "oad") {
-      const rank = Number(a.rank || String(a.level || "").match(/\d+/)?.[0] || 999);
-      const cfg = CONFIG.AWARD_BONUS.oad;
-      const bonus = rank <= 50 ? cfg.top50 : (rank <= 100 ? cfg.top100 : (rank <= 200 ? cfg.top200 : cfg.recommended));
-      fiftyBest = Math.max(fiftyBest, bonus);
-    } else if (a.guide === "thebestchef") {
-      const knives = Number(a.knives || String(a.level || "").match(/\d+/)?.[0] || 1);
-      const cfg = CONFIG.AWARD_BONUS.theBestChef;
-      const bonus = knives >= 3 ? cfg.three : (knives >= 2 ? cfg.two : cfg.one);
-      fiftyBest = Math.max(fiftyBest, bonus);
-    } else if (a.guide === "designawards") {
-      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.designAwards);
-    } else if (a.guide === "fmg") {
-      const stars = Number(a.stars || String(a.level || "").match(/\d+/)?.[0] || 1);
-      const cfg = CONFIG.AWARD_BONUS.fmg;
-      const bonus = stars >= 3 ? cfg.three : (stars >= 2 ? cfg.two : cfg.one);
-      fiftyBest = Math.max(fiftyBest, bonus);
-    } else if (a.guide === "greenveggie") {
-      const stars = Number(a.stars || String(a.level || "").match(/\d+/)?.[0] || 1);
-      const cfg = CONFIG.AWARD_BONUS.greenVeggie;
-      const bonus = stars >= 3 ? cfg.three : (stars >= 2 ? cfg.two : cfg.one);
-      fiftyBest = Math.max(fiftyBest, bonus);
-    } else if (a.guide === "gdgawards") {
-      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.gdgAwards);
-    } else if (a.guide === "taichunglowcarbon") {
-      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.taichungLowCarbon);
-    } else if (a.guide === "muslimfriendly") {
-      fiftyBest = Math.max(fiftyBest, CONFIG.AWARD_BONUS.muslimFriendly);
-    } else if (a.guide === "fdagrade") {
-      selected = Math.max(selected, CONFIG.AWARD_BONUS.fdaGrade[a.level] || 0);
     } else if (a.guide === "bib") {
       bib = CONFIG.AWARD_BONUS.bib;
     } else if (a.guide === "500plate" || a.guide === "500bowl" || a.guide === "500sweet") {
       const units = Number(a.plates ?? a.bowls ?? a.sweets ?? String(a.level || "").match(/\d+/)?.[0] ?? 1) || 1;
-      plate = Math.max(plate, Math.min(units * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap));
+      list = Math.max(list, Math.min(units * CONFIG.AWARD_BONUS.platePerUnit, CONFIG.AWARD_BONUS.plateCap));
     }
   }
-  return Math.min(michelin + fiftyBest + bib + plate + selected, CONFIG.AWARD_BONUS.totalCap);
+  return Math.min(michelin + bib + list + selected, CONFIG.AWARD_BONUS.totalCap);
 }
 
 function socialSignalBonus(signals){
@@ -4683,9 +4691,14 @@ function cardHTML(r, rank){
   if (r.goodGroups) feats.push("適合團體");
   if (r.liveMusic) feats.push("現場音樂");
   const detailFeatRow = feats.length ? `<div class="line"><span class="k">服務</span><span class="v"><span class="feats in-detail">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</span></span></div>` : "";
+  const safeAddress = isPendingFieldText(r.address) ? "" : String(r.address || "").trim();
+  const safeCuisine = isPendingFieldText(r.typeName) ? "" : String(r.typeName || "").trim();
+  const shareAddress = safeAddress || "";
+  const detailAddressLine = safeAddress ? `<div class="line"><span class="k">地址</span><span class="v">${escapeHTML(safeAddress)}</span></div>` : "";
+  const detailCuisineLine = safeCuisine ? `<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(safeCuisine)}</span></div>` : "";
 
   return `
-  <div class="card" data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-address="${escapeHTML(r.address||"")}" data-lat="${r.loc?.lat || ""}" data-lng="${r.loc?.lng || ""}">
+  <div class="card" data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-address="${escapeHTML(shareAddress)}" data-lat="${r.loc?.lat || ""}" data-lng="${r.loc?.lng || ""}">
     <div class="top">
       <div class="rank-badge">${rank}</div>
       <div class="head">
@@ -4705,7 +4718,7 @@ function cardHTML(r, rank){
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
         導航
       </button>
-      <button class="share" data-share data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-rating="${r.rating.toFixed(1)}" data-count="${r.count}" data-address="${escapeHTML(r.address||"")}">
+      <button class="share" data-share data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-rating="${r.rating.toFixed(1)}" data-count="${r.count}" data-address="${escapeHTML(shareAddress)}">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
         分享
       </button>
@@ -4721,7 +4734,7 @@ function cardHTML(r, rank){
         ${keywordHits}
         ${confidence}
         ${ai}
-        ${r.typeName?`<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(r.typeName)}</span></div>`:""}
+        ${detailCuisineLine}
         ${r.lbFormula?`<div class="line"><span class="k">綜合</span><span class="v calc-v">${escapeHTML(r.lbFormula)}</span></div>`:""}
         ${r.reviewTrustNote?`<div class="line"><span class="k">評論</span><span class="v">${escapeHTML(r.reviewTrustLabel || "評論可信度")}：${escapeHTML(r.reviewTrustNote)}</span></div>`:""}
         ${routeDetail(r)?`<div class="line"><span class="k">路線</span><span class="v">${escapeHTML(routeDetail(r))}</span></div>`:""}
@@ -4735,7 +4748,7 @@ function cardHTML(r, rank){
         ${r.accessStr?`<div class="line"><span class="k">無障礙</span><span class="v">${escapeHTML(r.accessStr)}</span></div>`:""}
         ${r.payStr?`<div class="line"><span class="k">付款</span><span class="v">${escapeHTML(r.payStr)}</span></div>`:""}
         ${r.parkStr?`<div class="line"><span class="k">停車</span><span class="v">${escapeHTML(r.parkStr)}</span></div>`:""}
-        <div class="line"><span class="k">地址</span><span class="v">${escapeHTML(r.address||"—")}</span></div>
+        ${detailAddressLine}
         <div class="line"><span class="k">電話</span><span class="v">${escapeHTML(r.phone||"—")}</span></div>
         ${(r.website||r.mapsUri||shareUrl)?`<div class="line"><span class="k">連結</span><span class="v links">${[shareUrl?`<a href="${escapeHTML(shareUrl)}" target="_blank" rel="noopener">分享卡片</a>`:"", r.website?`<a href="${escapeHTML(r.website)}" target="_blank" rel="noopener">官方網站</a>`:"", r.mapsUri?`<a href="${escapeHTML(r.mapsUri)}" target="_blank" rel="noopener">Google 地圖</a>`:""].filter(Boolean).join(" · ")}</span></div>`:""}
       </div>
@@ -4745,40 +4758,23 @@ function cardHTML(r, rank){
 
 function badgeHTML(a){
   const year = escapeHTML(String(a.year || ""));
-  if (a.guide==="michelin") return `<span class="badge michelin" title="MICHELIN Guide ${year} ${escapeHTML(a.level||"")}">米其林 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="michelinspecial") return `<span class="badge michelinspecial" title="MICHELIN Special Award ${year} ${escapeHTML(a.awardName||a.level||"")}">米其林 ${escapeHTML(a.level||"特別獎")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="michelin_selected") return `<span class="badge selected" title="MICHELIN Selected ${year}">米其林入選<span class="yr">${year}</span></span>`;
-  if (a.guide==="bib") return `<span class="badge bib" title="MICHELIN Bib Gourmand ${year}">必比登<span class="yr">${year}</span></span>`;
-  if (a.guide==="greenstar") return `<span class="badge greenstar" title="MICHELIN Green Star ${year}">綠星<span class="yr">${year}</span></span>`;
-  if (a.guide==="50best") return `<span class="badge fifty" title="50 Best ${year} ${escapeHTML(a.level||"")}">50 Best ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="50bestdiscovery") return `<span class="badge discovery" title="50 Best Discovery ${year}">50 Discovery<span class="yr">${year}</span></span>`;
-  if (a.guide==="oad") return `<span class="badge oad" title="OAD ${year} ${escapeHTML(a.level||"")}">OAD ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="thebestchef") return `<span class="badge bestchef" title="The Best Chef ${year} ${escapeHTML(a.level||"")}">Best Chef ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="designawards") return `<span class="badge designaward" title="Restaurant & Bar Design Awards ${year} ${escapeHTML(a.level||"")}">設計獎 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="fmg") return `<span class="badge fmg" title="Food Made Good ${year} ${escapeHTML(a.level||"")}">FMG ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="greenveggie") return `<span class="badge greenveggie" title="綠・蔬食評鑑指南 ${year} ${escapeHTML(a.level||"")}">綠蔬食 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="moenvgreen") return `<span class="badge ecocert" title="環保餐廳 ${year} ${escapeHTML(a.level||"")}">環保餐廳<span class="yr">${year}</span></span>`;
-  if (a.guide==="fdahaccp") return `<span class="badge haccpcert" title="旅館附設餐廳 HACCP ${year} ${escapeHTML(a.level||"")}">HACCP<span class="yr">${year}</span></span>`;
-  if (a.guide==="amottrace") return `<span class="badge tracecert" title="AMOT 溯源餐廳 ${year} ${escapeHTML(a.level||"")}">溯源 ${escapeHTML(a.level||"餐廳")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="taichunggold") return `<span class="badge goldencert" title="臺中金饌獎 ${year} ${escapeHTML(a.level||"")}">金饌 ${escapeHTML(a.level||"獎")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="gdgawards") return `<span class="badge gdgaward" title="綠色餐飲指南年度得獎 ${year} ${escapeHTML(a.level||"")}">GDG ${escapeHTML(a.level||"得獎")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="tcfpraise") return `<span class="badge mediaaward" title="美食指南點讚榜 ${year} ${escapeHTML(a.level||"")}">點讚榜<span class="yr">${year}</span></span>`;
-  if (a.guide==="taichunglowcarbon") return `<span class="badge localcert" title="臺中市低碳餐廳認證 ${year}">台中低碳<span class="yr">${year}</span></span>`;
-  if (a.guide==="muslimfriendly") return `<span class="badge muslimcert" title="穆斯林友善餐飲認證 ${year} ${escapeHTML(a.level||"")}">穆斯林 ${escapeHTML(a.level||"友善")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="fdagrade") return `<span class="badge fdagrade" title="餐飲衛生管理分級評核 ${year} ${escapeHTML(a.level||"")}">食安 ${escapeHTML(a.level||"分級")}<span class="yr">${year}</span></span>`;
-  if (a.guide==="tatlerbest") return `<span class="badge mediaaward" title="Tatler Best ${year} ${escapeHTML(a.level||"")}">Tatler${a.level ? ` ${escapeHTML(a.level)}` : ""}<span class="yr">${year}</span></span>`;
-  if (a.guide==="worldculinary") return `<span class="badge mediaaward" title="World Culinary Awards ${year} ${escapeHTML(a.level||"")}">World Culinary${a.winner ? " Winner" : ""}<span class="yr">${year}</span></span>`;
+  const sourceName = escapeHTML(String(a.sourceName || "").trim());
+  const awardName = escapeHTML(String(a.awardName || "").trim());
+  const baseTitle = [awardName || a.guide || "", year, sourceName].filter(Boolean).join(" | ");
+  if (a.guide==="michelin") return `<span class="badge michelin" title="${baseTitle || `MICHELIN Guide ${year} ${escapeHTML(a.level||"")}`}">米其林 ${escapeHTML(a.level||"")}<span class="yr">${year}</span></span>`;
+  if (a.guide==="michelin_selected") return `<span class="badge selected" title="${baseTitle || `MICHELIN Selected ${year}`}">米其林入選<span class="yr">${year}</span></span>`;
+  if (a.guide==="bib") return `<span class="badge bib" title="${baseTitle || `MICHELIN Bib Gourmand ${year}`}">必比登<span class="yr">${year}</span></span>`;
   if (a.guide==="500plate") {
     const label = a.level || (a.plates ? `${a.plates}盤` : "");
-    return `<span class="badge plate" title="500盤 ${year} ${escapeHTML(label)}">500盤${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
+    return `<span class="badge plate" title="${baseTitle || `500盤 ${year} ${escapeHTML(label)}`}">500盤${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
   }
   if (a.guide==="500bowl") {
     const label = a.level || (a.bowls ? `${a.bowls}碗` : "");
-    return `<span class="badge bowl" title="500碗 ${year} ${escapeHTML(label)}">500碗${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
+    return `<span class="badge bowl" title="${baseTitle || `500碗 ${year} ${escapeHTML(label)}`}">500碗${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
   }
   if (a.guide==="500sweet") {
     const label = a.level || (a.sweets ? `${a.sweets}甜` : "");
-    return `<span class="badge sweet" title="500甜 ${year} ${escapeHTML(label)}">500甜${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
+    return `<span class="badge sweet" title="${baseTitle || `500甜 ${year} ${escapeHTML(label)}`}">500甜${label ? ` ${escapeHTML(label)}` : ""}<span class="yr">${year}</span></span>`;
   }
   return "";
 }
@@ -4854,6 +4850,11 @@ function certificationBadges(r){
 
 function certBadgeHTML(c){
   return `<span class="badge ${escapeHTML(c.cls || "cert")}">${escapeHTML(c.label)}${c.note?`<span class="yr">${escapeHTML(c.note)}</span>`:""}</span>`;
+}
+
+function isPendingFieldText(value){
+  const text = String(value || "").trim();
+  return !text || text.includes("待確認");
 }
 
 /* ============================================================
@@ -5046,26 +5047,11 @@ function matchAwards(rest, list){
 // 彙總 500 系列（菜/碗/甜品單位數 → 餐廳層級總單位數）並標準化顯示
 function normalizeAwards(awards){
   const priority = a => a.guide === "michelin" ? 1
-    : (a.guide === "michelinspecial" ? 2
-    : (a.guide === "50best" ? 3
-    : (a.guide === "oad" ? 4
-    : (a.guide === "thebestchef" ? 5
-    : (a.guide === "worldculinary" ? 6
-    : (a.guide === "bib" ? 7
-    : (a.guide === "greenstar" ? 8
-    : (a.guide === "tatlerbest" ? 9
-    : (a.guide === "50bestdiscovery" ? 10
-    : (a.guide === "greenveggie" ? 11
-    : (a.guide === "fmg" ? 12
-    : (a.guide === "gdgawards" ? 13
-    : (a.guide === "taichunglowcarbon" ? 14
-    : (a.guide === "muslimfriendly" ? 15
-    : (a.guide === "fdagrade" ? 16
-    : (a.guide === "designawards" ? 17
-    : (a.guide === "500plate" ? 18
-    : (a.guide === "500bowl" ? 19
-    : (a.guide === "500sweet" ? 20
-    : (a.guide === "michelin_selected" ? 21 : 22))))))))))))))))))));
+    : (a.guide === "bib" ? 2
+    : (a.guide === "michelin_selected" ? 3
+    : (a.guide === "500plate" ? 4
+    : (a.guide === "500bowl" ? 5
+    : (a.guide === "500sweet" ? 6 : 99)))));
   return (awards||[]).map(a=>{
     if (a.guide==="500plate"){
       const plates = Array.isArray(a.dishPlates)
