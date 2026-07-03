@@ -4448,8 +4448,8 @@
         "Yung Yen"
       ],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "前金區",
+      "address": "前金區成功一路528號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/yung-yen",
       "awards": [
@@ -4465,7 +4465,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "田山餐館",
@@ -5392,7 +5392,7 @@
       ],
       "city": "高雄市",
       "district": "苓雅區",
-      "address": "地址待確認",
+      "address": "苓雅區憲政路132號",
       "cuisine": "創新菜",
       "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/the-front-house",
       "awards": [
@@ -5408,7 +5408,7 @@
           "notes": "來源網址由批次來源規則補齊 | Wikipedia district cross-check"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-page.snapshot.html 2026-07-03 | Wikipedia Michelin starred restaurants in Taiwan 2025 list 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-page.snapshot.html 2026-07-03 | Wikipedia Michelin starred restaurants in Taiwan 2025 list 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "8號旗魚飯 鮮魚湯",
@@ -6325,8 +6325,8 @@
       "name": "三分俗氣",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "永和區",
+      "address": "永和區國光路49巷8號",
       "cuisine": "江浙菜",
       "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-fen-su-chi",
       "awards": [
@@ -6342,7 +6342,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "大象切仔麵",
@@ -7059,8 +7059,8 @@
       "name": "首烏",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "板橋區",
+      "address": "板橋區民族路27號",
       "cuisine": "客家菜",
       "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/shou-wu",
       "awards": [
@@ -7076,7 +7076,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "香帥蛋糕",
@@ -7319,8 +7319,8 @@
       "name": "黑殿飯店 (創始店)",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "淡水區",
+      "address": "淡水區中正路一段62巷6、8及10號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/dark-palace-taiwanese-gourmet",
       "awards": [
@@ -7336,7 +7336,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "新建成餅店",
