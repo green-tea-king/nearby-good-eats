@@ -32530,10 +32530,10 @@
       "name": "FUKAI",
       "aliases": [],
       "city": "臺南市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區東寧路512巷2號",
       "cuisine": "現代菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/fukai",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -32547,30 +32547,30 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "Hara Peko",
       "aliases": [],
       "city": "臺南市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "中西區",
+      "address": "中西區永福路二段81巷13號",
       "cuisine": "現代菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/hara-peko",
       "awards": [
         {
           "guide": "michelin_selected",
           "level": "入選餐廳",
           "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+          "url": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/hara-peko",
           "sourceName": "MICHELIN Guide Taiwan 2025 Full List",
-          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/hara-peko",
           "extractedDate": "2026-06-30",
           "awardName": "米其林入選",
           "notes": ""
         }
       ],
-      "notes": "Michelin Tainan live browser merge 2026-07-03"
+      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "Perfe'dough",
