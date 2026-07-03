@@ -4104,10 +4104,10 @@
       "name": "Li.nu",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "前鎮區",
+      "address": "前鎮區中華五路802號",
       "cuisine": "創新菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/li-nu",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -4133,7 +4133,7 @@
           "notes": ""
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "LKK肉圓",
@@ -6372,10 +6372,10 @@
       "name": "今大魯肉飯",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "三重區",
+      "address": "三重區大仁街40號",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/chin-ta-lu-rou-fan",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -6389,7 +6389,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "天然本味老麵饅頭店",
@@ -6609,10 +6609,10 @@
       "name": "老徐的店",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": "新店區",
+      "address": "新店區新烏路三段寶島巷9號",
+      "cuisine": "臺灣菜, 江浙菜",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/lao-hsu",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -6626,7 +6626,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "吳記北平餡餅專賣店",
