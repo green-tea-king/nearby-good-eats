@@ -8881,30 +8881,6 @@
       "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
     },
     {
-      "name": "鮨安",
-      "aliases": [],
-      "city": "新竹縣",
-      "district": "竹北市",
-      "address": "新竹縣竹北市嘉豐南路一段62號",
-      "cuisine": "日式料理, 壽司",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
-      "awards": [
-        {
-          "guide": "500plate",
-          "plates": 1,
-          "level": "1盤",
-          "year": 2025,
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "sourceName": "500盤 2025 完整得獎名單",
-          "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "extractedDate": "2026-07-03",
-          "awardName": "500盤1盤",
-          "notes": "來源網址由批次來源規則補齊"
-        }
-      ],
-      "notes": "2026-07-03 手動補強 https://www.opentable.com.tw/restaurant/profile/187616 依訂位頁校正實際縣市與完整地址。 | 500盤人工補強批次 3 補強 2026-07-03 https://www.opentable.com.tw/"
-    },
-    {
       "name": "川阜",
       "aliases": [],
       "city": "新竹縣",
@@ -8978,9 +8954,9 @@
       "aliases": [],
       "city": "新竹縣",
       "district": "竹北市",
-      "address": "新竹縣竹北市成功二街102號",
+      "address": "竹北市成功二街102號",
       "cuisine": "義大利菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/piccola-enoteca",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8994,7 +8970,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | 500盤人工補強批次 3 補強 2026-07-03 https://www.opentable.com.tw/ | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | 500盤人工補強批次 3 補強 2026-07-03 https://www.opentable.com.tw/ | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "泥磚屋",
@@ -9112,29 +9088,6 @@
       "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
-      "name": "鮨安",
-      "aliases": [],
-      "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "壽司",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
-      "awards": [
-        {
-          "guide": "michelin_selected",
-          "level": "入選餐廳",
-          "year": 2025,
-          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sushi-an",
-          "sourceName": "MICHELIN Guide Taiwan 2025 Full List",
-          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sushi-an",
-          "extractedDate": "2026-06-30",
-          "awardName": "米其林入選",
-          "notes": "Michelin detail URL patched from official 2025 snapshot"
-        }
-      ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
-    },
-    {
       "name": "Firoo",
       "aliases": [],
       "city": "新竹縣",
@@ -9161,10 +9114,10 @@
       "name": "SABI",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "竹北市",
+      "address": "竹北市成功十街92號",
       "cuisine": "現代菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sabi",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -9178,16 +9131,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "ZenA",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "竹北市",
+      "address": "竹北市嘉豐二街二段75號",
       "cuisine": "時尚歐陸菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/zena",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -9201,7 +9154,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "春嬌粄條",
@@ -32690,6 +32643,41 @@
         }
       ],
       "notes": "2026-07-03 手動補強 https://www.facebook.com/tidelandseafood/ 依店家公開頁補完整地址與菜系。"
+    },
+    {
+      "name": "鮨安",
+      "aliases": [],
+      "city": "新竹縣",
+      "district": "竹北市",
+      "address": "竹北市嘉豐南路一段62號",
+      "cuisine": "壽司",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sushi-an",
+      "awards": [
+        {
+          "guide": "500plate",
+          "plates": 1,
+          "level": "1盤",
+          "year": 2025,
+          "url": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "sourceName": "500盤 2025 完整得獎名單",
+          "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797",
+          "extractedDate": "2026-07-03",
+          "awardName": "500盤1盤",
+          "notes": "來源網址由批次來源規則補齊"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sushi-an",
+          "sourceName": "MICHELIN Guide Taiwan 2025 Full List",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sushi-an",
+          "extractedDate": "2026-06-30",
+          "awardName": "米其林入選",
+          "notes": "Michelin detail URL patched from official 2025 snapshot"
+        }
+      ],
+      "notes": "2026-07-03 手動補強 https://www.opentable.com.tw/restaurant/profile/187616 依訂位頁校正實際縣市與完整地址。 | 500盤人工補強批次 3 補強 2026-07-03 https://www.opentable.com.tw/ | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
     }
   ]
 }
