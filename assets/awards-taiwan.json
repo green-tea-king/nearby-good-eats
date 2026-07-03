@@ -6328,7 +6328,7 @@
       "district": "行政區待確認",
       "address": "地址待確認",
       "cuisine": "江浙菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-fen-su-chi",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -6342,7 +6342,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "大象切仔麵",
@@ -7039,7 +7039,7 @@
       "district": "行政區待確認",
       "address": "地址待確認",
       "cuisine": "時尚臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/shi-yang",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7053,7 +7053,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "首烏",
@@ -7062,7 +7062,7 @@
       "district": "行政區待確認",
       "address": "地址待確認",
       "cuisine": "客家菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/shou-wu",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7076,7 +7076,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "香帥蛋糕",
@@ -7322,7 +7322,7 @@
       "district": "行政區待確認",
       "address": "地址待確認",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/dark-palace-taiwanese-gourmet",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7336,7 +7336,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "新建成餅店",
@@ -7866,7 +7866,7 @@
       "district": "行政區待確認",
       "address": "地址待確認",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/yonghe-chia-hsiang-soy-milk",
       "awards": [
         {
           "guide": "bib",
@@ -7880,7 +7880,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "玉麵堂",
@@ -7913,7 +7913,7 @@
       "district": "行政區待確認",
       "address": "地址待確認",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/guang-xing-pork-knuckle",
       "awards": [
         {
           "guide": "bib",
@@ -7927,7 +7927,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "宋朝",
