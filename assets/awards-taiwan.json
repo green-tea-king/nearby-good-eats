@@ -4451,7 +4451,7 @@
       "district": "行政區待確認",
       "address": "地址待確認",
       "cuisine": "臺灣菜",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/yung-yen",
       "awards": [
         {
           "guide": "bib",
@@ -4465,7 +4465,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "田山餐館",
@@ -5394,7 +5394,7 @@
       "district": "苓雅區",
       "address": "地址待確認",
       "cuisine": "創新菜",
-      "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/the-front-house",
       "awards": [
         {
           "guide": "michelin",
@@ -5408,7 +5408,7 @@
           "notes": "來源網址由批次來源規則補齊 | Wikipedia district cross-check"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-page.snapshot.html 2026-07-03 | Wikipedia Michelin starred restaurants in Taiwan 2025 list 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-page.snapshot.html 2026-07-03 | Wikipedia Michelin starred restaurants in Taiwan 2025 list 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "8號旗魚飯 鮮魚湯",
