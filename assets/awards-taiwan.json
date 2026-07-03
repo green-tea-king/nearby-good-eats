@@ -8954,10 +8954,10 @@
       "name": "老頭擺",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北埔鄉",
+      "address": "北埔鄉大林村4鄰46之1號",
       "cuisine": "客家菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/lao-tou-pai",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8971,7 +8971,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "彼刻",
@@ -9000,10 +9000,10 @@
       "name": "泥磚屋",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北埔鄉",
+      "address": "北埔鄉長春街113號",
       "cuisine": "客家菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/mud-brick-house",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -9017,16 +9017,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "客家本色",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北埔鄉",
+      "address": "北埔鄉埔心街28號",
       "cuisine": "客家菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/ko-chia-pen-se",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -9040,7 +9040,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "耕野月眉",
@@ -9092,10 +9092,10 @@
       "name": "裏月・晴酒",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "竹北市",
+      "address": "竹北市縣政十三路101號",
       "cuisine": "日本菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/li-yueh",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -9109,7 +9109,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "鮨安",
