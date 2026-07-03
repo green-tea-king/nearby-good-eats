@@ -6989,10 +6989,10 @@
       "name": "洵廚",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "林口區",
+      "address": "林口區文化一路一段232號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/xun-kitchen",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7006,7 +7006,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "紅林包子舖",
@@ -7509,10 +7509,10 @@
       "name": "樂也",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "坪林區",
+      "address": "坪林區坪雙路一段76號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/le-yeh",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7526,7 +7526,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "樂沐糕餅舖",
@@ -7749,9 +7749,9 @@
       "aliases": [],
       "city": "新北市",
       "district": "貢寮區",
-      "address": "新北市貢寮區仁和路2號",
-      "cuisine": "一般餐廳",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "address": "貢寮區仁和路2號",
+      "cuisine": "海鮮",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/chia-i",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7765,7 +7765,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "三姐妹農家樂",
@@ -8121,9 +8121,9 @@
       "aliases": [],
       "city": "新北市",
       "district": "瑞芳區",
-      "address": "新北市瑞芳區水湳洞洞頂路155-4號",
-      "cuisine": "法式餐酒館",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "address": "瑞芳區洞頂路155之4號",
+      "cuisine": "時尚歐陸菜",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/hui-hui",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8149,7 +8149,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "2026-07-03 資料補強：https://www.mottimes.com/article/detail/6010；地址取自公開專訪，菜系依台食法菜/餐酒館定位整理。 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "2026-07-03 資料補強：https://www.mottimes.com/article/detail/6010；地址取自公開專訪，菜系依台食法菜/餐酒館定位整理。 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "超人鱸魚",
