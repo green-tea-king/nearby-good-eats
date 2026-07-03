@@ -7036,8 +7036,8 @@
       "name": "食養山房",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "汐止區",
+      "address": "汐止區汐萬路三段366巷6號",
       "cuisine": "時尚臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/shi-yang",
       "awards": [
@@ -7053,7 +7053,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "首烏",
@@ -7863,8 +7863,8 @@
       "name": "永和佳香豆漿",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "永和區",
+      "address": "永和區民治街57號",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/yonghe-chia-hsiang-soy-milk",
       "awards": [
@@ -7880,7 +7880,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "玉麵堂",
@@ -7910,8 +7910,8 @@
       "name": "光興腿庫",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "三重區",
+      "address": "三重區仁愛街124號",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/guang-xing-pork-knuckle",
       "awards": [
@@ -7927,7 +7927,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Top-level source normalized to Michelin official detail page 2026-07-04 | Michelin official detail page confirmed address and cuisine 2026-07-04"
     },
     {
       "name": "宋朝",
