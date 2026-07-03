@@ -8352,10 +8352,10 @@
       "name": "非常好吃素刈包",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區林森路129號",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/very-good-vegan-gua-bao",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8369,16 +8369,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "南門壹食",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區南門街10號",
       "cuisine": "麵食",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/no-10-nanmen",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8392,16 +8392,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "海口刈包",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "香山區",
+      "address": "香山區延平路二段1457號",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/hai-kou-guabao",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8415,16 +8415,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "高宅",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區世界街92號",
       "cuisine": "泰國菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/kao-jai",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8438,7 +8438,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page confirmed address and cuisine 2026-07-04 | Top-level source normalized to Michelin official detail page 2026-07-04"
     },
     {
       "name": "常嚐料理廚房",
