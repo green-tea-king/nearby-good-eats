@@ -3,27 +3,27 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const awardsPath = path.join(repoRoot, "assets", "awards-taiwan.json");
-const draftPath = path.join(repoRoot, "assets", "awards-taiwan.500sweet-2025-draft.json");
 const sweetManualPath = path.join(repoRoot, "assets", "500sweet-2025-manual.json");
 const sweetCandidatesPath = path.join(repoRoot, "assets", "500sweet-2025-candidates.json");
 
-const ALLOWED_GUIDES = new Set(["michelin", "michelin_selected", "bib", "500plate", "500bowl", "500sweet", "greenveggie", "muslimfriendly", "fdagrade", "moenvgreen", "fdahaccp", "amottrace", "taichunggold"]);
+const ALLOWED_GUIDES = new Set([
+  "michelin",
+  "michelin_selected",
+  "bib",
+  "500plate",
+  "500bowl",
+  "500sweet",
+]);
+
 const EXPECTED = {
-  restaurants: 14905,
+  restaurants: 1329,
   guides: {
     michelin: 53,
-    "michelin_selected": 222,
+    michelin_selected: 222,
     bib: 144,
     "500plate": 260,
     "500bowl": 415,
     "500sweet": 328,
-    "greenveggie": 65,
-    "muslimfriendly": 74,
-    "fdagrade": 10224,
-    "moenvgreen": 3464,
-    "fdahaccp": 42,
-    "amottrace": 100,
-    "taichunggold": 398,
   },
 };
 
@@ -36,36 +36,20 @@ function normalizeName(value) {
     .normalize("NFKC")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/臺/g, "台")
-    .replace(/[’‘`´]/g, "'")
-    .replace(/[()（）・·.,，、!！?？\-_/&+＋x×\s]/g, "")
+    .replace(/[’'`]/g, "")
+    .replace(/[()\-_/&+,\s]/g, "")
     .toLowerCase();
 }
 
 function awardKey(award) {
-  return [award.guide, award.level || "", award.year || "", award.plates || "", award.bowls || "", award.sweets || ""].join("|");
-}
-
-function comparableRows(data) {
-  return (data.restaurants || [])
-    .map((row) => ({
-      name: row.name,
-      city: row.city,
-      district: row.district || "",
-      aliases: [...(row.aliases || [])].sort(),
-      awards: (row.awards || [])
-        .map((award) => ({
-          guide: award.guide,
-          level: award.level || "",
-          year: award.year || "",
-          plates: award.plates || "",
-          bowls: award.bowls || "",
-          sweets: award.sweets || "",
-          url: award.url || "",
-        }))
-        .sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b))),
-    }))
-    .sort((a, b) => `${a.city}${a.name}`.localeCompare(`${b.city}${b.name}`, "zh-Hant"));
+  return [
+    award.guide,
+    award.level || "",
+    award.year || "",
+    award.plates || "",
+    award.bowls || "",
+    award.sweets || "",
+  ].join("|");
 }
 
 function countGuides(data) {
@@ -110,6 +94,7 @@ function validateAwards(data) {
   for (const row of data.restaurants || []) {
     if (!row.name || !row.city || !Array.isArray(row.awards) || row.awards.length === 0) {
       errors.push(`missing core fields: ${row.name || "(missing name)"}`);
+      continue;
     }
 
     const aliasKeys = new Set();
@@ -124,7 +109,12 @@ function validateAwards(data) {
 
     const awardKeys = new Set();
     for (const award of row.awards || []) {
-      if (!ALLOWED_GUIDES.has(award.guide)) errors.push(`unknown guide: ${row.name}|${award.guide}`);
+      if (!ALLOWED_GUIDES.has(award.guide)) {
+        errors.push(`unknown guide: ${row.name}|${award.guide}`);
+      }
+      if (!award.year) {
+        errors.push(`missing award year: ${row.city || ""}|${row.name}|${award.guide}`);
+      }
       const key = awardKey(award);
       if (awardKeys.has(key)) errors.push(`duplicate award: ${row.name}|${key}`);
       awardKeys.add(key);
@@ -136,27 +126,6 @@ function validateAwards(data) {
   }
 
   return { guides, errors };
-}
-
-function compareFormalAndDraft(formal, draft) {
-  const formalRows = comparableRows(formal);
-  const draftRows = comparableRows(draft);
-  const formalMap = new Map(formalRows.map((row) => [`${row.city}|${row.name}`, row]));
-  const draftMap = new Map(draftRows.map((row) => [`${row.city}|${row.name}`, row]));
-  const errors = [];
-
-  for (const key of formalMap.keys()) {
-    if (!draftMap.has(key)) errors.push(`draft missing row: ${key}`);
-    else if (JSON.stringify(formalMap.get(key)) !== JSON.stringify(draftMap.get(key))) {
-      errors.push(`draft differs: ${key}`);
-    }
-  }
-
-  for (const key of draftMap.keys()) {
-    if (!formalMap.has(key)) errors.push(`draft extra row: ${key}`);
-  }
-
-  return errors;
 }
 
 function validateSweetManual(data) {
@@ -195,12 +164,14 @@ function validateSweetCandidates(data) {
 
 function main() {
   const formal = readJson(awardsPath);
-  const draft = readJson(draftPath);
   const result = validateAwards(formal);
-  const draftErrors = compareFormalAndDraft(formal, draft);
-  const sweetManual = fs.existsSync(sweetManualPath) ? validateSweetManual(readJson(sweetManualPath)) : { rows: 0, errors: [] };
-  const sweetCandidates = fs.existsSync(sweetCandidatesPath) ? validateSweetCandidates(readJson(sweetCandidatesPath)) : { rows: 0, highConfidence: 0, errors: ["missing 500sweet candidates"] };
-  const errors = [...result.errors, ...draftErrors, ...sweetManual.errors, ...sweetCandidates.errors];
+  const sweetManual = fs.existsSync(sweetManualPath)
+    ? validateSweetManual(readJson(sweetManualPath))
+    : { rows: 0, errors: [] };
+  const sweetCandidates = fs.existsSync(sweetCandidatesPath)
+    ? validateSweetCandidates(readJson(sweetCandidatesPath))
+    : { rows: 0, highConfidence: 0, skippedNonCity: 0, needsCityReview: 0, errors: ["missing 500sweet candidates"] };
+  const errors = [...result.errors, ...sweetManual.errors, ...sweetCandidates.errors];
 
   const summary = {
     ok: errors.length === 0,

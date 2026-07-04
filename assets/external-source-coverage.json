@@ -1,6 +1,6 @@
 {
   "version": "external-source-coverage-2026-07-01",
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "policy": {
     "runtimeExternalLookup": false,
     "costFirst": true,
@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 14905,
+    "awardsRestaurants": 1329,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -162,7 +162,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/green-veggie-guide-2025-candidates.json",
-      "count": 65,
+      "count": 0,
       "candidates": 65,
       "needsCityReview": 0,
       "runtimeLookup": false
@@ -215,7 +215,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/muslim-friendly-2026-candidates.json",
-      "count": 74,
+      "count": 0,
       "candidates": 75,
       "runtimeLookup": false
     },
@@ -225,7 +225,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/fda-restaurant-hygiene-2024-candidates.json",
-      "count": 10224,
+      "count": 0,
       "candidates": 6104,
       "runtimeLookup": false
     },
@@ -255,7 +255,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/moenv-green-restaurants-2026-candidates.json",
-      "count": 3464,
+      "count": 0,
       "candidates": 3471,
       "runtimeLookup": false
     },
@@ -265,7 +265,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/fda-haccp-hotel-restaurants-2026-candidates.json",
-      "count": 42,
+      "count": 0,
       "candidates": 42,
       "runtimeLookup": false
     },
@@ -275,7 +275,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/amot-traceability-awards-2024-candidates.json",
-      "count": 100,
+      "count": 0,
       "candidates": 31,
       "needsManualReview": 9,
       "runtimeLookup": false
@@ -286,7 +286,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/amot-traceability-awards-2026-candidates.json",
-      "count": 100,
+      "count": 0,
       "candidates": 69,
       "needsManualReview": 3,
       "runtimeLookup": false
@@ -297,7 +297,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/taichung-golden-awards-2024-candidates.json",
-      "count": 398,
+      "count": 0,
       "candidates": 398,
       "runtimeLookup": false
     },
