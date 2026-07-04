@@ -3967,7 +3967,7 @@
       "district": "前鎮區",
       "address": "前鎮區林森三路116號",
       "cuisine": "時尚歐陸菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/anchovy",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -3981,7 +3981,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "鐵盒保哥滷味",
@@ -4084,7 +4084,7 @@
       "district": "三民區",
       "address": "三民區德興街1號",
       "cuisine": "創新菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/j-parc",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -4098,7 +4098,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Li.nu",
@@ -4355,7 +4355,7 @@
       "district": "左營區",
       "address": "左營區立文路96號",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/hung-chi-rice-shop",
       "awards": [
         {
           "guide": "bib",
@@ -4369,7 +4369,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "打鹿岸原住民人文主題餐廳 高流店",
@@ -4402,7 +4402,7 @@
       "district": "左營區",
       "address": "左營區裕誠路245號",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/cheng-tsung-duck-rice",
       "awards": [
         {
           "guide": "bib",
@@ -4416,7 +4416,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "永心浮島",
@@ -4498,7 +4498,7 @@
       "district": "前鎮區",
       "address": "前鎮區中華五路789號6樓",
       "cuisine": "臺灣菜",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/pale-jade-pavilion",
       "awards": [
         {
           "guide": "bib",
@@ -4512,7 +4512,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | 2026-07-03 手動補強 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 及 114年度各縣市衛生優良餐飲業者名單 Excel，對應白玉樓經典台菜夢時代店地址。"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | 2026-07-03 手動補強 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 及 114年度各縣市衛生優良餐飲業者名單 Excel，對應白玉樓經典台菜夢時代店地址。 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "米院子油飯",
@@ -4661,7 +4661,7 @@
       "district": "三民區",
       "address": "三民區自強一路201號",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/hou-chi-duck-rice",
       "awards": [
         {
           "guide": "bib",
@@ -4687,7 +4687,7 @@
           "notes": ""
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "前金肉燥飯",
@@ -5012,7 +5012,7 @@
       "district": "橋頭區",
       "address": "橋頭區橋南路119號",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/liao-chi-migao",
       "awards": [
         {
           "guide": "bib",
@@ -5026,7 +5026,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin official detail page manual fill 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "潮台菜 衛武營店",
@@ -5259,7 +5259,7 @@
       "district": "前金區",
       "address": "前金區成功一路264-1號2樓",
       "cuisine": "現代菜",
-      "source": "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/haili",
       "awards": [
         {
           "guide": "michelin",
@@ -5273,7 +5273,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin public detail page fill 2026-07-03 | Michelin official detail page manual fill 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Michelin public detail page fill 2026-07-03 | Michelin official detail page manual fill 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Hâo Labo 法式小館",
@@ -6281,7 +6281,7 @@
       "district": "汐止區",
       "address": "新北市汐止區汐碇路380巷30號",
       "cuisine": "茶餐與茶莊",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/natural-tea-manor",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -6295,7 +6295,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "786李園清真小吃",
@@ -6446,7 +6446,7 @@
       "district": "汐止區",
       "address": "汐止區湖前街117號",
       "cuisine": "素食",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/joy-vegetarian-restaurant",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -6460,7 +6460,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "北京餡餅粥",
@@ -6589,7 +6589,7 @@
       "district": "永和區",
       "address": "永和區竹林路39巷13號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/zhulin-chicken-yonghe",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -6603,7 +6603,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "老徐的店",
@@ -6945,7 +6945,7 @@
       "district": "板橋區",
       "address": "新北市板橋區民權路88號",
       "cuisine": "粵菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/qing-ya",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -6959,7 +6959,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "南川麵館",
@@ -7133,7 +7133,7 @@
       "district": "板橋區",
       "address": "新北市板橋區縣民大道二段8號3樓",
       "cuisine": "江浙菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/jia-yen",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7147,7 +7147,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "真大蒸餃",
@@ -7201,10 +7201,10 @@
       "name": "張記傳統魚丸",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "district": "瑞芳區",
+      "address": "瑞芳區基山街25號",
+      "cuisine": "小吃",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/zhang-ji-fish-ball",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7218,16 +7218,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "梅工作坊西餐",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "新店區",
+      "address": "新店區中興路一段30號",
       "cuisine": "歐陸菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/le-mei-studio",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7241,7 +7241,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "野事草店Wild Herbs",
@@ -7438,10 +7438,10 @@
       "name": "萬得富爸爸肉骨茶王中王",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "板橋區",
+      "address": "板橋區莒光路18之1號",
       "cuisine": "馬來西亞菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/wonderful-baba-bak-kut-teh-king-of-king",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -7455,7 +7455,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "福州金魚麵店",
@@ -8201,10 +8201,10 @@
       "name": "蔡家牛肉麵",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "中和區",
+      "address": "中和區秀朗路三段153巷16弄12號",
       "cuisine": "麵食",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/tsai-chia-beef-noodles",
       "awards": [
         {
           "guide": "bib",
@@ -8230,7 +8230,7 @@
           "notes": ""
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "靚點飯店",
@@ -8286,7 +8286,7 @@
       "district": "瑞芳區",
       "address": "新北市瑞芳區豎崎路5號",
       "cuisine": "飲冰品業",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/a-gan-yi-taro-balls",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8300,7 +8300,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "皿富器食",
@@ -8444,10 +8444,10 @@
       "name": "常嚐料理廚房",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北區",
+      "address": "北區光華街102之3號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/chang-chang-kitchen",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8461,16 +8461,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "淳和食",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區鐵道路一段148號",
       "cuisine": "日本菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/jun",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8484,16 +8484,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "荷竹園",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北區",
+      "address": "北區湳中街63號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/ho-chu-yuan",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8507,16 +8507,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "野叔",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區園後街4號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/yeh-shu",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8530,16 +8530,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "廟口鴨香飯 (中山路)",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北區",
+      "address": "北區中山路142號",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/miao-kou-ya-xiang-fan-zhongshan-road",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8553,16 +8553,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "藝軒私房料理",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區明湖路683號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/yi-hsuan",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8576,16 +8576,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "鷹王肉圓",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "香山區",
+      "address": "香山區延平路二段350號",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/ying-wang-meatball",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8599,16 +8599,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "TAIVII",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區東門街32號 (辛志平校長故居)",
       "cuisine": "時尚臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/taivii",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8622,16 +8622,16 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "Yummy私房料理",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "東區",
+      "address": "東區中華路二段170巷70號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/yummy",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8645,7 +8645,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "九添福牛肉麵館",
@@ -8910,7 +8910,7 @@
       "district": "竹東鎮",
       "address": "竹東鎮北興路二段8號1樓",
       "cuisine": "麵食",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/zhudong-fried-sparerib-noodle-zhudong",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -8924,7 +8924,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "老頭擺",
@@ -9160,10 +9160,10 @@
       "name": "春嬌粄條",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北埔鄉",
+      "address": "北埔鄉公園街16巷1號",
       "cuisine": "客家菜",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/bebu",
       "awards": [
         {
           "guide": "bib",
@@ -9177,16 +9177,16 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "首烏廚EAT",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "竹北市",
+      "address": "竹北市成功二街31號",
       "cuisine": "客家菜",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/shou-wu-eat",
       "awards": [
         {
           "guide": "bib",
@@ -9200,7 +9200,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "唐草園",
@@ -9255,7 +9255,7 @@
       "district": "竹北市",
       "address": "新竹縣竹北市莊敬南路188號1樓",
       "cuisine": "素食",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/shan-guo-tang",
       "awards": [
         {
           "guide": "bib",
@@ -9269,7 +9269,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | 環境部環保餐廳資料集 補強 2026-07-03 https://data.moenv.gov.tw/dataset/detail/GIS_P_11"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | 環境部環保餐廳資料集 補強 2026-07-03 https://data.moenv.gov.tw/dataset/detail/GIS_P_11 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "鄒記菜包 (中正路)",
@@ -9278,7 +9278,7 @@
       "district": "北埔鄉",
       "address": "北埔鄉中正路49號",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/tsou-chi-cai-bao-zhongzheng-road",
       "awards": [
         {
           "guide": "bib",
@@ -9292,16 +9292,16 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "鴻金食堂",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "竹東鎮",
+      "address": "竹東鎮柯湖路三段312號",
       "cuisine": "客家菜",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/hung-chin",
       "awards": [
         {
           "guide": "bib",
@@ -9315,7 +9315,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "ㄤ咕麵",
@@ -10293,7 +10293,7 @@
       "district": "台中",
       "address": "台中市",
       "cuisine": "粵菜",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/shineyu",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -10319,7 +10319,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "元紀．台灣菜",
@@ -10422,7 +10422,7 @@
       "district": "台中",
       "address": "台中市",
       "cuisine": "小吃",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/kung-fu-shanghai-fish-ball",
       "awards": [
         {
           "guide": "bib",
@@ -10448,7 +10448,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03"
+      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "可口牛肉麵",
@@ -10763,7 +10763,7 @@
       "district": "西區",
       "address": "西區館前路77號2樓",
       "cuisine": "粵菜",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/ming-juan-lou",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -10789,7 +10789,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "金悅軒",
@@ -12126,7 +12126,7 @@
       "district": "東區",
       "address": "東區復興路四段17巷12號",
       "cuisine": "時尚歐陸菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/tu-pang",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -12140,7 +12140,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "你最蒸粿",
@@ -12313,10 +12313,10 @@
       "name": "東引釣客",
       "aliases": [],
       "city": "臺中市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "西區",
+      "address": "西區向上路一段96-2號",
       "cuisine": "海鮮",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/dongyin-fisherman",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -12330,7 +12330,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "東方龍",
@@ -12861,10 +12861,10 @@
       "name": "魚麗共同廚房",
       "aliases": [],
       "city": "臺中市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北區",
+      "address": "北區德化街417號",
       "cuisine": "臺灣菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/shoal-cuisine",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -12878,7 +12878,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taichung live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "鳥苑",
@@ -14367,7 +14367,7 @@
       "district": "大安區",
       "address": "台北市大安區忠孝東路三段282號4樓",
       "cuisine": "French",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/a",
       "awards": [
         {
           "guide": "michelin",
@@ -14405,7 +14405,7 @@
           "notes": ""
         }
       ],
-      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Zea",
@@ -15342,7 +15342,7 @@
       "district": "台北市大安區",
       "address": "台北市大安區",
       "cuisine": "創意料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/tableau-by-craig-yang",
       "awards": [
         {
           "guide": "bib",
@@ -15356,7 +15356,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "川雅",
@@ -15365,7 +15365,7 @@
       "district": "台北市",
       "address": "台北市",
       "cuisine": "川菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/chuan-ya",
       "awards": [
         {
           "guide": "michelin",
@@ -15391,7 +15391,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "人和園",
@@ -15952,7 +15952,7 @@
       "district": "台北市",
       "address": "台北市",
       "cuisine": "日式天婦羅",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/motoichi",
       "awards": [
         {
           "guide": "michelin",
@@ -15978,7 +15978,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "心宴 aMaze",
@@ -15991,7 +15991,7 @@
       "district": "台北市",
       "address": "598 明水路，中山區，台北市",
       "cuisine": "創意料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/amaze",
       "awards": [
         {
           "guide": "michelin",
@@ -16017,7 +16017,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "布雍家 Bouillon",
@@ -16089,7 +16089,7 @@
       "district": "台北市",
       "address": "17，20弄，300巷，第4段，仁愛路，大安區，台北市",
       "cuisine": "台灣當代料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/hosu",
       "awards": [
         {
           "guide": "michelin",
@@ -16115,7 +16115,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "米香",
@@ -16426,7 +16426,7 @@
       "district": "台北市",
       "address": "58 民樂街，大同區，台北市",
       "cuisine": "日本當代料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/eika",
       "awards": [
         {
           "guide": "michelin",
@@ -16464,7 +16464,7 @@
           "notes": ""
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "紅棉 Red Cotton",
@@ -16509,7 +16509,7 @@
       "district": "台北市",
       "address": "台北市",
       "cuisine": "日本菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/yu-kapo-1198592",
       "awards": [
         {
           "guide": "michelin",
@@ -16535,7 +16535,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "斑泊",
@@ -16695,7 +16695,7 @@
       "district": "台北市萬華區",
       "address": "台北市萬華區",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/su-lai-chuan",
       "awards": [
         {
           "guide": "bib",
@@ -16709,7 +16709,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "鄒記食舖",
@@ -16805,7 +16805,7 @@
       "district": "中山區",
       "address": "28 吉林路，中山區，台北市",
       "cuisine": "壽司",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/sushi-kajin",
       "awards": [
         {
           "guide": "michelin",
@@ -16819,7 +16819,7 @@
           "notes": "來源網址由批次來源規則補齊 | Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "朧粵",
@@ -16911,7 +16911,7 @@
       "district": "中山區",
       "address": "1樓，299 樂群三路，中山區，台北市",
       "cuisine": "義大利當代料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/frassi",
       "awards": [
         {
           "guide": "michelin",
@@ -16937,7 +16937,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Golden/Afterglo",
@@ -17005,7 +17005,7 @@
       "district": "台北市",
       "address": "1樓，Noke Mall，200 樂群三路，中山區，台北市",
       "cuisine": "歐陸當代料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/la-vie-by-thomas-buhner",
       "awards": [
         {
           "guide": "michelin",
@@ -17031,7 +17031,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Mizue",
@@ -18391,7 +18391,7 @@
       "district": "中山區",
       "address": "臺北市中山區樂群二路199號2樓",
       "cuisine": "日式天婦羅",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/tempura-sugimura",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -18405,7 +18405,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "太春小館（民生店）",
@@ -18868,7 +18868,7 @@
       "district": "大安區",
       "address": "臺北市大安區光復南路200號2樓",
       "cuisine": "江浙菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/pei-full",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -18882,7 +18882,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "卉堂",
@@ -19523,10 +19523,10 @@
       "name": "同",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "中正區",
+      "address": "中正區館前路22號2樓 (正旅館藍)",
       "cuisine": "粵菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/junto",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -19540,7 +19540,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "同心圓紅豆餅",
@@ -19789,7 +19789,7 @@
       "district": "大同區",
       "address": "臺北市大同區民樂街6號",
       "cuisine": "麵食",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/kou-gyu-rou",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -19803,7 +19803,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "江南春",
@@ -22783,7 +22783,7 @@
       "district": "大安區",
       "address": "臺北市大安區安和路1段135巷4號1樓",
       "cuisine": "日本菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/kiku-1216129",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -22797,7 +22797,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "教父牛排",
@@ -23938,7 +23938,7 @@
       "district": "松山區",
       "address": "松山區敦化北路139號",
       "cuisine": "粵菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/rong-ju",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -23952,7 +23952,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "榕美樹館",
@@ -24152,7 +24152,7 @@
       "district": "大安區",
       "address": "大安區四維路375之2號",
       "cuisine": "日本菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/dasuke",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -24166,7 +24166,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "鳳城燒臘粵菜",
@@ -24766,10 +24766,10 @@
       "name": "鮨香",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "中山區",
+      "address": "中山區林森北路485巷10號",
       "cuisine": "壽司",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/sushi-kaori",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -24783,7 +24783,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "鮨野村",
@@ -25171,7 +25171,7 @@
       "district": "大安區",
       "address": "5，19弄，52巷，四維路，大安區，台北市",
       "cuisine": "日本料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/ajimi",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -25185,7 +25185,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "akeruE Dessert",
@@ -25361,7 +25361,7 @@
       "district": "松山區",
       "address": "6樓，Mandarin Oriental Hotel，158 敦化北路，松山區，台北市",
       "cuisine": "Italian",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/bencotto",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -25387,7 +25387,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Bogart's Smokehouse Taipei",
@@ -26280,7 +26280,7 @@
       "district": "中山區",
       "address": "B3，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
       "cuisine": "日式串燒",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/fumee",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -26306,7 +26306,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Gustoso Italian Restaurant",
@@ -26914,7 +26914,7 @@
       "district": "大安區",
       "address": "6，25弄，300巷，第4段，仁愛路，大安區，台北市",
       "cuisine": "法國當代料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/lin",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -26928,7 +26928,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Little Lam Noodle Bar",
@@ -28335,7 +28335,7 @@
       "district": "大安區",
       "address": "15，33弄，216巷，第4段，忠孝東路，大安區，台北市",
       "cuisine": "創意料理",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/yuu",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -28349,7 +28349,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "Zaap",
@@ -29852,7 +29852,7 @@
       "district": "台南",
       "address": "台南市",
       "cuisine": "小吃",
-      "source": "https://udn.com/news/story/7266/8933484",
+      "source": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/lien-wu-chiao-lamb-soup",
       "awards": [
         {
           "guide": "bib",
@@ -29866,7 +29866,7 @@
           "notes": "來源網址由批次來源規則補齊"
         }
       ],
-      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03"
+      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
     },
     {
       "name": "曉璘海產碳烤",
@@ -30158,10 +30158,10 @@
       "name": "川泰號虱目魚丸",
       "aliases": [],
       "city": "臺南市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "中西區",
+      "address": "中西區大同路一段222號",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/chuan-tai-hao-milkfish-ball",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -30175,7 +30175,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "公園口紅燒土魠魚焿",
@@ -31450,10 +31450,10 @@
       "name": "啢啢餐桌",
       "aliases": [],
       "city": "臺南市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "北區",
+      "address": "北區民德路85巷63號",
       "cuisine": "時尚歐陸菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/liang-liang-table",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -31467,7 +31467,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "基明飯桌仔",
@@ -31877,10 +31877,10 @@
       "name": "傳家鹹粥",
       "aliases": [],
       "city": "臺南市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "安平區",
+      "address": "安平區慶平路410號",
       "cuisine": "小吃",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/chuan-chia-congee",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -31894,7 +31894,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "圓環牛肉湯",
@@ -32365,10 +32365,10 @@
       "name": "繭 小料理",
       "aliases": [],
       "city": "臺南市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "中西區",
+      "address": "中西區府前路二段206巷6號",
       "cuisine": "創新菜",
-      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+      "source": "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/mayu-cocoon",
       "awards": [
         {
           "guide": "michelin_selected",
@@ -32382,7 +32382,7 @@
           "notes": "Michelin detail URL patched from official 2025 snapshot"
         }
       ],
-      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03"
+      "notes": "Michelin Tainan live browser merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core address unicode normalization 2026-07-04"
     },
     {
       "name": "寶來香餅舖",
