@@ -810,7 +810,7 @@
       "city": "花蓮縣",
       "district": "秀林鄉",
       "address": "花蓮縣秀林鄉富世256號",
-      "cuisine": "菜系待確認",
+      "cuisine": "一般餐飲",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -828,7 +828,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859"
+      "notes": "FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859 | FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859"
     },
     {
       "name": "米崙丼飯屋",
@@ -10482,7 +10482,7 @@
       "city": "彰化縣",
       "district": "二林鎮",
       "address": "彰化縣二林鎮中山路119號",
-      "cuisine": "菜系待確認",
+      "cuisine": "一般餐廳",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -10500,7 +10500,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "肉粽大王",
@@ -10664,7 +10664,7 @@
       "city": "彰化縣",
       "district": "社頭鄉",
       "address": "彰化縣社頭鄉員集路二段568號",
-      "cuisine": "菜系待確認",
+      "cuisine": "一般餐廳",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -10682,7 +10682,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "阿三肉圓",
@@ -11594,7 +11594,7 @@
       "city": "臺中市",
       "district": "西屯區",
       "address": "臺中市西屯區惠中路一段88號27樓",
-      "cuisine": "菜系待確認",
+      "cuisine": "鍋物",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -11612,7 +11612,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "沙卡",
@@ -18620,9 +18620,9 @@
       "name": "TIPSY Sparrow",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市",
-      "address": "台北市",
-      "cuisine": "菜系待確認",
+      "district": "信義區",
+      "address": "臺北市信義區松仁路38號1樓",
+      "cuisine": "餐酒館 / 美法料理",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -18640,7 +18640,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | Vogue 2024 TIPSY Sparrow 開幕報導 https://www.vogue.com.tw/article/tipsy-sparrow-%E5%8F%B0%E5%8C%97%E5%AF%92%E8%88%8D%E8%89%BE%E7%BE%8E%E9%85%92%E5%BA%97"
     },
     {
       "name": "Wok by O'BOND",
@@ -20447,9 +20447,9 @@
       "name": "北投大地酒店 奇岩一號中餐廳",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "北投區",
+      "address": "臺北市北投區奇岩路1號",
+      "cuisine": "川湘料理 / 中餐廳",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -20467,7 +20467,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | 北投大地酒店官方餐廳介紹 https://www.thegaiahotel.com/"
     },
     {
       "name": "北門鳳李冰",
@@ -24359,7 +24359,7 @@
       "city": "臺北市",
       "district": "信義區",
       "address": "臺北市信義區莊敬路239巷1弄1號",
-      "cuisine": "菜系待確認",
+      "cuisine": "法式甜點 / 烘焙",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -24377,7 +24377,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "真的好海鮮",
@@ -27840,9 +27840,9 @@
       "name": "CLOVER BELLAVITA",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "信義區",
+      "address": "臺北市信義區松仁路28號4樓",
+      "cuisine": "法式料理",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -27860,7 +27860,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | BELLAVITA 官方餐廳介紹 https://www.bellavita.com.tw/dining/cloverbellavita.php"
     },
     {
       "name": "COAST",
@@ -28869,9 +28869,9 @@
       "name": "Kaffee Amadeus 阿瑪迪斯咖啡館",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "大同區",
+      "address": "臺北市大同區承德路1段1號2樓",
+      "cuisine": "奧地利咖啡 / 歐陸料理 / 甜點",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -28889,7 +28889,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Q square 京站官方介紹 https://www.qsquare.com.tw/m/food-detail.php?lv01_type=2F&lv02_id=A2504230001cc46"
     },
     {
       "name": "Kaju菓樹",
@@ -30087,9 +30087,9 @@
       "name": "Salt & Stone",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "信義區",
+      "address": "臺北市信義區市府路45號4樓",
+      "cuisine": "加州義式料理",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -30121,7 +30121,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | TAIPEI 101 品牌介紹 https://stage.taipei101mall.com.tw/brand/87"
     },
     {
       "name": "Sam Liu 小山姆",
