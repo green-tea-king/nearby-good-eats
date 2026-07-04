@@ -4,13 +4,19 @@ window.RANK_FILTER_DEFS = [
     key: "travel",
     label: "交通",
     tier: "route",
-    opts: [{ label: "走路" }, { label: "開車" }],
+    opts: [
+      { label: "走路" },
+      { label: "開車" }
+    ],
   },
   {
     key: "open",
     label: "營業",
     tier: "hard",
-    opts: [{ label: "不限" }, { label: "營業中" }],
+    opts: [
+      { label: "不限" },
+      { label: "營業中" }
+    ],
   },
   {
     key: "meal",
@@ -56,7 +62,10 @@ window.RANK_FILTER_DEFS = [
     key: "diet",
     label: "飲食",
     tier: "hard",
-    opts: [{ label: "不限" }, { label: "素食", query: "素食 vegan vegetarian 餐廳" }],
+    opts: [
+      { label: "不限" },
+      { label: "素食", query: "素食 vegan vegetarian 餐廳" },
+    ],
   },
   {
     key: "award",
