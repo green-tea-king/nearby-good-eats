@@ -561,8 +561,8 @@
       "aliases": [],
       "city": "宜蘭縣",
       "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "address": "宜蘭縣頭城鎮港口里港墘路60號2樓",
+      "cuisine": "飲品 / 咖啡館",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -580,7 +580,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "臺灣穆斯林友善餐旅資料 補強 2026-07-04 https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
     },
     {
       "name": "大仁哥蔗香脆皮桶仔雞",
@@ -6710,7 +6710,7 @@
       "city": "雲林縣",
       "district": "北港鎮",
       "address": "雲林縣北港鎮賜福里中正路２４號",
-      "cuisine": "菜系待確認",
+      "cuisine": "小型餐飲業",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -6728,7 +6728,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "溝仔垻清涼冰店",
@@ -8224,9 +8224,9 @@
       "name": "龍鳳堂餅舖",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "蘆洲區",
+      "address": "新北市蘆洲區中正路49號1樓",
+      "cuisine": "糕餅 / 中式甜點",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -8244,7 +8244,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "蘆洲-總讚手作蔥餅",
@@ -10534,7 +10534,7 @@
       "city": "彰化縣",
       "district": "員林市",
       "address": "彰化縣員林市萬年路3段65號1樓",
-      "cuisine": "菜系待確認",
+      "cuisine": "甜點 / 冰品",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -10552,7 +10552,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "怡古齋人文茶館",
@@ -13911,9 +13911,9 @@
       "name": "許愿 無毒農產烘焙×飲食空間",
       "aliases": [],
       "city": "臺中市",
-      "district": "行政區待確認",
+      "district": "西區",
       "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "cuisine": "烘焙與飯食",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -13931,7 +13931,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": ""
+      "notes": "Green Media 2025 國際綠色餐飲指南獎 補強 2026-07-04 https://greenmedia.today/article_detail.php?cid=7&mid=1410"
     },
     {
       "name": "陳記涼茶本舖",
@@ -14540,9 +14540,9 @@
       "name": "豐仁冰",
       "aliases": [],
       "city": "臺中市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "台中市",
+      "address": "台中市北區雙十路二段15號",
+      "cuisine": "冰品 / 甜湯",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -14560,7 +14560,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859"
     },
     {
       "name": "豐原廟東菱角酥",
@@ -18841,9 +18841,9 @@
       "name": "一品山西刀削麵之家",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "中正區",
+      "address": "臺北市中正區羅斯福路4段24巷12弄10之1號1樓",
+      "cuisine": "山西麵食",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -18861,7 +18861,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "人和園雲南餐廳",
@@ -19024,7 +19024,7 @@
       "city": "臺北市",
       "district": "北投區",
       "address": "臺北市北投區中山路32號",
-      "cuisine": "菜系待確認",
+      "cuisine": "法式料理 / 溫泉旅宿餐飲",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -19042,7 +19042,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Core awards batch6 mirrored Michelin 承家 row 2026-07-03"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | Core awards batch6 mirrored Michelin 承家 row 2026-07-03 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "三元號魯肉飯",
@@ -19491,7 +19491,7 @@
       "city": "臺北市",
       "district": "中山區",
       "address": "臺北市中山區敬業二路199號5樓",
-      "cuisine": "菜系待確認",
+      "cuisine": "燒肉",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -19509,7 +19509,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "大龍峒肉羹-米粉湯",
@@ -20086,7 +20086,7 @@
       "city": "臺北市",
       "district": "中山區",
       "address": "臺北市中山區雙城街25巷9號1樓",
-      "cuisine": "菜系待確認",
+      "cuisine": "日本料理 / 蟹懷石",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -20104,7 +20104,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "木白甜點咖啡店",
@@ -20616,9 +20616,9 @@
       "name": "台北亞都麗緻大飯店 巴賽麗廳",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "中山區",
+      "address": "臺北市中山區民權東路2段41號1F",
+      "cuisine": "法式料理",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -20636,7 +20636,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "台北美福大飯店 潮粵坊港潮餐廳",
@@ -21549,9 +21549,9 @@
       "name": "江南春",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "大安區",
+      "address": "臺北市大安區仁愛路3段160號3樓",
+      "cuisine": "江浙菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -21569,7 +21569,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "江家原汁排骨湯",
@@ -22015,9 +22015,9 @@
       "name": "秀蘭小館",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "大安區",
+      "address": "臺北市大安區信義路2段198巷5-5號",
+      "cuisine": "家常中菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -22035,7 +22035,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859"
     },
     {
       "name": "私・犇",
@@ -22248,9 +22248,9 @@
       "name": "亞都麗緻大飯店 巴賽麗廳 La Brasserie",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "中山區",
+      "address": "臺北市中山區民權東路2段41號1F",
+      "cuisine": "法式料理 / 甜點",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -22268,7 +22268,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "京丘・炭火燒鳥專門店",
@@ -22791,9 +22791,9 @@
       "name": "東方樓",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "南港區",
+      "address": "臺北市南港區經貿一路168號3F",
+      "cuisine": "粵菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -22811,7 +22811,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "板前中山",
@@ -23723,9 +23723,9 @@
       "name": "拾米屋",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "北投區",
+      "address": "臺北市北投區泉源路12號1樓",
+      "cuisine": "咖哩 / 甜點",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -23743,7 +23743,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "拾穗Bakery",
@@ -23970,9 +23970,9 @@
       "name": "胖都督中式精緻麵食",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "松山區",
+      "address": "臺北市松山區八德路386號",
+      "cuisine": "中式麵食",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -23990,7 +23990,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": ""
+      "notes": "FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859"
     },
     {
       "name": "重本書店",
@@ -24822,9 +24822,9 @@
       "name": "梁記嘉義雞肉飯",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "中正區",
+      "address": "臺北市中正區汀州路3段233號",
+      "cuisine": "雞肉飯 / 小吃",
       "source": "https://500times.udn.com/wtimes/story/123497/8874123",
       "awards": [
         {
@@ -24842,7 +24842,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "欲罷不能鹹水雞東區商圈店",
@@ -25364,9 +25364,9 @@
       "name": "晴光紅豆餅",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "內湖區",
+      "address": "臺北市內湖區舊宗路1段188號1樓",
+      "cuisine": "紅豆餅 / 甜點",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -25384,7 +25384,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "晴光意麵",
@@ -25467,9 +25467,9 @@
       "name": "港記酥皇",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "萬華區",
+      "address": "臺北市萬華區漢中街6號之2",
+      "cuisine": "港式糕餅",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -25487,7 +25487,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "滋養和菓子",
@@ -30594,7 +30594,7 @@
       "city": "臺北市",
       "district": "信義區",
       "address": "臺北市信義區松智路17號46樓",
-      "cuisine": "菜系待確認",
+      "cuisine": "鐵板燒",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -30612,7 +30612,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "TRIPLE T",
@@ -30852,7 +30852,7 @@
       "city": "臺北市",
       "district": "信義區",
       "address": "臺北市信義區吳興街345巷6號",
-      "cuisine": "菜系待確認",
+      "cuisine": "泰國菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -30870,7 +30870,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
+      "notes": "FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591 | FDA 114年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/TC/siteContent.aspx?sid=13591"
     },
     {
       "name": "王記府城肉粽",
@@ -32048,7 +32048,7 @@
       "city": "臺南市",
       "district": "中西區",
       "address": "臺南市中西區忠義路二段84巷7號",
-      "cuisine": "菜系待確認",
+      "cuisine": "臺菜 / 辦桌菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -32066,7 +32066,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
     },
     {
       "name": "梅鑫海產",
