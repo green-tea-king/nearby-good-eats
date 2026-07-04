@@ -46,7 +46,7 @@ if ($Html -notlike "*<div class=`"rank-filters`" id=`"rankFilters`"></div>*") {
 if ($Html -like '*rankFilters").classList.add("hidden")*' -or $Html -like '*rankFilters")?.classList.add("hidden")*') {
   throw "Leaderboard filters must not be hidden by runtime close logic"
 }
-foreach ($RequiredAwardMultiSelectText in @("function rankAwardValues", "rankAwardValues(f).includes(o.label)", "wanted.some")) {
+foreach ($RequiredAwardMultiSelectText in @("function rankAwardValues", "selectedAwards.includes(o.label)", "wanted.some")) {
   if ($Html -notlike "*$RequiredAwardMultiSelectText*") {
     throw "Award filter multi-select support is missing: $RequiredAwardMultiSelectText"
   }
@@ -68,8 +68,12 @@ if ($SettingsText -notlike "*externalTestMode: true*") {
 }
 
 $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
-$MultiAwardLabel = "$([char]0x8A55)$([char]0x9451)$([char]0x53EF)$([char]0x8907)$([char]0x9078)"
-foreach ($RequiredFilterText in @("key:`"award`"", "tier:`"static`"", $MultiAwardLabel, "guide:`"michelin`"", "level:`"3星`"", "level:`"2星`"", "level:`"1星`"", "guide:`"michelin_selected`"", "guide:`"bib`"", "guide:`"500plate`"", "guide:`"500bowl`"", "guide:`"500sweet`"")) {
+$AwardLabel = "$([char]0x8A55)$([char]0x9451)"
+$StarChar = [string][char]0x661F
+$Level3 = "3$StarChar"
+$Level2 = "2$StarChar"
+$Level1 = "1$StarChar"
+foreach ($RequiredFilterText in @("key: `"award`"", "tier: `"static`"", $AwardLabel, "guide: `"michelin`"", "level: `"$Level3`"", "level: `"$Level2`"", "level: `"$Level1`"", "guide: `"michelin_selected`"", "guide: `"bib`"", "guide: `"500plate`"", "guide: `"500bowl`"", "guide: `"500sweet`"")) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
