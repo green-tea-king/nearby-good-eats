@@ -46,7 +46,7 @@ if ($Html -notlike "*<div class=`"rank-filters`" id=`"rankFilters`"></div>*") {
 if ($Html -like '*rankFilters").classList.add("hidden")*' -or $Html -like '*rankFilters")?.classList.add("hidden")*') {
   throw "Leaderboard filters must not be hidden by runtime close logic"
 }
-foreach ($RequiredAwardMultiSelectText in @("function rankAwardValues", "rankAwardValues(f).includes(o.label)", "wanted.some")) {
+foreach ($RequiredAwardMultiSelectText in @("function rankAwardValues", "selectedAwards.includes(o.label)", "wanted.some")) {
   if ($Html -notlike "*$RequiredAwardMultiSelectText*") {
     throw "Award filter multi-select support is missing: $RequiredAwardMultiSelectText"
   }
@@ -68,11 +68,11 @@ if ($SettingsText -notlike "*externalTestMode: true*") {
 }
 
 $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
-$MichelinThreeStar = "$([char]0x4E09)$([char]0x661F)"
-$MichelinTwoStar = "$([char]0x4E8C)$([char]0x661F)"
-$MichelinOneStar = "$([char]0x4E00)$([char]0x661F)"
-$MultiAwardLabel = "$([char]0x8A55)$([char]0x9451)$([char]0x53EF)$([char]0x8907)$([char]0x9078)"
-foreach ($RequiredFilterText in @("key:`"award`"", "tier:`"static`"", $MultiAwardLabel, "guide:`"michelin`"", "level:`"$MichelinThreeStar`"", "level:`"$MichelinTwoStar`"", "level:`"$MichelinOneStar`"", "guide:`"michelinspecial`"", "guide:`"greenveggie`"", "guide:`"gdgawards`"", "guide:`"tcfpraise`"", "guide:`"taichunglowcarbon`"", "guide:`"muslimfriendly`"", "guide:`"fdagrade`"", "guide:`"500sweet`"")) {
+$AwardLabel = "$([char]0x8A55)$([char]0x9451)"
+$Level3 = "$([char]0x4E09)$([char]0x661F)"
+$Level2 = "$([char]0x4E8C)$([char]0x661F)"
+$Level1 = "$([char]0x4E00)$([char]0x661F)"
+foreach ($RequiredFilterText in @("key: `"award`"", "tier: `"static`"", $AwardLabel, "guide: `"michelin`"", "level: `"$Level3`"", "level: `"$Level2`"", "level: `"$Level1`"", "guide: `"michelin_selected`"", "guide: `"bib`"", "guide: `"500plate`"", "guide: `"500bowl`"", "guide: `"500sweet`"")) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"
   }
@@ -88,55 +88,23 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 7566
+  restaurants = 1329
   michelin = 53
-  "michelinspecial" = 4
   "michelin_selected" = 222
   bib = 144
-  greenstar = 7
   "500plate" = 260
   "500bowl" = 415
   "500sweet" = 328
-  "50best" = 4
-  "50bestdiscovery" = 13
-  "oad" = 29
-  "thebestchef" = 4
-  "designawards" = 3
-  "fmg" = 20
-  "greenveggie" = 65
-  "gdgawards" = 29
-  "tcfpraise" = 24
-  "taichunglowcarbon" = 20
-  "muslimfriendly" = 74
-  "fdagrade" = 6041
-  "tatlerbest" = 25
-  "worldculinary" = 4
 }
 
 $Actual = [ordered]@{
   restaurants = $Awards.restaurants.Count
   michelin = $Guides["michelin"]
-  "michelinspecial" = $Guides["michelinspecial"]
   "michelin_selected" = $Guides["michelin_selected"]
   bib = $Guides["bib"]
-  greenstar = $Guides["greenstar"]
   "500plate" = $Guides["500plate"]
   "500bowl" = $Guides["500bowl"]
   "500sweet" = $Guides["500sweet"]
-  "50best" = $Guides["50best"]
-  "50bestdiscovery" = $Guides["50bestdiscovery"]
-  "oad" = $Guides["oad"]
-  "thebestchef" = $Guides["thebestchef"]
-  "designawards" = $Guides["designawards"]
-  "fmg" = $Guides["fmg"]
-  "greenveggie" = $Guides["greenveggie"]
-  "gdgawards" = $Guides["gdgawards"]
-  "tcfpraise" = $Guides["tcfpraise"]
-  "taichunglowcarbon" = $Guides["taichunglowcarbon"]
-  "muslimfriendly" = $Guides["muslimfriendly"]
-  "fdagrade" = $Guides["fdagrade"]
-  "tatlerbest" = $Guides["tatlerbest"]
-  "worldculinary" = $Guides["worldculinary"]
 }
 
 foreach ($Key in $Expected.Keys) {

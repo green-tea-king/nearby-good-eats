@@ -1,6 +1,6 @@
 {
   "version": "external-source-coverage-2026-07-01",
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "policy": {
     "runtimeExternalLookup": false,
     "costFirst": true,
@@ -12,7 +12,7 @@
     ]
   },
   "summary": {
-    "awardsRestaurants": 11000,
+    "awardsRestaurants": 1329,
     "externalSignalSources": 14,
     "externalSignalRestaurants": 19,
     "externalSignals": 23,
@@ -36,7 +36,9 @@
     "tcfPraiseNeedsCityReview": 8,
     "taichungLowCarbonCandidates": 20,
     "muslimFriendlyCandidates": 75,
+    "fdaRestaurantHygiene2023Candidates": 4060,
     "fdaRestaurantHygieneCandidates": 6104,
+    "fdaRestaurantHygienePingtung2025Candidates": 125,
     "moenvGreenCandidates": 3471,
     "fdaHaccpHotelCandidates": 42,
     "amotTraceCandidates": 31,
@@ -160,7 +162,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/green-veggie-guide-2025-candidates.json",
-      "count": 65,
+      "count": 0,
       "candidates": 65,
       "needsCityReview": 0,
       "runtimeLookup": false
@@ -213,7 +215,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/muslim-friendly-2026-candidates.json",
-      "count": 74,
+      "count": 0,
       "candidates": 75,
       "runtimeLookup": false
     },
@@ -223,8 +225,28 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/fda-restaurant-hygiene-2024-candidates.json",
-      "count": 6041,
+      "count": 0,
       "candidates": 6104,
+      "runtimeLookup": false
+    },
+    {
+      "id": "fdagrade-2023",
+      "label": "餐飲衛生分級 2023",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/fda-restaurant-hygiene-2023-candidates.json",
+      "count": 4060,
+      "candidates": 4060,
+      "runtimeLookup": false
+    },
+    {
+      "id": "fdagrade-pingtung-2025",
+      "label": "屏東餐飲衛生分級 2025",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "candidatesFile": "assets/fda-restaurant-hygiene-pingtung-2025-candidates.json",
+      "count": 125,
+      "candidates": 125,
       "runtimeLookup": false
     },
     {
@@ -233,7 +255,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/moenv-green-restaurants-2026-candidates.json",
-      "count": 3464,
+      "count": 0,
       "candidates": 3471,
       "runtimeLookup": false
     },
@@ -243,7 +265,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/fda-haccp-hotel-restaurants-2026-candidates.json",
-      "count": 42,
+      "count": 0,
       "candidates": 42,
       "runtimeLookup": false
     },
@@ -253,7 +275,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/amot-traceability-awards-2024-candidates.json",
-      "count": 100,
+      "count": 0,
       "candidates": 31,
       "needsManualReview": 9,
       "runtimeLookup": false
@@ -264,7 +286,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/amot-traceability-awards-2026-candidates.json",
-      "count": 100,
+      "count": 0,
       "candidates": 69,
       "needsManualReview": 3,
       "runtimeLookup": false
@@ -275,7 +297,7 @@
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
       "candidatesFile": "assets/taichung-golden-awards-2024-candidates.json",
-      "count": 398,
+      "count": 0,
       "candidates": 398,
       "runtimeLookup": false
     },

@@ -18,14 +18,16 @@ const michelinSpecialCandidatesPath = path.join(repoRoot, "assets", "michelin-sp
 const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-candidates.json");
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
+const fdaRestaurantHygiene2023CandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2023-candidates.json");
 const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
+const fdaRestaurantHygienePingtung2025CandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-pingtung-2025-candidates.json");
 const moenvGreenCandidatesPath = path.join(repoRoot, "assets", "moenv-green-restaurants-2026-candidates.json");
 const fdaHaccpHotelCandidatesPath = path.join(repoRoot, "assets", "fda-haccp-hotel-restaurants-2026-candidates.json");
 const amotTraceCandidatesPath = path.join(repoRoot, "assets", "amot-traceability-awards-2024-candidates.json");
 const amotTrace2026CandidatesPath = path.join(repoRoot, "assets", "amot-traceability-awards-2026-candidates.json");
 const taichungGoldCandidatesPath = path.join(repoRoot, "assets", "taichung-golden-awards-2024-candidates.json");
 const reportPath = path.join(repoRoot, "assets", "external-awards-merge-report.json");
-const MIN_GUIDE_COUNT = 30;
+const MIN_GUIDE_COUNT = 100;
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -138,7 +140,9 @@ function main() {
   const tcfPraiseCandidates = fs.existsSync(tcfPraiseCandidatesPath) ? readJson(tcfPraiseCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
+  const fdaRestaurantHygiene2023Candidates = fs.existsSync(fdaRestaurantHygiene2023CandidatesPath) ? readJson(fdaRestaurantHygiene2023CandidatesPath) : { restaurants: [] };
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
+  const fdaRestaurantHygienePingtung2025Candidates = fs.existsSync(fdaRestaurantHygienePingtung2025CandidatesPath) ? readJson(fdaRestaurantHygienePingtung2025CandidatesPath) : { restaurants: [] };
   const moenvGreenCandidates = fs.existsSync(moenvGreenCandidatesPath) ? readJson(moenvGreenCandidatesPath) : { restaurants: [] };
   const fdaHaccpHotelCandidates = fs.existsSync(fdaHaccpHotelCandidatesPath) ? readJson(fdaHaccpHotelCandidatesPath) : { restaurants: [] };
   const amotTraceCandidates = fs.existsSync(amotTraceCandidatesPath) ? readJson(amotTraceCandidatesPath) : { restaurants: [] };
@@ -160,7 +164,9 @@ function main() {
     ...eligibleRows(tcfPraiseCandidates),
     ...eligibleRows(taichungLowCarbonCandidates),
     ...eligibleRows(muslimFriendlyCandidates),
+    ...eligibleRows(fdaRestaurantHygiene2023Candidates),
     ...eligibleRows(fdaRestaurantHygieneCandidates),
+    ...eligibleRows(fdaRestaurantHygienePingtung2025Candidates),
     ...eligibleRows(moenvGreenCandidates),
     ...eligibleRows(fdaHaccpHotelCandidates),
     ...eligibleRows(amotTraceCandidates),
@@ -187,7 +193,9 @@ function main() {
       ...(fs.existsSync(tcfPraiseCandidatesPath) ? ["assets/tcf-praise-2025-candidates.json"] : []),
       ...(fs.existsSync(taichungLowCarbonCandidatesPath) ? ["assets/taichung-low-carbon-2023-candidates.json"] : []),
       ...(fs.existsSync(muslimFriendlyCandidatesPath) ? ["assets/muslim-friendly-2026-candidates.json"] : []),
+      ...(fs.existsSync(fdaRestaurantHygiene2023CandidatesPath) ? ["assets/fda-restaurant-hygiene-2023-candidates.json"] : []),
       ...(fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? ["assets/fda-restaurant-hygiene-2024-candidates.json"] : []),
+      ...(fs.existsSync(fdaRestaurantHygienePingtung2025CandidatesPath) ? ["assets/fda-restaurant-hygiene-pingtung-2025-candidates.json"] : []),
       ...(fs.existsSync(moenvGreenCandidatesPath) ? ["assets/moenv-green-restaurants-2026-candidates.json"] : []),
       ...(fs.existsSync(fdaHaccpHotelCandidatesPath) ? ["assets/fda-haccp-hotel-restaurants-2026-candidates.json"] : []),
       ...(fs.existsSync(amotTraceCandidatesPath) ? ["assets/amot-traceability-awards-2024-candidates.json"] : []),
@@ -210,7 +218,9 @@ function main() {
     tcfPraiseCandidates: (tcfPraiseCandidates.restaurants || []).length,
     taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
     muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
+    fdaRestaurantHygiene2023Candidates: (fdaRestaurantHygiene2023Candidates.restaurants || []).length,
     fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
+    fdaRestaurantHygienePingtung2025Candidates: (fdaRestaurantHygienePingtung2025Candidates.restaurants || []).length,
     moenvGreenCandidates: (moenvGreenCandidates.restaurants || []).length,
     fdaHaccpHotelCandidates: (fdaHaccpHotelCandidates.restaurants || []).length,
     amotTraceCandidates: (amotTraceCandidates.restaurants || []).length,
@@ -312,7 +322,9 @@ function main() {
     ...(tcfPraiseCandidates.sourceUrl ? [tcfPraiseCandidates.sourceUrl] : []),
     ...(taichungLowCarbonCandidates.sourceUrl ? [taichungLowCarbonCandidates.sourceUrl] : []),
     ...(muslimFriendlyCandidates.sourceUrl ? [muslimFriendlyCandidates.sourceUrl] : []),
+    ...(fdaRestaurantHygiene2023Candidates.sourcePageUrl ? [fdaRestaurantHygiene2023Candidates.sourcePageUrl] : []),
     ...(fdaRestaurantHygieneCandidates.sourcePageUrl ? [fdaRestaurantHygieneCandidates.sourcePageUrl] : []),
+    ...(fdaRestaurantHygienePingtung2025Candidates.sourcePageUrl ? [fdaRestaurantHygienePingtung2025Candidates.sourcePageUrl] : []),
     ...(moenvGreenCandidates.sourcePageUrl ? [moenvGreenCandidates.sourcePageUrl] : []),
     ...(fdaHaccpHotelCandidates.sourcePageUrl ? [fdaHaccpHotelCandidates.sourcePageUrl] : []),
   ].filter(Boolean))];

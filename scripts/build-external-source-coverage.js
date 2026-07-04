@@ -19,7 +19,9 @@ const michelinSpecialCandidatesPath = path.join(repoRoot, "assets", "michelin-sp
 const tcfPraiseCandidatesPath = path.join(repoRoot, "assets", "tcf-praise-2025-candidates.json");
 const taichungLowCarbonCandidatesPath = path.join(repoRoot, "assets", "taichung-low-carbon-2023-candidates.json");
 const muslimFriendlyCandidatesPath = path.join(repoRoot, "assets", "muslim-friendly-2026-candidates.json");
+const fdaRestaurantHygiene2023CandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2023-candidates.json");
 const fdaRestaurantHygieneCandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-2024-candidates.json");
+const fdaRestaurantHygienePingtung2025CandidatesPath = path.join(repoRoot, "assets", "fda-restaurant-hygiene-pingtung-2025-candidates.json");
 const moenvGreenCandidatesPath = path.join(repoRoot, "assets", "moenv-green-restaurants-2026-candidates.json");
 const fdaHaccpHotelCandidatesPath = path.join(repoRoot, "assets", "fda-haccp-hotel-restaurants-2026-candidates.json");
 const amotTraceCandidatesPath = path.join(repoRoot, "assets", "amot-traceability-awards-2024-candidates.json");
@@ -78,7 +80,9 @@ function main() {
   const tcfPraiseCandidates = fs.existsSync(tcfPraiseCandidatesPath) ? readJson(tcfPraiseCandidatesPath) : { restaurants: [], needsCityReview: [] };
   const taichungLowCarbonCandidates = fs.existsSync(taichungLowCarbonCandidatesPath) ? readJson(taichungLowCarbonCandidatesPath) : { restaurants: [] };
   const muslimFriendlyCandidates = fs.existsSync(muslimFriendlyCandidatesPath) ? readJson(muslimFriendlyCandidatesPath) : { restaurants: [] };
+  const fdaRestaurantHygiene2023Candidates = fs.existsSync(fdaRestaurantHygiene2023CandidatesPath) ? readJson(fdaRestaurantHygiene2023CandidatesPath) : { restaurants: [] };
   const fdaRestaurantHygieneCandidates = fs.existsSync(fdaRestaurantHygieneCandidatesPath) ? readJson(fdaRestaurantHygieneCandidatesPath) : { restaurants: [] };
+  const fdaRestaurantHygienePingtung2025Candidates = fs.existsSync(fdaRestaurantHygienePingtung2025CandidatesPath) ? readJson(fdaRestaurantHygienePingtung2025CandidatesPath) : { restaurants: [] };
   const moenvGreenCandidates = fs.existsSync(moenvGreenCandidatesPath) ? readJson(moenvGreenCandidatesPath) : { restaurants: [] };
   const fdaHaccpHotelCandidates = fs.existsSync(fdaHaccpHotelCandidatesPath) ? readJson(fdaHaccpHotelCandidatesPath) : { restaurants: [] };
   const amotTraceCandidates = fs.existsSync(amotTraceCandidatesPath) ? readJson(amotTraceCandidatesPath) : { restaurants: [], needsManualReview: [] };
@@ -131,7 +135,9 @@ function main() {
       tcfPraiseNeedsCityReview: (tcfPraiseCandidates.needsCityReview || []).length,
       taichungLowCarbonCandidates: (taichungLowCarbonCandidates.restaurants || []).length,
       muslimFriendlyCandidates: (muslimFriendlyCandidates.restaurants || []).length,
+      fdaRestaurantHygiene2023Candidates: (fdaRestaurantHygiene2023Candidates.restaurants || []).length,
       fdaRestaurantHygieneCandidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
+      fdaRestaurantHygienePingtung2025Candidates: (fdaRestaurantHygienePingtung2025Candidates.restaurants || []).length,
       moenvGreenCandidates: (moenvGreenCandidates.restaurants || []).length,
       fdaHaccpHotelCandidates: (fdaHaccpHotelCandidates.restaurants || []).length,
       amotTraceCandidates: (amotTraceCandidates.restaurants || []).length,
@@ -315,6 +321,26 @@ function main() {
         candidatesFile: "assets/fda-restaurant-hygiene-2024-candidates.json",
         count: guides.fdagrade || 0,
         candidates: (fdaRestaurantHygieneCandidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "fdagrade-2023",
+        label: "餐飲衛生分級 2023",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/fda-restaurant-hygiene-2023-candidates.json",
+        count: (fdaRestaurantHygiene2023Candidates.restaurants || []).length,
+        candidates: (fdaRestaurantHygiene2023Candidates.restaurants || []).length,
+        runtimeLookup: false,
+      },
+      {
+        id: "fdagrade-pingtung-2025",
+        label: "屏東餐飲衛生分級 2025",
+        status: "integrated_data",
+        dataFile: "assets/awards-taiwan.json",
+        candidatesFile: "assets/fda-restaurant-hygiene-pingtung-2025-candidates.json",
+        count: (fdaRestaurantHygienePingtung2025Candidates.restaurants || []).length,
+        candidates: (fdaRestaurantHygienePingtung2025Candidates.restaurants || []).length,
         runtimeLookup: false,
       },
       {
