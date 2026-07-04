@@ -2783,8 +2783,8 @@
       "name": "三輪的店",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "鳳山區",
+      "address": "高雄市鳳山區八德路296巷25號",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2802,14 +2802,14 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | MICHELIN Guide restaurant snippet 2026-07-04 https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/three-wheels"
     },
     {
       "name": "三餐暖食 (苓雅)",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "苓雅區",
+      "address": "高雄市苓雅區中興街167號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -2827,7 +2827,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | MICHELIN Guide restaurant snippet 2026-07-04 https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/three-meals"
     },
     {
       "name": "大胖豬油拌麵",
@@ -3041,8 +3041,8 @@
       "name": "天廚",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "新興區",
+      "address": "高雄市新興區中東街174號",
       "cuisine": "川菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3060,7 +3060,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=8&sNo=0027001"
     },
     {
       "name": "仙桃素",
@@ -3091,8 +3091,8 @@
       "name": "冬瓜與胖子",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "鳥松區",
+      "address": "高雄市鳥松區本舘路89號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3110,7 +3110,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=9&sNo=0027001"
     },
     {
       "name": "北港蔡三代筒仔米糕",
@@ -3142,8 +3142,8 @@
       "name": "古家海鮮",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "左營區",
+      "address": "高雄市左營區德威街55號",
       "cuisine": "海鮮",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3161,7 +3161,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=9&sNo=0027001"
     },
     {
       "name": "台南旺",
@@ -3218,8 +3218,8 @@
       "name": "好蟳屋",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "三民區",
+      "address": "高雄市三民區建工路696號",
       "cuisine": "海鮮",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3237,14 +3237,14 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=11&sNo=0027001"
     },
     {
       "name": "老新台菜 (九如二路)",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "三民區",
+      "address": "高雄市三民區九如二路227號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3262,7 +3262,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=12&sNo=0027001"
     },
     {
       "name": "冷熱飲之家",
@@ -3449,8 +3449,8 @@
       "name": "波記食堂",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "苓雅區",
+      "address": "高雄市苓雅區四維三路162號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3468,7 +3468,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=15&sNo=0027001"
     },
     {
       "name": "芳德豬肉冬粉",
@@ -3500,8 +3500,8 @@
       "name": "長生29",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "鹽埕區",
+      "address": "高雄市鹽埕區河西路3號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3519,7 +3519,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=15&sNo=0027001"
     },
     {
       "name": "阿凡沙茶麻醬麵",
@@ -3785,8 +3785,8 @@
       "name": "柏弘肉燥",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "苓雅區",
+      "address": "高雄市苓雅區青年一路183-1號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -3804,7 +3804,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=17&sNo=0027001"
     },
     {
       "name": "秋",
@@ -3836,8 +3836,8 @@
       "aliases": [],
       "city": "高雄市",
       "district": "鼓山區",
-      "address": "高雄市鼓山區龍德新路222號",
-      "cuisine": "菜系待確認",
+      "address": "高雄市鼓山區龍德新路222號11樓 (萬豪酒店)",
+      "cuisine": "時尚法國菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
@@ -3854,7 +3854,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237"
+      "notes": "FDA 113年度各縣市衛生優良餐飲業者名單 補強 2026-07-03 https://www.fda.gov.tw/tc/siteContent.aspx?sid=13237 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=17&sNo=0027001"
     },
     {
       "name": "若生靜巷",
@@ -4222,8 +4222,8 @@
       "name": "鴨肉珍 (五福四路)",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "鹽埕區",
+      "address": "高雄市鹽埕區五福四路258號",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
@@ -4241,7 +4241,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Taiwan Tourism Administration Michelin directory snippet 2026-07-04 https://www.taiwan.net.tw/m1.aspx?page=27&sNo=0027001"
     },
     {
       "name": "鍾家高雄綠豆湯大王",
