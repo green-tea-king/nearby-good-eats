@@ -611,7 +611,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 <!-- ============ 美食排行榜（各縣市綜合冠軍） ============ -->
 <section id="rankView" class="hidden">
   <div class="rank-head">
-    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.04.14</span></div>
+    <div class="rank-titles"><img class="rank-logo" src="assets/local-food-rank-logo.png?v=transparent-1" alt="在地美食榜"><span class="rank-version" id="appVersion">v07.04.15</span></div>
   </div>
   <div class="rank-filters" id="rankFilters"></div>
   <div class="rank-guide" aria-live="polite" aria-atomic="true">
@@ -1371,7 +1371,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.04.14";
+const APP_VERSION_FALLBACK = "2026.07.04.15";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1398,7 +1398,10 @@ if (!RANK_FILTERS.some(g => g.key === "cuisine")) {
       { label: "西式" },
       { label: "台灣菜" },
       { label: "日本菜" },
+      { label: "韓式" },
+      { label: "火鍋" },
       { label: "麵食" },
+      { label: "燒烤" },
       { label: "小吃" },
       { label: "海鮮" },
       { label: "素食" },
@@ -2646,7 +2649,10 @@ function rankCuisineMatch(item, value){
   if (all.includes(wanted)) return true;
   if (wanted === normalizeCuisineToken("台灣菜")) return all.some(x => x.includes("台灣菜") || x.includes("台菜") || x.includes("臺灣菜"));
   if (wanted === normalizeCuisineToken("日本菜")) return all.some(x => x.includes("日本") || x.includes("日式") || x.includes("壽司") || x.includes("燒鳥") || x.includes("天婦羅"));
+  if (wanted === normalizeCuisineToken("韓式")) return all.some(x => x.includes("韓") || x.includes("韓式") || x.includes("韓國") || x.includes("豆腐鍋") || x.includes("部隊鍋"));
+  if (wanted === normalizeCuisineToken("火鍋")) return all.some(x => x.includes("火鍋") || x.includes("鍋物") || x.includes("麻辣鍋") || x.includes("涮涮鍋") || x.includes("酸菜白肉鍋"));
   if (wanted === normalizeCuisineToken("麵食")) return all.some(x => x.includes("麵"));
+  if (wanted === normalizeCuisineToken("燒烤")) return all.some(x => x.includes("燒烤") || x.includes("烤") || x.includes("串燒") || x.includes("炭烤") || x.includes("燒鳥"));
   if (wanted === normalizeCuisineToken("小吃")) return all.some(x => x.includes("小吃"));
   if (wanted === normalizeCuisineToken("海鮮")) return all.some(x => x.includes("海鮮"));
   if (wanted === normalizeCuisineToken("素食")) return all.some(x => x.includes("素食") || x.includes("蔬食"));
