@@ -69,10 +69,9 @@ if ($SettingsText -notlike "*externalTestMode: true*") {
 
 $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
 $AwardLabel = "$([char]0x8A55)$([char]0x9451)"
-$StarChar = [string][char]0x661F
-$Level3 = "3$StarChar"
-$Level2 = "2$StarChar"
-$Level1 = "1$StarChar"
+$Level3 = "$([char]0x4E09)$([char]0x661F)"
+$Level2 = "$([char]0x4E8C)$([char]0x661F)"
+$Level1 = "$([char]0x4E00)$([char]0x661F)"
 foreach ($RequiredFilterText in @("key: `"award`"", "tier: `"static`"", $AwardLabel, "guide: `"michelin`"", "level: `"$Level3`"", "level: `"$Level2`"", "level: `"$Level1`"", "guide: `"michelin_selected`"", "guide: `"bib`"", "guide: `"500plate`"", "guide: `"500bowl`"", "guide: `"500sweet`"")) {
   if ($FilterRulesText -notlike "*$RequiredFilterText*") {
     throw "Filter rules are missing award level option: $RequiredFilterText"

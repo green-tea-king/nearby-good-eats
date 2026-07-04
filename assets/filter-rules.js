@@ -64,9 +64,9 @@ window.RANK_FILTER_DEFS = [
     tier: "static",
     opts: [
       { label: "不限" },
-      { label: "米其林 1 星", guide: "michelin", level: "1星" },
-      { label: "米其林 2 星", guide: "michelin", level: "2星" },
-      { label: "米其林 3 星", guide: "michelin", level: "3星" },
+      { label: "米其林一星", guide: "michelin", level: "一星" },
+      { label: "米其林二星", guide: "michelin", level: "二星" },
+      { label: "米其林三星", guide: "michelin", level: "三星" },
       { label: "米其林星級", guide: "michelin" },
       { label: "米其林入選", guide: "michelin_selected" },
       { label: "必比登", guide: "bib" },

@@ -1,6 +1,6 @@
 {
   "version": "awards-taiwan-core-guides-v1",
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "scope": [
     "michelin",
     "michelin_selected",
@@ -4925,33 +4925,8 @@
       "name": "秀明豬心冬粉",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
-      "source": "https://udn.com/news/story/7266/8933484",
-      "awards": [
-        {
-          "guide": "bib",
-          "year": 2025,
-          "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
-          "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
-          "extractedDate": "2026-06-30",
-          "awardName": "必比登推介",
-          "notes": "來源網址由批次來源規則補齊",
-          "award": "必比登推介",
-          "extractedAt": "2026-06-30"
-        }
-      ],
-      "notes": "Core awards placeholder normalized 2026-07-03"
-    },
-    {
-      "name": "良佳豬腳",
-      "aliases": [],
-      "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "旗山區",
+      "address": "高雄市旗山區永平街41號",
       "cuisine": "小吃",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -4959,9 +4934,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/hsiu-ming",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/hsiu-ming",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -4969,7 +4944,32 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
+    },
+    {
+      "name": "良佳豬腳",
+      "aliases": [],
+      "city": "高雄市",
+      "district": "三民區",
+      "address": "高雄市三民區陽明路229號",
+      "cuisine": "小吃",
+      "source": "https://udn.com/news/story/7266/8933484",
+      "awards": [
+        {
+          "guide": "bib",
+          "year": 2025,
+          "level": "必比登推介",
+          "url": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/liang-chia-pig-knuckle",
+          "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/liang-chia-pig-knuckle",
+          "extractedDate": "2026-06-30",
+          "awardName": "必比登推介",
+          "notes": "來源網址由批次來源規則補齊",
+          "award": "必比登推介",
+          "extractedAt": "2026-06-30"
+        }
+      ],
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "金 東北私房菜",
@@ -5486,8 +5486,8 @@
       "name": "賣塩順",
       "aliases": [],
       "city": "高雄市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "鼓山區",
+      "address": "高雄市鼓山區青海路173號",
       "cuisine": "臺灣菜",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -5495,9 +5495,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/mai-yen-shun",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/mai-yen-shun",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -5505,7 +5505,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Kaohsiung live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "橋仔頭黃家肉燥飯 (橋頭)",
@@ -8431,8 +8431,8 @@
       "name": "三姐妹農家樂",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "萬里區",
+      "address": "新北市萬里區大坪路23號",
       "cuisine": "臺灣菜",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -8440,9 +8440,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-chieh-mei-nung-chia-le",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-chieh-mei-nung-chia-le",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -8450,7 +8450,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "上好雞肉",
@@ -8506,8 +8506,8 @@
       "name": "山東小館",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "新店區",
+      "address": "新北市新店區中央路133巷19號",
       "cuisine": "中菜",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -8515,9 +8515,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-tung",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-tung",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -8525,7 +8525,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "永和佳香豆漿",
@@ -8607,8 +8607,8 @@
       "name": "宋朝",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "永和區",
+      "address": "新北市永和區復興街72號",
       "cuisine": "臺灣菜",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -8616,9 +8616,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/song-jhao",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/song-jhao",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -8626,7 +8626,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "秀山大飯店",
@@ -8658,8 +8658,8 @@
       "name": "店小二 (大同北路)",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "三重區",
+      "address": "新北市三重區大同北路27號",
       "cuisine": "小吃",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -8667,9 +8667,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/dian-xiao-er-datong-north-road",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/dian-xiao-er-datong-north-road",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -8677,7 +8677,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "門前隱味牛肉麵 三重店",
@@ -8734,8 +8734,8 @@
       "name": "客家小館",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "永和區",
+      "address": "新北市永和區智光街22號",
       "cuisine": "客家菜",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -8743,9 +8743,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/garden-h",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/garden-h",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -8753,14 +8753,14 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "珍品餐飲坊",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "新莊區",
+      "address": "新北市新莊區復興路一段97號",
       "cuisine": "小吃",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -8768,9 +8768,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/jhen-pin",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/jhen-pin",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -8778,7 +8778,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "海園活海鮮餐廳",
@@ -8964,8 +8964,8 @@
       "name": "賴岡山羊肉",
       "aliases": [],
       "city": "新北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "新店區",
+      "address": "新北市新店區建國路10號",
       "cuisine": "小吃",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -8973,9 +8973,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/lai-kang-shan",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/lai-kang-shan",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -8983,7 +8983,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin New Taipei live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "阿柑姨芋圓",
@@ -9439,8 +9439,8 @@
       "name": "弄味小廚",
       "aliases": [],
       "city": "新竹市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "香山區",
+      "address": "新竹市香山區經國路三段92巷56號",
       "cuisine": "客家菜",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -9448,9 +9448,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/nung-wei-hsiao-chu",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/nung-wei-hsiao-chu",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -9458,7 +9458,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Hsinchu City live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "彼刻義式餐酒館",
@@ -10017,8 +10017,8 @@
       "name": "晌午粄食",
       "aliases": [],
       "city": "新竹縣",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "橫山鄉",
+      "address": "新竹縣橫山鄉河堤大道8號",
       "cuisine": "小吃",
       "source": "https://udn.com/news/story/7266/8933484",
       "awards": [
@@ -10026,9 +10026,9 @@
           "guide": "bib",
           "year": 2025,
           "level": "必比登推介",
-          "url": "https://udn.com/news/story/7266/8933484",
+          "url": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/noon-turnip-cake",
           "sourceName": "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection",
-          "sourceUrl": "https://udn.com/news/story/7266/8933484",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/noon-turnip-cake",
           "extractedDate": "2026-06-30",
           "awardName": "必比登推介",
           "notes": "來源網址由批次來源規則補齊",
@@ -10036,7 +10036,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03"
+      "notes": "Michelin Hsinchu County live browser merge 2026-07-03 | Core awards placeholder normalized 2026-07-03 | Michelin official detail enrichment 2026-07-04"
     },
     {
       "name": "善菓堂",
