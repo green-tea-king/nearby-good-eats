@@ -14560,7 +14560,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859 | FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859"
+      "notes": "FDA 112年度各縣市衛生優良餐飲業者名單 補強 2026-07-04 https://www.fda.gov.tw/tc/siteContent.aspx?sid=12859"
     },
     {
       "name": "豐原廟東菱角酥",
@@ -16935,8 +16935,8 @@
       "aliases": [],
       "city": "臺北市",
       "district": "中山區",
-      "address": "台北市中山區中山北路二段63號",
-      "cuisine": "菜系待確認",
+      "address": "台北市中山區遼寧街177號2樓",
+      "cuisine": "粵菜 / 川菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -16954,7 +16954,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Core awards batch18 normalized district format 2026-07-06"
+      "notes": "Core awards batch18 normalized district format 2026-07-06 | Core awards batch21 updated current dining address and cuisine from Ambassador Taipei dining page 2026-07-06 https://www.ambassador-hotels.com/tc/taipei/dining"
     },
     {
       "name": "軟實力",
@@ -18355,7 +18355,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html | Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
+      "notes": "Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
     },
     {
       "name": "Circum-",
@@ -24456,7 +24456,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06 | Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06"
+      "notes": "Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06"
     },
     {
       "name": "茗香園冰室（忠孝店 ）",

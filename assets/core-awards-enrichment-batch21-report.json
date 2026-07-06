@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-07-06T12:58:57.425Z",
+  "updated": 1,
+  "updates": [
+    {
+      "name": "國賓中餐廳",
+      "before": {
+        "district": "中山區",
+        "address": "台北市中山區中山北路二段63號",
+        "cuisine": "菜系待確認",
+        "notes": "Core awards batch18 normalized district format 2026-07-06"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區遼寧街177號2樓",
+        "cuisine": "粵菜 / 川菜",
+        "notes": "Core awards batch18 normalized district format 2026-07-06 | Core awards batch21 updated current dining address and cuisine from Ambassador Taipei dining page 2026-07-06 https://www.ambassador-hotels.com/tc/taipei/dining"
+      }
+    }
+  ]
+}
