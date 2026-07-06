@@ -11412,10 +11412,10 @@
       "name": "与玥樓頂級粵菜餐廳",
       "aliases": [],
       "city": "臺中市",
-      "district": "台中市",
-      "address": "台中市",
-      "cuisine": "宴席餐廳",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "district": "南屯區",
+      "address": "臺中市南屯區公益路二段783號",
+      "cuisine": "粵菜",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
           "guide": "500plate",
@@ -11432,7 +11432,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch17 mirrored Michelin Selected row 与玥樓 2026-07-06"
     },
     {
       "name": "頂粵吉品",
@@ -11914,10 +11914,10 @@
       "name": "梅子活海鮮餐廳",
       "aliases": [],
       "city": "臺中市",
-      "district": "台中",
-      "address": "台中市",
+      "district": "沙鹿區",
+      "address": "臺中市沙鹿區中山路473之2號",
       "cuisine": "海鮮",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
           "guide": "500plate",
@@ -11934,16 +11934,16 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Core awards batch8 mirrored 梅子 cuisine 2026-07-04"
+      "notes": "Core awards batch8 mirrored 梅子 cuisine 2026-07-04 | Core awards batch17 mirrored Michelin Selected row 梅子 2026-07-06"
     },
     {
       "name": "鳥苑 Torien Yakitori",
       "aliases": [],
       "city": "臺中市",
-      "district": "台中",
-      "address": "台中市",
+      "district": "西區",
+      "address": "臺中市西區忠明南路48號",
       "cuisine": "日本菜",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/yakitori-wine",
       "awards": [
         {
           "guide": "500plate",
@@ -11960,7 +11960,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Core awards batch7 mirrored Michelin Selected 鳥苑 cuisine 2026-07-03"
+      "notes": "Core awards batch7 mirrored Michelin Selected 鳥苑 cuisine 2026-07-03 | Core awards batch17 mirrored Michelin Selected row 鳥苑 2026-07-06"
     },
     {
       "name": "富狀元豬腳",
@@ -12080,10 +12080,10 @@
       "name": "溫叨古早味料理餐廳",
       "aliases": [],
       "city": "臺中市",
-      "district": "台中",
-      "address": "台中市",
+      "district": "北屯區",
+      "address": "臺中市北屯區太原路三段191號",
       "cuisine": "臺灣菜",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
       "awards": [
         {
           "guide": "500plate",
@@ -12100,7 +12100,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Core awards batch8 mirrored 溫叨 cuisine 2026-07-04"
+      "notes": "Core awards batch8 mirrored 溫叨 cuisine 2026-07-04 | Core awards batch17 mirrored Michelin Selected row 溫叨 2026-07-06"
     },
     {
       "name": "裡小樓",
@@ -12436,10 +12436,10 @@
       "name": "enPure 瀞",
       "aliases": [],
       "city": "臺中市",
-      "district": "台中",
-      "address": "台中市",
+      "district": "北區",
+      "address": "臺中市北區健行路86巷7弄33號",
       "cuisine": "現代菜",
-      "source": "https://500times.udn.com/wtimes/story/122412/9007797",
+      "source": "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/enpure",
       "awards": [
         {
           "guide": "500plate",
@@ -12456,7 +12456,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Core awards batch7 mirrored Michelin Selected 瀞 cuisine 2026-07-03"
+      "notes": "Core awards batch7 mirrored Michelin Selected 瀞 cuisine 2026-07-03 | Core awards batch17 mirrored Michelin Selected row 瀞 2026-07-06"
     },
     {
       "name": "Fleur de Sel",
