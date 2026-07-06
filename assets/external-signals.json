@@ -1,6 +1,6 @@
 {
-  "version": "platform-merge-2026-07-01",
-  "updated": "2026-07-01",
+  "version": "api-batch-2026-07-06",
+  "updated": "2026-07-06",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -1170,6 +1170,429 @@
           "generatedBy": "scripts/merge-platform-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "FRASSI",
+      "city": "臺北市",
+      "area": "中山區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 99,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 2,
+            "totalViews": 25722,
+            "topVideos": [
+              {
+                "id": "k-O3lJbW7bw",
+                "title": "Where to Eat in Taipei with a Michelin Chef | Fine Picks",
+                "channelTitle": "Taiwan Food & Travel",
+                "publishedAt": "2026-06-02T03:00:08Z",
+                "views": 24507,
+                "url": "https://www.youtube.com/watch?v=k-O3lJbW7bw"
+              },
+              {
+                "id": "AUGkkLwzm-s",
+                "title": "米其林一星FRASSI！台北大直！#全民金牌主廚陸巧因 #食品品保工程師 #米其林 #frassi #義大利",
+                "channelTitle": "陸巧因 全民金牌主廚 Mana",
+                "publishedAt": "2026-05-17T03:27:49Z",
+                "views": 1215,
+                "url": "https://www.youtube.com/watch?v=AUGkkLwzm-s"
+              }
+            ],
+            "query": "臺北市 FRASSI 美食"
+          },
+          "evidence": [
+            "Taiwan Food & Travel：Where to Eat in Taipei with a Michelin Chef | Fine Picks",
+            "陸巧因 全民金牌主廚 Mana：米其林一星FRASSI！台北大直！#全民金牌主廚陸巧因 #食品品保工程師 #米其林 #frassi #義大利"
+          ],
+          "url": "https://www.youtube.com/watch?v=k-O3lJbW7bw",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "GEN",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 85,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 0,
+            "totalViews": 11110,
+            "topVideos": [
+              {
+                "id": "JxjerzxfIN0",
+                "title": "素食家庭來高雄旅遊吃什麼？親民行程👉何老大手作蔬食、衛武營、炸蔬排-和家蔬食｜素食旅遊 Vegetarian Travel in Kaohsiung｜",
+                "channelTitle": "小安爺大俠客Andybosslife",
+                "publishedAt": "2026-03-11T11:00:06Z",
+                "views": 11058,
+                "url": "https://www.youtube.com/watch?v=JxjerzxfIN0"
+              },
+              {
+                "id": "q18d5eao-Aw",
+                "title": "高雄必吃！傳承三代爆量春捲 🌯",
+                "channelTitle": "高雄攻略",
+                "publishedAt": "2026-04-03T00:58:23Z",
+                "views": 52,
+                "url": "https://www.youtube.com/watch?v=q18d5eao-Aw"
+              }
+            ],
+            "query": "高雄市 GEN 美食"
+          },
+          "evidence": [
+            "小安爺大俠客Andybosslife：素食家庭來高雄旅遊吃什麼？親民行程👉何老大手作蔬食、衛武營、炸蔬排-和家蔬食｜素食旅遊 Vegetarian Travel in Kaohsiung｜",
+            "高雄攻略：高雄必吃！傳承三代爆量春捲 🌯"
+          ],
+          "url": "https://www.youtube.com/watch?v=JxjerzxfIN0",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "HAILI",
+      "city": "高雄市",
+      "area": "前金區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 83,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 2,
+            "totalViews": 1465,
+            "topVideos": [
+              {
+                "id": "J9e9_RYq_Is",
+                "title": "啥？這是米其林級的鍋燒意麵，#高雄Haili #米其林一星",
+                "channelTitle": "王瑞瑤與保師傅的超級美食家",
+                "publishedAt": "2026-03-05T02:17:57Z",
+                "views": 1448,
+                "url": "https://www.youtube.com/watch?v=J9e9_RYq_Is"
+              },
+              {
+                "id": "aGG_1ml_5o0",
+                "title": "「旅遊高CP值亞洲城市」出擊！高雄率60人逾30業者赴馬來西亞推展觀光",
+                "channelTitle": "丁福祥",
+                "publishedAt": "2026-06-24T03:21:13Z",
+                "views": 9,
+                "url": "https://www.youtube.com/watch?v=aGG_1ml_5o0"
+              },
+              {
+                "id": "c87AD2Se35A",
+                "title": "「Kaohsiung Syok！高雄爽快過癮！」嗨翻吉隆坡 高雄觀光大馬出擊 百名旅遊業者熱烈交流",
+                "channelTitle": "丁福祥",
+                "publishedAt": "2026-07-04T03:31:52Z",
+                "views": 8,
+                "url": "https://www.youtube.com/watch?v=c87AD2Se35A"
+              }
+            ],
+            "query": "高雄市 HAILI 美食"
+          },
+          "evidence": [
+            "王瑞瑤與保師傅的超級美食家：啥？這是米其林級的鍋燒意麵，#高雄Haili #米其林一星",
+            "丁福祥：「旅遊高CP值亞洲城市」出擊！高雄率60人逾30業者赴馬來西亞推展觀光",
+            "丁福祥：「Kaohsiung Syok！高雄爽快過癮！」嗨翻吉隆坡 高雄觀光大馬出擊 百名旅遊業者熱烈交流"
+          ],
+          "url": "https://www.youtube.com/watch?v=J9e9_RYq_Is",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "IMPROMPTU BY PAUL LEE",
+      "city": "臺北市",
+      "area": "中山區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 64,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 0,
+            "totalViews": 1776,
+            "topVideos": [
+              {
+                "id": "zvTksL4-lSU",
+                "title": "台北週末就該這樣吃跟姐妹吃早午餐🥂#shortvideo",
+                "channelTitle": "Beone 逼萬大吃",
+                "publishedAt": "2026-01-15T14:15:57Z",
+                "views": 1776,
+                "url": "https://www.youtube.com/watch?v=zvTksL4-lSU"
+              }
+            ],
+            "query": "臺北市 IMPROMPTU BY PAUL LEE 美食"
+          },
+          "evidence": [
+            "Beone 逼萬大吃：台北週末就該這樣吃跟姐妹吃早午餐🥂#shortvideo"
+          ],
+          "url": "https://www.youtube.com/watch?v=zvTksL4-lSU",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "Inita",
+      "city": "臺北市",
+      "area": "松山區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 68,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 1651,
+            "topVideos": [
+              {
+                "id": "FugNlsCno84",
+                "title": "台北一星米其林餐廳「INITA」 ！！",
+                "channelTitle": "Pei",
+                "publishedAt": "2026-06-03T15:15:29Z",
+                "views": 1651,
+                "url": "https://www.youtube.com/watch?v=FugNlsCno84"
+              }
+            ],
+            "query": "臺北市 Inita 美食"
+          },
+          "evidence": [
+            "Pei：台北一星米其林餐廳「INITA」 ！！"
+          ],
+          "url": "https://www.youtube.com/watch?v=FugNlsCno84",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "JL Studio",
+      "city": "臺中市",
+      "area": "台中市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 38,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 2,
+            "totalViews": 9,
+            "topVideos": [
+              {
+                "id": "lHS-3hv4lEM",
+                "title": "台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-06-27T15:46:04Z",
+                "views": 5,
+                "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM"
+              },
+              {
+                "id": "czR7tIcv9ew",
+                "title": "台中米其林別亂訂：三星、一星、必比登怎麼選才不踩雷",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-06-27T08:44:27Z",
+                "views": 4,
+                "url": "https://www.youtube.com/watch?v=czR7tIcv9ew"
+              }
+            ],
+            "query": "臺中市 JL Studio 美食"
+          },
+          "evidence": [
+            "派派城市外掛：台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排",
+            "派派城市外掛：台中米其林別亂訂：三星、一星、必比登怎麼選才不踩雷"
+          ],
+          "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "L'Atelier par Yao",
+      "city": "臺中市",
+      "area": "太平區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 24,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 5,
+            "topVideos": [
+              {
+                "id": "lHS-3hv4lEM",
+                "title": "台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-06-27T15:46:04Z",
+                "views": 5,
+                "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM"
+              }
+            ],
+            "query": "臺中市 L'Atelier par Yao 美食"
+          },
+          "evidence": [
+            "派派城市外掛：台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排"
+          ],
+          "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "logy",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 3,
+            "totalViews": 52283,
+            "topVideos": [
+              {
+                "id": "zovTHRqpd2g",
+                "title": "你是美食家還是盤子—？進餐廳前你該具備的辨別技能與避雷指南！重新定義 Fine Dining【Liz美食家】",
+                "channelTitle": "Liz 的美食家自學之路 Self-taught Gourmet",
+                "publishedAt": "2026-04-23T11:00:00Z",
+                "views": 52154,
+                "url": "https://www.youtube.com/watch?v=zovTHRqpd2g"
+              },
+              {
+                "id": "MWDR9VR4M0c",
+                "title": "【🎧播客】10 個讓你顯得優雅而不失禮的必備禮儀 🍴✨ 別當餐桌上的外行人！高級西餐 3 個絕對不能踩的雷區 ❌ 星級餐廳用餐攻略｜那些主廚沒說，但侍酒師很在意的細節 🍷",
+                "channelTitle": "FoodStops",
+                "publishedAt": "2026-05-10T22:15:03Z",
+                "views": 108,
+                "url": "https://www.youtube.com/watch?v=MWDR9VR4M0c"
+              },
+              {
+                "id": "21qQphmkmL8",
+                "title": "台北米其林三星二星怎麼選？9間星級餐廳得星年份、招牌與預算",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-06-13T14:28:55Z",
+                "views": 21,
+                "url": "https://www.youtube.com/watch?v=21qQphmkmL8"
+              }
+            ],
+            "query": "臺北市 logy 美食"
+          },
+          "evidence": [
+            "Liz 的美食家自學之路 Self-taught Gourmet：你是美食家還是盤子—？進餐廳前你該具備的辨別技能與避雷指南！重新定義 Fine Dining【Liz美食家】",
+            "FoodStops：【🎧播客】10 個讓你顯得優雅而不失禮的必備禮儀 🍴✨ 別當餐桌上的外行人！高級西餐 3 個絕對不能踩的雷區 ❌ 星級餐廳用餐攻略｜那些主廚沒說，但侍酒師很在意的細節 🍷",
+            "派派城市外掛：台北米其林三星二星怎麼選？9間星級餐廳得星年份、招牌與預算"
+          ],
+          "url": "https://www.youtube.com/watch?v=zovTHRqpd2g",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "NOBUO",
+      "city": "臺北市",
+      "area": "中正區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 5,
+            "recentVideoCount": 1,
+            "totalViews": 29707,
+            "topVideos": [
+              {
+                "id": "hqSyt0K_cAY",
+                "title": "這三間 Fine Dining可以天天吃 ？挑選餐廳心法大公開！約會、商務、朋友聚餐【餐廳頻道健檢】",
+                "channelTitle": "Liz 的美食家自學之路 Self-taught Gourmet",
+                "publishedAt": "2026-01-29T11:00:00Z",
+                "views": 23379,
+                "url": "https://www.youtube.com/watch?v=hqSyt0K_cAY"
+              },
+              {
+                "id": "dxrsj2vGae4",
+                "title": "吃垃圾食品的10大可怕副作用！失眠、腎結石、關節炎通通中招",
+                "channelTitle": "柏格醫生中文 健康知識",
+                "publishedAt": "2026-02-26T22:00:46Z",
+                "views": 3719,
+                "url": "https://www.youtube.com/watch?v=dxrsj2vGae4"
+              },
+              {
+                "id": "ucJgv2GqJIU",
+                "title": "「 今天吃哪盤？」星級餐廳主廚 Nobu Lee 李信男 帶你尋找美味魯肉飯",
+                "channelTitle": "500輯 500 Times",
+                "publishedAt": "2026-06-12T14:45:13Z",
+                "views": 1163,
+                "url": "https://www.youtube.com/watch?v=ucJgv2GqJIU"
+              }
+            ],
+            "query": "臺北市 NOBUO 美食"
+          },
+          "evidence": [
+            "Liz 的美食家自學之路 Self-taught Gourmet：這三間 Fine Dining可以天天吃 ？挑選餐廳心法大公開！約會、商務、朋友聚餐【餐廳頻道健檢】",
+            "柏格醫生中文 健康知識：吃垃圾食品的10大可怕副作用！失眠、腎結石、關節炎通通中招",
+            "500輯 500 Times：「 今天吃哪盤？」星級餐廳主廚 Nobu Lee 李信男 帶你尋找美味魯肉飯"
+          ],
+          "url": "https://www.youtube.com/watch?v=hqSyt0K_cAY",
+          "updated": "2026-07-06",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -1220,11 +1643,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-06-30T14:17:28.057Z",
+    "lastRun": "2026-07-06T21:47:06.803Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 33,
+    "nextAwardOffset": 43,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 1,
+    "lastUpdatedSignals": 9,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
