@@ -18331,11 +18331,13 @@
     },
     {
       "name": "Adachi 足立壽司",
-      "aliases": [],
+      "aliases": [
+        "Adachi"
+      ],
       "city": "臺北市",
-      "district": "台北市",
-      "address": "台北市",
-      "cuisine": "菜系待確認",
+      "district": "信義區",
+      "address": "台北市信義區莊敬路239巷12號",
+      "cuisine": "壽司 / 無菜單料理",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -18353,7 +18355,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html | Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
     },
     {
       "name": "Circum-",
@@ -24434,8 +24436,8 @@
       "name": "秦味館 Qin Wei Guan",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
+      "district": "大安區",
+      "address": "台北市大安區",
       "cuisine": "菜系待確認",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
@@ -24454,7 +24456,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06 | Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06"
     },
     {
       "name": "茗香園冰室（忠孝店 ）",

@@ -1,0 +1,44 @@
+{
+  "generatedAt": "2026-07-06T12:54:16.199Z",
+  "updated": 2,
+  "updates": [
+    {
+      "name": "Adachi 足立壽司",
+      "before": {
+        "aliases": [
+          "Adachi"
+        ],
+        "district": "信義區",
+        "address": "台北市信義區莊敬路239巷12號",
+        "cuisine": "壽司 / 無菜單料理",
+        "notes": "Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
+      },
+      "after": {
+        "aliases": [
+          "Adachi"
+        ],
+        "district": "信義區",
+        "address": "台北市信義區莊敬路239巷12號",
+        "cuisine": "壽司 / 無菜單料理",
+        "notes": "Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html | Core awards batch20 enriched from 50 Best Discovery public page 2026-07-06 https://www.theworlds50best.com/discovery/Establishments/Taiwan/Taipei/Adachi.html"
+      }
+    },
+    {
+      "name": "秦味館 Qin Wei Guan",
+      "before": {
+        "aliases": [],
+        "district": "大安區",
+        "address": "台北市大安區",
+        "cuisine": "菜系待確認",
+        "notes": "Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06"
+      },
+      "after": {
+        "aliases": [],
+        "district": "大安區",
+        "address": "台北市大安區",
+        "cuisine": "菜系待確認",
+        "notes": "Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06 | Core awards batch20 aligned alias row with sibling restaurant entry 秦味館 2026-07-06"
+      }
+    }
+  ]
+}
