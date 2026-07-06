@@ -1,0 +1,370 @@
+{
+  "generatedAt": "2026-07-06T12:40:29.568Z",
+  "updatedRows": [
+    {
+      "name": "好朋友涼麵",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市士林區",
+        "address": "台北市士林區大南路31號",
+        "cuisine": "街頭小吃"
+      },
+      "after": {
+        "district": "士林區",
+        "address": "台北市士林區大南路31號",
+        "cuisine": "街頭小吃"
+      }
+    },
+    {
+      "name": "松竹園",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市士林區",
+        "address": "台北市士林區永公路546號",
+        "cuisine": "台灣菜"
+      },
+      "after": {
+        "district": "士林區",
+        "address": "台北市士林區永公路546號",
+        "cuisine": "台灣菜"
+      }
+    },
+    {
+      "name": "鍾家原上海生煎包",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市士林區",
+        "address": "台北市士林區小東街38號",
+        "cuisine": "街頭小吃"
+      },
+      "after": {
+        "district": "士林區",
+        "address": "台北市士林區小東街38號",
+        "cuisine": "街頭小吃"
+      }
+    },
+    {
+      "name": "大橋頭老牌筒仔米糕",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市大同區",
+        "address": "台北市大同區延平北路三段41號",
+        "cuisine": "小吃"
+      },
+      "after": {
+        "district": "大同區",
+        "address": "台北市大同區延平北路三段41號",
+        "cuisine": "小吃"
+      }
+    },
+    {
+      "name": "HUGH dessert dining",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市大同區",
+        "address": "台北市大同區重慶北路三段136巷56號",
+        "cuisine": "創意料理"
+      },
+      "after": {
+        "district": "大同區",
+        "address": "台北市大同區重慶北路三段136巷56號",
+        "cuisine": "創意料理"
+      }
+    },
+    {
+      "name": "小小樹食",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市大安區",
+        "address": "台北市大安區大安路一段116巷17號",
+        "cuisine": "素食"
+      },
+      "after": {
+        "district": "大安區",
+        "address": "台北市大安區大安路一段116巷17號",
+        "cuisine": "素食"
+      }
+    },
+    {
+      "name": "巷子龍家常菜",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市大安區",
+        "address": "台北市大安區四維路25號",
+        "cuisine": "湘菜"
+      },
+      "after": {
+        "district": "大安區",
+        "address": "台北市大安區四維路25號",
+        "cuisine": "湘菜"
+      }
+    },
+    {
+      "name": "秦味館",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市大安區",
+        "address": "台北市大安區",
+        "cuisine": "菜系待確認"
+      },
+      "after": {
+        "district": "大安區",
+        "address": "台北市大安區",
+        "cuisine": "菜系待確認"
+      }
+    },
+    {
+      "name": "Solo Pasta",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市大安區",
+        "address": "台北市大安區安和路一段29-1號",
+        "cuisine": "菜系待確認"
+      },
+      "after": {
+        "district": "大安區",
+        "address": "台北市大安區安和路一段29-1號",
+        "cuisine": "菜系待確認"
+      }
+    },
+    {
+      "name": "Tableau by Craig Yang",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市大安區",
+        "address": "台北市大安區",
+        "cuisine": "創意料理"
+      },
+      "after": {
+        "district": "大安區",
+        "address": "台北市大安區",
+        "cuisine": "創意料理"
+      }
+    },
+    {
+      "name": "人和園",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區中山北路二段112號",
+        "cuisine": "滇菜"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區中山北路二段112號",
+        "cuisine": "滇菜"
+      }
+    },
+    {
+      "name": "小品雅廚",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區中原街130號",
+        "cuisine": "台灣菜"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區中原街130號",
+        "cuisine": "台灣菜"
+      }
+    },
+    {
+      "name": "小酌之家",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區吉林路420號",
+        "cuisine": "台灣菜"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區吉林路420號",
+        "cuisine": "台灣菜"
+      }
+    },
+    {
+      "name": "欣葉鐘菜",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區樂群二路199號",
+        "cuisine": "台灣菜"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區樂群二路199號",
+        "cuisine": "台灣菜"
+      }
+    },
+    {
+      "name": "國賓中餐廳",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區中山北路二段63號",
+        "cuisine": "菜系待確認"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區中山北路二段63號",
+        "cuisine": "菜系待確認"
+      }
+    },
+    {
+      "name": "黃記魯肉飯",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區中山北路二段183巷28號",
+        "cuisine": "小吃"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區中山北路二段183巷28號",
+        "cuisine": "小吃"
+      }
+    },
+    {
+      "name": "隱食家",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區雙城街28巷8號",
+        "cuisine": "台灣菜"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區雙城街28巷8號",
+        "cuisine": "台灣菜"
+      }
+    },
+    {
+      "name": "無名推車燒餅",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中正區",
+        "address": "台北市中正區中華路二段311巷",
+        "cuisine": "街頭小吃"
+      },
+      "after": {
+        "district": "中正區",
+        "address": "台北市中正區中華路二段311巷",
+        "cuisine": "街頭小吃"
+      }
+    },
+    {
+      "name": "雄記蔥抓餅",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中正區",
+        "address": "台北市中正區羅斯福路四段108巷2號",
+        "cuisine": "街頭小吃"
+      },
+      "after": {
+        "district": "中正區",
+        "address": "台北市中正區羅斯福路四段108巷2號",
+        "cuisine": "街頭小吃"
+      }
+    },
+    {
+      "name": "金賞軒",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市松山區",
+        "address": "台北市松山區敦化北路155巷111號",
+        "cuisine": "臺灣菜"
+      },
+      "after": {
+        "district": "松山區",
+        "address": "台北市松山區敦化北路155巷111號",
+        "cuisine": "臺灣菜"
+      }
+    },
+    {
+      "name": "富錦樹台菜香檳",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市松山區",
+        "address": "台北市松山區敦化北路199巷17號",
+        "cuisine": "台灣菜"
+      },
+      "after": {
+        "district": "松山區",
+        "address": "台北市松山區敦化北路199巷17號",
+        "cuisine": "台灣菜"
+      }
+    },
+    {
+      "name": "T+T",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市松山區",
+        "address": "台北市松山區富錦街",
+        "cuisine": "Asian"
+      },
+      "after": {
+        "district": "松山區",
+        "address": "台北市松山區富錦街",
+        "cuisine": "Asian"
+      }
+    },
+    {
+      "name": "夜上海",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市信義區",
+        "address": "台北市信義區松壽路12號",
+        "cuisine": "上海菜 / 江浙菜"
+      },
+      "after": {
+        "district": "信義區",
+        "address": "台北市信義區松壽路12號",
+        "cuisine": "上海菜 / 江浙菜"
+      }
+    },
+    {
+      "name": "小王煮瓜",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市萬華區",
+        "address": "台北市萬華區華西街17之4號",
+        "cuisine": "小吃"
+      },
+      "after": {
+        "district": "萬華區",
+        "address": "台北市萬華區華西街17之4號",
+        "cuisine": "小吃"
+      }
+    },
+    {
+      "name": "蘇來傳",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市萬華區",
+        "address": "台北市萬華區",
+        "cuisine": "小吃"
+      },
+      "after": {
+        "district": "萬華區",
+        "address": "台北市萬華區",
+        "cuisine": "小吃"
+      }
+    },
+    {
+      "name": "阿城鵝肉 (中山)",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市中山區",
+        "address": "台北市中山區吉林路162號",
+        "cuisine": "臺灣菜"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "台北市中山區吉林路162號",
+        "cuisine": "臺灣菜"
+      }
+    }
+  ],
+  "missingRows": []
+}

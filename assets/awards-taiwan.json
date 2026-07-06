@@ -560,7 +560,7 @@
       "name": "Tjuku cafe 啾咕咖啡",
       "aliases": [],
       "city": "宜蘭縣",
-      "district": "行政區待確認",
+      "district": "頭城鎮",
       "address": "宜蘭縣頭城鎮港口里港墘路60號2樓",
       "cuisine": "飲品 / 咖啡館",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
@@ -580,7 +580,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "臺灣穆斯林友善餐旅資料 補強 2026-07-04 https://www.taiwan.net.tw/m1.aspx?sNo=0020118"
+      "notes": "臺灣穆斯林友善餐旅資料 補強 2026-07-04 https://www.taiwan.net.tw/m1.aspx?sNo=0020118 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "大仁哥蔗香脆皮桶仔雞",
@@ -16168,7 +16168,7 @@
       "name": "好朋友涼麵",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市士林區",
+      "district": "士林區",
       "address": "台北市士林區大南路31號",
       "cuisine": "街頭小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16187,13 +16187,13 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "松竹園",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市士林區",
+      "district": "士林區",
       "address": "台北市士林區永公路546號",
       "cuisine": "台灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16212,7 +16212,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "金蓬萊遵古台菜",
@@ -16259,7 +16259,7 @@
       "name": "鍾家原上海生煎包",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市士林區",
+      "district": "士林區",
       "address": "台北市士林區小東街38號",
       "cuisine": "街頭小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16278,13 +16278,13 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "大橋頭老牌筒仔米糕",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市大同區",
+      "district": "大同區",
       "address": "台北市大同區延平北路三段41號",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16303,7 +16303,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "賣麵炎仔",
@@ -16391,7 +16391,7 @@
       "name": "HUGH dessert dining",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市大同區",
+      "district": "大同區",
       "address": "台北市大同區重慶北路三段136巷56號",
       "cuisine": "創意料理",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16424,7 +16424,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "小小樹食",
@@ -16433,7 +16433,7 @@
         "Little Tree Food (Da'an Road)"
       ],
       "city": "臺北市",
-      "district": "台北市大安區",
+      "district": "大安區",
       "address": "台北市大安區大安路一段116巷17號",
       "cuisine": "素食",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -16452,7 +16452,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "天下三絕",
@@ -16508,7 +16508,7 @@
       "name": "巷子龍家常菜",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市大安區",
+      "district": "大安區",
       "address": "台北市大安區四維路25號",
       "cuisine": "湘菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16527,13 +16527,13 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "秦味館",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市大安區",
+      "district": "大安區",
       "address": "台北市大安區",
       "cuisine": "菜系待確認",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
@@ -16553,7 +16553,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "鼎泰豐",
@@ -16639,7 +16639,7 @@
       "name": "Solo Pasta",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市大安區",
+      "district": "大安區",
       "address": "台北市大安區安和路一段29-1號",
       "cuisine": "菜系待確認",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
@@ -16673,13 +16673,13 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "Tableau by Craig Yang",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市大安區",
+      "district": "大安區",
       "address": "台北市大安區",
       "cuisine": "創意料理",
       "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/tableau-by-craig-yang",
@@ -16698,7 +16698,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "川雅",
@@ -16743,7 +16743,7 @@
       "name": "人和園",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區中山北路二段112號",
       "cuisine": "滇菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16762,13 +16762,13 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "小品雅廚",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區中原街130號",
       "cuisine": "台灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16787,13 +16787,13 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "小酌之家",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區吉林路420號",
       "cuisine": "台灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -16812,7 +16812,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "天香樓",
@@ -16884,7 +16884,7 @@
       "name": "欣葉鐘菜",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區樂群二路199號",
       "cuisine": "台灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -16903,7 +16903,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "茂園",
@@ -16934,7 +16934,7 @@
       "name": "國賓中餐廳",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區中山北路二段63號",
       "cuisine": "菜系待確認",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
@@ -16954,7 +16954,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "軟實力",
@@ -17039,7 +17039,7 @@
       "name": "黃記魯肉飯",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區中山北路二段183巷28號",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -17058,13 +17058,13 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "隱食家",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區雙城街28巷8號",
       "cuisine": "台灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -17083,7 +17083,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "A Cut",
@@ -17190,7 +17190,7 @@
       "name": "無名推車燒餅",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中正區",
+      "district": "中正區",
       "address": "台北市中正區中華路二段311巷",
       "cuisine": "街頭小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -17209,13 +17209,13 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "雄記蔥抓餅",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中正區",
+      "district": "中正區",
       "address": "台北市中正區羅斯福路四段108巷2號",
       "cuisine": "街頭小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -17248,7 +17248,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "請客樓",
@@ -17586,7 +17586,7 @@
       "name": "金賞軒",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市松山區",
+      "district": "松山區",
       "address": "台北市松山區敦化北路155巷111號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -17605,7 +17605,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "富錦樹台菜香檳",
@@ -17614,7 +17614,7 @@
         "Fujin Tree Taiwanese Cuisine & Champagne (Songshan)"
       ],
       "city": "臺北市",
-      "district": "台北市松山區",
+      "district": "松山區",
       "address": "台北市松山區敦化北路199巷17號",
       "cuisine": "台灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -17661,7 +17661,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "雲川水月 Clavius",
@@ -17692,7 +17692,7 @@
       "name": "T+T",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市松山區",
+      "district": "松山區",
       "address": "台北市松山區富錦街",
       "cuisine": "Asian",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -17711,7 +17711,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "知名李",
@@ -17782,7 +17782,7 @@
       "name": "夜上海",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市信義區",
+      "district": "信義區",
       "address": "台北市信義區松壽路12號",
       "cuisine": "上海菜 / 江浙菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
@@ -17802,7 +17802,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Elite Concepts 官方餐廳介紹 2026-07-04 https://www.elite-concepts.com/zh-hk/our-concepts/taipei/ye-shanghai/"
+      "notes": "Elite Concepts 官方餐廳介紹 2026-07-04 https://www.elite-concepts.com/zh-hk/our-concepts/taipei/ye-shanghai/ | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "侯布雄 L'ATELIER de Joël Robuchon",
@@ -18087,7 +18087,7 @@
       "name": "小王煮瓜",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市萬華區",
+      "district": "萬華區",
       "address": "台北市萬華區華西街17之4號",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection",
@@ -18106,7 +18106,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "老山東牛肉家常麵店",
@@ -18162,7 +18162,7 @@
       "name": "蘇來傳",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市萬華區",
+      "district": "萬華區",
       "address": "台北市萬華區",
       "cuisine": "小吃",
       "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/su-lai-chuan",
@@ -18181,7 +18181,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-bib-2025-page.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "鄒記食舖",
@@ -23191,7 +23191,7 @@
       "name": "阿城鵝肉 (中山)",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市中山區",
+      "district": "中山區",
       "address": "台北市中山區吉林路162號",
       "cuisine": "臺灣菜",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -23210,7 +23210,7 @@
           "extractedAt": "2026-06-30"
         }
       ],
-      "notes": "Michelin Taipei live browser merge 2026-07-03"
+      "notes": "Michelin Taipei live browser merge 2026-07-03 | Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "阿春滷味",
@@ -27866,7 +27866,7 @@
       "name": "COAST",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
+      "district": "中山區",
       "address": "No. 3, Lane 39, Section 2, Zhongshan North Road, Taipei, 10491",
       "cuisine": "Southeast Asian",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
@@ -27900,7 +27900,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch18 normalized district format 2026-07-06"
     },
     {
       "name": "COFE 喫茶咖啡",
