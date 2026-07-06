@@ -17388,7 +17388,7 @@
         "aMaze 心宴"
       ],
       "city": "臺北市",
-      "district": "台北市",
+      "district": "中山區",
       "address": "598 明水路，中山區，台北市",
       "cuisine": "創意料理",
       "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/amaze",
@@ -17421,7 +17421,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core awards batch19 inferred district from existing address 2026-07-06"
     },
     {
       "name": "布雍家 Bouillon",
@@ -17496,7 +17496,7 @@
         "HOSU"
       ],
       "city": "臺北市",
-      "district": "台北市",
+      "district": "大安區",
       "address": "17，20弄，300巷，第4段，仁愛路，大安區，台北市",
       "cuisine": "台灣當代料理",
       "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/hosu",
@@ -17529,7 +17529,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core awards batch19 inferred district from existing address 2026-07-06"
     },
     {
       "name": "米香",
@@ -17865,7 +17865,7 @@
         "EIKA 盈科"
       ],
       "city": "臺北市",
-      "district": "台北市",
+      "district": "大同區",
       "address": "58 民樂街，大同區，台北市",
       "cuisine": "日本當代料理",
       "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/eika",
@@ -17912,7 +17912,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin detail URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core awards batch19 inferred district from existing address 2026-07-06"
     },
     {
       "name": "紅棉 Red Cotton",
@@ -18359,7 +18359,7 @@
       "name": "Circum-",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市",
+      "district": "中山區",
       "address": "地下二樓，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
       "cuisine": "創意料理",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -18392,7 +18392,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch19 inferred district from existing address 2026-07-06"
     },
     {
       "name": "FRASSI",
@@ -18463,7 +18463,7 @@
       "name": "Inita",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市",
+      "district": "松山區",
       "address": "1，52弄，12巷，第3段，八德路，松山區，台北市",
       "cuisine": "義大利當代料理",
       "source": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
@@ -18496,13 +18496,13 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Core awards batch19 inferred district from existing address 2026-07-06"
     },
     {
       "name": "La Vie by Thomas Bühner",
       "aliases": [],
       "city": "臺北市",
-      "district": "台北市",
+      "district": "中山區",
       "address": "1樓，Noke Mall，200 樂群三路，中山區，台北市",
       "cuisine": "歐陸當代料理",
       "source": "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/la-vie-by-thomas-buhner",
@@ -18535,7 +18535,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04"
+      "notes": "Michelin Taipei candidate detail merge 2026-07-03 | Michelin official URL patched from snapshot michelin-taiwan-full-list-2025.official.snapshot.html 2026-07-03 | Michelin official detail page auto fill 2026-07-04 | Core awards batch19 inferred district from existing address 2026-07-06"
     },
     {
       "name": "Mizue",

@@ -1,0 +1,90 @@
+{
+  "generatedAt": "2026-07-06T12:43:41.380Z",
+  "updatedRows": [
+    {
+      "name": "心宴 aMaze",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市",
+        "address": "598 明水路，中山區，台北市",
+        "cuisine": "創意料理"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "598 明水路，中山區，台北市",
+        "cuisine": "創意料理"
+      }
+    },
+    {
+      "name": "好嶼",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市",
+        "address": "17，20弄，300巷，第4段，仁愛路，大安區，台北市",
+        "cuisine": "台灣當代料理"
+      },
+      "after": {
+        "district": "大安區",
+        "address": "17，20弄，300巷，第4段，仁愛路，大安區，台北市",
+        "cuisine": "台灣當代料理"
+      }
+    },
+    {
+      "name": "盈科 EIKA",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市",
+        "address": "58 民樂街，大同區，台北市",
+        "cuisine": "日本當代料理"
+      },
+      "after": {
+        "district": "大同區",
+        "address": "58 民樂街，大同區，台北市",
+        "cuisine": "日本當代料理"
+      }
+    },
+    {
+      "name": "Circum-",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市",
+        "address": "地下二樓，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
+        "cuisine": "創意料理"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "地下二樓，晶華酒店，3，39巷，第2段，中山北路，中山區，台北市",
+        "cuisine": "創意料理"
+      }
+    },
+    {
+      "name": "Inita",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市",
+        "address": "1，52弄，12巷，第3段，八德路，松山區，台北市",
+        "cuisine": "義大利當代料理"
+      },
+      "after": {
+        "district": "松山區",
+        "address": "1，52弄，12巷，第3段，八德路，松山區，台北市",
+        "cuisine": "義大利當代料理"
+      }
+    },
+    {
+      "name": "La Vie by Thomas Bühner",
+      "city": "臺北市",
+      "before": {
+        "district": "台北市",
+        "address": "1樓，Noke Mall，200 樂群三路，中山區，台北市",
+        "cuisine": "歐陸當代料理"
+      },
+      "after": {
+        "district": "中山區",
+        "address": "1樓，Noke Mall，200 樂群三路，中山區，台北市",
+        "cuisine": "歐陸當代料理"
+      }
+    }
+  ],
+  "missingRows": []
+}
