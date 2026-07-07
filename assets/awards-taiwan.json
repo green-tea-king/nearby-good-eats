@@ -29467,9 +29467,9 @@
       "name": "Mark's Teppanyaki 台北萬豪酒店",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "中山區",
+      "address": "台北市中山區樂群二路199號",
+      "cuisine": "鐵板燒 / 日中西融合料理",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -29487,7 +29487,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch25 filled hotel restaurant address and cuisine from Taipei Marriott public pages / Wikipedia summary 2026-07-07 https://en.wikipedia.org/wiki/Marriott_Taipei ; https://zh.wikipedia.org/wiki/%E8%90%AC%E8%B1%AA%E9%85%92%E5%BA%97"
     },
     {
       "name": "Masa",
