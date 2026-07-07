@@ -1,0 +1,4698 @@
+{
+  "generatedAt": "2026-07-07T13:41:29.083Z",
+  "restaurants": 1329,
+  "guides": [
+    {
+      "guide": "michelin",
+      "records": 53,
+      "years": {
+        "2025": 53
+      },
+      "sourceNames": {
+        "MICHELIN Guide Taiwan 2025 Full List": 53
+      },
+      "sourceUrls": {
+        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list": 6,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/haili": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/sho": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/the-front-house": 1,
+        "https://500times.udn.com/wtimes/story/122412/9007797": 1,
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list": 33,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/a": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/chuan-ya": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/motoichi": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/amaze": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/hosu": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/eika": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/yu-kapo-1198592": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/sushi-kajin": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/frassi": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/la-vie-by-thomas-buhner": 1
+      },
+      "weakRows": 0,
+      "weakSample": []
+    },
+    {
+      "guide": "michelin_selected",
+      "records": 223,
+      "years": {
+        "2025": 223
+      },
+      "sourceNames": {
+        "MICHELIN Guide Taiwan 2025 Full List": 223
+      },
+      "sourceUrls": {
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list": 100,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/xiantaosu": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/tainan-wang": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/mu-1204166": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/cho": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/temperature-studio": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/ca-marche-1200953": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/anchovy": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/apis-grill": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/cratain": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/j-parc": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/li-nu": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/nibbon": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/ukai-tei": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/natural-tea-manor": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-fen-su-chi": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/chin-ta-lu-rou-fan": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/joy-vegetarian-restaurant": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/zhulin-chicken-yonghe": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/lao-hsu": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/chi-yuan": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/amajia": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/qing-ya": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/xun-kitchen": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/shi-yang": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/shou-wu": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/jia-yen": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/zhang-ji-fish-ball": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/le-mei-studio": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/dark-palace-taiwanese-gourmet": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/wonderful-baba-bak-kut-teh-king-of-king": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/le-yeh": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/chia-i": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/hui-hui": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/a-gan-yi-taro-balls": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/min-food": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/shih-fang-hsiao-ching": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/very-good-vegan-gua-bao": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/no-10-nanmen": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/hai-kou-guabao": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/kao-jai": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/chang-chang-kitchen": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/jun": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/ho-chu-yuan": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/yeh-shu": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/miao-kou-ya-xiang-fan-zhongshan-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/yi-hsuan": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/ying-wang-meatball": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/taivii": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/yummy": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/chuan-fu-1217253": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/zhudong-fried-sparerib-noodle-zhudong": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/lao-tou-pai": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/piccola-enoteca": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/mud-brick-house": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/ko-chia-pen-se": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/geng-ye-yue-mei": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/happy-hwa": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/li-yueh": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/firoo": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sabi": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/zena": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/shineyu": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/ming-juan-lou": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/zai-lai": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/tu-pang": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/dongyin-fisherman": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/chef-ah-hsi-s-old-time-restaurant": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/shoal-cuisine": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/yakitori-wine": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/hello-vietnam": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/rong-cuisine": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/enpure": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/firns": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/pi": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/chuan-mu-yuan": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/tempura-sugimura": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/pei-full": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/junto": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/kou-gyu-rou": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/antico-forno": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/3927": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/taiwan-rice-dining-hall": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/kiku-1216129": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/uosho": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/mochi-baby": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/kohaku-1213377": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/uke": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/yuan-huan-pien-oyster-egg-omelette": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/rong-ju": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/dasuke": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/sate-house": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/sushi-kaori": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/orchid": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/ajimi": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/bencotto": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/fumee": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/lin": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/yuu": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/chuan-tai-hao-milkfish-ball": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/kanshi": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/good-hunan-cuisine": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/the-temple-front-eatery": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/hsin-hsin": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/a-cun-beef-soup-baoan-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/a-ming-zhu-xing-baoan-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/a-yu-beef-shabu-shabu-kunlun-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/a-hai-tawianese-oden": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/eastern-castle-noodles": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/di-yi-ding": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/l-herbe": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/principe": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/liang-liang-table": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/yang-mei-tu-chi": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/kaiyuan-road-no-name-milkfish": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/shun-te-beef-soup": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/chuan-chia-congee": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/como-en-casa-gourmet": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/feng-no-seafood": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/mayu-cocoon": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/bistro-alley": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/fukai": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/hara-peko": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/sushi-an": 1
+      },
+      "weakRows": 0,
+      "weakSample": []
+    },
+    {
+      "guide": "bib",
+      "records": 144,
+      "years": {
+        "2025": 144
+      },
+      "sourceNames": {
+        "MICHELIN Guide Taiwan 2025 Bib Gourmand Selection": 144
+      },
+      "sourceUrls": {
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/simmer-house": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/beef-chief-zihciang-2nd-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/bei-gang-tsai-rice-tube-yancheng": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/hung-chi-rice-shop": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/cheng-tsung-duck-rice": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/yung-yen": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/pale-jade-pavilion": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/mi-yuan-tzu-steamed-glutinous-rice": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/hsiu-ming": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/liang-chia-pig-knuckle": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/ibu-kitchen": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/hou-chi-duck-rice": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/cianjin-brasied-pork-rice": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/chun-lan-gua-bao": 1,
+        "https://www.taiwan.net.tw/m1.aspx?page=17&sNo=0027001": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/thai-yuan": 1,
+        "https://500times.udn.com/wtimes/story/122412/9007797": 1,
+        "https://udn.com/news/story/7266/8933484": 57,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/erge-shih-tang": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/liao-chi-migao": 1,
+        "https://guide.michelin.com/tw/zh_TW/kaohsiung-region/kaohsiung/restaurant/mai-yen-shun": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-chieh-mei-nung-chia-le": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/shang-hao": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/da-one-gone-lamb": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/san-tung": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/yonghe-chia-hsiang-soy-milk": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/guang-xing-pork-knuckle": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/song-jhao": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/dian-xiao-er-datong-north-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/a-ba-s-taro-ball": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/garden-h": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/jhen-pin": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/yeh-chia-pork-ribs-medicinal-herbs-soup": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/tsai-chia-beef-noodles": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/new-taipei-city_2853082/restaurant/lai-kang-shan": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/jiu-tian-fu": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/he-jih-hsiang-minzu-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/nung-wei-hsiao-chu": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/dongmen-rice-noodle-soup": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/yuan-wei-duck-noodle": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/garden-v": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-city_2853126/restaurant/cat-house": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/bebu": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/shou-wu-eat": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/tang-tsao-yuan": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/noon-turnip-cake": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/shan-guo-tang": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/tsou-chi-cai-bao-zhongzheng-road": 1,
+        "https://guide.michelin.com/tw/zh_TW/northern-taiwan/hsinchu-county_2853127/restaurant/hung-chin": 1,
+        "https://guide.michelin.com/tw/zh_TW/taichung-region/taichung/restaurant/kung-fu-shanghai-fish-ball": 1,
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection": 33,
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/tableau-by-craig-yang": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/soft-power": 1,
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/su-lai-chuan": 1,
+        "https://guide.michelin.com/tw/zh_TW/tainan-region/tainan/restaurant/lien-wu-chiao-lamb-soup": 1
+      },
+      "weakRows": 0,
+      "weakSample": []
+    },
+    {
+      "guide": "500plate",
+      "records": 260,
+      "years": {
+        "2025": 260
+      },
+      "sourceNames": {
+        "500盤 2025 完整得獎名單": 260
+      },
+      "sourceUrls": {
+        "https://500times.udn.com/wtimes/story/122412/9007797": 219,
+        "https://guide.michelin.com/tw/en/article/michelin-guide-ceremony/taiwan-full-list": 1,
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list": 38,
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection": 2
+      },
+      "weakRows": 106,
+      "weakSample": [
+        {
+          "name": "金悅軒",
+          "city": "臺中市",
+          "district": "台中",
+          "address": "台中市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "香．寓",
+          "city": "臺中市",
+          "district": "台中",
+          "address": "台中市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "龍富 天婦羅",
+          "city": "臺中市",
+          "district": "台中",
+          "address": "台中市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Brass Hana 銅錵日式涮涮鍋",
+          "city": "臺中市",
+          "district": "台中",
+          "address": "台中市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Glou Suru",
+          "city": "臺中市",
+          "district": "台中",
+          "address": "台中市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "秦味館",
+          "city": "臺北市",
+          "district": "大安區",
+          "address": "台北市大安區",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤3盤",
+          "level": "3盤"
+        },
+        {
+          "name": "Solo Pasta",
+          "city": "臺北市",
+          "district": "大安區",
+          "address": "台北市大安區安和路一段29-1號",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤3盤",
+          "level": "3盤"
+        },
+        {
+          "name": "布雍家 Bouillon",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤3盤",
+          "level": "3盤"
+        },
+        {
+          "name": "赤綠",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤3盤",
+          "level": "3盤"
+        },
+        {
+          "name": "知名李",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤4盤",
+          "level": "4盤"
+        },
+        {
+          "name": "紅棉 Red Cotton",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤11盤",
+          "level": "11盤"
+        },
+        {
+          "name": "貳零捌公館",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤3盤",
+          "level": "3盤"
+        },
+        {
+          "name": "鄒記食舖",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤6盤",
+          "level": "6盤"
+        },
+        {
+          "name": "朧粵",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤3盤",
+          "level": "3盤"
+        },
+        {
+          "name": "Golden/Afterglo",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤5盤",
+          "level": "5盤"
+        },
+        {
+          "name": "Mizue",
+          "city": "臺北市",
+          "district": "台北市",
+          "address": "台北市",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤3盤",
+          "level": "3盤"
+        },
+        {
+          "name": "1117 一起cafe",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "1993韓式無菜單料理",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "十里。尋",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "三六食府",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "三禾小廚私房菜",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "小香 SHANN SHANN",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "小膳香成都麻辣火鍋",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "川揚郁坊小館",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "川湘號",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "中山對酌",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "允壽司",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "六品小館",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "六廚川客料理",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "太春小館（民生店）",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "毛家私廚",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "牛小路壽喜燒",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "牛琅",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "牛壽司",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "王匯所",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "先進海產店",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "匠樂割烹壽司",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "吉品海鮮（敦南店）",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "夙席",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "如嬌花膠雞．鍋物（民權一店）",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "弎弎川酒",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "成海壽司",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "百年台菜「豐」辦桌",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "竹苑 shabu",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "米匠（大直店）",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "艾迪墨西哥餐廳",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "君尹 Brisé",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "私・犇",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "赤身燒肉 USHIO Taipei",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "酉志",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "京丘・炭火燒鳥專門店",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "呷味鮮處女蟳",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "帕泰家 Baan Phadthai",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "泰式料理",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "板前中山",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Amamoto 鮨天本",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Après",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "BELLINI Pasta Pasta",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "義式料理 / 義大利麵 / 披薩",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Bogart's Smokehouse Taipei",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "Butcher by LanPengYou",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Café de LUGANO 盧卡諾義法餐酒館",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "Canvas",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "ConfitRémi 黑米",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "DOMANI 義式餐廳",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Earnestos",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "Extension 1 by 橘色",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Fa burger",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Focoso Taipei",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "foldie 蔬食餐酒館",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Fon-Cé",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Gustoso Italian Restaurant",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "inari Izakaya 現代居酒屋",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "INGE'S Bar & Grill 台北萬豪酒店",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Kitkit 創意川食",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "KOUMA日本料理小馬",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        },
+        {
+          "name": "L’Atelier de Joël Robuchon Taipei",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "French",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "LOPFAIT 樂斐",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "LOPFAIT Grill",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "M&CO",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "Magic Touch",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "onefifteen 初衣食午",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤2盤",
+          "level": "2盤"
+        }
+      ]
+    },
+    {
+      "guide": "500bowl",
+      "records": 415,
+      "years": {
+        "2025": 415
+      },
+      "sourceNames": {
+        "500碗 2025 完整得獎名單": 415
+      },
+      "sourceUrls": {
+        "https://500times.udn.com/wtimes/story/123497/8874123": 415
+      },
+      "weakRows": 389,
+      "weakSample": [
+        {
+          "name": "一香飲食店 麻醬麵",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "四海居小吃部",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "正好鮮肉小籠包",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "合鴨米灶腳",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "吉祥鮮肉小籠包",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "好運牛湯麵",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "老吳碳烤燒烤餅",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "南方澳無名蝦餅蚵嗲蘿蔔糕",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "南陽香辣麵",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "彭記蔥油餅",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "湯城麵食",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "嘟好燒",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "小廢柴 Little Sleepyhead",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "米崙丼飯屋",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "單一純賣 雞湯 小卷米粉",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "福源海鮮",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "鴨隊堡",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "HANG OUT手工漢堡（慶降Kiciyang）",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "包葉扣仔嗲",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "正統飯糰",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "吃溜麵館",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "汶傳統米食坊",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿章意麵",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗2碗",
+          "level": "2碗"
+        },
+        {
+          "name": "唐元食事",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "清境馬蘭廚房眷村美食小吃",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "澄食 和食料理",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "蘇媽媽湯圓",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "Feeling18生吐司",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "上讚肉圓 大腸 粉腸(27攤)",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "大眾便當自助餐",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "正源萬巒豬腳",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "老宋牛肉麵",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "老牌鵝肉",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "周記春捲",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "東港正宗肉丸",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗2碗",
+          "level": "2碗"
+        },
+        {
+          "name": "東港蔡沙蝦肉丸",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "林記肉粿",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿卿姐飯湯",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "屏東黃家肉圓",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "美鳳鹹酥雞",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "香港仔美食",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "國泰萬巒豬腳大王",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "婦功食品行早餐",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "惜緣亭-米販部",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "菊子 Wouli 889（菊子窩裡）",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "葉家肉粿",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "熊熊本丸",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "歸來肉圓老店",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "古早味婆菜",
+          "city": "苗栗縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "白沙屯外省牛肉麵",
+          "city": "苗栗縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿梅姐日常手作·味自慢糧倉",
+          "city": "苗栗縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "仁利菜包",
+          "city": "桃園市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "油條麻吉 ( 金門油條 )",
+          "city": "桃園市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿桃的店",
+          "city": "桃園市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "胡家潤餅",
+          "city": "桃園市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "三郎麵包廠",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "小吃",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "大胖豬油拌麵",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "大港飯糰",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "小暫渡米糕四神湯",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗2碗",
+          "level": "2碗"
+        },
+        {
+          "name": "天天沙茶火鍋",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "北港蔡三代筒仔米糕",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "小吃",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "四口田手作麻辣「正」",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "吳記肉圓",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "李氏商行",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "林記豆漿店",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "芳德豬肉冬粉",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿凡沙茶麻醬麵",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿城粄條",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿英排骨飯",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿貴虱目魚店",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗2碗",
+          "level": "2碗"
+        },
+        {
+          "name": "阿貴活海產",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "阿進切仔麵",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "南台春捲",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "南豐魯肉飯",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "哈瑪星汕頭麵呂",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "香四海現做旗魚黑輪",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "堀江麵",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "堂伯猪肝卷",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "曾記廚房",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        },
+        {
+          "name": "無名肉燥飯",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500碗1碗",
+          "level": "1碗"
+        }
+      ]
+    },
+    {
+      "guide": "500sweet",
+      "records": 328,
+      "years": {
+        "2025": 328
+      },
+      "sourceNames": {
+        "500甜 2025 完整得獎名單": 328
+      },
+      "sourceUrls": {
+        "https://500times.udn.com/wtimes/story/124537/8931871": 328
+      },
+      "weakRows": 285,
+      "weakSample": [
+        {
+          "name": "小食粑 Rice Mini Cake",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "小涼園冰果室",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "白水豆花",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "老元香",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "和平豆花(宜蘭)",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "南館市場",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "逗可可:甜點研究室",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "越穗香手作甜點",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "聯發冰工坊",
+          "city": "宜蘭縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "找到了可頌小売所",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "蘭二㼗 Lan Er Ting 中式創意甜點",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "YUTUZU",
+          "city": "花蓮縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "海霓蜜坊Honey workshop",
+          "city": "金門縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "沒有豆花",
+          "city": "南投縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "波波廚房 Kitchen Swell",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "莉姆姆的歌",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "菜寮豆花",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "福灣巧克力",
+          "city": "屏東縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "北苗市場_阿婆手工粉圓",
+          "city": "苗栗縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "屋咖人Vug Ka Ngin",
+          "city": "苗栗縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "穿龍老屋豆腐坊",
+          "city": "苗栗縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "福樂麵店",
+          "city": "苗栗縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "艾蕾蒂法式甜點",
+          "city": "桃園市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜2甜",
+          "level": "2甜"
+        },
+        {
+          "name": "藍嵐",
+          "city": "桃園市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "小雅芋頭西米露專賣店",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "小露吃",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "仁愛一街綠豆湯",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "天池冬瓜茶",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "冷熱飲之家",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "李家圓仔湯",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "呷百二自然洋果子",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "拜樹頭烘焙商店",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "若生靜巷",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "猜心泡芙",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜2甜",
+          "level": "2甜"
+        },
+        {
+          "name": "莎士比亞烘焙坊",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "旗山 常美冰店",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "OCEAN BAKERY",
+          "city": "高雄市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "李鵠餅店",
+          "city": "基隆市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "目鏡仔麥芽酥",
+          "city": "雲林縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "長興圓仔冰",
+          "city": "雲林縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "溝仔垻清涼冰店",
+          "city": "雲林縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "粳粽林",
+          "city": "雲林縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "碳烤鴨蛋糕",
+          "city": "雲林縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "豆林豆花",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "林口米苔目冰",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "香帥蛋糕",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "倆樂 LiAng Le",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "粉圓王",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "野事草店Wild Herbs",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "新建成餅店",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "Le Môut Pâtisserie Boulangerie 樂沐糕餅舖",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "NINE SKY 九天",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "Quartet Kaffe 適芳咖啡",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "Urban Canyon by Brown Study 城市峽谷咖啡館",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "YUYU Pâtisserie",
+          "city": "新北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "(源記)鹿港傳統粉粿冰",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "大元蔴糬(鹹麻糬)",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "不二坊",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜2甜",
+          "level": "2甜"
+        },
+        {
+          "name": "玉瓏坊名產麻糬",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "怡古齋人文茶館",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "明豐珍兔仔寮牛舌餅",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "施豆花",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "新口味食品行",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "寶珍香桂圓蛋糕創始店",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "BEAR BAKERY 小熊菓子",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "Bruce Coffee 自家焙煎咖啡",
+          "city": "彰化縣",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "一中豐仁冰",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "臺灣菜",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "不二糕餅",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "天天饅頭",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "巴蕾麵包",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "牛B葫蘆王 逢甲總店",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "坂神本舖長崎蛋糕",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜2甜",
+          "level": "2甜"
+        },
+        {
+          "name": "奉咖啡",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "東東芋圓 本店",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "阿斗伯冷凍芋",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜3甜",
+          "level": "3甜"
+        },
+        {
+          "name": "俊美",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "美村點頭冰",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "堂本麵包店 (亞森洋果子)",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜6甜",
+          "level": "6甜"
+        },
+        {
+          "name": "陳記涼茶本舖",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        },
+        {
+          "name": "硬翰拔絲米血",
+          "city": "臺中市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500甜1甜",
+          "level": "1甜"
+        }
+      ]
+    }
+  ],
+  "manualReviewCount": 775,
+  "manualReviewSample": [
+    {
+      "name": "一香飲食店 麻醬麵",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "小食粑 Rice Mini Cake",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "小涼園冰果室",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "四海居小吃部",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "正好鮮肉小籠包",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "白水豆花",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "合鴨米灶腳",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "吉祥鮮肉小籠包",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "好運牛湯麵",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "老元香",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "老吳碳烤燒烤餅",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "和平豆花(宜蘭)",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "南方澳無名蝦餅蚵嗲蘿蔔糕",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "南陽香辣麵",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "南館市場",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "逗可可:甜點研究室",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "彭記蔥油餅",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "湯城麵食",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "越穗香手作甜點",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "嘟好燒",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "聯發冰工坊",
+      "city": "宜蘭縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "小廢柴 Little Sleepyhead",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "米崙丼飯屋",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "找到了可頌小売所",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "單一純賣 雞湯 小卷米粉",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "福源海鮮",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "鴨隊堡",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "蘭二㼗 Lan Er Ting 中式創意甜點",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "HANG OUT手工漢堡（慶降Kiciyang）",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "YUTUZU",
+      "city": "花蓮縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "海霓蜜坊Honey workshop",
+      "city": "金門縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "包葉扣仔嗲",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "正統飯糰",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "吃溜麵館",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "汶傳統米食坊",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "沒有豆花",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "阿章意麵",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "唐元食事",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "清境馬蘭廚房眷村美食小吃",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "澄食 和食料理",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "蘇媽媽湯圓",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "Feeling18生吐司",
+      "city": "南投縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "上讚肉圓 大腸 粉腸(27攤)",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "大眾便當自助餐",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "正源萬巒豬腳",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "老宋牛肉麵",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "老牌鵝肉",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "周記春捲",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "東港正宗肉丸",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "東港蔡沙蝦肉丸",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "林記肉粿",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "波波廚房 Kitchen Swell",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "阿卿姐飯湯",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "屏東黃家肉圓",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "美鳳鹹酥雞",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "香港仔美食",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "國泰萬巒豬腳大王",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "婦功食品行早餐",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "惜緣亭-米販部",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "莉姆姆的歌",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "菊子 Wouli 889（菊子窩裡）",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "菜寮豆花",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "葉家肉粿",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "熊熊本丸",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "福灣巧克力",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "歸來肉圓老店",
+      "city": "屏東縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "北苗市場_阿婆手工粉圓",
+      "city": "苗栗縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "古早味婆菜",
+      "city": "苗栗縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "白沙屯外省牛肉麵",
+      "city": "苗栗縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿梅姐日常手作·味自慢糧倉",
+      "city": "苗栗縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "屋咖人Vug Ka Ngin",
+      "city": "苗栗縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "穿龍老屋豆腐坊",
+      "city": "苗栗縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "福樂麵店",
+      "city": "苗栗縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "仁利菜包",
+      "city": "桃園市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "艾蕾蒂法式甜點",
+      "city": "桃園市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "油條麻吉 ( 金門油條 )",
+      "city": "桃園市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿桃的店",
+      "city": "桃園市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "胡家潤餅",
+      "city": "桃園市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "藍嵐",
+      "city": "桃園市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "三郎麵包廠",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "小吃",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "大胖豬油拌麵",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "大港飯糰",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "小雅芋頭西米露專賣店",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "小暫渡米糕四神湯",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "小露吃",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "仁愛一街綠豆湯",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "天天沙茶火鍋",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "天池冬瓜茶",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "北港蔡三代筒仔米糕",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "小吃",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "四口田手作麻辣「正」",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "冷熱飲之家",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "吳記肉圓",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "李氏商行",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "李家圓仔湯",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "呷百二自然洋果子",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "林記豆漿店",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "芳德豬肉冬粉",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿凡沙茶麻醬麵",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿城粄條",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿英排骨飯",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿貴虱目魚店",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿貴活海產",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿進切仔麵",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "南台春捲",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "南豐魯肉飯",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "哈瑪星汕頭麵呂",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "拜樹頭烘焙商店",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "若生靜巷",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "香四海現做旗魚黑輪",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "堀江麵",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "堂伯猪肝卷",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "猜心泡芙",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "莎士比亞烘焙坊",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "曾記廚房",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "無名肉燥飯",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "旗山 常美冰店",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "蒜泥雖小",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "劉江便當",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "鍾家高雄綠豆湯大王",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "鐵盒保哥滷味",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "鹽埕埔碗粿雄",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "LKK肉圓",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "OCEAN BAKERY",
+      "city": "高雄市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "8號旗魚飯 鮮魚湯",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "小文肉羹魯肉飯",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "水產餃子館",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "正豐鵝肉",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "圳記紅燒鰻",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "成功市場黑白炒咖哩麵",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "李鵠餅店",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "林記油蔥稞",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "長腳麵食",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿中海鮮小吃",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "素志久碳烤三明治",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "基隆廟口 油粿 芋粿",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "基隆廟口22號蝦仁羹 豬腳",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "基隆廟口40號花枝羹 大麵炒",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "魚丸伯仔",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "雅吉麵線肉圓豆花",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "黃家麥克麵線",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "遠東賴家水煎包",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "銘傳油飯",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "稻香軒",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "魯肉飯專家",
+      "city": "基隆市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "斗南米糕甲",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "北港嘉義火雞肉飯",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "目鏡仔麥芽酥",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "老街碗粿",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "虎尾美貞肉羹麵",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "長興圓仔冰",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "阿美小吃",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿國獅魷魚羹",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "溝仔垻清涼冰店",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "粳粽林",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "碳烤鴨蛋糕",
+      "city": "雲林縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "786李園清真小吃",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "大象切仔麵",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "天然本味老麵饅頭店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "尤協豐豆干店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "北京餡餅粥",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "正莊古早味好吃雞肉店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "永貞好吃雞肉飯",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "甲鼎茶莊古早味傳統小吃店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "朱記花枝羹",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "吳記北平餡餅專賣店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "吾時·食",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "志明油飯麵線",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "豆林豆花",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "車頭鹹粥",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "林口米苔目冰",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "林員肉圓",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿倍麵線",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿勝切仔麵",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿榮切仔麵",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "阿薇緬甸小吃店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "南川麵館",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "紅林包子舖",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "香帥蛋糕",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "倆樂 LiAng Le",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "真大蒸餃",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "粉圓王",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "野事草店Wild Herbs",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "富關東煮",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "無名刈包",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "新建成餅店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "新莊羊肉榮",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "新莊後港炭烤鷄排",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "源慶鮮蚵",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "福州金魚麵店",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "辣四方",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "樂沐糕餅舖",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "蓮霧滷肉飯",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "蘆洲-總讚手作蔥餅",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    },
+    {
+      "name": "Le Môut Pâtisserie Boulangerie 樂沐糕餅舖",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "NINE SKY 九天",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "Quartet Kaffe 適芳咖啡",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "Urban Canyon by Brown Study 城市峽谷咖啡館",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "YUYU Pâtisserie",
+      "city": "新北市",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "(源記)鹿港傳統粉粿冰",
+      "city": "彰化縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500sweet"
+      ]
+    },
+    {
+      "name": "大元蔴薯",
+      "city": "彰化縣",
+      "district": "行政區待確認",
+      "address": "地址待確認",
+      "cuisine": "菜系待確認",
+      "guides": [
+        "500bowl"
+      ]
+    }
+  ]
+}

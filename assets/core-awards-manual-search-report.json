@@ -1,0 +1,2401 @@
+{
+  "generatedAt": "2026-07-07T13:41:06.349Z",
+  "purpose": "Prioritized manual or semi-automated public-web enrichment queue for remaining core awards gaps.",
+  "totalStrictRows": 776,
+  "summary": {
+    "cuisineOnly": 1,
+    "locationAndCuisine": 756,
+    "locationOnly": 18
+  },
+  "priorityCuisineOnly": [
+    {
+      "name": "Solo Pasta",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市大安區安和路一段29-1號",
+      "cuisine": "菜系待確認",
+      "awards": [
+        {
+          "guide": "500plate",
+          "year": 2025,
+          "level": "3盤",
+          "awardName": "500盤3盤",
+          "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+        },
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "level": "1甜",
+          "awardName": "500甜1甜",
+          "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+        }
+      ],
+      "queryHints": [
+        "Solo Pasta 台北市 官方",
+        "Solo Pasta 台北市 菜系",
+        "Solo Pasta 台北市 地址",
+        "Solo Pasta 台北市 site:facebook.com",
+        "Solo Pasta 台北市 site:ifoodie.tw"
+      ],
+      "notes": "Core awards batch18 normalized district format 2026-07-06"
+    }
+  ],
+  "samples": {
+    "locationAndCuisine": [
+      {
+        "name": "(源記)鹿港傳統粉粿冰",
+        "city": "彰化縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "(源記)鹿港傳統粉粿冰 彰化縣 官方",
+          "(源記)鹿港傳統粉粿冰 彰化縣 菜系",
+          "(源記)鹿港傳統粉粿冰 彰化縣 地址",
+          "(源記)鹿港傳統粉粿冰 彰化縣 site:facebook.com",
+          "(源記)鹿港傳統粉粿冰 彰化縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "1117 一起cafe",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "1117 一起cafe 台北市 官方",
+          "1117 一起cafe 台北市 菜系",
+          "1117 一起cafe 台北市 地址",
+          "1117 一起cafe 台北市 site:facebook.com",
+          "1117 一起cafe 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "1789 Café Pâtisserie",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "2甜",
+            "awardName": "500甜2甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "1789 Café Pâtisserie 台北市 官方",
+          "1789 Café Pâtisserie 台北市 菜系",
+          "1789 Café Pâtisserie 台北市 地址",
+          "1789 Café Pâtisserie 台北市 site:facebook.com",
+          "1789 Café Pâtisserie 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "1976道地香港美食",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "1976道地香港美食 台北市 官方",
+          "1976道地香港美食 台北市 菜系",
+          "1976道地香港美食 台北市 地址",
+          "1976道地香港美食 台北市 site:facebook.com",
+          "1976道地香港美食 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "1993韓式無菜單料理",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "1993韓式無菜單料理 台北市 官方",
+          "1993韓式無菜單料理 台北市 菜系",
+          "1993韓式無菜單料理 台北市 地址",
+          "1993韓式無菜單料理 台北市 site:facebook.com",
+          "1993韓式無菜單料理 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "1NAM desserts&drinks",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "1NAM desserts&drinks 台北市 官方",
+          "1NAM desserts&drinks 台北市 菜系",
+          "1NAM desserts&drinks 台北市 地址",
+          "1NAM desserts&drinks 台北市 site:facebook.com",
+          "1NAM desserts&drinks 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "216粉圓大王",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "2甜",
+            "awardName": "500甜2甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "216粉圓大王 台北市 官方",
+          "216粉圓大王 台北市 菜系",
+          "216粉圓大王 台北市 地址",
+          "216粉圓大王 台北市 site:facebook.com",
+          "216粉圓大王 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "786李園清真小吃",
+        "city": "新北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "786李園清真小吃 新北市 官方",
+          "786李園清真小吃 新北市 菜系",
+          "786李園清真小吃 新北市 地址",
+          "786李園清真小吃 新北市 site:facebook.com",
+          "786李園清真小吃 新北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "8號旗魚飯 鮮魚湯",
+        "city": "基隆市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "8號旗魚飯 鮮魚湯 基隆市 官方",
+          "8號旗魚飯 鮮魚湯 基隆市 菜系",
+          "8號旗魚飯 鮮魚湯 基隆市 地址",
+          "8號旗魚飯 鮮魚湯 基隆市 site:facebook.com",
+          "8號旗魚飯 鮮魚湯 基隆市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "一香飲食店 麻醬麵",
+        "city": "宜蘭縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "一香飲食店 麻醬麵 宜蘭縣 官方",
+          "一香飲食店 麻醬麵 宜蘭縣 菜系",
+          "一香飲食店 麻醬麵 宜蘭縣 地址",
+          "一香飲食店 麻醬麵 宜蘭縣 site:facebook.com",
+          "一香飲食店 麻醬麵 宜蘭縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "八和和牛燒肉專門店",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "八和和牛燒肉專門店 台北市 官方",
+          "八和和牛燒肉專門店 台北市 菜系",
+          "八和和牛燒肉專門店 台北市 地址",
+          "八和和牛燒肉專門店 台北市 site:facebook.com",
+          "八和和牛燒肉專門店 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "十三香精緻麵食",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "十三香精緻麵食 台北市 官方",
+          "十三香精緻麵食 台北市 菜系",
+          "十三香精緻麵食 台北市 地址",
+          "十三香精緻麵食 台北市 site:facebook.com",
+          "十三香精緻麵食 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "十分麵線",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "十分麵線 台北市 官方",
+          "十分麵線 台北市 菜系",
+          "十分麵線 台北市 地址",
+          "十分麵線 台北市 site:facebook.com",
+          "十分麵線 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "十平",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "十平 台南市 官方",
+          "十平 台南市 菜系",
+          "十平 台南市 地址",
+          "十平 台南市 site:facebook.com",
+          "十平 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "十里。尋",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "2盤",
+            "awardName": "500盤2盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "十里。尋 台北市 官方",
+          "十里。尋 台北市 菜系",
+          "十里。尋 台北市 地址",
+          "十里。尋 台北市 site:facebook.com",
+          "十里。尋 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "三元號魯肉飯",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "三元號魯肉飯 台北市 官方",
+          "三元號魯肉飯 台北市 菜系",
+          "三元號魯肉飯 台北市 地址",
+          "三元號魯肉飯 台北市 site:facebook.com",
+          "三元號魯肉飯 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "三六食府",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "2盤",
+            "awardName": "500盤2盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "三六食府 台北市 官方",
+          "三六食府 台北市 菜系",
+          "三六食府 台北市 地址",
+          "三六食府 台北市 site:facebook.com",
+          "三六食府 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "三日月茶空間(和菓子)",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "2甜",
+            "awardName": "500甜2甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "三日月茶空間(和菓子) 台北市 官方",
+          "三日月茶空間(和菓子) 台北市 菜系",
+          "三日月茶空間(和菓子) 台北市 地址",
+          "三日月茶空間(和菓子) 台北市 site:facebook.com",
+          "三日月茶空間(和菓子) 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "三禾小廚私房菜",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "三禾小廚私房菜 台北市 官方",
+          "三禾小廚私房菜 台北市 菜系",
+          "三禾小廚私房菜 台北市 地址",
+          "三禾小廚私房菜 台北市 site:facebook.com",
+          "三禾小廚私房菜 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "三角冰",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "三角冰 台北市 官方",
+          "三角冰 台北市 菜系",
+          "三角冰 台北市 地址",
+          "三角冰 台北市 site:facebook.com",
+          "三角冰 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "三明堂",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "三明堂 台北市 官方",
+          "三明堂 台北市 菜系",
+          "三明堂 台北市 地址",
+          "三明堂 台北市 site:facebook.com",
+          "三明堂 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "三統漢菓子 suntone",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "三統漢菓子 suntone 台北市 官方",
+          "三統漢菓子 suntone 台北市 菜系",
+          "三統漢菓子 suntone 台北市 地址",
+          "三統漢菓子 suntone 台北市 site:facebook.com",
+          "三統漢菓子 suntone 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "上上咖啡",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "上上咖啡 台北市 官方",
+          "上上咖啡 台北市 菜系",
+          "上上咖啡 台北市 地址",
+          "上上咖啡 台北市 site:facebook.com",
+          "上上咖啡 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "上舜碗粿",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "上舜碗粿 台南市 官方",
+          "上舜碗粿 台南市 菜系",
+          "上舜碗粿 台南市 地址",
+          "上舜碗粿 台南市 site:facebook.com",
+          "上舜碗粿 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "上讚肉圓 大腸 粉腸(27攤)",
+        "city": "屏東縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "上讚肉圓 大腸 粉腸(27攤) 屏東縣 官方",
+          "上讚肉圓 大腸 粉腸(27攤) 屏東縣 菜系",
+          "上讚肉圓 大腸 粉腸(27攤) 屏東縣 地址",
+          "上讚肉圓 大腸 粉腸(27攤) 屏東縣 site:facebook.com",
+          "上讚肉圓 大腸 粉腸(27攤) 屏東縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "口口家豆花甜湯chez Lu Taiwanese dessert",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "口口家豆花甜湯chez Lu Taiwanese dessert 台北市 官方",
+          "口口家豆花甜湯chez Lu Taiwanese dessert 台北市 菜系",
+          "口口家豆花甜湯chez Lu Taiwanese dessert 台北市 地址",
+          "口口家豆花甜湯chez Lu Taiwanese dessert 台北市 site:facebook.com",
+          "口口家豆花甜湯chez Lu Taiwanese dessert 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "土然巧克力專門店TERRA Bean to Bar Chocolate",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "5甜",
+            "awardName": "500甜5甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "土然巧克力專門店TERRA Bean to Bar Chocolate 台北市 官方",
+          "土然巧克力專門店TERRA Bean to Bar Chocolate 台北市 菜系",
+          "土然巧克力專門店TERRA Bean to Bar Chocolate 台北市 地址",
+          "土然巧克力專門店TERRA Bean to Bar Chocolate 台北市 site:facebook.com",
+          "土然巧克力專門店TERRA Bean to Bar Chocolate 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "士東市場137號米粉湯",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "士東市場137號米粉湯 台北市 官方",
+          "士東市場137號米粉湯 台北市 菜系",
+          "士東市場137號米粉湯 台北市 地址",
+          "士東市場137號米粉湯 台北市 site:facebook.com",
+          "士東市場137號米粉湯 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大三元豆漿",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大三元豆漿 台北市 官方",
+          "大三元豆漿 台北市 菜系",
+          "大三元豆漿 台北市 地址",
+          "大三元豆漿 台北市 site:facebook.com",
+          "大三元豆漿 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大元蔴薯",
+        "city": "彰化縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大元蔴薯 彰化縣 官方",
+          "大元蔴薯 彰化縣 菜系",
+          "大元蔴薯 彰化縣 地址",
+          "大元蔴薯 彰化縣 site:facebook.com",
+          "大元蔴薯 彰化縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大元蔴糬(鹹麻糬)",
+        "city": "彰化縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "大元蔴糬(鹹麻糬) 彰化縣 官方",
+          "大元蔴糬(鹹麻糬) 彰化縣 菜系",
+          "大元蔴糬(鹹麻糬) 彰化縣 地址",
+          "大元蔴糬(鹹麻糬) 彰化縣 site:facebook.com",
+          "大元蔴糬(鹹麻糬) 彰化縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大巴六九景觀餐廳",
+        "city": "臺東縣",
+        "district": "台東",
+        "address": "台東縣",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "大巴六九景觀餐廳 台東縣 官方",
+          "大巴六九景觀餐廳 台東縣 菜系",
+          "大巴六九景觀餐廳 台東縣 地址",
+          "大巴六九景觀餐廳 台東縣 site:facebook.com",
+          "大巴六九景觀餐廳 台東縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大水缸養生甜品",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "大水缸養生甜品 台北市 官方",
+          "大水缸養生甜品 台北市 菜系",
+          "大水缸養生甜品 台北市 地址",
+          "大水缸養生甜品 台北市 site:facebook.com",
+          "大水缸養生甜品 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大王漢寶殿",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大王漢寶殿 台北市 官方",
+          "大王漢寶殿 台北市 菜系",
+          "大王漢寶殿 台北市 地址",
+          "大王漢寶殿 台北市 site:facebook.com",
+          "大王漢寶殿 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大安永和豆漿大王",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大安永和豆漿大王 台北市 官方",
+          "大安永和豆漿大王 台北市 菜系",
+          "大安永和豆漿大王 台北市 地址",
+          "大安永和豆漿大王 台北市 site:facebook.com",
+          "大安永和豆漿大王 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大佳牛雜湯",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大佳牛雜湯 台北市 官方",
+          "大佳牛雜湯 台北市 菜系",
+          "大佳牛雜湯 台北市 地址",
+          "大佳牛雜湯 台北市 site:facebook.com",
+          "大佳牛雜湯 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大胖豬油拌麵",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大胖豬油拌麵 高雄市 官方",
+          "大胖豬油拌麵 高雄市 菜系",
+          "大胖豬油拌麵 高雄市 地址",
+          "大胖豬油拌麵 高雄市 site:facebook.com",
+          "大胖豬油拌麵 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大眾便當自助餐",
+        "city": "屏東縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大眾便當自助餐 屏東縣 官方",
+          "大眾便當自助餐 屏東縣 菜系",
+          "大眾便當自助餐 屏東縣 地址",
+          "大眾便當自助餐 屏東縣 site:facebook.com",
+          "大眾便當自助餐 屏東縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大港飯糰",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大港飯糰 高雄市 官方",
+          "大港飯糰 高雄市 菜系",
+          "大港飯糰 高雄市 地址",
+          "大港飯糰 高雄市 site:facebook.com",
+          "大港飯糰 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大象切仔麵",
+        "city": "新北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大象切仔麵 新北市 官方",
+          "大象切仔麵 新北市 菜系",
+          "大象切仔麵 新北市 地址",
+          "大象切仔麵 新北市 site:facebook.com",
+          "大象切仔麵 新北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大龍峒肉羹-米粉湯",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大龍峒肉羹-米粉湯 台北市 官方",
+          "大龍峒肉羹-米粉湯 台北市 菜系",
+          "大龍峒肉羹-米粉湯 台北市 地址",
+          "大龍峒肉羹-米粉湯 台北市 site:facebook.com",
+          "大龍峒肉羹-米粉湯 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大膽牛腩麵",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大膽牛腩麵 台北市 官方",
+          "大膽牛腩麵 台北市 菜系",
+          "大膽牛腩麵 台北市 地址",
+          "大膽牛腩麵 台北市 site:facebook.com",
+          "大膽牛腩麵 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小山西館",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "小山西館 台中市 官方",
+          "小山西館 台中市 菜系",
+          "小山西館 台中市 地址",
+          "小山西館 台中市 site:facebook.com",
+          "小山西館 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小文肉羹魯肉飯",
+        "city": "基隆市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "小文肉羹魯肉飯 基隆市 官方",
+          "小文肉羹魯肉飯 基隆市 菜系",
+          "小文肉羹魯肉飯 基隆市 地址",
+          "小文肉羹魯肉飯 基隆市 site:facebook.com",
+          "小文肉羹魯肉飯 基隆市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小林雞肉飯",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "小林雞肉飯 台中市 官方",
+          "小林雞肉飯 台中市 菜系",
+          "小林雞肉飯 台中市 地址",
+          "小林雞肉飯 台中市 site:facebook.com",
+          "小林雞肉飯 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小食粑 Rice Mini Cake",
+        "city": "宜蘭縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "小食粑 Rice Mini Cake 宜蘭縣 官方",
+          "小食粑 Rice Mini Cake 宜蘭縣 菜系",
+          "小食粑 Rice Mini Cake 宜蘭縣 地址",
+          "小食粑 Rice Mini Cake 宜蘭縣 site:facebook.com",
+          "小食粑 Rice Mini Cake 宜蘭縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小香 SHANN SHANN",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "2盤",
+            "awardName": "500盤2盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "小香 SHANN SHANN 台北市 官方",
+          "小香 SHANN SHANN 台北市 菜系",
+          "小香 SHANN SHANN 台北市 地址",
+          "小香 SHANN SHANN 台北市 site:facebook.com",
+          "小香 SHANN SHANN 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小涼園冰果室",
+        "city": "宜蘭縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "小涼園冰果室 宜蘭縣 官方",
+          "小涼園冰果室 宜蘭縣 菜系",
+          "小涼園冰果室 宜蘭縣 地址",
+          "小涼園冰果室 宜蘭縣 site:facebook.com",
+          "小涼園冰果室 宜蘭縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小凱悅南村小吃店",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "小凱悅南村小吃店 台北市 官方",
+          "小凱悅南村小吃店 台北市 菜系",
+          "小凱悅南村小吃店 台北市 地址",
+          "小凱悅南村小吃店 台北市 site:facebook.com",
+          "小凱悅南村小吃店 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小雅芋頭西米露專賣店",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "小雅芋頭西米露專賣店 高雄市 官方",
+          "小雅芋頭西米露專賣店 高雄市 菜系",
+          "小雅芋頭西米露專賣店 高雄市 地址",
+          "小雅芋頭西米露專賣店 高雄市 site:facebook.com",
+          "小雅芋頭西米露專賣店 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小廢柴 Little Sleepyhead",
+        "city": "花蓮縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "小廢柴 Little Sleepyhead 花蓮縣 官方",
+          "小廢柴 Little Sleepyhead 花蓮縣 菜系",
+          "小廢柴 Little Sleepyhead 花蓮縣 地址",
+          "小廢柴 Little Sleepyhead 花蓮縣 site:facebook.com",
+          "小廢柴 Little Sleepyhead 花蓮縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小暫渡米糕四神湯",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "2碗",
+            "awardName": "500碗2碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "小暫渡米糕四神湯 高雄市 官方",
+          "小暫渡米糕四神湯 高雄市 菜系",
+          "小暫渡米糕四神湯 高雄市 地址",
+          "小暫渡米糕四神湯 高雄市 site:facebook.com",
+          "小暫渡米糕四神湯 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小膳香成都麻辣火鍋",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "小膳香成都麻辣火鍋 台北市 官方",
+          "小膳香成都麻辣火鍋 台北市 菜系",
+          "小膳香成都麻辣火鍋 台北市 地址",
+          "小膳香成都麻辣火鍋 台北市 site:facebook.com",
+          "小膳香成都麻辣火鍋 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "小露吃",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "小露吃 高雄市 官方",
+          "小露吃 高雄市 菜系",
+          "小露吃 高雄市 地址",
+          "小露吃 高雄市 site:facebook.com",
+          "小露吃 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "山東赤肉蒸餃",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "山東赤肉蒸餃 台北市 官方",
+          "山東赤肉蒸餃 台北市 菜系",
+          "山東赤肉蒸餃 台北市 地址",
+          "山東赤肉蒸餃 台北市 site:facebook.com",
+          "山東赤肉蒸餃 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "山記魚仔店",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "山記魚仔店 台南市 官方",
+          "山記魚仔店 台南市 菜系",
+          "山記魚仔店 台南市 地址",
+          "山記魚仔店 台南市 site:facebook.com",
+          "山記魚仔店 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "川畝園麵食館",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "川畝園麵食館 台北市 官方",
+          "川畝園麵食館 台北市 菜系",
+          "川畝園麵食館 台北市 地址",
+          "川畝園麵食館 台北市 site:facebook.com",
+          "川畝園麵食館 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "川揚郁坊小館",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "川揚郁坊小館 台北市 官方",
+          "川揚郁坊小館 台北市 菜系",
+          "川揚郁坊小館 台北市 地址",
+          "川揚郁坊小館 台北市 site:facebook.com",
+          "川揚郁坊小館 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "川湘號",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "川湘號 台北市 官方",
+          "川湘號 台北市 菜系",
+          "川湘號 台北市 地址",
+          "川湘號 台北市 site:facebook.com",
+          "川湘號 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "不二坊",
+        "city": "彰化縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "2甜",
+            "awardName": "500甜2甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "不二坊 彰化縣 官方",
+          "不二坊 彰化縣 菜系",
+          "不二坊 彰化縣 地址",
+          "不二坊 彰化縣 site:facebook.com",
+          "不二坊 彰化縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "不二糕餅",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "不二糕餅 台中市 官方",
+          "不二糕餅 台中市 菜系",
+          "不二糕餅 台中市 地址",
+          "不二糕餅 台中市 site:facebook.com",
+          "不二糕餅 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "中山對酌",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "2盤",
+            "awardName": "500盤2盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "中山對酌 台北市 官方",
+          "中山對酌 台北市 菜系",
+          "中山對酌 台北市 地址",
+          "中山對酌 台北市 site:facebook.com",
+          "中山對酌 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "仁利菜包",
+        "city": "桃園市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "仁利菜包 桃園市 官方",
+          "仁利菜包 桃園市 菜系",
+          "仁利菜包 桃園市 地址",
+          "仁利菜包 桃園市 site:facebook.com",
+          "仁利菜包 桃園市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "仁愛一街綠豆湯",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "仁愛一街綠豆湯 高雄市 官方",
+          "仁愛一街綠豆湯 高雄市 菜系",
+          "仁愛一街綠豆湯 高雄市 地址",
+          "仁愛一街綠豆湯 高雄市 site:facebook.com",
+          "仁愛一街綠豆湯 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "允壽司",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "允壽司 台北市 官方",
+          "允壽司 台北市 菜系",
+          "允壽司 台北市 地址",
+          "允壽司 台北市 site:facebook.com",
+          "允壽司 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "公園口紅燒土魠魚焿",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "2碗",
+            "awardName": "500碗2碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "公園口紅燒土魠魚焿 台南市 官方",
+          "公園口紅燒土魠魚焿 台南市 菜系",
+          "公園口紅燒土魠魚焿 台南市 地址",
+          "公園口紅燒土魠魚焿 台南市 site:facebook.com",
+          "公園口紅燒土魠魚焿 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "六丁目咖啡",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "六丁目咖啡 台北市 官方",
+          "六丁目咖啡 台北市 菜系",
+          "六丁目咖啡 台北市 地址",
+          "六丁目咖啡 台北市 site:facebook.com",
+          "六丁目咖啡 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "六甲媽祖廟剉冰",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "六甲媽祖廟剉冰 台南市 官方",
+          "六甲媽祖廟剉冰 台南市 菜系",
+          "六甲媽祖廟剉冰 台南市 地址",
+          "六甲媽祖廟剉冰 台南市 site:facebook.com",
+          "六甲媽祖廟剉冰 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "六品小館",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "六品小館 台北市 官方",
+          "六品小館 台北市 菜系",
+          "六品小館 台北市 地址",
+          "六品小館 台北市 site:facebook.com",
+          "六品小館 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "六順豆花",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "六順豆花 台北市 官方",
+          "六順豆花 台北市 菜系",
+          "六順豆花 台北市 地址",
+          "六順豆花 台北市 site:facebook.com",
+          "六順豆花 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "六豊",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "六豊 台中市 官方",
+          "六豊 台中市 菜系",
+          "六豊 台中市 地址",
+          "六豊 台中市 site:facebook.com",
+          "六豊 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "六廚川客料理",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "六廚川客料理 台北市 官方",
+          "六廚川客料理 台北市 菜系",
+          "六廚川客料理 台北市 地址",
+          "六廚川客料理 台北市 site:facebook.com",
+          "六廚川客料理 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "友愛街旅館",
+        "city": "臺南市",
+        "district": "台南",
+        "address": "台南市",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "友愛街旅館 台南市 官方",
+          "友愛街旅館 台南市 菜系",
+          "友愛街旅館 台南市 地址",
+          "友愛街旅館 台南市 site:facebook.com",
+          "友愛街旅館 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "天公壇素食麵",
+        "city": "彰化縣",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "天公壇素食麵 彰化縣 官方",
+          "天公壇素食麵 彰化縣 菜系",
+          "天公壇素食麵 彰化縣 地址",
+          "天公壇素食麵 彰化縣 site:facebook.com",
+          "天公壇素食麵 彰化縣 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "天天沙茶火鍋",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "天天沙茶火鍋 高雄市 官方",
+          "天天沙茶火鍋 高雄市 菜系",
+          "天天沙茶火鍋 高雄市 地址",
+          "天天沙茶火鍋 高雄市 site:facebook.com",
+          "天天沙茶火鍋 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "天天饅頭",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "天天饅頭 台中市 官方",
+          "天天饅頭 台中市 菜系",
+          "天天饅頭 台中市 地址",
+          "天天饅頭 台中市 site:facebook.com",
+          "天天饅頭 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "天心軒素食喜餅",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "天心軒素食喜餅 台南市 官方",
+          "天心軒素食喜餅 台南市 菜系",
+          "天心軒素食喜餅 台南市 地址",
+          "天心軒素食喜餅 台南市 site:facebook.com",
+          "天心軒素食喜餅 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "天母大頭鵝",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "天母大頭鵝 台北市 官方",
+          "天母大頭鵝 台北市 菜系",
+          "天母大頭鵝 台北市 地址",
+          "天母大頭鵝 台北市 site:facebook.com",
+          "天母大頭鵝 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "天池冬瓜茶",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "天池冬瓜茶 高雄市 官方",
+          "天池冬瓜茶 高雄市 菜系",
+          "天池冬瓜茶 高雄市 地址",
+          "天池冬瓜茶 高雄市 site:facebook.com",
+          "天池冬瓜茶 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "天然本味老麵饅頭店",
+        "city": "新北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "天然本味老麵饅頭店 新北市 官方",
+          "天然本味老麵饅頭店 新北市 菜系",
+          "天然本味老麵饅頭店 新北市 地址",
+          "天然本味老麵饅頭店 新北市 site:facebook.com",
+          "天然本味老麵饅頭店 新北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      }
+    ],
+    "locationOnly": [
+      {
+        "name": "一中豐仁冰",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "臺灣菜",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "一中豐仁冰 台中市 官方",
+          "一中豐仁冰 台中市 菜系",
+          "一中豐仁冰 台中市 地址",
+          "一中豐仁冰 台中市 site:facebook.com",
+          "一中豐仁冰 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "一品清冰品-阿燕姨冰枝店",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "小吃",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "一品清冰品-阿燕姨冰枝店 台南市 官方",
+          "一品清冰品-阿燕姨冰枝店 台南市 菜系",
+          "一品清冰品-阿燕姨冰枝店 台南市 地址",
+          "一品清冰品-阿燕姨冰枝店 台南市 site:facebook.com",
+          "一品清冰品-阿燕姨冰枝店 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "二空燕京蔥油餅",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "麵食",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "二空燕京蔥油餅 台南市 官方",
+          "二空燕京蔥油餅 台南市 菜系",
+          "二空燕京蔥油餅 台南市 地址",
+          "二空燕京蔥油餅 台南市 site:facebook.com",
+          "二空燕京蔥油餅 台南市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "八寶彬圓仔惠",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "小吃",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "2甜",
+            "awardName": "500甜2甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "八寶彬圓仔惠 台南市 官方",
+          "八寶彬圓仔惠 台南市 菜系",
+          "八寶彬圓仔惠 台南市 地址",
+          "八寶彬圓仔惠 台南市 site:facebook.com",
+          "八寶彬圓仔惠 台南市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch8 mirrored 八寶彬圓仔惠 (國華街) cuisine 2026-07-04"
+      },
+      {
+        "name": "三郎麵包廠",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "小吃",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "三郎麵包廠 高雄市 官方",
+          "三郎麵包廠 高雄市 菜系",
+          "三郎麵包廠 高雄市 地址",
+          "三郎麵包廠 高雄市 site:facebook.com",
+          "三郎麵包廠 高雄市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "大慈天然素食",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "臺灣菜",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "大慈天然素食 台中市 官方",
+          "大慈天然素食 台中市 菜系",
+          "大慈天然素食 台中市 地址",
+          "大慈天然素食 台中市 site:facebook.com",
+          "大慈天然素食 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "子梧桐 日本傳統手工烏龍麵",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "臺灣菜",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "子梧桐 日本傳統手工烏龍麵 台中市 官方",
+          "子梧桐 日本傳統手工烏龍麵 台中市 菜系",
+          "子梧桐 日本傳統手工烏龍麵 台中市 地址",
+          "子梧桐 日本傳統手工烏龍麵 台中市 site:facebook.com",
+          "子梧桐 日本傳統手工烏龍麵 台中市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      },
+      {
+        "name": "北港蔡三代筒仔米糕",
+        "city": "高雄市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "小吃",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "北港蔡三代筒仔米糕 高雄市 官方",
+          "北港蔡三代筒仔米糕 高雄市 菜系",
+          "北港蔡三代筒仔米糕 高雄市 地址",
+          "北港蔡三代筒仔米糕 高雄市 site:facebook.com",
+          "北港蔡三代筒仔米糕 高雄市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch8 mirrored 北港蔡三代筒仔米糕 (鹽埕) cuisine 2026-07-04"
+      },
+      {
+        "name": "吃麵吧Jai Mi Ba",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "麵食",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "1甜",
+            "awardName": "500甜1甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "吃麵吧Jai Mi Ba 台南市 官方",
+          "吃麵吧Jai Mi Ba 台南市 菜系",
+          "吃麵吧Jai Mi Ba 台南市 地址",
+          "吃麵吧Jai Mi Ba 台南市 site:facebook.com",
+          "吃麵吧Jai Mi Ba 台南市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch8 mirrored 吃麵吧 cuisine 2026-07-04"
+      },
+      {
+        "name": "帕泰家 Baan Phadthai",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "泰式料理",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "帕泰家 Baan Phadthai 台北市 官方",
+          "帕泰家 Baan Phadthai 台北市 菜系",
+          "帕泰家 Baan Phadthai 台北市 地址",
+          "帕泰家 Baan Phadthai 台北市 site:facebook.com",
+          "帕泰家 Baan Phadthai 台北市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch24 filled cuisine from Baan Phadthai official site 2026-07-07 https://www.baanphadthai.com.tw/Store.html ; Taipei branch address remains pending because the public page confirms cuisine but does not expose a clear single branch address in static content."
+      },
+      {
+        "name": "欣葉台菜",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "臺灣菜",
+        "awards": [
+          {
+            "guide": "500sweet",
+            "year": 2025,
+            "level": "2甜",
+            "awardName": "500甜2甜",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871"
+          }
+        ],
+        "queryHints": [
+          "欣葉台菜 台北市 官方",
+          "欣葉台菜 台北市 菜系",
+          "欣葉台菜 台北市 地址",
+          "欣葉台菜 台北市 site:facebook.com",
+          "欣葉台菜 台北市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch9 mirrored 欣葉台菜創始店 cuisine 2026-07-04"
+      },
+      {
+        "name": "阿城鵝肉",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "臺灣菜",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "阿城鵝肉 台北市 官方",
+          "阿城鵝肉 台北市 菜系",
+          "阿城鵝肉 台北市 地址",
+          "阿城鵝肉 台北市 site:facebook.com",
+          "阿城鵝肉 台北市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch9 mirrored 阿城鵝肉 (中山) cuisine 2026-07-04"
+      },
+      {
+        "name": "許愿 無毒農產烘焙×飲食空間",
+        "city": "臺中市",
+        "district": "西區",
+        "address": "地址待確認",
+        "cuisine": "烘焙與飯食",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "許愿 無毒農產烘焙×飲食空間 台中市 官方",
+          "許愿 無毒農產烘焙×飲食空間 台中市 菜系",
+          "許愿 無毒農產烘焙×飲食空間 台中市 地址",
+          "許愿 無毒農產烘焙×飲食空間 台中市 site:facebook.com",
+          "許愿 無毒農產烘焙×飲食空間 台中市 site:ifoodie.tw"
+        ],
+        "notes": "Green Media 2025 國際綠色餐飲指南獎 補強 2026-07-04 https://greenmedia.today/article_detail.php?cid=7&mid=1410"
+      },
+      {
+        "name": "富貴亭飲食店",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "臺灣菜",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "富貴亭飲食店 台中市 官方",
+          "富貴亭飲食店 台中市 菜系",
+          "富貴亭飲食店 台中市 地址",
+          "富貴亭飲食店 台中市 site:facebook.com",
+          "富貴亭飲食店 台中市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch8 mirrored 富貴亭 cuisine 2026-07-04"
+      },
+      {
+        "name": "無名羊肉湯-大菜市",
+        "city": "臺南市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "小吃",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "無名羊肉湯-大菜市 台南市 官方",
+          "無名羊肉湯-大菜市 台南市 菜系",
+          "無名羊肉湯-大菜市 台南市 地址",
+          "無名羊肉湯-大菜市 台南市 site:facebook.com",
+          "無名羊肉湯-大菜市 台南市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch8 mirrored 無名羊肉湯 cuisine 2026-07-04"
+      },
+      {
+        "name": "羅家古早味",
+        "city": "臺中市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "臺灣菜",
+        "awards": [
+          {
+            "guide": "500bowl",
+            "year": 2025,
+            "level": "1碗",
+            "awardName": "500碗1碗",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/123497/8874123"
+          }
+        ],
+        "queryHints": [
+          "羅家古早味 台中市 官方",
+          "羅家古早味 台中市 菜系",
+          "羅家古早味 台中市 地址",
+          "羅家古早味 台中市 site:facebook.com",
+          "羅家古早味 台中市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch8 mirrored 羅家古早味 (南屯) cuisine 2026-07-04"
+      },
+      {
+        "name": "BELLINI Pasta Pasta",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "義式料理 / 義大利麵 / 披薩",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "BELLINI Pasta Pasta 台北市 官方",
+          "BELLINI Pasta Pasta 台北市 菜系",
+          "BELLINI Pasta Pasta 台北市 地址",
+          "BELLINI Pasta Pasta 台北市 site:facebook.com",
+          "BELLINI Pasta Pasta 台北市 site:ifoodie.tw"
+        ],
+        "notes": "Core awards batch24 filled cuisine from BELLINI Pasta Pasta official site 2026-07-07 https://www.bellinipasta.com.tw/ ; Taipei branch address remains pending because official site lists multiple Taipei locations."
+      },
+      {
+        "name": "L’Atelier de Joël Robuchon Taipei",
+        "city": "臺北市",
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "French",
+        "awards": [
+          {
+            "guide": "500plate",
+            "year": 2025,
+            "level": "1盤",
+            "awardName": "500盤1盤",
+            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
+          }
+        ],
+        "queryHints": [
+          "L’Atelier de Joël Robuchon Taipei 台北市 官方",
+          "L’Atelier de Joël Robuchon Taipei 台北市 菜系",
+          "L’Atelier de Joël Robuchon Taipei 台北市 地址",
+          "L’Atelier de Joël Robuchon Taipei 台北市 site:facebook.com",
+          "L’Atelier de Joël Robuchon Taipei 台北市 site:ifoodie.tw"
+        ],
+        "notes": ""
+      }
+    ]
+  }
+}

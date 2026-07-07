@@ -19,7 +19,7 @@ const EXPECTED = {
   restaurants: 1329,
   guides: {
     michelin: 53,
-    michelin_selected: 222,
+    michelin_selected: 223,
     bib: 144,
     "500plate": 260,
     "500bowl": 415,

@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-07-07T13:41:06.310Z",
+  "rows": [
+    {
+      "name": "捌伍添第 85TD",
+      "cuisine": "粵菜",
+      "awards": [
+        {
+          "guide": "500sweet",
+          "year": 2025,
+          "sweets": 1,
+          "level": "1甜",
+          "url": "https://500times.udn.com/wtimes/story/124537/8931871",
+          "sourceName": "500甜 2025 完整得獎名單",
+          "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871",
+          "extractedDate": "2026-07-01",
+          "awardName": "500甜1甜",
+          "notes": "批次整理匯入；來源：500甜 2025 完整得獎名單；擷取日：2026-07-01；https://500times.udn.com/wtimes/story/124537/8931871",
+          "award": "500甜1甜",
+          "extractedAt": "2026-07-01"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+          "sourceName": "MICHELIN Guide Taiwan 2025 Full List",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+          "extractedDate": "2026-07-07",
+          "awardName": "米其林入選",
+          "notes": "Core awards batch27 merged Michelin Taipei 2025 candidate cuisine and selected award 2026-07-07",
+          "award": "米其林入選",
+          "extractedAt": "2026-07-07"
+        }
+      ],
+      "notes": "環境部環保餐廳資料集 補強 2026-07-03 https://data.moenv.gov.tw/dataset/detail/GIS_P_11 | Core awards batch27 merged Michelin Taipei 2025 candidate cuisine 粵菜 and Michelin Selected 2025 2026-07-07 https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
+    }
+  ]
+}

@@ -24154,7 +24154,7 @@
       "city": "臺北市",
       "district": "信義區",
       "address": "臺北市信義區信義路五段7號85號樓B側",
-      "cuisine": "菜系待確認",
+      "cuisine": "粵菜",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -24170,9 +24170,22 @@
           "notes": "批次整理匯入；來源：500甜 2025 完整得獎名單；擷取日：2026-07-01；https://500times.udn.com/wtimes/story/124537/8931871",
           "award": "500甜1甜",
           "extractedAt": "2026-07-01"
+        },
+        {
+          "guide": "michelin_selected",
+          "level": "入選餐廳",
+          "year": 2025,
+          "url": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+          "sourceName": "MICHELIN Guide Taiwan 2025 Full List",
+          "sourceUrl": "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+          "extractedDate": "2026-07-07",
+          "awardName": "米其林入選",
+          "notes": "Core awards batch27 merged Michelin Taipei 2025 candidate cuisine and selected award 2026-07-07",
+          "award": "米其林入選",
+          "extractedAt": "2026-07-07"
         }
       ],
-      "notes": "環境部環保餐廳資料集 補強 2026-07-03 https://data.moenv.gov.tw/dataset/detail/GIS_P_11"
+      "notes": "環境部環保餐廳資料集 補強 2026-07-03 https://data.moenv.gov.tw/dataset/detail/GIS_P_11 | Core awards batch27 merged Michelin Taipei 2025 candidate cuisine 粵菜 and Michelin Selected 2025 2026-07-07 https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list"
     },
     {
       "name": "時常在這裡",
