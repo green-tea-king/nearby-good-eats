@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-07-07T14:10:37.390Z",
+  "rows": [
+    {
+      "name": "Solo Pasta",
+      "city": "臺北市",
+      "district": "大安區",
+      "address": "台北市大安區安和路一段29-1號",
+      "cuisine": "義式料理 / 義大利麵",
+      "notes": "Core awards batch18 normalized district format 2026-07-06 | Core awards batch30 filled cuisine from public article metadata 2026-07-07 https://icecreamcat.tw/solo-pasta/"
+    }
+  ]
+}

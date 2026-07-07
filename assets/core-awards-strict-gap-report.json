@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-07T13:52:54.822Z",
+  "generatedAt": "2026-07-07T14:10:37.450Z",
   "policy": "Strict gap list: only obvious city-only or pending district-address-cuisine problems for the six core guide sets.",
   "summary": {
-    "rows": 773,
+    "rows": 772,
     "byGuide": {
       "500bowl": 389,
-      "500sweet": 284,
-      "500plate": 105
+      "500sweet": 283,
+      "500plate": 104
     }
   },
   "rows": [
@@ -5478,32 +5478,6 @@
           "awardName": "500盤3盤",
           "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797",
           "url": "https://500times.udn.com/wtimes/story/122412/9007797"
-        }
-      ],
-      "notes": "Core awards batch18 normalized district format 2026-07-06"
-    },
-    {
-      "name": "Solo Pasta",
-      "city": "臺北市",
-      "district": "大安區",
-      "address": "台北市大安區安和路一段29-1號",
-      "cuisine": "菜系待確認",
-      "awards": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "level": "3盤",
-          "awardName": "500盤3盤",
-          "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797"
-        },
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "level": "1甜",
-          "awardName": "500甜1甜",
-          "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "notes": "Core awards batch18 normalized district format 2026-07-06"

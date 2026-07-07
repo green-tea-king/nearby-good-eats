@@ -453,6 +453,11 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
 .social-signal .k{font-size:12px;color:var(--text-faint);}
 .social-signal .v{font-size:13px;color:var(--text);line-height:1.55;}
 .social-signal a{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px;}
+.award-evidence{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start;background:rgba(255,255,255,.018);border:1px solid var(--line);border-radius:8px;padding:10px 12px;}
+.award-evidence .k{font-size:12px;color:var(--text-faint);}
+.award-evidence .v{font-size:13px;color:var(--text);line-height:1.6;}
+.award-evidence .v small{display:block;margin-top:4px;color:var(--text-dim);font-size:11px;line-height:1.45;}
+.award-evidence a{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px;}
 .keyword-hit{font-size:10.5px;color:var(--text-dim);background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.22);border-radius:999px;padding:3px 8px;}
 .keyword-hit b{color:var(--accent-bright);font-weight:600;}
 .card-note-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
@@ -1371,7 +1376,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.07.44";
+const APP_VERSION_FALLBACK = "2026.07.07.45";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -4630,6 +4635,43 @@ function socialSignalDetailHTML(r){
   return `<div class="social-signal"><span class="k">外部口碑</span><span class="v">${escapeHTML(parts.join(" · "))}${link ? ` · <a href="${escapeHTML(link)}" target="_blank" rel="noopener">查看來源</a>` : ""}<br><small>${escapeHTML(source)}</small></span></div>`;
 }
 
+function awardEvidenceHTML(awards){
+  const rows = [];
+  const seen = new Set();
+  for (const award of (awards || [])) {
+    const guide = String(award.guide || "").trim();
+    if (!guide) continue;
+    const sourceName = String(award.sourceName || "").trim();
+    const sourceUrl = String(award.sourceUrl || award.url || "").trim();
+    const year = String(award.year || "").trim();
+    const label = [
+      guide === "michelin" ? `米其林 ${String(award.level || "").trim()}`.trim()
+        : guide === "michelin_selected" ? "米其林入選"
+        : guide === "bib" ? "必比登"
+        : guide === "500plate" ? `500盤 ${String(award.level || "").trim()}`.trim()
+        : guide === "500bowl" ? `500碗 ${String(award.level || "").trim()}`.trim()
+        : guide === "500sweet" ? `500甜 ${String(award.level || "").trim()}`.trim()
+        : String(award.awardName || guide).trim(),
+      year ? `${year}` : "",
+    ].filter(Boolean).join(" · ");
+    const key = [guide, year, sourceName, sourceUrl].join("|");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    rows.push({
+      label,
+      sourceName: sourceName || "來源待補",
+      sourceUrl,
+    });
+  }
+  if (!rows.length) return "";
+  return `<div class="award-evidence"><span class="k">評鑑來源</span><span class="v">${rows.slice(0, 4).map((item) => {
+    const source = item.sourceUrl
+      ? `<a href="${escapeHTML(item.sourceUrl)}" target="_blank" rel="noopener">${escapeHTML(item.sourceName)}</a>`
+      : escapeHTML(item.sourceName);
+    return `${escapeHTML(item.label)}<small>來源：${source}</small>`;
+  }).join("<br>")}</span></div>`;
+}
+
 function cardHTML(r, rank){
   const placeId = r.id || "";
   const shareUrl = placeId ? placeShareUrl(placeId) : "";
@@ -4666,6 +4708,7 @@ function cardHTML(r, rank){
     .map(certBadgeHTML)
     .join("");
   const detailBadgeRow = detailBadges ? `<div class="badges detail-badges">${detailBadges}</div>` : "";
+  const awardEvidence = awardEvidenceHTML(r.awards);
   const confidence = confidenceHTML(r);
   const keywordHits = keywordHitSummaryHTML(r.keywordHit);
   const socialDetail = socialSignalDetailHTML(r);
@@ -4698,10 +4741,11 @@ function cardHTML(r, rank){
   if (r.liveMusic) feats.push("現場音樂");
   const detailFeatRow = feats.length ? `<div class="line"><span class="k">服務</span><span class="v"><span class="feats in-detail">${feats.map(f=>`<span class="feat">${escapeHTML(f)}</span>`).join("")}</span></span></div>` : "";
   const safeAddress = isPendingFieldText(r.address) ? "" : String(r.address || "").trim();
-  const safeCuisine = isPendingFieldText(r.typeName) ? "" : String(r.typeName || "").trim();
+  const safeCuisineSource = [r.cuisine, r.typeName].find((value) => value && !isPendingFieldText(value));
+  const safeCuisine = safeCuisineSource ? String(safeCuisineSource).trim() : "";
   const shareAddress = safeAddress || "";
   const detailAddressLine = safeAddress ? `<div class="line"><span class="k">地址</span><span class="v">${escapeHTML(safeAddress)}</span></div>` : "";
-  const detailCuisineLine = safeCuisine ? `<div class="line"><span class="k">類型</span><span class="v">${escapeHTML(safeCuisine)}</span></div>` : "";
+  const detailCuisineLine = safeCuisine ? `<div class="line"><span class="k">菜系</span><span class="v">${escapeHTML(safeCuisine)}</span></div>` : "";
 
   return `
   <div class="card" data-place-id="${escapeHTML(placeId)}" data-name="${escapeHTML(r.name)}" data-address="${escapeHTML(shareAddress)}" data-lat="${r.loc?.lat || ""}" data-lng="${r.loc?.lng || ""}">
@@ -4736,6 +4780,7 @@ function cardHTML(r, rank){
       <div class="detail-inner">
         ${photoStrip}
         ${detailBadgeRow}
+        ${awardEvidence}
         ${socialDetail}
         ${keywordHits}
         ${confidence}

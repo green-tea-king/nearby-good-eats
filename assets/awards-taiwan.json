@@ -16641,7 +16641,7 @@
       "city": "臺北市",
       "district": "大安區",
       "address": "台北市大安區安和路一段29-1號",
-      "cuisine": "菜系待確認",
+      "cuisine": "義式料理 / 義大利麵",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -16673,7 +16673,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": "Core awards batch18 normalized district format 2026-07-06"
+      "notes": "Core awards batch18 normalized district format 2026-07-06 | Core awards batch30 filled cuisine from public article metadata 2026-07-07 https://icecreamcat.tw/solo-pasta/"
     },
     {
       "name": "Tableau by Craig Yang",

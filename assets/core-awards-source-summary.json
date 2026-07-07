@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T13:52:54.761Z",
+  "generatedAt": "2026-07-07T14:10:37.420Z",
   "restaurants": 1329,
   "guides": [
     {
@@ -255,7 +255,7 @@
         "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list": 38,
         "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection": 2
       },
-      "weakRows": 105,
+      "weakRows": 104,
       "weakSample": [
         {
           "name": "金悅軒",
@@ -312,16 +312,6 @@
           "city": "臺北市",
           "district": "大安區",
           "address": "台北市大安區",
-          "cuisine": "菜系待確認",
-          "year": 2025,
-          "awardName": "500盤3盤",
-          "level": "3盤"
-        },
-        {
-          "name": "Solo Pasta",
-          "city": "臺北市",
-          "district": "大安區",
-          "address": "台北市大安區安和路一段29-1號",
           "cuisine": "菜系待確認",
           "year": 2025,
           "awardName": "500盤3盤",
@@ -1049,6 +1039,16 @@
         },
         {
           "name": "Pastaio Noodle cafe",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
+        },
+        {
+          "name": "PASTi",
           "city": "臺北市",
           "district": "行政區待確認",
           "address": "地址待確認",
@@ -1887,7 +1887,7 @@
       "sourceUrls": {
         "https://500times.udn.com/wtimes/story/124537/8931871": 328
       },
-      "weakRows": 284,
+      "weakRows": 283,
       "weakSample": [
         {
           "name": "小食粑 Rice Mini Cake",
@@ -2692,7 +2692,7 @@
       ]
     }
   ],
-  "manualReviewCount": 773,
+  "manualReviewCount": 772,
   "manualReviewSample": [
     {
       "name": "一香飲食店 麻醬麵",
