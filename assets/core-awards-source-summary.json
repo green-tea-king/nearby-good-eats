@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T13:41:29.083Z",
+  "generatedAt": "2026-07-07T13:48:26.019Z",
   "restaurants": 1329,
   "guides": [
     {
@@ -255,7 +255,7 @@
         "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list": 38,
         "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection": 2
       },
-      "weakRows": 106,
+      "weakRows": 105,
       "weakSample": [
         {
           "name": "金悅軒",
@@ -998,16 +998,6 @@
           "level": "2盤"
         },
         {
-          "name": "L’Atelier de Joël Robuchon Taipei",
-          "city": "臺北市",
-          "district": "行政區待確認",
-          "address": "地址待確認",
-          "cuisine": "French",
-          "year": 2025,
-          "awardName": "500盤1盤",
-          "level": "1盤"
-        },
-        {
           "name": "LOPFAIT 樂斐",
           "city": "臺北市",
           "district": "行政區待確認",
@@ -1056,6 +1046,16 @@
           "year": 2025,
           "awardName": "500盤2盤",
           "level": "2盤"
+        },
+        {
+          "name": "Pastaio Noodle cafe",
+          "city": "臺北市",
+          "district": "行政區待確認",
+          "address": "地址待確認",
+          "cuisine": "菜系待確認",
+          "year": 2025,
+          "awardName": "500盤1盤",
+          "level": "1盤"
         }
       ]
     },
@@ -2692,7 +2692,7 @@
       ]
     }
   ],
-  "manualReviewCount": 775,
+  "manualReviewCount": 774,
   "manualReviewSample": [
     {
       "name": "一香飲食店 麻醬麵",

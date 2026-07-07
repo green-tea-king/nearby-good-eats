@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-07T13:41:29.083Z",
+  "generatedAt": "2026-07-07T13:48:26.113Z",
   "policy": "Strict gap list: only obvious city-only or pending district-address-cuisine problems for the six core guide sets.",
   "summary": {
-    "rows": 775,
+    "rows": 774,
     "byGuide": {
       "500bowl": 389,
       "500sweet": 285,
-      "500plate": 106
+      "500plate": 105
     }
   },
   "rows": [
@@ -11096,24 +11096,6 @@
           "year": 2025,
           "level": "2盤",
           "awardName": "500盤2盤",
-          "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797",
-          "url": "https://500times.udn.com/wtimes/story/122412/9007797"
-        }
-      ],
-      "notes": ""
-    },
-    {
-      "name": "L’Atelier de Joël Robuchon Taipei",
-      "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "French",
-      "awards": [
-        {
-          "guide": "500plate",
-          "year": 2025,
-          "level": "1盤",
-          "awardName": "500盤1盤",
           "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797",
           "url": "https://500times.udn.com/wtimes/story/122412/9007797"
         }

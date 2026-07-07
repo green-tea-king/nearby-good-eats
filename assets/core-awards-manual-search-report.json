@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-07T13:41:06.349Z",
+  "generatedAt": "2026-07-07T13:48:26.051Z",
   "purpose": "Prioritized manual or semi-automated public-web enrichment queue for remaining core awards gaps.",
-  "totalStrictRows": 776,
+  "totalStrictRows": 775,
   "summary": {
     "cuisineOnly": 1,
     "locationAndCuisine": 756,
-    "locationOnly": 18
+    "locationOnly": 17
   },
   "priorityCuisineOnly": [
     {
@@ -2371,30 +2371,6 @@
           "BELLINI Pasta Pasta 台北市 site:ifoodie.tw"
         ],
         "notes": "Core awards batch24 filled cuisine from BELLINI Pasta Pasta official site 2026-07-07 https://www.bellinipasta.com.tw/ ; Taipei branch address remains pending because official site lists multiple Taipei locations."
-      },
-      {
-        "name": "L’Atelier de Joël Robuchon Taipei",
-        "city": "臺北市",
-        "district": "行政區待確認",
-        "address": "地址待確認",
-        "cuisine": "French",
-        "awards": [
-          {
-            "guide": "500plate",
-            "year": 2025,
-            "level": "1盤",
-            "awardName": "500盤1盤",
-            "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797"
-          }
-        ],
-        "queryHints": [
-          "L’Atelier de Joël Robuchon Taipei 台北市 官方",
-          "L’Atelier de Joël Robuchon Taipei 台北市 菜系",
-          "L’Atelier de Joël Robuchon Taipei 台北市 地址",
-          "L’Atelier de Joël Robuchon Taipei 台北市 site:facebook.com",
-          "L’Atelier de Joël Robuchon Taipei 台北市 site:ifoodie.tw"
-        ],
-        "notes": ""
       }
     ]
   }
