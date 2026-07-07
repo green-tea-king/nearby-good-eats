@@ -29066,9 +29066,9 @@
       "name": "LA BOUTIQUE de Joël Robuchon Taipei 侯布雄法式精品甜點",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "信義區",
+      "address": "臺北市信義區松仁路28號",
+      "cuisine": "法式甜點",
       "source": "https://500times.udn.com/wtimes/story/124537/8931871",
       "awards": [
         {
@@ -29086,7 +29086,7 @@
           "extractedAt": "2026-07-01"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch29 filled Bellavita building address and cuisine from public naming context 2026-07-07 https://en.wikipedia.org/wiki/Bellavita ; inferred as Bellavita Taipei branch from brand co-location context, floor not asserted"
     },
     {
       "name": "La Fossette 老法的酒窩",

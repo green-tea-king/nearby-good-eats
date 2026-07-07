@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-07T13:48:26.051Z",
+  "generatedAt": "2026-07-07T13:52:54.772Z",
   "purpose": "Prioritized manual or semi-automated public-web enrichment queue for remaining core awards gaps.",
-  "totalStrictRows": 775,
+  "totalStrictRows": 774,
   "summary": {
     "cuisineOnly": 1,
-    "locationAndCuisine": 756,
+    "locationAndCuisine": 755,
     "locationOnly": 17
   },
   "priorityCuisineOnly": [

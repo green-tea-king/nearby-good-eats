@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-07T13:48:26.113Z",
+  "generatedAt": "2026-07-07T13:52:54.822Z",
   "policy": "Strict gap list: only obvious city-only or pending district-address-cuisine problems for the six core guide sets.",
   "summary": {
-    "rows": 774,
+    "rows": 773,
     "byGuide": {
       "500bowl": 389,
-      "500sweet": 285,
+      "500sweet": 284,
       "500plate": 105
     }
   },
@@ -11098,24 +11098,6 @@
           "awardName": "500盤2盤",
           "sourceUrl": "https://500times.udn.com/wtimes/story/122412/9007797",
           "url": "https://500times.udn.com/wtimes/story/122412/9007797"
-        }
-      ],
-      "notes": ""
-    },
-    {
-      "name": "LA BOUTIQUE de Joël Robuchon Taipei 侯布雄法式精品甜點",
-      "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
-      "awards": [
-        {
-          "guide": "500sweet",
-          "year": 2025,
-          "level": "1甜",
-          "awardName": "500甜1甜",
-          "sourceUrl": "https://500times.udn.com/wtimes/story/124537/8931871",
-          "url": "https://500times.udn.com/wtimes/story/124537/8931871"
         }
       ],
       "notes": ""
