@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-07-07T12:57:45.831Z",
+  "updated": 2,
+  "updates": [
+    {
+      "name": "BELLINI Pasta Pasta",
+      "before": {
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "notes": ""
+      },
+      "after": {
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "義式料理 / 義大利麵 / 披薩",
+        "notes": "Core awards batch24 filled cuisine from BELLINI Pasta Pasta official site 2026-07-07 https://www.bellinipasta.com.tw/ ; Taipei branch address remains pending because official site lists multiple Taipei locations."
+      }
+    },
+    {
+      "name": "帕泰家 Baan Phadthai",
+      "before": {
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "notes": ""
+      },
+      "after": {
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "泰式料理",
+        "notes": "Core awards batch24 filled cuisine from Baan Phadthai official site 2026-07-07 https://www.baanphadthai.com.tw/Store.html ; Taipei branch address remains pending because the public page confirms cuisine but does not expose a clear single branch address in static content."
+      }
+    }
+  ]
+}

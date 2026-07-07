@@ -22614,7 +22614,7 @@
       "city": "臺北市",
       "district": "行政區待確認",
       "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "cuisine": "泰式料理",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -22632,7 +22632,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch24 filled cuisine from Baan Phadthai official site 2026-07-07 https://www.baanphadthai.com.tw/Store.html ; Taipei branch address remains pending because the public page confirms cuisine but does not expose a clear single branch address in static content."
     },
     {
       "name": "忠誠號蚵仔煎",
@@ -27520,7 +27520,7 @@
       "city": "臺北市",
       "district": "行政區待確認",
       "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "cuisine": "義式料理 / 義大利麵 / 披薩",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -27538,7 +27538,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch24 filled cuisine from BELLINI Pasta Pasta official site 2026-07-07 https://www.bellinipasta.com.tw/ ; Taipei branch address remains pending because official site lists multiple Taipei locations."
     },
     {
       "name": "BEMO Salon",
