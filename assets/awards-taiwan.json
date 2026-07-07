@@ -11566,9 +11566,9 @@
       "name": "沁園春",
       "aliases": [],
       "city": "臺中市",
-      "district": "台中",
-      "address": "台中市",
-      "cuisine": "菜系待確認",
+      "district": "中區",
+      "address": "台中市中區台灣大道一段129號",
+      "cuisine": "江浙菜 / 上海菜",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -11586,7 +11586,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch26 filled district, address, and cuisine from public article metadata 2026-07-07 https://www.tony60533.com/qinyuanchun/"
     },
     {
       "name": "沐明鍋物",

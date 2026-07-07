@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-07-07T13:16:50.655Z",
+  "updated": 1,
+  "updates": [
+    {
+      "name": "沁園春",
+      "before": {
+        "district": "台中",
+        "address": "台中市",
+        "cuisine": "菜系待確認",
+        "notes": ""
+      },
+      "after": {
+        "district": "中區",
+        "address": "台中市中區台灣大道一段129號",
+        "cuisine": "江浙菜 / 上海菜",
+        "notes": "Core awards batch26 filled district, address, and cuisine from public article metadata 2026-07-07 https://www.tony60533.com/qinyuanchun/"
+      }
+    }
+  ]
+}
