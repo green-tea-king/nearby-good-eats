@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-07-07T12:52:44.859Z",
+  "updated": 1,
+  "updates": [
+    {
+      "name": "兄弟飯店 蘭花廳",
+      "before": {
+        "district": "行政區待確認",
+        "address": "地址待確認",
+        "cuisine": "菜系待確認",
+        "notes": ""
+      },
+      "after": {
+        "district": "松山區",
+        "address": "台北市松山區南京東路三段255號",
+        "cuisine": "台菜 / 海鮮",
+        "notes": "Core awards batch23 filled hotel restaurant address and cuisine from Brother Hotel official dining page 2026-07-07 https://www.brotherhotel.com.tw/"
+      }
+    }
+  ]
+}

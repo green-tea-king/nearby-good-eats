@@ -20346,9 +20346,9 @@
       "name": "兄弟飯店 蘭花廳",
       "aliases": [],
       "city": "臺北市",
-      "district": "行政區待確認",
-      "address": "地址待確認",
-      "cuisine": "菜系待確認",
+      "district": "松山區",
+      "address": "台北市松山區南京東路三段255號",
+      "cuisine": "台菜 / 海鮮",
       "source": "https://500times.udn.com/wtimes/story/122412/9007797",
       "awards": [
         {
@@ -20366,7 +20366,7 @@
           "extractedAt": "2026-07-03"
         }
       ],
-      "notes": ""
+      "notes": "Core awards batch23 filled hotel restaurant address and cuisine from Brother Hotel official dining page 2026-07-07 https://www.brotherhotel.com.tw/"
     },
     {
       "name": "加福奇士蛋糕專門店",
