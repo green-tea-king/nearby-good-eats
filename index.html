@@ -1379,7 +1379,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.08.46";
+const APP_VERSION_FALLBACK = "2026.07.08.47";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -1439,21 +1439,21 @@ let rankSearchCommitted = false;
 function leaderboardIdleSummary(){
   const f = rankFilter;
   const parts = [];
-  if (f.meal) parts.push(`???${f.meal}`);
-  if (f.travel) parts.push(`???${f.travel}${rankOriginLabel ? `?${rankOriginLabel}` : ""}`);
-  else if (f.city || f.area || f.village) parts.push(`???${f.city}${f.area || ""}${f.village || ""}`);
-  if (f.keyword) parts.push(`????${f.keyword}`);
-  if (f.open === RANK_DEFAULT_OPEN) parts.push("??????");
-  return parts.join("?");
+  if (f.meal) parts.push(`時間：${f.meal}`);
+  if (f.travel) parts.push(`交通：${f.travel}${rankOriginLabel ? `・${rankOriginLabel}` : ""}`);
+  else if (f.city || f.area || f.village) parts.push(`地區：${f.city}${f.area || ""}${f.village || ""}`);
+  if (f.keyword) parts.push(`關鍵字：${f.keyword}`);
+  if (f.open === RANK_DEFAULT_OPEN) parts.push("預設：營業中");
+  return parts.join("　");
 }
 
 function renderLeaderboardIdleState(){
   $("#rankList").innerHTML = `
     <div class="rank-note">
-      ?????????????????? Google ????
+      先選條件，再按右下角「套用」開始查詢 Google 真資料。
       ${leaderboardIdleSummary() ? `<div class="rank-idle-summary">${escapeHTML(leaderboardIdleSummary())}</div>` : ""}
     </div>`;
-  setGuide("idle", "??????????????????????? API?", "???");
+  setGuide("idle", "目前尚未送出搜尋。系統只會在你按下套用後才調用 API。", "待搜尋");
 }
 
 function cloneRankFilter(src=rankFilter){
@@ -1772,7 +1772,7 @@ async function openLeaderboard(force){
   trackUsage("leaderboard_open", { force:!!force, keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", travel:rankFilter.travel || "", open:rankFilter.open || "", award:rankAwardText(rankFilter) });
   $("#splash")?.classList.add("hidden");
   $("#rankView").classList.remove("hidden");
-  setGuide("idle", "???????????????", "???");
+  setGuide("idle", "先設定條件，再按套用開始查詢。", "待搜尋");
   if (!rankContextReady){
     applyCurrentMealToRankFilter();
     beginRankFilterDraft();
