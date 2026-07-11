@@ -2,6 +2,16 @@
 
 版本：2026.07.01.23
 
+## 未來開工必讀文件
+
+未來任何 Codex / AI agent / 開發者開始修改本專案前，必須先讀：
+
+1. `AGENTS.md`：固定工作規範、安全邊界、Git 流程與回報格式。
+2. `project-rules.md`：已定案的產品規則、濾網規則、API 成本原則與驗收清單。
+3. `design.md`：完整產品設計、資料流程、評分、API、外部資料與部署說明。
+
+不得只依賴聊天記憶。若任務要求與上述文件衝突，必須先指出衝突；除非使用者明確要求更新規則，否則以文件為準。
+
 ## 專案目標
 
 這是一個手機直式使用的美食排行榜 Web App。首頁直接進入「在地美食榜」，以 Google Places 真實餐廳資料為核心，依使用者目前時間、定位點、步行可到範圍、濾網條件與綜合評分排序，快速列出前 3 名餐廳。
@@ -28,13 +38,13 @@
 - `assets/local-food-rank-logo.png`：排行榜頁面 Logo。
 - `assets/certification-badges.json`：Google 真欄位認證徽章規則，例如高分認證、萬則口碑、可訂位、聚餐友善。
 - `assets/external-signals.json`：批次更新的外部訊號入口，用於未來社群聲量、平台認證、媒體推薦；前端不得即時查外部網站，只讀這個靜態資料檔。
-- `assets/external-source-coverage.json`：外部來源覆蓋狀態報告，列出米其林、500盤、500碗、500甜、Google 評論、愛食記、OpenRice、Tripadvisor 的目前狀態、資料數與匯入限制。
+- `assets/external-source-coverage.json`：外部來源覆蓋狀態報告，目前只保留 Michelin、Bib、Michelin Selected、500盤、500碗、500甜六類核心評鑑來源，列出資料數、年份與匯入限制。
 - `assets/platform-signals.manual.json`：愛食記、OpenRice、Tripadvisor 等平台資料的人工 / AI 整理入口。此檔只放有 URL、審核者與信心等級的可追溯資料，經 `scripts/merge-platform-signals.js` 合併進 `assets/external-signals.json`。
 - `assets/platform-signals.import.csv`：平台口碑資料的表格匯入入口；欄位包含餐廳、縣市、來源、分數、信心、評論數、證據、URL 與審核者，經 `scripts/import-platform-signals-csv.js` 轉成 `platform-signals.manual.json`。
 - `assets/platform-source-probe-report.json`：平台來源可用性探測報告。只記錄愛食記、OpenRice、Tripadvisor 是否適合批次整理，不匯入餐廳資料。
 - `assets/social-signal-config.json`：社群熱度批次更新設定，目前以 YouTube Data API 為第一階段來源，控制每次查詢餐廳數、影片數、時間範圍與分數權重。
 - `assets/taiwan-villages.json`：台灣縣市 / 區域 / 村里名稱資料，只存行政區名稱，不含邊界座標。
-- `assets/awards-taiwan.json`：餐廳評鑑名單入口，用於米其林、米其林入選、必比登、500 盤、500 碗、500 甜、50 Best 等加權；2025 已擴充米其林星級 53 家、米其林入選 222 筆、必比登 144 家、500 盤官方文字名單 260 筆餐廳獎項、500 碗官方文字名單高信心 415 筆、500 甜官方文字名單高信心 328 筆，並保留來源 URL。
+- `assets/awards-taiwan.json`：餐廳評鑑名單入口，只保留 Michelin、Bib、Michelin Selected、500盤、500碗、500甜六類加權資料；目前包含 Michelin 星級 53 筆、Michelin Selected 223 筆、Bib 144 筆、500盤 260 筆、500碗 887 筆、500甜 328 筆，並保留年份與來源 URL。
 - `assets/500sweet-2025-manual.json`：500甜人工 / AI 整理入口。官方完整名單已可由 `https://500times.udn.com/wtimes/story/124537/8931871` 批次解析；人工檔只用於補充需人工覆核的縣市不明、連鎖或線上通路資料。
 - `assets/500sweet-2025-candidates.json`：500甜 2025 官方文字名單候選檔，共 356 筆；只將單一明確縣市的 328 筆高信心資料自動匯入正式評鑑。
 - `awards-taipei.json`：舊版台北評鑑資料檔，保留作為相容與資料來源備份。
@@ -68,7 +78,7 @@
 
 3. 餐廳卡片
    - 顯示排行、店名、Google 評分、評論數、營業狀態、地區、路線時間、綜合分數。
-   - 主卡最多顯示 4 個強徽章；外部評鑑優先，其次高分認證、口碑、可訂位、聚餐友善等。
+   - 主卡最多顯示 4 個強徽章；外部評鑑優先，同一來源多年份時主卡只顯示最新 / 最高等級徽章，其次高分認證、口碑、可訂位、聚餐友善等。
    - 完整認證、服務標籤、Google 照片、Google 摘要、評論摘要與 AI 判讀放在詳情。
    - 沒有照片或摘要資料時不顯示 placeholder，避免讓使用者誤會功能壞掉。
    - 動作按鈕：導航、分享、詳情。
@@ -112,7 +122,7 @@
 - 關鍵字支援多詞，例如 `滷肉飯 排骨湯`。多詞採 AND 條件，每個詞都必須命中；卡片會標示命中來源，例如店名、類型、評論摘要、Google 摘要。
 - 關鍵字無結果時只提供「放寬關鍵字」或取消條件，不改用不相干推薦。
 - `吃到飽` 是高風險近似濾網，不能只因為搜尋詞命中就通過；結果必須在店名、類型、地址、Google 摘要或評論摘要出現吃到飽、自助餐、buffet、放題、無限供應或已知吃到飽品牌等明確證據，且會排除「不是吃到飽、單點制」等反向描述。
-- `評鑑` 是本地批次資料硬濾網，只讀 `assets/awards-taiwan.json` 已整理的米其林星等、米其林入選、必比登、綠星、500盤、500碗與 500甜資料；不把評鑑選項丟進 Google 搜尋詞，也不增加即時 Google API 調用。米其林可選三星 / 二星 / 一星，也可選全部米其林星。
+- `評鑑` 是本地批次資料硬濾網，只讀 `assets/awards-taiwan.json` 已整理的 Michelin、Bib、Michelin Selected、500盤、500碗與 500甜資料；不把評鑑選項丟進 Google 搜尋詞，也不增加即時 Google API 調用。Michelin 可選三星 / 二星 / 一星，也可選全部米其林星。
 - 行政區與里會先 geocode 成座標，作為 Google Places Text Search 的 location bias；搜尋仍保留文字條件，但不只靠地址文字比對。
 - 排行榜會做分店 / 連鎖店分群，先依綜合分數排序，同品牌多分店只保留最高分卡片，卡片上提示合併的同品牌數量。
 - 近似 / AI 濾網：Google 沒有直接欄位時，先以店名、類型、摘要、Google flags 判斷，後續可接後端 AI proxy 強化。
@@ -225,7 +235,7 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 - `C`：可信度門檻，目前設定為 150。
 - 評論量加分用 `log10(n+1) * 0.06` 計算，上限 `0.32`，讓同星等時評論數多者明顯更前，但避免評論數超大的店過度壓過品質。
 - 評論可信度保守扣分先處理「高星等但樣本數偏少」的情況，例如 4.9 星但未滿 200 則評論會小幅扣分；另外只在已取得的 Google 摘要出現「五星 / 好評 / 評論」搭配「送 / 換 / 贈 / 折扣 / 招待 / 打卡」等明確活動評價用語時，才顯示警訊並小幅調整。這不是判定洗評，而是避免少量五星或活動換評過度影響排行。詳情內會顯示評論樣本與警訊說明。
-- Google 評分 / 評論數仍是主體；米其林、必比登、500 盤、500 碗、500 甜、50 Best 等外部資料只做額外加分。
+- Google 評分 / 評論數仍是主體；Michelin、Bib、Michelin Selected、500盤、500碗、500甜等外部資料只做額外加分。
 - 外部評鑑權重原則：米其林星級高權重；必比登與 500 系列中高權重；50 Best 高權重但只影響少數真實入榜店。外部評鑑總加分有上限，避免壓過 Google 真實評分與評論量。
 - 社群聲量、平台認證、媒體推薦等外部資料不做使用者查詢時的即時抓取；先批次整理進 `assets/external-signals.json`，再由前端讀取，降低 API 成本並避免來源不穩。
 - 社群聲量採 API 優先、批次更新。第一階段來源為 YouTube Data API：每次預設只查 10 家候選餐廳、每家最多 8 支影片，影片必須命中店名或別名才可寫入。分數依影片數、90 天內影片數與觀看數對數加權產生，僅作輔助訊號。
@@ -233,7 +243,7 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 - 愛食記、OpenRice、Tripadvisor 先採手動 / AI 整理檔匯入：資料必須有來源 URL、信心等級、更新日期與審核者，合併後以 `platformRating` 或 `platformCertification` 做小幅輔助加分；沒有資料就不顯示徽章，不用猜測。2026-07-01 已建立第一批種子資料：2 家餐廳、6 筆平台訊號，三個平台各 2 筆。
 - 2026-07-01 平台來源探測結果：愛食記頁面可讀但 robots 有廣泛限制；OpenRice 與 Tripadvisor 也不符合安全自動解析條件。因此三者都維持手動整理或授權 API，不做自動抓取匯入。
 - 卡片認證章分兩類：
-  - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援米其林星級、必比登、綠星、500 盤、500 碗、500 甜、50 Best；資料帶縣市與來源欄位，前端會合併同店多獎項並避免跨縣市誤標。
+  - 外部評鑑獎牌：來自 `assets/awards-taiwan.json`，目前支援 Michelin、Bib、Michelin Selected、500盤、500碗、500甜；資料帶縣市、年份與來源欄位，前端會合併同店多年份主徽章並避免跨縣市誤標。
   - Google 真欄位認證：由 Google rating / userRatingCount / Places 服務欄位產生，例如高分認證、千則口碑、可訂位、聚餐友善、素食友善、戶外座位、寵物友善、無障礙資訊。
 
 ### 社群熱度批次更新
@@ -431,17 +441,16 @@ assets/awards-taiwan.json
 - Michelin 2025 必比登：144 筆。
 - Michelin 2025 綠星：7 筆，只顯示徽章，不參與美味加權。
 - 500盤：260 筆。
-- 500碗：415 筆，來自 2025 第三屆 500碗官方頁文字名單的單一縣市高信心解析；47 筆跨縣市列保留在 merge report 待人工覆核。
+- 500碗：887 筆，包含 2025 第三屆官方頁文字名單高信心 415 筆，以及 2026 第四屆官方頁連結之官方 Google 地圖 KML 472 筆。
 - 500甜：328 筆，來自 2025 第一屆 500甜官方頁文字名單的單一縣市高信心解析；5 筆新竹 / 嘉義縣市需人工判斷、23 筆連鎖與線上通路保留在 merge report 待人工覆核。
 
-可加入但必須分層處理的外部來源：
+目前只納入的外部評鑑來源：
 
 - Google Maps reviews：已是主資料來源，使用 Places 評分、評論數、摘要與服務欄位；不得另存大量評論全文。評論雜訊防護只使用既有 rating / userRatingCount / Google 摘要，不為了抓洗評而增加即時 API 調用。
-- Michelin Guide Taiwan：正式獎牌來源，星級與必比登可加權；入選餐廳只做弱加分與弱徽章；綠星只顯示永續徽章。
+- Michelin Guide Taiwan：正式獎牌來源，星級與必比登可加權；入選餐廳只做弱加分與弱徽章。
 - 500盤、500碗、500甜：正式獎牌來源，批次整理後進 `assets/awards-taiwan.json`，只做中高權重加分。
-- 50 Best：正式獎牌來源，高權重但只影響少數入榜店。
-- 愛食記、OpenRice、Tripadvisor：平台口碑/聲量來源，預設不放進 `awards-taiwan.json`；只能在授權 API、手動整理或可追溯批次資料可用時寫入 `assets/external-signals.json`，作小幅輔助訊號與提示，不取代 Google 評分。
-- `assets/external-source-coverage.json` 是目前覆蓋狀態的權威摘要：評鑑來源會標示 `integrated_data`，平台來源在已有審核資料時標示 `manual_data_available`，尚無人工資料時標示 `batch_pipeline_ready_no_data`。
+- 其他來源暫不納入 `assets/awards-taiwan.json`，避免評鑑範圍擴散；若日後恢復，必須另建資料規格與人工覆核規則。
+- `assets/external-source-coverage.json` 是目前覆蓋狀態的權威摘要：只列核心六類評鑑，不把平台聲量或候選清單混成正式評鑑。
 - 後台會讀取 `assets/external-source-coverage.json` 顯示「外部來源覆蓋」，讓管理員一眼分辨已整合來源、執行時來源與只有批次管線但尚無資料的平台來源。
 - 平台資料目前以 `assets/platform-signals.manual.json` 作為審核入口，執行 `node scripts/merge-platform-signals.js` 後才會進 `assets/external-signals.json`。這個流程是為了避免前端即時查外站、節省成本，也避免來源結構改版導致正式站壞掉。
 - 若資料來源先由人工、AI 或試算表整理，優先填 `assets/platform-signals.import.csv`，再執行 `node scripts/import-platform-signals-csv.js` 轉成審核 JSON。CSV 沒有資料時保持空表，不產生假訊號。
@@ -517,6 +526,17 @@ node scripts/validate-awards-data.js
 ```
 
 第一支腳本讀取 500碗官方文字名單並輸出 `assets/500bowl-2025-candidates.json` 與 `assets/500bowl-2025-import-report.json`。第二支腳本只合併單一縣市高信心資料到 `assets/awards-taiwan.500bowl-2025-draft.json`，跨縣市列保留在 `assets/500bowl-2025-merge-report.json` 待人工覆核。第三支腳本固定驗證正式資料與最新 draft 一致。
+
+500碗 2026 建構流程：
+
+```text
+node scripts/build-500bowl-2026-candidates.js
+node scripts/merge-500bowl-2026-awards.js
+node scripts/build-core-awards-public-source-report.js
+node scripts/validate-awards-data.js
+```
+
+第一支腳本讀取 500碗 2026 官方頁與該頁連結的官方 Google My Maps KML，輸出 `assets/500bowl-2026-candidates.json`、`assets/500bowl-2026-google-map.kml` 與 `assets/500bowl-2026-import-report.json`。官方頁文字層解析出 441 筆候選，KML 共有 472 個 Placemark，並含地址、行政區、菜系、得獎菜色、電話與營業時間；正式資料以 KML 的 472 筆為準。第二支腳本會清理前一輪文字層匯入但未被 KML 確認的 2026 500碗獎項，清單保留在 `assets/500bowl-2026-merge-report.json`。
 
 500甜批次更新流程：
 

@@ -1379,7 +1379,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.08.47";
+const APP_VERSION_FALLBACK = "2026.07.11.1";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2938,18 +2938,34 @@ function rankFilterPrecisionText(f=rankFilter){
   if (tiers.has("search")) parts.push(hasAi ? "搜尋詞 + AI判讀" : "搜尋詞 + 近似判斷");
   return parts.join(" / ") || "近似判斷";
 }
-async function renderLeaderboard(){
-  if (!hasDataApi){
-    $("#rankList").innerHTML = `<div class="rank-note">需要後端 API proxy 或 Google 金鑰才能載入排行榜。</div>`;
-    setGuideError("目前沒有可用的 Google 資料來源，請確認 Maps API key 或後端 proxy。");
-    return;
-  }
-  const token = ++rankRenderToken;
-  const f = rankFilter;
-  if (rankPoolNeeded(f) && !rankPool){
-    await ensureRankPool(false);
-    if (token !== rankRenderToken) return;
-  }
+function buildRankListHelpers(f){
+  const applyRankFilters = (items, relaxAutoMeal=false) => items.filter(x => {
+    if (f.city && x.city !== f.city) return false;
+    if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
+    if (f.village && !(x.address||"").includes(f.village)) return false;
+    if (f.keyword){
+      const hit = keywordMatchDetails(x, f.keyword);
+      if (!hit.ok) return false;
+      x.keywordHit = hit;
+    }
+    if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
+    if (f.open === "\u71df\u696d\u4e2d" && x.openNow !== true) return false;
+    if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
+    if (f.service && !rankTagMatch(x, "service", f.service)) return false;
+    if (f.diet && !rankTagMatch(x, "diet", f.diet)) return false;
+    if (rankAwardValues(f).length && !rankAwardMatch(x, f.award)) return false;
+    return true;
+  });
+  const sortRankItems = (items, filter=f) => {
+    const list = [...items];
+    if (filter.keyword){
+      list.sort((a,b) => (keywordStrength(b, filter.keyword) - keywordStrength(a, filter.keyword)) || (b.composite - a.composite));
+    }
+    return list;
+  };
+  return { applyRankFilters, sortRankItems };
+}
+async function resolveLeaderboardSourceContext(f, token){
   let source = rankPool || [];
   const searchTerms = rankQueryTerms(f);
   const useTravel = isTravelRankMode(f);
@@ -2971,44 +2987,44 @@ async function renderLeaderboard(){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(rankOriginLabel || "目前位置")} 步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內美食中…</div>`;
     setGuideWorking(`正在查詢 ${rankOriginLabel || "目前位置"} 附近步行可到的店。`);
     source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_RADIUS_M, renderQuotaKey);
-    if (token !== rankRenderToken) return;
+    if (token !== rankRenderToken) return null;
   }else if (f.city && (f.area || f.village || searchTerms.length)){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (f.village || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
     setGuideWorking(`正在查詢「${f.city}${f.area || ""}${f.village || ""}${searchTerms.length ? " " + searchTerms.join(" ") : ""}」的 Google 真資料。`);
     source = await areaCandidates(f.city, f.area, f, renderQuotaKey);
-    if (token !== rankRenderToken) return;
+    if (token !== rankRenderToken) return null;
   }else if (searchTerms.length){
     $("#rankList").innerHTML = `<div class="rank-note">整理全台 ${escapeHTML(searchTerms.join(" "))} 美食中…</div>`;
     setGuideWorking(`關鍵字是強條件，正在查詢全台「${searchTerms.join(" ")}」相關店家，不會亂塞不相干建議。`);
     source = await keywordCandidates(f, renderQuotaKey);
+    if (token !== rankRenderToken) return null;
+  }
+  return { source, searchTerms, useTravel, useNearby, renderQuotaKey };
+}
+function renderLeaderboardCards(cards, f, guideText){
+  $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("") + renderResultActions(f);
+  bindCardEvents($("#rankList"));
+  bindResultActionButtons();
+  if (guideText) setGuideReady(guideText);
+}
+async function renderLeaderboard(){
+  if (!hasDataApi){
+    $("#rankList").innerHTML = `<div class="rank-note">需要後端 API proxy 或 Google 金鑰才能載入排行榜。</div>`;
+    setGuideError("目前沒有可用的 Google 資料來源，請確認 Maps API key 或後端 proxy。");
+    return;
+  }
+  const token = ++rankRenderToken;
+  const f = rankFilter;
+  if (rankPoolNeeded(f) && !rankPool){
+    await ensureRankPool(false);
     if (token !== rankRenderToken) return;
   }
+  const context = await resolveLeaderboardSourceContext(f, token);
+  if (!context) return;
+  let { source, searchTerms, useTravel, useNearby, renderQuotaKey } = context;
   await enrichAiFilterTags(source, f);
   if (token !== rankRenderToken) return;
-  const applyRankFilters = (items, relaxAutoMeal=false) => items.filter(x => {
-    if (f.city && x.city !== f.city) return false;
-    if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
-    if (f.village && !(x.address||"").includes(f.village)) return false;
-    if (f.keyword){
-      const hit = keywordMatchDetails(x, f.keyword);
-      if (!hit.ok) return false;
-      x.keywordHit = hit;
-    }
-    if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
-    if (f.open === "營業中" && x.openNow !== true) return false;
-    if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
-    if (f.service && !rankTagMatch(x, "service", f.service)) return false;
-    if (f.diet && !rankTagMatch(x, "diet", f.diet)) return false;
-    if (rankAwardValues(f).length && !rankAwardMatch(x, f.award)) return false;
-    return true;
-  });
-  const sortRankItems = (items, filter) => {
-    const list = [...items];
-    if (filter.keyword){
-      list.sort((a,b) => (keywordStrength(b, filter.keyword) - keywordStrength(a, filter.keyword)) || (b.composite - a.composite));
-    }
-    return list;
-  };
+  const { applyRankFilters, sortRankItems } = buildRankListHelpers(f);
   if (useTravel){
     const radii = rankTravelRadiusSteps(f.travel);
     const firstRadius = radii[0] || CONFIG.RANK_WALKABLE_RADIUS_M;
@@ -3198,10 +3214,11 @@ async function renderLeaderboard(){
         routeMin:rankRouteMin(c, f.travel) || null,
       })),
     });
-    $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("") + renderResultActions(f);
-    bindCardEvents($("#rankList"));
-    bindResultActionButtons();
-    setGuideReady(`已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間、外部獎牌與社群熱度小幅加權，條件：${guideFilterSummary(f)}。`);
+    renderLeaderboardCards(
+      cards,
+      f,
+      `已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間、外部獎牌與社群熱度小幅加權，條件：${guideFilterSummary(f)}。`
+    );
     return;
   }
   let list = applyRankFilters(source, false);
@@ -3362,10 +3379,11 @@ async function renderLeaderboard(){
       composite:Number(c.composite?.toFixed?.(2) || 0),
     })),
   });
-  $("#rankList").innerHTML = cards.map((c,i) => cardHTML(c, i+1)).join("") + renderResultActions(f);
-  bindCardEvents($("#rankList"));
-  bindResultActionButtons();
-  setGuideReady(`已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間、獎牌與熱度標籤；照片與完整資訊放在詳情內省流量。`);
+  renderLeaderboardCards(
+    cards,
+    f,
+    `已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間、獎牌與熱度標籤；照片與完整資訊放在詳情內省流量。`
+  );
 }
 
 function safeRenderLeaderboard(){
@@ -4831,6 +4849,45 @@ function awardEvidenceHTML(awards){
   }).join("<br>")}</span></div>`;
 }
 
+function awardGuidePriority(award){
+  const guide = String(award?.guide || "");
+  if (guide === "michelin") {
+    const level = String(award.level || "");
+    if (level.includes("三星")) return 1;
+    if (level.includes("二星")) return 2;
+    if (level.includes("一星")) return 3;
+    return 4;
+  }
+  if (guide === "bib") return 5;
+  if (guide === "500plate") return 6;
+  if (guide === "500bowl") return 7;
+  if (guide === "500sweet") return 8;
+  if (guide === "michelin_selected") return 9;
+  return 99;
+}
+
+function primaryAwardBadges(awards){
+  const grouped = new Map();
+  for (const award of awards || []) {
+    const guide = String(award?.guide || "").trim();
+    if (!guide) continue;
+    const key = guide === "michelin" ? `${guide}|${String(award.level || "").trim()}` : guide;
+    const previous = grouped.get(key);
+    const year = Number(award.year) || 0;
+    const previousYear = Number(previous?.year) || 0;
+    const unit = Number(award.plates || award.bowls || award.sweets || 0);
+    const previousUnit = Number(previous?.plates || previous?.bowls || previous?.sweets || 0);
+    if (!previous || year > previousYear || (year === previousYear && unit > previousUnit)) {
+      grouped.set(key, award);
+    }
+  }
+  return [...grouped.values()].sort((a, b) => {
+    const priority = awardGuidePriority(a) - awardGuidePriority(b);
+    if (priority) return priority;
+    return (Number(b.year) || 0) - (Number(a.year) || 0);
+  });
+}
+
 function cardHTML(r, rank){
   const placeId = r.id || "";
   const shareUrl = placeId ? placeShareUrl(placeId) : "";
@@ -4843,7 +4900,7 @@ function cardHTML(r, rank){
                 : r.openNow === false ? `<span class="closed">休息中</span>` : "";
   const primaryMeta = [price ? `<span class="price">${price}</span>` : "", openTxt].filter(Boolean).join("");
   // 第一眼只放少數強徽章；詳情只補主卡沒有顯示的項目，避免重複。
-  const awardBadgeItems = (r.awards && r.awards.length) ? r.awards.map(badgeHTML) : [];
+  const awardBadgeItems = primaryAwardBadges(r.awards).map(badgeHTML);
   const certItems = certificationBadges(r);
   const certPriority = new Map([
     ["高分認證", 1],
