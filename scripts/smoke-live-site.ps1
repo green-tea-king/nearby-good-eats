@@ -28,9 +28,6 @@ if ($ShortVersion -notmatch "^v\d\d\.") {
 if ($Html -notlike "*$Version*" -and $Html -notlike "*$ShortVersion*") {
   throw "Homepage does not contain live version $Version or $ShortVersion"
 }
-if ($Html -notlike "*greenstar*") {
-  throw "Homepage is missing greenstar rendering support"
-}
 if ($Html -notlike "*500bowl*" -or $Html -notlike "*500sweet*") {
   throw "Homepage is missing 500bowl/500sweet rendering support"
 }
@@ -88,12 +85,12 @@ foreach ($Restaurant in $Awards.restaurants) {
 }
 
 $Expected = [ordered]@{
-  restaurants = 1329
+  restaurants = 1748
   michelin = 53
-  "michelin_selected" = 222
+  "michelin_selected" = 223
   bib = 144
   "500plate" = 260
-  "500bowl" = 415
+  "500bowl" = 887
   "500sweet" = 328
 }
 
@@ -111,6 +108,20 @@ foreach ($Key in $Expected.Keys) {
   if (($Actual[$Key] -as [int]) -ne ($Expected[$Key] -as [int])) {
     throw "Awards count mismatch for $Key. expected=$($Expected[$Key]) live=$($Actual[$Key])"
   }
+}
+
+$GuideYears = @{}
+foreach ($Restaurant in $Awards.restaurants) {
+  foreach ($Award in $Restaurant.awards) {
+    if (-not $GuideYears.ContainsKey([string]$Award.guide)) {
+      $GuideYears[[string]$Award.guide] = @{}
+    }
+    $YearKey = [string]$Award.year
+    $GuideYears[[string]$Award.guide][$YearKey] = 1 + ($GuideYears[[string]$Award.guide][$YearKey] -as [int])
+  }
+}
+if (($GuideYears["500bowl"]["2026"] -as [int]) -ne 472) {
+  throw "500bowl 2026 count mismatch. expected=472 live=$($GuideYears["500bowl"]["2026"])"
 }
 
 $SignalsText = Read-TextUrl "$BaseUrl/assets/external-signals.json?cacheBust=$CacheBust"
@@ -141,7 +152,7 @@ foreach ($RequiredPlatform in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
 $CoverageText = Read-TextUrl "$BaseUrl/assets/external-source-coverage.json?cacheBust=$CacheBust"
 $Coverage = $CoverageText | ConvertFrom-Json
 $CoverageIds = @($Coverage.sources | ForEach-Object { $_.id })
-foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "50best", "50bestdiscovery", "oad", "thebestchef", "designawards", "fmg", "greenveggie", "gdgawards", "michelinspecial", "tcfpraise", "taichunglowcarbon", "muslimfriendly", "fdagrade", "tatlerbest", "worldculinary", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw")) {
+foreach ($RequiredCoverage in @("michelin-guide-taiwan", "michelin-selected-taiwan", "bib-gourmand-taiwan", "500plate", "500bowl", "500sweet")) {
   if ($CoverageIds -notcontains $RequiredCoverage) {
     throw "External source coverage missing $RequiredCoverage"
   }
@@ -149,14 +160,20 @@ foreach ($RequiredCoverage in @("michelin-guide-taiwan", "500plate", "500bowl", 
 if ($Coverage.policy.runtimeExternalLookup -ne $false -or $Coverage.policy.noFakeData -ne $true) {
   throw "External source coverage policy must disable runtime lookup and fake data"
 }
-foreach ($RequiredPlatform in @("ifoodie", "openrice-tw", "tripadvisor-tw")) {
-  $PlatformCoverage = @($Coverage.sources | Where-Object { $_.id -eq $RequiredPlatform })[0]
-  if ($PlatformCoverage.status -ne "manual_data_available") {
-    throw "External source coverage should show manual data for $RequiredPlatform"
-  }
-  if (($PlatformCoverage.currentManualSignals -as [int]) -le 0) {
-    throw "External source coverage missing manual signals for $RequiredPlatform"
-  }
+if ($Coverage.policy.onlyCoreAwardSources -ne $true) {
+  throw "External source coverage should be limited to core award sources"
+}
+
+$CoreReportText = Read-TextUrl "$BaseUrl/assets/core-awards-public-source-report.json?cacheBust=$CacheBust"
+$CoreReport = $CoreReportText | ConvertFrom-Json
+if (($CoreReport.summary.countsByGuideYear."500bowl"."2026" -as [int]) -ne 472) {
+  throw "Core awards report missing 500bowl 2026 count 472"
+}
+
+$Bowl2026Text = Read-TextUrl "$BaseUrl/assets/500bowl-2026-candidates.json?cacheBust=$CacheBust"
+$Bowl2026 = $Bowl2026Text | ConvertFrom-Json
+if (($Bowl2026.restaurants.Count -as [int]) -ne 472) {
+  throw "500bowl 2026 candidates should have 472 rows"
 }
 
 $ManualSignalsText = Read-TextUrl "$BaseUrl/assets/platform-signals.manual.json?cacheBust=$CacheBust"

@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-07-11T13:27:57.342Z",
+  "source": "https://500times.udn.com/wtimes/story/123497/9547367",
+  "mapSource": "https://www.google.com/maps/d/viewer?mid=19E5ausxMMacpaiOhadZFvns_UOlgFNo",
+  "candidates": 472,
+  "addedRestaurants": 0,
+  "updatedExistingRestaurants": 0,
+  "skippedNeedsReview": 0,
+  "skippedDuplicateAward": 472,
+  "removedUnconfirmed2026Awards": 10,
+  "removedEmptyRestaurants": 10,
+  "removedUnconfirmedRows": [
+    {
+      "name": "屋伴餃子 WOOPAN",
+      "city": "台北市",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "開囍滷肉專賣店",
+      "city": "台北市",
+      "level": "2碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "極之好味 港式燒臘飯館",
+      "city": "台北市",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "阿鳳肉粿度小月擔仔麵 中正旗艦店",
+      "city": "台南市",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "咖啡敘事曲",
+      "city": "高雄市",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "饅頭達人",
+      "city": "高雄市",
+      "level": "2碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "鶴笙麵屋手工日式蕎麥",
+      "city": "高雄市",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "華一街 手工包子",
+      "city": "基隆市",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "饅頭店",
+      "city": "基隆市",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    },
+    {
+      "name": "吳頂釣魚場社口水煎包",
+      "city": "彰化縣",
+      "level": "1碗",
+      "previousSource": "https://500times.udn.com/wtimes/story/123497/9547367"
+    }
+  ],
+  "correctedMichelinSelected85td": false
+}

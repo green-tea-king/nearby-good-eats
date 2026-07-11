@@ -16,14 +16,24 @@ const ALLOWED_GUIDES = new Set([
 ]);
 
 const EXPECTED = {
-  restaurants: 1329,
+  restaurants: 1748,
   guides: {
     michelin: 53,
     michelin_selected: 223,
     bib: 144,
     "500plate": 260,
-    "500bowl": 415,
+    "500bowl": 887,
     "500sweet": 328,
+  },
+  guideYears: {
+    michelin_selected: {
+      "2025": 222,
+      "2026": 1,
+    },
+    "500bowl": {
+      "2025": 415,
+      "2026": 472,
+    },
   },
 };
 
@@ -54,12 +64,16 @@ function awardKey(award) {
 
 function countGuides(data) {
   const guides = {};
+  const guideYears = {};
   for (const row of data.restaurants || []) {
     for (const award of row.awards || []) {
       guides[award.guide] = (guides[award.guide] || 0) + 1;
+      const year = String(award.year || "年份待確認");
+      guideYears[award.guide] = guideYears[award.guide] || {};
+      guideYears[award.guide][year] = (guideYears[award.guide][year] || 0) + 1;
     }
   }
-  return guides;
+  return { guides, guideYears };
 }
 
 function findDuplicateIdentityKeys(data) {
@@ -79,7 +93,7 @@ function findDuplicateIdentityKeys(data) {
 
 function validateAwards(data) {
   const errors = [];
-  const guides = countGuides(data);
+  const { guides, guideYears } = countGuides(data);
 
   if ((data.restaurants || []).length !== EXPECTED.restaurants) {
     errors.push(`restaurants expected ${EXPECTED.restaurants}, got ${(data.restaurants || []).length}`);
@@ -88,6 +102,15 @@ function validateAwards(data) {
   for (const [guide, expected] of Object.entries(EXPECTED.guides)) {
     if ((guides[guide] || 0) !== expected) {
       errors.push(`${guide} expected ${expected}, got ${guides[guide] || 0}`);
+    }
+  }
+
+  for (const [guide, years] of Object.entries(EXPECTED.guideYears || {})) {
+    for (const [year, expected] of Object.entries(years)) {
+      const actual = guideYears[guide]?.[year] || 0;
+      if (actual !== expected) {
+        errors.push(`${guide} ${year} expected ${expected}, got ${actual}`);
+      }
     }
   }
 
@@ -125,7 +148,7 @@ function validateAwards(data) {
     errors.push(`duplicate identity key: ${duplicate.key} => ${duplicate.names.join(", ")}`);
   }
 
-  return { guides, errors };
+  return { guides, guideYears, errors };
 }
 
 function validateSweetManual(data) {
@@ -177,6 +200,7 @@ function main() {
     ok: errors.length === 0,
     restaurants: (formal.restaurants || []).length,
     guides: result.guides,
+    guideYears: result.guideYears,
     sweetManualRows: sweetManual.rows,
     sweetCandidates: {
       rows: sweetCandidates.rows,

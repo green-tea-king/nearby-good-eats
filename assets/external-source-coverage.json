@@ -1,403 +1,154 @@
 {
-  "version": "external-source-coverage-2026-07-01",
-  "updated": "2026-07-04",
+  "version": "external-source-coverage-core-awards-2026-07-11",
+  "updated": "2026-07-11",
   "policy": {
     "runtimeExternalLookup": false,
     "costFirst": true,
     "noFakeData": true,
+    "onlyCoreAwardSources": true,
     "notes": [
-      "已接入代表有正式資料或安全批次管線；不代表每個外部平台都有可自動抓取資料。",
-      "平台來源若 robots、授權或登入限制不適合自動抓取，只允許授權 API、人工整理或可追溯批次 CSV 匯入。",
-      "Google 評分與評論數仍是排序主體，外部來源只做加分、提示或可信度調整。"
+      "本檔只保留 Michelin / Bib / Michelin Selected / 500盤 / 500碗 / 500甜。",
+      "Google 評分與評論數仍是排序主體，外部評鑑只做加分與徽章。",
+      "使用者搜尋時不即時查外部網站，只讀批次產生的靜態資料。"
     ]
   },
   "summary": {
-    "awardsRestaurants": 1329,
-    "externalSignalSources": 14,
-    "externalSignalRestaurants": 19,
-    "externalSignals": 23,
-    "platformManualRestaurants": 2,
-    "platformManualSignals": 6,
-    "externalAwardSources": 3,
-    "tatlerCandidates": 20,
-    "worldCulinaryCandidates": 4,
-    "fiftyBestCandidates": 4,
-    "fiftyDiscoveryCandidates": 13,
-    "oadCandidates": 29,
-    "bestChefCandidates": 4,
-    "designAwardsCandidates": 3,
-    "fmgCandidates": 20,
-    "greenVeggieCandidates": 65,
-    "greenVeggieNeedsCityReview": 0,
-    "gdgAwardsCandidates": 21,
-    "gdgAwardsNeedsCityReview": 4,
-    "michelinSpecialCandidates": 4,
-    "tcfPraiseCandidates": 24,
-    "tcfPraiseNeedsCityReview": 8,
-    "taichungLowCarbonCandidates": 20,
-    "muslimFriendlyCandidates": 75,
-    "fdaRestaurantHygiene2023Candidates": 4060,
-    "fdaRestaurantHygieneCandidates": 6104,
-    "fdaRestaurantHygienePingtung2025Candidates": 125,
-    "moenvGreenCandidates": 3471,
-    "fdaHaccpHotelCandidates": 42,
-    "amotTraceCandidates": 31,
-    "amotTraceNeedsManualReview": 9,
-    "amotTrace2026Candidates": 69,
-    "amotTrace2026NeedsManualReview": 3,
-    "taichungGoldCandidates": 398,
-    "externalAwardReviewQueue": 3
+    "awardsRestaurants": 1748,
+    "awardCount": 1895,
+    "manualReviewCount": 741,
+    "countsByGuide": {
+      "500bowl": 887,
+      "500sweet": 328,
+      "michelin_selected": 223,
+      "500plate": 260,
+      "bib": 144,
+      "michelin": 53
+    },
+    "countsByGuideYear": {
+      "500bowl": {
+        "2025": 415,
+        "2026": 472
+      },
+      "500sweet": {
+        "2025": 328
+      },
+      "michelin_selected": {
+        "2025": 222,
+        "2026": 1
+      },
+      "500plate": {
+        "2025": 260
+      },
+      "bib": {
+        "2025": 144
+      },
+      "michelin": {
+        "2025": 53
+      }
+    }
   },
   "sources": [
     {
       "id": "michelin-guide-taiwan",
-      "label": "米其林指南台灣",
+      "label": "Michelin",
+      "guide": "michelin",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
-      "sourceCatalog": [
-        "michelin-guide",
-        "bib-gourmand"
-      ],
-      "counts": {
-        "stars": 53,
-        "selected": 222,
-        "bib": 144,
-        "greenstar": 0
+      "awardCount": 53,
+      "restaurantCount": 53,
+      "years": {
+        "2025": 53
       },
+      "sourceUrls": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-starred-restaurant-2025"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "michelin-selected-taiwan",
+      "label": "Michelin Selected",
+      "guide": "michelin_selected",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 223,
+      "restaurantCount": 223,
+      "years": {
+        "2025": 222,
+        "2026": 1
+      },
+      "sourceUrls": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/85td"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "bib-gourmand-taiwan",
+      "label": "Bib",
+      "guide": "bib",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 144,
+      "restaurantCount": 144,
+      "years": {
+        "2025": 144
+      },
+      "sourceUrls": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      ],
       "runtimeLookup": false
     },
     {
       "id": "500plate",
       "label": "500盤",
+      "guide": "500plate",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
-      "count": 260,
+      "awardCount": 260,
+      "restaurantCount": 260,
+      "years": {
+        "2025": 260
+      },
+      "sourceUrls": [
+        "https://500times.udn.com/wtimes/story/122412/9007797"
+      ],
       "runtimeLookup": false
     },
     {
       "id": "500bowl",
       "label": "500碗",
+      "guide": "500bowl",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
-      "count": 415,
+      "awardCount": 887,
+      "restaurantCount": 847,
+      "years": {
+        "2025": 415,
+        "2026": 472
+      },
+      "sourceUrls": [
+        "https://500times.udn.com/wtimes/story/123497/8874123",
+        "https://500times.udn.com/wtimes/story/123497/9547367",
+        "https://www.google.com/maps/d/viewer?mid=19E5ausxMMacpaiOhadZFvns_UOlgFNo",
+        "https://www.google.com/maps/d/kml?mid=19E5ausxMMacpaiOhadZFvns_UOlgFNo&forcekml=1"
+      ],
       "runtimeLookup": false
     },
     {
       "id": "500sweet",
       "label": "500甜",
+      "guide": "500sweet",
       "status": "integrated_data",
       "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/500sweet-2025-candidates.json",
-      "count": 328,
-      "candidates": 356,
-      "highConfidence": 328,
-      "runtimeLookup": false
-    },
-    {
-      "id": "50best",
-      "label": "50 Best",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "sourceFile": "assets/asias-50-best-restaurants-2026-candidates.json",
-      "count": 0,
-      "candidates": 4,
-      "sourceCatalog": [
-        "asias-50-best-restaurants-2026"
-      ],
-      "runtimeLookup": false
-    },
-    {
-      "id": "50bestdiscovery",
-      "label": "50 Best Discovery",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/50best-discovery-taiwan-candidates.json",
-      "count": 0,
-      "candidates": 13,
-      "runtimeLookup": false
-    },
-    {
-      "id": "oad",
-      "label": "OAD Top Restaurants Asia",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/oad-asia-2025-candidates.json",
-      "count": 0,
-      "candidates": 29,
-      "runtimeLookup": false
-    },
-    {
-      "id": "thebestchef",
-      "label": "The Best Chef Awards",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/thebestchef-taiwan-2025-candidates.json",
-      "count": 0,
-      "candidates": 4,
-      "runtimeLookup": false
-    },
-    {
-      "id": "designawards",
-      "label": "Restaurant & Bar Design Awards",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/restaurant-design-awards-taiwan-candidates.json",
-      "count": 0,
-      "candidates": 3,
-      "runtimeLookup": false
-    },
-    {
-      "id": "fmg",
-      "label": "Food Made Good Taiwan",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/fmg-taiwan-2025-candidates.json",
-      "count": 0,
-      "candidates": 20,
-      "runtimeLookup": false
-    },
-    {
-      "id": "greenveggie",
-      "label": "綠・蔬食評鑑指南",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/green-veggie-guide-2025-candidates.json",
-      "count": 0,
-      "candidates": 65,
-      "needsCityReview": 0,
-      "runtimeLookup": false
-    },
-    {
-      "id": "gdgawards",
-      "label": "綠色餐飲指南年度評鑑入圍",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/gdg-awards-2025-candidates.json",
-      "count": 0,
-      "candidates": 21,
-      "needsCityReview": 4,
-      "runtimeLookup": false
-    },
-    {
-      "id": "michelinspecial",
-      "label": "米其林特別獎",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/michelin-special-awards-2025-candidates.json",
-      "count": 0,
-      "candidates": 4,
-      "runtimeLookup": false
-    },
-    {
-      "id": "tcfpraise",
-      "label": "美食指南點讚榜臺灣站",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/tcf-praise-2025-candidates.json",
-      "count": 0,
-      "candidates": 24,
-      "needsCityReview": 8,
-      "runtimeLookup": false
-    },
-    {
-      "id": "taichunglowcarbon",
-      "label": "臺中市低碳餐廳認證",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/taichung-low-carbon-2023-candidates.json",
-      "count": 0,
-      "candidates": 20,
-      "runtimeLookup": false
-    },
-    {
-      "id": "muslimfriendly",
-      "label": "穆斯林友善餐飲認證",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/muslim-friendly-2026-candidates.json",
-      "count": 0,
-      "candidates": 75,
-      "runtimeLookup": false
-    },
-    {
-      "id": "fdagrade",
-      "label": "餐飲衛生分級",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/fda-restaurant-hygiene-2024-candidates.json",
-      "count": 0,
-      "candidates": 6104,
-      "runtimeLookup": false
-    },
-    {
-      "id": "fdagrade-2023",
-      "label": "餐飲衛生分級 2023",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/fda-restaurant-hygiene-2023-candidates.json",
-      "count": 4060,
-      "candidates": 4060,
-      "runtimeLookup": false
-    },
-    {
-      "id": "fdagrade-pingtung-2025",
-      "label": "屏東餐飲衛生分級 2025",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/fda-restaurant-hygiene-pingtung-2025-candidates.json",
-      "count": 125,
-      "candidates": 125,
-      "runtimeLookup": false
-    },
-    {
-      "id": "moenvgreen",
-      "label": "環保餐廳",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/moenv-green-restaurants-2026-candidates.json",
-      "count": 0,
-      "candidates": 3471,
-      "runtimeLookup": false
-    },
-    {
-      "id": "fdahaccp",
-      "label": "HACCP",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/fda-haccp-hotel-restaurants-2026-candidates.json",
-      "count": 0,
-      "candidates": 42,
-      "runtimeLookup": false
-    },
-    {
-      "id": "amottrace",
-      "label": "AMOT 溯源餐廳",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/amot-traceability-awards-2024-candidates.json",
-      "count": 0,
-      "candidates": 31,
-      "needsManualReview": 9,
-      "runtimeLookup": false
-    },
-    {
-      "id": "amottrace-2026",
-      "label": "AMOT 溯源餐廳 2026",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/amot-traceability-awards-2026-candidates.json",
-      "count": 0,
-      "candidates": 69,
-      "needsManualReview": 3,
-      "runtimeLookup": false
-    },
-    {
-      "id": "taichunggold",
-      "label": "臺中金饌獎",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "candidatesFile": "assets/taichung-golden-awards-2024-candidates.json",
-      "count": 0,
-      "candidates": 398,
-      "runtimeLookup": false
-    },
-    {
-      "id": "tatlerbest",
-      "label": "Tatler Best",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "sourceFile": "assets/tatler-best-taiwan-2025-candidates.json",
-      "count": 0,
-      "candidates": 20,
-      "sourceCatalog": [
-        "tatler-best-taiwan-2025-top20",
-        "tatler-best-taiwan-2025-best-service",
-        "tatler-best-taiwan-2025-best-innovation",
-        "tatler-best-taiwan-2025-rising-star",
-        "tatler-best-taiwan-2025-restaurant-of-the-year",
-        "tatler-best-taiwan-2025-best-in-class"
-      ],
-      "runtimeLookup": false
-    },
-    {
-      "id": "worldculinary",
-      "label": "World Culinary Awards",
-      "status": "integrated_data",
-      "dataFile": "assets/awards-taiwan.json",
-      "sourceFile": "assets/world-culinary-awards-taiwan-2025-candidates.json",
-      "count": 0,
-      "candidates": 4,
-      "sourceCatalog": [
-        "world-culinary-awards-taiwan-2025"
-      ],
-      "runtimeLookup": false
-    },
-    {
-      "id": "external-award-review-queue",
-      "label": "External Award Review Queue",
-      "status": "manual_verification_queue",
-      "dataFile": "assets/external-award-review-queue.json",
-      "count": 3,
-      "runtimeLookup": false
-    },
-    {
-      "id": "google-maps-reviews",
-      "label": "Google Maps 評論",
-      "status": "runtime_primary_with_noise_guard",
-      "dataFile": "Google Places API response",
-      "fields": [
-        "rating",
-        "userRatingCount",
-        "reviewSummary",
-        "editorialSummary",
-        "generativeSummary"
-      ],
-      "safeguards": {
-        "bayesianScore": true,
-        "reviewCountBonus": true,
-        "reviewNoiseHints": true,
-        "promoTextPenalty": true,
-        "noFullReviewStorage": true
+      "awardCount": 328,
+      "restaurantCount": 328,
+      "years": {
+        "2025": 328
       },
-      "runtimeLookup": "via Google Places only"
-    },
-    {
-      "id": "ifoodie",
-      "label": "愛食記",
-      "status": "manual_data_available",
-      "dataFile": "assets/platform-signals.manual.json",
-      "importCsv": "assets/platform-signals.import.csv",
-      "sourceCatalogPresent": true,
-      "currentManualRows": 2,
-      "currentManualSignals": 2,
-      "probeDecision": "do_not_auto_import",
-      "recommendedImportMode": "manual_or_authorized_api",
-      "runtimeLookup": false
-    },
-    {
-      "id": "openrice-tw",
-      "label": "OpenRice 台灣",
-      "status": "manual_data_available",
-      "dataFile": "assets/platform-signals.manual.json",
-      "importCsv": "assets/platform-signals.import.csv",
-      "sourceCatalogPresent": true,
-      "currentManualRows": 2,
-      "currentManualSignals": 2,
-      "probeDecision": "do_not_auto_import",
-      "recommendedImportMode": "manual_or_authorized_api",
-      "runtimeLookup": false
-    },
-    {
-      "id": "tripadvisor-tw",
-      "label": "Tripadvisor 台灣",
-      "status": "manual_data_available",
-      "dataFile": "assets/platform-signals.manual.json",
-      "importCsv": "assets/platform-signals.import.csv",
-      "sourceCatalogPresent": true,
-      "currentManualRows": 2,
-      "currentManualSignals": 2,
-      "probeDecision": "do_not_auto_import",
-      "recommendedImportMode": "manual_or_authorized_api",
+      "sourceUrls": [
+        "https://500times.udn.com/wtimes/story/124537/8931871"
+      ],
       "runtimeLookup": false
     }
   ]
