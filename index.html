@@ -1379,7 +1379,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.11.1";
+const APP_VERSION_FALLBACK = "2026.07.11.2";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2811,6 +2811,16 @@ function keywordRelaxLabel(keyword){
   const relaxed = relaxedKeywordValue(keyword);
   return relaxed ? `放寬關鍵字為「${relaxed}」` : "清除關鍵字";
 }
+function relaxedAwardValues(values){
+  const selected = [...new Set((Array.isArray(values) ? values : [values]).filter(Boolean))];
+  if (!selected.length) return [];
+  const michelinLevels = new Set(["米其林一星", "米其林二星", "米其林三星"]);
+  if (selected.some(value => michelinLevels.has(value)) && !selected.includes("米其林星級")) {
+    return [...selected.filter(value => !michelinLevels.has(value)), "米其林星級"];
+  }
+  if (selected.length) return [];
+  return selected;
+}
 function activeRankFilters(f){
   const active = RANK_FILTERS
     .filter(g => !["open","travel"].includes(g.key))
@@ -2832,6 +2842,8 @@ function minimumResultRelaxations(baseFilter){
   pushStep("clear-village", () => !!baseFilter.village, f => { f.village = ""; }, "已取消里別", "取消里別");
   pushStep("clear-area", () => !!baseFilter.area, f => { f.area = ""; f.village = ""; }, "已取消區域", "取消區域");
   pushStep("clear-city", () => !!baseFilter.city, f => { f.city = ""; f.area = ""; f.village = ""; }, "已取消縣市", "取消縣市");
+  pushStep("relax-award-level", () => relaxedAwardValues(rankAwardValues(baseFilter)).length > 0, f => { f.award = relaxedAwardValues(rankAwardValues(baseFilter)); }, "評鑑結果不足，已放寬為米其林星級", "放寬星等");
+  pushStep("clear-award", () => rankAwardValues(baseFilter).length > 0, f => { f.award = []; }, "評鑑結果不足，已放寬評鑑限制", "不限評鑑");
   pushStep("relax-keyword", () => !!baseFilter.keyword && !!relaxedKeywordValue(baseFilter.keyword), f => { f.keyword = relaxedKeywordValue(baseFilter.keyword); }, "已放寬關鍵字", "放寬關鍵字");
   pushStep("clear-keyword", () => !!baseFilter.keyword, f => { f.keyword = ""; }, "已取消關鍵字", "取消關鍵字");
   return steps;
@@ -3382,7 +3394,7 @@ async function renderLeaderboard(){
   renderLeaderboardCards(
     cards,
     f,
-    `已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間、獎牌與熱度標籤；照片與完整資訊放在詳情內省流量。`
+    `${relaxNote ? `${relaxNote}，` : ""}已整理出 ${cards.length} 家。第一眼先看分數、評論量、交通時間、獎牌與熱度標籤；照片與完整資訊放在詳情內省流量。`
   );
 }
 
