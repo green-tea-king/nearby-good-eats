@@ -1379,7 +1379,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.11.2";
+const APP_VERSION_FALLBACK = "2026.07.12.1";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = null;
@@ -2951,21 +2951,21 @@ function rankFilterPrecisionText(f=rankFilter){
   return parts.join(" / ") || "近似判斷";
 }
 function buildRankListHelpers(f){
-  const applyRankFilters = (items, relaxAutoMeal=false) => items.filter(x => {
-    if (f.city && x.city !== f.city) return false;
-    if (f.area && x.area !== f.area && !(x.address||"").includes(f.area)) return false;
-    if (f.village && !(x.address||"").includes(f.village)) return false;
-    if (f.keyword){
-      const hit = keywordMatchDetails(x, f.keyword);
+  const applyRankFilters = (items, relaxAutoMeal=false, filter=f) => items.filter(x => {
+    if (filter.city && x.city !== filter.city) return false;
+    if (filter.area && x.area !== filter.area && !(x.address||"").includes(filter.area)) return false;
+    if (filter.village && !(x.address||"").includes(filter.village)) return false;
+    if (filter.keyword){
+      const hit = keywordMatchDetails(x, filter.keyword);
       if (!hit.ok) return false;
       x.keywordHit = hit;
     }
-    if (f.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", f.meal)) return false;
-    if (f.open === "\u71df\u696d\u4e2d" && x.openNow !== true) return false;
-    if (f.cuisine && !rankTagMatch(x, "cuisine", f.cuisine)) return false;
-    if (f.service && !rankTagMatch(x, "service", f.service)) return false;
-    if (f.diet && !rankTagMatch(x, "diet", f.diet)) return false;
-    if (rankAwardValues(f).length && !rankAwardMatch(x, f.award)) return false;
+    if (filter.meal && !(rankAutoMeal && relaxAutoMeal) && !rankTagMatch(x, "meal", filter.meal)) return false;
+    if (filter.open === "\u71df\u696d\u4e2d" && x.openNow !== true) return false;
+    if (filter.cuisine && !rankTagMatch(x, "cuisine", filter.cuisine)) return false;
+    if (filter.service && !rankTagMatch(x, "service", filter.service)) return false;
+    if (filter.diet && !rankTagMatch(x, "diet", filter.diet)) return false;
+    if (rankAwardValues(filter).length && !rankAwardMatch(x, filter.award)) return false;
     return true;
   });
   const sortRankItems = (items, filter=f) => {
@@ -3145,7 +3145,7 @@ async function renderLeaderboard(){
         fetchItems: async relaxedFilter => {
           const fallbackSource = await originKeywordFallbackCandidates(relaxedFilter, renderQuotaKey);
           if (token !== rankRenderToken) return [];
-          const fallbackCards = sortRankItems(applyRankFilters(fallbackSource, false), relaxedFilter)
+          const fallbackCards = sortRankItems(applyRankFilters(fallbackSource, false, relaxedFilter), relaxedFilter)
             .slice(0, Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3))
             .map(x => Object.assign(rankCardData(x), {
               distanceRelaxed:true,
@@ -3278,7 +3278,7 @@ async function renderLeaderboard(){
         if (token !== rankRenderToken) return [];
         await enrichAiFilterTags(relaxedSource, relaxedFilter);
         if (token !== rankRenderToken) return [];
-        return sortRankItems(applyRankFilters(relaxedSource, false), relaxedFilter);
+        return sortRankItems(applyRankFilters(relaxedSource, false, relaxedFilter), relaxedFilter);
       },
       sortItems: sortRankItems,
     });
