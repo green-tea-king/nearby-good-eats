@@ -893,7 +893,7 @@ const CONFIG = {
     MODE: "off",
   },
   AI_FILTER: {
-    MODE: "proxy",           // off＝不用 AI 過濾｜proxy＝呼叫後端分類服務
+    MODE: APP_SETTINGS.aiEnabled === true ? "proxy" : "off", // 只有明確開啟且有後端才顯示 AI
     ENDPOINT: "",            // 後端回 {items:[{id,tags,confidence,reason,sources}]}
     MAX_ITEMS: 80,
   },
@@ -3002,7 +3002,7 @@ function rankFilterPrecisionText(f=rankFilter){
   const parts = [];
   if (tiers.has("hard")) parts.push("真資料硬篩");
   if (tiers.has("static")) parts.push("本地評鑑名單");
-  if (tiers.has("search")) parts.push(hasAi ? "搜尋詞 + AI判讀" : "搜尋詞 + 近似判斷");
+  if (tiers.has("search")) parts.push(hasAi ? "搜尋詞 + AI判讀" : "搜尋詞 + Google/近似判斷（AI未啟用）");
   return parts.join(" / ") || "近似判斷";
 }
 function buildRankListHelpers(f){

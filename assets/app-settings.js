@@ -2,6 +2,8 @@
 // Keep it HTTP-referrer restricted in Google Cloud; move back to apiBaseUrl proxy later if abuse appears.
 window.APP_SETTINGS = {
   apiBaseUrl: "",
+  aiEnabled: false,
+  aiDisabledReason: "尚未配置受控的後端 AI 模型；目前只使用 Google 真欄位與可追溯批次資料。",
   googleMapsApiKey: "AIzaSyBtViT280p8qtdm4PT2QUnMypdMssTV1-k",
   apiLimits: {
     externalTestMode: false,

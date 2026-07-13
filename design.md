@@ -350,11 +350,11 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 
 ## AI 設計方向
 
-目前前端已保留 `CONFIG.AI_FILTER` 設定，但預設關閉：
+目前前端已保留 `CONFIG.AI_FILTER` 設定，正式站預設關閉：
 
 ```js
 AI_FILTER: {
-  MODE: "proxy",
+  MODE: "off",
   ENDPOINT: "",
   MAX_ITEMS: 80,
 }

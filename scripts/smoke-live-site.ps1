@@ -60,8 +60,8 @@ foreach ($RequiredAdminText in @("sourceCoverageRows", "external-source-coverage
 }
 
 $SettingsText = Read-TextUrl "$BaseUrl/assets/app-settings.js?cacheBust=$CacheBust"
-if ($SettingsText -notlike "*externalTestMode: true*") {
-  throw "External phone testing mode is not enabled in app settings"
+if ($SettingsText -notlike "*externalTestMode: false*" -or $SettingsText -notlike "*dailySearchLimit: 30*") {
+  throw "Static API safety settings must enable the 30/day limit"
 }
 
 $FilterRulesText = Read-TextUrl "$BaseUrl/assets/filter-rules.js?cacheBust=$CacheBust"
