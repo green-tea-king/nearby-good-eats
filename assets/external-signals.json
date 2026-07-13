@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-07-06",
-  "updated": "2026-07-06",
+  "version": "api-batch-2026-07-13",
+  "updated": "2026-07-13",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -1593,6 +1593,245 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "Sens",
+      "city": "臺北市",
+      "area": "松山區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 86,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 17208,
+            "topVideos": [
+              {
+                "id": "Jkb6lh1z2iA",
+                "title": "【2026台北吃到飽】饗A JoyＸ江振誠《四季交饗曲》夏季新品登場！法皮台骨新滋味玩翻夏日餐桌再掀蔚藍浪潮！Taiwan's Highest Buffet: A Joy x Chef André",
+                "channelTitle": "佩特拉去哪裡Petra Play Around",
+                "publishedAt": "2026-07-13T11:00:06Z",
+                "views": 17208,
+                "url": "https://www.youtube.com/watch?v=Jkb6lh1z2iA"
+              }
+            ],
+            "query": "臺北市 Sens 美食"
+          },
+          "evidence": [
+            "佩特拉去哪裡Petra Play Around：【2026台北吃到飽】饗A JoyＸ江振誠《四季交饗曲》夏季新品登場！法皮台骨新滋味玩翻夏日餐桌再掀蔚藍浪潮！Taiwan's Highest Buffet: A Joy x Chef André"
+          ],
+          "url": "https://www.youtube.com/watch?v=Jkb6lh1z2iA",
+          "updated": "2026-07-13",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "Sho",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [
+        "承"
+      ],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 1,
+            "totalViews": 48636,
+            "topVideos": [
+              {
+                "id": "7Y2dz1R5IDk",
+                "title": "【高雄仁武區美食地圖第二彈】銅板小吃連發 50元雞排 大啃骨肉湯 燥佬爺 一級棒什菜 雙蛋蔥油餅 烤黑輪片爆汁餡餅 仁武好市多/kaohsiung/taiwan_street_food/台湾グルメ",
+                "channelTitle": "貓跪妃",
+                "publishedAt": "2026-03-08T12:00:12Z",
+                "views": 35758,
+                "url": "https://www.youtube.com/watch?v=7Y2dz1R5IDk"
+              },
+              {
+                "id": "aOCD_-vYqRE",
+                "title": "祖傳美食｜高雄少見的肉圓吃法 刷新一票饕客既有印象",
+                "channelTitle": "高雄都會台 - 中嘉寬頻",
+                "publishedAt": "2026-07-06T10:33:23Z",
+                "views": 12878,
+                "url": "https://www.youtube.com/watch?v=aOCD_-vYqRE"
+              }
+            ],
+            "query": "高雄市 Sho 美食"
+          },
+          "evidence": [
+            "貓跪妃：【高雄仁武區美食地圖第二彈】銅板小吃連發 50元雞排 大啃骨肉湯 燥佬爺 一級棒什菜 雙蛋蔥油餅 烤黑輪片爆汁餡餅 仁武好市多/kaohsiung/taiwan_street_food/台湾グルメ",
+            "高雄都會台 - 中嘉寬頻：祖傳美食｜高雄少見的肉圓吃法 刷新一票饕客既有印象"
+          ],
+          "url": "https://www.youtube.com/watch?v=7Y2dz1R5IDk",
+          "updated": "2026-07-13",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "Sur-",
+      "city": "臺中市",
+      "area": "中區",
+      "aliases": [
+        "澀"
+      ],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 95,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 1,
+            "totalViews": 10806,
+            "topVideos": [
+              {
+                "id": "CVgHs_NIGLY",
+                "title": "台中隱藏版草莓果實冰 #台灣美食 #美食 #台中一日遊 #草莓 #草莓甜點 #台中下午茶 #甜點 #台中旅遊",
+                "channelTitle": "麥克先生",
+                "publishedAt": "2026-02-28T09:00:29Z",
+                "views": 8301,
+                "url": "https://www.youtube.com/watch?v=CVgHs_NIGLY"
+              },
+              {
+                "id": "gpHl0lpZeCg",
+                "title": "台中唯一的巨無霸草莓盒子 #台灣美食 #美食 #food #台中一日遊 #草莓 #甜點 #台灣旅遊",
+                "channelTitle": "麥克先生",
+                "publishedAt": "2026-03-05T13:01:14Z",
+                "views": 2499,
+                "url": "https://www.youtube.com/watch?v=gpHl0lpZeCg"
+              },
+              {
+                "id": "lHS-3hv4lEM",
+                "title": "台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-06-27T15:46:04Z",
+                "views": 6,
+                "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM"
+              }
+            ],
+            "query": "臺中市 Sur- 美食"
+          },
+          "evidence": [
+            "麥克先生：台中隱藏版草莓果實冰 #台灣美食 #美食 #台中一日遊 #草莓 #草莓甜點 #台中下午茶 #甜點 #台中旅遊",
+            "麥克先生：台中唯一的巨無霸草莓盒子 #台灣美食 #美食 #food #台中一日遊 #草莓 #甜點 #台灣旅遊",
+            "派派城市外掛：台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排"
+          ],
+          "url": "https://www.youtube.com/watch?v=CVgHs_NIGLY",
+          "updated": "2026-07-13",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "T+T",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 6,
+            "totalViews": 66097,
+            "topVideos": [
+              {
+                "id": "Jkb6lh1z2iA",
+                "title": "【2026台北吃到飽】饗A JoyＸ江振誠《四季交饗曲》夏季新品登場！法皮台骨新滋味玩翻夏日餐桌再掀蔚藍浪潮！Taiwan's Highest Buffet: A Joy x Chef André",
+                "channelTitle": "佩特拉去哪裡Petra Play Around",
+                "publishedAt": "2026-07-13T11:00:06Z",
+                "views": 17208,
+                "url": "https://www.youtube.com/watch?v=Jkb6lh1z2iA"
+              },
+              {
+                "id": "i_VbIdXFt_4",
+                "title": "帶上海居民逛吃台北周末！遊客美食精選！近期最愛深夜食堂！排隊50分也要吃到的牛肉麵!？饒河夜市怎麼吃!？｜ Taipei台北",
+                "channelTitle": "阿臉呷跨賣",
+                "publishedAt": "2026-07-11T10:00:27Z",
+                "views": 13999,
+                "url": "https://www.youtube.com/watch?v=i_VbIdXFt_4"
+              },
+              {
+                "id": "EwXj7_Ktys4",
+                "title": "【台北自由行攻略】99%人都錯過這區⁉️千元內Loft酒店推介🏨 連明星都開店？富錦街慢活魅力☕10間隱藏版質感店🛍️101策展夜景｜2026台北旅行EP1｜台北酒店推介｜台北新餐廳｜台北美食",
+                "channelTitle": "TraveLa 莎朗",
+                "publishedAt": "2026-07-10T12:00:06Z",
+                "views": 13093,
+                "url": "https://www.youtube.com/watch?v=EwXj7_Ktys4"
+              }
+            ],
+            "query": "臺北市 T+T 美食"
+          },
+          "evidence": [
+            "佩特拉去哪裡Petra Play Around：【2026台北吃到飽】饗A JoyＸ江振誠《四季交饗曲》夏季新品登場！法皮台骨新滋味玩翻夏日餐桌再掀蔚藍浪潮！Taiwan's Highest Buffet: A Joy x Chef André",
+            "阿臉呷跨賣：帶上海居民逛吃台北周末！遊客美食精選！近期最愛深夜食堂！排隊50分也要吃到的牛肉麵!？饒河夜市怎麼吃!？｜ Taipei台北",
+            "TraveLa 莎朗：【台北自由行攻略】99%人都錯過這區⁉️千元內Loft酒店推介🏨 連明星都開店？富錦街慢活魅力☕10間隱藏版質感店🛍️101策展夜景｜2026台北旅行EP1｜台北酒店推介｜台北新餐廳｜台北美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=Jkb6lh1z2iA",
+          "updated": "2026-07-13",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "Zea",
+      "city": "臺北市",
+      "area": "大安區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 65,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 1106,
+            "topVideos": [
+              {
+                "id": "iAMCT3gk60s",
+                "title": "台北大安約會餐廳😍這道豬肉驚為天人！米其林一星ZEA",
+                "channelTitle": "美姨餐桌筆記",
+                "publishedAt": "2026-05-20T14:44:28Z",
+                "views": 1106,
+                "url": "https://www.youtube.com/watch?v=iAMCT3gk60s"
+              }
+            ],
+            "query": "臺北市 Zea 美食"
+          },
+          "evidence": [
+            "美姨餐桌筆記：台北大安約會餐廳😍這道豬肉驚為天人！米其林一星ZEA"
+          ],
+          "url": "https://www.youtube.com/watch?v=iAMCT3gk60s",
+          "updated": "2026-07-13",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -1643,11 +1882,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-07-06T21:47:06.803Z",
+    "lastRun": "2026-07-13T21:12:40.840Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 43,
+    "nextAwardOffset": 53,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 9,
+    "lastUpdatedSignals": 5,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
