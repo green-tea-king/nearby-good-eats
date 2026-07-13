@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.23
+版本：2026.07.13.1
 
 ## 未來開工必讀文件
 
@@ -172,7 +172,7 @@
 - Places API New
 - Geocoding API
 - Routes API
-- Distance Matrix API fallback
+- Routes API；若瀏覽器路線服務逾時，僅使用標示為「約」的保守距離估算，不呼叫已棄用的 Distance Matrix API。
 
 Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`functions/` 已建立 `api` 與 `photo` proxy，會驗證 Firebase ID token、可驗證 `X-Firebase-AppCheck` token、使用 `GOOGLE_MAPS_API_KEY` Secret 代打 Google API，並寫入 `apiEvents`。
 
@@ -180,7 +180,7 @@ Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`f
 
 搜尋類 API (`textSearch`、`nearbySearch`) 套用每日使用者配額：一般使用者每天 30 次搜尋，管理員不限。一次排行榜整理即使內部查多個縣市，也會用同一個 quota key 合併計算成一次使用者搜尋。
 
-2026-07-01 外部手機測試期間，`assets/app-settings.js` 設定 `apiLimits.externalTestMode:true`，Functions proxy 預設 `DISABLE_SEARCH_QUOTA !== "false"`，因此暫停每日 30 次搜尋封鎖，但仍保留 Google 登入、`usageEvents` 與 `apiEvents` 紀錄。明天恢復管控時，將 Functions 環境變數設為 `DISABLE_SEARCH_QUOTA=false`，並把 `assets/app-settings.js` 的 `externalTestMode` 改回 `false`。
+目前 `assets/app-settings.js` 已恢復每日 30 次搜尋限制，管理員不限；靜態版先用瀏覽器本機額度避免一般誤用，真正不可繞過的額度仍須部署 Functions proxy。Functions 原始碼則以 App Check 開啟、`DISABLE_SEARCH_QUOTA=false` 為安全預設，若日後啟用 proxy 不需再改原始碼。
 
 `apiEvents` 會記錄 action、成功/失敗、延遲、估算單位、粗估成本、App Check 狀態、配額剩餘與配額封鎖。`admin.html` 會顯示 API 次數、錯誤率、成本估算、API 使用者排行與錯誤/配額排行。成本估算只供控管趨勢，正式帳務仍以 Google Cloud Billing 為準。
 
