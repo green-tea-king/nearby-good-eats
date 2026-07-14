@@ -1136,7 +1136,10 @@ async function initAuth(){
   if (CONFIG.APP_CHECK.SITE_KEY && firebase.appCheck){
     if (CONFIG.APP_CHECK.DEBUG_TOKEN) self.FIREBASE_APPCHECK_DEBUG_TOKEN = CONFIG.APP_CHECK.DEBUG_TOKEN;
     authState.appCheck = firebase.appCheck();
-    authState.appCheck.activate(CONFIG.APP_CHECK.SITE_KEY, true);
+    const provider = firebase.appCheck.ReCaptchaEnterpriseProvider
+      ? new firebase.appCheck.ReCaptchaEnterpriseProvider(CONFIG.APP_CHECK.SITE_KEY)
+      : CONFIG.APP_CHECK.SITE_KEY;
+    authState.appCheck.activate(provider, true);
   }
   const auth = firebase.auth();
   auth.languageCode = "zh-TW";
@@ -1398,7 +1401,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.13.1";
+const APP_VERSION_FALLBACK = "2026.07.14.1";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";

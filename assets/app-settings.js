@@ -1,7 +1,7 @@
-// Non-secret runtime settings. This static Pages build uses a browser Google Maps key.
-// Keep it HTTP-referrer restricted in Google Cloud; move back to apiBaseUrl proxy later if abuse appears.
+// Non-secret runtime settings. Places, Routes and photo requests use the protected Functions proxy.
+// The browser key remains only for loading the interactive Google map and is referrer restricted.
 window.APP_SETTINGS = {
-  apiBaseUrl: "",
+  apiBaseUrl: "https://us-central1-nearby-good-eats.cloudfunctions.net/api",
   aiEnabled: false,
   aiDisabledReason: "尚未配置受控的後端 AI 模型；目前只使用 Google 真欄位與可追溯批次資料。",
   googleMapsApiKey: "AIzaSyBtViT280p8qtdm4PT2QUnMypdMssTV1-k",
@@ -10,8 +10,7 @@ window.APP_SETTINGS = {
     dailySearchLimit: 30,
     note: "每位一般使用者每日最多送出 30 次搜尋；管理員不受此限制。",
   },
-  // Fill after registering the Web app in Firebase App Check. Empty keeps App Check optional on the proxy.
-  appCheckSiteKey: "",
+  appCheckSiteKey: "6LeQC1MtAAAAADFUT00yrOctfkmj_VGUJKX-Pu_4",
   appCheckDebugToken: false,
   awardsUrl: "assets/awards-taiwan.json",
   externalSignalsUrl: "assets/external-signals.json",
