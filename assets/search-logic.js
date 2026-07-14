@@ -11,6 +11,10 @@
     return Object.assign({}, filter, { travel:null });
   }
 
+  function withBaseAreaSearchQuery(queries = []) {
+    return Array.isArray(queries) && queries.length ? queries : [""];
+  }
+
   function defaultSearchFilter(overrides = {}) {
     return Object.assign({
       keyword: "",
@@ -96,6 +100,7 @@
   return {
     isReusableSearchCacheValue,
     locationModeFilter,
+    withBaseAreaSearchQuery,
     defaultSearchFilter,
     autoRelaxCandidates,
     nextResultPage,

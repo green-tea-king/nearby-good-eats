@@ -1387,7 +1387,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.14.9";
+const APP_VERSION_FALLBACK = "2026.07.14.10";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
@@ -2269,7 +2269,6 @@ async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
           maxResultCount:20,
           locationBias:opts.locationBias || null,
         }, { quotaKey:opts.quotaKey || "" });
-        console.info("[Text Search Evidence] " + JSON.stringify({ textQuery, itemCount:(data.items || []).length }));
         return cacheableCandidates((data.items || [])
           .filter(p => p.rating && p.count)
           .map(p => rankCandidateFromProxy(p, context)));
@@ -2349,7 +2348,8 @@ async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
   const locationTerms = [area, village].filter(Boolean).join(" ");
   const geo = await geocodeTaiwanScope(city, area, village);
   let all = [];
-  const queryTexts = rankSearchTextQueries(f).map(q => `${city}${locationTerms} ${q} 餐廳`.trim());
+  const queryTexts = NGE_SEARCH_LOGIC.withBaseAreaSearchQuery(rankSearchTextQueries(f))
+    .map(q => `${city}${locationTerms} ${q} 餐廳`.trim());
   for (const textQuery of queryTexts){
     const got = await textSearchRankCandidates(Place, textQuery, {
       city,
@@ -2374,7 +2374,6 @@ async function areaCandidates(city, area, f=rankFilter, quotaKey=""){
     x.areaCenter = geo?.center || null;
   });
   all = finalizeRankCandidates(all);
-  console.info("[Area Candidates Evidence] " + JSON.stringify({ key, count:all.length, sample:all.slice(0,2).map(x=>({name:x.name,city:x.city,area:x.area})) }));
   rankAreaPools[key] = all;
   return all;
 }
@@ -3288,7 +3287,6 @@ async function renderLeaderboard(){
     return;
   }
   let list = applyRankFilters(source, false);
-  console.info("[Leaderboard Evidence] " + JSON.stringify({ sourceCount:source.length, filteredCount:list.length, filter:cloneRankFilter(f) }));
   let distanceRelaxed = false;
   if (!list.length && useNearby){
     $("#rankList").innerHTML = `<div class="rank-note">步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內選擇較少，放寬到 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m…</div>`;
