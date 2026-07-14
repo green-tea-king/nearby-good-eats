@@ -1386,7 +1386,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.14.3";
+const APP_VERSION_FALLBACK = "2026.07.14.4";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
@@ -2877,7 +2877,7 @@ function renderResultActions(filter){
     ? `<button type="button" data-result-action="next-group">下一組</button>`
     : "";
   if (!steps.length && !nextButton) return "";
-  return `<div class="result-actions"><div class="hint">${nextButton ? "不滿意這組結果？可以換下一組" : "目前結果不足，請選擇要放寬的條件"}</div>${nextButton}${steps.map(step =>
+  return `<div class="result-actions"><div class="hint">${nextButton ? "不滿意這組結果？可以換下一組" : "想查看更多選擇，可放寬條件"}</div>${nextButton}${steps.map(step =>
     `<button type="button" data-result-action="${escapeHTML(step.key)}">${escapeHTML(step.label)}</button>`
   ).join("")}</div>`;
 }
@@ -3088,6 +3088,7 @@ async function renderLeaderboard(){
     let list = [];
     let distanceRelaxed = false;
     let routeLimitRelaxed = false;
+    let routeRelaxNote = "";
     let finalRadius = firstRadius;
     await ensureCertificationRules();
     for (let i=0; i<radii.length; i++){
@@ -3215,6 +3216,7 @@ async function renderLeaderboard(){
         cards = relaxed.items;
         routeLimitRelaxed = true;
         distanceRelaxed = true;
+        routeRelaxNote = relaxed.relaxNote || "";
         if (relaxed.relaxNote) setGuideWorking(`${relaxed.relaxNote}，補齊至少 ${RANK_TOP} 家。`);
       }
     }
@@ -3277,7 +3279,7 @@ async function renderLeaderboard(){
     renderLeaderboardCards(
       cards,
       f,
-      `已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間、外部獎牌與社群熱度小幅加權，條件：${guideFilterSummary(f)}。`
+      `${routeRelaxNote ? `${routeRelaxNote}；以下為放寬後建議。` : ""}${routeLimitRelaxed ? `為補足 ${RANK_TOP} 家，已放寬${rankTravelLimitText(f.travel)}限制。` : ""}已整理出 ${cards.length} 家。排序以 Google 評分、評論量、距離時間、外部獎牌與社群熱度小幅加權，${routeRelaxNote || routeLimitRelaxed ? "原始條件" : "條件"}：${guideFilterSummary(f)}。`
     );
     return;
   }
