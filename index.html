@@ -978,12 +978,13 @@ function apiCacheKey(scope, parts){
 function readApiCache(key){
   const now = Date.now();
   const mem = memoryCache.get(key);
-  if (mem && mem.expiresAt > now) return mem.value;
+  if (mem && mem.expiresAt > now && NGE_SEARCH_LOGIC.isReusableSearchCacheValue(mem.value)) return mem.value;
   if (mem) memoryCache.delete(key);
   try{
     const raw = localStorage.getItem(key);
     if (!raw) return null;
     const entry = JSON.parse(raw);
+    if (!NGE_SEARCH_LOGIC.isReusableSearchCacheValue(entry?.value)) return null;
     if (!entry || entry.expiresAt <= now){
       localStorage.removeItem(key);
       return null;
@@ -1014,7 +1015,7 @@ function cachedRequest(key, ttl, producer){
   if (inflightRequests.has(key)) return inflightRequests.get(key);
   const p = Promise.resolve()
     .then(producer)
-    .then(value => writeApiCache(key, value, ttl))
+    .then(value => NGE_SEARCH_LOGIC.isReusableSearchCacheValue(value) ? writeApiCache(key, value, ttl) : value)
     .finally(() => inflightRequests.delete(key));
   inflightRequests.set(key, p);
   return p;
@@ -1386,7 +1387,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.14.7";
+const APP_VERSION_FALLBACK = "2026.07.14.8";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
@@ -1555,7 +1556,7 @@ function clearRankLocationFilter({ notify=false, target=rankFilter }={}){
 }
 function clearRankTravelFilter({ notify=false, target=rankFilter }={}){
   const hadTravel = !!target.travel || !!rankOriginLabel;
-  target.travel = RANK_DEFAULT_TRAVEL;
+  Object.assign(target, NGE_SEARCH_LOGIC.locationModeFilter(target));
   rankOriginLabel = "";
   rankOriginScope = { city:"", area:"", village:"" };
   if (notify && hadTravel) toast("已切換地區模式，交通與定位條件已清除");
@@ -3285,18 +3286,6 @@ async function renderLeaderboard(){
     return;
   }
   let list = applyRankFilters(source, false);
-  console.info("[Leaderboard Filter] " + JSON.stringify({
-    sourceCount:source.length,
-    filteredCount:list.length,
-    filter:cloneRankFilter(f),
-    sourceSample:source.slice(0, 3).map(x => ({
-      name:x.name,
-      city:x.city,
-      area:x.area,
-      address:x.address,
-      openNow:x.openNow,
-    })),
-  }));
   let distanceRelaxed = false;
   if (!list.length && useNearby){
     $("#rankList").innerHTML = `<div class="rank-note">步行 ${CONFIG.RANK_WALKABLE_RADIUS_M}m 內選擇較少，放寬到 ${CONFIG.RANK_WALKABLE_FALLBACK_M}m…</div>`;

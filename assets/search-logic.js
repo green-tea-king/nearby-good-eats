@@ -3,6 +3,14 @@
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.NGE_SEARCH_LOGIC = api;
 })(typeof window !== "undefined" ? window : globalThis, function() {
+  function isReusableSearchCacheValue(value) {
+    return !Array.isArray(value) || value.length > 0;
+  }
+
+  function locationModeFilter(filter = {}) {
+    return Object.assign({}, filter, { travel:null });
+  }
+
   function defaultSearchFilter(overrides = {}) {
     return Object.assign({
       keyword: "",
@@ -86,6 +94,8 @@
   }
 
   return {
+    isReusableSearchCacheValue,
+    locationModeFilter,
     defaultSearchFilter,
     autoRelaxCandidates,
     nextResultPage,
