@@ -269,7 +269,11 @@ function sourceNote(source){
   if (source.id === "google-maps-reviews") return "Google 評分/評論數為排序主體，含洗評與活動文字降噪。";
   if (source.status === "batch_pipeline_ready_no_data") return "已有安全批次入口，但尚未匯入可追溯資料。";
   if (source.status === "manual_verification_queue") return "目前只有候選名單，仍待人工補完地址、菜系或來源交叉確認。";
-  if (source.id === "michelin-guide-taiwan") return `星級 ${source.counts?.stars || 0}、必比登 ${source.counts?.bib || 0}、入選 ${source.counts?.selected || 0}、綠星 ${source.counts?.greenstar || 0}`;
+  if (source.id === "michelin-guide-taiwan") {
+    const stars = source.counts?.stars ?? source.awardCount ?? source.restaurantCount ?? 0;
+    const years = Object.keys(source.years || {}).join("、") || "年份待確認";
+    return `星級 ${Number(stars).toLocaleString()}；資料年份 ${years}`;
+  }
   return source.runtimeLookup === false ? "只讀本地批次資料，不在使用者搜尋時即時外查。" : "執行時資料來源。";
 }
 function renderSourceCoverage(){

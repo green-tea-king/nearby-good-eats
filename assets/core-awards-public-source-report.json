@@ -1,6 +1,6 @@
 {
   "version": "core-awards-public-source-report-v1",
-  "generatedAt": "2026-07-13T13:03:40.555Z",
+  "generatedAt": "2026-07-14T14:05:36.033Z",
   "extractedDate": "2026-07-11",
   "dataFile": "assets/awards-taiwan.json",
   "policy": {
@@ -49,7 +49,7 @@
         "2025": 53
       }
     },
-    "manualReviewCount": 741
+    "manualReviewCount": 737
   },
   "sources": [
     {
@@ -158,7 +158,7 @@
   ],
   "missingFieldsByGuide": {
     "500bowl": {
-      "district": 353,
+      "district": 351,
       "address": 351,
       "cuisine": 343
     },
@@ -173,9 +173,9 @@
       "cuisine": 0
     },
     "500plate": {
-      "district": 76,
-      "address": 76,
-      "cuisine": 102
+      "district": 74,
+      "address": 74,
+      "cuisine": 100
     },
     "bib": {
       "district": 0,
@@ -189,15 +189,6 @@
     }
   },
   "manualReviewItems": [
-    {
-      "name": "大成羊排麵牛肉麵",
-      "city": "宜蘭縣",
-      "guide": "500bowl",
-      "missing": [
-        "district"
-      ],
-      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
-    },
     {
       "name": "小食粑 Rice Mini Cake",
       "city": "宜蘭縣",
@@ -976,15 +967,6 @@
         "district",
         "address",
         "cuisine"
-      ],
-      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
-    },
-    {
-      "name": "廟口肉圓",
-      "city": "苗栗縣",
-      "guide": "500bowl",
-      "missing": [
-        "district"
       ],
       "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
     },
@@ -4300,17 +4282,6 @@
       "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
     },
     {
-      "name": "弎弎川酒",
-      "city": "臺北市",
-      "guide": "500plate",
-      "missing": [
-        "district",
-        "address",
-        "cuisine"
-      ],
-      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
-    },
-    {
       "name": "成海壽司",
       "city": "臺北市",
       "guide": "500plate",
@@ -6488,17 +6459,6 @@
     },
     {
       "name": "foldie 蔬食餐酒館",
-      "city": "臺北市",
-      "guide": "500plate",
-      "missing": [
-        "district",
-        "address",
-        "cuisine"
-      ],
-      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
-    },
-    {
-      "name": "Fon-Cé",
       "city": "臺北市",
       "guide": "500plate",
       "missing": [
