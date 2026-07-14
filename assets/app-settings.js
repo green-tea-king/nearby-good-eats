@@ -2,8 +2,8 @@
 // The browser key remains only for loading the interactive Google map and is referrer restricted.
 window.APP_SETTINGS = {
   apiBaseUrl: "https://us-central1-nearby-good-eats.cloudfunctions.net/api",
-  aiEnabled: false,
-  aiDisabledReason: "尚未配置受控的後端 AI 模型；目前只使用 Google 真欄位與可追溯批次資料。",
+  aiEnabled: true,
+  aiDisabledReason: "",
   googleMapsApiKey: "AIzaSyBtViT280p8qtdm4PT2QUnMypdMssTV1-k",
   apiLimits: {
     externalTestMode: false,

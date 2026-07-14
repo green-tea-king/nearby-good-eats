@@ -29,6 +29,7 @@
 <script src="assets/app-settings.js"></script>
 <script src="assets/filter-rules.js"></script>
 <script src="assets/search-logic.js"></script>
+<script src="assets/auth-logic.js"></script>
 <script src="firebase-config.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -895,7 +896,7 @@ const CONFIG = {
   AI_FILTER: {
     MODE: APP_SETTINGS.aiEnabled === true ? "proxy" : "off", // 只有明確開啟且有後端才顯示 AI
     ENDPOINT: "",            // 後端回 {items:[{id,tags,confidence,reason,sources}]}
-    MAX_ITEMS: 80,
+    MAX_ITEMS: 8,
   },
   AUTH: window.APP_FIREBASE_CONFIG || {
     requireSignIn: true,
@@ -1052,8 +1053,8 @@ function authErrorMessage(error){
   const code = error?.code || "";
   const message = error?.message || "";
   if (code.includes("popup-closed")) return "登入視窗已關閉，請重新點選登入。";
-  if (code.includes("popup-blocked")) return "瀏覽器阻擋了登入視窗，正在改用跳轉登入。";
-  if (code.includes("operation-not-supported")) return "這個瀏覽器不支援彈出式登入，正在改用跳轉登入。";
+  if (code.includes("popup-blocked")) return "瀏覽器阻擋了登入視窗，請允許彈出視窗後重試。";
+  if (code.includes("operation-not-supported")) return "這個瀏覽器不支援 Google 登入，請用 Safari 或 Chrome 一般分頁開啟。";
   if (code.includes("redirect-cancelled") || code.includes("redirect-operation-pending")) return "已有登入流程進行中，請稍候再試。";
   if (code.includes("requests-from-referer") || message.includes("requests from referer")){
     return "Firebase 登入 API key 尚未允許這個網站來源。請到 Google Cloud Console 的 API key 限制加入 https://green-tea-king.github.io/* 與 https://green-tea-king.github.io/nearby-good-eats/*。";
@@ -1071,7 +1072,7 @@ function isEmbeddedAuthBrowser(){
   return /(FBAN|FBAV|Instagram|Line|MicroMessenger)/i.test(ua);
 }
 function shouldUseRedirectLogin(){
-  return isEmbeddedAuthBrowser();
+  return false;
 }
 function authRedirectFlag(){
   return "nearbyGoodEats:authRedirectStartedAt";
@@ -1148,27 +1149,19 @@ async function initAuth(){
   provider.addScope("email");
   provider.addScope("profile");
   provider.setCustomParameters({ prompt:"select_account" });
-  let hadRedirectAttempt = false;
   try{
     await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    hadRedirectAttempt = !!consumeAuthRedirectStarted();
-    const redirectResult = await auth.getRedirectResult();
-    if (redirectResult?.user) hadRedirectAttempt = false;
   }catch(e){
-    consumeAuthRedirectStarted();
     showAuthError(authErrorMessage(e));
   }
   $("#googleLoginBtn")?.addEventListener("click", async () => {
     showAuthError("");
     setAuthBusy(true);
     try{
-      if (shouldUseRedirectLogin()){
-        if (isRecentAuthRedirect()){
-          showAuthError("登入流程仍在處理中，請稍候幾秒後再重新整理。");
-          return;
-        }
-        markAuthRedirectStarted();
-        await auth.signInWithRedirect(provider);
+      const strategy = NGE_AUTH_LOGIC.loginStrategy({ embedded:isEmbeddedAuthBrowser() });
+      if (strategy === "external-browser-required"){
+        await navigator.clipboard?.writeText?.(location.href).catch(() => {});
+        showAuthError("LINE、Facebook 或 Instagram 內建瀏覽器無法安全完成 Google 登入。網址已複製，請改用 Safari 或 Chrome 一般分頁開啟。");
         return;
       }
       await auth.signInWithPopup(provider);
@@ -1176,11 +1169,6 @@ async function initAuth(){
       const msg = authErrorMessage(e);
       showAuthError(msg);
       const code = e?.code || "";
-      if (code.includes("popup-blocked") || code.includes("operation-not-supported")){
-        markAuthRedirectStarted();
-        await auth.signInWithRedirect(provider);
-        return;
-      }
     }finally{
       setAuthBusy(false);
     }
@@ -1193,9 +1181,6 @@ async function initAuth(){
     authState.user = user || null;
     setAuthBusy(false);
     if (user) showAuthError("");
-    if (!user && hadRedirectAttempt){
-      showAuthError("登入沒有完成。手機請用 Safari 或 Chrome 一般分頁，不要用私密瀏覽或 LINE/FB 內建瀏覽器。");
-    }
     updateAuthUi();
     if (user){
       upsertUserProfile(user);
@@ -1401,7 +1386,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.14.1";
+const APP_VERSION_FALLBACK = "2026.07.14.2";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
@@ -1459,6 +1444,8 @@ let locationPrivacyNotified = false;
 let rankSearchCommitted = false;
 let rankResultCandidates = [];
 let rankShownPlaceIds = new Set();
+let rankFilterRebuildPending = false;
+let rankKeywordComposing = false;
 
 function leaderboardIdleSummary(){
   const f = rankFilter;
@@ -2839,14 +2826,7 @@ function keywordRelaxLabel(keyword){
   return relaxed ? `放寬關鍵字為「${relaxed}」` : "清除關鍵字";
 }
 function relaxedAwardValues(values){
-  const selected = [...new Set((Array.isArray(values) ? values : [values]).filter(Boolean))];
-  if (!selected.length) return [];
-  const michelinLevels = new Set(["米其林一星", "米其林二星", "米其林三星"]);
-  if (selected.some(value => michelinLevels.has(value)) && !selected.includes("米其林星級")) {
-    return [...selected.filter(value => !michelinLevels.has(value)), "米其林星級"];
-  }
-  if (selected.length) return [];
-  return selected;
+  return NGE_SEARCH_LOGIC.relaxedAwardValues(values);
 }
 function activeRankFilters(f){
   const active = RANK_FILTERS
@@ -2886,6 +2866,9 @@ function minimumRankDistanceRelaxations(filter){
       note:`已放寬步行搜尋半徑至 ${Number(radius).toLocaleString()}m`,
       label:`放寬至 ${Number(radius).toLocaleString()}m`,
     }));
+}
+function minimumRankFallbackRelaxations(filter){
+  return NGE_SEARCH_LOGIC.automaticFallbackRelaxations(filter);
 }
 function renderResultActions(filter){
   const steps = minimumResultRelaxations(filter).slice(0, 3);
@@ -3202,7 +3185,8 @@ async function renderLeaderboard(){
         baseFilter: f,
         minimum: RANK_TOP,
         fetchItems: async relaxedFilter => {
-          const fallbackSource = await originKeywordFallbackCandidates(relaxedFilter, renderQuotaKey);
+          const relaxedRadius = relaxedFilter.radius || finalRadius;
+          const fallbackSource = await nearbyRankCandidates(relaxedFilter, relaxedRadius, renderQuotaKey);
           if (token !== rankRenderToken) return [];
           const fallbackCards = sortRankItems(applyRankFilters(fallbackSource, false, relaxedFilter), relaxedFilter)
             .slice(0, Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3))
@@ -3222,7 +3206,10 @@ async function renderLeaderboard(){
             .slice(0, RANK_TOP);
         },
         sortItems: items => items,
-        relaxations: [],
+        relaxations: [
+          ...minimumRankDistanceRelaxations(f),
+          ...minimumRankFallbackRelaxations(f),
+        ],
       });
       if (relaxed.items.length > cards.length){
         cards = relaxed.items;
@@ -3342,7 +3329,10 @@ async function renderLeaderboard(){
         return sortRankItems(applyRankFilters(relaxedSource, false, relaxedFilter), relaxedFilter);
       },
       sortItems: sortRankItems,
-      relaxations: minimumRankDistanceRelaxations(f),
+      relaxations: [
+        ...minimumRankDistanceRelaxations(f),
+        ...minimumRankFallbackRelaxations(f),
+      ],
     });
     if (relaxed.items.length > list.length){
       list = relaxed.items;
@@ -3834,6 +3824,11 @@ async function shareCard(btn){
 
 /* 篩選列 */
 function buildRankFilterBar(){
+  if (NGE_SEARCH_LOGIC.shouldDeferFilterRebuild(document.activeElement?.id || "", rankKeywordComposing)) {
+    rankFilterRebuildPending = true;
+    return;
+  }
+  rankFilterRebuildPending = false;
   const bar = $("#rankFilters");
   const f = editableRankFilter();
   let html = `<div class="fg fg-location"><span class="fg-lab">地區</span><div class="fg-chips">`
@@ -3906,11 +3901,23 @@ function buildRankFilterBar(){
   };
   $("#rkKeywordApply")?.addEventListener("click", applyFilters);
   const keywordInput = $("#rkKeyword");
-  ["focus","input","compositionstart","compositionupdate","touchstart","pointerdown"].forEach(type => {
+  ["focus","input","compositionupdate","touchstart","pointerdown"].forEach(type => {
     keywordInput?.addEventListener(type, () => markRankFilterInteraction(2400), { passive:true });
   });
+  keywordInput?.addEventListener("compositionstart", () => {
+    rankKeywordComposing = true;
+    markRankFilterInteraction(2400);
+  });
+  keywordInput?.addEventListener("compositionend", () => {
+    rankKeywordComposing = false;
+    syncKeywordDraft();
+  });
   keywordInput?.addEventListener("input", syncKeywordDraft);
-  keywordInput?.addEventListener("blur", () => markRankFilterInteraction(500));
+  keywordInput?.addEventListener("blur", () => {
+    rankKeywordComposing = false;
+    markRankFilterInteraction(500);
+    if (rankFilterRebuildPending) requestAnimationFrame(buildRankFilterBar);
+  });
   keywordInput?.addEventListener("keydown", e => {
     markRankFilterInteraction(2400);
     if (e.key === "Enter"){

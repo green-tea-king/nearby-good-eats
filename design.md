@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.14.1
+版本：2026.07.14.2
 
 ## 未來開工必讀文件
 
@@ -350,17 +350,17 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 
 ## AI 設計方向
 
-目前前端已保留 `CONFIG.AI_FILTER` 設定，正式站預設關閉：
+正式站已透過受 Firebase Auth 與 App Check 保護的 Functions proxy 呼叫 Vertex AI：
 
 ```js
 AI_FILTER: {
-  MODE: "off",
+  MODE: "proxy",
   ENDPOINT: "",
-  MAX_ITEMS: 80,
+  MAX_ITEMS: 8,
 }
 ```
 
-正確方向不是把 AI API key 放前端，而是建立後端或 serverless proxy：
+AI 模型使用 `gemini-2.5-flash-lite`，以 Cloud Functions 服務帳戶取得 Vertex AI 權限；前端沒有 AI API key。每次最多批次判讀 8 家，且只在使用者套用需要近似判斷的濾網時呼叫：
 
 ```text
 Google Places 真資料 -> 後端 AI 分類 -> 回傳 tags + confidence + reason + sources -> 前端套用濾網與顯示判讀依據
