@@ -79,6 +79,7 @@
   function automaticFallbackRelaxations(filter = {}) {
     const steps = [];
     const add = (key, patch, note) => steps.push({ key, patch, note });
+    if (filter.meal) add("clear-meal", { meal:null }, "結果不足，已放寬時段");
     if (filter.village) add("clear-village", { village:"" }, "結果不足，已放寬為整個行政區");
     if (filter.area) add("clear-area", { area:"", village:"" }, "結果不足，已放寬為整個縣市");
     if (filter.city) add("clear-city", { city:"", area:"", village:"" }, "結果不足，已放寬地區限制");
@@ -89,7 +90,6 @@
     if ((filter.award || []).length) add("clear-award", { award:[] }, "結果不足，已放寬評鑑限制");
     if (filter.cuisine) add("clear-cuisine", { cuisine:null }, "結果不足，已放寬菜系");
     if (filter.diet) add("clear-diet", { diet:null }, "結果不足，已放寬飲食限制");
-    if (filter.meal) add("clear-meal", { meal:null }, "結果不足，已放寬時段");
     return steps;
   }
 
