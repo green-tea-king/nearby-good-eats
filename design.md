@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.01.23
+版本：2026.07.14.13
 
 ## 未來開工必讀文件
 
@@ -11,6 +11,67 @@
 3. `design.md`：完整產品設計、資料流程、評分、API、外部資料與部署說明。
 
 不得只依賴聊天記憶。若任務要求與上述文件衝突，必須先指出衝突；除非使用者明確要求更新規則，否則以文件為準。
+
+## 快速接手摘要
+
+這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
+
+目前正式版本為 `2026.07.14.13`，正式站為：
+
+```text
+https://green-tea-king.github.io/nearby-good-eats/
+```
+
+核心設計精神：
+
+1. 真實優先：Google 評分、評論數、營業、地址與路線是主體，不用假資料補畫面。
+2. 決策優先：第一眼只呈現選店必要資訊，照片、完整標籤與摘要延後到詳情。
+3. 成本優先：不進站自動搜尋、不逐項濾網搜尋、只顯示 3 家、Details／Routes／AI 限量補抓、所有可重用結果快取。
+4. 可解釋：任何自動放寬、AI 判讀、獎牌加分與距離估算都要告訴使用者依據。
+5. 手機優先：只維護一種 360px 到 480px 直式操作模型，避免桌機版與手機版邏輯分叉。
+6. 可追溯：外部評鑑每筆都要有年份、來源 URL、擷取日期；不知道就標記待確認，不猜測。
+
+## 系統架構
+
+```text
+使用者手機瀏覽器
+  ├─ GitHub Pages
+  │   ├─ index.html                  前台 UI、整合流程、卡片渲染
+  │   ├─ admin.html                  管理員統計
+  │   └─ assets/*.js / *.json        純邏輯、設定、評鑑與外部訊號
+  ├─ Firebase Authentication         Google 登入與 ID token
+  ├─ Firebase App Check              限制非本站客戶端
+  ├─ Cloud Firestore
+  │   ├─ usageEvents                 前台行為事件
+  │   ├─ apiEvents                   後端 API 成功、錯誤與成本估算
+  │   ├─ quotaUsage                  每人每日搜尋配額與去重 request key
+  │   ├─ users                       使用者資料
+  │   └─ admins                      管理員白名單
+  └─ Firebase Functions
+      ├─ api                         Auth/App Check/Quota/API proxy/AI
+      └─ photo                       簽名照片代理
+          ├─ Places API New
+          ├─ Routes API
+          ├─ Geocoding API
+          └─ Vertex AI Gemini
+```
+
+信任邊界：瀏覽器送出的 UID、email、配額與成本資訊都不可信；後端必須從 Firebase ID token 取得身分，App Check 驗證客戶端，Firestore Rules 只允許使用者建立自己的 `usageEvents`。Google secret key 與 Vertex AI 身分只存在後端。
+
+## 執行技術與框架
+
+- 前端：原生 HTML、CSS、JavaScript，無 bundler、無 SPA framework。
+- 字體與轉換：Google Fonts、OpenCC.js。
+- 地圖載入：Google Maps JavaScript API；browser loader key 為公開值，但必須設定 referrer／API 限制。
+- 身分與資料：Firebase Web Compat SDK 10.12.5、Authentication、Firestore、App Check。
+- 後端：Firebase Functions 2nd Gen、Node.js 22、CommonJS。
+- AI：Vertex AI `gemini-2.5-flash-lite`，使用 Functions 服務帳戶 OAuth。
+- 靜態部署：GitHub Pages。
+- 後端部署：Firebase CLI。
+- 自動化：GitHub Actions 每週批次更新外部社群訊號；搜尋執行期不爬外站。
+- 測試：Node.js assertion scripts、資料 validators、PowerShell live smoke、Chrome 實站 QA。
+
+目前沒有前端 build step；修改 `index.html` 或 `assets/` 後可直接由靜態伺服器載入。這降低部署複雜度，但 `index.html` 已偏大，新增純邏輯時應抽到 `assets/*.js` 並以 CommonJS/Browser UMD 方式保持可測試。
 
 ## 專案目標
 
@@ -28,8 +89,10 @@
 
 - `index.html`：主要 App，包含 HTML、CSS、JavaScript。
 - `admin.html`：Firebase 後台統計頁，登入管理員可看使用紀錄、API 估算成本與外部來源覆蓋狀態。
-- `assets/app-settings.js`：公開的非機密執行設定，集中管理後端 proxy 與資料檔路徑；不得放 Google Maps secret key。
+- `assets/app-settings.js`：公開的非機密執行設定，集中管理後端 proxy、Maps loader key 與資料檔路徑；不得放可代打 Places / Routes 的後端 secret key。
 - `assets/filter-rules.js`：排行榜濾網定義與精準度層級。
+- `assets/search-logic.js`：可測試的搜尋純邏輯，包括預設濾網、地區／交通互斥、空結果快取判斷、自動放寬與下一組分頁。
+- `assets/auth-logic.js`：可測試的登入策略，處理一般瀏覽器、手機 popup／redirect 與嵌入式瀏覽器提示。
 - `firebase-config.js`：Firebase Auth / Firestore 設定，未填寫前登入功能保持關閉。
 - `firestore.rules`：Firestore 安全規則，限制使用者只能寫自己的使用紀錄、管理員可讀後台資料。
 - `firebase.json`：Firebase CLI 使用的 Firestore 規則設定。
@@ -168,19 +231,17 @@
 
 目前 App 依賴 Google Maps Platform：
 
-- Maps JavaScript API
+- Maps JavaScript API（只負責瀏覽器地圖載入）
 - Places API New
 - Geocoding API
 - Routes API
-- Distance Matrix API fallback
+- Routes API；若瀏覽器路線服務逾時，僅使用標示為「約」的保守距離估算，不呼叫已棄用的 Distance Matrix API。
 
-Google Places / Routes 的正式方向是走 Firebase Cloud Functions proxy。`functions/` 已建立 `api` 與 `photo` proxy，會驗證 Firebase ID token、可驗證 `X-Firebase-AppCheck` token、使用 `GOOGLE_MAPS_API_KEY` Secret 代打 Google API，並寫入 `apiEvents`。
-
-目前先部署 GitHub Pages 靜態版，`assets/app-settings.js` 暫時使用 Google Maps browser key fallback，不走 Firebase Functions proxy，避免 Blaze 付費門檻阻塞上線。這個 key 必須在 Google Cloud 設定 HTTP referrer 與 API 限制。若後續出現濫用或成本風險，再回到 Functions proxy / App Check / rate limit 架構。
+正式站已使用 Firebase Cloud Functions proxy。`functions/` 的 `api` 與 `photo` 會驗證 Firebase ID token 與 `X-Firebase-AppCheck` token，使用 `GOOGLE_MAPS_API_KEY` Secret 代打 Google API，並寫入 `apiEvents`。`assets/app-settings.js` 中的 Maps browser key只用於載入互動地圖，必須在 Google Cloud 設定 HTTP referrer 與 API 限制，不得拿它繞過 proxy 呼叫 Places Web Service。
 
 搜尋類 API (`textSearch`、`nearbySearch`) 套用每日使用者配額：一般使用者每天 30 次搜尋，管理員不限。一次排行榜整理即使內部查多個縣市，也會用同一個 quota key 合併計算成一次使用者搜尋。
 
-2026-07-01 外部手機測試期間，`assets/app-settings.js` 設定 `apiLimits.externalTestMode:true`，Functions proxy 預設 `DISABLE_SEARCH_QUOTA !== "false"`，因此暫停每日 30 次搜尋封鎖，但仍保留 Google 登入、`usageEvents` 與 `apiEvents` 紀錄。明天恢復管控時，將 Functions 環境變數設為 `DISABLE_SEARCH_QUOTA=false`，並把 `assets/app-settings.js` 的 `externalTestMode` 改回 `false`。
+`assets/app-settings.js` 的本機額度只用來提早提示；真正不可繞過的每日 30 次限制在 Functions / Firestore transaction。管理員不限。Functions 以 App Check 開啟、`DISABLE_SEARCH_QUOTA=false` 為安全預設；同一 quota key 的內部同心圓或放寬查詢只計一次使用者搜尋。
 
 `apiEvents` 會記錄 action、成功/失敗、延遲、估算單位、粗估成本、App Check 狀態、配額剩餘與配額封鎖。`admin.html` 會顯示 API 次數、錯誤率、成本估算、API 使用者排行與錯誤/配額排行。成本估算只供控管趨勢，正式帳務仍以 Google Cloud Billing 為準。
 
@@ -350,17 +411,17 @@ https://green-tea-king.github.io/nearby-good-eats/?place=<GooglePlaceId>
 
 ## AI 設計方向
 
-目前前端已保留 `CONFIG.AI_FILTER` 設定，但預設關閉：
+正式站已透過受 Firebase Auth 與 App Check 保護的 Functions proxy 呼叫 Vertex AI：
 
 ```js
 AI_FILTER: {
   MODE: "proxy",
   ENDPOINT: "",
-  MAX_ITEMS: 80,
+  MAX_ITEMS: 8,
 }
 ```
 
-正確方向不是把 AI API key 放前端，而是建立後端或 serverless proxy：
+AI 模型使用 `gemini-2.5-flash-lite`，以 Cloud Functions 服務帳戶取得 Vertex AI 權限；前端沒有 AI API key。每次最多批次判讀 8 家，且只在使用者套用需要近似判斷的濾網時呼叫：
 
 ```text
 Google Places 真資料 -> 後端 AI 分類 -> 回傳 tags + confidence + reason + sources -> 前端套用濾網與顯示判讀依據
@@ -408,6 +469,117 @@ Authorization: Bearer <Firebase ID token>
 - 推薦原因
 - 信心分數
 
+## Functions API 契約
+
+前端以 `POST assets/app-settings.js::apiBaseUrl` 呼叫單一 `api` endpoint，request body 形式為：
+
+```json
+{
+  "action": "textSearch",
+  "payload": {}
+}
+```
+
+必要 headers：
+
+```http
+Authorization: Bearer <Firebase ID token>
+X-Firebase-AppCheck: <App Check token>
+Content-Type: application/json
+```
+
+支援 action：
+
+| action | 用途 | 主要輸入 | 主要輸出 |
+|---|---|---|---|
+| `textSearch` | 關鍵字／行政區搜尋 | `textQuery`, `maxResultCount`, `locationBias` | `items[]` |
+| `nearbySearch` | 定位同心圓搜尋 | `center`, `radius`, `includedPrimaryTypes` | `items[]` |
+| `placeDetails` | 前幾名完整欄位 | `placeId` | `item` |
+| `routeMatrix` | 步行或開車時間 | `origin`, `targets[]`, `travelMode` | `items[]` |
+| `geocode` | 行政區中心點 | `address` | `item` |
+| `aiClassify` | 最多 8 家二次分類 | `filters[]`, `items[]` | `items[]` 的 tags/confidence/reason/sources |
+
+後端硬限制：Text/Nearby 每次最多 20 家、Nearby radius 最多 5,000m、Routes targets 最多 20 家、AI 最多 8 家。新增 action 時必須同時更新：允許 action、request validation、成本估算、事件記錄、前端呼叫、測試與本文件。
+
+正常 response 會附帶結果及配額資訊；失敗使用 HTTP 4xx/5xx。前端不得把 API 失敗轉成「0 家」假裝成功，必須交由系統導引顯示可理解錯誤。
+
+## 前端狀態與搜尋流程
+
+重要狀態：
+
+- `rankFilter`：已套用條件。
+- `rankFilterDraft`：使用者尚未按套用的草稿；點 chip 只改草稿，不搜尋。
+- `rankSearchCommitted`：是否已進行第一次明確搜尋；false 時維持空白待搜尋狀態。
+- `rankResultCandidates`：目前條件完整候選池，用於「下一組」。
+- `rankShownPlaceIds`：已顯示 place ID，避免重複。
+- `rankAreaPools` / `rankKeywordPools` / `rankNearbyPools`：記憶體候選池。
+- `rankRich`：依 place ID 保存補抓 Details 的完整資料。
+- `rankOriginLabel` / `rankOriginScope`：定位顯示與行政區 fallback，不保存到後台精確座標。
+
+搜尋狀態機：
+
+```text
+登入完成
+  -> 顯示濾網與待搜尋導引（不呼叫 API）
+  -> 使用者修改 rankFilterDraft（不呼叫 API）
+  -> 按套用，commit 到 rankFilter
+  -> 選資料來源：交通 Nearby / 地區 Text / 關鍵字 Text / 全台候選
+  -> Google 真欄位與本地標籤篩選
+  -> 必要時 AI 二次分類
+  -> 不足 3 家：自動時段 -> 里 -> 區 -> 縣市 -> 營業/供餐/評鑑等逐步放寬
+  -> 排序並僅補抓前幾名 Details / Routes
+  -> 顯示 3 張卡片，保留候選池供下一組
+```
+
+空陣列不得寫入或沿用搜尋快取，否則 API 恢復後瀏覽器仍會永久看到 0 家。核心 JS script URL 必須帶目前 `VERSION`，避免 HTML 與快取 JS 版本錯配；`scripts/test-static-asset-versions.js` 固定檢查此契約。
+
+## 資料模型
+
+### Google 候選餐廳
+
+前後端統一使用簡化欄位：`id`、`name`、`loc`、`rating`、`count`、`address`、`openNow`、`priceLevel`、`pt`/`ptd`、`photos`、服務 flags、摘要與 `awards`。`id` 即 Google place ID，是快取、去重、分享與 Details 的主鍵。
+
+### 評鑑資料 `assets/awards-taiwan.json`
+
+```json
+{
+  "name": "餐廳名稱",
+  "city": "臺北市",
+  "district": "信義區",
+  "address": "完整地址",
+  "cuisine": "菜系",
+  "aliases": [],
+  "awards": [
+    {
+      "guide": "michelin",
+      "awardName": "米其林一星",
+      "year": 2025,
+      "level": "一星",
+      "sourceUrl": "https://...",
+      "extractedDate": "2026-06-30",
+      "notes": ""
+    }
+  ]
+}
+```
+
+正式允許的 guide 只有 `michelin`、`michelin_selected`、`bib`、`500plate`、`500bowl`、`500sweet`。年份不能推測；來源沒有年份時用「年份待確認」。名稱比對需考慮別名、縣市、地址與分店，不能只靠模糊店名自動掛獎。
+
+### 外部訊號 `assets/external-signals.json`
+
+外部資料只做低權重加分和標籤。每筆 signal 必須帶 `sourceId`、可追溯 URL、擷取時間、信心或證據。資料由批次腳本／人工審核產生；前端搜尋期間不得即時抓愛食記、OpenRice、Tripadvisor、YouTube 或其他網站。
+
+## 設定、Secret 與權限
+
+- `firebase-config.js`：Firebase Web config、`requireSignIn`、管理員 email。Web config 可公開，但仍應設定授權網域與適當限制。
+- `assets/app-settings.js`：API base URL、公開 Maps loader key、App Check site key、每日提示額度、資料檔 URL；不得放 server secret。
+- Secret Manager：`GOOGLE_MAPS_API_KEY`，供 Places、Routes、Geocode 與照片 proxy 使用。
+- Functions env：`REQUIRE_APP_CHECK` 預設 true、`DISABLE_SEARCH_QUOTA` 預設 false、`DAILY_SEARCH_LIMIT` 預設 30、`VERTEX_AI_MODEL` 預設 `gemini-2.5-flash-lite`。
+- CORS：正式只允許 `https://green-tea-king.github.io`，本機允許 `127.0.0.1:4177` 與 `localhost:4177`。
+- 管理員：Firestore `admins/<lowercase-email>` 或後端保留管理員 email；規則與前後台名單需同步。
+
+任何文件、commit、日誌或備份說明都不得寫入 secret 值。若 key 洩漏，先在 Google Cloud 輪替，再部署 Functions secret，最後驗證正式站。
+
 ## 部署
 
 目前使用 GitHub Pages：
@@ -418,13 +590,23 @@ https://green-tea-king.github.io/nearby-good-eats/
 
 部署流程：
 
-1. 修改檔案。
-2. 更新 `VERSION`。
-3. 本機檢查 JavaScript 語法。
-4. 手機寬度截圖或互動驗證。
-5. 使用 `scripts/deploy-github-contents.ps1` 透過 GitHub Git Data API 建立單一 commit；本機不依賴 `.git`。
-6. 等 GitHub Pages 更新。
-7. 用 `scripts/smoke-live-site.ps1 -ExpectedVersion <VERSION>` 驗證正式 URL 的 `VERSION`、首頁版本與獎牌資料統計。
+1. 先讀 `AGENTS.md`、`project-rules.md`、本文件，執行 `git status --short --branch`；不得直接在 `main` 修改。
+2. 完成修改後執行 `AGENTS.md` 的最低驗證矩陣與手機瀏覽器 QA。
+3. 更新 `VERSION`，並同步所有核心 JS 的版本 query；`scripts/test-static-asset-versions.js` 必須通過。
+4. 靜態站使用 `scripts/deploy-github-contents.ps1`，透過 GitHub Git Data API 建立遠端單一 commit。
+5. 若有 Functions 修改，執行 `$env:CI='1'; npx firebase-tools deploy --project nearby-good-eats --only functions:api`。
+6. 若有 Firestore Rules 修改，執行 `$env:CI='1'; npx firebase-tools deploy --project nearby-good-eats --only firestore:rules`。
+7. 等 GitHub Pages workflow 完成，再執行 `scripts/smoke-live-site.ps1 -ExpectedVersion <VERSION>`。
+8. 用 Chrome 實測登入、套用搜尋、3 張卡片、下一組、分享、詳情照片與後台。
+
+`deploy-github-contents.ps1` 會直接建立遠端 commit，但不會自動移動本機 branch 的 HEAD。部署完成後必須核對遠端 commit 與本機內容，明確同步，不可假設本機 Git 已經跟上正式站。
+
+### 回滾
+
+- 靜態站：找出最後一個已驗證版本，把該版本內容重新部署成新的回滾 commit；禁止用 force push、hard reset 或刪除歷史。
+- Functions：從最後一個已驗證原始碼版本重新部署 `functions:api`，並確認 Secret 與 env 未被舊值覆蓋。
+- Firestore Rules：只回滾規則檔，不刪除既有集合或使用紀錄。
+- 回滾後仍要跑正式站 smoke、登入、搜尋與錯誤導引，並記錄回滾原因與版本。
 
 ## 外部獎牌資料建構
 
@@ -590,7 +772,65 @@ VERSION = 2026.06.27.22
 
 ## 後續可優化方向
 
-- 建立 serverless proxy，支援 AI 分類與摘要。
-- 針對村里查詢加入更柔性的 fallback，避免某些餐廳地址沒有里名導致結果過窄。
-- 將 `index.html` 拆成多檔模組，降低單檔維護成本。
-- 建立正式測試腳本，固定檢查首頁、濾網、分享路由、Google API 載入與手機寬度。
+- 將 `index.html` 的狀態管理、API adapter、卡片 render 與事件處理拆成可測試模組，降低單檔維護風險。
+- 針對村里與評鑑多選建立更可解釋的 fallback report，清楚列出哪一層條件被放寬。
+- 建立真正的動態 OG 分享頁；目前 `?place=` 可開啟獨立狀態，但社群預覽 metadata 仍受靜態頁限制。
+- 持續處理獎牌資料 merge report 的人工確認項目，名稱、分店、行政區或年份未確認前不得自動掛獎。
+- 將後台成本估算與 Google Cloud Billing export 對照；目前後台金額是事件估算，不是帳單真值。
+- 補齊外部平台訊號覆蓋，但維持批次匯入、來源 URL 與人工覆核，不在搜尋時即時爬站。
+- 規劃 Firebase Functions 相依套件升級；先處理測試與相容性，不為消除 audit 警告直接做破壞性 major upgrade。
+- 建立 Android Chrome 與 iPhone Safari 的固定回歸清單，特別覆蓋登入 redirect、鍵盤焦點、縮放、返回鍵與照片燈箱。
+- 追蹤 GitHub Actions Node.js 20 runtime 淘汰時程，適時升級 action major version。
+- PWA／離線殼層僅作後續選項；不可快取搜尋結果冒充即時 Google 資料。
+
+## 常見故障與定位
+
+### 搜尋只出 0 到 2 家
+
+1. 先確認使用者是否真的按了「套用」，以及 `rankSearchCommitted` 是否為 true。
+2. 檢查 Functions `apiEvents`、瀏覽器 Network response 與系統導引；不可把 401、403、429 或 5xx 當成 0 家。
+3. 檢查候選池是否被空陣列快取、評鑑多選是否誤用 AND、關鍵字是否過度嚴格。
+4. 依時段、里、區、縣市、營業、供餐、評鑑順序確認放寬流程，並確保畫面揭露放寬狀態。
+
+### `NGE_SEARCH_LOGIC.* is not a function`
+
+通常是新版 HTML 載到舊版快取 JS。確認核心 script URL 都帶當前 `VERSION`，執行 `node scripts/test-static-asset-versions.js`，更新版本後重新部署。
+
+### 中文顯示 `???` 或亂碼
+
+用 `Get-Content -Encoding UTF8` 讀取原檔，再用瀏覽器確認。若檔案內容真的被問號取代，從可驗證來源修復文字；不可只改終端 code page 後宣稱完成。
+
+### AI 回傳 401／未啟用
+
+確認前端有 Firebase ID token、header 是否是可列舉 plain object、Functions service account 是否有 Vertex AI 權限，以及 `aiClassify` action 是否成功寫入 `apiEvents`。
+
+### Routes／Geocode 回傳 403
+
+確認 `nearby-good-eats` 專案已啟用對應 API、後端 key API restriction、帳單綁定與 Secret 版本。不要改用前端 key 繞過。
+
+### 詳情照片消失
+
+照片只在詳情 lazy load。檢查 place ID、Details response、photo proxy URL 是否過期、圖片 fallback 與 Network 狀態；列表卡片沒有照片本身不是錯誤。
+
+### 手機 Google 登入迴圈
+
+檢查 Firebase authorized domains、Google provider、popup／redirect 分流、redirect result 是否只處理一次，以及 GitHub Pages 正式 origin 是否一致。
+
+### 濾網輸入框一直跳掉
+
+輸入期間不可重建整個濾網 DOM；處理 `focus`、`compositionstart`／`compositionend`，只更新 draft，等「套用」才 commit 與搜尋。
+
+### 正式站仍是舊版
+
+先看 GitHub Pages workflow，再直接讀正式站 `VERSION` 與 HTML asset query。確認部署 commit、CDN／瀏覽器快取與本機 HEAD 三者，不要只看本機檔案。
+
+## 接手完成條件
+
+新接手者完成以下項目才算具備可修改狀態：
+
+- 能說明首次進站、套用搜尋、放寬到 3 家、下一組的完整狀態流程。
+- 能指出 Places、Routes、Geocode、Photos、AI 分別在哪一層呼叫以及如何記錄配額。
+- 能說明 Google 評分、評論數、正式評鑑與外部訊號的權重關係。
+- 能從 `place_id` 追到候選池、Details、分享路由、快取與事件記錄。
+- 能執行最低驗證矩陣，並區分本機測試、正式站 smoke 與人工手機 QA。
+- 能在不刪資料、不洩漏 secret、不重打無謂 API 的前提下完成部署與回滾。

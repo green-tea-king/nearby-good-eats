@@ -252,6 +252,11 @@ function sourceStatusLabel(source){
 }
 function sourceCountLabel(source){
   if (source.count != null) return source.count;
+  if (source.awardCount != null || source.restaurantCount != null) {
+    const awards = Number(source.awardCount || 0).toLocaleString();
+    const restaurants = Number(source.restaurantCount || 0).toLocaleString();
+    return `${awards} 筆 / ${restaurants} 家`;
+  }
   if (source.id === "michelin-guide-taiwan" && source.counts) {
     return `星${source.counts.stars || 0} 必${source.counts.bib || 0} 入${source.counts.selected || 0} 綠${source.counts.greenstar || 0}`;
   }
@@ -264,7 +269,11 @@ function sourceNote(source){
   if (source.id === "google-maps-reviews") return "Google 評分/評論數為排序主體，含洗評與活動文字降噪。";
   if (source.status === "batch_pipeline_ready_no_data") return "已有安全批次入口，但尚未匯入可追溯資料。";
   if (source.status === "manual_verification_queue") return "目前只有候選名單，仍待人工補完地址、菜系或來源交叉確認。";
-  if (source.id === "michelin-guide-taiwan") return `星級 ${source.counts?.stars || 0}、必比登 ${source.counts?.bib || 0}、入選 ${source.counts?.selected || 0}、綠星 ${source.counts?.greenstar || 0}`;
+  if (source.id === "michelin-guide-taiwan") {
+    const stars = source.counts?.stars ?? source.awardCount ?? source.restaurantCount ?? 0;
+    const years = Object.keys(source.years || {}).join("、") || "年份待確認";
+    return `星級 ${Number(stars).toLocaleString()}；資料年份 ${years}`;
+  }
   return source.runtimeLookup === false ? "只讀本地批次資料，不在使用者搜尋時即時外查。" : "執行時資料來源。";
 }
 function renderSourceCoverage(){
@@ -302,6 +311,11 @@ function filterLabel(e){
   if (p.key && p.value) return `${p.key}: ${p.value}`;
   if (p.key && p.selected != null) return `${p.key}: ${p.selected ? "選取" : "取消"}`;
   if (p.city || p.area || p.village) return [p.city, p.area, p.village].filter(Boolean).join(" ");
+  const labels = [
+    ["關鍵字", p.keyword], ["餐期", p.meal], ["營業", p.open], ["交通", p.travel],
+    ["菜系", p.cuisine], ["吃法", p.service], ["評鑑", p.award],
+  ].filter(([, value]) => value);
+  if (labels.length) return labels.map(([label, value]) => `${label}: ${value}`).join(" · ");
   return "";
 }
 function placeLabel(e){
@@ -386,7 +400,7 @@ function renderStats(user, events, apiEvents=[]){
   $("mUsers").textContent = users.size;
   $("mSessions").textContent = sessions.size;
   $("mSearch").textContent = events.filter(e => queryTypes.has(e.type)).length;
-  $("mFilters").textContent = events.filter(e => ["filter_change","filter_clear","locate_origin"].includes(e.type)).length;
+  $("mFilters").textContent = events.filter(e => ["filter_change","filter_clear","filter_apply","locate_origin"].includes(e.type)).length;
   $("mShare").textContent = events.filter(e => intentTypes.has(e.type)).length;
   $("mRange").textContent = fmtRange(currentDays);
   const apiErrors = apiEvents.filter(e => e.ok === false);
@@ -399,7 +413,7 @@ function renderStats(user, events, apiEvents=[]){
 
   renderTopRows("eventTypeRows", countBy(events, e => e.type).map(r => ({ ...r, label:eventName(r.key) })));
   renderTopRows("userRows", countBy(events, e => e.email).map(r => ({ ...r, meta:"事件數" })));
-  renderTopRows("filterRows", countBy(events.filter(e => e.type === "filter_change" || e.type === "locate_origin"), filterLabel));
+  renderTopRows("filterRows", countBy(events.filter(e => ["filter_change","filter_apply","locate_origin"].includes(e.type)), filterLabel));
   renderTopRows("placeRows", countBy(events.filter(e => ["share_copy","navigation_open","detail_toggle","leaderboard_result"].includes(e.type)), placeLabel));
   renderTopRows("apiActionRows", countBy(apiEvents, e => e.action).map(r => ({ ...r, meta:"呼叫次數" })));
   renderTopRows("apiErrorRows", countBy(apiEvents.filter(e => e.ok === false), e => e.error || e.action).map(r => ({ ...r, meta:"錯誤次數" })));

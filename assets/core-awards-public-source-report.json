@@ -1,0 +1,8220 @@
+{
+  "version": "core-awards-public-source-report-v1",
+  "generatedAt": "2026-07-14T14:05:36.033Z",
+  "extractedDate": "2026-07-11",
+  "dataFile": "assets/awards-taiwan.json",
+  "policy": {
+    "allowedGuides": [
+      "michelin",
+      "michelin_selected",
+      "bib",
+      "500plate",
+      "500bowl",
+      "500sweet"
+    ],
+    "runtimeExternalLookup": false,
+    "noGuessingYear": true,
+    "unknownYearValue": "年份待確認"
+  },
+  "summary": {
+    "restaurants": 1748,
+    "awardCount": 1895,
+    "countsByGuide": {
+      "500bowl": 887,
+      "500sweet": 328,
+      "michelin_selected": 223,
+      "500plate": 260,
+      "bib": 144,
+      "michelin": 53
+    },
+    "countsByGuideYear": {
+      "500bowl": {
+        "2025": 415,
+        "2026": 472
+      },
+      "500sweet": {
+        "2025": 328
+      },
+      "michelin_selected": {
+        "2025": 222,
+        "2026": 1
+      },
+      "500plate": {
+        "2025": 260
+      },
+      "bib": {
+        "2025": 144
+      },
+      "michelin": {
+        "2025": 53
+      }
+    },
+    "manualReviewCount": 737
+  },
+  "sources": [
+    {
+      "id": "michelin-guide-taiwan",
+      "label": "Michelin",
+      "guide": "michelin",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 53,
+      "restaurantCount": 53,
+      "years": {
+        "2025": 53
+      },
+      "sourceUrls": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-starred-restaurant-2025"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "michelin-selected-taiwan",
+      "label": "Michelin Selected",
+      "guide": "michelin_selected",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 223,
+      "restaurantCount": 223,
+      "years": {
+        "2025": 222,
+        "2026": 1
+      },
+      "sourceUrls": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/taiwan-full-list",
+        "https://guide.michelin.com/tw/zh_TW/taipei-region/taipei/restaurant/85td"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "bib-gourmand-taiwan",
+      "label": "Bib",
+      "guide": "bib",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 144,
+      "restaurantCount": 144,
+      "years": {
+        "2025": 144
+      },
+      "sourceUrls": [
+        "https://guide.michelin.com/tw/zh_TW/article/michelin-guide-ceremony/michelin-guide-taiwan-2025-bib-gourmand-selection"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "500plate",
+      "label": "500盤",
+      "guide": "500plate",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 260,
+      "restaurantCount": 260,
+      "years": {
+        "2025": 260
+      },
+      "sourceUrls": [
+        "https://500times.udn.com/wtimes/story/122412/9007797"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "500bowl",
+      "label": "500碗",
+      "guide": "500bowl",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 887,
+      "restaurantCount": 847,
+      "years": {
+        "2025": 415,
+        "2026": 472
+      },
+      "sourceUrls": [
+        "https://500times.udn.com/wtimes/story/123497/8874123",
+        "https://500times.udn.com/wtimes/story/123497/9547367",
+        "https://www.google.com/maps/d/viewer?mid=19E5ausxMMacpaiOhadZFvns_UOlgFNo",
+        "https://www.google.com/maps/d/kml?mid=19E5ausxMMacpaiOhadZFvns_UOlgFNo&forcekml=1"
+      ],
+      "runtimeLookup": false
+    },
+    {
+      "id": "500sweet",
+      "label": "500甜",
+      "guide": "500sweet",
+      "status": "integrated_data",
+      "dataFile": "assets/awards-taiwan.json",
+      "awardCount": 328,
+      "restaurantCount": 328,
+      "years": {
+        "2025": 328
+      },
+      "sourceUrls": [
+        "https://500times.udn.com/wtimes/story/124537/8931871"
+      ],
+      "runtimeLookup": false
+    }
+  ],
+  "missingFieldsByGuide": {
+    "500bowl": {
+      "district": 351,
+      "address": 351,
+      "cuisine": 343
+    },
+    "500sweet": {
+      "district": 280,
+      "address": 280,
+      "cuisine": 278
+    },
+    "michelin_selected": {
+      "district": 0,
+      "address": 0,
+      "cuisine": 0
+    },
+    "500plate": {
+      "district": 74,
+      "address": 74,
+      "cuisine": 100
+    },
+    "bib": {
+      "district": 0,
+      "address": 0,
+      "cuisine": 0
+    },
+    "michelin": {
+      "district": 0,
+      "address": 0,
+      "cuisine": 0
+    }
+  },
+  "manualReviewItems": [
+    {
+      "name": "小食粑 Rice Mini Cake",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小涼園冰果室",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "四海居小吃部",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "正好鮮肉小籠包",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "白水豆花",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "合鴨米灶腳",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吉祥鮮肉小籠包",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "好運牛湯麵",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老元香",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老吳碳烤燒烤餅",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "和平豆花(宜蘭)",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南方澳無名蝦餅蚵嗲蘿蔔糕",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南陽香辣麵",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南館市場",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "逗可可:甜點研究室",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "彭記蔥油餅",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "湯城麵食",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "越穗香手作甜點",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "嘟好燒",
+      "city": "宜蘭縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "聯發冰工坊",
+      "city": "宜蘭縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小廢柴 Little Sleepyhead",
+      "city": "花蓮縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "米崙丼飯屋",
+      "city": "花蓮縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "找到了可頌小売所",
+      "city": "花蓮縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "單一純賣 雞湯 小卷米粉",
+      "city": "花蓮縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福源海鮮",
+      "city": "花蓮縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鴨隊堡",
+      "city": "花蓮縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蘭二㼗 Lan Er Ting 中式創意甜點",
+      "city": "花蓮縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "HANG OUT手工漢堡（慶降Kiciyang）",
+      "city": "花蓮縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "YUTUZU",
+      "city": "花蓮縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "海霓蜜坊Honey workshop",
+      "city": "金門縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "包葉扣仔嗲",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "正統飯糰",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吃溜麵館",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "汶傳統米食坊",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "沒有豆花",
+      "city": "南投縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿章意麵",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "唐元食事",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "清境馬蘭廚房眷村美食小吃",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "澄食 和食料理",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蘇媽媽湯圓",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Feeling18生吐司",
+      "city": "南投縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "上讚肉圓 大腸 粉腸(27攤)",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大眾便當自助餐",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "正源萬巒豬腳",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老宋牛肉麵",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老牌鵝肉",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "周記春捲",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "東港正宗肉丸",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "東港蔡沙蝦肉丸",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林記肉粿",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "波波廚房 Kitchen Swell",
+      "city": "屏東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿卿姐飯湯",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "屏東黃家肉圓",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "美鳳鹹酥雞",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "香港仔美食",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "國泰萬巒豬腳大王",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "婦功食品行早餐",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "惜緣亭-米販部",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "莉姆姆的歌",
+      "city": "屏東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "菜寮豆花",
+      "city": "屏東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "葉家肉粿",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "熊熊本丸",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福灣巧克力",
+      "city": "屏東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "歸來肉圓老店",
+      "city": "屏東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北苗市場_阿婆手工粉圓",
+      "city": "苗栗縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "古早味婆菜",
+      "city": "苗栗縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "白沙屯外省牛肉麵",
+      "city": "苗栗縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿梅姐日常手作·味自慢糧倉",
+      "city": "苗栗縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "屋咖人Vug Ka Ngin",
+      "city": "苗栗縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "穿龍老屋豆腐坊",
+      "city": "苗栗縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福樂麵店",
+      "city": "苗栗縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "仁利菜包",
+      "city": "桃園市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "艾蕾蒂法式甜點",
+      "city": "桃園市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "油條麻吉 ( 金門油條 )",
+      "city": "桃園市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿桃的店",
+      "city": "桃園市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "胡家潤餅",
+      "city": "桃園市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "藍嵐",
+      "city": "桃園市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三郎麵包廠",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大胖豬油拌麵",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大港飯糰",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小雅芋頭西米露專賣店",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小暫渡米糕四神湯",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小露吃",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "仁愛一街綠豆湯",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "天天沙茶火鍋",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "天池冬瓜茶",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "四口田手作麻辣「正」",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "冷熱飲之家",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吳記肉圓",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "李氏商行",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "李家圓仔湯",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "呷百二自然洋果子",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林記豆漿店",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "芳德豬肉冬粉",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿凡沙茶麻醬麵",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿城粄條",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿英排骨飯",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿貴虱目魚店",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿貴活海產",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿進切仔麵",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南台春捲",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南豐魯肉飯",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "哈瑪星汕頭麵呂",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "拜樹頭烘焙商店",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "若生靜巷",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "香四海現做旗魚黑輪",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "堀江麵",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "堂伯猪肝卷",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "猜心泡芙",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "莎士比亞烘焙坊",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "無名肉燥飯",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "旗山 常美冰店",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蒜泥雖小",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "劉江便當",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鍾家高雄綠豆湯大王",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鐵盒保哥滷味",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鹽埕埔碗粿雄",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "LKK肉圓",
+      "city": "高雄市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "OCEAN BAKERY",
+      "city": "高雄市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "8號旗魚飯 鮮魚湯",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小文肉羹魯肉飯",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "水產餃子館",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "正豐鵝肉",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "圳記紅燒鰻",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "成功市場黑白炒咖哩麵",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "李鵠餅店",
+      "city": "基隆市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林記油蔥稞",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿中海鮮小吃",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "素志久碳烤三明治",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "基隆廟口 油粿 芋粿",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "基隆廟口22號蝦仁羹 豬腳",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "基隆廟口40號花枝羹 大麵炒",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "魚丸伯仔",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "雅吉麵線肉圓豆花",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "黃家麥克麵線",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "遠東賴家水煎包",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "銘傳油飯",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "稻香軒",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "魯肉飯專家",
+      "city": "基隆市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "斗南米糕甲",
+      "city": "雲林縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北港嘉義火雞肉飯",
+      "city": "雲林縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "目鏡仔麥芽酥",
+      "city": "雲林縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老街碗粿",
+      "city": "雲林縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "虎尾美貞肉羹麵",
+      "city": "雲林縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "長興圓仔冰",
+      "city": "雲林縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿美小吃",
+      "city": "雲林縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿國獅魷魚羹",
+      "city": "雲林縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "溝仔垻清涼冰店",
+      "city": "雲林縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "粳粽林",
+      "city": "雲林縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "碳烤鴨蛋糕",
+      "city": "雲林縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "786李園清真小吃",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大象切仔麵",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "天然本味老麵饅頭店",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "尤協豐豆干店",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北京餡餅粥",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "正莊古早味好吃雞肉店",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "永貞好吃雞肉飯",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "甲鼎茶莊古早味傳統小吃店",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吳記北平餡餅專賣店",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吾時·食",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "志明油飯麵線",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "豆林豆花",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "車頭鹹粥",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林口米苔目冰",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林員肉圓",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿倍麵線",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿勝切仔麵",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿榮切仔麵",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿薇緬甸小吃店",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南川麵館",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "紅林包子舖",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "香帥蛋糕",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "倆樂 LiAng Le",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "真大蒸餃",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "粉圓王",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "野事草店Wild Herbs",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "富關東煮",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "無名刈包",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "新建成餅店",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "新莊羊肉榮",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "新莊後港炭烤鷄排",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福州金魚麵店",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "辣四方",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "樂沐糕餅舖",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蓮霧滷肉飯",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蘆洲-總讚手作蔥餅",
+      "city": "新北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Le Môut Pâtisserie Boulangerie 樂沐糕餅舖",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "NINE SKY 九天",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Quartet Kaffe 適芳咖啡",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Urban Canyon by Brown Study 城市峽谷咖啡館",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "YUYU Pâtisserie",
+      "city": "新北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "石家魚丸",
+      "city": "新竹市",
+      "guide": "500bowl",
+      "missing": [
+        "district"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "(源記)鹿港傳統粉粿冰",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大元蔴薯",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大元蔴糬(鹹麻糬)",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "不二坊",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "天公壇素食麵",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北斗肉圓詹",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北門口肉圓",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北門肉粽行",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "玉瓏坊名產麻糬",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "禾家鄉",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老店朱爌肉飯",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老担阿璋肉圓",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "肉包明",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "肉粽大王",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "怡古齋人文茶館",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "明豐珍兔仔寮牛舌餅",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林家素食",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林記拉仔麵",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿三肉圓",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "施豆花",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "香饌胡椒餅",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "宮後街臭豆腐",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蚵ㄚ仁",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鹿港永香民俗小吃",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "新口味食品行",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "煲魚鋪 鮮魚湯專賣店",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "腳筋飯阿正爌肉飯",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "彰化燒肉圓",
+      "city": "彰化縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "寶珍香桂圓蛋糕創始店",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "BEAR BAKERY 小熊菓子",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Bruce Coffee 自家焙煎咖啡",
+      "city": "彰化縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "一中豐仁冰",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大慈天然素食",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "子梧桐 日本傳統手工烏龍麵",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小山西館",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小林雞肉飯",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "不二糕餅",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "六豊",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "天天饅頭",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "巴蕾麵包",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "水湳台中肉圓",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "牛B葫蘆王 逢甲總店",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "王塔米糕店",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "弘水煎包",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "民生嘉義米糕",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "永芳亭扁食 肉粽",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "你最蒸粿",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吳家莊頂級牛肉麵",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吳記脆皮肉圓",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "坂神本舖長崎蛋糕",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "沙鹿肉圓福",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "奉咖啡",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "東東芋圓 本店",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "東海蓮心冰‧雞爪凍",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "金悅軒",
+      "city": "臺中市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿斗伯冷凍芋",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿里郎迷你火鍋",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿棋 三代福州意麵老店",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "俊美",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南陽路炒麵豬血湯",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "柳川大麵焿水晶餃",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "美村點頭冰",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "美蓁小吃店",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "風鼓崎猪血湯老店",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "香．寓",
+      "city": "臺中市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "徐家莊手打麵",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "烏日水煎包",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "租界",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "堂本麵包店 (亞森洋果子)",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "康康豬豬血湯",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "清水燒炸粿",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "許愿 無毒農產烘焙×飲食空間",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "陳記涼茶本舖",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "富貴亭飲食店",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "湖南味牛肉麵",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "無招牌自治街乾麵",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "硬翰拔絲米血",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鈞苰牛肉麵",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "新豐源排骨麵店",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "董媽涼麵",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "碧月Dessert",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "聚眾緣麵館",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "聞湘小館",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "寬華薑母鴨",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鄭記上海蟹殼黃碳烤小酥餅",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "戰豆冰",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "龍富 天婦羅",
+      "city": "臺中市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "豐原廟東菱角酥",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "顏正原燒烤/串燒",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "羅家古早味",
+      "city": "臺中市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "麵包林里.Boulangerie Pangolin",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "讓一糖 蛋糕專賣店",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Brass Hana 銅錵日式涮涮鍋",
+      "city": "臺中市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "CJSJ 2.0",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Creammm.t",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "FReNCHIE FReNCHIE",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Glou Suru",
+      "city": "臺中市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "L.Z. DESSART 無框架甜點",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "MINIMAL",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Mr. 啃",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "National Park bakery 國家公園餅店",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "パーラー 映",
+      "city": "臺中市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "1117 一起cafe",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "1789 Café Pâtisserie",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "1976道地香港美食",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "1993韓式無菜單料理",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "1NAM desserts&drinks",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "216粉圓大王",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "八和和牛燒肉專門店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "十三香精緻麵食",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "十分麵線",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "十里。尋",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三元號魯肉飯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三六食府",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三日月茶空間(和菓子)",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三禾小廚私房菜",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三角冰",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三明堂",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "三統漢菓子 suntone",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "上上咖啡",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "口口家豆花甜湯chez Lu Taiwanese dessert",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "土然巧克力專門店TERRA Bean to Bar Chocolate",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大三元豆漿",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大水缸養生甜品",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大王漢寶殿",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大安永和豆漿大王",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小香 SHANN SHANN",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小凱悅南村小吃店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "小膳香成都麻辣火鍋",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "山東赤肉蒸餃",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "川畝園麵食館",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "川揚郁坊小館",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "川湘號",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "中山對酌",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "允壽司",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "六丁目咖啡",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "六品小館",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "六順豆花",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "六廚川客料理",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "天母大頭鵝",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "太春小館（民生店）",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "木白甜點咖啡店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "毛家私廚",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "牛小路壽喜燒",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "牛琅",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "牛壽司",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "王功鮮蚵之家",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "王記豆腐捲",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "王匯所",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "以利泡泡冰",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "加福奇士蛋糕專門店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北門鳳李冰",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "北港甜湯",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "卉堂",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "可甜可鹹 X 豆花專賣店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "可甜可鹹 X 豆花專賣店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "史大華精緻麵食",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "布雍家 Bouillon",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "平安京茶事",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "永樂雞捲大王",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "永緣素食餐館",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "生計食品",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "立裴米緹咖啡館",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "先進海產店",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "光輝肉羹",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "全球炸雞",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "全統西點麵包 CHUAN TUNG",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "匠樂割烹壽司",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吃口味豬腳飯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吃吃看Tasters",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吃咖 Chikafe",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "合歡刀削麵館",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吉那圈咖啡",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吉品海鮮（敦南店）",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "同心圓紅豆餅",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "同安街麵線羹",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "在室。甜點|En vie Pâtisserie",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "夙席",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "好味老店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "好粿緣",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "如嬌花膠雞．鍋物（民權一店）",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "庄頭豆花担",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "成海壽司",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "江記東門豆花",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "百年台菜「豐」辦桌",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "竹苑 shabu",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "米匠（大直店）",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老牌山東水餃大王",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老童小吃部",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "艾迪墨西哥餐廳",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "西門町阿添羊肉羹魷魚羹",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "何記手工蒸餃",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "君尹 Brisé",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "折田菓舖",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "杉味豆花",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "杏仁核 Amygdala",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "村子口",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "私・犇",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "良記福臨魯肉飯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "芋香園",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "豆之坊",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "貝克宅",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "赤身燒肉 USHIO Taipei",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "赤綠",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "酉志",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "京丘・炭火燒鳥專門店",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "佳德糕餅",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "來呷甜甜品",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "依鼎越式美食",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "周廚牛肉麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "味鼎 龍江 with peace",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "呷二嘴",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "呷味鮮處女蟳",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "咖朵咖啡Caldo Cafe",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "咖哩嚕哆",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "帕泰家 Baan Phadthai",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "忠誠號蚵仔煎",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "承繼CHENG JI",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "昇冠雞排專賣店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "明月堂",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "板前中山",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林良號潤餅",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "欣葉台菜",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "知名李",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "金仙魯肉飯 松山店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "金雞母Jingimoo",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "長板凳工作室。PT_handmade",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿川蚵仔麵線",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿永小吃店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿花魷魚羹 羊肉羹",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿城鵝肉",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿春滷味",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿柱麻油雞",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿英滷肉飯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿桂姨原汁排骨湯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿財虱目魚肚",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿財鍋貼餃子專賣店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿國切仔麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿猜嬤甜湯",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿富海鮮粥",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿圖麻油雞",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿蕙古早味粗米粉湯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "勇伯米苔目",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南港老張燒餅店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南機場芋頭大王",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南蠻堂",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "室香Savour Kaffee",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "屋頂上的貓",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "巷口無名麵店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "拾穗Bakery",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "施家麻油腰花",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "春來蚵仔麵線",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "春美冰菓室",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "昭和食堂",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "珍好呷越南河粉",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "珍蜜咖啡坊",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "紅棉 Red Cotton",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "紅棉 Red Cotton",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "重本書店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "面對面",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "家鄉碳烤香雞排",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "悄悄好食 杭州南店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "時常在這裡",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "柴進來雞蛋糕",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "栗林裏Li lin li",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "桂姐臭豆腐",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "海產街蚵仔麵線",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "秘方雪人兄弟",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "秦味館",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "秦味館 Qin Wei Guan",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "茗香園冰室（忠孝店 ）",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "茶菓一色",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "財神台南擔仔麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "高家涼麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "啊興阿滷肉飯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "啜飲室",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "巢nido",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "張阿花香菇肉羹",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "張媽媽香大雞排",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "御品元冰火湯圓",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "御菓子花雨。okashi Kau",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "捲捲村",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "欲罷不能鹹水雞東區商圈店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "涼食帖",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "深夜裡的法國手工甜點",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "爽記麵攤仔",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "甜拾 dessert",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "船軒鄉村煙燻滷味",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "通化夜市九份芋圓",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "造糕的人",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "陳耀訓·麵包埠 YOSHI BAKERY",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "陸 和洋私廚料理",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "頂好紫琳蒸餃館",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "勝記油飯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "尊賢粥品蔥油餅中式麵點",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "晴光意麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "温暖好家",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "滋養和菓子",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "無名阿婆油飯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "給冷鴿手作甜點",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "菓實日",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "菸花Op.118.2",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "貳零捌公館",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "雅口麻辣豆腐專賣",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "黃金麵線",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "黃記四神湯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "黑岩古早味黑砂糖剉冰",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "黑美林",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "傻雞 春大直",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "圓仔豆花",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "搖滾牛冰淇淋",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鄒記食舖",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鄒記食舖",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "雹仔豆花",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "彰化肉圓魷魚羹",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "榕美樹館",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福大蒸餃館",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福德涼麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "綠逗薏人",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "臺一牛奶大王",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鳳城燒臘粵菜",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "齊味餃子館",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "劉記四神湯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "劉媽媽抄手小吃店",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "劍潭榮宗麵線",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "廣州街夜市脆皮蚵仔煎",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "德記麻油雞麵線",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "慶祝烘焙",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "熟成餐酒館",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "橘色涮涮鍋",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "燕山湯圓",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "興寧街古早味手工挫冰",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蕭家小館",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蕭家牛雜湯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "貓下去敦北俱樂部",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "遼寧街黑白切",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "靜岡勝政日式豬排",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "駱師傅法式冰淇淋之家",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "點冰室·ジャビン",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "雙連圓仔湯",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "雙葉海鮮魚麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "嚼活麵疙瘩",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "寶杏堂手切滷肉飯 溫補羊肉湯",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "朧粵",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "騷豆花",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "麵線傳奇",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鐵木Ironwood Coffee",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "饞食坊",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "ABCD . A Better Coffee & Doughnut",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "akeruE Dessert",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Amamoto 鮨天本",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "amamoto bros.",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Après",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "BELLINI Pasta Pasta",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "BEMO Salon",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Bogart's Smokehouse Taipei",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Bogart's Smokehouse Taipei （美式木柴煙燻屋）",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Brillante Pâtisserie 星忱甜點",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Butcher by LanPengYou",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Café de LUGANO 盧卡諾義法餐酒館",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Café Parmentier",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Canvas",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "CHIFFON手工蛋糕店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "COFE 喫茶咖啡",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "COMEME康蜜蛋塔",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "ConfitRémi 黑米",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "COQUOLOGY 料理生活",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Cosi O Cosi 義大利餐廳",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "COVA MONTENAPOLEONE",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Creative Pasta 創義麵",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Cypress & Chestnut",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Deux Doux",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Dolce gelateria 手工義式冰淇淋",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "DOMANI 義式餐廳",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "DOMANI 義式餐廳",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Double V",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Earnestos",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Extension 1 by 橘色",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Fa burger",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Flügel studio",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Fly cafe",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Focoso Taipei",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "foldie 蔬食餐酒館",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Golden/Afterglo",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Gustoso Italian Restaurant",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Heritage Bakery & Cafe|美式烘培坊 Goo Donut",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "HiSugar 嗨糖 日式可麗餅 クレープ Crepe",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "hoshing1947 合興壹玖肆柒",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "inari Izakaya 現代居酒屋",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "INGE'S Bar & Grill 台北萬豪酒店",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "ISM主義甜時",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Joey's Restaurant and bar",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Kaju菓樹",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Kakigori toshihiko",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Kitkit 創意川食",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Koshi Café",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "KOUMA日本料理小馬",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "La Fossette 老法的酒窩",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Lady Chef 甜法",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Lady M",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Le Cinq",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Le Ruban Pâtisserie 法朋烘焙甜點坊",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Library Angte紅茶圖圕館",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Libreadry 巢屋",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Little Lam Noodle Bar",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "LOPFAIT 樂斐",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "LOPFAIT Grill",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "M&CO",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "M&CO Restaurant & Tearoom",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Magic Touch",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Masa",
+      "city": "臺北市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "MATCHA ONE 齊東店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "MERCER BRUNCH TAIWAN",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "MHO甜點工作室| L'Atelier de Mlle HO",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Mine kitchen",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Miss V Bakery",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "misu misu|提拉米蘇專賣店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Mizue",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Mr. 雪腐",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "onefifteen 初衣食午",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Pastaio Noodle cafe",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "PASTi",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "PASTi Trattoria",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Pierre Herme",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "PIZZAROUND 比薩斜躺",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Pokapoka Bakery",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "POPINA",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "PPM Cafe&Bar",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Quelques Pâtisseries 某某甜點",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Reale Cucina Italiana",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Regent Taipei 台北晶華酒店",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Restaurant 12, YMS by Onefifteen",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Sam Liu 小山姆",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Saturn Landing Turkish Coffee",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "SBREAD",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Seafood & Meat 波波海鮮市集",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "SEASON Artisan Pâtissier",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Sheryl's Recipe 嗜甜女子",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Smith & Wollensky",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "STONE Espresso Bar & Coffee Roaster",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Süivre Lab 順流實驗室",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Tatami 私廚",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "That cake thoo 台北客製化蛋糕",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "The Antipodean（內湖店）",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "The COACH Coffee Shop",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "TRIPLE T",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "TUGA",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Wagyu Mania",
+      "city": "臺北市",
+      "guide": "500plate",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "WILD DONKEY 野驢小餐館",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Woolloomoolloo",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "WUNIQUE Pâtisserie 吳一無二法式甜點",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Yu Chocolatier 畬室 法式巧克力甜點創作",
+      "city": "臺北市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "大巴六九景觀餐廳",
+      "city": "臺東縣",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "文化虱目魚丸",
+      "city": "臺東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "半野生活",
+      "city": "臺東縣",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "台東\"讚\"甘蔗檸檬汁",
+      "city": "臺東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "夜月酒食",
+      "city": "臺東縣",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "幸福食堂",
+      "city": "臺東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "花式蔥餅",
+      "city": "臺東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "秒殺水煎包",
+      "city": "臺東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "香香牛肉麵",
+      "city": "臺東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "柴源製菓",
+      "city": "臺東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "陳記麻糬",
+      "city": "臺東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "德布西咖啡 江賢二藝術園區會館",
+      "city": "臺東縣",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蟲子麵店",
+      "city": "臺東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "癡愛玉",
+      "city": "臺東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蘭嶼漂流木餐廳",
+      "city": "臺東縣",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Les Potes 博友好食商行",
+      "city": "臺東縣",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "POOZ新蘭灣柴燒窯烤披薩",
+      "city": "臺東縣",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "一品清冰品-阿燕姨冰枝店",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "二空燕京蔥油餅",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "八寶彬圓仔惠",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "十平",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "上舜碗粿",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "山記魚仔店",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "公園口紅燒土魠魚焿",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "六甲媽祖廟剉冰",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "友愛街旅館",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "天心軒素食喜餅",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "手工麵專門店",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "犬首燒",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "古早味魚丸湯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "古板港式點心 蔡師傅",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "台南府城 吳萬春蜜餞",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "永南興餅舖",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "目鏡蝦仁飯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "石舂臼海產粥",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "石精臼羊肉湯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "冰鄉",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "吃麵吧Jai Mi Ba",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "好地方蝦仁肉絲飯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老正牌• 阿堯師雞蛋糕",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "老鄧牛肉麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "肉包輝意麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "助仔碗粿",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "尚海海產",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林家汕頭意麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "林家茂子白糖粿蕃薯椪(原國華街口)",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "知味料理館",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "虎頭風味小吃",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿公阿婆蛋餅",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿田水果店",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿江鱔魚意麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿美純手工麻糬",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿娥意麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿財牛肉湯 平豐店",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "阿華粿店",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "南門路無名早餐店",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "軌咖啡(鬼咖啡)",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "員林肉圓",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "泰成水果店",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "基明飯桌仔",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "梅楓正宗古早味粉圓",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "梅鑫海產",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "清吉水果",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "莉莉水果店",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "富盛號",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "富源冰菓部",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "棠口水煎包",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "無名米糕",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "黃胖妞豬心",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "黃家米糕栫",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "溫點 Warmplace",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "矮仔成蝦仁飯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "葡吉麵包店",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "詹記-家常飯桌鮮魚湯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福來鱔魚意麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "福昇小食鱔魚意麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "窩聚生活 衣食空間",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蜜桃香楊桃湯",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "蜷尾家",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鳳滷味",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "廟口二代 清燉牛肉麵",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "樑記正老店牛肉湯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "潘家牛肉湯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "曉璘海產碳烤",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "錕羊肉",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鮨聚善",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "鴻品牛肉湯",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "寶來香餅舖",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "糯夫米糕",
+      "city": "臺南市",
+      "guide": "500bowl",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Chun純薏仁。甜點",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "FOUFOU餐酒館",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Mo",
+      "city": "臺南市",
+      "guide": "500plate",
+      "missing": [
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    },
+    {
+      "name": "Perfe'dough",
+      "city": "臺南市",
+      "guide": "500sweet",
+      "missing": [
+        "district",
+        "address",
+        "cuisine"
+      ],
+      "note": "不猜測地址、行政區或菜系；需人工或 Google 真資料補強。"
+    }
+  ]
+}

@@ -2,16 +2,21 @@ const admin = require("firebase-admin");
 const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const { logger } = require("firebase-functions");
+const { GoogleAuth } = require("google-auth-library");
+const { MAX_ITEMS:AI_MAX_ITEMS, buildVertexRequest, parseVertexResponse } = require("./ai-classifier");
+const { sanitizeApiKey, authorizationHeader } = require("./key-utils");
+const { localizedText } = require("./summary-utils");
 const crypto = require("crypto");
 
 admin.initializeApp();
 const db = admin.firestore();
 const GOOGLE_MAPS_API_KEY = defineSecret("GOOGLE_MAPS_API_KEY");
-const REQUIRE_APP_CHECK = process.env.REQUIRE_APP_CHECK === "true";
-// Temporary external phone testing mode: keep logging apiEvents, but do not block searches by daily quota.
-// Set DISABLE_SEARCH_QUOTA=false when restoring the 30/day rule.
-const DISABLE_SEARCH_QUOTA = process.env.DISABLE_SEARCH_QUOTA !== "false";
+const REQUIRE_APP_CHECK = process.env.REQUIRE_APP_CHECK !== "false";
+// Secure defaults: App Check and the 30/day quota are enabled unless explicitly disabled for a local test.
+const DISABLE_SEARCH_QUOTA = process.env.DISABLE_SEARCH_QUOTA === "true";
 const DAILY_SEARCH_LIMIT = Number(process.env.DAILY_SEARCH_LIMIT || 30);
+const VERTEX_AI_MODEL = process.env.VERTEX_AI_MODEL || "gemini-2.5-flash-lite";
+const vertexAuth = new GoogleAuth({ scopes:["https://www.googleapis.com/auth/cloud-platform"] });
 const SEARCH_ACTIONS = new Set(["textSearch", "nearbySearch"]);
 const API_COST_USD = {
   textSearch: 0.032,
@@ -45,18 +50,18 @@ const FIELD_MASK = [
   "places.primaryType",
   "places.primaryTypeDisplayName",
   "places.photos",
-  "places.hasDineIn",
-  "places.hasTakeout",
-  "places.hasDelivery",
-  "places.hasCurbsidePickup",
-  "places.isReservable",
-  "places.hasOutdoorSeating",
+  "places.dineIn",
+  "places.takeout",
+  "places.delivery",
+  "places.curbsidePickup",
+  "places.reservable",
+  "places.outdoorSeating",
   "places.allowsDogs",
-  "places.hasLiveMusic",
-  "places.isGoodForChildren",
-  "places.isGoodForGroups",
-  "places.hasMenuForChildren",
-  "places.hasRestroom",
+  "places.liveMusic",
+  "places.goodForChildren",
+  "places.goodForGroups",
+  "places.menuForChildren",
+  "places.restroom",
   "places.accessibilityOptions",
   "places.paymentOptions",
   "places.parkingOptions",
@@ -92,18 +97,18 @@ const DETAIL_FIELDS = [
   "primaryType",
   "primaryTypeDisplayName",
   "photos",
-  "hasDineIn",
-  "hasTakeout",
-  "hasDelivery",
-  "hasCurbsidePickup",
-  "isReservable",
-  "hasOutdoorSeating",
+  "dineIn",
+  "takeout",
+  "delivery",
+  "curbsidePickup",
+  "reservable",
+  "outdoorSeating",
   "allowsDogs",
-  "hasLiveMusic",
-  "isGoodForChildren",
-  "isGoodForGroups",
-  "hasMenuForChildren",
-  "hasRestroom",
+  "liveMusic",
+  "goodForChildren",
+  "goodForGroups",
+  "menuForChildren",
+  "restroom",
   "accessibilityOptions",
   "paymentOptions",
   "parkingOptions",
@@ -264,9 +269,7 @@ async function enforceSearchQuota(decoded, action, payload = {}) {
 }
 
 function textOf(v) {
-  if (!v) return "";
-  if (typeof v === "string") return v;
-  return v.text || "";
+  return localizedText(v);
 }
 
 function photoSignature(name, exp) {
@@ -316,18 +319,18 @@ function normalizePlace(place) {
     photos,
     photo: photos[0] || "",
     photoBig: photos[0] || "",
-    dineIn: place.hasDineIn === true,
-    takeout: place.hasTakeout === true,
-    delivery: place.hasDelivery === true,
-    curbside: place.hasCurbsidePickup === true,
-    reservable: place.isReservable === true,
-    outdoor: place.hasOutdoorSeating === true,
+    dineIn: place.dineIn === true,
+    takeout: place.takeout === true,
+    delivery: place.delivery === true,
+    curbside: place.curbsidePickup === true,
+    reservable: place.reservable === true,
+    outdoor: place.outdoorSeating === true,
     allowsDogs: place.allowsDogs === true,
-    liveMusic: place.hasLiveMusic === true,
-    goodKids: place.isGoodForChildren === true,
-    goodGroups: place.isGoodForGroups === true,
-    menuKids: place.hasMenuForChildren === true,
-    restroom: place.hasRestroom === true,
+    liveMusic: place.liveMusic === true,
+    goodKids: place.goodForChildren === true,
+    goodGroups: place.goodForGroups === true,
+    menuKids: place.menuForChildren === true,
+    restroom: place.restroom === true,
     servesVeg: place.servesVegetarianFood === true,
     servesAlcohol: place.servesBeer === true || place.servesWine === true || place.servesCocktails === true,
     servesBreakfast: place.servesBreakfast === true,
@@ -377,7 +380,7 @@ function openNow(oh) {
 }
 
 function googleApiKey(purpose = "PLACES") {
-  return process.env[`GOOGLE_${purpose}_API_KEY`] || GOOGLE_MAPS_API_KEY.value();
+  return sanitizeApiKey(process.env[`GOOGLE_${purpose}_API_KEY`] || GOOGLE_MAPS_API_KEY.value());
 }
 
 async function googleJson(url, options = {}, purpose = "PLACES") {
@@ -512,92 +515,29 @@ async function geocode(payload) {
   };
 }
 
-function pushSource(list, field, label, evidence = "") {
-  if (!list.some(x => x.field === field && x.evidence === evidence)) {
-    list.push({ field, label, evidence:String(evidence || "").slice(0, 42) });
-  }
-}
-
-function sourceMatches(item, re) {
-  const fields = [
-    ["name", "店名", item.name],
-    ["type", "類型", item.type],
-    ["reviewSummary", "評論摘要", item.reviewSummary],
-    ["generativeSummary", "Google 摘要", item.generativeSummary],
-    ["editorialSummary", "Google 摘要", item.editorialSummary],
-  ];
-  const hits = [];
-  for (const [field, label, value] of fields) {
-    const text = String(value || "");
-    if (text && re.test(text.toLowerCase())) pushSource(hits, field, label, text);
-  }
-  return hits;
-}
-
-function sourceLabels(sources) {
-  return [...new Set(Object.values(sources).flat().map(x => x.label).filter(Boolean))];
-}
-
-function reasonFrom(tags, confidence, sources) {
-  const picked = [];
-  for (const key of ["service", "occasion", "diet", "cuisine", "style"]) {
-    const tag = tags[key]?.[0];
-    if (!tag) continue;
-    const score = confidence[key] != null ? ` ${Math.round(confidence[key] * 100)}%` : "";
-    picked.push(`${tag}${score}`);
-  }
-  const src = sourceLabels(sources).slice(0, 3).join("、") || "後端規則";
-  return picked.length ? `AI 分類：${picked.join("、")}。依據：${src}。` : `AI 分類：依據 ${src} 判讀。`;
-}
-
-function classifyOne(item) {
-  const tags = { occasion: [], service: [], cuisine: [], style: [], type: [], diet: [] };
-  const confidence = {};
-  const sources = { occasion: [], service: [], cuisine: [], style: [], type: [], diet: [] };
-  const flags = item.googleFlags || {};
-
-  if (flags.goodGroups) pushSource(sources.occasion, "googleFlags.goodGroups", "Google flags", "適合團體");
-  if (flags.reservable) pushSource(sources.occasion, "googleFlags.reservable", "Google flags", "可訂位");
-  sourceMatches(item, /聚餐|包廂|火鍋|燒肉|合菜|桌菜|buffet|吃到飽|group|family|bbq|hot.?pot/).forEach(s => sources.occasion.push(s));
-  if (sources.occasion.length) {
-    tags.occasion.push("聚餐"); confidence.occasion = flags.goodGroups ? 0.9 : 0.72;
-  } else {
-    tags.occasion.push("獨享"); confidence.occasion = 0.58;
-    pushSource(sources.occasion, "negativeEvidence", "未命中來源", "未命中聚餐特徵");
-  }
-
-  sourceMatches(item, /吃到飽|吃到饱|自助餐|buffet|all.?you.?can.?eat|放題|無限供應|無限暢食|任食|任點任食|饗食天堂|漢來海港|旭集|饗饗|島語|涮乃葉|馬辣|辛殿|燒肉眾|夯下去|千葉火鍋|欣葉日本料理|果然匯|蓮池閣/).forEach(s => sources.service.push(s));
-  if (sources.service.length) {
-    tags.service.push("吃到飽"); confidence.service = 0.82;
-  } else {
-    tags.service.push("單點"); confidence.service = 0.56;
-    pushSource(sources.service, "negativeEvidence", "未命中來源", "未命中吃到飽證據");
-  }
-
-  if (flags.servesVeg) pushSource(sources.diet, "googleFlags.servesVeg", "Google flags", "素食");
-  sourceMatches(item, /素食|蔬食|vegan|vegetarian/).forEach(s => sources.diet.push(s));
-  if (sources.diet.length) {
-    tags.diet.push("素食"); confidence.diet = flags.servesVeg ? 0.9 : 0.7;
-  } else {
-    tags.diet.push("葷食"); confidence.diet = 0.55;
-    pushSource(sources.diet, "negativeEvidence", "未命中來源", "未命中素食證據");
-  }
-
-  const chineseSources = sourceMatches(item, /中式|台菜|牛肉麵|火鍋|粵|川菜|江浙|麵|餃/);
-  if (chineseSources.length) { tags.cuisine.push("中式"); confidence.cuisine = 0.68; sources.cuisine.push(...chineseSources); }
-  const westernSources = sourceMatches(item, /西式|義式|法式|美式|pizza|pasta|burger|steak|bistro/);
-  if (westernSources.length) { tags.cuisine.push("西式"); confidence.cuisine = Math.max(confidence.cuisine || 0, 0.68); sources.cuisine.push(...westernSources); }
-
-  const traditionalSources = sourceMatches(item, /老店|傳統|古早|老字號/);
-  if (traditionalSources.length) { tags.style.push("傳統"); confidence.style = 0.64; sources.style.push(...traditionalSources); }
-  const modernSources = sourceMatches(item, /創意|現代|fusion|bistro|無國界|餐酒館/);
-  if (modernSources.length) { tags.style.push("現代"); confidence.style = Math.max(confidence.style || 0, 0.64); sources.style.push(...modernSources); }
-
-  return { id:item.id, tags, confidence, reason:reasonFrom(tags, confidence, sources), sources };
-}
-
 async function aiClassify(payload) {
-  return { items: (payload.items || []).map(classifyOne) };
+  const items = Array.isArray(payload.items) ? payload.items.slice(0, AI_MAX_ITEMS) : [];
+  if (!items.length) return { enabled:true, model:VERTEX_AI_MODEL, items:[] };
+  const url = `https://us-central1-aiplatform.googleapis.com/v1/projects/${encodeURIComponent(process.env.GCLOUD_PROJECT || "nearby-good-eats")}/locations/us-central1/publishers/google/models/${encodeURIComponent(VERTEX_AI_MODEL)}:generateContent`;
+  const client = await vertexAuth.getClient();
+  const authHeaders = await client.getRequestHeaders(url);
+  const response = await fetch(url, {
+    method:"POST",
+    headers:{
+      "content-type":"application/json",
+      authorization:authorizationHeader(authHeaders),
+    },
+    body:JSON.stringify(buildVertexRequest({ ...payload, items })),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw httpError(`Vertex AI ${response.status}: ${data.error?.message || "classification failed"}`, 502);
+  const allowedIds = new Set(items.map(item => String(item.id || "")).filter(Boolean));
+  return {
+    enabled:true,
+    model:VERTEX_AI_MODEL,
+    items:parseVertexResponse(data, allowedIds),
+    usage:data.usageMetadata || null,
+  };
 }
 
 const handlers = { textSearch, nearbySearch, placeDetails, routeMatrix, geocode, aiClassify };
@@ -653,6 +593,11 @@ exports.api = onRequest({ region: "us-central1", secrets: [GOOGLE_MAPS_API_KEY],
     const rawPayload = req.body?.payload || {};
     const quota = await enforceSearchQuota(decoded, action, rawPayload);
     const result = await handler(stripInternalPayload(rawPayload));
+    logger.info("api success", {
+      action,
+      itemCount: Array.isArray(result?.items) ? result.items.length : null,
+      hasResult: result != null,
+    });
     await logApiEvent(decoded, action, started, true, {
       ...quota,
       estimatedUnits: estimatedUnits(action),

@@ -40,6 +40,8 @@ $Files = @(
   "assets/external-signals.json",
   "assets/external-source-coverage.json",
   "assets/filter-rules.js",
+  "assets/search-logic.js",
+  "assets/auth-logic.js",
   "assets/platform-source-probe-report.json",
   "assets/platform-signals.manual.json",
   "assets/platform-signals.import.csv",

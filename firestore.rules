@@ -16,8 +16,25 @@ service cloud.firestore {
 
     match /usageEvents/{eventId} {
       allow create: if signedIn()
+        && request.resource.data.keys().hasOnly([
+          'type', 'payload', 'uid', 'email', 'sessionId', 'path',
+          'userAgent', 'createdAt'
+        ])
         && request.resource.data.uid == request.auth.uid
-        && request.resource.data.email == request.auth.token.email;
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.type is string
+        && request.resource.data.type.size() <= 80
+        && request.resource.data.payload is map
+        && request.resource.data.payload.size() <= 30
+        && request.resource.data.uid.size() <= 160
+        && request.resource.data.email.size() <= 320
+        && request.resource.data.sessionId is string
+        && request.resource.data.sessionId.size() <= 160
+        && request.resource.data.path is string
+        && request.resource.data.path.size() <= 500
+        && request.resource.data.userAgent is string
+        && request.resource.data.userAgent.size() <= 600
+        && request.resource.data.createdAt is timestamp;
       allow read: if isAdmin();
       allow update, delete: if false;
     }

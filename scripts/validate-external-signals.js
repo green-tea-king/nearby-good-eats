@@ -200,7 +200,7 @@ if (fs.existsSync(platformImportCsvPath)) {
 }
 if (fs.existsSync(coveragePath)) {
   const coverage = readJson(coveragePath);
-  const requiredCoverage = ["michelin-guide-taiwan", "500plate", "500bowl", "500sweet", "google-maps-reviews", "ifoodie", "openrice-tw", "tripadvisor-tw"];
+  const requiredCoverage = ["michelin-guide-taiwan", "michelin-selected-taiwan", "bib-gourmand-taiwan", "500plate", "500bowl", "500sweet"];
   const coverageIds = new Set((coverage.sources || []).map((source) => source.id));
   for (const id of requiredCoverage) {
     if (!coverageIds.has(id)) report.errors.push(`external source coverage missing: ${id}`);

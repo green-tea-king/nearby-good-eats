@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-07-11T13:27:57.281Z",
+  "sourceUrl": "https://500times.udn.com/wtimes/story/123497/9547367",
+  "mapUrl": "https://www.google.com/maps/d/viewer?mid=19E5ausxMMacpaiOhadZFvns_UOlgFNo",
+  "kmlUrl": "https://www.google.com/maps/d/kml?mid=19E5ausxMMacpaiOhadZFvns_UOlgFNo&forcekml=1",
+  "extractedDate": "2026-07-11",
+  "candidates": 472,
+  "highConfidence": 472,
+  "needsCityReview": 0,
+  "textLayerCandidates": 441,
+  "kmlPlacemarks": 472,
+  "byBowls": {
+    "1": 447,
+    "2": 23,
+    "3": 2
+  },
+  "note": "候選資料以官方頁連結之 Google My Maps KML 為主，官方頁文字層作為交叉檢查；只自動合併可確認縣市資料，無法確認縣市列需人工覆核。"
+}
