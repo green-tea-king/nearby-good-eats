@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.14.13
+版本：2026.07.17.1
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前正式版本為 `2026.07.14.13`，正式站為：
+目前正式版本為 `2026.07.17.1`，正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
