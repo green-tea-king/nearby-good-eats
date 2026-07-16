@@ -12,7 +12,7 @@
 2. fetch 最新 `origin/main`，在目前資料夾執行非 fast-forward merge；不建立 worktree、不搬移專案。
 3. 衝突逐檔處理：保留遠端新增功能與正式資料，同時保留本機較新的安全設定、Node.js 22、Vertex AI、Firestore Rules、規範與測試。
 4. merge 後先執行完整靜態、資料、Functions 與 Git 驗證。
-5. 驗證通過後依版本規則更新為 `2026.07.16.1`，再重跑版本與必要回歸檢查。
+5. 驗證通過後依版本規則更新為 `2026.07.17.1`，再重跑版本與必要回歸檢查。
 6. 使用既有 Firebase 專案 `nearby-good-eats` 部署 `api`、`photo` 與 Firestore Rules。
 7. 使用既有 GitHub Git Data API 腳本更新遠端 `main` 與 GitHub Pages。
 8. 正式站 smoke 通過後 fetch 新版 `origin/main`，比較本機 branch、部署 commit 與正式站內容。
@@ -48,7 +48,7 @@
 - 平台：原有 `green-tea-king/nearby-good-eats`。
 - 來源：`main` branch 根目錄。
 - 工具：`scripts/deploy-github-contents.ps1`。
-- 部署訊息：`Deploy v2026.07.16.1 local-primary release`。
+- 部署訊息：`Deploy v2026.07.17.1 local-primary release`。
 - 不建立新 repository、Pages site 或其他靜態平台。
 
 ### Firebase
@@ -61,7 +61,7 @@
 
 ## 版本同步
 
-部署版本固定為 `2026.07.16.1`，同步更新：
+部署版本固定為 `2026.07.17.1`，同步更新：
 
 - `VERSION`
 - `index.html` 的 `APP_VERSION_FALLBACK`
@@ -101,7 +101,7 @@
 
 ## 完成條件
 
-- 正式站回報版本 `2026.07.16.1`。
+- 正式站回報版本 `2026.07.17.1`。
 - 遠端功能已合併進目前唯一工作資料夾，且 recovery commit 保持可還原。
 - `api`、`photo` Functions 為 ACTIVE 且 Node.js 22。
 - Firestore Rules 部署成功。
