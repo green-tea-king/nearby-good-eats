@@ -2,20 +2,44 @@
 
 ## 目標
 
-以 recovery commit `0670033` 保存的本機專案內容為權威來源，部署到既有 GitHub Pages 與 Firebase 專案；部署後重新取得遠端 `main`，精確盤點新版 Git 落差並提出後續維護建議。
+以 recovery commit `0670033` 保存的本機專案內容為主要來源，先把最新 `origin/main` 的遠端功能安全合併進目前唯一工作資料夾，再部署到既有 GitHub Pages 與 Firebase 專案；部署後重新取得遠端 `main`，精確盤點新版 Git 落差並提出後續維護建議。
 
 ## 已選方案
 
-採用「本機完整部署後再比較」：
+採用「遠端功能先合併、本機安全設定優先、完整測試後部署」：
 
 1. 從 `codex/workspace-recovery-20260716` 建立獨立部署 branch。
-2. 依版本規則更新為 `2026.07.16.1`。
-3. 部署前執行完整靜態、資料、Functions 與 Git 驗證。
-4. 使用既有 GitHub Git Data API 腳本更新遠端 `main` 與 GitHub Pages。
-5. 使用既有 Firebase 專案 `nearby-good-eats` 部署 `api`、`photo` 與 Firestore Rules。
-6. 正式站 smoke 通過後 fetch 新版 `origin/main`，比較本機 branch、部署 commit 與正式站內容。
+2. fetch 最新 `origin/main`，在目前資料夾執行非 fast-forward merge；不建立 worktree、不搬移專案。
+3. 衝突逐檔處理：保留遠端新增功能與正式資料，同時保留本機較新的安全設定、Node.js 22、Vertex AI、Firestore Rules、規範與測試。
+4. merge 後先執行完整靜態、資料、Functions 與 Git 驗證。
+5. 驗證通過後依版本規則更新為 `2026.07.16.1`，再重跑版本與必要回歸檢查。
+6. 使用既有 Firebase 專案 `nearby-good-eats` 部署 `api`、`photo` 與 Firestore Rules。
+7. 使用既有 GitHub Git Data API 腳本更新遠端 `main` 與 GitHub Pages。
+8. 正式站 smoke 通過後 fetch 新版 `origin/main`，比較本機 branch、部署 commit 與正式站內容。
 
-不採用「先整理 Git 再部署」，因使用者已指定先讓正式環境以本機內容為準；也不採用只部署靜態站，避免 Functions 與 Rules 留在不同版本。
+不採用整批 `ours` 或整批 `theirs`，因兩側各有需要保留的內容；也不採用 rebase、hard reset 或另建工作資料夾。Recovery branch `codex/workspace-recovery-20260716` 與 commit `0670033` 保持不動，作為零遺失還原點。
+
+## 合併規則
+
+### 本機版本優先
+
+- `AGENTS.md`、`project-rules.md`、`design.md` 的已定案維護與產品契約。
+- `firestore.rules` 的 usage event 欄位與大小限制。
+- `functions/` 的 Node.js 22、安全預設、Vertex AI helper、key／summary helper 與單元測試。
+- `assets/search-logic.js`、`assets/auth-logic.js` 與對應測試中已通過的本機契約。
+- `.gitignore`、`ops-checklist.md` 與本機新增的驗證文件。
+
+### 遠端版本優先
+
+- 本機沒有的遠端正式功能與部署 commit 內容。
+- 遠端已發布的批次候選、import report、官方快照與其他 generated artifacts。
+- 不與本機產品契約或安全設定衝突的前台、後台、資料與腳本修正。
+
+### 衝突處理
+
+- 先產生 merge conflict 清單，再逐檔比較；不得使用整體 `git checkout --ours .` 或 `--theirs .`。
+- 不刪除任何本機或遠端檔案；若 Git 將檔案標為 deleted/modified，先保留內容並回報用途。
+- merge commit 只負責歷史與功能收斂；版本更新使用後續獨立 commit，方便 review 與回滾。
 
 ## 部署範圍
 
@@ -56,11 +80,13 @@
 
 ## 部署順序與錯誤處理
 
-1. 完成版本修改與本機 commit。
-2. 部署 Firebase Functions；失敗即停止。
-3. 部署 Firestore Rules；失敗即停止。
-4. 部署 GitHub Pages 靜態內容；失敗即停止。
-5. 等待 Pages workflow 完成並執行正式站 smoke。
+1. merge `origin/main` 並完成衝突處理與 merge commit。
+2. 執行完整測試；失敗即停止，不升版、不部署。
+3. 完成版本修改與本機 release commit。
+4. 部署 Firebase Functions；失敗即停止。
+5. 部署 Firestore Rules；失敗即停止。
+6. 部署 GitHub Pages 靜態內容；失敗即停止。
+7. 等待 Pages workflow 完成並執行正式站 smoke。
 
 部署命令不得輸出 OAuth token、API key、Secret Manager 值或 App Check secret。不得刪除資料、Functions、Firestore collection、branch 或 Git 歷史。
 
@@ -76,6 +102,7 @@
 ## 完成條件
 
 - 正式站回報版本 `2026.07.16.1`。
+- 遠端功能已合併進目前唯一工作資料夾，且 recovery commit 保持可還原。
 - `api`、`photo` Functions 為 ACTIVE 且 Node.js 22。
 - Firestore Rules 部署成功。
 - 正式站 smoke 通過。
