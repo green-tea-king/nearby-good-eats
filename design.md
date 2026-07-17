@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.17.5
+版本：2026.07.17.6
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前原始碼準備發布版本為 `2026.07.17.5`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
+目前原始碼準備發布版本為 `2026.07.17.6`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
@@ -593,7 +593,7 @@ https://green-tea-king.github.io/nearby-good-eats/
 - `main` 是完整原始碼的唯一 Git source of truth；不得再用 Git Data API 把公開檔案直接覆寫到 `main`。
 - `scripts/pages-files.json` 是正式站唯一公開檔案清單；新增公開檔案時必須同步更新 manifest 與測試。
 - `scripts/build-pages-artifact.js` 只能建置到 repository 外的空目錄，並逐檔驗證 SHA-256。
-- `.github/workflows/deploy-pages.yml` 對 pull request 只建置；只有 `main` push、`main` 手動 dispatch 或外部訊號 workflow 成功才可部署。
+- `.github/workflows/deploy-pages.yml` 對 pull request 只建置；只有 `main` push、`main` 手動 dispatch 或外部訊號 workflow 成功才可部署。Pages actions 使用 `configure-pages@v6`、`upload-pages-artifact@v5`、`deploy-pages@v5`，皆為 Node.js 24 runtime major。
 - `scripts/deploy-github-contents.ps1` 只觸發與監看 Actions，不得建立 Git blob、tree、commit 或更新 ref。
 - Pages 沿用原 repository 與 `https://green-tea-king.github.io/nearby-good-eats/`。
 
@@ -792,7 +792,7 @@ VERSION = 2026.06.27.22
 - 補齊外部平台訊號覆蓋，但維持批次匯入、來源 URL 與人工覆核，不在搜尋時即時爬站。
 - 規劃 Firebase Functions 相依套件升級；先處理測試與相容性，不為消除 audit 警告直接做破壞性 major upgrade。
 - 建立 Android Chrome 與 iPhone Safari 的固定回歸清單，特別覆蓋登入 redirect、鍵盤焦點、縮放、返回鍵與照片燈箱。
-- 追蹤 GitHub Actions Node.js 20 runtime 淘汰時程，適時升級 action major version。
+- 持續追蹤 GitHub Actions runtime 淘汰時程；目前 Pages actions 已升級至 Node.js 24 major。
 - PWA／離線殼層僅作後續選項；不可快取搜尋結果冒充即時 Google 資料。
 
 ## 常見故障與定位
