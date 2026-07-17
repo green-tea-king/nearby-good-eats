@@ -26,10 +26,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
-<script src="assets/app-settings.js?v=2026.07.17.4"></script>
-<script src="assets/filter-rules.js?v=2026.07.17.4"></script>
-<script src="assets/search-logic.js?v=2026.07.17.4"></script>
-<script src="assets/auth-logic.js?v=2026.07.17.4"></script>
+<script src="assets/app-settings.js?v=2026.07.17.5"></script>
+<script src="assets/filter-rules.js?v=2026.07.17.5"></script>
+<script src="assets/search-logic.js?v=2026.07.17.5"></script>
+<script src="assets/auth-logic.js?v=2026.07.17.5"></script>
 <script src="firebase-config.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -607,7 +607,7 @@ main{flex:1;padding:18px 16px 104px;max-width:480px;width:100%;margin:0 auto;}
     <p id="authGateText">使用 Google 帳戶登入後才能查詢排行榜。任何 Google 帳戶都可使用，後台只開放管理員。</p>
     <button id="googleLoginBtn" type="button">使用 Google 登入</button>
     <div class="auth-error" id="authError"></div>
-    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機 Safari / Chrome 會先使用彈出式登入；內建瀏覽器才改用跳轉登入。</p>
+    <p class="auth-note" id="authGateNote">登入門檻已啟用。手機 Safari／Chrome 使用彈出式登入；LINE、Facebook、Instagram 等內建瀏覽器請改用 Safari／Chrome 一般分頁開啟。</p>
     <p class="privacy-note">定位只用於查詢附近餐廳與估算步行/開車時間；後台記錄操作事件與定位文字標籤，不寫入精確經緯度。</p>
   </div>
 </div>
@@ -1388,7 +1388,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.17.4";
+const APP_VERSION_FALLBACK = "2026.07.17.5";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
