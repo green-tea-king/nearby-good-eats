@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.17.1
+版本：2026.07.17.2
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前正式版本為 `2026.07.17.1`，正式站為：
+目前正式版本為 `2026.07.17.2`，正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
@@ -600,6 +600,8 @@ https://green-tea-king.github.io/nearby-good-eats/
 8. 用 Chrome 實測登入、套用搜尋、3 張卡片、下一組、分享、詳情照片與後台。
 
 `deploy-github-contents.ps1` 會直接建立遠端 commit，但不會自動移動本機 branch 的 HEAD。部署完成後必須核對遠端 commit 與本機內容，明確同步，不可假設本機 Git 已經跟上正式站。
+
+GitHub Git Data API 若回傳 HTTP 502、503、504 或整份 HTML 閘道錯誤，部署腳本會在單一 API 步驟內最多嘗試 6 次，依序等待 2、4、8、12、15 秒；401、403、404、409、422 與本機錯誤不重試。重試不會切換平台、建立新專案、force push 或重新部署 Firebase。
 
 ### 回滾
 
