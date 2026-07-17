@@ -61,7 +61,13 @@ Assert-True (Test-GhHtmlResponse -Text "  <!DOCTYPE html><html></html>") "A full
 Assert-True (!(Test-GhHtmlResponse -Text '{"content":"<html>text</html>"}')) "HTML inside valid JSON is not a gateway response."
 Assert-True (!(Test-GhTransientFailure -Message "ConvertFrom-Json: invalid JSON")) "Generic JSON errors must not retry."
 
+$DeployScript = Get-Content -LiteralPath (Join-Path $PSScriptRoot "deploy-github-contents.ps1") -Raw -Encoding UTF8
+Assert-True ($DeployScript -match 'github-api-retry\.ps1') "Deploy script must load the retry helper."
+Assert-True ($DeployScript -match 'Invoke-GhApiWithRetry') "Deploy script must call the bounded retry helper."
+Assert-True ($DeployScript -match '"scripts/github-api-retry\.ps1"') "Deploy allowlist must include the retry helper."
+Assert-True ($DeployScript -match '"scripts/test-github-api-retry\.ps1"') "Deploy allowlist must include the retry test."
+
 [pscustomobject]@{
   ok = $true
-  cases = 7
+  cases = 11
 } | ConvertTo-Json -Compress

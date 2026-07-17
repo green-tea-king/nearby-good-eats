@@ -8,6 +8,8 @@ param(
 $ErrorActionPreference = "Stop"
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$RetryHelperPath = Join-Path $ScriptDir "github-api-retry.ps1"
+. $RetryHelperPath
 $RepoRoot = Resolve-Path (Join-Path $ScriptDir "..")
 Set-Location $RepoRoot
 
@@ -78,6 +80,8 @@ $Files = @(
   "scripts/smoke-live-site.ps1",
   "scripts/build-michelin-taipei-candidates.js",
   "scripts/review-michelin-award-import.js",
+  "scripts/github-api-retry.ps1",
+  "scripts/test-github-api-retry.ps1",
   "scripts/deploy-github-contents.ps1"
 )
 
@@ -88,24 +92,35 @@ function Invoke-GhJson {
     [object]$Body = $null
   )
 
-  if ($null -eq $Body) {
-    $Raw = gh api $Endpoint --method $Method
-    if ($LASTEXITCODE -ne 0) {
-      throw "gh api failed: $Endpoint"
-    }
-    return $Raw | ConvertFrom-Json
-  }
-
-  $Tmp = New-TemporaryFile
+  $Tmp = $null
   try {
-    [IO.File]::WriteAllText($Tmp.FullName, ($Body | ConvertTo-Json -Compress -Depth 20), [Text.Encoding]::ASCII)
-    $Raw = gh api $Endpoint --method $Method --input $Tmp.FullName
-    if ($LASTEXITCODE -ne 0) {
-      throw "gh api failed: $Endpoint"
+    if ($null -ne $Body) {
+      $Tmp = New-TemporaryFile
+      [IO.File]::WriteAllText($Tmp.FullName, ($Body | ConvertTo-Json -Compress -Depth 20), [Text.Encoding]::ASCII)
     }
-    return $Raw | ConvertFrom-Json
+
+    return Invoke-GhApiWithRetry -Endpoint $Endpoint -Method $Method -Operation {
+      if ($null -eq $Tmp) {
+        $Raw = & gh api $Endpoint --method $Method 2>&1
+      } else {
+        $Raw = & gh api $Endpoint --method $Method --input $Tmp.FullName 2>&1
+      }
+
+      $GhExitCode = $LASTEXITCODE
+      $RawText = (@($Raw | ForEach-Object { $_.ToString() }) -join [Environment]::NewLine).Trim()
+      if ($GhExitCode -ne 0) {
+        throw "gh api exited with code $GhExitCode. $RawText"
+      }
+      if (Test-GhHtmlResponse -Text $RawText) {
+        throw "gh api returned an HTML response: $RawText"
+      }
+
+      return $RawText | ConvertFrom-Json
+    }
   } finally {
-    Remove-Item -LiteralPath $Tmp.FullName -Force
+    if ($null -ne $Tmp) {
+      Remove-Item -LiteralPath $Tmp.FullName -Force
+    }
   }
 }
 
