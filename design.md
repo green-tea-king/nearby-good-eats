@@ -213,7 +213,7 @@ https://green-tea-king.github.io/nearby-good-eats/
   - `share_copy`
   - `detail_toggle`
 - `admin.html` 可切換今日、7 天、30 天，顯示事件數、使用者、工作階段、查詢 / 排行榜、濾網操作、分享 / 導航，並提供事件分布、活躍使用者、熱門濾網、熱門餐廳行為、查詢結果紀錄、最新紀錄與 CSV 匯出。
-- 登入 UX 會顯示登入中、錯誤訊息；popup 被阻擋時改用 redirect 登入。Firebase 未允許網域或未啟用 Google provider 時會在登入卡片提示。
+- 登入 UX 會顯示登入中與錯誤訊息；popup 等待超過 20 秒會恢復登入按鈕並提示重試或改用 Safari／Chrome，一般流程不自動改用 redirect。Firebase 未允許網域或未啟用 Google provider 時會在登入卡片提示。
 - 若 Firebase Web API key 的 HTTP referrer 限制未允許 GitHub Pages，登入卡片會提示需加入 `https://green-tea-king.github.io/*` 與 `https://green-tea-king.github.io/nearby-good-eats/*`。
 - 定位只用於附近餐廳與步行 / 開車估算；後台事件只記錄定位文字標籤與操作，不寫入精確經緯度。
 
