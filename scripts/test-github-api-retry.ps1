@@ -64,8 +64,8 @@ Assert-True (!(Test-GhTransientFailure -Message "ConvertFrom-Json: invalid JSON"
 $DeployScript = Get-Content -LiteralPath (Join-Path $PSScriptRoot "deploy-github-contents.ps1") -Raw -Encoding UTF8
 Assert-True ($DeployScript -match 'github-api-retry\.ps1') "Deploy script must load the retry helper."
 Assert-True ($DeployScript -match 'Invoke-GhApiWithRetry') "Deploy script must call the bounded retry helper."
-Assert-True ($DeployScript -match '"scripts/github-api-retry\.ps1"') "Deploy allowlist must include the retry helper."
-Assert-True ($DeployScript -match '"scripts/test-github-api-retry\.ps1"') "Deploy allowlist must include the retry test."
+Assert-True ($DeployScript -match 'Invoke-GhCommandOnce -Label "workflow/dispatch"') "Workflow dispatch must use the single-attempt command helper."
+Assert-True ($DeployScript -notmatch 'Invoke-GhReadWithRetry -Label "workflow/dispatch"') "Workflow dispatch must not use the retrying read helper."
 
 [pscustomobject]@{
   ok = $true

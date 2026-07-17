@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.17.2
+版本：2026.07.17.3
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前正式版本為 `2026.07.17.2`，正式站為：
+目前原始碼準備發布版本為 `2026.07.17.3`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
@@ -588,20 +588,30 @@ Content-Type: application/json
 https://green-tea-king.github.io/nearby-good-eats/
 ```
 
+### GitHub source 與 Pages artifact
+
+- `main` 是完整原始碼的唯一 Git source of truth；不得再用 Git Data API 把公開檔案直接覆寫到 `main`。
+- `scripts/pages-files.json` 是正式站唯一公開檔案清單；新增公開檔案時必須同步更新 manifest 與測試。
+- `scripts/build-pages-artifact.js` 只能建置到 repository 外的空目錄，並逐檔驗證 SHA-256。
+- `.github/workflows/deploy-pages.yml` 對 pull request 只建置；只有 `main` push、`main` 手動 dispatch 或外部訊號 workflow 成功才可部署。
+- `scripts/deploy-github-contents.ps1` 只觸發與監看 Actions，不得建立 Git blob、tree、commit 或更新 ref。
+- Pages 沿用原 repository 與 `https://green-tea-king.github.io/nearby-good-eats/`。
+
 部署流程：
 
 1. 先讀 `AGENTS.md`、`project-rules.md`、本文件，執行 `git status --short --branch`；不得直接在 `main` 修改。
 2. 完成修改後執行 `AGENTS.md` 的最低驗證矩陣與手機瀏覽器 QA。
 3. 更新 `VERSION`，並同步所有核心 JS 的版本 query；`scripts/test-static-asset-versions.js` 必須通過。
-4. 靜態站使用 `scripts/deploy-github-contents.ps1`，透過 GitHub Git Data API 建立遠端單一 commit。
-5. 若有 Functions 修改，執行 `$env:CI='1'; npx firebase-tools deploy --project nearby-good-eats --only functions:api`。
-6. 若有 Firestore Rules 修改，執行 `$env:CI='1'; npx firebase-tools deploy --project nearby-good-eats --only firestore:rules`。
-7. 等 GitHub Pages workflow 完成，再執行 `scripts/smoke-live-site.ps1 -ExpectedVersion <VERSION>`。
-8. 用 Chrome 實測登入、套用搜尋、3 張卡片、下一組、分享、詳情照片與後台。
+4. 取得使用者明確同意後，依核准的 Git 流程把已驗證來源整合到遠端 `main`；不得直接在 `main` 修改或繞過 review 覆寫來源。
+5. 確認 Pages API `build_type=workflow`，再使用 `scripts/deploy-github-contents.ps1` 觸發並監看既有 `deploy-pages.yml`；不得建立新的 Pages 專案。
+6. 若有 Functions 修改，執行 `$env:CI='1'; npx firebase-tools deploy --project nearby-good-eats --only functions:api`。
+7. 若有 Firestore Rules 修改，執行 `$env:CI='1'; npx firebase-tools deploy --project nearby-good-eats --only firestore:rules`。
+8. 等 GitHub Pages workflow 完成，再執行 `scripts/smoke-live-site.ps1 -ExpectedVersion <VERSION>`。
+9. 用 Chrome 實測登入、套用搜尋、3 張卡片、下一組、分享、詳情照片與後台。
 
-`deploy-github-contents.ps1` 會直接建立遠端 commit，但不會自動移動本機 branch 的 HEAD。部署完成後必須核對遠端 commit 與本機內容，明確同步，不可假設本機 Git 已經跟上正式站。
+`deploy-github-contents.ps1` 不會建立或推送 commit。執行前必須先確認遠端 `main` 已包含要發布的來源，而且遠端 `VERSION` 等於本機版本；腳本也會核對固定 repository、default branch、Pages URL 與 `build_type`，其中任一不符就停止。
 
-GitHub Git Data API 若回傳 HTTP 502、503、504 或整份 HTML 閘道錯誤，部署腳本會在單一 API 步驟內最多嘗試 6 次，依序等待 2、4、8、12、15 秒；401、403、404、409、422 與本機錯誤不重試。重試不會切換平台、建立新專案、force push 或重新部署 Firebase。
+GitHub 的 read-only 查詢若遇到 HTTP 502、503、504 或整份 HTML 閘道錯誤，可以依腳本設定有限重試；401、403、404、409、422 與本機錯誤不重試。`workflow_dispatch` 是會造成部署的 mutation，只送出一次，不得因傳輸錯誤自動重送；後續以回傳 run URL 或遠端 commit SHA 找到並監看該次 workflow。
 
 ### 回滾
 

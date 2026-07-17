@@ -113,13 +113,6 @@ git diff --check
 
 瀏覽器人工驗收至少包含：首次進站無搜尋、Google 登入、關鍵字輸入不跳焦點、地區搜尋 3 家、交通搜尋 3 家、下一組不重複、分享路由、詳情照片、後台統計。
 
-## 零之五、GitHub Pages source 與 artifact
-
-1. 開始 GitHub Pages 工作前，必須讀 `scripts/pages-files.json` 與 `.github/workflows/deploy-pages.yml`。
-2. `main` 保存完整 source；正式站只發布 manifest 允許的 artifact。不得用 Git Data API 直接產生或覆寫 `main` commit。
-3. 修改 Pages manifest、artifact builder、workflow 或部署包裝器時，必須執行 `node scripts/test-pages-artifact.js` 與 `node scripts/test-pages-workflow-contract.js`。
-4. 正式部署前必須確認 Pages API `build_type` 為 `workflow`、遠端 `main` 的 `VERSION` 等於本機版本，並取得使用者部署確認。
-
 ## 一、核心原則
 
 1. 禁止直接修改 `main` 分支。
