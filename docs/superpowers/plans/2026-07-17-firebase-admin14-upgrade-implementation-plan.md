@@ -476,3 +476,53 @@ index.html
 - 是否可進入 push／PR 審查；不得自行 push、開 PR、merge 或部署。
 
 本 Task 不建立新 commit；如果驗證產生檔案或修改 tracked file，先停止並查明原因，不把產物加入 commit。
+
+---
+
+### Task 5: Final review fix — 補齊 Firebase Admin local Emulator runtime contracts
+
+**Files:**
+- Create: `functions/search-quota.js` — production-neutral quota factory；`functions/index.js` 與 runtime test 共用同一份 transaction 實作。
+- Create: `functions/test-admin-runtime-contract.js` — 驗證真實 Firestore transaction／timestamps，以及 Auth／App Check HTTP 401 契約。
+- Create: `functions/run-admin-runtime-contract.js` — 以固定 Firebase CLI 版本在 OS temp 啟動隔離的 Auth／Firestore Emulators。
+- Modify: `functions/index.js` — 只改為組裝並呼叫抽出的 quota factory，HTTP 與產品行為不變。
+- Test: `functions/test-admin-runtime-contract.js`
+
+**Safety boundary:**
+- Firebase namespace 固定為既有 `nearby-good-eats`，只連線到 Auth Emulator `127.0.0.1:19099` 與 Firestore Emulator `127.0.0.1:18080`。
+- 不啟動 Functions Emulator、不讀 Secret、不呼叫 Google API、不連正式 Auth／Firestore／Functions，也不部署。
+- invalid App Check 使用無法解碼的 `not-a-jwt`，由 Admin SDK 在本機 JWT decode 階段拒絕，不查詢正式 App Check JWKS endpoint。
+
+- [x] **Step 1: 先建立 focused runtime contract test 並取得真實 RED**
+
+Run:
+
+```powershell
+npx --yes node@22 functions/run-admin-runtime-contract.js
+```
+
+RED evidence：Auth／Firestore Emulators 成功啟動後，test 因 production-neutral seam 尚不存在而以 `Cannot find module './search-quota'` 失敗。
+
+- [x] **Step 2: 最小抽取既有 quota transaction，避免測試複製邏輯**
+
+將 `enforceSearchQuota`、Taipei day key、request hash 與 internal payload strip 移至 `functions/search-quota.js`；`functions/index.js` 以原本的 `db`、`FieldValue`、`isAdminEmail`、`httpError` 與 quota env 組裝 factory。collection path、欄位、timestamp、limit、HTTP payload 與安全預設不變。
+
+- [x] **Step 3: 以同一 repeatable command 取得 GREEN**
+
+```powershell
+npx --yes node@22 functions/run-admin-runtime-contract.js
+```
+
+Expected named contracts：
+
+```text
+PASS Firestore transaction charges the first quota request only
+PASS Firestore request createdAt and aggregate updatedAt resolve to server timestamps
+PASS API rejects a request without Firebase Auth with HTTP 401
+PASS API accepts Auth Emulator identity then rejects missing App Check with HTTP 401
+PASS API accepts Auth Emulator identity then rejects invalid App Check with HTTP 401
+```
+
+- [x] **Step 4: 重跑既有 Functions tests、changed JavaScript syntax、audit 與 diff checks**
+
+完成後將精確命令與結果記錄在 `.superpowers/sdd/final-fix-report.md`，再以 `test: cover Firebase Admin runtime contracts` 建立單一 final-review-fix commit。
