@@ -556,10 +556,12 @@ Expected: test prints PASS, whitespace check exits 0, and the commit contains on
 **Files:**
 - Modify: `scripts/test-pages-workflow-contract.js`
 - Modify: `scripts/deploy-github-contents.ps1`
+- Modify: `scripts/test-github-api-retry.ps1`
 
 **Interfaces:**
-- Consumes: `Owner`, `Repo`, `Branch`, `Message`, retry/poll/timeout parameters and authenticated `gh`.
+- Consumes: `Owner`, `Repo`, `Branch`, `Message`, read-only retry/poll/timeout parameters and authenticated `gh`.
 - Produces: dispatch and watched run for `deploy-pages.yml`; JSON-shaped PowerShell object with repository, branch, version, run ID, status, conclusion, URL and head SHA.
+- Safety: GitHub 查詢可以有限重試；`workflow_dispatch` 是可能產生重複部署的 mutation，只能送出一次，再依 CLI 回傳 URL 或 commit SHA 尋找該次 run。
 
 - [ ] **Step 1: Add the failing wrapper contract**
 
@@ -572,7 +574,8 @@ assert.match(deployScript, /gh workflow run deploy-pages\.yml/);
 assert.match(deployScript, /gh run watch/);
 assert.match(deployScript, /Deployment target must be green-tea-king\/nearby-good-eats main/);
 assert.match(deployScript, /Pages build_type must be workflow before dispatch/);
-assert.match(deployScript, /pagesUrl = \$pages\.html_url/);
+assert.match(deployScript, /pagesUrl = \$pages\.html_url/i);
+assert.match(deployScript, /Invoke-GhCommandOnce -Label "workflow\/dispatch"[\s\S]{0,400}gh workflow run deploy-pages\.yml/);
 assert.doesNotMatch(deployScript, /\/git\/(?:blobs|trees|commits|refs)/);
 assert.doesNotMatch(deployScript, /\$Files\s*=\s*@\(/);
 ```
@@ -585,127 +588,16 @@ Expected: FAIL because the current script still writes Git Data API and has no w
 
 - [ ] **Step 3: Replace the deployment script**
 
-Replace `scripts/deploy-github-contents.ps1` with:
+Refactor `scripts/deploy-github-contents.ps1` to satisfy all of these contracts:
 
-```powershell
-param(
-    [string]$Owner = "green-tea-king",
-    [string]$Repo = "nearby-good-eats",
-    [string]$Branch = "main",
-    [string]$Message = "Deploy GitHub Pages artifact",
-    [ValidateRange(1, 10)][int]$MaxAttempts = 4,
-    [ValidateRange(1, 60)][int]$BaseDelaySeconds = 3,
-    [ValidateRange(2, 60)][int]$PollSeconds = 5,
-    [ValidateRange(60, 3600)][int]$TimeoutSeconds = 900
-)
-
-$ErrorActionPreference = "Stop"
-$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$ProjectRoot = Split-Path -Parent $ScriptDir
-$RetryHelper = Join-Path $ScriptDir "github-api-retry.ps1"
-if ($Owner -ne "green-tea-king" -or $Repo -ne "nearby-good-eats" -or $Branch -ne "main") {
-    throw "Deployment target must be green-tea-king/nearby-good-eats main"
-}
-if (-not (Test-Path -LiteralPath $RetryHelper -PathType Leaf)) {
-    throw "Missing retry helper: $RetryHelper"
-}
-. $RetryHelper
-
-function Invoke-GhCommandWithRetry {
-    param(
-        [Parameter(Mandatory = $true)][string]$Label,
-        [Parameter(Mandatory = $true)][scriptblock]$Command
-    )
-    $retryParameters = @{
-        Endpoint = $Label
-        Method = "CLI"
-        MaxAttempts = $MaxAttempts
-        BaseDelaySeconds = $BaseDelaySeconds
-        Operation = {
-            $output = & $Command 2>&1
-            $exitCode = $LASTEXITCODE
-            if ($exitCode -ne 0) {
-                throw "gh command failed ($Label, exit $exitCode): $($output -join [Environment]::NewLine)"
-            }
-            return ($output -join [Environment]::NewLine).Trim()
-        }
-    }
-    return Invoke-GhApiWithRetry @retryParameters
-}
-
-$null = Invoke-GhCommandWithRetry -Label "auth/status" -Command { gh auth status }
-$repoInfoJson = Invoke-GhCommandWithRetry -Label "repo/view" -Command {
-    gh repo view "$Owner/$Repo" --json nameWithOwner,defaultBranchRef,url
-}
-$repoInfo = $repoInfoJson | ConvertFrom-Json
-if ($repoInfo.nameWithOwner -ne "$Owner/$Repo") {
-    throw "Repository mismatch: expected $Owner/$Repo, got $($repoInfo.nameWithOwner)"
-}
-if ($repoInfo.defaultBranchRef.name -ne $Branch) {
-    throw "Branch mismatch: expected default $Branch, got $($repoInfo.defaultBranchRef.name)"
-}
-
-$remoteSha = Invoke-GhCommandWithRetry -Label "commits/$Branch" -Command {
-    gh api "repos/$Owner/$Repo/commits/$Branch" --jq ".sha"
-}
-$encodedVersion = Invoke-GhCommandWithRetry -Label "contents/VERSION?ref=$Branch" -Command {
-    gh api --method GET "repos/$Owner/$Repo/contents/VERSION" -f "ref=$Branch" --jq ".content"
-}
-$remoteVersion = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String(($encodedVersion -replace "\s", ""))).Trim()
-$localVersion = (Get-Content -LiteralPath (Join-Path $ProjectRoot "VERSION") -Encoding UTF8 -Raw).Trim()
-if ($remoteVersion -ne $localVersion) {
-    throw "Version mismatch: local=$localVersion remote=$remoteVersion. Push or merge source before deployment."
-}
-$pagesJson = Invoke-GhCommandWithRetry -Label "pages/view" -Command {
-    gh api --method GET "repos/$Owner/$Repo/pages"
-}
-$pages = $pagesJson | ConvertFrom-Json
-if ($pages.html_url -ne "https://green-tea-king.github.io/nearby-good-eats/") {
-    throw "Unexpected Pages URL: $($pages.html_url)"
-}
-if ($pages.build_type -ne "workflow") {
-    throw "Pages build_type must be workflow before dispatch, got $($pages.build_type)"
-}
-
-$startedAt = [DateTimeOffset]::UtcNow
-$null = Invoke-GhCommandWithRetry -Label "workflow/dispatch" -Command {
-    gh workflow run deploy-pages.yml --repo "$Owner/$Repo" --ref $Branch -f "reason=$Message"
-}
-
-$deadline = [DateTimeOffset]::UtcNow.AddSeconds($TimeoutSeconds)
-$run = $null
-do {
-    $runsJson = Invoke-GhCommandWithRetry -Label "runs/list" -Command {
-        gh run list --repo "$Owner/$Repo" --workflow deploy-pages.yml --event workflow_dispatch --limit 20 --json databaseId,createdAt,headSha,status,conclusion,url
-    }
-    $runs = @($runsJson | ConvertFrom-Json)
-    $run = $runs |
-        Where-Object { $_.headSha -eq $remoteSha -and [DateTimeOffset]$_.createdAt -ge $startedAt.AddSeconds(-5) } |
-        Sort-Object { [DateTimeOffset]$_.createdAt } -Descending |
-        Select-Object -First 1
-    if (-not $run) { Start-Sleep -Seconds $PollSeconds }
-} while (-not $run -and [DateTimeOffset]::UtcNow -lt $deadline)
-if (-not $run) { throw "Timed out locating deploy-pages.yml run for $remoteSha" }
-
-& gh run watch $run.databaseId --repo "$Owner/$Repo" --exit-status --interval $PollSeconds
-if ($LASTEXITCODE -ne 0) { throw "GitHub Pages workflow failed: $($run.url)" }
-
-$resultJson = Invoke-GhCommandWithRetry -Label "runs/$($run.databaseId)" -Command {
-    gh run view $run.databaseId --repo "$Owner/$Repo" --json databaseId,status,conclusion,url,headSha
-}
-$result = $resultJson | ConvertFrom-Json
-[pscustomobject]@{
-    repository = $repoInfo.nameWithOwner
-    branch = $Branch
-    version = $localVersion
-    runId = $result.databaseId
-    status = $result.status
-    conclusion = $result.conclusion
-    url = $result.url
-    headSha = $result.headSha
-    pagesUrl = $pages.html_url
-}
-```
+- Reject every deployment target except `green-tea-king/nearby-good-eats` branch `main`.
+- Reuse `github-api-retry.ps1` only for read-only `gh` commands, using bounded exponential delays.
+- Verify authenticated repository、default branch、remote `main` SHA、remote/local `VERSION`、Pages URL and `build_type=workflow` before dispatch.
+- Call `gh workflow run deploy-pages.yml` exactly once through `Invoke-GhCommandOnce`; never place dispatch inside a retry helper.
+- Prefer the run URL returned by `gh workflow run`; if unavailable, locate the matching `workflow_dispatch` run by remote SHA and dispatch timestamp.
+- Watch the selected run with `gh run watch --exit-status`, then verify its final head SHA and return compact JSON metadata.
+- Remove the 69-file `$Files` array and every Git Data API write to blobs、trees、commits or refs.
+- Update `scripts/test-github-api-retry.ps1` so it checks the read-only retry/single-attempt dispatch boundary instead of the removed allowlist.
 
 - [ ] **Step 4: Verify without dispatching**
 
@@ -722,7 +614,7 @@ Expected: test passes and PowerShell parser has zero errors. Do not execute the 
 - [ ] **Step 5: Commit**
 
 ```powershell
-git add scripts/test-pages-workflow-contract.js scripts/deploy-github-contents.ps1
+git add scripts/test-pages-workflow-contract.js scripts/deploy-github-contents.ps1 scripts/test-github-api-retry.ps1 docs/superpowers/plans/2026-07-17-pages-actions-local-implementation-plan.md
 git commit -m "build: route Pages deploys through Actions"
 ```
 

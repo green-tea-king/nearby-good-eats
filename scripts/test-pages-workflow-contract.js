@@ -33,4 +33,15 @@ assert.match(workflow, /deploy:\s*[\s\S]*if:\s*>-[\s\S]*github\.event_name != 'p
 assert.match(workflow, /Checkout workflow run result[\s\S]*github\.event_name == 'workflow_run'[\s\S]*ref:\s*main/);
 assert.match(workflow, /Checkout source[\s\S]*github\.event_name != 'workflow_run'/);
 assert.strictEqual((workflow.match(/github\.ref == 'refs\/heads\/main'/g) || []).length, 2);
+
+const deployScriptPath = path.join(repoRoot, "scripts", "deploy-github-contents.ps1");
+const deployScript = fs.readFileSync(deployScriptPath, "utf8");
+assert.match(deployScript, /gh workflow run deploy-pages\.yml/);
+assert.match(deployScript, /gh run watch/);
+assert.match(deployScript, /Deployment target must be green-tea-king\/nearby-good-eats main/);
+assert.match(deployScript, /Pages build_type must be workflow before dispatch/);
+assert.match(deployScript, /pagesUrl = \$pages\.html_url/i);
+assert.match(deployScript, /Invoke-GhCommandOnce -Label "workflow\/dispatch"[\s\S]{0,400}gh workflow run deploy-pages\.yml/);
+assert.doesNotMatch(deployScript, /\/git\/(?:blobs|trees|commits|refs)/);
+assert.doesNotMatch(deployScript, /\$Files\s*=\s*@\(/);
 console.log("PASS: GitHub Pages workflow contract verified");
