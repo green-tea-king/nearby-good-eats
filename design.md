@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.17.6
+版本：2026.07.17.7
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前原始碼準備發布版本為 `2026.07.17.6`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
+目前原始碼準備發布版本為 `2026.07.17.7`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
@@ -64,7 +64,7 @@ https://green-tea-king.github.io/nearby-good-eats/
 - 字體與轉換：Google Fonts、OpenCC.js。
 - 地圖載入：Google Maps JavaScript API；browser loader key 為公開值，但必須設定 referrer／API 限制。
 - 身分與資料：Firebase Web Compat SDK 10.12.5、Authentication、Firestore、App Check。
-- 後端：Firebase Functions 2nd Gen、Node.js 22、CommonJS。
+- 後端：Firebase Functions 2nd Gen、Node.js 22、CommonJS、Firebase Admin SDK 14.2.0、firebase-functions 7.3.0。
 - AI：Vertex AI `gemini-2.5-flash-lite`，使用 Functions 服務帳戶 OAuth。
 - 靜態部署：GitHub Pages。
 - 後端部署：Firebase CLI。
@@ -790,7 +790,7 @@ VERSION = 2026.06.27.22
 - 持續處理獎牌資料 merge report 的人工確認項目，名稱、分店、行政區或年份未確認前不得自動掛獎。
 - 將後台成本估算與 Google Cloud Billing export 對照；目前後台金額是事件估算，不是帳單真值。
 - 補齊外部平台訊號覆蓋，但維持批次匯入、來源 URL 與人工覆核，不在搜尋時即時爬站。
-- 規劃 Firebase Functions 相依套件升級；先處理測試與相容性，不為消除 audit 警告直接做破壞性 major upgrade。
+- Firebase Functions 已升級至 Admin SDK 14 modular API 與 firebase-functions 7.3.0；後續持續追蹤官方相依更新，不為消除 audit 警告直接做破壞性 major override。
 - 建立 Android Chrome 與 iPhone Safari 的固定回歸清單，特別覆蓋登入 redirect、鍵盤焦點、縮放、返回鍵與照片燈箱。
 - 持續追蹤 GitHub Actions runtime 淘汰時程；目前 Pages actions 已升級至 Node.js 24 major。
 - PWA／離線殼層僅作後續選項；不可快取搜尋結果冒充即時 Google 資料。
