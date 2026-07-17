@@ -34,6 +34,16 @@ async function main() {
   );
   assert.match(
     html,
+    /手機 Safari／Chrome 使用彈出式登入；LINE、Facebook、Instagram 等內建瀏覽器請改用 Safari／Chrome 一般分頁開啟。/,
+    "登入卡片說明必須符合內建瀏覽器外開策略",
+  );
+  assert.doesNotMatch(
+    html,
+    /內建瀏覽器才改用跳轉登入/,
+    "登入卡片不得宣稱內建瀏覽器會自動 redirect",
+  );
+  assert.match(
+    html,
     /登入流程已等待 20 秒。若登入視窗已開啟，請繼續完成；若未開啟，請重新點選或改用 Safari／Chrome 一般分頁。/,
     "Popup 逾時必須提供可操作的繁體中文指引",
   );
