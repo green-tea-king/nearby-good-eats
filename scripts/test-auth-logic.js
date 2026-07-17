@@ -1,4 +1,6 @@
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const { loginStrategy, withTimeout } = require("../assets/auth-logic.js");
 
 async function main() {
@@ -17,6 +19,23 @@ async function main() {
   await assert.rejects(
     withTimeout(new Promise(() => {}), 10),
     error => error?.code === "auth/popup-timeout",
+  );
+
+  const html = fs.readFileSync(path.resolve(__dirname, "..", "index.html"), "utf8");
+  assert.match(
+    html,
+    /NGE_AUTH_LOGIC\.withTimeout\(auth\.signInWithPopup\(provider\), 20000\)/,
+    "Google popup 登入必須有 20 秒逾時保護",
+  );
+  assert.match(
+    html,
+    /auth\/popup-timeout/,
+    "登入錯誤訊息必須辨識 popup 逾時代碼",
+  );
+  assert.match(
+    html,
+    /登入流程已等待 20 秒。若登入視窗已開啟，請繼續完成；若未開啟，請重新點選或改用 Safari／Chrome 一般分頁。/,
+    "Popup 逾時必須提供可操作的繁體中文指引",
   );
 
   console.log("auth logic tests passed");

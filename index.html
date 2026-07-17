@@ -26,10 +26,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
-<script src="assets/app-settings.js?v=2026.07.17.3"></script>
-<script src="assets/filter-rules.js?v=2026.07.17.3"></script>
-<script src="assets/search-logic.js?v=2026.07.17.3"></script>
-<script src="assets/auth-logic.js?v=2026.07.17.3"></script>
+<script src="assets/app-settings.js?v=2026.07.17.4"></script>
+<script src="assets/filter-rules.js?v=2026.07.17.4"></script>
+<script src="assets/search-logic.js?v=2026.07.17.4"></script>
+<script src="assets/auth-logic.js?v=2026.07.17.4"></script>
 <script src="firebase-config.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -1053,6 +1053,7 @@ function showAuthError(message=""){
 function authErrorMessage(error){
   const code = error?.code || "";
   const message = error?.message || "";
+  if (code === "auth/popup-timeout") return "登入流程已等待 20 秒。若登入視窗已開啟，請繼續完成；若未開啟，請重新點選或改用 Safari／Chrome 一般分頁。";
   if (code.includes("popup-closed")) return "登入視窗已關閉，請重新點選登入。";
   if (code.includes("popup-blocked")) return "瀏覽器阻擋了登入視窗，請允許彈出視窗後重試。";
   if (code.includes("operation-not-supported")) return "這個瀏覽器不支援 Google 登入，請用 Safari 或 Chrome 一般分頁開啟。";
@@ -1165,7 +1166,7 @@ async function initAuth(){
         showAuthError("LINE、Facebook 或 Instagram 內建瀏覽器無法安全完成 Google 登入。網址已複製，請改用 Safari 或 Chrome 一般分頁開啟。");
         return;
       }
-      await auth.signInWithPopup(provider);
+      await NGE_AUTH_LOGIC.withTimeout(auth.signInWithPopup(provider), 20000);
     }catch(e){
       const msg = authErrorMessage(e);
       showAuthError(msg);
@@ -1387,7 +1388,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.17.3";
+const APP_VERSION_FALLBACK = "2026.07.17.4";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
