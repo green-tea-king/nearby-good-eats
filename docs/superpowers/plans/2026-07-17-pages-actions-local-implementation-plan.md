@@ -409,7 +409,7 @@ Open the official GitHub Pages documentation:
 - `https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site`
 - `https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages`
 
-Expected: official examples still support `actions/checkout@v6`, `actions/configure-pages@v5`, `actions/upload-pages-artifact@v4` and `actions/deploy-pages@v4`. If an official major changed, stop and update the approved design before implementation.
+Expected: official Pages examples still support `actions/checkout@v6`, `actions/configure-pages@v5`, `actions/upload-pages-artifact@v4` and `actions/deploy-pages@v4`; the official `actions/setup-node` repository currently documents `actions/setup-node@v7`. If an official major changes again, stop and update the approved design or plan before implementation.
 
 - [ ] **Step 2: Write the failing workflow test**
 
@@ -433,6 +433,7 @@ for (const token of [
   "workflow_run:",
   'workflows: ["Update external social signals"]',
   "actions/checkout@v6",
+  "actions/setup-node@v7",
   "actions/configure-pages@v5",
   "actions/upload-pages-artifact@v4",
   "actions/deploy-pages@v4",
@@ -505,7 +506,7 @@ jobs:
         if: github.event_name != 'workflow_run'
         uses: actions/checkout@v6
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Verify Pages artifact contract
