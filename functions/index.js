@@ -1,4 +1,7 @@
-const admin = require("firebase-admin");
+const { initializeApp } = require("firebase-admin/app");
+const { getAuth } = require("firebase-admin/auth");
+const { getAppCheck } = require("firebase-admin/app-check");
+const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const { logger } = require("firebase-functions");
@@ -8,8 +11,8 @@ const { sanitizeApiKey, authorizationHeader } = require("./key-utils");
 const { localizedText } = require("./summary-utils");
 const crypto = require("crypto");
 
-admin.initializeApp();
-const db = admin.firestore();
+initializeApp();
+const db = getFirestore();
 const GOOGLE_MAPS_API_KEY = defineSecret("GOOGLE_MAPS_API_KEY");
 const REQUIRE_APP_CHECK = process.env.REQUIRE_APP_CHECK !== "false";
 // Secure defaults: App Check and the 30/day quota are enabled unless explicitly disabled for a local test.
@@ -150,7 +153,7 @@ async function requireUser(req) {
   if (!match) {
     throw httpError("missing auth token", 401);
   }
-  return admin.auth().verifyIdToken(match[1]);
+  return getAuth().verifyIdToken(match[1]);
 }
 
 async function verifyAppCheck(req) {
@@ -160,7 +163,7 @@ async function verifyAppCheck(req) {
     return { ok: false, required: false, missing: true };
   }
   try {
-    const decoded = await admin.appCheck().verifyToken(String(token));
+    const decoded = await getAppCheck().verifyToken(String(token));
     return { ok: true, appId: decoded.appId || "" };
   } catch (e) {
     if (REQUIRE_APP_CHECK) throw httpError("invalid app check token", 401, { appCheckInvalid: true });
@@ -248,7 +251,7 @@ async function enforceSearchQuota(decoded, action, payload = {}) {
     tx.set(requestDoc, {
       action,
       keyHash: requestHash,
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      createdAt: FieldValue.serverTimestamp(),
     });
     tx.set(quotaDoc, {
       uid: decoded.uid,
@@ -256,7 +259,7 @@ async function enforceSearchQuota(decoded, action, payload = {}) {
       day,
       searchCount: currentCount + 1,
       limit: DAILY_SEARCH_LIMIT,
-      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: FieldValue.serverTimestamp(),
     }, { merge: true });
     quotaResult = {
       quotaCharged: true,
@@ -561,7 +564,7 @@ async function logApiEvent(decoded, action, started, ok, extra = {}) {
       appCheck: extra.appCheck === true,
       appId: extra.appId || "",
       error: extra.error || "",
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      createdAt: FieldValue.serverTimestamp(),
     });
   } catch (e) {
     logger.warn("apiEvents write failed", e.message);
