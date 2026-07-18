@@ -1,4 +1,7 @@
-const admin = require("firebase-admin");
+const { initializeApp } = require("firebase-admin/app");
+const { getAuth } = require("firebase-admin/auth");
+const { getAppCheck } = require("firebase-admin/app-check");
+const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const { logger } = require("firebase-functions");
@@ -6,10 +9,11 @@ const { GoogleAuth } = require("google-auth-library");
 const { MAX_ITEMS:AI_MAX_ITEMS, buildVertexRequest, parseVertexResponse } = require("./ai-classifier");
 const { sanitizeApiKey, authorizationHeader } = require("./key-utils");
 const { localizedText } = require("./summary-utils");
+const { createSearchQuotaEnforcer, stripInternalPayload } = require("./search-quota");
 const crypto = require("crypto");
 
-admin.initializeApp();
-const db = admin.firestore();
+initializeApp();
+const db = getFirestore();
 const GOOGLE_MAPS_API_KEY = defineSecret("GOOGLE_MAPS_API_KEY");
 const REQUIRE_APP_CHECK = process.env.REQUIRE_APP_CHECK !== "false";
 // Secure defaults: App Check and the 30/day quota are enabled unless explicitly disabled for a local test.
@@ -17,7 +21,6 @@ const DISABLE_SEARCH_QUOTA = process.env.DISABLE_SEARCH_QUOTA === "true";
 const DAILY_SEARCH_LIMIT = Number(process.env.DAILY_SEARCH_LIMIT || 30);
 const VERTEX_AI_MODEL = process.env.VERTEX_AI_MODEL || "gemini-2.5-flash-lite";
 const vertexAuth = new GoogleAuth({ scopes:["https://www.googleapis.com/auth/cloud-platform"] });
-const SEARCH_ACTIONS = new Set(["textSearch", "nearbySearch"]);
 const API_COST_USD = {
   textSearch: 0.032,
   nearbySearch: 0.032,
@@ -150,7 +153,7 @@ async function requireUser(req) {
   if (!match) {
     throw httpError("missing auth token", 401);
   }
-  return admin.auth().verifyIdToken(match[1]);
+  return getAuth().verifyIdToken(match[1]);
 }
 
 async function verifyAppCheck(req) {
@@ -160,7 +163,7 @@ async function verifyAppCheck(req) {
     return { ok: false, required: false, missing: true };
   }
   try {
-    const decoded = await admin.appCheck().verifyToken(String(token));
+    const decoded = await getAppCheck().verifyToken(String(token));
     return { ok: true, appId: decoded.appId || "" };
   } catch (e) {
     if (REQUIRE_APP_CHECK) throw httpError("invalid app check token", 401, { appCheckInvalid: true });
@@ -180,25 +183,6 @@ async function isAdminEmail(email) {
   return normalized === "rh.taipei@gmail.com";
 }
 
-function taipeiDayKey(date = new Date()) {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Taipei",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(date);
-}
-
-function hashKey(value) {
-  return crypto.createHash("sha256").update(String(value || "")).digest("hex").slice(0, 32);
-}
-
-function stripInternalPayload(payload = {}) {
-  const clean = { ...payload };
-  delete clean.__quota;
-  return clean;
-}
-
 function estimatedUnits(action) {
   if (action === "routeMatrix") return 2;
   if (action === "aiClassify") return 0;
@@ -209,64 +193,14 @@ function estimatedCostUsd(action) {
   return Number(API_COST_USD[action] || 0);
 }
 
-async function enforceSearchQuota(decoded, action, payload = {}) {
-  if (!SEARCH_ACTIONS.has(action)) {
-    return { quotaCharged: false, quotaAdmin: false, quotaTestOpen: DISABLE_SEARCH_QUOTA, quotaLimit: DAILY_SEARCH_LIMIT, quotaRemaining: null };
-  }
-  if (DISABLE_SEARCH_QUOTA) {
-    return { quotaCharged: false, quotaAdmin: false, quotaTestOpen: true, quotaLimit: null, quotaRemaining: null };
-  }
-  const adminUser = await isAdminEmail(decoded.email || "");
-  if (adminUser) {
-    return { quotaCharged: false, quotaAdmin: true, quotaTestOpen: false, quotaLimit: null, quotaRemaining: null };
-  }
-  const day = taipeiDayKey();
-  const quotaDoc = db.collection("quotaUsage").doc(`${decoded.uid}_${day}`);
-  const quotaKey = String(payload.__quota?.key || `${action}:${JSON.stringify(stripInternalPayload(payload)).slice(0, 1200)}`);
-  const requestDoc = quotaDoc.collection("requests").doc(hashKey(quotaKey));
-  const requestHash = requestDoc.id;
-  let quotaResult = { quotaCharged: false, quotaAdmin: false, quotaLimit: DAILY_SEARCH_LIMIT, quotaRemaining: DAILY_SEARCH_LIMIT };
-  await db.runTransaction(async (tx) => {
-    const [quotaSnap, requestSnap] = await Promise.all([tx.get(quotaDoc), tx.get(requestDoc)]);
-    const currentCount = Number(quotaSnap.data()?.searchCount || 0);
-    if (requestSnap.exists) {
-      quotaResult = {
-        quotaCharged: false,
-        quotaAdmin: false,
-        quotaLimit: DAILY_SEARCH_LIMIT,
-        quotaRemaining: Math.max(0, DAILY_SEARCH_LIMIT - currentCount),
-      };
-      return;
-    }
-    if (currentCount >= DAILY_SEARCH_LIMIT) {
-      throw httpError("今日搜尋額度已用完（30次）", 429, {
-        quotaBlocked: true,
-        quotaLimit: DAILY_SEARCH_LIMIT,
-        quotaRemaining: 0,
-      });
-    }
-    tx.set(requestDoc, {
-      action,
-      keyHash: requestHash,
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    });
-    tx.set(quotaDoc, {
-      uid: decoded.uid,
-      email: decoded.email || "",
-      day,
-      searchCount: currentCount + 1,
-      limit: DAILY_SEARCH_LIMIT,
-      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
-    }, { merge: true });
-    quotaResult = {
-      quotaCharged: true,
-      quotaAdmin: false,
-      quotaLimit: DAILY_SEARCH_LIMIT,
-      quotaRemaining: Math.max(0, DAILY_SEARCH_LIMIT - currentCount - 1),
-    };
-  });
-  return quotaResult;
-}
+const enforceSearchQuota = createSearchQuotaEnforcer({
+  db,
+  FieldValue,
+  isAdminEmail,
+  httpError,
+  disableSearchQuota: DISABLE_SEARCH_QUOTA,
+  dailySearchLimit: DAILY_SEARCH_LIMIT,
+});
 
 function textOf(v) {
   return localizedText(v);
@@ -561,7 +495,7 @@ async function logApiEvent(decoded, action, started, ok, extra = {}) {
       appCheck: extra.appCheck === true,
       appId: extra.appId || "",
       error: extra.error || "",
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      createdAt: FieldValue.serverTimestamp(),
     });
   } catch (e) {
     logger.warn("apiEvents write failed", e.message);
