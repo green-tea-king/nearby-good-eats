@@ -26,10 +26,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
-<script src="assets/app-settings.js?v=2026.07.19.1"></script>
-<script src="assets/filter-rules.js?v=2026.07.19.1"></script>
-<script src="assets/search-logic.js?v=2026.07.19.1"></script>
-<script src="assets/auth-logic.js?v=2026.07.19.1"></script>
+<script src="assets/app-settings.js?v=2026.07.19.2"></script>
+<script src="assets/filter-rules.js?v=2026.07.19.2"></script>
+<script src="assets/search-logic.js?v=2026.07.19.2"></script>
+<script src="assets/auth-logic.js?v=2026.07.19.2"></script>
 <script src="firebase-config.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -1388,7 +1388,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.19.1";
+const APP_VERSION_FALLBACK = "2026.07.19.2";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
@@ -1847,10 +1847,11 @@ function matchTaiwanArea(city, area){
 }
 
 function cityAreaFromAddress(address){
-  const text = normalizeTaiwanCity(address || "");
-  const city = TW_CITIES.find(c => text.includes(c)) || "";
-  const area = city ? (TW_AREAS[city] || []).find(a => text.includes(a)) || "" : "";
-  return { city, area };
+  return NGE_SEARCH_LOGIC.resolveCandidateLocation({
+    address,
+    cities:TW_CITIES,
+    areasByCity:TW_AREAS,
+  });
 }
 
 async function geocodeTaiwanScope(city, area="", village=""){
@@ -2038,9 +2039,15 @@ async function locateRankOrigin(btn){
 
 function normalizeRankPlace(p, context={}){
   const address = toTW(p.formattedAddress || "");
-  const parsedArea = cityAreaFromAddress(address);
-  const city = context.city || parsedArea.city || "";
-  const area = context.area || parsedArea.area || "";
+  const parsedArea = NGE_SEARCH_LOGIC.resolveCandidateLocation({
+    address,
+    contextCity:context.city || "",
+    contextArea:context.area || "",
+    cities:TW_CITIES,
+    areasByCity:TW_AREAS,
+  });
+  const city = parsedArea.city;
+  const area = parsedArea.area;
   const o = {
     id: p.id,
     city,
@@ -2076,11 +2083,17 @@ function normalizeRankPlace(p, context={}){
   return o;
 }
 function rankCandidateFromProxy(x, context={}){
-  const parsedArea = cityAreaFromAddress(x.address || "");
+  const parsedArea = NGE_SEARCH_LOGIC.resolveCandidateLocation({
+    address:x.address || "",
+    contextCity:context.city || "",
+    contextArea:context.area || "",
+    cities:TW_CITIES,
+    areasByCity:TW_AREAS,
+  });
   const o = {
     id:x.id,
-    city:context.city || parsedArea.city || "",
-    area:context.area || parsedArea.area || "",
+    city:parsedArea.city,
+    area:parsedArea.area,
     village:context.village || "",
     name:toTW(x.name || ""),
     rating:x.rating || 0,
@@ -2293,7 +2306,7 @@ async function textSearchRankCandidates(Place, textQuery, context={}, opts={}){
       console.warn("[Text Search] 查詢失敗：", textQuery, e.message || e);
       return [];
     }
-  }).then(items => items.map(x => ({ ...x, ...context, queryTerms:context.queryTerms || x.queryTerms || [] })));
+  }).then(items => items.map(x => NGE_SEARCH_LOGIC.mergeCandidateContext(x, context)));
 }
 
 function isGoogleQuotaError(e){
@@ -2747,59 +2760,11 @@ function normalizeKeywordValue(value){
     .replace(/臺/g, "台")
     .replace(/魯肉/g, "滷肉");
 }
-function keywordTermVariants(term){
-  const base = normalizeKeywordValue(term);
-  if (!base) return [];
-  const variants = new Set([base]);
-  variants.add(base.replace(/滷肉/g, "魯肉"));
-  variants.add(base.replace(/魯肉/g, "滷肉"));
-  variants.add(base.replace(/台/g, "臺"));
-  variants.add(base.replace(/臺/g, "台"));
-  variants.add(base.replace(/麵線/g, "面線"));
-  variants.add(base.replace(/面線/g, "麵線"));
-  return [...variants].filter(Boolean);
-}
-function keywordTokens(keyword){
-  return String(keyword || "").split(/[\s,，、]+/).map(normalizeKeywordValue).filter(Boolean);
-}
 function rawKeywordTokens(keyword){
   return String(keyword || "").split(/[\s,，、]+/).map(x => x.trim()).filter(Boolean);
 }
-function keywordSourceFields(item){
-  return [
-    { key:"query", label:"搜尋詞", weight:6, text:(item.queryTerms || []).join(" ") },
-    { key:"name", label:"店名", weight:8, text:item.name },
-    { key:"type", label:"類型", weight:5, text:[item.ptd, item.typeName, item.pt].join(" ") },
-    { key:"review", label:"評論摘要", weight:4, text:item.reviewSummary },
-    { key:"summary", label:"Google 摘要", weight:3.5, text:[item.summary, item.generativeSummary].join(" ") },
-    { key:"address", label:"地址", weight:1.5, text:item.address },
-  ].map(x => ({ ...x, normalized:normalizeKeywordValue(x.text) }));
-}
 function keywordMatchDetails(item, keyword){
-  const rawTokens = rawKeywordTokens(keyword);
-  const terms = rawTokens.length > 1 ? rawTokens : [String(keyword || "").trim()].filter(Boolean);
-  if (!terms.length) return { ok:true, score:0, hits:[], missing:[] };
-  const fields = keywordSourceFields(item);
-  const hits = [];
-  const missing = [];
-  let score = 0;
-  for (const term of terms){
-    const variants = keywordTermVariants(term);
-    let best = null;
-    for (const f of fields){
-      const found = variants.find(v => f.normalized.includes(v));
-      if (!found) continue;
-      const candidate = { term, source:f.label, field:f.key, score:f.weight + Math.min(found.length, 8) / 10 };
-      if (!best || candidate.score > best.score) best = candidate;
-    }
-    if (best){
-      hits.push(best);
-      score += best.score;
-    }else{
-      missing.push(term);
-    }
-  }
-  return { ok:missing.length === 0, score, hits, missing };
+  return NGE_SEARCH_LOGIC.keywordMatchDetails(item, keyword);
 }
 function keywordStrength(item, keyword){
   const details = keywordMatchDetails(item, keyword);
@@ -2875,8 +2840,8 @@ function minimumRankFallbackRelaxations(filter){
 }
 function renderResultActions(filter){
   const steps = minimumResultRelaxations(filter).slice(0, 3);
-  const remaining = rankResultCandidates.filter(item => item?.id && !rankShownPlaceIds.has(item.id));
-  const nextButton = remaining.length > 0
+  const nextPage = NGE_SEARCH_LOGIC.nextResultPage(rankResultCandidates, rankShownPlaceIds, RANK_TOP);
+  const nextButton = nextPage.length === RANK_TOP
     ? `<button type="button" data-result-action="next-group">下一組</button>`
     : "";
   if (!steps.length && !nextButton) return "";
