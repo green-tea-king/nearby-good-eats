@@ -60,7 +60,112 @@
 
   function nextResultPage(items = [], shownIds = new Set(), size = 3) {
     const seen = shownIds instanceof Set ? shownIds : new Set(shownIds || []);
-    return items.filter(item => item && item.id && !seen.has(item.id)).slice(0, size);
+    const page = items.filter(item => item && item.id && !seen.has(item.id)).slice(0, size);
+    return page.length === size ? page : [];
+  }
+
+  function normalizeKeywordValue(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .replace(/臺/g, "台")
+      .replace(/魯肉/g, "滷肉");
+  }
+
+  function keywordTermVariants(term) {
+    const base = normalizeKeywordValue(term);
+    if (!base) return [];
+    const variants = new Set([base]);
+    variants.add(base.replace(/滷肉/g, "魯肉"));
+    variants.add(base.replace(/魯肉/g, "滷肉"));
+    variants.add(base.replace(/台/g, "臺"));
+    variants.add(base.replace(/臺/g, "台"));
+    variants.add(base.replace(/麵線/g, "面線"));
+    variants.add(base.replace(/面線/g, "麵線"));
+    return [...variants].filter(Boolean);
+  }
+
+  function keywordMatchDetails(item = {}, keyword = "") {
+    const rawTokens = String(keyword || "").split(/[\s,，、]+/).map(value => value.trim()).filter(Boolean);
+    const terms = rawTokens.length > 1 ? rawTokens : [String(keyword || "").trim()].filter(Boolean);
+    if (!terms.length) return { ok:true, score:0, hits:[], missing:[] };
+    const fields = [
+      { key:"name", label:"店名", weight:8, text:item.name },
+      { key:"type", label:"類型", weight:5, text:[item.ptd, item.typeName, item.pt].join(" ") },
+      { key:"review", label:"評論摘要", weight:4, text:item.reviewSummary },
+      { key:"summary", label:"Google 摘要", weight:3.5, text:[item.summary, item.generativeSummary].join(" ") },
+    ].map(field => ({ ...field, normalized:normalizeKeywordValue(field.text) }));
+    const hits = [];
+    const missing = [];
+    let score = 0;
+    for (const term of terms) {
+      const variants = keywordTermVariants(term);
+      let best = null;
+      for (const field of fields) {
+        const found = variants.find(variant => field.normalized.includes(variant));
+        if (!found) continue;
+        const candidate = {
+          term,
+          source:field.label,
+          field:field.key,
+          score:field.weight + Math.min(found.length, 8) / 10,
+        };
+        if (!best || candidate.score > best.score) best = candidate;
+      }
+      if (best) {
+        hits.push(best);
+        score += best.score;
+      } else {
+        missing.push(term);
+      }
+    }
+    return { ok:missing.length === 0, score, hits, missing };
+  }
+
+  const TAIWAN_CITY_ADDRESS_ALIASES = [
+    ["新北市", "new taipei city"], ["臺北市", "taipei city"],
+    ["桃園市", "taoyuan city"], ["臺中市", "taichung city"],
+    ["臺南市", "tainan city"], ["高雄市", "kaohsiung city"],
+    ["基隆市", "keelung city"], ["新竹縣", "hsinchu county"],
+    ["新竹市", "hsinchu city"], ["苗栗縣", "miaoli county"],
+    ["彰化縣", "changhua county"], ["南投縣", "nantou county"],
+    ["雲林縣", "yunlin county"], ["嘉義縣", "chiayi county"],
+    ["嘉義市", "chiayi city"], ["屏東縣", "pingtung county"],
+    ["宜蘭縣", "yilan county"], ["花蓮縣", "hualien county"],
+    ["臺東縣", "taitung county"], ["澎湖縣", "penghu county"],
+    ["金門縣", "kinmen county"], ["連江縣", "lienchiang county"],
+  ];
+
+  function resolveCandidateLocation({
+    address = "",
+    contextCity = "",
+    contextArea = "",
+    cities = [],
+    areasByCity = {},
+  } = {}) {
+    const normalizedAddress = String(address || "").replace(/台/g, "臺");
+    const normalizedEnglishAddress = normalizedAddress.toLowerCase().replace(/[^a-z]+/g, " ").trim();
+    const knownCities = Array.isArray(cities) ? cities : [];
+    let actualCity = knownCities.find(city => normalizedAddress.includes(String(city).replace(/台/g, "臺"))) || "";
+    if (!actualCity) {
+      const aliasMatch = TAIWAN_CITY_ADDRESS_ALIASES.find(([city, alias]) =>
+        knownCities.includes(city) && normalizedEnglishAddress.includes(alias)
+      );
+      actualCity = aliasMatch?.[0] || "";
+    }
+    const areas = actualCity && Array.isArray(areasByCity[actualCity]) ? areasByCity[actualCity] : [];
+    const actualArea = areas.find(area => normalizedAddress.includes(area)) || "";
+    const normalizedContextCity = String(contextCity || "").replace(/台/g, "臺");
+    return {
+      city:actualCity || normalizedContextCity,
+      area:actualArea || (!actualCity || actualCity === normalizedContextCity ? contextArea : ""),
+    };
+  }
+
+  function mergeCandidateContext(item = {}, context = {}) {
+    return Object.assign({}, context, item, {
+      queryTerms:context.queryTerms || item.queryTerms || [],
+    });
   }
 
   function relaxedAwardValues(values = []) {
@@ -104,6 +209,9 @@
     defaultSearchFilter,
     autoRelaxCandidates,
     nextResultPage,
+    keywordMatchDetails,
+    resolveCandidateLocation,
+    mergeCandidateContext,
     relaxedAwardValues,
     automaticFallbackRelaxations,
     shouldDeferFilterRebuild,

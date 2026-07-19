@@ -9,6 +9,9 @@ const {
   isReusableSearchCacheValue,
   locationModeFilter,
   withBaseAreaSearchQuery,
+  keywordMatchDetails,
+  resolveCandidateLocation,
+  mergeCandidateContext,
 } = require("../assets/search-logic.js");
 
 async function run() {
@@ -59,7 +62,64 @@ async function run() {
     new Set(["a", "b", "c"]),
     3,
   );
-  assert.deepEqual(page.map(x => x.id), ["d"]);
+  assert.deepEqual(page, [], "下一組不足三家時不得顯示殘缺頁");
+  assert.deepEqual(
+    nextResultPage(
+      [{ id: "a" }, { id: "b" }, { id: "c" }, { id: "d" }, { id: "e" }, { id: "f" }],
+      new Set(["a", "b", "c"]),
+      3,
+    ).map(x => x.id),
+    ["d", "e", "f"],
+    "下一組有完整三家時應沿用候選池回傳",
+  );
+
+  assert.equal(
+    keywordMatchDetails(
+      {
+        name: "S&D 好食光後山埤門市",
+        ptd: "咖啡廳",
+        queryTerms: ["滷肉飯"],
+        address: "臺北市信義區",
+      },
+      "滷肉飯",
+    ).ok,
+    false,
+    "使用者輸入的搜尋詞本身不得當成店家符合關鍵字的證據",
+  );
+  assert.equal(
+    keywordMatchDetails(
+      { name: "今大魯肉飯", ptd: "台灣餐廳", address: "新北市三重區" },
+      "滷肉飯",
+    ).ok,
+    true,
+    "店名中的魯肉／滷肉同義字應視為真實命中",
+  );
+
+  assert.deepEqual(
+    resolveCandidateLocation({
+      address: "No. 23, Datong N. Rd., Sanchong District, New Taipei City, Taiwan",
+      contextCity: "臺北市",
+      contextArea: "中正區",
+      cities: ["臺北市", "新北市"],
+      areasByCity: { 臺北市:["中正區"], 新北市:["三重區"] },
+    }),
+    { city:"新北市", area:"" },
+    "地址中的真實縣市必須優先於搜尋查詢的縣市標籤",
+  );
+  assert.deepEqual(
+    mergeCandidateContext(
+      { id:"place-1", city:"新北市", area:"三重區", queryTerms:[] },
+      { city:"臺北市", area:"中正區", queryTerms:["滷肉飯"], areaScopeKey:"taipei-query" },
+    ),
+    {
+      id:"place-1",
+      city:"新北市",
+      area:"三重區",
+      queryTerms:["滷肉飯"],
+      areaScopeKey:"taipei-query",
+    },
+    "補上查詢中繼資料時不得再次覆蓋地址解析出的縣市",
+  );
 
   assert.deepEqual(relaxedAwardValues(["米其林一星"]), ["米其林星"]);
   assert.deepEqual(relaxedAwardValues(["米其林二星", "必比登"]), ["米其林星", "必比登"]);
