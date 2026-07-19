@@ -19,13 +19,24 @@ function listFiles(root, current = "") {
     .sort();
 }
 
+function collectRuntimeAssetReferences(relativePaths) {
+  const references = new Set();
+  for (const relativePath of relativePaths) {
+    const source = fs.readFileSync(path.join(repoRoot, ...relativePath.split("/")), "utf8");
+    for (const match of source.matchAll(/assets\/[A-Za-z0-9._/-]+/g)) {
+      references.add(match[0]);
+    }
+  }
+  return [...references].sort();
+}
+
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-assert.strictEqual(manifest.length, 69);
+assert.strictEqual(manifest.length, 72);
 assert.strictEqual(new Set(manifest).size, manifest.length);
 assert.strictEqual(
   crypto.createHash("sha256").update(manifest.join("\n")).digest("hex"),
-  "6792d9d3f2814b110de12120359239eb5b5985e262402ab6eb2c14701469beed",
-  "manifest 必須精確維持切換前 69-file allowlist 與順序"
+  "f6af8c0cd640e001fdd385878ff2461a8292bfc37c629c22a1cdf43d69df0db4",
+  "manifest 必須精確維持 72-file allowlist 與順序"
 );
 for (const required of [
   "index.html", "admin.html", ".nojekyll", "VERSION", "design.md", "project-rules.md",
@@ -40,6 +51,24 @@ for (const forbidden of [
 ]) {
   assert(!manifest.includes(forbidden), "manifest 不得包含 " + forbidden);
 }
+
+const runtimeSourceFiles = [
+  "index.html",
+  "admin.html",
+  "firebase-config.js",
+  ...manifest.filter((entry) => /^assets\/.*\.js$/.test(entry))
+];
+const runtimeAssetReferences = collectRuntimeAssetReferences(runtimeSourceFiles);
+const missingRuntimeFiles = runtimeAssetReferences.filter((entry) => (
+  !fs.existsSync(path.join(repoRoot, ...entry.split("/")))
+));
+assert.deepStrictEqual(missingRuntimeFiles, [], "runtime 資產在 repository 中不存在");
+const missingRuntimeManifestEntries = runtimeAssetReferences.filter((entry) => !manifest.includes(entry));
+assert.deepStrictEqual(
+  missingRuntimeManifestEntries,
+  [],
+  "Pages manifest 缺少 runtime 資產: " + missingRuntimeManifestEntries.join(", ")
+);
 
 assert.throws(() => validateManifest([...manifest, manifest[0]], repoRoot), /重複/);
 assert.throws(() => validateManifest(["../secret.txt"], repoRoot), /不安全/);
