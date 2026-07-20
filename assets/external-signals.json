@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-07-06",
-  "updated": "2026-07-06",
+  "version": "api-batch-2026-07-20",
+  "updated": "2026-07-20",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -1593,6 +1593,296 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "Sens",
+      "city": "臺北市",
+      "area": "松山區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 65,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 1099,
+            "topVideos": [
+              {
+                "id": "lm-NMIZxOPs",
+                "title": "台灣台北🇹🇼 東區新開幕即爆紅的台北麵包店 New Bakery in Taipei",
+                "channelTitle": "凱文食記 jingxin_kevin",
+                "publishedAt": "2026-07-20T04:30:22Z",
+                "views": 1099,
+                "url": "https://www.youtube.com/watch?v=lm-NMIZxOPs"
+              }
+            ],
+            "query": "臺北市 Sens 美食"
+          },
+          "evidence": [
+            "凱文食記 jingxin_kevin：台灣台北🇹🇼 東區新開幕即爆紅的台北麵包店 New Bakery in Taipei"
+          ],
+          "url": "https://www.youtube.com/watch?v=lm-NMIZxOPs",
+          "updated": "2026-07-20",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "Sho",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [
+        "承"
+      ],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 153356,
+            "topVideos": [
+              {
+                "id": "m3I5KpDcE7Y",
+                "title": "【高雄鳳西黃昏市場】超多美食市場 二六限定爆米香 貝貝的好大刈包 阿鴻萬巒豬腳 太陽餅 蔥油餅 煙燻滷味 花生豬腳 鹹湯圓 排骨酥/market food/kaohsiung/Taiwan/台湾グルメ",
+                "channelTitle": "貓跪妃",
+                "publishedAt": "2026-04-04T10:01:14Z",
+                "views": 49752,
+                "url": "https://www.youtube.com/watch?v=m3I5KpDcE7Y"
+              },
+              {
+                "id": "ML3mnIB7CW8",
+                "title": "【高雄賀鴨郎港式吃到飽老實說】平日中午限定 30多種品項吃到飽  用餐3小時 餐券價750 現場價1150/kaohsiung/taiwan_street_food/buffet",
+                "channelTitle": "貓跪妃",
+                "publishedAt": "2026-06-11T10:00:15Z",
+                "views": 46935,
+                "url": "https://www.youtube.com/watch?v=ML3mnIB7CW8"
+              },
+              {
+                "id": "P4QFlBwh9rU",
+                "title": "【高雄車站必吃美食地圖】搭捷運也能到 香菇肉飯糰 老屋拉麵麵屋田介 山田烤吐司 阿龍月亮餅 手做披薩 興湯包/kaohsiung/taiwan_street_food/台湾グルメ",
+                "channelTitle": "貓跪妃",
+                "publishedAt": "2026-03-15T12:00:38Z",
+                "views": 32048,
+                "url": "https://www.youtube.com/watch?v=P4QFlBwh9rU"
+              }
+            ],
+            "query": "高雄市 Sho 美食"
+          },
+          "evidence": [
+            "貓跪妃：【高雄鳳西黃昏市場】超多美食市場 二六限定爆米香 貝貝的好大刈包 阿鴻萬巒豬腳 太陽餅 蔥油餅 煙燻滷味 花生豬腳 鹹湯圓 排骨酥/market food/kaohsiung/Taiwan/台湾グルメ",
+            "貓跪妃：【高雄賀鴨郎港式吃到飽老實說】平日中午限定 30多種品項吃到飽  用餐3小時 餐券價750 現場價1150/kaohsiung/taiwan_street_food/buffet",
+            "貓跪妃：【高雄車站必吃美食地圖】搭捷運也能到 香菇肉飯糰 老屋拉麵麵屋田介 山田烤吐司 阿龍月亮餅 手做披薩 興湯包/kaohsiung/taiwan_street_food/台湾グルメ"
+          ],
+          "url": "https://www.youtube.com/watch?v=m3I5KpDcE7Y",
+          "updated": "2026-07-20",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "Sur-",
+      "city": "臺中市",
+      "area": "中區",
+      "aliases": [
+        "澀"
+      ],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 95,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 1,
+            "totalViews": 10819,
+            "topVideos": [
+              {
+                "id": "CVgHs_NIGLY",
+                "title": "台中隱藏版草莓果實冰 #台灣美食 #美食 #台中一日遊 #草莓 #草莓甜點 #台中下午茶 #甜點 #台中旅遊",
+                "channelTitle": "麥克先生",
+                "publishedAt": "2026-02-28T09:00:29Z",
+                "views": 8307,
+                "url": "https://www.youtube.com/watch?v=CVgHs_NIGLY"
+              },
+              {
+                "id": "gpHl0lpZeCg",
+                "title": "台中唯一的巨無霸草莓盒子 #台灣美食 #美食 #food #台中一日遊 #草莓 #甜點 #台灣旅遊",
+                "channelTitle": "麥克先生",
+                "publishedAt": "2026-03-05T13:01:14Z",
+                "views": 2502,
+                "url": "https://www.youtube.com/watch?v=gpHl0lpZeCg"
+              },
+              {
+                "id": "lHS-3hv4lEM",
+                "title": "台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-06-27T15:46:04Z",
+                "views": 10,
+                "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM"
+              }
+            ],
+            "query": "臺中市 Sur- 美食"
+          },
+          "evidence": [
+            "麥克先生：台中隱藏版草莓果實冰 #台灣美食 #美食 #台中一日遊 #草莓 #草莓甜點 #台中下午茶 #甜點 #台中旅遊",
+            "麥克先生：台中唯一的巨無霸草莓盒子 #台灣美食 #美食 #food #台中一日遊 #草莓 #甜點 #台灣旅遊",
+            "派派城市外掛：台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排"
+          ],
+          "url": "https://www.youtube.com/watch?v=CVgHs_NIGLY",
+          "updated": "2026-07-20",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "T+T",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 4,
+            "totalViews": 354281,
+            "topVideos": [
+              {
+                "id": "xGia8aZ3x48",
+                "title": "【內行人才知#16】台北必吃隱藏美食推薦！大嗑超爆汁蒸餃、第一名牛肉麵還有東區最強甜點！？",
+                "channelTitle": "那個女生 Kiki",
+                "publishedAt": "2026-06-10T09:00:20Z",
+                "views": 158132,
+                "url": "https://www.youtube.com/watch?v=xGia8aZ3x48"
+              },
+              {
+                "id": "XC53o1KUGWY",
+                "title": "【台北2日1夜快閃】不請假去台北 食宿全攻略 | 台北10大必吃 一網打盡最新台北美食 中山區 隱世天然藥材牛肉麵 爆餡流心鬆餅 爆汁小籠包 50年酒樓台菜 麻辣火鍋 | 西門町最靚酒店房開箱",
+                "channelTitle": "Stephen Leung 吃喝玩樂",
+                "publishedAt": "2026-07-14T11:00:21Z",
+                "views": 64899,
+                "url": "https://www.youtube.com/watch?v=XC53o1KUGWY"
+              },
+              {
+                "id": "07OJ43wf4kY",
+                "title": "[為食在台北 🇹🇼］台北六間美食分享🔥Fusion 新派台菜 👉食九孔鮑魚滷肉飯😋地道小籠湯包‼️ 50年代博物館咖啡室 打卡一流👍🏻 鹽滷豆花 必食餡餅 仲會去台式扒房鋸扒",
+                "channelTitle": "Denman826",
+                "publishedAt": "2026-01-22T11:00:02Z",
+                "views": 60296,
+                "url": "https://www.youtube.com/watch?v=07OJ43wf4kY"
+              }
+            ],
+            "query": "臺北市 T+T 美食"
+          },
+          "evidence": [
+            "那個女生 Kiki：【內行人才知#16】台北必吃隱藏美食推薦！大嗑超爆汁蒸餃、第一名牛肉麵還有東區最強甜點！？",
+            "Stephen Leung 吃喝玩樂：【台北2日1夜快閃】不請假去台北 食宿全攻略 | 台北10大必吃 一網打盡最新台北美食 中山區 隱世天然藥材牛肉麵 爆餡流心鬆餅 爆汁小籠包 50年酒樓台菜 麻辣火鍋 | 西門町最靚酒店房開箱",
+            "Denman826：[為食在台北 🇹🇼］台北六間美食分享🔥Fusion 新派台菜 👉食九孔鮑魚滷肉飯😋地道小籠湯包‼️ 50年代博物館咖啡室 打卡一流👍🏻 鹽滷豆花 必食餡餅 仲會去台式扒房鋸扒"
+          ],
+          "url": "https://www.youtube.com/watch?v=xGia8aZ3x48",
+          "updated": "2026-07-20",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "the FRONT HOUSE",
+      "city": "高雄市",
+      "area": "苓雅區",
+      "aliases": [
+        "方蒔",
+        "the FRONT HOUSE 方蒔",
+        "方蒔 the Front House"
+      ],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 54,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 284,
+            "topVideos": [
+              {
+                "id": "W7wXHlEu7Tw",
+                "title": "吃爆高雄，美食零踩雷❗️｜入住寵物友善酒店🐶",
+                "channelTitle": "從翎開始 From Ling,",
+                "publishedAt": "2026-07-05T11:30:03Z",
+                "views": 284,
+                "url": "https://www.youtube.com/watch?v=W7wXHlEu7Tw"
+              }
+            ],
+            "query": "高雄市 the FRONT HOUSE 美食"
+          },
+          "evidence": [
+            "從翎開始 From Ling,：吃爆高雄，美食零踩雷❗️｜入住寵物友善酒店🐶"
+          ],
+          "url": "https://www.youtube.com/watch?v=W7wXHlEu7Tw",
+          "updated": "2026-07-20",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "Zea",
+      "city": "臺北市",
+      "area": "大安區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 65,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 1109,
+            "topVideos": [
+              {
+                "id": "iAMCT3gk60s",
+                "title": "台北大安約會餐廳😍這道豬肉驚為天人！米其林一星ZEA",
+                "channelTitle": "美姨餐桌筆記",
+                "publishedAt": "2026-05-20T14:44:28Z",
+                "views": 1109,
+                "url": "https://www.youtube.com/watch?v=iAMCT3gk60s"
+              }
+            ],
+            "query": "臺北市 Zea 美食"
+          },
+          "evidence": [
+            "美姨餐桌筆記：台北大安約會餐廳😍這道豬肉驚為天人！米其林一星ZEA"
+          ],
+          "url": "https://www.youtube.com/watch?v=iAMCT3gk60s",
+          "updated": "2026-07-20",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -1643,11 +1933,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-07-06T21:47:06.803Z",
+    "lastRun": "2026-07-20T21:32:00.162Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 43,
+    "nextAwardOffset": 53,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 9,
+    "lastUpdatedSignals": 6,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
