@@ -26,10 +26,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <!-- 簡體→繁體（台灣用字）轉換，避免 Google 回傳的簡體字（如 信义区→信義區）外露 -->
 <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/cn2t.js"></script>
-<script src="assets/app-settings.js?v=2026.07.19.2"></script>
-<script src="assets/filter-rules.js?v=2026.07.19.2"></script>
-<script src="assets/search-logic.js?v=2026.07.19.2"></script>
-<script src="assets/auth-logic.js?v=2026.07.19.2"></script>
+<script src="assets/app-settings.js?v=2026.07.22.2"></script>
+<script src="assets/filter-rules.js?v=2026.07.22.2"></script>
+<script src="assets/search-logic.js?v=2026.07.22.2"></script>
+<script src="assets/auth-logic.js?v=2026.07.22.2"></script>
 <script src="firebase-config.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -810,6 +810,7 @@ const CONFIG = {
   RANK_WALK_MAX_MIN: 15,     // 交通篩選：走路 15 分鐘內
   RANK_DRIVE_MAX_MIN: 30,    // 交通篩選：開車 30 分鐘內
   RANK_ROUTE_PREFETCH_COUNT: 8,
+  RANK_AWARD_SEARCH_MAX_QUERIES: 8,
   RANK_DETAIL_PREFETCH_LIMIT: 3,
   ROUTE_TIMEOUT_MS: 7000,    // Routes API 逾時後保留直線距離估算，不阻塞畫面
   RESULT_COUNT: 3,           // 取前幾家
@@ -1023,6 +1024,7 @@ function cachedRequest(key, ttl, producer){
 function rankPoolNeeded(f=rankFilter){
   const terms = rankQueryTerms(f);
   if (isTravelRankMode(f) || isWalkableRankMode(f)) return false;
+  if (rankAwardValues(f).length) return false;
   if (f.city && (f.area || f.village || terms.length)) return false;
   if (terms.length) return false;
   return true;
@@ -1388,7 +1390,7 @@ document.addEventListener("keydown", e => {
    - 每次開啟重新撈全台候選；選區域時另打 Google 查該區，不使用舊快取
    - 只有顯示的前 3 名才補抓照片/營業/服務等完整欄位
    ============================================================ */
-const APP_VERSION_FALLBACK = "2026.07.19.2";
+const APP_VERSION_FALLBACK = "2026.07.22.2";
 const RANK_TOP = 3;                 // 只列前 3 名
 const RANK_DEFAULT_OPEN = "營業中";
 const RANK_DEFAULT_TRAVEL = "走路";
@@ -1401,7 +1403,7 @@ const RANK_FILTERS = window.RANK_FILTER_DEFS || [
   { key:"meal",    label:"時段", tier:"search", opts:[{label:"早餐", query:"早餐 早午餐 豆漿 蛋餅"}, {label:"早茶", query:"早茶 早午餐 港式飲茶 港點"}, {label:"午餐", query:"午餐 便當 定食 簡餐 商業午餐"}, {label:"午茶", query:"下午茶 咖啡 甜點 茶屋"}, {label:"晚餐", query:"晚餐 餐酒館 火鍋 燒肉 聚餐"}, {label:"消夜", query:"宵夜 消夜 夜市 居酒屋 串燒"}] },
   { key:"service", label:"吃法", tier:"search", opts:[{label:"單點"}, {label:"吃到飽", query:"吃到飽 自助餐 buffet 放題 all you can eat 無限供應 任食"}] },
   { key:"diet",    label:"飲食", tier:"hard", opts:[{label:"葷食"}, {label:"素食", query:"素食 蔬食 vegan vegetarian 素餐 純素"}] },
-  { key:"award",   label:"評鑑（可複選）", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
+  { key:"award",   label:"評鑑（可複選）", tier:"static", opts:[{label:"不限"}, {label:"米其林三星", guide:"michelin", level:"三星"}, {label:"米其林二星", guide:"michelin", level:"二星"}, {label:"米其林一星", guide:"michelin", level:"一星"}, {label:"米其林星級", guide:"michelin"}, {label:"米其林入選", guide:"michelin_selected"}, {label:"必比登", guide:"bib"}, {label:"500盤", guide:"500plate"}, {label:"500碗", guide:"500bowl"}, {label:"500甜", guide:"500sweet"}] },
 ];
 if (!RANK_FILTERS.some(g => g.key === "cuisine")) {
   const cuisineInsertAt = Math.max(0, RANK_FILTERS.findIndex(g => g.key === "service"));
@@ -1434,6 +1436,7 @@ const rankRich = {};     // id -> 已補抓的完整卡片欄位（避免重抓�
 let rankAreaPools = {};  // city|area -> 區域專用候選池
 let rankKeywordPools = {}; // keyword/searchTerms -> 全台關鍵字候選池
 let rankNearbyPools = {}; // origin|radius|filters -> 定位點附近候選池
+let rankAwardPools = {}; // award|city|area -> 評鑑名單直查候選池
 let rankGeocodeCache = {};
 let rankContextReady = false;
 let rankAutoMeal = false;
@@ -1487,7 +1490,7 @@ function cloneRankFilter(src=rankFilter){
 function rankAwardValues(f=rankFilter){
   const value = f?.award;
   const raw = Array.isArray(value) ? value : (value ? [value] : []);
-  return [...new Set(raw.map(x => String(x || "").trim()).filter(x => x && x !== "不限"))];
+  return [...new Set(raw.map(NGE_SEARCH_LOGIC.normalizeAwardFilterValue).filter(x => x && x !== "不限"))];
 }
 function rankAwardText(f=rankFilter){
   return rankAwardValues(f).join("、");
@@ -2213,6 +2216,7 @@ async function ensureRankPool(force){
     rankAreaPools = {};
     rankKeywordPools = {};
     rankNearbyPools = {};
+    rankAwardPools = {};
   }
   $("#rankList").innerHTML = `<div class="rank-note">整理全台美食中…</div>`;
   setGuideWorking("正在整理 Google 真資料候選池，評分與評論數會先做加權排序。");
@@ -2416,6 +2420,56 @@ async function keywordCandidates(f=rankFilter, quotaKey=""){
   all.forEach(x => { x.queryTerms = terms; });
   all = finalizeRankCandidates(all);
   rankKeywordPools[key] = all;
+  return all;
+}
+
+function rankAwardOptions(){
+  return RANK_FILTERS.find(g => g.key === "award")?.opts || [];
+}
+
+async function awardCandidates(f=rankFilter, quotaKey=""){
+  const selectedAwards = rankAwardValues(f);
+  if (!selectedAwards.length) return [];
+  const terms = rankQueryTerms(f);
+  const key = [
+    "award-v1",
+    f.city || "",
+    f.area || "",
+    f.village || "",
+    ...selectedAwards.map(NGE_SEARCH_LOGIC.normalizeAwardFilterValue),
+    ...terms,
+  ].join("|");
+  if (rankAwardPools[key]) return rankAwardPools[key];
+  await Promise.all([ensureAwards(), ensureExternalSignals()]);
+  let Place = null;
+  if (!hasApiProxy){
+    await loadGoogle();
+    ({ Place } = await google.maps.importLibrary("places"));
+  }
+  const got = [];
+  const querySpecs = NGE_SEARCH_LOGIC.awardSearchQueriesFromEntries(AWARDS, selectedAwards, rankAwardOptions(), {
+    city:f.city || "",
+    area:f.area || "",
+    limit:CONFIG.RANK_AWARD_SEARCH_MAX_QUERIES,
+  });
+  for (const spec of querySpecs){
+    const textQuery = terms.length
+      ? `${spec.textQuery} ${terms.join(" ")}`.trim()
+      : spec.textQuery;
+    const result = await textSearchRankCandidates(Place, textQuery, {
+      city:spec.city || f.city || "",
+      area:spec.area || f.area || "",
+      village:f.village || "",
+      queryTerms:terms,
+      awardQuery:true,
+      awardEntryName:spec.entryName,
+    }, { quotaKey });
+    got.push(...result);
+    const unique = new Set(got.filter(x => x?.id).map(x => x.id));
+    if (unique.size >= Math.max(RANK_TOP, CONFIG.RANK_ROUTE_PREFETCH_COUNT * 3)) break;
+  }
+  const all = finalizeRankCandidates(got);
+  rankAwardPools[key] = all;
   return all;
 }
 
@@ -2733,7 +2787,8 @@ function rankAwardMatch(item, value){
 }
 function rankAwardSingleMatch(item, value){
   const awards = item.awards || [];
-  const option = (RANK_FILTERS.find(g => g.key === "award")?.opts || []).find(o => o.label === value);
+  const normalizedValue = NGE_SEARCH_LOGIC.normalizeAwardFilterValue(value);
+  const option = (RANK_FILTERS.find(g => g.key === "award")?.opts || []).find(o => NGE_SEARCH_LOGIC.normalizeAwardFilterValue(o.label) === normalizedValue);
   if (option?.guide) {
     return awards.some(a =>
       a.guide === option.guide
@@ -2741,16 +2796,16 @@ function rankAwardSingleMatch(item, value){
     );
   }
   const has = guide => awards.some(a => a.guide === guide);
-  if (value === "米其林三星") return awards.some(a => a.guide === "michelin" && a.level === "三星");
-  if (value === "米其林二星") return awards.some(a => a.guide === "michelin" && a.level === "二星");
-  if (value === "米其林一星") return awards.some(a => a.guide === "michelin" && a.level === "一星");
-  if (value === "米其林星") return awards.some(a => a.guide === "michelin");
-  if (value === "米其林入選") return has("michelin_selected");
-  if (value === "必比登") return has("bib");
-  if (value === "綠星") return has("greenstar");
-  if (value === "500盤") return has("500plate");
-  if (value === "500碗") return has("500bowl");
-  if (value === "500甜") return has("500sweet");
+  if (normalizedValue === "米其林三星") return awards.some(a => a.guide === "michelin" && a.level === "三星");
+  if (normalizedValue === "米其林二星") return awards.some(a => a.guide === "michelin" && a.level === "二星");
+  if (normalizedValue === "米其林一星") return awards.some(a => a.guide === "michelin" && a.level === "一星");
+  if (normalizedValue === "米其林星級") return awards.some(a => a.guide === "michelin");
+  if (normalizedValue === "米其林入選") return has("michelin_selected");
+  if (normalizedValue === "必比登") return has("bib");
+  if (normalizedValue === "綠星") return has("greenstar");
+  if (normalizedValue === "500盤") return has("500plate");
+  if (normalizedValue === "500碗") return has("500bowl");
+  if (normalizedValue === "500甜") return has("500sweet");
   return false;
 }
 function normalizeKeywordValue(value){
@@ -2875,6 +2930,7 @@ function applySingleResultRelaxation(action){
   rankShownPlaceIds = new Set();
   rankKeywordPools = {};
   rankNearbyPools = {};
+  rankAwardPools = {};
   buildRankFilterBar();
   setGuideWorking(`${step.note}，正在重找結果。`);
   safeRenderLeaderboard();
@@ -3009,6 +3065,13 @@ async function resolveLeaderboardSourceContext(f, token){
     setGuideWorking(`正在查詢 ${rankOriginLabel || "目前位置"} 附近步行可到的店。`);
     source = await nearbyRankCandidates(f, CONFIG.RANK_WALKABLE_RADIUS_M, renderQuotaKey);
     if (token !== rankRenderToken) return null;
+  }else if (rankAwardValues(f).length){
+    const awardText = rankAwardText(f);
+    const scopeText = f.city ? `${f.city}${f.area || ""}${f.village || ""}` : "全台";
+    $("#rankList").innerHTML = `<div class="rank-note">依評鑑名單整理 ${escapeHTML(scopeText)} ${escapeHTML(awardText)} 店家中…</div>`;
+    setGuideWorking(`正在先查本地評鑑名單，再少量補 Google 真資料；為保護 API 成本，每次最多補查 ${CONFIG.RANK_AWARD_SEARCH_MAX_QUERIES} 筆評鑑店名。`);
+    source = await awardCandidates(f, renderQuotaKey);
+    if (token !== rankRenderToken) return null;
   }else if (f.city && (f.area || f.village || searchTerms.length)){
     $("#rankList").innerHTML = `<div class="rank-note">整理 ${escapeHTML(f.city + (f.area || "") + (f.village || "") + (searchTerms.length ? " " + searchTerms.join(" ") : ""))} 美食中…</div>`;
     setGuideWorking(`正在查詢「${f.city}${f.area || ""}${f.village || ""}${searchTerms.length ? " " + searchTerms.join(" ") : ""}」的 Google 真資料。`);
@@ -3059,6 +3122,13 @@ async function renderLeaderboard(){
     let routeRelaxNote = "";
     let finalRadius = firstRadius;
     await ensureCertificationRules();
+    const travelAwardSource = rankAwardValues(f).length
+      ? await awardCandidates({
+        ...f,
+        city:f.city || rankOriginScope.city || "",
+        area:f.area || rankOriginScope.area || "",
+      }, renderQuotaKey)
+      : [];
     for (let i=0; i<radii.length; i++){
       const radius = radii[i];
       finalRadius = radius;
@@ -3068,7 +3138,7 @@ async function renderLeaderboard(){
       const radiusSource = await nearbyRankCandidates(f, radius, renderQuotaKey);
       if (token !== rankRenderToken) return;
       collectedSources.push(radiusSource);
-      source = mergeRankCandidates(collectedSources, { sortDistance:true });
+      source = mergeRankCandidates([...collectedSources, travelAwardSource], { sortDistance:true });
       await enrichAiFilterTags(source, f);
       if (token !== rankRenderToken) return;
       list = applyRankFilters(source, false);
@@ -3863,6 +3933,7 @@ function buildRankFilterBar(){
     rankSearchCommitted = true;
     rankKeywordPools = {};
     rankNearbyPools = {};
+    rankAwardPools = {};
     rankResultCandidates = [];
     rankShownPlaceIds = new Set();
     trackUsage("filter_apply", { keyword:rankFilter.keyword || "", meal:rankFilter.meal || "", cuisine:rankFilter.cuisine || "", travel:rankFilter.travel || "", open:rankFilter.open || "", award:rankAwardText(rankFilter), city:rankFilter.city || "", area:rankFilter.area || "", village:rankFilter.village || "" });

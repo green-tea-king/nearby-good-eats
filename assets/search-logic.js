@@ -168,14 +168,91 @@
     });
   }
 
+  function normalizeAwardFilterValue(value) {
+    const text = String(value || "").trim();
+    return text === "米其林星" ? "米其林星級" : text;
+  }
+
+  function normalizeTaiwanText(value) {
+    return String(value || "").trim().replace(/台/g, "臺").replace(/\s+/g, "");
+  }
+
+  function awardOptionForValue(value, options = []) {
+    const normalized = normalizeAwardFilterValue(value);
+    return (Array.isArray(options) ? options : []).find(option =>
+      normalizeAwardFilterValue(option?.label) === normalized
+    ) || { label:normalized };
+  }
+
+  function awardMatchesOption(award = {}, option = {}) {
+    if (option.guide) {
+      return award.guide === option.guide && (!option.level || award.level === option.level);
+    }
+    const value = normalizeAwardFilterValue(option.label);
+    if (value === "米其林三星") return award.guide === "michelin" && award.level === "三星";
+    if (value === "米其林二星") return award.guide === "michelin" && award.level === "二星";
+    if (value === "米其林一星") return award.guide === "michelin" && award.level === "一星";
+    if (value === "米其林星級") return award.guide === "michelin";
+    if (value === "米其林入選") return award.guide === "michelin_selected";
+    if (value === "必比登") return award.guide === "bib";
+    if (value === "500盤") return award.guide === "500plate";
+    if (value === "500碗") return award.guide === "500bowl";
+    if (value === "500甜") return award.guide === "500sweet";
+    return false;
+  }
+
+  function awardEntryMatchesValues(entry = {}, values = [], options = []) {
+    const selected = [...new Set((Array.isArray(values) ? values : [values])
+      .map(normalizeAwardFilterValue)
+      .filter(value => value && value !== "不限"))];
+    if (!selected.length) return false;
+    const awards = Array.isArray(entry.awards) ? entry.awards : [];
+    if (!awards.length) return false;
+    const selectedOptions = selected.map(value => awardOptionForValue(value, options));
+    return awards.some(award => selectedOptions.some(option => awardMatchesOption(award, option)));
+  }
+
+  function awardSearchQueriesFromEntries(entries = [], values = [], options = [], { city = "", area = "", limit = 8 } = {}) {
+    const normalizedCity = normalizeTaiwanText(city);
+    const normalizedArea = normalizeTaiwanText(area);
+    const max = Math.max(1, Number(limit) || 8);
+    const queries = [];
+    const seen = new Set();
+    for (const entry of Array.isArray(entries) ? entries : []) {
+      if (!awardEntryMatchesValues(entry, values, options)) continue;
+      const entryCity = normalizeTaiwanText(entry.city);
+      const entryArea = normalizeTaiwanText(entry.district || entry.area);
+      const entryAddress = normalizeTaiwanText(entry.address);
+      if (normalizedCity && entryCity !== normalizedCity) continue;
+      if (normalizedArea && entryArea !== normalizedArea && !entryAddress.includes(normalizedArea)) continue;
+      const name = String(entry.name || "").trim();
+      if (!name) continue;
+      const cityText = String(city || entry.city || "").trim();
+      const areaText = String(area || entry.district || entry.area || "").trim();
+      const textQuery = [cityText, areaText, name, "餐廳"].filter(Boolean).join(" ");
+      const key = normalizeTaiwanText(textQuery);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      queries.push({
+        textQuery,
+        entryName:name,
+        city:cityText,
+        area:areaText,
+        awardValues:[...new Set((Array.isArray(values) ? values : [values]).map(normalizeAwardFilterValue).filter(Boolean))],
+      });
+      if (queries.length >= max) break;
+    }
+    return queries;
+  }
+
   function relaxedAwardValues(values = []) {
-    const selected = [...new Set((Array.isArray(values) ? values : [values]).filter(Boolean))];
+    const selected = [...new Set((Array.isArray(values) ? values : [values]).map(normalizeAwardFilterValue).filter(Boolean))];
     if (!selected.length) return [];
     const michelinLevels = new Set(["米其林一星", "米其林二星", "米其林三星"]);
     if (!selected.some(value => michelinLevels.has(value))) return [];
     const relaxed = [];
     for (const value of selected) {
-      const next = michelinLevels.has(value) ? "米其林星" : value;
+      const next = michelinLevels.has(value) ? "米其林星級" : value;
       if (!relaxed.includes(next)) relaxed.push(next);
     }
     return relaxed;
@@ -212,6 +289,9 @@
     keywordMatchDetails,
     resolveCandidateLocation,
     mergeCandidateContext,
+    normalizeAwardFilterValue,
+    awardEntryMatchesValues,
+    awardSearchQueriesFromEntries,
     relaxedAwardValues,
     automaticFallbackRelaxations,
     shouldDeferFilterRebuild,

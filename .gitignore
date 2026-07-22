@@ -24,8 +24,6 @@ scripts/build-core-awards-acquisition-queue.js
 scripts/build-core-awards-review-queue.js
 scripts/build-core-awards-source-summary.js
 scripts/build-core-awards-strict-gap-report.js
-scripts/enrich-core-awards-targeted-google.js
-scripts/enrich-core-awards-with-google-places.js
 scripts/enrich-core-michelin-official-details.js
 scripts/merge-michelin-taipei-details.js
 scripts/normalize-core-address-escapes.js

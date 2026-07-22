@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.19.2
+版本：2026.07.22.2
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前原始碼準備發布版本為 `2026.07.19.2`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
+目前原始碼準備發布版本為 `2026.07.22.2`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
@@ -158,7 +158,7 @@ https://green-tea-king.github.io/nearby-good-eats/
 5. 時段：早餐 / 早茶 / 午餐 / 午茶 / 晚餐 / 消夜
 6. 吃法：單點 / 吃到飽
 7. 飲食：葷食 / 素食
-8. 評鑑：米其林三星 / 米其林二星 / 米其林一星 / 米其林星 / 米其林入選 / 必比登 / 綠星 / 500盤 / 500碗 / 500甜
+8. 評鑑：米其林三星 / 米其林二星 / 米其林一星 / 米其林星級 / 米其林入選 / 必比登 / 綠星 / 500盤 / 500碗 / 500甜
 
 ### 預設值
 
@@ -185,7 +185,7 @@ https://green-tea-king.github.io/nearby-good-eats/
 - 關鍵字支援多詞，例如 `滷肉飯 排骨湯`。多詞採 AND 條件，每個詞都必須命中；卡片會標示命中來源，例如店名、類型、評論摘要、Google 摘要。
 - 關鍵字無結果時只提供「放寬關鍵字」或取消條件，不改用不相干推薦。
 - `吃到飽` 是高風險近似濾網，不能只因為搜尋詞命中就通過；結果必須在店名、類型、地址、Google 摘要或評論摘要出現吃到飽、自助餐、buffet、放題、無限供應或已知吃到飽品牌等明確證據，且會排除「不是吃到飽、單點制」等反向描述。
-- `評鑑` 是本地批次資料硬濾網，只讀 `assets/awards-taiwan.json` 已整理的 Michelin、Bib、Michelin Selected、500盤、500碗與 500甜資料；不把評鑑選項丟進 Google 搜尋詞，也不增加即時 Google API 調用。Michelin 可選三星 / 二星 / 一星，也可選全部米其林星。
+- `評鑑` 是本地批次資料硬濾網，來源為 `assets/awards-taiwan.json` 已整理的 Michelin、Bib、Michelin Selected、500盤、500碗與 500甜資料；使用者選評鑑時，前台必須先查本地評鑑名單，依評鑑、縣市與行政區縮小候選後，才少量補 Google Text Search 取得 place id、評分與評論數。預設補查上限為 8 筆評鑑店名，避免把本地清單全量外查。Michelin 可選三星 / 二星 / 一星，也可選全部米其林星級。
 - 行政區與里會先 geocode 成座標，作為 Google Places Text Search 的 location bias；搜尋仍保留文字條件，但不只靠地址文字比對。
 - 排行榜會做分店 / 連鎖店分群，先依綜合分數排序，同品牌多分店只保留最高分卡片，卡片上提示合併的同品牌數量。
 - 近似 / AI 濾網：Google 沒有直接欄位時，先以店名、類型、摘要、Google flags 判斷，後續可接後端 AI proxy 強化。
@@ -774,6 +774,7 @@ VERSION = 2026.06.27.22
 
 - 不要加入假餐廳資料或死資料。
 - Google API key 必須留在後端 Secret；若另設測試 key，也必須設定 referrer 與 API 限制。
+- 批次 Google enrichment 腳本不得讀取公開前端 Maps key；必須使用明確的 `GOOGLE_MAPS_SERVER_API_KEY`，避免本機腳本因 browser referrer 限制造成大量 403。
 - 所有新濾網都要確認是否真的會影響 Google 查詢、硬過濾或 AI 判斷，不要只做 UI。
 - 所有新功能都要預設使用快取、延後補抓、可取消或可去重的 API 流程；不能為了 UI 即時感而無限制重打 Google API。
 - 手機 360px 寬度一定要檢查，避免濾網、卡片按鈕或文字擠版。
