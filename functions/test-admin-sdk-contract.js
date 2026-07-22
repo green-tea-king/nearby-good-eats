@@ -23,9 +23,12 @@ assert.match(source, /require\(["']firebase-admin\/app-check["']\)/);
 assert.match(source, /require\(["']firebase-admin\/firestore["']\)/);
 assert.match(source, /\binitializeApp\(\)/);
 assert.match(source, /\bgetFirestore\(\)/);
-assert.match(source, /\bgetAuth\(\)\.verifyIdToken\(/);
-assert.match(source, /\bgetAppCheck\(\)\.verifyToken\(/);
+assert.match(source, /\bauth\(\)\.verifyIdToken\(/);
+assert.match(source, /\bappCheck\(\)\.verifyToken\(/);
 assert.match(source, /\bFieldValue\.serverTimestamp\(\)/);
+assert.match(source, /\bfunction auth\(\)/);
+assert.match(source, /\bfunction appCheck\(\)/);
+assert.match(source, /\bfunction firestore\(\)/);
 
 const { initializeApp } = require("firebase-admin/app");
 const { getAuth } = require("firebase-admin/auth");

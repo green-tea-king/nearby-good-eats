@@ -44,7 +44,9 @@ const result = spawnSync(
   npxCommand,
   [
     "--yes",
+    "-p",
     `firebase-tools@${FIREBASE_TOOLS_VERSION}`,
+    "firebase",
     "emulators:exec",
     "--project",
     PROJECT_ID,
