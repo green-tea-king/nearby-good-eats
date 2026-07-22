@@ -12,6 +12,8 @@ const {
   keywordMatchDetails,
   resolveCandidateLocation,
   mergeCandidateContext,
+  normalizeAwardFilterValue,
+  awardSearchQueriesFromEntries,
 } = require("../assets/search-logic.js");
 
 async function run() {
@@ -121,9 +123,20 @@ async function run() {
     "補上查詢中繼資料時不得再次覆蓋地址解析出的縣市",
   );
 
-  assert.deepEqual(relaxedAwardValues(["米其林一星"]), ["米其林星"]);
-  assert.deepEqual(relaxedAwardValues(["米其林二星", "必比登"]), ["米其林星", "必比登"]);
+  assert.equal(normalizeAwardFilterValue("米其林星"), "米其林星級");
+  assert.deepEqual(relaxedAwardValues(["米其林一星"]), ["米其林星級"]);
+  assert.deepEqual(relaxedAwardValues(["米其林二星", "必比登"]), ["米其林星級", "必比登"]);
   assert.deepEqual(relaxedAwardValues(["必比登"]), []);
+
+  const awardQueries = awardSearchQueriesFromEntries(
+    [
+      { name:"測試三星店", city:"臺北市", district:"中山區", awards:[{ guide:"michelin", level:"三星" }] },
+      { name:"測試碗店", city:"臺中市", district:"北區", awards:[{ guide:"500bowl" }] },
+    ],
+    ["米其林星"],
+    [{ label:"米其林星級", guide:"michelin" }],
+  );
+  assert.deepEqual(awardQueries.map(query => query.textQuery), ["臺北市 中山區 測試三星店 餐廳"]);
 
   const fallbackSteps = automaticFallbackRelaxations({
     keyword: "麵線",
