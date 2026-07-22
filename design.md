@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.22.2
+版本：2026.07.22.3
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前原始碼準備發布版本為 `2026.07.22.2`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
+目前原始碼準備發布版本為 `2026.07.22.3`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
@@ -775,6 +775,7 @@ VERSION = 2026.06.27.22
 - 不要加入假餐廳資料或死資料。
 - Google API key 必須留在後端 Secret；若另設測試 key，也必須設定 referrer 與 API 限制。
 - 批次 Google enrichment 腳本不得讀取公開前端 Maps key；必須使用明確的 `GOOGLE_MAPS_SERVER_API_KEY`，避免本機腳本因 browser referrer 限制造成大量 403。
+- Functions 依賴安全修補優先使用非破壞性 `npm audit fix`；若 audit 要求 `--force` 並牽涉 Firebase Admin / Functions 重大版本變更，必須另開任務規劃與完整測試，不可直接套用。
 - 所有新濾網都要確認是否真的會影響 Google 查詢、硬過濾或 AI 判斷，不要只做 UI。
 - 所有新功能都要預設使用快取、延後補抓、可取消或可去重的 API 流程；不能為了 UI 即時感而無限制重打 Google API。
 - 手機 360px 寬度一定要檢查，避免濾網、卡片按鈕或文字擠版。
