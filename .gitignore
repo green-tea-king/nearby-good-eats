@@ -3,6 +3,7 @@ scripts/__pycache__/
 *.pyc
 firebase-debug.log
 firestore-debug.log
+functions/functions.yaml
 
 # Generated reports and candidate artifacts from awards/data enrichment workflows
 assets/*-report.json
