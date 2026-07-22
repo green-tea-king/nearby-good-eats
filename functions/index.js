@@ -1,11 +1,7 @@
 const { initializeApp } = require("firebase-admin/app");
-const { getAuth } = require("firebase-admin/auth");
-const { getAppCheck } = require("firebase-admin/app-check");
-const { getFirestore, FieldValue } = require("firebase-admin/firestore");
 const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
-const { logger } = require("firebase-functions");
-const { GoogleAuth } = require("google-auth-library");
+const logger = require("firebase-functions/logger");
 const { MAX_ITEMS:AI_MAX_ITEMS, buildVertexRequest, parseVertexResponse } = require("./ai-classifier");
 const { sanitizeApiKey, authorizationHeader } = require("./key-utils");
 const { localizedText } = require("./summary-utils");
@@ -13,14 +9,12 @@ const { createSearchQuotaEnforcer, stripInternalPayload } = require("./search-qu
 const crypto = require("crypto");
 
 initializeApp();
-const db = getFirestore();
 const GOOGLE_MAPS_API_KEY = defineSecret("GOOGLE_MAPS_API_KEY");
 const REQUIRE_APP_CHECK = process.env.REQUIRE_APP_CHECK !== "false";
 // Secure defaults: App Check and the 30/day quota are enabled unless explicitly disabled for a local test.
 const DISABLE_SEARCH_QUOTA = process.env.DISABLE_SEARCH_QUOTA === "true";
 const DAILY_SEARCH_LIMIT = Number(process.env.DAILY_SEARCH_LIMIT || 30);
 const VERTEX_AI_MODEL = process.env.VERTEX_AI_MODEL || "gemini-2.5-flash-lite";
-const vertexAuth = new GoogleAuth({ scopes:["https://www.googleapis.com/auth/cloud-platform"] });
 const API_COST_USD = {
   textSearch: 0.032,
   nearbySearch: 0.032,
@@ -35,6 +29,52 @@ const ALLOWED_ORIGINS = new Set([
   "http://127.0.0.1:4177",
   "http://localhost:4177",
 ]);
+
+let authApi = null;
+let appCheckApi = null;
+let firestoreApi = null;
+let db = null;
+let enforceSearchQuota = null;
+let vertexAuth = null;
+
+function auth() {
+  if (!authApi) authApi = require("firebase-admin/auth").getAuth();
+  return authApi;
+}
+
+function appCheck() {
+  if (!appCheckApi) appCheckApi = require("firebase-admin/app-check").getAppCheck();
+  return appCheckApi;
+}
+
+function firestore() {
+  if (!firestoreApi) firestoreApi = require("firebase-admin/firestore");
+  if (!db) db = firestoreApi.getFirestore();
+  return { db, FieldValue: firestoreApi.FieldValue };
+}
+
+function searchQuotaEnforcer() {
+  if (!enforceSearchQuota) {
+    const { db:firestoreDb, FieldValue } = firestore();
+    enforceSearchQuota = createSearchQuotaEnforcer({
+      db:firestoreDb,
+      FieldValue,
+      isAdminEmail,
+      httpError,
+      disableSearchQuota: DISABLE_SEARCH_QUOTA,
+      dailySearchLimit: DAILY_SEARCH_LIMIT,
+    });
+  }
+  return enforceSearchQuota;
+}
+
+function vertexAuthClient() {
+  if (!vertexAuth) {
+    const { GoogleAuth } = require("google-auth-library");
+    vertexAuth = new GoogleAuth({ scopes:["https://www.googleapis.com/auth/cloud-platform"] });
+  }
+  return vertexAuth;
+}
 
 const FIELD_MASK = [
   "places.id",
@@ -153,7 +193,7 @@ async function requireUser(req) {
   if (!match) {
     throw httpError("missing auth token", 401);
   }
-  return getAuth().verifyIdToken(match[1]);
+  return auth().verifyIdToken(match[1]);
 }
 
 async function verifyAppCheck(req) {
@@ -163,7 +203,7 @@ async function verifyAppCheck(req) {
     return { ok: false, required: false, missing: true };
   }
   try {
-    const decoded = await getAppCheck().verifyToken(String(token));
+    const decoded = await appCheck().verifyToken(String(token));
     return { ok: true, appId: decoded.appId || "" };
   } catch (e) {
     if (REQUIRE_APP_CHECK) throw httpError("invalid app check token", 401, { appCheckInvalid: true });
@@ -175,7 +215,7 @@ async function isAdminEmail(email) {
   const normalized = String(email || "").toLowerCase();
   if (!normalized) return false;
   try {
-    const snap = await db.collection("admins").doc(normalized).get();
+    const snap = await firestore().db.collection("admins").doc(normalized).get();
     if (snap.exists) return true;
   } catch (e) {
     logger.warn("admin lookup failed", { email: normalized, error: e.message });
@@ -192,15 +232,6 @@ function estimatedUnits(action) {
 function estimatedCostUsd(action) {
   return Number(API_COST_USD[action] || 0);
 }
-
-const enforceSearchQuota = createSearchQuotaEnforcer({
-  db,
-  FieldValue,
-  isAdminEmail,
-  httpError,
-  disableSearchQuota: DISABLE_SEARCH_QUOTA,
-  dailySearchLimit: DAILY_SEARCH_LIMIT,
-});
 
 function textOf(v) {
   return localizedText(v);
@@ -453,7 +484,7 @@ async function aiClassify(payload) {
   const items = Array.isArray(payload.items) ? payload.items.slice(0, AI_MAX_ITEMS) : [];
   if (!items.length) return { enabled:true, model:VERTEX_AI_MODEL, items:[] };
   const url = `https://us-central1-aiplatform.googleapis.com/v1/projects/${encodeURIComponent(process.env.GCLOUD_PROJECT || "nearby-good-eats")}/locations/us-central1/publishers/google/models/${encodeURIComponent(VERTEX_AI_MODEL)}:generateContent`;
-  const client = await vertexAuth.getClient();
+  const client = await vertexAuthClient().getClient();
   const authHeaders = await client.getRequestHeaders(url);
   const response = await fetch(url, {
     method:"POST",
@@ -478,7 +509,8 @@ const handlers = { textSearch, nearbySearch, placeDetails, routeMatrix, geocode,
 
 async function logApiEvent(decoded, action, started, ok, extra = {}) {
   try {
-    await db.collection("apiEvents").add({
+    const { db:firestoreDb, FieldValue } = firestore();
+    await firestoreDb.collection("apiEvents").add({
       uid: decoded?.uid || "",
       email: decoded?.email || "",
       action,
@@ -525,7 +557,7 @@ exports.api = onRequest({ region: "us-central1", secrets: [GOOGLE_MAPS_API_KEY],
       throw httpError("unknown action", 400);
     }
     const rawPayload = req.body?.payload || {};
-    const quota = await enforceSearchQuota(decoded, action, rawPayload);
+    const quota = await searchQuotaEnforcer()(decoded, action, rawPayload);
     const result = await handler(stripInternalPayload(rawPayload));
     logger.info("api success", {
       action,

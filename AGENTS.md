@@ -101,6 +101,7 @@ node test-key-utils.js
 node test-summary-utils.js
 node test-places-field-mask.js
 node test-ai-classifier.js
+node test-source-discovery-load.js
 npm audit --omit=dev
 Pop-Location
 

@@ -776,6 +776,7 @@ VERSION = 2026.06.27.22
 - Google API key 必須留在後端 Secret；若另設測試 key，也必須設定 referrer 與 API 限制。
 - 批次 Google enrichment 腳本不得讀取公開前端 Maps key；必須使用明確的 `GOOGLE_MAPS_SERVER_API_KEY`，避免本機腳本因 browser referrer 限制造成大量 403。
 - Functions 依賴安全修補優先使用非破壞性 `npm audit fix`；若 audit 要求 `--force` 並牽涉 Firebase Admin / Functions 重大版本變更，必須另開任務規劃與完整測試，不可直接套用。
+- Functions source discovery 必須保持快速載入；Firebase Admin Auth、App Check、Firestore 等重型模組應在 request handler 內 lazy load，避免 Firebase CLI 部署時 manifest discovery 超過 10 秒 timeout。
 - 所有新濾網都要確認是否真的會影響 Google 查詢、硬過濾或 AI 判斷，不要只做 UI。
 - 所有新功能都要預設使用快取、延後補抓、可取消或可去重的 API 流程；不能為了 UI 即時感而無限制重打 Google API。
 - 手機 360px 寬度一定要檢查，避免濾網、卡片按鈕或文字擠版。

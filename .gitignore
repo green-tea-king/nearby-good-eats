@@ -1,6 +1,8 @@
 tmp/
 scripts/__pycache__/
 *.pyc
+firebase-debug.log
+firestore-debug.log
 
 # Generated reports and candidate artifacts from awards/data enrichment workflows
 assets/*-report.json
