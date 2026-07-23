@@ -11,6 +11,15 @@
     return Object.assign({}, filter, { travel:null });
   }
 
+  function travelOriginFilter(filter = {}, defaultTravel = "走路") {
+    return Object.assign({}, filter, {
+      city:"",
+      area:"",
+      village:"",
+      travel:filter.travel || defaultTravel,
+    });
+  }
+
   function withBaseAreaSearchQuery(queries = []) {
     return Array.isArray(queries) && queries.length ? queries : [""];
   }
@@ -282,6 +291,7 @@
   return {
     isReusableSearchCacheValue,
     locationModeFilter,
+    travelOriginFilter,
     withBaseAreaSearchQuery,
     defaultSearchFilter,
     autoRelaxCandidates,
