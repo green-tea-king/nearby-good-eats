@@ -8,6 +8,7 @@ const {
   shouldDeferFilterRebuild,
   isReusableSearchCacheValue,
   locationModeFilter,
+  travelOriginFilter,
   withBaseAreaSearchQuery,
   keywordMatchDetails,
   resolveCandidateLocation,
@@ -21,6 +22,21 @@ async function run() {
   assert.equal(isReusableSearchCacheValue(["place"]), true, "有資料的搜尋結果可沿用快取");
   assert.equal(isReusableSearchCacheValue({ items:[] }), true, "非候選陣列維持既有快取行為");
   assert.equal(locationModeFilter({ travel:"走路", city:"臺北市" }).travel, null, "地區模式不得保留交通選取狀態");
+  assert.equal(
+    travelOriginFilter({ travel:"開車", city:"臺北市", area:"中正區" }).travel,
+    "開車",
+    "交通定位不得把使用者已選的開車模式改回走路",
+  );
+  assert.deepEqual(
+    { city:travelOriginFilter({ travel:"開車", city:"臺北市", area:"中正區" }).city, area:travelOriginFilter({ travel:"開車", city:"臺北市", area:"中正區" }).area },
+    { city:"", area:"" },
+    "交通定位仍應清除地區條件，維持地區與交通互斥",
+  );
+  assert.equal(
+    travelOriginFilter({ travel:null }).travel,
+    "走路",
+    "沒有既有交通模式時，定位才使用預設走路",
+  );
   assert.deepEqual(withBaseAreaSearchQuery([]), [""], "只選地區時仍須建立基本餐廳查詢");
   assert.deepEqual(withBaseAreaSearchQuery(["火鍋"]), ["火鍋"], "已有條件時不得增加重複查詢");
   assert.equal(
