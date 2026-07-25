@@ -28,14 +28,29 @@ for ($Index = 0; $Index -lt ($MaxAttempts - 1); $Index++) {
   $RetryDelays += [int][Math]::Min($BaseDelaySeconds * [Math]::Pow(2, $Index), 60)
 }
 
+function Get-StableProcessWorkingDirectory {
+  $TempPath = [System.IO.Path]::GetTempPath()
+  try {
+    return (Resolve-Path -LiteralPath $TempPath).Path
+  } catch {
+    return $TempPath
+  }
+}
+
 function Invoke-GhCommandOnce {
   param(
     [Parameter(Mandatory = $true)][string]$Label,
     [Parameter(Mandatory = $true)][scriptblock]$Command
   )
 
-  $Output = & $Command 2>&1
-  $ExitCode = $LASTEXITCODE
+  $StableWorkingDirectory = Get-StableProcessWorkingDirectory
+  Push-Location -LiteralPath $StableWorkingDirectory
+  try {
+    $Output = & $Command 2>&1
+    $ExitCode = $LASTEXITCODE
+  } finally {
+    Pop-Location
+  }
   $OutputText = (@($Output | ForEach-Object { $_.ToString() }) -join [Environment]::NewLine).Trim()
   if ($ExitCode -ne 0) {
     throw "gh command failed ($Label, exit $ExitCode): $OutputText"

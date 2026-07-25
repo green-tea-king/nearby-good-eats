@@ -1,6 +1,6 @@
 # 在地美食榜專案說明
 
-版本：2026.07.23.1
+版本：2026.07.25.1
 
 ## 未來開工必讀文件
 
@@ -16,7 +16,7 @@
 
 這是一個「靜態前端 + Firebase 安全層 + Google 真資料 + 本地批次評鑑資料」的手機 Web App。前台部署於 GitHub Pages，使用 Firebase Google Auth 登入；需付費或具濫用風險的 Places、Routes、Geocode、照片與 Vertex AI 呼叫由 Firebase Functions proxy 執行。Firestore 保存使用事件、API 事件與每日搜尋配額。
 
-目前原始碼準備發布版本為 `2026.07.23.1`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
+目前原始碼準備發布版本為 `2026.07.25.1`；正式站實際版本仍須以線上 `VERSION` 與部署 smoke 結果確認。正式站為：
 
 ```text
 https://green-tea-king.github.io/nearby-good-eats/
@@ -609,7 +609,7 @@ https://green-tea-king.github.io/nearby-good-eats/
 8. 等 GitHub Pages workflow 完成，再執行 `scripts/smoke-live-site.ps1 -ExpectedVersion <VERSION>`。
 9. 用 Chrome 實測登入、套用搜尋、3 張卡片、下一組、分享、詳情照片與後台。
 
-`deploy-github-contents.ps1` 不會建立或推送 commit。執行前必須先確認遠端 `main` 已包含要發布的來源，而且遠端 `VERSION` 等於本機版本；腳本也會核對固定 repository、default branch、Pages URL 與 `build_type`，其中任一不符就停止。
+`deploy-github-contents.ps1` 不會建立或推送 commit。執行前必須先確認遠端 `main` 已包含要發布的來源，而且遠端 `VERSION` 等於本機版本；腳本也會核對固定 repository、default branch、Pages URL 與 `build_type`，其中任一不符就停止。WebDAV／RaiDrive 環境下，部署腳本的 GitHub CLI 子程序會切到本機暫存目錄執行，避免把 WebDAV 目錄當作 child-process cwd；Pages artifact 建置則用明確 `--git-dir`／`--work-tree` 讀 Git 追蹤清單，並對常見 WebDAV 暫時性讀取錯誤做有上限的重試。
 
 GitHub 的 read-only 查詢若遇到 HTTP 502、503、504 或整份 HTML 閘道錯誤，可以依腳本設定有限重試；401、403、404、409、422 與本機錯誤不重試。`workflow_dispatch` 是會造成部署的 mutation，只送出一次，不得因傳輸錯誤自動重送；後續以回傳 run URL 或遠端 commit SHA 找到並監看該次 workflow。
 

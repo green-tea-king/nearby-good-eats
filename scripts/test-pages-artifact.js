@@ -88,6 +88,11 @@ assert(
   "APP_VERSION_FALLBACK 必須等於 VERSION"
 );
 
+const artifactBuilder = fs.readFileSync(path.join(__dirname, "build-pages-artifact.js"), "utf8");
+assert.match(artifactBuilder, /stableProcessWorkingDirectory/);
+assert.match(artifactBuilder, /--git-dir=/);
+assert.match(artifactBuilder, /--work-tree=/);
+
 const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), "nearby-good-eats-pages-"));
 const result = buildArtifact({ repoRoot, manifestPath, outputDir });
 assert.strictEqual(result.manifestCount, manifest.length);

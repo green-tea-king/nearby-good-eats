@@ -38,6 +38,8 @@ const deployScriptPath = path.join(repoRoot, "scripts", "deploy-github-contents.
 const deployScript = fs.readFileSync(deployScriptPath, "utf8");
 assert.match(deployScript, /gh workflow run deploy-pages\.yml/);
 assert.match(deployScript, /gh run watch/);
+assert.match(deployScript, /Get-StableProcessWorkingDirectory/);
+assert.match(deployScript, /Push-Location -LiteralPath \$StableWorkingDirectory/);
 assert.match(deployScript, /Deployment target must be green-tea-king\/nearby-good-eats main/);
 assert.match(deployScript, /Pages build_type must be workflow before dispatch/);
 assert.match(deployScript, /pagesUrl = \$pages\.html_url/i);
