@@ -68,12 +68,45 @@ function normalizeSources(value) {
   return out;
 }
 
+function extractJsonObjectText(text) {
+  const raw = String(text || "").trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
+  if (raw.startsWith("{") && raw.endsWith("}")) return raw;
+
+  const start = raw.indexOf("{");
+  if (start < 0) return "";
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let index = start; index < raw.length; index++) {
+    const char = raw[index];
+    if (escaped) {
+      escaped = false;
+      continue;
+    }
+    if (char === "\\") {
+      escaped = inString;
+      continue;
+    }
+    if (char === "\"") {
+      inString = !inString;
+      continue;
+    }
+    if (inString) continue;
+    if (char === "{") depth++;
+    if (char === "}") {
+      depth--;
+      if (depth === 0) return raw.slice(start, index + 1);
+    }
+  }
+  return "";
+}
+
 function parseVertexResponse(response, allowedIds = new Set()) {
   const text = response?.candidates?.[0]?.content?.parts?.map(part => part.text || "").join("") || "";
   if (!text) throw new Error("Vertex AI returned no text");
   let parsed;
   try {
-    parsed = JSON.parse(text.replace(/^```json\s*|\s*```$/g, ""));
+    parsed = JSON.parse(extractJsonObjectText(text));
   } catch (_) {
     throw new Error("Vertex AI returned invalid JSON");
   }

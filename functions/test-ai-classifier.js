@@ -38,4 +38,23 @@ assert.deepEqual(parsed[0].tags.service, ["吃到飽"]);
 assert.equal(parsed[0].confidence.service, 1);
 assert.equal(parsed[0].sources.service[0].label, "評論摘要");
 
+const wrappedResponse = {
+  candidates:[{ content:{ parts:[{ text:[
+    "以下是依照 INPUT_JSON 分析後的結果：",
+    "```json",
+    JSON.stringify({ items:[{
+      id:"p1",
+      tags:{ meal:["午餐"] },
+      confidence:{ meal:0.72 },
+      reason:"Google flags 顯示 servesLunch。",
+      sources:{ meal:[{ field:"googleFlags.servesLunch", label:"Google Flags", evidence:"servesLunch=true" }] },
+    }] }),
+    "```",
+  ].join("\n") }] } }],
+};
+const wrappedParsed = parseVertexResponse(wrappedResponse, new Set(["p1"]));
+assert.equal(wrappedParsed.length, 1);
+assert.deepEqual(wrappedParsed[0].tags.meal, ["午餐"]);
+assert.equal(wrappedParsed[0].confidence.meal, 0.72);
+
 console.log("AI classifier tests passed");
