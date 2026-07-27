@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-07-20",
-  "updated": "2026-07-20",
+  "version": "api-batch-2026-07-27",
+  "updated": "2026-07-27",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -1883,6 +1883,436 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "一甲子餐飲",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 3,
+            "totalViews": 10836,
+            "topVideos": [
+              {
+                "id": "FIxbu_iBrtw",
+                "title": "沒吃過別說你來過萬華！老字號必吃清單。#一甲子餐飲 #萬華美食 #艋舺美食 #台北美食 #萬華 #控肉飯 #刈包 #米其林必比登 #古早味 #排隊美食 #小吃 #台灣小吃 #TaiwanFood",
+                "channelTitle": "Die For Food 大發福",
+                "publishedAt": "2026-03-21T03:22:52Z",
+                "views": 4264,
+                "url": "https://www.youtube.com/watch?v=FIxbu_iBrtw"
+              },
+              {
+                "id": "Xb8OERUisaE",
+                "title": "台北北萬華8經典古早味美食！ 五年必比登控肉飯刈包，70年歷史甜不辣，60年歷史四神湯，鹹粥，蚵仔煎，楊桃冰！Explore Taipei N Wanhua's 8 legendary eats!",
+                "channelTitle": "美國平民 USCommoner",
+                "publishedAt": "2026-02-21T17:40:33Z",
+                "views": 3607,
+                "url": "https://www.youtube.com/watch?v=Xb8OERUisaE"
+              },
+              {
+                "id": "f9b47OW0du0",
+                "title": "城市記憶｜萬華在地人認證超讚控肉飯！觀光客也大多了吧",
+                "channelTitle": "Shem Rios",
+                "publishedAt": "2026-06-30T13:52:50Z",
+                "views": 1075,
+                "url": "https://www.youtube.com/watch?v=f9b47OW0du0"
+              }
+            ],
+            "query": "臺北市 一甲子餐飲 美食"
+          },
+          "evidence": [
+            "Die For Food 大發福：沒吃過別說你來過萬華！老字號必吃清單。#一甲子餐飲 #萬華美食 #艋舺美食 #台北美食 #萬華 #控肉飯 #刈包 #米其林必比登 #古早味 #排隊美食 #小吃 #台灣小吃 #TaiwanFood",
+            "美國平民 USCommoner：台北北萬華8經典古早味美食！ 五年必比登控肉飯刈包，70年歷史甜不辣，60年歷史四神湯，鹹粥，蚵仔煎，楊桃冰！Explore Taipei N Wanhua's 8 legendary eats!",
+            "Shem Rios：城市記憶｜萬華在地人認證超讚控肉飯！觀光客也大多了吧"
+          ],
+          "url": "https://www.youtube.com/watch?v=FIxbu_iBrtw",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "一味品",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 7,
+            "totalViews": 78297,
+            "topVideos": [
+              {
+                "id": "p01hVeLupdE",
+                "title": "【台南市場美食推薦】鹹香肉燥碗粿/豆菜麵/古早味飯桌仔/虱目魚粥/現炸排骨酥/鱔魚意麵/蒜酥豬腳飯 #台灣1001個故事​",
+                "channelTitle": "台灣Cheers",
+                "publishedAt": "2026-05-28T11:00:25Z",
+                "views": 26172,
+                "url": "https://www.youtube.com/watch?v=p01hVeLupdE"
+              },
+              {
+                "id": "lHcqJaL35n4",
+                "title": "【台南市場美食推薦】鹹香肉燥碗粿/豆菜麵/古早味飯桌仔/虱目魚粥/現炸排骨酥/鱔魚意麵/蒜酥豬腳飯【台灣1001個故事】 @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-05-28T12:30:28Z",
+                "views": 16416,
+                "url": "https://www.youtube.com/watch?v=lHcqJaL35n4"
+              },
+              {
+                "id": "V7WzWb8VcQc",
+                "title": "【台南中西區美食推薦】大廚版豪華便當/鴨肉麵/清燉牛肉麵/炭烤夾心酥/傳統膨餅/碗粿/沙茶蛋餅/脆皮炸雞【台灣1001個故事】  @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-06-10T10:30:05Z",
+                "views": 15485,
+                "url": "https://www.youtube.com/watch?v=V7WzWb8VcQc"
+              }
+            ],
+            "query": "臺南市 一味品 美食"
+          },
+          "evidence": [
+            "台灣Cheers：【台南市場美食推薦】鹹香肉燥碗粿/豆菜麵/古早味飯桌仔/虱目魚粥/現炸排骨酥/鱔魚意麵/蒜酥豬腳飯 #台灣1001個故事​",
+            "台灣1001個故事復刻版：【台南市場美食推薦】鹹香肉燥碗粿/豆菜麵/古早味飯桌仔/虱目魚粥/現炸排骨酥/鱔魚意麵/蒜酥豬腳飯【台灣1001個故事】 @TaiwanCheers",
+            "台灣1001個故事復刻版：【台南中西區美食推薦】大廚版豪華便當/鴨肉麵/清燉牛肉麵/炭烤夾心酥/傳統膨餅/碗粿/沙茶蛋餅/脆皮炸雞【台灣1001個故事】  @TaiwanCheers"
+          ],
+          "url": "https://www.youtube.com/watch?v=p01hVeLupdE",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "人和園",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 92,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 2207,
+            "topVideos": [
+              {
+                "id": "zL8ArffbUaM",
+                "title": "沒想到豌豆可以好吃成這樣！！！！！#大文的人間美味特報 #人和園餐廳 #台北美食",
+                "channelTitle": "這裡是大文 dawendesu",
+                "publishedAt": "2026-06-21T09:12:34Z",
+                "views": 1075,
+                "url": "https://www.youtube.com/watch?v=zL8ArffbUaM"
+              },
+              {
+                "id": "wbB_2eWHWOA",
+                "title": "2026人和園雲南餐廳 #米其林餐廳 #台北美食推薦",
+                "channelTitle": "陳胡",
+                "publishedAt": "2026-07-20T02:33:32Z",
+                "views": 871,
+                "url": "https://www.youtube.com/watch?v=wbB_2eWHWOA"
+              },
+              {
+                "id": "iBWqBI-qahQ",
+                "title": "長輩會喜歡的桌菜餐廳 雲南料理 aka 米其林必比登 #美食",
+                "channelTitle": "Mila說，把拔小聲點",
+                "publishedAt": "2026-02-16T02:00:46Z",
+                "views": 233,
+                "url": "https://www.youtube.com/watch?v=iBWqBI-qahQ"
+              }
+            ],
+            "query": "臺北市 人和園 美食"
+          },
+          "evidence": [
+            "這裡是大文 dawendesu：沒想到豌豆可以好吃成這樣！！！！！#大文的人間美味特報 #人和園餐廳 #台北美食",
+            "陳胡：2026人和園雲南餐廳 #米其林餐廳 #台北美食推薦",
+            "Mila說，把拔小聲點：長輩會喜歡的桌菜餐廳 雲南料理 aka 米其林必比登 #美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=zL8ArffbUaM",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "三好一公道當歸鴨",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 92,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 0,
+            "totalViews": 61401,
+            "topVideos": [
+              {
+                "id": "_44I-9KCwmE",
+                "title": "台湾旅行｜25スポットを巡る台南4日間。人気グルメ10軒・カフェ7軒・有名スポット8軒・昭和レトロな路地裏散歩を愉しみながら、美食の街を歩く｜神農街・信義街・府中街・新美街",
+                "channelTitle": "Lassy Travel -夫婦で世界の街歩き-",
+                "publishedAt": "2026-03-07T09:12:09Z",
+                "views": 61401,
+                "url": "https://www.youtube.com/watch?v=_44I-9KCwmE"
+              }
+            ],
+            "query": "臺南市 三好一公道當歸鴨 美食"
+          },
+          "evidence": [
+            "Lassy Travel -夫婦で世界の街歩き-：台湾旅行｜25スポットを巡る台南4日間。人気グルメ10軒・カフェ7軒・有名スポット8軒・昭和レトロな路地裏散歩を愉しみながら、美食の街を歩く｜神農街・信義街・府中街・新美街"
+          ],
+          "url": "https://www.youtube.com/watch?v=_44I-9KCwmE",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "三姐妹農家樂",
+      "city": "新北市",
+      "area": "新北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 1,
+            "totalViews": 107061,
+            "topVideos": [
+              {
+                "id": "tIQ2_JyD-6I",
+                "title": "深入金山萬里交界，挖掘Google 地圖上容易錯過的寶藏店家，品嚐老宅米其林家常傳承手藝、名店半價在地隱藏版甜點，打卡佛心免門票樹屋農場，回家前再泡一回CP值湯屋，大人小孩都愛的輕鬆一日萬金遊！",
+                "channelTitle": "CHILL先生一家人",
+                "publishedAt": "2026-02-05T13:24:03Z",
+                "views": 106548,
+                "url": "https://www.youtube.com/watch?v=tIQ2_JyD-6I"
+              },
+              {
+                "id": "IIHzKu1Apk4",
+                "title": "《主播凹鬥Outdoor中》你選哪一道！全台第一家祖傳沙茶汕頭鍋🔎最適合聊祕密異國洞穴酒吧㊙️三姊妹傳承私房農家菜🥢新派台菜餐酒創意精緻🍸",
+                "channelTitle": "壹電視NEXT TV",
+                "publishedAt": "2026-03-22T08:30:08Z",
+                "views": 357,
+                "url": "https://www.youtube.com/watch?v=IIHzKu1Apk4"
+              },
+              {
+                "id": "cLdAeIFqUJA",
+                "title": "米其林必比登英文怎麼說？外國人也瘋狂的新北神級小吃！用簡單英語聊台灣美食文化！New Taipei City's legendary snacks that even foreigners love!",
+                "channelTitle": "【用英語認識台灣 Speak English to Understand Taiwan】",
+                "publishedAt": "2026-06-05T00:00:17Z",
+                "views": 156,
+                "url": "https://www.youtube.com/watch?v=cLdAeIFqUJA"
+              }
+            ],
+            "query": "新北市 三姐妹農家樂 美食"
+          },
+          "evidence": [
+            "CHILL先生一家人：深入金山萬里交界，挖掘Google 地圖上容易錯過的寶藏店家，品嚐老宅米其林家常傳承手藝、名店半價在地隱藏版甜點，打卡佛心免門票樹屋農場，回家前再泡一回CP值湯屋，大人小孩都愛的輕鬆一日萬金遊！",
+            "壹電視NEXT TV：《主播凹鬥Outdoor中》你選哪一道！全台第一家祖傳沙茶汕頭鍋🔎最適合聊祕密異國洞穴酒吧㊙️三姊妹傳承私房農家菜🥢新派台菜餐酒創意精緻🍸",
+            "【用英語認識台灣 Speak English to Understand Taiwan】：米其林必比登英文怎麼說？外國人也瘋狂的新北神級小吃！用簡單英語聊台灣美食文化！New Taipei City's legendary snacks that even foreigners love!"
+          ],
+          "url": "https://www.youtube.com/watch?v=tIQ2_JyD-6I",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "上好雞肉",
+      "city": "新北市",
+      "area": "新北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 3,
+            "totalViews": 13019,
+            "topVideos": [
+              {
+                "id": "4P_kGb0RS-0",
+                "title": "看似普通的雞肉飯好吃程度無法言喻👏🏼難怪是必比登推薦啊🤤-📍上好雞肉",
+                "channelTitle": "YC吃喝玩樂",
+                "publishedAt": "2026-07-16T11:43:56Z",
+                "views": 11422,
+                "url": "https://www.youtube.com/watch?v=4P_kGb0RS-0"
+              },
+              {
+                "id": "0hveeqQk_ZI",
+                "title": "低調路邊攤竟是必比登推薦！中和排隊雞肉飯　口感鮮滑只賣70元｜ETtoday旅遊雲",
+                "channelTitle": "ETtoday旅遊雲",
+                "publishedAt": "2026-07-10T14:30:37Z",
+                "views": 888,
+                "url": "https://www.youtube.com/watch?v=0hveeqQk_ZI"
+              },
+              {
+                "id": "IAerIOqZoPA",
+                "title": "在台北，有一種幸福叫做雞肉飯。【雞肉飯 - 強力新棒篇!】最強新勢力竹林、上好、富春全評測！台北最強雞肉飯傳奇！",
+                "channelTitle": "FoodStops",
+                "publishedAt": "2026-06-11T06:00:29Z",
+                "views": 709,
+                "url": "https://www.youtube.com/watch?v=IAerIOqZoPA"
+              }
+            ],
+            "query": "新北市 上好雞肉 美食"
+          },
+          "evidence": [
+            "YC吃喝玩樂：看似普通的雞肉飯好吃程度無法言喻👏🏼難怪是必比登推薦啊🤤-📍上好雞肉",
+            "ETtoday旅遊雲：低調路邊攤竟是必比登推薦！中和排隊雞肉飯　口感鮮滑只賣70元｜ETtoday旅遊雲",
+            "FoodStops：在台北，有一種幸福叫做雞肉飯。【雞肉飯 - 強力新棒篇!】最強新勢力竹林、上好、富春全評測！台北最強雞肉飯傳奇！"
+          ],
+          "url": "https://www.youtube.com/watch?v=4P_kGb0RS-0",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "上海未名麵點",
+      "city": "臺中市",
+      "area": "中區市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 8184,
+            "topVideos": [
+              {
+                "id": "z_FQf_s3wRY",
+                "title": "台中榮獲4次必比登推薦上海未名麵點🇹🇼必點 #豬排酸菜麵 附的醃蔥段是老饕最愛‼️教大家一個我自己的隱藏吃法，同時吃到湯麵跟乾麵的吃法，真的超級好吃 #未名 #必比登 #台中必吃 #Taiwan",
+                "channelTitle": "Vicky帶你吃",
+                "publishedAt": "2026-03-28T14:21:46Z",
+                "views": 6714,
+                "url": "https://www.youtube.com/watch?v=z_FQf_s3wRY"
+              },
+              {
+                "id": "L9rXjGbiHEI",
+                "title": "豬排麵配滷蛋！店家附贈蔥段和辣椒￼！#台中#中區#上海未名麵點酸梅湯#taiwan",
+                "channelTitle": "文虎Tiger-foods & funny",
+                "publishedAt": "2026-03-20T11:00:41Z",
+                "views": 969,
+                "url": "https://www.youtube.com/watch?v=L9rXjGbiHEI"
+              },
+              {
+                "id": "ei3X3x8zEWk",
+                "title": "🈴台中必比登哪家好吃？這三家還不錯👍",
+                "channelTitle": "哈密瓜美食報報",
+                "publishedAt": "2026-06-09T10:00:20Z",
+                "views": 295,
+                "url": "https://www.youtube.com/watch?v=ei3X3x8zEWk"
+              }
+            ],
+            "query": "臺中市 上海未名麵點 美食"
+          },
+          "evidence": [
+            "Vicky帶你吃：台中榮獲4次必比登推薦上海未名麵點🇹🇼必點 #豬排酸菜麵 附的醃蔥段是老饕最愛‼️教大家一個我自己的隱藏吃法，同時吃到湯麵跟乾麵的吃法，真的超級好吃 #未名 #必比登 #台中必吃 #Taiwan",
+            "文虎Tiger-foods & funny：豬排麵配滷蛋！店家附贈蔥段和辣椒￼！#台中#中區#上海未名麵點酸梅湯#taiwan",
+            "哈密瓜美食報報：🈴台中必比登哪家好吃？這三家還不錯👍"
+          ],
+          "url": "https://www.youtube.com/watch?v=z_FQf_s3wRY",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "大勇街無名鹹粥",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 18189,
+            "topVideos": [
+              {
+                "id": "8VOqFtMcO5M",
+                "title": "台南兩日慢旅：美食、文青小店、咖啡館的老城散步日記，一次走玩 20 個地方",
+                "channelTitle": "旅行慢漫 Rita at somewhere",
+                "publishedAt": "2026-04-03T08:24:37Z",
+                "views": 15711,
+                "url": "https://www.youtube.com/watch?v=8VOqFtMcO5M"
+              },
+              {
+                "id": "P3mVpaeryfw",
+                "title": "台南超鮮甜無名鹹粥",
+                "channelTitle": "挖系阿邱",
+                "publishedAt": "2026-01-31T14:24:03Z",
+                "views": 1850,
+                "url": "https://www.youtube.com/watch?v=P3mVpaeryfw"
+              },
+              {
+                "id": "6j6LbgSAM1k",
+                "title": "台南在地人私藏早餐！大勇街無名鹹粥，銷魂肉燥飯配超厚魚皮湯太過癮🤤｜台南中西區探店",
+                "channelTitle": "KAI Travel Films Life金融保險生活與美食溫度",
+                "publishedAt": "2026-07-19T02:38:31Z",
+                "views": 619,
+                "url": "https://www.youtube.com/watch?v=6j6LbgSAM1k"
+              }
+            ],
+            "query": "臺南市 大勇街無名鹹粥 美食"
+          },
+          "evidence": [
+            "旅行慢漫 Rita at somewhere：台南兩日慢旅：美食、文青小店、咖啡館的老城散步日記，一次走玩 20 個地方",
+            "挖系阿邱：台南超鮮甜無名鹹粥",
+            "KAI Travel Films Life金融保險生活與美食溫度：台南在地人私藏早餐！大勇街無名鹹粥，銷魂肉燥飯配超厚魚皮湯太過癮🤤｜台南中西區探店"
+          ],
+          "url": "https://www.youtube.com/watch?v=8VOqFtMcO5M",
+          "updated": "2026-07-27",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -1933,11 +2363,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-07-20T21:32:00.162Z",
+    "lastRun": "2026-07-27T21:29:32.112Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 53,
+    "nextAwardOffset": 63,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 6,
+    "lastUpdatedSignals": 8,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
