@@ -31,12 +31,12 @@ function collectRuntimeAssetReferences(relativePaths) {
 }
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-assert.strictEqual(manifest.length, 72);
+assert.strictEqual(manifest.length, 73);
 assert.strictEqual(new Set(manifest).size, manifest.length);
 assert.strictEqual(
   crypto.createHash("sha256").update(manifest.join("\n")).digest("hex"),
-  "f6af8c0cd640e001fdd385878ff2461a8292bfc37c629c22a1cdf43d69df0db4",
-  "manifest 必須精確維持 72-file allowlist 與順序"
+  "381b93e8705152e96ea987c4ae48c8828d2ee16cf6a0e82d3dfd1d07c85ce88f",
+  "manifest 必須精確維持 73-file allowlist 與順序"
 );
 for (const required of [
   "index.html", "admin.html", ".nojekyll", "VERSION", "design.md", "project-rules.md",

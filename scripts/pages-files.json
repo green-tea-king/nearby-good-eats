@@ -32,6 +32,7 @@
   "assets/filter-rules.js",
   "assets/search-logic.js",
   "assets/auth-logic.js",
+  "assets/proxy-policy.js",
   "assets/platform-source-probe-report.json",
   "assets/platform-signals.manual.json",
   "assets/platform-signals.import.csv",
