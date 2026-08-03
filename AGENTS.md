@@ -87,9 +87,12 @@
 ```powershell
 node scripts/test-search-logic.js
 node scripts/test-auth-logic.js
+node scripts/test-proxy-policy.js
 node scripts/test-award-search-contract.js
 node scripts/test-core-awards-enrichment.js
 node scripts/test-detail-photo-lazy-load.js
+node scripts/test-billing-reconciliation.js
+node scripts/test-functions-security-contract.js
 node scripts/test-google-enrichment-key-guard.js
 node scripts/test-static-asset-versions.js
 node scripts/scan-ui-text.js
