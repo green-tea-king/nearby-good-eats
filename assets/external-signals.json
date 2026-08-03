@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-07-27",
-  "updated": "2026-07-27",
+  "version": "api-batch-2026-08-03",
+  "updated": "2026-08-03",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -2313,6 +2313,457 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "大碗公當歸羊肉",
+      "city": "新北市",
+      "area": "新北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 7,
+            "recentVideoCount": 6,
+            "totalViews": 150283,
+            "topVideos": [
+              {
+                "id": "3HPWBYxORAU",
+                "title": "板橋絕對是新美食天堂！神明面前吃義大利麵？極品羊肉湯、水蜜桃千層酥！樹木捲披薩？",
+                "channelTitle": "厭世甜點店",
+                "publishedAt": "2026-05-31T13:00:06Z",
+                "views": 141639,
+                "url": "https://www.youtube.com/watch?v=3HPWBYxORAU"
+              },
+              {
+                "id": "Hl5qEUWqpik",
+                "title": "2025米其林必比登新入選【大碗公當歸羊肉】#米其林  #必比登 #板橋美食 #新北美食",
+                "channelTitle": "Aga不專業食記",
+                "publishedAt": "2026-02-07T10:28:27Z",
+                "views": 2096,
+                "url": "https://www.youtube.com/watch?v=Hl5qEUWqpik"
+              },
+              {
+                "id": "9BqVowMSrKQ",
+                "title": "喜歡羊肉的一定要來大碗公當歸羊肉，還有號稱新北最強滷肉飯也好吃，真的非常推薦#滷肉飯 #台灣美食 #food #羊肉湯 #羊肉爐#taiwanfood",
+                "channelTitle": "湯湯葫蘆葫蘆",
+                "publishedAt": "2026-07-06T14:37:07Z",
+                "views": 1742,
+                "url": "https://www.youtube.com/watch?v=9BqVowMSrKQ"
+              }
+            ],
+            "query": "新北市 大碗公當歸羊肉 美食"
+          },
+          "evidence": [
+            "厭世甜點店：板橋絕對是新美食天堂！神明面前吃義大利麵？極品羊肉湯、水蜜桃千層酥！樹木捲披薩？",
+            "Aga不專業食記：2025米其林必比登新入選【大碗公當歸羊肉】#米其林  #必比登 #板橋美食 #新北美食",
+            "湯湯葫蘆葫蘆：喜歡羊肉的一定要來大碗公當歸羊肉，還有號稱新北最強滷肉飯也好吃，真的非常推薦#滷肉飯 #台灣美食 #food #羊肉湯 #羊肉爐#taiwanfood"
+          ],
+          "url": "https://www.youtube.com/watch?v=3HPWBYxORAU",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "大橋頭老牌筒仔米糕",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 4,
+            "totalViews": 39371,
+            "topVideos": [
+              {
+                "id": "7BeUFu1KOmQ",
+                "title": "超唰嘴夜市美食都在台北捷運大橋頭站！超稀有的油泡大腸煎、老牌筒仔米糕、純糖燒麻糬軟Q噴香、入口即化的焢肉！｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260502",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-05-02T09:00:10Z",
+                "views": 13777,
+                "url": "https://www.youtube.com/watch?v=7BeUFu1KOmQ"
+              },
+              {
+                "id": "cVuiRdYEuSQ",
+                "title": "2026大稻埕美食地圖：14 家必吃清單從早吃到晚完全指南！#大稻埕美食 #迪化街美食 #台北美食 #台灣小吃 #TaipeiFood #TaiwanStreetFood #大發福 #白種元推薦",
+                "channelTitle": "Die For Food 大發福",
+                "publishedAt": "2026-05-11T07:01:00Z",
+                "views": 11227,
+                "url": "https://www.youtube.com/watch?v=cVuiRdYEuSQ"
+              },
+              {
+                "id": "rTZOHCfM_vI",
+                "title": "【台湾/台北 《朝食》特集28店】観光スポットで朝早くからオープンの店で台湾グルメ!!｜第1～4弾総集編｜沖縄人の台湾生活Ver.663",
+                "channelTitle": "沖縄人の台湾生活",
+                "publishedAt": "2026-03-27T08:00:53Z",
+                "views": 6698,
+                "url": "https://www.youtube.com/watch?v=rTZOHCfM_vI"
+              }
+            ],
+            "query": "臺北市 大橋頭老牌筒仔米糕 美食"
+          },
+          "evidence": [
+            "食尚玩家：超唰嘴夜市美食都在台北捷運大橋頭站！超稀有的油泡大腸煎、老牌筒仔米糕、純糖燒麻糬軟Q噴香、入口即化的焢肉！｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260502",
+            "Die For Food 大發福：2026大稻埕美食地圖：14 家必吃清單從早吃到晚完全指南！#大稻埕美食 #迪化街美食 #台北美食 #台灣小吃 #TaipeiFood #TaiwanStreetFood #大發福 #白種元推薦",
+            "沖縄人の台湾生活：【台湾/台北 《朝食》特集28店】観光スポットで朝早くからオープンの店で台湾グルメ!!｜第1～4弾総集編｜沖縄人の台湾生活Ver.663"
+          ],
+          "url": "https://www.youtube.com/watch?v=7BeUFu1KOmQ",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "小小樹食",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [
+        "小小樹食 （大安路）",
+        "Little Tree Food (Da'an Road)"
+      ],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 98,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 1,
+            "totalViews": 17502,
+            "topVideos": [
+              {
+                "id": "hLlugjP-2tI",
+                "title": "台北捷運忠孝復興站必吃特色美食！老饕最愛爆汁蒸餃、米其林綠星和必比登推薦的蔬食料理、上班族省錢飯館！｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260418",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-04-18T09:01:02Z",
+                "views": 17356,
+                "url": "https://www.youtube.com/watch?v=hLlugjP-2tI"
+              },
+              {
+                "id": "i0J9Z8T6xDE",
+                "title": "✍️台北美食必吃✍️小小樹食微風南山店 甜點太好吃了吧🥰",
+                "channelTitle": "在森林生活的龍貓",
+                "publishedAt": "2026-05-10T10:05:00Z",
+                "views": 145,
+                "url": "https://www.youtube.com/watch?v=i0J9Z8T6xDE"
+              },
+              {
+                "id": "tLl2rZHwoMk",
+                "title": "台北大小姐的大安區美食 韓式烤五花~料韓男 + 小小樹食 2026.03.16 by 周靜萱 Patty.Chou",
+                "channelTitle": "中原第一美女~周靜萱",
+                "publishedAt": "2026-03-27T05:15:12Z",
+                "views": 1,
+                "url": "https://www.youtube.com/watch?v=tLl2rZHwoMk"
+              }
+            ],
+            "query": "臺北市 小小樹食 美食"
+          },
+          "evidence": [
+            "食尚玩家：台北捷運忠孝復興站必吃特色美食！老饕最愛爆汁蒸餃、米其林綠星和必比登推薦的蔬食料理、上班族省錢飯館！｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260418",
+            "在森林生活的龍貓：✍️台北美食必吃✍️小小樹食微風南山店 甜點太好吃了吧🥰",
+            "中原第一美女~周靜萱：台北大小姐的大安區美食 韓式烤五花~料韓男 + 小小樹食 2026.03.16 by 周靜萱 Patty.Chou"
+          ],
+          "url": "https://www.youtube.com/watch?v=hLlugjP-2tI",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "小公園擔仔麵",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 1,
+            "totalViews": 62426,
+            "topVideos": [
+              {
+                "id": "_44I-9KCwmE",
+                "title": "台湾旅行｜25スポットを巡る台南4日間。人気グルメ10軒・カフェ7軒・有名スポット8軒・昭和レトロな路地裏散歩を愉しみながら、美食の街を歩く｜神農街・信義街・府中街・新美街",
+                "channelTitle": "Lassy Travel -夫婦で世界の街歩き-",
+                "publishedAt": "2026-03-07T09:12:09Z",
+                "views": 62070,
+                "url": "https://www.youtube.com/watch?v=_44I-9KCwmE"
+              },
+              {
+                "id": "FN1vmmrQc7M",
+                "title": "台南美食攻略  90%人踩坑！在地人私藏隱藏小吃+百年老字號全公開",
+                "channelTitle": "台灣吃喝玩樂地圖",
+                "publishedAt": "2026-04-20T07:46:58Z",
+                "views": 343,
+                "url": "https://www.youtube.com/watch?v=FN1vmmrQc7M"
+              },
+              {
+                "id": "JWt8wlmLNwo",
+                "title": "台南米其林怎麼吃？10間小吃、必比登與特別餐廳一次看懂",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-07-05T02:16:12Z",
+                "views": 13,
+                "url": "https://www.youtube.com/watch?v=JWt8wlmLNwo"
+              }
+            ],
+            "query": "臺南市 小公園擔仔麵 美食"
+          },
+          "evidence": [
+            "Lassy Travel -夫婦で世界の街歩き-：台湾旅行｜25スポットを巡る台南4日間。人気グルメ10軒・カフェ7軒・有名スポット8軒・昭和レトロな路地裏散歩を愉しみながら、美食の街を歩く｜神農街・信義街・府中街・新美街",
+            "台灣吃喝玩樂地圖：台南美食攻略  90%人踩坑！在地人私藏隱藏小吃+百年老字號全公開",
+            "派派城市外掛：台南米其林怎麼吃？10間小吃、必比登與特別餐廳一次看懂"
+          ],
+          "url": "https://www.youtube.com/watch?v=_44I-9KCwmE",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "小王煮瓜",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 2,
+            "totalViews": 8466,
+            "topVideos": [
+              {
+                "id": "JU5zdaoQZ0M",
+                "title": "#小王煮瓜 地址：臺北市萬華區華西街17之4號攤位153號 桃園國際機場店（二航廈）地址；桃園市大園區航站南路9號 #streetfood #台北美食 #桃園美食 #萬華美食 #龍潭民宿",
+                "channelTitle": "蒔薈 i House 民宿",
+                "publishedAt": "2026-03-24T10:07:55Z",
+                "views": 2983,
+                "url": "https://www.youtube.com/watch?v=JU5zdaoQZ0M"
+              },
+              {
+                "id": "_-Lg-Klv7qw",
+                "title": "必比登推薦：台灣最鹹的滷肉飯？小王煮瓜 香菇滷肉飯 #台北美食 #ubereats #米其林 #必比登 #外送",
+                "channelTitle": "和HAN一起",
+                "publishedAt": "2026-03-14T10:44:29Z",
+                "views": 1851,
+                "url": "https://www.youtube.com/watch?v=_-Lg-Klv7qw"
+              },
+              {
+                "id": "iw_HVCBCQb8",
+                "title": "隱身巷弄的幸福滋味！在地老饕私藏，6家雙北必吃神級黑金魯肉飯大公開！吃過一次就回不去！ 🎬🍚🤤【幸福魯肉飯】店小二魯肉飯、啊興阿滷肉飯、北北車魯肉飯、阿益魯肉飯、仁和街滷肉飯、閹豬切仔麵",
+                "channelTitle": "FoodStops",
+                "publishedAt": "2026-07-19T06:49:30Z",
+                "views": 1621,
+                "url": "https://www.youtube.com/watch?v=iw_HVCBCQb8"
+              }
+            ],
+            "query": "臺北市 小王煮瓜 美食"
+          },
+          "evidence": [
+            "蒔薈 i House 民宿：#小王煮瓜 地址：臺北市萬華區華西街17之4號攤位153號 桃園國際機場店（二航廈）地址；桃園市大園區航站南路9號 #streetfood #台北美食 #桃園美食 #萬華美食 #龍潭民宿",
+            "和HAN一起：必比登推薦：台灣最鹹的滷肉飯？小王煮瓜 香菇滷肉飯 #台北美食 #ubereats #米其林 #必比登 #外送",
+            "FoodStops：隱身巷弄的幸福滋味！在地老饕私藏，6家雙北必吃神級黑金魯肉飯大公開！吃過一次就回不去！ 🎬🍚🤤【幸福魯肉飯】店小二魯肉飯、啊興阿滷肉飯、北北車魯肉飯、阿益魯肉飯、仁和街滷肉飯、閹豬切仔麵"
+          ],
+          "url": "https://www.youtube.com/watch?v=JU5zdaoQZ0M",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "小品雅廚",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 5,
+            "totalViews": 172772,
+            "topVideos": [
+              {
+                "id": "kkvyMRy8aHo",
+                "title": "國民外交餐廳必備！外國朋友來台灣吃什麼？震撼老外的 6 間台北私藏名單，別再只帶他們去夜市｜餐廳推薦健檢【Liz 美食家】",
+                "channelTitle": "Liz 的美食家自學之路 Self-taught Gourmet",
+                "publishedAt": "2026-05-21T11:00:01Z",
+                "views": 122028,
+                "url": "https://www.youtube.com/watch?v=kkvyMRy8aHo"
+              },
+              {
+                "id": "9jIXQHrMJII",
+                "title": "必比登推薦超強宵夜",
+                "channelTitle": "冬冬🌸生活美食日記💓",
+                "publishedAt": "2026-04-25T09:02:17Z",
+                "views": 39329,
+                "url": "https://www.youtube.com/watch?v=9jIXQHrMJII"
+              },
+              {
+                "id": "KSoOTEwEVO8",
+                "title": "#小品雅廚 #台北宵夜 #清粥小菜 #信義區美食 #市政府站美食",
+                "channelTitle": "阿天天Tian",
+                "publishedAt": "2026-05-02T20:17:19Z",
+                "views": 5743,
+                "url": "https://www.youtube.com/watch?v=KSoOTEwEVO8"
+              }
+            ],
+            "query": "臺北市 小品雅廚 美食"
+          },
+          "evidence": [
+            "Liz 的美食家自學之路 Self-taught Gourmet：國民外交餐廳必備！外國朋友來台灣吃什麼？震撼老外的 6 間台北私藏名單，別再只帶他們去夜市｜餐廳推薦健檢【Liz 美食家】",
+            "冬冬🌸生活美食日記💓：必比登推薦超強宵夜",
+            "阿天天Tian：#小品雅廚 #台北宵夜 #清粥小菜 #信義區美食 #市政府站美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=kkvyMRy8aHo",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "山東小館",
+      "city": "新北市",
+      "area": "新北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 4,
+            "totalViews": 164912,
+            "topVideos": [
+              {
+                "id": "IxybW-ltOSg",
+                "title": "【2026新店美食推薦】炸紅糟肉/老麵水煎包/藥膳羊肉湯/芹菜大餅/清蒸肉圓/紅麴麵線/家常山東燒雞【台灣1001個故事】       @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-07-12T10:30:26Z",
+                "views": 63252,
+                "url": "https://www.youtube.com/watch?v=IxybW-ltOSg"
+              },
+              {
+                "id": "cUY_3G-_n5g",
+                "title": "【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】     @TaiwanCheers",
+                "channelTitle": "台灣Cheers",
+                "publishedAt": "2026-03-20T11:01:14Z",
+                "views": 43107,
+                "url": "https://www.youtube.com/watch?v=cUY_3G-_n5g"
+              },
+              {
+                "id": "tWVNkeqCW8s",
+                "title": "【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】      @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-06-08T10:30:06Z",
+                "views": 35398,
+                "url": "https://www.youtube.com/watch?v=tWVNkeqCW8s"
+              }
+            ],
+            "query": "新北市 山東小館 美食"
+          },
+          "evidence": [
+            "台灣1001個故事復刻版：【2026新店美食推薦】炸紅糟肉/老麵水煎包/藥膳羊肉湯/芹菜大餅/清蒸肉圓/紅麴麵線/家常山東燒雞【台灣1001個故事】       @TaiwanCheers",
+            "台灣Cheers：【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】     @TaiwanCheers",
+            "台灣1001個故事復刻版：【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】      @TaiwanCheers"
+          ],
+          "url": "https://www.youtube.com/watch?v=IxybW-ltOSg",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "天下三絕",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 5,
+            "recentVideoCount": 1,
+            "totalViews": 498556,
+            "topVideos": [
+              {
+                "id": "iDy92KAZp7Y",
+                "title": "超緊張‼️韓國米其林主廚為了台灣牛肉麵直接飛來？",
+                "channelTitle": "有璟嘿喲요찡",
+                "publishedAt": "2026-05-27T12:00:14Z",
+                "views": 282776,
+                "url": "https://www.youtube.com/watch?v=iDy92KAZp7Y"
+              },
+              {
+                "id": "xj1-HT3CdQY",
+                "title": "台北10間牛肉麵排行！你是清燉還是紅燒派？全世界最貴牛肉麵一碗竟然要一萬元？！｜SuperTaste Taiwan｜#食尚玩家 #曾子余【網路獨家】20260225",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-02-25T12:00:06Z",
+                "views": 213268,
+                "url": "https://www.youtube.com/watch?v=xj1-HT3CdQY"
+              },
+              {
+                "id": "S817QzoYCPA",
+                "title": "📍【大安區天下三絕｜可以喝紅酒的高級牛肉麵】 #牛肉麵  #冠軍",
+                "channelTitle": "呷霸天勾-達特楊",
+                "publishedAt": "2026-02-22T11:35:32Z",
+                "views": 1471,
+                "url": "https://www.youtube.com/watch?v=S817QzoYCPA"
+              }
+            ],
+            "query": "臺北市 天下三絕 美食"
+          },
+          "evidence": [
+            "有璟嘿喲요찡：超緊張‼️韓國米其林主廚為了台灣牛肉麵直接飛來？",
+            "食尚玩家：台北10間牛肉麵排行！你是清燉還是紅燒派？全世界最貴牛肉麵一碗竟然要一萬元？！｜SuperTaste Taiwan｜#食尚玩家 #曾子余【網路獨家】20260225",
+            "呷霸天勾-達特楊：📍【大安區天下三絕｜可以喝紅酒的高級牛肉麵】 #牛肉麵  #冠軍"
+          ],
+          "url": "https://www.youtube.com/watch?v=iDy92KAZp7Y",
+          "updated": "2026-08-03",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -2363,9 +2814,9 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-07-27T21:29:32.112Z",
+    "lastRun": "2026-08-03T21:29:36.185Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 63,
+    "nextAwardOffset": 73,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
     "lastUpdatedSignals": 8,
     "platformManualMerge": {
