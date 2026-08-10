@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-08-03",
-  "updated": "2026-08-03",
+  "version": "api-batch-2026-08-10",
+  "updated": "2026-08-10",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -2764,6 +2764,335 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "心潮飯店",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 93,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 0,
+            "totalViews": 32434,
+            "topVideos": [
+              {
+                "id": "MlGSa7mnxUk",
+                "title": "連三年米其林神級炒飯│台北美食必吃│心潮飯店【非凡大探索】2026.04.05",
+                "channelTitle": "非凡大探索",
+                "publishedAt": "2026-04-05T12:45:02Z",
+                "views": 26102,
+                "url": "https://www.youtube.com/watch?v=MlGSa7mnxUk"
+              },
+              {
+                "id": "fS9-7rH9raU",
+                "title": "【完整版】連三年米其林\"牛排炒飯\"、\"干貝烏魚子炒飯\"豪華吸睛！爆紅的\"炸全雞\"只要知名賣場半價！超人氣\"汕頭火鍋\"獨門秘製手炒沙茶！【非凡大探索】2026.04.05",
+                "channelTitle": "非凡大探索",
+                "publishedAt": "2026-04-05T12:45:05Z",
+                "views": 6332,
+                "url": "https://www.youtube.com/watch?v=fS9-7rH9raU"
+              }
+            ],
+            "query": "臺北市 心潮飯店 美食"
+          },
+          "evidence": [
+            "非凡大探索：連三年米其林神級炒飯│台北美食必吃│心潮飯店【非凡大探索】2026.04.05",
+            "非凡大探索：【完整版】連三年米其林\"牛排炒飯\"、\"干貝烏魚子炒飯\"豪華吸睛！爆紅的\"炸全雞\"只要知名賣場半價！超人氣\"汕頭火鍋\"獨門秘製手炒沙茶！【非凡大探索】2026.04.05"
+          ],
+          "url": "https://www.youtube.com/watch?v=MlGSa7mnxUk",
+          "updated": "2026-08-10",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "牛稼莊",
+      "city": "臺中市",
+      "area": "臺中市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 36,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 26,
+            "topVideos": [
+              {
+                "id": "lHS-3hv4lEM",
+                "title": "台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-06-27T15:46:04Z",
+                "views": 26,
+                "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM"
+              }
+            ],
+            "query": "臺中市 牛稼莊 美食"
+          },
+          "evidence": [
+            "派派城市外掛：台中米其林別亂訂！14家餐廳三天兩夜路線怎麼排"
+          ],
+          "url": "https://www.youtube.com/watch?v=lHS-3hv4lEM",
+          "updated": "2026-08-10",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "功夫上海手工魚丸",
+      "city": "臺中市",
+      "area": "臺中市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 3,
+            "totalViews": 46867,
+            "topVideos": [
+              {
+                "id": "ltvSdDWmznE",
+                "title": "台中人就問！為何沒入選米其林！？找出那些美味遺珠之憾～｜#林莎 #李易 #張立東 SuperTaste Taiwan｜#食尚玩家瘋狂總部 完整版 20260629📍台中",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-06-30T04:00:06Z",
+                "views": 27037,
+                "url": "https://www.youtube.com/watch?v=ltvSdDWmznE"
+              },
+              {
+                "id": "GfB1XrMErQI",
+                "title": "台湾旅行｜台中3泊でミシュラン ビブグルマン5軒を巡る街歩き｜台北から1時間で行けるおすすめの街、台中グルメと落ち着いた街の雰囲気を心ゆくまで味わう",
+                "channelTitle": "Lassy Travel -夫婦で世界の街歩き-",
+                "publishedAt": "2026-02-14T09:31:39Z",
+                "views": 16032,
+                "url": "https://www.youtube.com/watch?v=GfB1XrMErQI"
+              },
+              {
+                "id": "ZRQ5_tQKm5A",
+                "title": "從早吃到晚的美食街~ 台中中美街夜市週末晚餐 Taichung Zhongmei Street (Night Market)｜向上水餃｜炸蚵爹｜可不可熟成紅茶創始店｜台灣｜Taiwan",
+                "channelTitle": "台灣小散步 Taiwan吃GoGo",
+                "publishedAt": "2026-02-27T04:30:21Z",
+                "views": 2159,
+                "url": "https://www.youtube.com/watch?v=ZRQ5_tQKm5A"
+              }
+            ],
+            "query": "臺中市 功夫上海手工魚丸 美食"
+          },
+          "evidence": [
+            "食尚玩家：台中人就問！為何沒入選米其林！？找出那些美味遺珠之憾～｜#林莎 #李易 #張立東 SuperTaste Taiwan｜#食尚玩家瘋狂總部 完整版 20260629📍台中",
+            "Lassy Travel -夫婦で世界の街歩き-：台湾旅行｜台中3泊でミシュラン ビブグルマン5軒を巡る街歩き｜台北から1時間で行けるおすすめの街、台中グルメと落ち着いた街の雰囲気を心ゆくまで味わう",
+            "台灣小散步 Taiwan吃GoGo：從早吃到晚的美食街~ 台中中美街夜市週末晚餐 Taichung Zhongmei Street (Night Market)｜向上水餃｜炸蚵爹｜可不可熟成紅茶創始店｜台灣｜Taiwan"
+          ],
+          "url": "https://www.youtube.com/watch?v=ltvSdDWmznE",
+          "updated": "2026-08-10",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "可口牛肉麵",
+      "city": "臺中市",
+      "area": "西屯區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 73,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 1,
+            "totalViews": 1406,
+            "topVideos": [
+              {
+                "id": "Nx72r8TdbXo",
+                "title": "Taichung Vlog｜探訪12家台中美食、咖啡廳、美式漢堡、必比登牛肉麵、發現台中的浪漫日常",
+                "channelTitle": "CHIN LOG",
+                "publishedAt": "2026-08-09T12:00:06Z",
+                "views": 907,
+                "url": "https://www.youtube.com/watch?v=Nx72r8TdbXo"
+              },
+              {
+                "id": "95Rm7WBAf7c",
+                "title": "🍜 米其林等級牛肉麵，一口直接上癮 🍜  #可口牛肉麵 #米其林美食 #台灣美食 #beefnoodles #foodie #michelin#台中",
+                "channelTitle": "老鄭嘴饞",
+                "publishedAt": "2026-03-20T10:44:11Z",
+                "views": 499,
+                "url": "https://www.youtube.com/watch?v=95Rm7WBAf7c"
+              }
+            ],
+            "query": "臺中市 可口牛肉麵 美食"
+          },
+          "evidence": [
+            "CHIN LOG：Taichung Vlog｜探訪12家台中美食、咖啡廳、美式漢堡、必比登牛肉麵、發現台中的浪漫日常",
+            "老鄭嘴饞：🍜 米其林等級牛肉麵，一口直接上癮 🍜  #可口牛肉麵 #米其林美食 #台灣美食 #beefnoodles #foodie #michelin#台中"
+          ],
+          "url": "https://www.youtube.com/watch?v=Nx72r8TdbXo",
+          "updated": "2026-08-10",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "台中肉員",
+      "city": "臺中市",
+      "area": "南區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 66,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 1253,
+            "topVideos": [
+              {
+                "id": "Oxzm2pCW11s",
+                "title": "米其林必比登推薦台中肉圓#台灣美食 #台中美食 #美食 #肉圓 #美食日常 #小吃#銅板美食",
+                "channelTitle": "覓食享旅行",
+                "publishedAt": "2026-07-31T14:33:18Z",
+                "views": 1253,
+                "url": "https://www.youtube.com/watch?v=Oxzm2pCW11s"
+              }
+            ],
+            "query": "臺中市 台中肉員 美食"
+          },
+          "evidence": [
+            "覓食享旅行：米其林必比登推薦台中肉圓#台灣美食 #台中美食 #美食 #肉圓 #美食日常 #小吃#銅板美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=Oxzm2pCW11s",
+          "updated": "2026-08-10",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "弘記肉燥飯舖",
+      "city": "高雄市",
+      "area": "左營區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 79,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 2,
+            "totalViews": 1906,
+            "topVideos": [
+              {
+                "id": "78chap_xsxc",
+                "title": "價格不友善，但吃了真香？『米其林必比登』你買單嗎？",
+                "channelTitle": "小毛呆の禾昕森活",
+                "publishedAt": "2026-06-19T11:56:22Z",
+                "views": 1850,
+                "url": "https://www.youtube.com/watch?v=78chap_xsxc"
+              },
+              {
+                "id": "x5SCzUkrSL8",
+                "title": "LIWEI - gogo高雄看媽媽木的Travel Vlog | 弘記肉燥飯舖 | 高雄美食 | 打狗英國領事館 | MAMAMOO WORLD TOUR [4WARD] in KAOHSIUNG",
+                "channelTitle": "LIWEI 立威",
+                "publishedAt": "2026-08-01T11:27:46Z",
+                "views": 56,
+                "url": "https://www.youtube.com/watch?v=x5SCzUkrSL8"
+              }
+            ],
+            "query": "高雄市 弘記肉燥飯舖 美食"
+          },
+          "evidence": [
+            "小毛呆の禾昕森活：價格不友善，但吃了真香？『米其林必比登』你買單嗎？",
+            "LIWEI 立威：LIWEI - gogo高雄看媽媽木的Travel Vlog | 弘記肉燥飯舖 | 高雄美食 | 打狗英國領事館 | MAMAMOO WORLD TOUR [4WARD] in KAOHSIUNG"
+          ],
+          "url": "https://www.youtube.com/watch?v=78chap_xsxc",
+          "updated": "2026-08-10",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "正宗鴨肉飯",
+      "city": "高雄市",
+      "area": "左營區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 96,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 3630,
+            "topVideos": [
+              {
+                "id": "kir0BdpLaw4",
+                "title": "高雄小吃正宗鴨肉飯丨連續4 年榮獲米其林必比登",
+                "channelTitle": "Yuan來世界那麼大",
+                "publishedAt": "2026-06-02T04:24:06Z",
+                "views": 1566,
+                "url": "https://www.youtube.com/watch?v=kir0BdpLaw4"
+              },
+              {
+                "id": "toSIo1eRhlk",
+                "title": "正宗鴨肉飯#高雄 #高雄市 #高雄美食 #高雄餐廳 #kaohsiungtaiwan  #鴨肉飯 #米其林 #米其林美食 #kaohsiungfood #kaohsiung #restaurant",
+                "channelTitle": "嘎哩-給給",
+                "publishedAt": "2026-03-15T04:39:39Z",
+                "views": 1104,
+                "url": "https://www.youtube.com/watch?v=toSIo1eRhlk"
+              },
+              {
+                "id": "cajmufCt3FA",
+                "title": "【高雄美食】米其林也瘋狂！在地人激推的五大傳奇鴨肉飯終極評比 🦆🍚",
+                "channelTitle": "贊贊小屋",
+                "publishedAt": "2026-03-19T09:46:05Z",
+                "views": 621,
+                "url": "https://www.youtube.com/watch?v=cajmufCt3FA"
+              }
+            ],
+            "query": "高雄市 正宗鴨肉飯 美食"
+          },
+          "evidence": [
+            "Yuan來世界那麼大：高雄小吃正宗鴨肉飯丨連續4 年榮獲米其林必比登",
+            "嘎哩-給給：正宗鴨肉飯#高雄 #高雄市 #高雄美食 #高雄餐廳 #kaohsiungtaiwan  #鴨肉飯 #米其林 #米其林美食 #kaohsiungfood #kaohsiung #restaurant",
+            "贊贊小屋：【高雄美食】米其林也瘋狂！在地人激推的五大傳奇鴨肉飯終極評比 🦆🍚"
+          ],
+          "url": "https://www.youtube.com/watch?v=kir0BdpLaw4",
+          "updated": "2026-08-10",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -2814,11 +3143,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-08-03T21:29:36.185Z",
+    "lastRun": "2026-08-10T21:01:19.416Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 73,
+    "nextAwardOffset": 83,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 8,
+    "lastUpdatedSignals": 7,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
