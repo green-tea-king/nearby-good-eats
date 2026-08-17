@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-08-10",
-  "updated": "2026-08-10",
+  "version": "api-batch-2026-08-17",
+  "updated": "2026-08-17",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -3093,6 +3093,393 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "永和佳香豆漿",
+      "city": "新北市",
+      "area": "永和區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 77,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 2,
+            "totalViews": 682,
+            "topVideos": [
+              {
+                "id": "A2MVBtj3oOc",
+                "title": "永和佳香豆漿",
+                "channelTitle": "Meck 食之記憶",
+                "publishedAt": "2026-05-12T14:53:40Z",
+                "views": 514,
+                "url": "https://www.youtube.com/watch?v=A2MVBtj3oOc"
+              },
+              {
+                "id": "cLdAeIFqUJA",
+                "title": "米其林必比登英文怎麼說？外國人也瘋狂的新北神級小吃！用簡單英語聊台灣美食文化！New Taipei City's legendary snacks that even foreigners love!",
+                "channelTitle": "【用英語認識台灣 Speak English to Understand Taiwan】",
+                "publishedAt": "2026-06-05T00:00:17Z",
+                "views": 157,
+                "url": "https://www.youtube.com/watch?v=cLdAeIFqUJA"
+              },
+              {
+                "id": "wrvWCEbcfaM",
+                "title": "高雄＋新北＋新竹米其林怎麼選？九間餐廳逐間講｜歷史、招牌菜、訂位重點",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-07-11T14:07:42Z",
+                "views": 11,
+                "url": "https://www.youtube.com/watch?v=wrvWCEbcfaM"
+              }
+            ],
+            "query": "新北市 永和佳香豆漿 美食"
+          },
+          "evidence": [
+            "Meck 食之記憶：永和佳香豆漿",
+            "【用英語認識台灣 Speak English to Understand Taiwan】：米其林必比登英文怎麼說？外國人也瘋狂的新北神級小吃！用簡單英語聊台灣美食文化！New Taipei City's legendary snacks that even foreigners love!",
+            "派派城市外掛：高雄＋新北＋新竹米其林怎麼選？九間餐廳逐間講｜歷史、招牌菜、訂位重點"
+          ],
+          "url": "https://www.youtube.com/watch?v=A2MVBtj3oOc",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "永筵小館",
+      "city": "高雄市",
+      "area": "前金區",
+      "aliases": [
+        "Yung Yen"
+      ],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 29,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 11,
+            "topVideos": [
+              {
+                "id": "wrvWCEbcfaM",
+                "title": "高雄＋新北＋新竹米其林怎麼選？九間餐廳逐間講｜歷史、招牌菜、訂位重點",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-07-11T14:07:42Z",
+                "views": 11,
+                "url": "https://www.youtube.com/watch?v=wrvWCEbcfaM"
+              }
+            ],
+            "query": "高雄市 永筵小館 美食"
+          },
+          "evidence": [
+            "派派城市外掛：高雄＋新北＋新竹米其林怎麼選？九間餐廳逐間講｜歷史、招牌菜、訂位重點"
+          ],
+          "url": "https://www.youtube.com/watch?v=wrvWCEbcfaM",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "田媽媽 長盈海味屋",
+      "city": "臺南市",
+      "area": "北門區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 41,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 0,
+            "totalViews": 83,
+            "topVideos": [
+              {
+                "id": "E7zWvbFPhLg",
+                "title": "台南海邊吹海風吃美食",
+                "channelTitle": "貪吃媽媽帶著勛勛玩世界",
+                "publishedAt": "2026-03-05T12:54:35Z",
+                "views": 83,
+                "url": "https://www.youtube.com/watch?v=E7zWvbFPhLg"
+              }
+            ],
+            "query": "臺南市 田媽媽 長盈海味屋 美食"
+          },
+          "evidence": [
+            "貪吃媽媽帶著勛勛玩世界：台南海邊吹海風吃美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=E7zWvbFPhLg",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "白玉樓",
+      "city": "高雄市",
+      "area": "前鎮區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 96,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 1,
+            "totalViews": 5995,
+            "topVideos": [
+              {
+                "id": "gPDTe4Wmjt0",
+                "title": "重現輝煌台灣美食史  四代傳承求奇求巧酒家菜 511《 白玉樓 》[高雄 前鎮]",
+                "channelTitle": "高點電視",
+                "publishedAt": "2026-04-26T13:01:15Z",
+                "views": 3879,
+                "url": "https://www.youtube.com/watch?v=gPDTe4Wmjt0"
+              },
+              {
+                "id": "9wIinWvEbc8",
+                "title": "高雄這間米其林指南推薦台菜，你吃過嗎？｜白玉樓開箱｜三杯雞、椒麻土魠魚必點 #米其林指南 #白玉樓 #土魠魚 #三杯雞 #高雄美食 #前鎮區 #夢時代 #台灣菜 #taiwanfood #food",
+                "channelTitle": "冠冠愛出遊",
+                "publishedAt": "2026-07-22T10:00:13Z",
+                "views": 1230,
+                "url": "https://www.youtube.com/watch?v=9wIinWvEbc8"
+              },
+              {
+                "id": "yT-j8biFvSo",
+                "title": "台灣街頭小吃｜白玉樓｜說故事洋行｜台菓子工作室｜永豐春捲冰果室｜燒冷冰｜_台灣百味  511",
+                "channelTitle": "高點電視",
+                "publishedAt": "2026-04-26T13:00:06Z",
+                "views": 685,
+                "url": "https://www.youtube.com/watch?v=yT-j8biFvSo"
+              }
+            ],
+            "query": "高雄市 白玉樓 美食"
+          },
+          "evidence": [
+            "高點電視：重現輝煌台灣美食史  四代傳承求奇求巧酒家菜 511《 白玉樓 》[高雄 前鎮]",
+            "冠冠愛出遊：高雄這間米其林指南推薦台菜，你吃過嗎？｜白玉樓開箱｜三杯雞、椒麻土魠魚必點 #米其林指南 #白玉樓 #土魠魚 #三杯雞 #高雄美食 #前鎮區 #夢時代 #台灣菜 #taiwanfood #food",
+            "高點電視：台灣街頭小吃｜白玉樓｜說故事洋行｜台菓子工作室｜永豐春捲冰果室｜燒冷冰｜_台灣百味  511"
+          ],
+          "url": "https://www.youtube.com/watch?v=gPDTe4Wmjt0",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "光興腿庫",
+      "city": "新北市",
+      "area": "三重區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 2,
+            "totalViews": 78632,
+            "topVideos": [
+              {
+                "id": "jAZwHzLYSSc",
+                "title": "滷肉飯有差嗎？全部吃一次就知道了｜新北三重",
+                "channelTitle": "我是邵阿咩",
+                "publishedAt": "2026-06-24T10:00:20Z",
+                "views": 48777,
+                "url": "https://www.youtube.com/watch?v=jAZwHzLYSSc"
+              },
+              {
+                "id": "pYu2jPi2TTE",
+                "title": "三重人不想說的秘密！文化北路 60 年油飯、超狂鐵夾蛋餅，這 16 家才是正港三重味！傳說中「雙蛋蛋餅」跟「鋼管鴨肉羹」真的這麼強？",
+                "channelTitle": "FoodStops",
+                "publishedAt": "2026-04-29T22:15:03Z",
+                "views": 16432,
+                "url": "https://www.youtube.com/watch?v=pYu2jPi2TTE"
+              },
+              {
+                "id": "Lg1VVG3SxxI",
+                "title": "三重人從小吃到大！13家不踩雷名單！#三重美食 #三重必吃 #台北美食 #新北美食 #台灣小吃 #美食懶人包 #美食地圖 #排隊名店 #銅板美食",
+                "channelTitle": "Die For Food 大發福",
+                "publishedAt": "2026-05-15T06:43:41Z",
+                "views": 9843,
+                "url": "https://www.youtube.com/watch?v=Lg1VVG3SxxI"
+              }
+            ],
+            "query": "新北市 光興腿庫 美食"
+          },
+          "evidence": [
+            "我是邵阿咩：滷肉飯有差嗎？全部吃一次就知道了｜新北三重",
+            "FoodStops：三重人不想說的秘密！文化北路 60 年油飯、超狂鐵夾蛋餅，這 16 家才是正港三重味！傳說中「雙蛋蛋餅」跟「鋼管鴨肉羹」真的這麼強？",
+            "Die For Food 大發福：三重人從小吃到大！13家不踩雷名單！#三重美食 #三重必吃 #台北美食 #新北美食 #台灣小吃 #美食懶人包 #美食地圖 #排隊名店 #銅板美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=jAZwHzLYSSc",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "吃麵吧",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 66,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 1296,
+            "topVideos": [
+              {
+                "id": "lc7rAQ3CKbg",
+                "title": "@jaimiba8 吃麵吧台南市中西區南廠里保安路159-1號#台南美食 #台南麵館",
+                "channelTitle": "來7床上躺一下",
+                "publishedAt": "2026-05-21T07:09:58Z",
+                "views": 1296,
+                "url": "https://www.youtube.com/watch?v=lc7rAQ3CKbg"
+              }
+            ],
+            "query": "臺南市 吃麵吧 美食"
+          },
+          "evidence": [
+            "來7床上躺一下：@jaimiba8 吃麵吧台南市中西區南廠里保安路159-1號#台南美食 #台南麵館"
+          ],
+          "url": "https://www.youtube.com/watch?v=lc7rAQ3CKbg",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "好朋友涼麵",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 95,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 2,
+            "totalViews": 6997,
+            "topVideos": [
+              {
+                "id": "zDJP6c50QWs",
+                "title": "台北士林夜市6大必吃美食！ 4間米其林必比登！Taipei Shilin Night Market 6 must eat (4 Michelin Bib Gourmand)!",
+                "channelTitle": "美國平民 USCommoner",
+                "publishedAt": "2026-06-17T09:19:16Z",
+                "views": 3982,
+                "url": "https://www.youtube.com/watch?v=zDJP6c50QWs"
+              },
+              {
+                "id": "0SZdABg259M",
+                "title": "士林夜市必吃！米其林認證的「好朋友涼麵」#士林夜市 #士林美食 #台北美食 #台北小吃 #士林夜市美食 #shilinnightmarket #好朋友涼麵 #米其林必比登 #必比登推介 #涼麵",
+                "channelTitle": "Die For Food 大發福",
+                "publishedAt": "2026-02-22T10:04:59Z",
+                "views": 1795,
+                "url": "https://www.youtube.com/watch?v=0SZdABg259M"
+              },
+              {
+                "id": "pYewNbOWf98",
+                "title": "來士林夜市吃吃喝喝之後，超推薦來這裡當最後一站！",
+                "channelTitle": "謝れない台湾人彼女 my Taiwanese girlfriend can’t say sorry",
+                "publishedAt": "2026-08-15T15:02:17Z",
+                "views": 1220,
+                "url": "https://www.youtube.com/watch?v=pYewNbOWf98"
+              }
+            ],
+            "query": "臺北市 好朋友涼麵 美食"
+          },
+          "evidence": [
+            "美國平民 USCommoner：台北士林夜市6大必吃美食！ 4間米其林必比登！Taipei Shilin Night Market 6 must eat (4 Michelin Bib Gourmand)!",
+            "Die For Food 大發福：士林夜市必吃！米其林認證的「好朋友涼麵」#士林夜市 #士林美食 #台北美食 #台北小吃 #士林夜市美食 #shilinnightmarket #好朋友涼麵 #米其林必比登 #必比登推介 #涼麵",
+            "謝れない台湾人彼女 my Taiwanese girlfriend can’t say sorry：來士林夜市吃吃喝喝之後，超推薦來這裡當最後一站！"
+          ],
+          "url": "https://www.youtube.com/watch?v=zDJP6c50QWs",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "好農家米糕",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 94,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 1,
+            "totalViews": 21978,
+            "topVideos": [
+              {
+                "id": "GmCUK514ViY",
+                "title": "【GWのお供に３時間半イッキ見】1泊2日で16食！美食の街、台南ミシュラン食べ歩きをゾロがわかりやすく紹介！",
+                "channelTitle": "ゾロの台湾グルメ",
+                "publishedAt": "2026-05-01T11:00:24Z",
+                "views": 21962,
+                "url": "https://www.youtube.com/watch?v=GmCUK514ViY"
+              },
+              {
+                "id": "BxEGTiIi--E",
+                "title": "黃金南區好行 | 漫遊南區 一里一特色 🧣*◞ 🖐🏻 ᯓ 🚗 𓈒𓏸@南區文南里☆文華里☆大成里☆再興里☆廣州里☆新昌里☆新興里",
+                "channelTitle": "臺南市南區區公所",
+                "publishedAt": "2026-08-11T08:13:28Z",
+                "views": 16,
+                "url": "https://www.youtube.com/watch?v=BxEGTiIi--E"
+              }
+            ],
+            "query": "臺南市 好農家米糕 美食"
+          },
+          "evidence": [
+            "ゾロの台湾グルメ：【GWのお供に３時間半イッキ見】1泊2日で16食！美食の街、台南ミシュラン食べ歩きをゾロがわかりやすく紹介！",
+            "臺南市南區區公所：黃金南區好行 | 漫遊南區 一里一特色 🧣*◞ 🖐🏻 ᯓ 🚗 𓈒𓏸@南區文南里☆文華里☆大成里☆再興里☆廣州里☆新昌里☆新興里"
+          ],
+          "url": "https://www.youtube.com/watch?v=GmCUK514ViY",
+          "updated": "2026-08-17",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -3143,11 +3530,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-08-10T21:01:19.416Z",
+    "lastRun": "2026-08-17T20:42:59.697Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 83,
+    "nextAwardOffset": 93,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 7,
+    "lastUpdatedSignals": 8,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
