@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-08-17",
-  "updated": "2026-08-17",
+  "version": "api-batch-2026-08-24",
+  "updated": "2026-08-24",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -3480,6 +3480,456 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "米院子油飯",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 74,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 0,
+            "totalViews": 2898,
+            "topVideos": [
+              {
+                "id": "YSkRK11ezlk",
+                "title": "高雄米院子油飯·米其林美食·必比登推薦 #美食 #高雄美食 #米院子 #油飯",
+                "channelTitle": "Weiting",
+                "publishedAt": "2026-05-01T06:59:18Z",
+                "views": 1646,
+                "url": "https://www.youtube.com/watch?v=YSkRK11ezlk"
+              },
+              {
+                "id": "g9lz_v95_RI",
+                "title": "#親子共遊 高雄美食特輯絕美庭院裡的古早味油飯 誰說吃傳統小吃不能很有儀式感？大家在高雄還有沒有推薦的隱藏版巷弄美食呢？歡迎在底下留言推坑給我喔！👇#高雄美食 #米院子油飯 #高雄必吃 #巷弄美食",
+                "channelTitle": "慧媛的吃喝玩樂導覽",
+                "publishedAt": "2026-05-26T12:40:31Z",
+                "views": 1252,
+                "url": "https://www.youtube.com/watch?v=g9lz_v95_RI"
+              }
+            ],
+            "query": "高雄市 米院子油飯 美食"
+          },
+          "evidence": [
+            "Weiting：高雄米院子油飯·米其林美食·必比登推薦 #美食 #高雄美食 #米院子 #油飯",
+            "慧媛的吃喝玩樂導覽：#親子共遊 高雄美食特輯絕美庭院裡的古早味油飯 誰說吃傳統小吃不能很有儀式感？大家在高雄還有沒有推薦的隱藏版巷弄美食呢？歡迎在底下留言推坑給我喔！👇#高雄美食 #米院子油飯 #高雄必吃 #巷弄美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=YSkRK11ezlk",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "老士官擀麵",
+      "city": "臺中市",
+      "area": "清水區鎮",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 7,
+            "recentVideoCount": 5,
+            "totalViews": 27473,
+            "topVideos": [
+              {
+                "id": "BIH1buEkkCg",
+                "title": "【2026台中麵店推薦】外省炸醬麵/紅燒牛肉麵疙瘩/起司雲南乾麵/芋頭排骨酥麵/爆量羊肉羹麵/麻醬手擀麵/海鮮炒麵【進擊的台灣】    @FoodinTaiwan",
+                "channelTitle": "進擊的台灣",
+                "publishedAt": "2026-08-12T10:00:07Z",
+                "views": 22665,
+                "url": "https://www.youtube.com/watch?v=BIH1buEkkCg"
+              },
+              {
+                "id": "tNN8HvE89Tg",
+                "title": "20260726台中清水美食景點輕旅行：高美濕地清水走走藝術季｜老士官擀麵｜阿財米糕店｜鰲峰觀景台｜牛罵頭遺址｜清水鬼洞｜石瀨頭橋(橋中橋)｜紫雲巖｜阿婆樹下粉圓｜台中市立港口藝術中心(7月系列五)",
+                "channelTitle": "新竹池上-慢活旅遊足跡",
+                "publishedAt": "2026-07-28T04:43:41Z",
+                "views": 1148,
+                "url": "https://www.youtube.com/watch?v=tNN8HvE89Tg"
+              },
+              {
+                "id": "cKw2oukj7yk",
+                "title": "台中清水必吃\"老士官擀麵\"，連三年獲米其林必比登推薦│【吃貨請跟上】20260413│三立iNEWS",
+                "channelTitle": "吃貨請跟上 x 54Free食代",
+                "publishedAt": "2026-04-13T09:00:50Z",
+                "views": 1123,
+                "url": "https://www.youtube.com/watch?v=cKw2oukj7yk"
+              }
+            ],
+            "query": "臺中市 老士官擀麵 美食"
+          },
+          "evidence": [
+            "進擊的台灣：【2026台中麵店推薦】外省炸醬麵/紅燒牛肉麵疙瘩/起司雲南乾麵/芋頭排骨酥麵/爆量羊肉羹麵/麻醬手擀麵/海鮮炒麵【進擊的台灣】    @FoodinTaiwan",
+            "新竹池上-慢活旅遊足跡：20260726台中清水美食景點輕旅行：高美濕地清水走走藝術季｜老士官擀麵｜阿財米糕店｜鰲峰觀景台｜牛罵頭遺址｜清水鬼洞｜石瀨頭橋(橋中橋)｜紫雲巖｜阿婆樹下粉圓｜台中市立港口藝術中心(7月系列五)",
+            "吃貨請跟上 x 54Free食代：台中清水必吃\"老士官擀麵\"，連三年獲米其林必比登推薦│【吃貨請跟上】20260413│三立iNEWS"
+          ],
+          "url": "https://www.youtube.com/watch?v=BIH1buEkkCg",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "老山東牛肉家常麵店",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 95,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 1,
+            "totalViews": 25471,
+            "topVideos": [
+              {
+                "id": "sr1gusq02vU",
+                "title": "【2026台北牛肉麵推薦】正統山東牛肉麵/宮廷祕方牛肉麵/波斯香料牛肉麵/番茄牛肉麵/70年清燉牛肉麵/冠軍辣味牛肉麵/超厚切牛肉麵【進擊的台灣】        @FoodinTaiwan",
+                "channelTitle": "進擊的台灣",
+                "publishedAt": "2026-08-20T10:00:16Z",
+                "views": 15233,
+                "url": "https://www.youtube.com/watch?v=sr1gusq02vU"
+              },
+              {
+                "id": "5CcBUcKxP6w",
+                "title": "【2026全台牛肉麵TOP10】鳳梨牛肉麵/山東牛肉麵/帶骨牛小排麵/淮南牛肉冬粉/超厚切牛肉麵/台式番茄牛肉麵/牛肉麵炒飯【進擊的台灣】    @FoodinTaiwan",
+                "channelTitle": "進擊的台灣",
+                "publishedAt": "2026-04-04T04:00:07Z",
+                "views": 10238,
+                "url": "https://www.youtube.com/watch?v=5CcBUcKxP6w"
+              }
+            ],
+            "query": "臺北市 老山東牛肉家常麵店 美食"
+          },
+          "evidence": [
+            "進擊的台灣：【2026台北牛肉麵推薦】正統山東牛肉麵/宮廷祕方牛肉麵/波斯香料牛肉麵/番茄牛肉麵/70年清燉牛肉麵/冠軍辣味牛肉麵/超厚切牛肉麵【進擊的台灣】        @FoodinTaiwan",
+            "進擊的台灣：【2026全台牛肉麵TOP10】鳳梨牛肉麵/山東牛肉麵/帶骨牛小排麵/淮南牛肉冬粉/超厚切牛肉麵/台式番茄牛肉麵/牛肉麵炒飯【進擊的台灣】    @FoodinTaiwan"
+          ],
+          "url": "https://www.youtube.com/watch?v=sr1gusq02vU",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "西羅殿牛肉湯",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 2,
+            "totalViews": 27431,
+            "topVideos": [
+              {
+                "id": "s6cEYQLnB00",
+                "title": "火車慢旅 台南人的早餐美食 古蹟一日旅 ep410 西羅殿牛肉湯 鴨母寮市場美食 | 超夢幻莉莉水果冰 | 台灣文學館 台南美術館 司法博物館 台南孔廟 | 林百貨伴手禮",
+                "channelTitle": "CHIEN YU 我在路上",
+                "publishedAt": "2026-08-07T10:30:22Z",
+                "views": 18946,
+                "url": "https://www.youtube.com/watch?v=s6cEYQLnB00"
+              },
+              {
+                "id": "Hu8nOkfIomw",
+                "title": "西羅殿牛肉湯又開始排爆了！還是根本就沒停過啊～ #熱血玩台南 #台南美食",
+                "channelTitle": "熱血玩台南",
+                "publishedAt": "2026-07-21T05:26:47Z",
+                "views": 2073,
+                "url": "https://www.youtube.com/watch?v=Hu8nOkfIomw"
+              },
+              {
+                "id": "UHTmLrNZshE",
+                "title": "台南美食，西羅殿牛肉湯，又又又回訪了，強力椒依然好吃 #牛肉湯 #美食 #台南",
+                "channelTitle": "高系櫻娜 Channel #遊戲 #美食 #旅遊 #生活",
+                "publishedAt": "2026-05-01T22:00:29Z",
+                "views": 1974,
+                "url": "https://www.youtube.com/watch?v=UHTmLrNZshE"
+              }
+            ],
+            "query": "臺南市 西羅殿牛肉湯 美食"
+          },
+          "evidence": [
+            "CHIEN YU 我在路上：火車慢旅 台南人的早餐美食 古蹟一日旅 ep410 西羅殿牛肉湯 鴨母寮市場美食 | 超夢幻莉莉水果冰 | 台灣文學館 台南美術館 司法博物館 台南孔廟 | 林百貨伴手禮",
+            "熱血玩台南：西羅殿牛肉湯又開始排爆了！還是根本就沒停過啊～ #熱血玩台南 #台南美食",
+            "高系櫻娜 Channel #遊戲 #美食 #旅遊 #生活：台南美食，西羅殿牛肉湯，又又又回訪了，強力椒依然好吃 #牛肉湯 #美食 #台南"
+          ],
+          "url": "https://www.youtube.com/watch?v=s6cEYQLnB00",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "吾旺再季",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 46479,
+            "topVideos": [
+              {
+                "id": "XZaZ1GN4lYQ",
+                "title": "【吾旺再季潤餅捲專賣】米其林必比登推薦的30年老字號，皮Q餡滿好好吃",
+                "channelTitle": "台灣美食吃什麼?",
+                "publishedAt": "2026-08-09T09:45:01Z",
+                "views": 30221,
+                "url": "https://www.youtube.com/watch?v=XZaZ1GN4lYQ"
+              },
+              {
+                "id": "f5gDiejJ0Wc",
+                "title": "【吃爆 台北 南機場夜市🇹🇼‼️】台北美食🥰台北必吃💖平價美食 米其林 推薦‼️台北小吃🍡🍧台北夜市｜夜市必吃美食｜台北夜市推薦👍🏻台北夜市小吃🌮台北旅游美食｜吃爆台灣夜市｜台灣美食介紹｜台灣自由行",
+                "channelTitle": "Ceci szee",
+                "publishedAt": "2026-07-11T13:30:32Z",
+                "views": 8950,
+                "url": "https://www.youtube.com/watch?v=f5gDiejJ0Wc"
+              },
+              {
+                "id": "qYZZjD5PSFk",
+                "title": "㊙️第一次到南機場吃什麼？這三家還不錯👍#台北美食",
+                "channelTitle": "哈密瓜美食報報",
+                "publishedAt": "2026-04-04T10:01:13Z",
+                "views": 7077,
+                "url": "https://www.youtube.com/watch?v=qYZZjD5PSFk"
+              }
+            ],
+            "query": "臺北市 吾旺再季 美食"
+          },
+          "evidence": [
+            "台灣美食吃什麼?：【吾旺再季潤餅捲專賣】米其林必比登推薦的30年老字號，皮Q餡滿好好吃",
+            "Ceci szee：【吃爆 台北 南機場夜市🇹🇼‼️】台北美食🥰台北必吃💖平價美食 米其林 推薦‼️台北小吃🍡🍧台北夜市｜夜市必吃美食｜台北夜市推薦👍🏻台北夜市小吃🌮台北旅游美食｜吃爆台灣夜市｜台灣美食介紹｜台灣自由行",
+            "哈密瓜美食報報：㊙️第一次到南機場吃什麼？這三家還不錯👍#台北美食"
+          ],
+          "url": "https://www.youtube.com/watch?v=XZaZ1GN4lYQ",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "弄味小廚",
+      "city": "新竹市",
+      "area": "新竹市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 58,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 476,
+            "topVideos": [
+              {
+                "id": "uh3zZSEJ0yk",
+                "title": "✿ 新竹｜回憶食光 𝗘𝗣.𝟮｜新竹vlog、新竹旅行",
+                "channelTitle": "盤籽 Panzi",
+                "publishedAt": "2026-06-05T14:45:18Z",
+                "views": 476,
+                "url": "https://www.youtube.com/watch?v=uh3zZSEJ0yk"
+              }
+            ],
+            "query": "新竹市 弄味小廚 美食"
+          },
+          "evidence": [
+            "盤籽 Panzi：✿ 新竹｜回憶食光 𝗘𝗣.𝟮｜新竹vlog、新竹旅行"
+          ],
+          "url": "https://www.youtube.com/watch?v=uh3zZSEJ0yk",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "秀明豬心冬粉",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 95,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 3253,
+            "topVideos": [
+              {
+                "id": "6iu77C-6Y7k",
+                "title": "【非凡大探索】高雄美食篇-24hr直播不間斷",
+                "channelTitle": "非凡大探索",
+                "publishedAt": "2026-05-15T10:26:20Z",
+                "views": 2674,
+                "url": "https://www.youtube.com/watch?v=6iu77C-6Y7k"
+              },
+              {
+                "id": "ITSSv7MQsko",
+                "title": "高雄旗山老街美食景點：秀明豬心冬粉｜香蕉城手工蛋捲｜三哥臭豆腐｜朝林冰果室｜鄭家陽春麵｜萬來豬舌冬粉｜旗山地景橋｜旗山孔子廟｜旗山武德殿｜旗山車站旗山神社(2月系列七)",
+                "channelTitle": "新竹池上-慢活旅遊足跡",
+                "publishedAt": "2026-02-26T13:32:10Z",
+                "views": 469,
+                "url": "https://www.youtube.com/watch?v=ITSSv7MQsko"
+              },
+              {
+                "id": "FEBQtN0l7LQ",
+                "title": "旗山必吃名店！秀明豬心冬粉｜米其林必比登、500碗推薦 月見肉燥飯必點",
+                "channelTitle": "高雄攻略",
+                "publishedAt": "2026-06-29T13:36:01Z",
+                "views": 64,
+                "url": "https://www.youtube.com/watch?v=FEBQtN0l7LQ"
+              }
+            ],
+            "query": "高雄市 秀明豬心冬粉 美食"
+          },
+          "evidence": [
+            "非凡大探索：【非凡大探索】高雄美食篇-24hr直播不間斷",
+            "新竹池上-慢活旅遊足跡：高雄旗山老街美食景點：秀明豬心冬粉｜香蕉城手工蛋捲｜三哥臭豆腐｜朝林冰果室｜鄭家陽春麵｜萬來豬舌冬粉｜旗山地景橋｜旗山孔子廟｜旗山武德殿｜旗山車站旗山神社(2月系列七)",
+            "高雄攻略：旗山必吃名店！秀明豬心冬粉｜米其林必比登、500碗推薦 月見肉燥飯必點"
+          ],
+          "url": "https://www.youtube.com/watch?v=6iu77C-6Y7k",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "良佳豬腳",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 66,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 1281,
+            "topVideos": [
+              {
+                "id": "QGZ5l6Zm1po",
+                "title": "高雄連續3年米其林必比登！良佳豬腳真的太香了",
+                "channelTitle": "高雄攻略",
+                "publishedAt": "2026-08-24T04:00:29Z",
+                "views": 1281,
+                "url": "https://www.youtube.com/watch?v=QGZ5l6Zm1po"
+              }
+            ],
+            "query": "高雄市 良佳豬腳 美食"
+          },
+          "evidence": [
+            "高雄攻略：高雄連續3年米其林必比登！良佳豬腳真的太香了"
+          ],
+          "url": "https://www.youtube.com/watch?v=QGZ5l6Zm1po",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "夜間部爌肉飯",
+      "city": "臺中市",
+      "area": "臺中市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 7,
+            "recentVideoCount": 5,
+            "totalViews": 13526,
+            "topVideos": [
+              {
+                "id": "cONlUI1RYtE",
+                "title": "【台中彰化最強宵夜場】在地人排爆的6家深夜美食！鹽酥雞／小籠包／爌肉飯／切仔麵／蘿蔔糕／豬腳｜#廖科溢 #台灣美好時光",
+                "channelTitle": "亞洲旅遊台 - 官方頻道",
+                "publishedAt": "2026-07-01T04:00:17Z",
+                "views": 7022,
+                "url": "https://www.youtube.com/watch?v=cONlUI1RYtE"
+              },
+              {
+                "id": "iVh257CgJ48",
+                "title": "米其林必比登推薦的爌肉飯",
+                "channelTitle": "飛天璇",
+                "publishedAt": "2026-05-06T23:07:31Z",
+                "views": 2632,
+                "url": "https://www.youtube.com/watch?v=iVh257CgJ48"
+              },
+              {
+                "id": "f_GqYpJs2Lg",
+                "title": "以前超愛吃，現在卻吃不懂？台中米其林夜間有在賣爌肉的￼名店⋯⋯#台中美食 #晶老闆與電小二 #美食探店 #米其林",
+                "channelTitle": "大家好我是電冰箱-南北貨俱樂部",
+                "publishedAt": "2026-07-30T00:08:53Z",
+                "views": 1622,
+                "url": "https://www.youtube.com/watch?v=f_GqYpJs2Lg"
+              }
+            ],
+            "query": "臺中市 夜間部爌肉飯 美食"
+          },
+          "evidence": [
+            "亞洲旅遊台 - 官方頻道：【台中彰化最強宵夜場】在地人排爆的6家深夜美食！鹽酥雞／小籠包／爌肉飯／切仔麵／蘿蔔糕／豬腳｜#廖科溢 #台灣美好時光",
+            "飛天璇：米其林必比登推薦的爌肉飯",
+            "大家好我是電冰箱-南北貨俱樂部：以前超愛吃，現在卻吃不懂？台中米其林夜間有在賣爌肉的￼名店⋯⋯#台中美食 #晶老闆與電小二 #美食探店 #米其林"
+          ],
+          "url": "https://www.youtube.com/watch?v=cONlUI1RYtE",
+          "updated": "2026-08-24",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -3530,11 +3980,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-08-17T20:42:59.697Z",
+    "lastRun": "2026-08-24T20:47:31.617Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 93,
+    "nextAwardOffset": 103,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 8,
+    "lastUpdatedSignals": 9,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
