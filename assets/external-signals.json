@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-08-24",
-  "updated": "2026-08-24",
+  "version": "api-batch-2026-08-31",
+  "updated": "2026-08-31",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -3930,6 +3930,427 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "杭州小籠湯包",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 2,
+            "totalViews": 33362,
+            "topVideos": [
+              {
+                "id": "xXjGG8etdP4",
+                "title": "【台北グルメ完全版】台湾好きが本気で選んだ！絶対に食べるべき名店10選＋α",
+                "channelTitle": "HIKOLOG / TAIWAN",
+                "publishedAt": "2026-08-02T09:30:35Z",
+                "views": 32342,
+                "url": "https://www.youtube.com/watch?v=xXjGG8etdP4"
+              },
+              {
+                "id": "dfOh96k9eMU",
+                "title": "【台湾🇹🇼202603】杭州小籠湯包民生東路店 最後の夜に選ぶ安心感 #台灣台北 #台北美食 #小籠包 #詳細は概要欄から",
+                "channelTitle": "24hirofumi 台湾さんぽと吹奏楽",
+                "publishedAt": "2026-05-03T09:00:00Z",
+                "views": 766,
+                "url": "https://www.youtube.com/watch?v=dfOh96k9eMU"
+              },
+              {
+                "id": "vT9r-e5ARIo",
+                "title": "【台湾台北神イレブン】ここに行けば間違いなし出張飯 Vol.2",
+                "channelTitle": "食べ旅 Tabetabi",
+                "publishedAt": "2026-05-05T09:24:43Z",
+                "views": 151,
+                "url": "https://www.youtube.com/watch?v=vT9r-e5ARIo"
+              }
+            ],
+            "query": "臺北市 杭州小籠湯包 美食"
+          },
+          "evidence": [
+            "HIKOLOG / TAIWAN：【台北グルメ完全版】台湾好きが本気で選んだ！絶対に食べるべき名店10選＋α",
+            "24hirofumi 台湾さんぽと吹奏楽：【台湾🇹🇼202603】杭州小籠湯包民生東路店 最後の夜に選ぶ安心感 #台灣台北 #台北美食 #小籠包 #詳細は概要欄から",
+            "食べ旅 Tabetabi：【台湾台北神イレブン】ここに行けば間違いなし出張飯 Vol.2"
+          ],
+          "url": "https://www.youtube.com/watch?v=xXjGG8etdP4",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "東門米粉攤",
+      "city": "新竹市",
+      "area": "東區大同路86號東門市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 94,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 3,
+            "totalViews": 3804,
+            "topVideos": [
+              {
+                "id": "sFmxUaluu50",
+                "title": "有些店賣的是美食，有些店賣的是堅持 | 東門米粉攤",
+                "channelTitle": "高虹安",
+                "publishedAt": "2026-06-05T12:00:22Z",
+                "views": 1773,
+                "url": "https://www.youtube.com/watch?v=sFmxUaluu50"
+              },
+              {
+                "id": "adcgs_t5lpk",
+                "title": "精選6家超強「新竹市小吃」｜【吃貨請跟上】20260717｜94要賺錢",
+                "channelTitle": "94要賺錢",
+                "publishedAt": "2026-07-17T10:30:06Z",
+                "views": 1146,
+                "url": "https://www.youtube.com/watch?v=adcgs_t5lpk"
+              },
+              {
+                "id": "cKTHptLjt4M",
+                "title": "精選6家超強「新竹市小吃」｜【吃貨請跟上】20260717｜三立財經iNEWS",
+                "channelTitle": "三立財經iNEWS",
+                "publishedAt": "2026-07-17T08:00:06Z",
+                "views": 885,
+                "url": "https://www.youtube.com/watch?v=cKTHptLjt4M"
+              }
+            ],
+            "query": "新竹市 東門米粉攤 美食"
+          },
+          "evidence": [
+            "高虹安：有些店賣的是美食，有些店賣的是堅持 | 東門米粉攤",
+            "94要賺錢：精選6家超強「新竹市小吃」｜【吃貨請跟上】20260717｜94要賺錢",
+            "三立財經iNEWS：精選6家超強「新竹市小吃」｜【吃貨請跟上】20260717｜三立財經iNEWS"
+          ],
+          "url": "https://www.youtube.com/watch?v=sFmxUaluu50",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "東香台菜海味料理",
+      "city": "臺南市",
+      "area": "安南區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音提及",
+          "score": 64,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 2,
+            "recentVideoCount": 1,
+            "totalViews": 473,
+            "topVideos": [
+              {
+                "id": "nSW-W89nClU",
+                "title": "母親節帶媽媽來吃\"米其林\"，全台北中南餐廳，精選7家必吃│【吃貨請跟上】20260507│三立iNEWS",
+                "channelTitle": "三立財經iNEWS",
+                "publishedAt": "2026-05-07T08:00:06Z",
+                "views": 426,
+                "url": "https://www.youtube.com/watch?v=nSW-W89nClU"
+              },
+              {
+                "id": "JWt8wlmLNwo",
+                "title": "台南米其林怎麼吃？10間小吃、必比登與特別餐廳一次看懂",
+                "channelTitle": "派派城市外掛",
+                "publishedAt": "2026-07-05T02:16:12Z",
+                "views": 47,
+                "url": "https://www.youtube.com/watch?v=JWt8wlmLNwo"
+              }
+            ],
+            "query": "臺南市 東香台菜海味料理 美食"
+          },
+          "evidence": [
+            "三立財經iNEWS：母親節帶媽媽來吃\"米其林\"，全台北中南餐廳，精選7家必吃│【吃貨請跟上】20260507│三立iNEWS",
+            "派派城市外掛：台南米其林怎麼吃？10間小吃、必比登與特別餐廳一次看懂"
+          ],
+          "url": "https://www.youtube.com/watch?v=nSW-W89nClU",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "松竹園",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 3,
+            "totalViews": 148030,
+            "topVideos": [
+              {
+                "id": "tWVNkeqCW8s",
+                "title": "【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】      @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-06-08T10:30:06Z",
+                "views": 61699,
+                "url": "https://www.youtube.com/watch?v=tWVNkeqCW8s"
+              },
+              {
+                "id": "cUY_3G-_n5g",
+                "title": "【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】     @TaiwanCheers",
+                "channelTitle": "台灣Cheers",
+                "publishedAt": "2026-03-20T11:01:14Z",
+                "views": 43293,
+                "url": "https://www.youtube.com/watch?v=cUY_3G-_n5g"
+              },
+              {
+                "id": "zuhiVZMgX5A",
+                "title": "【全台土雞推薦】市場土雞王/茶壺烤雞/梅子雞/招牌白斬雞/茶香燻雞/土雞火鍋/柴燒咖啡土雞【台灣1001個故事】     @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-07-07T10:30:30Z",
+                "views": 25697,
+                "url": "https://www.youtube.com/watch?v=zuhiVZMgX5A"
+              }
+            ],
+            "query": "臺北市 松竹園 美食"
+          },
+          "evidence": [
+            "台灣1001個故事復刻版：【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】      @TaiwanCheers",
+            "台灣Cheers：【陽明山美食】脆皮烤雞/芋頭米粉/炭烤厚片三明治/手工鮮蝦餛飩麵/炸蛋蔥油餅/山東韭菜水餃【台灣1001個故事】     @TaiwanCheers",
+            "台灣1001個故事復刻版：【全台土雞推薦】市場土雞王/茶壺烤雞/梅子雞/招牌白斬雞/茶香燻雞/土雞火鍋/柴燒咖啡土雞【台灣1001個故事】     @TaiwanCheers"
+          ],
+          "url": "https://www.youtube.com/watch?v=tWVNkeqCW8s",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "欣葉小聚",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "medium",
+          "metrics": {
+            "videoCount": 1,
+            "recentVideoCount": 1,
+            "totalViews": 125591,
+            "topVideos": [
+              {
+                "id": "nHysfqbLMeg",
+                "title": "爽吃3.5小時！欣葉彩膳樂亭！台北Buffet新戰力「欣葉彩膳樂亭」真實評價大公開欣葉彩膳樂亭",
+                "channelTitle": "CHILL先生一家人",
+                "publishedAt": "2026-06-09T17:05:02Z",
+                "views": 125591,
+                "url": "https://www.youtube.com/watch?v=nHysfqbLMeg"
+              }
+            ],
+            "query": "臺北市 欣葉小聚 美食"
+          },
+          "evidence": [
+            "CHILL先生一家人：爽吃3.5小時！欣葉彩膳樂亭！台北Buffet新戰力「欣葉彩膳樂亭」真實評價大公開欣葉彩膳樂亭"
+          ],
+          "url": "https://www.youtube.com/watch?v=nHysfqbLMeg",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "金賞軒",
+      "city": "臺北市",
+      "area": "台北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 5,
+            "recentVideoCount": 4,
+            "totalViews": 26920,
+            "topVideos": [
+              {
+                "id": "6hGhd3IIYPw",
+                "title": "【台北松山區美食推薦】乾燒獅子頭/全國第一名炒飯/爆漿蘿蔔絲餅/老滷湯滷味/金沙蝦/杏仁豆腐【台灣1001個故事】@TaiwanCheers",
+                "channelTitle": "進擊的台灣",
+                "publishedAt": "2026-05-21T04:00:12Z",
+                "views": 11563,
+                "url": "https://www.youtube.com/watch?v=6hGhd3IIYPw"
+              },
+              {
+                "id": "BDHR3ARyzkI",
+                "title": "【2026台北水舞嘉年華美食推薦】藥燉羊肉/清燉功夫牛肉麵/招牌玉米雞/爆漿蘿蔔絲餅/粉絲牛肉煲/老麵肉包/紅燒豬腳/極致海鮮丼/烤豬五花串燒【進擊的台灣】    @FoodinTaiwan",
+                "channelTitle": "進擊的台灣",
+                "publishedAt": "2026-06-16T10:00:19Z",
+                "views": 8396,
+                "url": "https://www.youtube.com/watch?v=BDHR3ARyzkI"
+              },
+              {
+                "id": "E1HvuwS8y9k",
+                "title": "【2026父親節餐廳推薦】美國極黑和牛/招牌鹽焗鯛魚/活魚料理王/蒜蒸波士頓龍蝦/創意葫蘆鴨/香蒜中卷/脆皮烤鴨/千絲芋香糕/海藻玫瑰生魚片【台灣1001個故事】  @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-07-29T10:30:36Z",
+                "views": 5060,
+                "url": "https://www.youtube.com/watch?v=E1HvuwS8y9k"
+              }
+            ],
+            "query": "臺北市 金賞軒 美食"
+          },
+          "evidence": [
+            "進擊的台灣：【台北松山區美食推薦】乾燒獅子頭/全國第一名炒飯/爆漿蘿蔔絲餅/老滷湯滷味/金沙蝦/杏仁豆腐【台灣1001個故事】@TaiwanCheers",
+            "進擊的台灣：【2026台北水舞嘉年華美食推薦】藥燉羊肉/清燉功夫牛肉麵/招牌玉米雞/爆漿蘿蔔絲餅/粉絲牛肉煲/老麵肉包/紅燒豬腳/極致海鮮丼/烤豬五花串燒【進擊的台灣】    @FoodinTaiwan",
+            "台灣1001個故事復刻版：【2026父親節餐廳推薦】美國極黑和牛/招牌鹽焗鯛魚/活魚料理王/蒜蒸波士頓龍蝦/創意葫蘆鴨/香蒜中卷/脆皮烤鴨/千絲芋香糕/海藻玫瑰生魚片【台灣1001個故事】  @TaiwanCheers"
+          ],
+          "url": "https://www.youtube.com/watch?v=6hGhd3IIYPw",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "阿文米粿",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 3,
+            "totalViews": 20985,
+            "topVideos": [
+              {
+                "id": "baTdp3wlTn4",
+                "title": "食尚玩家拍過的2026台南米其林必比登小吃名單！傳承三代老字號溫體羊肉、米粿x筍絲肉燥羹、超人氣土魠魚羹、現蒸蝦仁肉圓｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260815",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-08-15T09:00:06Z",
+                "views": 12128,
+                "url": "https://www.youtube.com/watch?v=baTdp3wlTn4"
+              },
+              {
+                "id": "tNzoUxdtm0Y",
+                "title": "​台南小吃總是不讓人失望！來吃頓台南式早餐",
+                "channelTitle": "吹吹流浪的風",
+                "publishedAt": "2026-05-28T11:30:04Z",
+                "views": 6422,
+                "url": "https://www.youtube.com/watch?v=tNzoUxdtm0Y"
+              },
+              {
+                "id": "rsEQQSEOeR0",
+                "title": "台南千萬不要錯過這幾家",
+                "channelTitle": "嘶嘶元 下班後的美食家",
+                "publishedAt": "2026-05-19T04:00:49Z",
+                "views": 1596,
+                "url": "https://www.youtube.com/watch?v=rsEQQSEOeR0"
+              }
+            ],
+            "query": "臺南市 阿文米粿 美食"
+          },
+          "evidence": [
+            "食尚玩家：食尚玩家拍過的2026台南米其林必比登小吃名單！傳承三代老字號溫體羊肉、米粿x筍絲肉燥羹、超人氣土魠魚羹、現蒸蝦仁肉圓｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260815",
+            "吹吹流浪的風：​台南小吃總是不讓人失望！來吃頓台南式早餐",
+            "嘶嘶元 下班後的美食家：台南千萬不要錯過這幾家"
+          ],
+          "url": "https://www.youtube.com/watch?v=baTdp3wlTn4",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "阿坤麵",
+      "city": "臺中市",
+      "area": "中區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 5,
+            "recentVideoCount": 4,
+            "totalViews": 66687,
+            "topVideos": [
+              {
+                "id": "5DIwiP18oS0",
+                "title": "食尚玩家拍過的2026台中米其林必比登小吃！一碗擀麵征服米其林、老饕最愛燉豬腳、超人氣宵夜美食夜間部爌肉飯、銅板價魚丸湯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260829",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-08-29T09:00:12Z",
+                "views": 33781,
+                "url": "https://www.youtube.com/watch?v=5DIwiP18oS0"
+              },
+              {
+                "id": "aoAcIkU3XqA",
+                "title": "第一次帶澳洲老公＆女兒玩台中！3天根本吃不完玩不夠｜逢甲夜市・春水堂・米其林早餐・彩虹眷村TAICHUNG FOOD! Feng Chia Night Market | Chun Shui Tang",
+                "channelTitle": "Cordelia Super Fantastic ",
+                "publishedAt": "2026-05-12T00:00:02Z",
+                "views": 28893,
+                "url": "https://www.youtube.com/watch?v=aoAcIkU3XqA"
+              },
+              {
+                "id": "_JeEMhmaol8",
+                "title": "🥢臺中公園可以吃什麼？這三家還不錯👍",
+                "channelTitle": "哈密瓜美食報報",
+                "publishedAt": "2026-07-30T10:00:22Z",
+                "views": 1664,
+                "url": "https://www.youtube.com/watch?v=_JeEMhmaol8"
+              }
+            ],
+            "query": "臺中市 阿坤麵 美食"
+          },
+          "evidence": [
+            "食尚玩家：食尚玩家拍過的2026台中米其林必比登小吃！一碗擀麵征服米其林、老饕最愛燉豬腳、超人氣宵夜美食夜間部爌肉飯、銅板價魚丸湯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260829",
+            "Cordelia Super Fantastic ：第一次帶澳洲老公＆女兒玩台中！3天根本吃不完玩不夠｜逢甲夜市・春水堂・米其林早餐・彩虹眷村TAICHUNG FOOD! Feng Chia Night Market | Chun Shui Tang",
+            "哈密瓜美食報報：🥢臺中公園可以吃什麼？這三家還不錯👍"
+          ],
+          "url": "https://www.youtube.com/watch?v=5DIwiP18oS0",
+          "updated": "2026-08-31",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -3980,11 +4401,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-08-24T20:47:31.617Z",
+    "lastRun": "2026-08-31T23:51:00.858Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 103,
+    "nextAwardOffset": 113,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 9,
+    "lastUpdatedSignals": 8,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
