@@ -1,6 +1,6 @@
 {
-  "version": "api-batch-2026-08-31",
-  "updated": "2026-08-31",
+  "version": "api-batch-2026-09-07",
+  "updated": "2026-09-07",
   "description": "批次更新的外部訊號資料檔。前端不得即時查外部網站；只讀本檔與既有 Google API 結果，避免 API 成本、來源不穩與跨站限制。",
   "policy": {
     "runtimeExternalLookup": false,
@@ -4351,6 +4351,510 @@
           "generatedBy": "scripts/update-external-signals.js"
         }
       ]
+    },
+    {
+      "placeId": "",
+      "name": "阿爸の芋圓",
+      "city": "新北市",
+      "area": "永和區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 3,
+            "totalViews": 22180,
+            "topVideos": [
+              {
+                "id": "LhHzXY3ei4U",
+                "title": "雙北街頭爭霸戰🆚米其林切仔麵、豆漿界愛馬仕手作豆腐、當歸鴨天花板｜#林美秀#張再興#ozone#黃文廷 SuperTasteTaiwan｜#食尚玩家我們這一家 完整版20260523📍台北、新北",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-05-25T11:00:25Z",
+                "views": 13461,
+                "url": "https://www.youtube.com/watch?v=LhHzXY3ei4U"
+              },
+              {
+                "id": "mh83UMWt_U8",
+                "title": "新北重複性低、逛不膩「樂華夜市」必吃小吃！當歸鴨天花板、2025米其林必比登推薦的芋圓冰、大排長龍深海旗魚串｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260719",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-07-19T09:00:31Z",
+                "views": 6826,
+                "url": "https://www.youtube.com/watch?v=mh83UMWt_U8"
+              },
+              {
+                "id": "tgnVP8XJxWA",
+                "title": "2026米其林必比登名單出爐🤩帶你看中永和板橋哪些名店持續上榜！",
+                "channelTitle": "YC吃喝玩樂",
+                "publishedAt": "2026-07-26T04:43:25Z",
+                "views": 1879,
+                "url": "https://www.youtube.com/watch?v=tgnVP8XJxWA"
+              }
+            ],
+            "query": "新北市 阿爸の芋圓 美食"
+          },
+          "evidence": [
+            "食尚玩家：雙北街頭爭霸戰🆚米其林切仔麵、豆漿界愛馬仕手作豆腐、當歸鴨天花板｜#林美秀#張再興#ozone#黃文廷 SuperTasteTaiwan｜#食尚玩家我們這一家 完整版20260523📍台北、新北",
+            "食尚玩家：新北重複性低、逛不膩「樂華夜市」必吃小吃！當歸鴨天花板、2025米其林必比登推薦的芋圓冰、大排長龍深海旗魚串｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260719",
+            "YC吃喝玩樂：2026米其林必比登名單出爐🤩帶你看中永和板橋哪些名店持續上榜！"
+          ],
+          "url": "https://www.youtube.com/watch?v=LhHzXY3ei4U",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "阿星鹹粥",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 6,
+            "totalViews": 94724,
+            "topVideos": [
+              {
+                "id": "SYHF1vOm9eM",
+                "title": "【台灣古早味早餐】蟳粿/虱目魚粥/古早味什菜/煎肉粿/豬腳飯/傳統炒麵/老字號牛肉湯/麵線糊【台灣1001個故事】   @TaiwanCheers",
+                "channelTitle": "台灣1001個故事復刻版",
+                "publishedAt": "2026-06-28T10:30:20Z",
+                "views": 49077,
+                "url": "https://www.youtube.com/watch?v=SYHF1vOm9eM"
+              },
+              {
+                "id": "yr9gks9XapM",
+                "title": "來台南都觀光客才吃？我今天就是觀光客，身為臺南人這些店我可是都沒吃過的！來台南吃美食囉",
+                "channelTitle": "Max 吃旅遊",
+                "publishedAt": "2026-06-27T14:00:05Z",
+                "views": 25732,
+                "url": "https://www.youtube.com/watch?v=yr9gks9XapM"
+              },
+              {
+                "id": "baTdp3wlTn4",
+                "title": "食尚玩家拍過的2026台南米其林必比登小吃名單！傳承三代老字號溫體羊肉、米粿x筍絲肉燥羹、超人氣土魠魚羹、現蒸蝦仁肉圓｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260815",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-08-15T09:00:06Z",
+                "views": 13223,
+                "url": "https://www.youtube.com/watch?v=baTdp3wlTn4"
+              }
+            ],
+            "query": "臺南市 阿星鹹粥 美食"
+          },
+          "evidence": [
+            "台灣1001個故事復刻版：【台灣古早味早餐】蟳粿/虱目魚粥/古早味什菜/煎肉粿/豬腳飯/傳統炒麵/老字號牛肉湯/麵線糊【台灣1001個故事】   @TaiwanCheers",
+            "Max 吃旅遊：來台南都觀光客才吃？我今天就是觀光客，身為臺南人這些店我可是都沒吃過的！來台南吃美食囉",
+            "食尚玩家：食尚玩家拍過的2026台南米其林必比登小吃名單！傳承三代老字號溫體羊肉、米粿x筍絲肉燥羹、超人氣土魠魚羹、現蒸蝦仁肉圓｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260815"
+          ],
+          "url": "https://www.youtube.com/watch?v=SYHF1vOm9eM",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "阿美飯店",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 2,
+            "totalViews": 1151801,
+            "topVideos": [
+              {
+                "id": "5NeRoMjAWtY",
+                "title": "韓國女演員第一次吃台灣婚宴辦桌😂竟然吃到經紀人衝出來阻止？",
+                "channelTitle": "有璟嘿喲요찡",
+                "publishedAt": "2026-09-05T12:00:18Z",
+                "views": 1150053,
+                "url": "https://www.youtube.com/watch?v=5NeRoMjAWtY"
+              },
+              {
+                "id": "RRRhA0ZP_0A",
+                "title": "台南在地美食清單大公開！不愧是台灣美食之都每一家都好吃到停不下來🤤#溫體牛肉 #春捲 #米粿 #米其林",
+                "channelTitle": "Kevin老師的生活頻道",
+                "publishedAt": "2026-03-12T10:00:42Z",
+                "views": 1361,
+                "url": "https://www.youtube.com/watch?v=RRRhA0ZP_0A"
+              },
+              {
+                "id": "I8TUA5mwSZw",
+                "title": "阿美飯店 | 台南",
+                "channelTitle": "Holiuken",
+                "publishedAt": "2026-07-24T18:30:36Z",
+                "views": 387,
+                "url": "https://www.youtube.com/watch?v=I8TUA5mwSZw"
+              }
+            ],
+            "query": "臺南市 阿美飯店 美食"
+          },
+          "evidence": [
+            "有璟嘿喲요찡：韓國女演員第一次吃台灣婚宴辦桌😂竟然吃到經紀人衝出來阻止？",
+            "Kevin老師的生活頻道：台南在地美食清單大公開！不愧是台灣美食之都每一家都好吃到停不下來🤤#溫體牛肉 #春捲 #米粿 #米其林",
+            "Holiuken：阿美飯店 | 台南"
+          ],
+          "url": "https://www.youtube.com/watch?v=5NeRoMjAWtY",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "阿香的廚房",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 6,
+            "recentVideoCount": 4,
+            "totalViews": 26324,
+            "topVideos": [
+              {
+                "id": "4KZ8tu8OjEA",
+                "title": "食尚玩家拍過的2026高雄米其林必比登小吃！老饕溫體牛、新一代的高雄肉燥飯3巨頭、在地人早餐豬心冬粉、飄香40年鴨肉飯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260822",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-08-22T09:00:31Z",
+                "views": 23258,
+                "url": "https://www.youtube.com/watch?v=4KZ8tu8OjEA"
+              },
+              {
+                "id": "Zx1upbQyGTs",
+                "title": "【2026七夕情人節約會特輯】座落太平洋邊的平價海鮮宴！陽明山山林野菜，加碼梅山景觀樹屋無菜單！",
+                "channelTitle": "亞洲旅遊台 - 官方頻道",
+                "publishedAt": "2026-08-15T10:00:07Z",
+                "views": 1101,
+                "url": "https://www.youtube.com/watch?v=Zx1upbQyGTs"
+              },
+              {
+                "id": "oeZL44viUj0",
+                "title": "2026【母親節景觀餐廳推薦】花蓮海景秘境／陽明山土雞野菜／梅山山中樹屋／美濃部落私廚｜#廖科溢 #台灣美好時光",
+                "channelTitle": "亞洲旅遊台 - 官方頻道",
+                "publishedAt": "2026-05-07T04:00:00Z",
+                "views": 905,
+                "url": "https://www.youtube.com/watch?v=oeZL44viUj0"
+              }
+            ],
+            "query": "高雄市 阿香的廚房 美食"
+          },
+          "evidence": [
+            "食尚玩家：食尚玩家拍過的2026高雄米其林必比登小吃！老饕溫體牛、新一代的高雄肉燥飯3巨頭、在地人早餐豬心冬粉、飄香40年鴨肉飯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260822",
+            "亞洲旅遊台 - 官方頻道：【2026七夕情人節約會特輯】座落太平洋邊的平價海鮮宴！陽明山山林野菜，加碼梅山景觀樹屋無菜單！",
+            "亞洲旅遊台 - 官方頻道：2026【母親節景觀餐廳推薦】花蓮海景秘境／陽明山土雞野菜／梅山山中樹屋／美濃部落私廚｜#廖科溢 #台灣美好時光"
+          ],
+          "url": "https://www.youtube.com/watch?v=4KZ8tu8OjEA",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "阿興虱目魚",
+      "city": "臺南市",
+      "area": "臺南市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 1,
+            "totalViews": 32281,
+            "topVideos": [
+              {
+                "id": "GmCUK514ViY",
+                "title": "【GWのお供に３時間半イッキ見】1泊2日で16食！美食の街、台南ミシュラン食べ歩きをゾロがわかりやすく紹介！",
+                "channelTitle": "ゾロの台湾グルメ",
+                "publishedAt": "2026-05-01T11:00:24Z",
+                "views": 23330,
+                "url": "https://www.youtube.com/watch?v=GmCUK514ViY"
+              },
+              {
+                "id": "tNzoUxdtm0Y",
+                "title": "​台南小吃總是不讓人失望！來吃頓台南式早餐",
+                "channelTitle": "吹吹流浪的風",
+                "publishedAt": "2026-05-28T11:30:04Z",
+                "views": 6424,
+                "url": "https://www.youtube.com/watch?v=tNzoUxdtm0Y"
+              },
+              {
+                "id": "xMTLdZZLYlA",
+                "title": "週日跑完吃哪裡？跑完10公里後，回味一下大學開始吃到現在的阿興虱目魚🤩 #runninggirl #台南必吃",
+                "channelTitle": "Tsun’s Runner x Foodie Life",
+                "publishedAt": "2026-05-03T14:05:35Z",
+                "views": 1581,
+                "url": "https://www.youtube.com/watch?v=xMTLdZZLYlA"
+              }
+            ],
+            "query": "臺南市 阿興虱目魚 美食"
+          },
+          "evidence": [
+            "ゾロの台湾グルメ：【GWのお供に３時間半イッキ見】1泊2日で16食！美食の街、台南ミシュラン食べ歩きをゾロがわかりやすく紹介！",
+            "吹吹流浪的風：​台南小吃總是不讓人失望！來吃頓台南式早餐",
+            "Tsun’s Runner x Foodie Life：週日跑完吃哪裡？跑完10公里後，回味一下大學開始吃到現在的阿興虱目魚🤩 #runninggirl #台南必吃"
+          ],
+          "url": "https://www.youtube.com/watch?v=GmCUK514ViY",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "侯記鴨肉飯",
+      "city": "高雄市",
+      "area": "三民區",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 4,
+            "totalViews": 547470,
+            "topVideos": [
+              {
+                "id": "6lVpZZN9YLc",
+                "title": "高雄晚來真的吃不到！早上六點半跟著在地人吃！百年老店炭燒豆花！【千千進食中】",
+                "channelTitle": "千千進食中",
+                "publishedAt": "2026-07-24T12:03:32Z",
+                "views": 501470,
+                "url": "https://www.youtube.com/watch?v=6lVpZZN9YLc"
+              },
+              {
+                "id": "4KZ8tu8OjEA",
+                "title": "食尚玩家拍過的2026高雄米其林必比登小吃！老饕溫體牛、新一代的高雄肉燥飯3巨頭、在地人早餐豬心冬粉、飄香40年鴨肉飯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260822",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-08-22T09:00:31Z",
+                "views": 23258,
+                "url": "https://www.youtube.com/watch?v=4KZ8tu8OjEA"
+              },
+              {
+                "id": "Z4G9m5s1RfA",
+                "title": "『高雄排隊美食』在地人激推💥第一名鴨肉飯❗️必吃溫體牛肉火鍋🐮寶藏蔥油餅❗️真銅板美食15元炸肉串🔥",
+                "channelTitle": "戴妮塔 Nita & Dai's Daily",
+                "publishedAt": "2026-03-29T13:30:07Z",
+                "views": 14779,
+                "url": "https://www.youtube.com/watch?v=Z4G9m5s1RfA"
+              }
+            ],
+            "query": "高雄市 侯記鴨肉飯 美食"
+          },
+          "evidence": [
+            "千千進食中：高雄晚來真的吃不到！早上六點半跟著在地人吃！百年老店炭燒豆花！【千千進食中】",
+            "食尚玩家：食尚玩家拍過的2026高雄米其林必比登小吃！老饕溫體牛、新一代的高雄肉燥飯3巨頭、在地人早餐豬心冬粉、飄香40年鴨肉飯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260822",
+            "戴妮塔 Nita & Dai's Daily：『高雄排隊美食』在地人激推💥第一名鴨肉飯❗️必吃溫體牛肉火鍋🐮寶藏蔥油餅❗️真銅板美食15元炸肉串🔥"
+          ],
+          "url": "https://www.youtube.com/watch?v=6lVpZZN9YLc",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "前金肉燥飯",
+      "city": "高雄市",
+      "area": "高雄市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 8,
+            "recentVideoCount": 5,
+            "totalViews": 32142,
+            "topVideos": [
+              {
+                "id": "4KZ8tu8OjEA",
+                "title": "食尚玩家拍過的2026高雄米其林必比登小吃！老饕溫體牛、新一代的高雄肉燥飯3巨頭、在地人早餐豬心冬粉、飄香40年鴨肉飯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260822",
+                "channelTitle": "食尚玩家",
+                "publishedAt": "2026-08-22T09:00:31Z",
+                "views": 23259,
+                "url": "https://www.youtube.com/watch?v=4KZ8tu8OjEA"
+              },
+              {
+                "id": "fOMedzkJCms",
+                "title": "高雄前金私心推薦美食🫶🏻每個都好喜歡😍好好吃 #高雄 #高雄美食推薦 #高雄美食 #高雄前金區美食 #kaohsiung #taiwanfood #前金肉燥飯 #月娥鴨肉 #旗魚黑輪#老蔡牛肉",
+                "channelTitle": "環工女孩的吃貨日記🫶🏻",
+                "publishedAt": "2026-08-24T11:00:35Z",
+                "views": 2694,
+                "url": "https://www.youtube.com/watch?v=fOMedzkJCms"
+              },
+              {
+                "id": "ztn3H_BGEr0",
+                "title": "【台湾旅行】これは外せない！高雄No.1肉燥飯✨【台湾グルメ】",
+                "channelTitle": "ダリねこの平和かわいい旅",
+                "publishedAt": "2026-04-09T08:49:31Z",
+                "views": 1680,
+                "url": "https://www.youtube.com/watch?v=ztn3H_BGEr0"
+              }
+            ],
+            "query": "高雄市 前金肉燥飯 美食"
+          },
+          "evidence": [
+            "食尚玩家：食尚玩家拍過的2026高雄米其林必比登小吃！老饕溫體牛、新一代的高雄肉燥飯3巨頭、在地人早餐豬心冬粉、飄香40年鴨肉飯｜SuperTaste Taiwan｜#食尚玩家【美食攏底家】20260822",
+            "環工女孩的吃貨日記🫶🏻：高雄前金私心推薦美食🫶🏻每個都好喜歡😍好好吃 #高雄 #高雄美食推薦 #高雄美食 #高雄前金區美食 #kaohsiung #taiwanfood #前金肉燥飯 #月娥鴨肉 #旗魚黑輪#老蔡牛肉",
+            "ダリねこの平和かわいい旅：【台湾旅行】これは外せない！高雄No.1肉燥飯✨【台湾グルメ】"
+          ],
+          "url": "https://www.youtube.com/watch?v=4KZ8tu8OjEA",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "客家小館",
+      "city": "新北市",
+      "area": "新北市",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 82,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 3,
+            "recentVideoCount": 0,
+            "totalViews": 3604,
+            "topVideos": [
+              {
+                "id": "xjAhh_ce7nY",
+                "title": "清明節吃對東西!\"補運.生財\"，潤餅/春捲/韭菜/草仔粿/水煮蛋｜【吃貨請跟上 完整版】20260404│三立iNEWS",
+                "channelTitle": "吃貨請跟上 x 54Free食代",
+                "publishedAt": "2026-04-04T10:00:06Z",
+                "views": 1932,
+                "url": "https://www.youtube.com/watch?v=xjAhh_ce7nY"
+              },
+              {
+                "id": "vA_elcT0SpE",
+                "title": "台北享佳客家小館 #美食 #享佳 #客家菜 #永春站美食 #信義區美食 #台北美食 #台菜 #food",
+                "channelTitle": "萬花筒天空",
+                "publishedAt": "2026-03-27T08:28:16Z",
+                "views": 1476,
+                "url": "https://www.youtube.com/watch?v=vA_elcT0SpE"
+              },
+              {
+                "id": "uKNyvC4VLGI",
+                "title": "客家小館🥘永和小巷內的必比登好味道🥧",
+                "channelTitle": "Violet",
+                "publishedAt": "2026-05-01T14:32:55Z",
+                "views": 196,
+                "url": "https://www.youtube.com/watch?v=uKNyvC4VLGI"
+              }
+            ],
+            "query": "新北市 客家小館 美食"
+          },
+          "evidence": [
+            "吃貨請跟上 x 54Free食代：清明節吃對東西!\"補運.生財\"，潤餅/春捲/韭菜/草仔粿/水煮蛋｜【吃貨請跟上 完整版】20260404│三立iNEWS",
+            "萬花筒天空：台北享佳客家小館 #美食 #享佳 #客家菜 #永春站美食 #信義區美食 #台北美食 #台菜 #food",
+            "Violet：客家小館🥘永和小巷內的必比登好味道🥧"
+          ],
+          "url": "https://www.youtube.com/watch?v=xjAhh_ce7nY",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "春嬌粄條",
+      "city": "新竹縣",
+      "area": "北埔鄉",
+      "aliases": [],
+      "signals": [
+        {
+          "type": "youtubeBuzz",
+          "sourceId": "youtube-api",
+          "label": "影音熱度高",
+          "score": 100,
+          "confidence": "high",
+          "metrics": {
+            "videoCount": 4,
+            "recentVideoCount": 3,
+            "totalViews": 11361,
+            "topVideos": [
+              {
+                "id": "6A8EoNs7sjQ",
+                "title": "「破百元粄條」必比登大讚！英文教師出招翻轉客家餐桌 20260718【台灣向錢衝】PART1",
+                "channelTitle": "台灣向錢衝",
+                "publishedAt": "2026-07-18T15:00:18Z",
+                "views": 9411,
+                "url": "https://www.youtube.com/watch?v=6A8EoNs7sjQ"
+              },
+              {
+                "id": "H4bGxnurdFE",
+                "title": "台灣文化基地\"美食之旅\"，吃貨佳樺私藏美食公開｜【吃貨請跟上】三立財經iNEWS",
+                "channelTitle": "三立財經iNEWS",
+                "publishedAt": "2026-06-27T10:00:06Z",
+                "views": 1624,
+                "url": "https://www.youtube.com/watch?v=H4bGxnurdFE"
+              },
+              {
+                "id": "wyi3JirGvww",
+                "title": "《主播凹鬥Outdoor中》主題氛圍任意門！鐵板秀搬進包廂不限時熱唱🎶DIY露營風餐廳如童話森林🌲五星飯店宵夜頂奢滿足🥢新竹必比登+1靈魂油蔥尬粄條🌱",
+                "channelTitle": "壹電視NEXT TV",
+                "publishedAt": "2026-05-24T08:30:30Z",
+                "views": 312,
+                "url": "https://www.youtube.com/watch?v=wyi3JirGvww"
+              }
+            ],
+            "query": "新竹縣 春嬌粄條 美食"
+          },
+          "evidence": [
+            "台灣向錢衝：「破百元粄條」必比登大讚！英文教師出招翻轉客家餐桌 20260718【台灣向錢衝】PART1",
+            "三立財經iNEWS：台灣文化基地\"美食之旅\"，吃貨佳樺私藏美食公開｜【吃貨請跟上】三立財經iNEWS",
+            "壹電視NEXT TV：《主播凹鬥Outdoor中》主題氛圍任意門！鐵板秀搬進包廂不限時熱唱🎶DIY露營風餐廳如童話森林🌲五星飯店宵夜頂奢滿足🥢新竹必比登+1靈魂油蔥尬粄條🌱"
+          ],
+          "url": "https://www.youtube.com/watch?v=6A8EoNs7sjQ",
+          "updated": "2026-09-07",
+          "generatedBy": "scripts/update-external-signals.js"
+        }
+      ]
     }
   ],
   "_recordSchema": {
@@ -4401,11 +4905,11 @@
   },
   "automation": {
     "provider": "youtube",
-    "lastRun": "2026-08-31T23:51:00.858Z",
+    "lastRun": "2026-09-07T22:50:14.128Z",
     "lastStatus": "completed",
-    "nextAwardOffset": 113,
+    "nextAwardOffset": 123,
     "note": "Set YOUTUBE_API_KEY in the environment or GitHub Actions secrets.",
-    "lastUpdatedSignals": 8,
+    "lastUpdatedSignals": 9,
     "platformManualMerge": {
       "lastRun": "2026-07-01T01:17:41.128Z",
       "sourceFile": "assets/platform-signals.manual.json",
